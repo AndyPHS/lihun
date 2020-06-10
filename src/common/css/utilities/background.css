@@ -1,0 +1,8 @@
+@responsive {
+    /* 首页 */
+    /*.bg-navigation-pc-cover-image { !* PC端banner背景图 *!*/
+        /*background-image: url(../../images/index/banner.png);*/
+        /*@apply .bg-no-repeat;*/
+    /*}*/
+
+}

@@ -1,0 +1,548 @@
+[
+  {
+    "id": 1,
+    "title": "双方基本信息",
+    "level": 1,
+    "class": "title",
+    "hide": [],
+    "position": "default",
+    "data": []
+  },
+  {
+    "id": 2,
+    "title": "婚姻状况",
+    "level": 1,
+    "class": "title",
+    "hide": [],
+    "position": "default",
+    "data": []
+  },
+  {
+    "id": 3,             //在问卷表中的问题id
+    "title": "子女问题",  //标题
+    "level": 1,           //层级
+    "class": "title",     //类型 title标题 problem问题 problemRepeat重复问题
+    "hide": [],           //显示条件
+    "position": "default",//显示位置 正常default 例如男方 女方为top
+    "data": [
+      {
+        "id": 4,
+        "class": "problemRepeat",//重复问题 需要遍历全部子集的问题 同时根据此类型决定是否显示切换功能 遍历次数基于值
+        "problemRepeatName": "子女",//当class为problemRepeat的时候 有子集的名字 方便遍历 同时
+        "problemOrderId": 1,//问题的orderId 问题数组的排序id 可以直接通过次id从问题数组中找到问题的基本信息
+        "problemId": 11,//问题的id 用于进行接口请求
+        "level": 2,
+        "important": 1,//是否必选
+        "hide": [],
+        "value": "",//问题的值
+        "data": [
+          {
+            "id": 5,
+            "title": "基本信息",
+            "level": 3,
+            "class": "title",
+            "hide": [],
+            "position": "default",
+            "data": [
+              {
+                "id": 6,
+                "class": "problem",          // 孩子的生日
+                "problemId": 12,
+                "problemOrderId": 2,   // 通过  problemOrderId的值-1获取问题 title
+                "important": 1,        // 是否必填
+                "level": 4,
+                "hide": []
+              },
+              {
+                "id": 7,
+                "class": "problem",         // 孩子的姓名
+                "problemId": 13,
+                "problemOrderId": 3,
+                "important": 1,
+                "level": 4,
+                "hide": []
+              },
+              {
+                "id": 8,
+                "class": "problem",           // 性别
+                "problemId": 14,
+                "problemOrderId": 4,
+                "important": 1,
+                "level": 4,
+                "hide": []
+              },
+              {
+                "id": 9,
+                "class": "problem",
+                "problemId": 15,
+                "problemOrderId": 5,
+                "important": 2,
+                "level": 4,
+                "hide": []
+              }
+            ]
+          },
+          {
+            "id": 10,
+            "title": "抚养权归属",
+            "level": 3,
+            "class": "title",
+            "hide": [],
+            "position": "default",
+            "data": [
+              {
+                "id": 11,
+                "class": "problem",
+                "problemId": 16,
+                "problemOrderId": 6,
+                "important": 1,
+                "level": 4,
+                "hide": []
+              },
+              {
+                "id": 12,
+                "class": "problem",
+                "problemId": 17,
+                "problemOrderId": 7,
+                "important": 1,
+                "level": 4,
+                "hide": [
+                  {
+                    "where": "=",
+                    "problemOrderId": "6",
+                    "value": 3
+                  }
+                ],
+                "data": [
+                  {
+                    "id": 13,
+                    "class": "problem",
+                    "problemId": 17,
+                    "problemOrderId": 7,
+                    "important": 1,
+                    "level": 5,
+                    "hide": {
+                      "where": "=",
+                      "problemOrderId": "12",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "id": 14,
+                    "class": "problem",
+                    "problemId": 18,
+                    "problemOrderId": 8,
+                    "important": 1,
+                    "level": 5,
+                    "hide": {
+                      "where": "=",
+                      "problemOrderId": "12",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "id": 31,
+                    "class": "problem",
+                    "problemId": 17,
+                    "problemOrderId": 7,
+                    "important": 1,
+                    "level": 5,
+                    "hide": {
+                      "where": "=",
+                      "problemOrderId": "12",
+                      "value": 2
+                    }
+                  },
+                  {
+                    "id": 32,
+                    "class": "problem",
+                    "problemId": 18,
+                    "problemOrderId": 8,
+                    "important": 1,
+                    "level": 5,
+                    "hide": {
+                      "where": "=",
+                      "problemOrderId": "12",
+                      "value": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 15,
+            "title": "抚养费",
+            "level": 3,
+            "class": "title",
+            "hide": [],
+            "position": "default",
+            "data": [
+              {
+                "id": 16,
+                "title": "男方抚养期间",
+                "level": 4,
+                "class": "title",
+                "hide": [],
+                "position": "default",
+                "data": [
+                  {
+                    "id": 17,
+                    "class": "problem",
+                    "problemId": 19,
+                    "problemOrderId": 9,
+                    "important": 1,
+                    "level": 5,
+                    "hide": []
+                  },
+                  {
+                    "id": 18,
+                    "class": "problem",
+                    "problemId": 21,
+                    "problemOrderId": 11,
+                    "important": 1,
+                    "level": 5,
+                    "hide": {
+                      "where": "=",
+                      "problemOrderId": 9,
+                      "value": 1
+                    },
+                    "data": [
+                      {
+                        "id": 19,
+                        "class": "problem",
+                        "problemId": 22,
+                        "problemOrderId": 12,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 1
+                        }
+                      },
+                      {
+                        "id": 20,
+                        "class": "problem",
+                        "problemId": 26,
+                        "problemOrderId": 16,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 1
+                        }
+                      },
+                      {
+                        "id": 21,
+                        "class": "problem",
+                        "problemId": 23,
+                        "problemOrderId": 13,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 2
+                        }
+                      },
+                      {
+                        "id": 22,
+                        "class": "problem",
+                        "problemId": 27,
+                        "problemOrderId": 17,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 2
+                        }
+                      },
+                      {
+                        "id": 23,
+                        "class": "problem",
+                        "problemId": 24,
+                        "problemOrderId": 14,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 3
+                        }
+                      },
+                      {
+                        "id": 24,
+                        "class": "problem",
+                        "problemId": 28,
+                        "problemOrderId": 18,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 3
+                        }
+                      },
+                      {
+                        "id": 25,
+                        "class": "problem",
+                        "problemId": 25,
+                        "problemOrderId": 15,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 4
+                        }
+                      },
+                      {
+                        "id": 26,
+                        "class": "problem",
+                        "problemId": 29,
+                        "problemOrderId": 19,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 11,
+                          "value": 4
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 27,
+                "title": "女方抚养期间",
+                "level": 4,
+                "class": "title",
+                "hide": [],
+                "position": "default",
+                "data": [
+                  {
+                    "id": 28,
+                    "class": "problem",
+                    "problemId": 20,
+                    "problemOrderId": 10,
+                    "important": 1,
+                    "level": 5,
+                    "hide": []
+                  },
+                  {
+                    "id": 33,
+                    "class": "problem",
+                    "problemId": 21,
+                    "problemOrderId": 11,
+                    "important": 1,
+                    "level": 5,
+                    "hide": {
+                      "where": "=",
+                      "problemOrderId": 19,
+                      "value": 1
+                    },
+                    "data": [
+                      {
+                        "id": 34,
+                        "class": "problem",
+                        "problemId": 22,
+                        "problemOrderId": 12,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 1
+                        }
+                      },
+                      {
+                        "id": 35,
+                        "class": "problem",
+                        "problemId": 26,
+                        "problemOrderId": 16,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 1
+                        }
+                      },
+                      {
+                        "id": 36,
+                        "class": "problem",
+                        "problemId": 23,
+                        "problemOrderId": 13,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 2
+                        }
+                      },
+                      {
+                        "id": 37,
+                        "class": "problem",
+                        "problemId": 27,
+                        "problemOrderId": 17,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 2
+                        }
+                      },
+                      {
+                        "id": 38,
+                        "class": "problem",
+                        "problemId": 24,
+                        "problemOrderId": 14,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 3
+                        }
+                      },
+                      {
+                        "id": 39,
+                        "class": "problem",
+                        "problemId": 28,
+                        "problemOrderId": 18,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 3
+                        }
+                      },
+                      {
+                        "id": 40,
+                        "class": "problem",
+                        "problemId": 25,
+                        "problemOrderId": 15,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 4
+                        }
+                      },
+                      {
+                        "id": 41,
+                        "class": "problem",
+                        "problemId": 29,
+                        "problemOrderId": 19,
+                        "important": 1,
+                        "level": 5,
+                        "hide": {
+                          "where": "=",
+                          "problemOrderId": 28,
+                          "value": 4
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "problemValue": [
+//          [
+//            {
+//              "data":[
+//                {
+//                  "value": "2019/02/12"
+//                },{
+//                  "value": "胖虎"
+//                },{
+//                  "value": "1"
+//                },{
+//                  "value": "222404199809123015"
+//                }
+//              ]
+//            },{
+//              "data":[
+//                {
+//                  "value":3
+//                },
+//                {
+//                  "value":2,
+//                  "data":[
+//                    {
+//                      "value":[
+//                        "2019/07/21",
+//                        "2019/08/12"
+//                      ]
+//                    }
+//                  ]
+//                }
+//              ]
+//            }
+//          ],
+//          [
+//            {
+//              "data":[
+//                {
+//                  "value": "2019/02/12"
+//                },{
+//                  "value": "胖虎"
+//                },{
+//                  "value": "1"
+//                },{
+//                  "value": "222404199809123015"
+//                }
+//              ]
+//            },{
+//            "data":[
+//              {
+//                "value":3
+//              },
+//              {
+//                "value":2,
+//                "data":[
+//                  {
+//                    "value":[
+//                      "2019/07/21",
+//                      "2019/08/12"
+//                    ]
+//                  }
+//                ]
+//              }
+//            ]
+//          }
+//          ]
+
+        ]  //重复问题中的值 数组格式
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "财产问题",
+    "level": 1,
+    "class": "title",
+    "hide": [],
+    "position": "default",
+    "data": []
+  },
+  {
+    "id": 30,
+    "title": "债权问题",
+    "level": 1,
+    "class": "title",
+    "hide": [],
+    "position": "default",
+    "data": []
+  }
+]

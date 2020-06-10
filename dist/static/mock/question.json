@@ -1,0 +1,220 @@
+[
+  {
+    "id": 11,
+    "orderId": 1,
+    "title": "您与配偶生有几个子女？",
+    "type": "select",
+    "child": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    }
+  },
+  {
+    "id": 12,
+    "orderId": 2,
+    "title": "孩子的出生日期是？",
+    "type": "dateTime_day"
+  },
+  {
+    "id": 13,    //问题id
+    "orderId": 3, //排序id 方便调用 orderId-1就是len的坐标
+    "title": "孩子的姓名是？", //问题标题
+    "re": [     //re 1汉子 2数字 3小写字母 4大写字母 5符号
+      "1"
+    ],
+    "reLen": [   //长度限定
+      {
+        "where": ">=",
+        "number": 2
+      },
+      {
+        "where": "<",
+        "number": 5
+      }
+    ],
+    "type": "input"
+  },
+  {
+    "id": 14,
+    "orderId": 4,
+    "title": "孩子的性别是？",
+    "type": "select",
+    "child": {
+      "1": "男",
+      "2": "女"
+    }
+  },
+  {
+    "id": 15,
+    "orderId": 5,
+    "title": "孩子的身份证号是？",
+    "re": [
+      "2"
+    ],
+    "reLen": [
+      {
+        "where": "=",
+        "number": 18
+      }
+    ],
+    "type": "input"
+  },
+  {
+    "id": 16,
+    "orderId": 6,
+    "title": "孩子归谁抚养？",
+    "type": "radio",
+    "child": {
+      "1": "男方",
+      "2": "女方",
+      "3": "共同抚养"
+    }
+  },
+  {
+    "id": 17,
+    "orderId": 7,
+    "title": "共同抚养怎么规定",
+    "type": "radio",
+    "child": {
+      "1": "轮流循环抚养",
+      "2": "按阶段分别抚养"
+    }
+  },
+  {
+    "id": 17,
+    "orderId": 7,
+    "title": "归男方的时间",
+    "type": "dateTime_end"
+  },
+  {
+    "id": 18,
+    "orderId": 8,
+    "title": "归女方的时间",
+    "type": "dateTime_end"
+  },
+  {
+    "id": 19,
+    "orderId": 9,
+    "title": "女方是否支付孩子抚养费",
+    "type": "radio",
+    "child": {
+      "1": "是",
+      "2": "否"
+    }
+  },
+  {
+    "id": 20,
+    "orderId": 10,
+    "title": "男方是否支付孩子抚养费",
+    "type": "radio",
+    "child": {
+      "1": "是",
+      "2": "否"
+    }
+  },
+  {
+    "id": 21,
+    "orderId": 11,
+    "title": "支付抚养费的方式",
+    "type": "radio",
+    "child": {
+      "1": "一次性支付",
+      "2": "按月支付",
+      "3": "按季度支付",
+      "4": "按年支付"
+    }
+  },
+  {
+    "id": 22,
+    "orderId": 12,
+    "title": "时间",
+    "type": "combination",
+    "data": [
+      {
+        "type": "dateTime_day"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "orderId": 13,
+    "title": "每月几号之前",
+    "type": "combination",
+    "data": [
+      {
+        "type": "text",
+        "text": "每月   "
+      },
+      {
+        "type": "time_day"
+      },
+      {
+        "type": "text",
+        "text": "前   "
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "orderId": 14,
+    "title": "每季度几月几号之前",
+    "type": "combination",
+    "data": [
+      {
+        "type": "text",
+        "text": "每季度   "
+      },
+      {
+        "type": "time_month_day"
+      },
+      {
+        "type": "text",
+        "text": "前   "
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "orderId": 15,
+    "title": "每月几号之前",
+    "type": "combination",
+    "data": [
+      {
+        "type": "text",
+        "text": "每年   "
+      },
+      {
+        "type": "time_month_day"
+      },
+      {
+        "type": "text",
+        "text": "前   "
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "orderId": 16,
+    "title": "抚养费总额",
+    "type": "money"
+  },
+  {
+    "id": 27,
+    "orderId": 17,
+    "title": "月抚养费数额",
+    "type": "money"
+  },
+  {
+    "id": 28,
+    "orderId": 18,
+    "title": "季度抚养费数额",
+    "type": "money"
+  },
+  {
+    "id": 29,
+    "orderId": 19,
+    "title": "年抚养费数额",
+    "type": "money"
+  }
+]
