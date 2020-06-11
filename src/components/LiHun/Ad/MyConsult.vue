@@ -115,6 +115,16 @@
             <span class="cbt re" @click="dialogNewCopyOk">确 定</span>
           </div>
         </el-dialog>
+		<!-- 离婚指导弹窗 -->
+		<div class="zhidaopage">
+			<el-dialog title="" :visible.sync="dialogZhiDao">
+			  <el-carousel :interval="5000" arrow="always">
+			      <el-carousel-item v-for="item in zhidaoArr" :key="item">
+			        <img :src="item" alt="">
+			      </el-carousel-item>
+			    </el-carousel>
+			</el-dialog>
+		</div>
       </div>
 
     </div>
@@ -141,7 +151,15 @@ export default {
       chooseList: {
         title: '' // 新建副本
       },
-      formLabelWidth: '80px'
+      formLabelWidth: '80px',
+	  dialogZhiDao: true,
+	  zhidaoArr: [ // 离婚指导轮播图
+		  '../../static/img/zhidao01.jpeg',
+		  '../../static/img/zhidao02.jpeg',
+		  '../../static/img/zhidao03.jpeg',
+		  '../../static/img/zhidao04.jpeg',
+		  '../../static/img/zhidao05.jpeg',
+	  ]
     }
   },
   mounted () {
@@ -273,7 +291,7 @@ export default {
   }
 }
 </script>
-<style scoped >
+<style >
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
 .all{background-color: #f2f4f7;height: 100vh;}
 .w{width: 1200px; margin: 0 auto;}
@@ -295,7 +313,7 @@ export default {
 .c_m_m_m_m_r_n span{width: 58px;height: 24px;text-align: center;line-height: 24px;border-radius: 12px;border:1px solid #cfcfcf;color:#cfcfcf;font-size: 14px;}
 .tishi_bot{width:502px;margin:0 auto;display: flex;justify-content: space-between;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
-
-
+.zhidaopage .el-dialog__body{padding:20px 0px 0px 0px;}
+.zhidaopage .el-carousel__container{height: 458px;}
 .re{background-color: #ff3f68;border: 1px solid #ff3f68;color: #fff;}
 </style>
