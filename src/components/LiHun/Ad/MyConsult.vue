@@ -152,7 +152,7 @@ export default {
         title: '' // 新建副本
       },
       formLabelWidth: '80px',
-	  dialogZhiDao: true,
+	  dialogZhiDao: false,
 	  zhidaoArr: [ // 离婚指导轮播图
 		  '../../static/img/zhidao01.jpeg',
 		  '../../static/img/zhidao02.jpeg',
@@ -184,6 +184,9 @@ export default {
 		}).then((data) => {
 		  if (data.data.status_code === 200) {
 		    this.wenshuList = data.data.data
+			if (this.wenshuList.length === 0) {
+				this.dialogZhiDao = true
+			}
 		  } else {
 		    this.$message({
 		      message: '协议获取失败，请联系管理员',

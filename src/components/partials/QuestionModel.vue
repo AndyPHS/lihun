@@ -7463,7 +7463,7 @@
 </template>
 
 <script>
-   import {userAddAnswer} from '@/api/api/requestLogin.js'    // 用户添加问卷的内容
+   import {userAddAnswer} from '@/api/api/AgreementRequest.js'    // 用户添加问卷的内容
    import { regionData, CodeToText,TextToCode  } from 'element-china-area-data'    // 省市联动信息
   export default {
     props: {

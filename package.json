@@ -5,13 +5,13 @@
   "author": "",
   "private": true,
   "scripts": {
-    "dev": "node --max-old-space-size=8192 node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "node --max-old-space-size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node --max_old_space_size=8192 build/build.js",
+    "build": "node --max_old_space_size=4096 build/build.js",
     "tailwind": "tailwind build ./src/assets/css/tailwind.css -c ./tailwind.js -o ./src/assets/css/output.css"
   },
   "dependencies": {

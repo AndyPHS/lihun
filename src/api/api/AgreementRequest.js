@@ -2,6 +2,7 @@ import {apiUrl} from '@/common/js/api.js'
 import axios from 'axios'
 import qs from 'qs'
 
+
 // 修改手机号
 export const updatePhone = params => {
   return axios({
@@ -100,8 +101,6 @@ export const updatePasswordEmail = params => {
     data: params
   });
 };
-
-
 
 // 验证码接口
 export const verifyCode = params => {

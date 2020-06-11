@@ -229,8 +229,7 @@
 </template>
 
 <script>
-import {addUser, phoneCode, frontLogin} from '@/api/api/AgreementRequest.js'
-import {verifyCode} from '@/api/api/requestLogin.js'
+import {addUser, phoneCode, frontLogin, verifyCode} from '@/api/api/AgreementRequest.js'
 
 export default {
   name: 'lihun_head',
