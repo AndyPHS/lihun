@@ -7,9 +7,9 @@
           <div class="w flex justify-between items-center swi">
             <div class="swiper01_min">
               <p>离婚协议书自动生成，20分钟专属定制</p>
-              <h2>已累计定制3500份</h2>
+              <h2 class="font-thin">已累计定制3500份</h2>
               <div>
-                <img class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+                <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
               </div>
             </div>
             <div>
@@ -23,9 +23,9 @@
           <div class="w flex justify-between items-center swi">
             <div class="swiper01_min">
               <p>离婚协议书自动生成，20分钟专属定制</p>
-              <h2>已累计定制3500份</h2>
+              <h2 class="font-thin">已累计定制3500份</h2>
               <div>
-                <img class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+                <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
               </div>
             </div>
             <div>
@@ -75,7 +75,7 @@
         </dl>
       </div>
       <div class="moreZhiShi">
-        <span class="cursor-pointer">更多离婚知识 ></span>
+        <span @click="goMoreKnowledge" class="cursor-pointer">更多离婚知识 ></span>
       </div>
     </div>
     <div class="fuwu">
@@ -154,7 +154,7 @@
         </div>
       </div>
       <div class="dingzhi">
-        <img class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+        <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
       </div>
     </div>
     <div class="qianyue">
@@ -189,7 +189,7 @@
         </dl>
       </div>
       <div class="w qianyue_02">
-        <el-carousel :interval="5000" arrow="always" indicator-position="outside" height="254px">
+        <el-carousel :interval="5000" arrow="nerver" indicator-position="outside" height="254px">
             <el-carousel-item >
               <ul class="flex justify-between">
                 <li class="w-1/4 mr-4">
@@ -266,7 +266,7 @@
         <img class="inline-block" src="../../../assets/images/lihun/liucheng.png" alt="">
       </div>
       <div class="dingzhi">
-        <img class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+        <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
       </div>
     </div>
     <div class="bot">
@@ -322,6 +322,12 @@ export default {
 
   },
   methods: {
+	goDingZhi () {
+		this.$router.replace('MyConsult')
+	},
+	goMoreKnowledge () {
+		this.$router.replace('Knowledge')
+	}
 
   }
 }

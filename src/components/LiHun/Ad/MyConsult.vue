@@ -149,29 +149,30 @@ export default {
   },
   methods: {
     dingzhiBtn () { // 点击定制协议跳转到小问卷页面
-      localStorage.setItem('qid', 3)
-      userAddQuestionnaire({
-          qid: 3
-        }).then((data) => {
-          localStorage.setItem('quid', data.data.data)
-          localStorage.setItem('questionnaireType', 1)
-          this.$router.replace('/CustomAgreement')
-        })
+	  this.$router.replace('/Pay')
+      // localStorage.setItem('qid', 3)
+      // userAddQuestionnaire({
+      //     qid: 3
+      //   }).then((data) => {
+      //     localStorage.setItem('quid', data.data.data)
+      //     localStorage.setItem('questionnaireType', 1)
+      //     this.$router.replace('/CustomAgreement')
+      //   })
     },
     getWenShu () { // 查找用户文书
-      selectUserQuestionnaire({
-        qid: 3,
-        status: 1
-      }).then((data) => {
-        if (data.data.status_code === 200) {
-          this.wenshuList = data.data.data
-        } else {
-          this.$message({
-            message: '协议获取失败，请联系管理员',
-            type: 'error'
-          })
-        }
-      })
+		selectUserQuestionnaire({
+		  qid: 3,
+		  status: 1
+		}).then((data) => {
+		  if (data.data.status_code === 200) {
+		    this.wenshuList = data.data.data
+		  } else {
+		    this.$message({
+		      message: '协议获取失败，请联系管理员',
+		      type: 'error'
+		    })
+		  }
+		})
     },
     goComplete (e) { // 点击查看协议跳转到生成协议页面
       localStorage.setItem('quid', e)

@@ -55,7 +55,7 @@
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
-// import {answer} from '@/api/api/requestLogin.js'
+import {userAddQuestionnaire} from '@/api/api/AgreementRequest.js'
 export default {
   name: 'Pay',
   components: {
@@ -101,8 +101,15 @@ export default {
       this.dialogQueRen = false
     },
     alreadyPay () {
-      this.dialogQueRen = false
-      this.$router.replace('/MyConsult')
+      localStorage.setItem('qid', 3)
+      userAddQuestionnaire({
+          qid: 3
+        }).then((data) => {
+          localStorage.setItem('quid', data.data.data)
+          localStorage.setItem('questionnaireType', 1)
+          this.$router.replace('/CustomAgreement')
+		  this.dialogQueRen = false
+        })
     }
   }
 }

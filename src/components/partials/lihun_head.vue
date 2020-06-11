@@ -10,14 +10,12 @@
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
             <li>
-              <router-link to="Home">首页</router-link>
+              <router-link to="/">首页</router-link>
             </li>
             <li>
               <router-link to="Knowledge">离婚知识</router-link>
             </li>
-            <li>
-              <router-link to="MyConsult">定制我的离婚协议书</router-link>
-            </li>
+            <li @click="goDingZhi">定制我的离婚协议书</li>
             <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li>
           </ul>
           <div v-if="this.isLogin==false" class="loginBox flex justify-around items-center">
@@ -267,6 +265,14 @@ export default {
     this.changeCode()
   },
   methods: {
+	goDingZhi () { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
+		var isLogin = localStorage.getItem('token')
+		if (isLogin == undefined){
+			this.dialogLogin = true
+		} else {
+			this.$router.replace('/MyConsult')
+		}
+	},
     goAgreementUser () {
       this.$router.replace('/AgreementUser')
     },
