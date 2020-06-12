@@ -5,12 +5,12 @@
       <div class="c_m_l">
         <div class="pt-10">
           <h3 class="text-center text-lg font-bold">离婚知识分类</h3>
-          <ul class="mt-5 pl-10">
-            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-left">
+          <ul class="mt-5">
+            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-center">
               <h2 :class="ins === index?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
-              <ul class="pl-2" v-if="item.data.length>0">
+              <!-- <ul class="pl-2" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" @click="searchList($item, $index)">{{ $item.title }}</li>
-              </ul>
+              </ul> -->
             </li>
           </ul>
         </div>
@@ -31,17 +31,17 @@
           <ul class="">
             <li v-for="(item, index) in tableData" :key="index"  class="pb-8 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
               <div class="py-8 flex justify-between items-center">
-                <h2 class="w-4/5 overflow-hidden">{{ item.title }}</h2>
+                <h2 class="w-4/5 overflow-hidden" v-html="item.title"></h2>
                 <span class="w-1/5 text-right">{{ item.createdTime }}</span>
               </div>
-              <p>{{ item.description }}</p>
+              <p v-html="item.description"></p>
             </li>
           </ul>
-          <div class="hidden">
+          <div class="" v-if="this.tableDataNull">
             <div class="pt-12 text-center mx-auto">
               <img class="inline-block" src="../../../assets/images/lihun/no_consult_icon.png" alt="">
               <p class="text-center text-sm pt-5">
-                共找到<span class="text-red-400 font-bold">0条</span> 与 <span class="text-red-400 font-bold">"抚养权"</span> 相关的内容</br>
+                共找到<span class="text-red-400 font-bold">0条</span> 与 <span class="text-red-400 font-bold">"{{ keyMsg }}"</span> 相关的内容</br>
                 可尝试更换不同的关键词重新进行搜索
               </p>
             </div>
@@ -54,7 +54,7 @@
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
-import {selectAction, selectFaIDNews} from '@/api/api/AgreementRequest.js'
+import {selectAction, selectFaIDNews, selectOsNews} from '@/api/api/AgreementRequest.js'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'Knowledge',
@@ -67,7 +67,8 @@ export default {
       fenleiAll: [], // 文章分类汇总
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
-      ins: 0
+      ins: 0,
+	  tableDataNull: false // 无文章
     }
   },
   mounted () {
@@ -84,7 +85,7 @@ export default {
     },
     getWenType () { // 查询分类
       selectAction().then((data) => {
-        this.fenleiAll = data.data
+        this.fenleiAll = data.data[0].data
         if (this.$route.params.id != undefined) {
           this.firstType = this.$route.params.id
         } else {
@@ -99,6 +100,9 @@ export default {
         faId: this.firstType
       }).then((data) => {
         this.tableData = data.data.data
+		if (this.tableData.length == 0 ) {
+			this.tableDataNull = true
+		}
       })
     },
     searchList (item, index) { // 点击分类查找文章
@@ -108,15 +112,29 @@ export default {
         faId: item.id
       }).then((data) => {
         this.tableData = data.data.data
+		if (this.tableData.length == 0 ) {
+			this.tableDataNull = true
+			this.keyMsg = item.title
+		}
       })
     },
     searchAction () {
-      alert('没有搜索结果')
+		selectOsNews({title:this.keyMsg}).then((data) => {
+			if ( data.data.status_code ==200 ) {
+				this.tableData = data.data.data
+				this.ins = null
+				if (this.tableData.length == 0 ) {
+					this.tableDataNull = true
+				}
+			} else {
+				this.$message.error('查询失败，请重新尝试')
+			}
+		})
     }
   }
 }
 </script>
-<style scoped >
+<style>
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
 .all{background-color: #f2f4f7;height: 100vh;}
 .w{width: 1200px; margin: 0 auto;}
@@ -130,8 +148,10 @@ export default {
 .c_m_r_t{width: 530px;margin:0 auto;}
 .m_r_m ul li{border-color: #eceff4;}
 .m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
+.m_r_m ul li h2 em{color:red;margin-right: 3px;}
 .m_r_m ul li span{color: #d1d1d1;font-size: 14px;}
 .m_r_m ul li p{font-size: 15px;color: #818181;line-height: 28px;white-space: pre-wrap;text-indent: 2em;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+.m_r_m ul li p em{color:red;margin:0 3px;}
 .default_active{color:red}
 .default{color:#343434;}
 </style>

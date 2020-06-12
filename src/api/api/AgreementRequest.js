@@ -108,7 +108,6 @@ export const verifyCode = params => {
     method: "GET",
     dataType: 'json',
     url: apiUrl.loginCode,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: qs.stringify(params)
   });
 };
@@ -169,6 +168,17 @@ export const returnQuestionnaireJson = params => {
     method: "get",
     dataType: 'json',
     url: apiUrl.returnQuestionnaireJson + params.qpid +'?quid='+localStorage.getItem('quid')+'&qid='+ localStorage.getItem('qid'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+
+// 关键字查询文章
+export const selectOsNews = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectOsNews + '?title=' + params.title,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });
@@ -260,6 +270,16 @@ export const userUpdateQuestionnaire = params => {
     method: "put",
     dataType: 'json',
     url: apiUrl.userUpdateQuestionnaire + localStorage.getItem('quid'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+// 修改问卷
+export const updateQuestionnaire = params => {
+  return axios({
+    method: "put",
+    dataType: 'json',
+    url: apiUrl.updateQuestionnaire + localStorage.getItem('qid'),
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });

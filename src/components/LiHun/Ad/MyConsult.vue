@@ -27,7 +27,7 @@
           <ul>
             <li v-for="(item, index) in wenshuList" :key="index">
               <h4 class="flex justify-between items-center px-6">
-                <div class="flex w-1/2">
+                <div class="flex w-1/2 text-gray-600">
                   <span class="inline-block">{{ item.UpdateTime }}</span>
                   <span class="inline-block ml-10">文书编号:{{ item.agreement_number }}</span>
                 </div>
@@ -48,8 +48,8 @@
                     </dd>
                   </dl>
                   <dl v-if="item.complete == 2" class="w-1/3">
-                    <dt>起草中</dt>
-                    <dd @click="goOnTianxie(item.id)" class="text-red-300">
+                    <dt class="text-blue-400">起草中</dt>
+                    <dd @click="goOnTianxie(item.id)" class="text-red">
                       继续起草
                     </dd>
                   </dl>
@@ -62,21 +62,21 @@
                   <!-- 已完成complete 1 -->
                   <div v-if="item.complete == 1" class="w-1/3 c_m_m_m_m_r flex justify-around">
                     <span @click="DownLoadWord(item.id)" class="inline-block">下 载</span>
-                    <span v-if="item.status ==4" class="inline-block">已签订</span>
-                    <span v-if="item.status ==5" class="inline-block">未签订</span>
+                    <span v-if="item.signed == 1" @click="isQianAction(item)" class="inline-block">已签订</span>
+                    <span v-if="item.signed == 0 " @click="isQianAction(item)" class="inline-block">未签订</span>
                   </div>
                   <!-- 未完成 -->
                   <div v-if="item.complete == 2" class="w-1/3 c_m_m_m_m_r_n flex justify-around">
                     <span class="inline-block">下 载</span>
-                    <span v-if="item.status ==4" class="inline-block">已签订</span>
-                    <span v-if="item.status ==5" class="inline-block">未签订</span>
+                    <span v-if="item.signed ==1" class="inline-block">已签订</span>
+                    <span v-if="item.signed ==0" class="inline-block">未签订</span>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        <div v-else class="no_consult ">
+        <div v-if="this.wenshuList.length == 0 " class="no_consult ">
           <div class="w py-20">
             <img class="inline-block mb-6" src="../../../assets/images/lihun/no_consult_icon.png" alt="">
             <h3 class="text-base text-center">暂无协议书，可以点击<span class="inline-block text-red-500 underline cursor-pointer" @click="dingzhiBtn">定制我的协议书</span></h3>
@@ -290,7 +290,19 @@ export default {
       }).catch((data) => {
         this.$message.error('重命名失败，请联系管理员')
       })
-    }
+    },
+	isQianAction (item) { // 签订与否切换
+		var sta = item.signed
+		if (sta == 1){
+			sta = 0
+		} else {
+			sta = 1
+		}
+		localStorage.setItem('quid', item.id)
+		userUpdateQuestionnaire({signed: sta}).then((data) => {
+			this.getWenShu()
+		})
+	}
   }
 }
 </script>
@@ -311,6 +323,7 @@ export default {
 .c_m_m_m_m dl dt{font-size: 18px;}
 .c_m_m_m_m dl dd{font-size: 14px;color:#979797;text-decoration: underline;cursor: pointer;}
 .c_m_m_m_m dl dd.re{color:#ff7290;}
+.c_m_m_m_m dl dd.text-red{color:#ff7290;}
 .c_m_m_m_m_r span{width: 58px;height: 24px;text-align: center;line-height: 24px;border-radius: 12px;border:1px solid #547ce0;color:#547ce0;font-size: 14px;}
 .c_m_m_m_m_r span:hover{background-color: #547ce0;color:#fff;}
 .c_m_m_m_m_r_n span{width: 58px;height: 24px;text-align: center;line-height: 24px;border-radius: 12px;border:1px solid #cfcfcf;color:#cfcfcf;font-size: 14px;}

@@ -4,7 +4,7 @@
     <div class="c_m w flex justify-between">
       <div class="c_m_l">
         <div class="pt-10">
-          <h3 class="text-center text-lg font-bold">离婚知识分类</h3>
+          <h3 class="text-center text-lg font-bold">离婚帮助</h3>
           <ul class="mt-5">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-center">
               <h2 @click="searchList(item)">{{ item.title }}</h2>
@@ -42,7 +42,7 @@ import lihun_head from '../../partials/lihun_head.vue'
 import {selectNewsContent, selectAction} from '@/api/api/AgreementRequest.js' // 查询文章
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
-  name: 'KnowledgeCon',
+  name: 'AgreementHelpCon',
   components: {
     'lihun-head': lihun_head
   },
@@ -74,12 +74,13 @@ export default {
      },
      getWenType () { // 查询分类
        selectAction().then((data) => {
-         this.fenleiAll = data.data[0].data
+		 // 获取离婚帮助
+         this.fenleiAll = data.data[1].data
        })
      },
      searchList (item) { // 点击文章分类跳转到文章列表页
        this.$router.push({
-         name: 'Knowledge',
+         name: 'AgreementHelp',
          params: {
            id: item.id
          }

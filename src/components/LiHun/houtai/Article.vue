@@ -101,11 +101,11 @@ export default{
       this.getFenLeiList()
     },
     getFenLeiList () { // 查询总文章
-      if (this.selectFenLei.length === 2) {
-        this.selectFenLei = this.selectFenLei[1]
-      } else {
-        this.selectFenLei = this.selectFenLei[0]
-      }
+      // if (this.selectFenLei.length > 0) {
+      //   this.selectFenLei = this.selectFenLei[1]
+      // } else {
+      //   this.selectFenLei = this.selectFenLei[0]
+      // }
       this.fullscreenLoading = true
       if (this.selectFenLei != null) {
         selectFaIDNews({

@@ -274,6 +274,8 @@ const apiUrl = {
   selectNews: baseLiHunURL + 'news/select_news/',
   // 查询文章内容
   selectNewsContent: baseLiHunURL + 'news/select_news_content/',
+  // 关键字搜索文章news/select_os_news/
+  selectOsNews: baseLiHunURL + 'news/select_os_news/',
 
   // 修改手机号
   updatePhone: baseLiHunURL + 'front_user/update_phone',

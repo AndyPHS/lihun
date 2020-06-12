@@ -29,16 +29,16 @@
 
     <div>
       <el-main>
-        <el-table :data="tableData" stripe height="500" :header-row-style="{height:'40px'}" :row-style="{height:'40px'}">
-          <el-table-column prop="date" label="ID" width="80" height="50">
+        <el-table :data="pageInfo" stripe height="500" :header-row-style="{height:'40px'}" :row-style="{height:'40px'}">
+          <el-table-column prop="id" label="ID" width="80" height="50">
           </el-table-column>
           <el-table-column prop="name" label="用户名" width="100">
           </el-table-column>
-          <el-table-column prop="address" label="注册时间" width="100">
+          <el-table-column prop="created_at" label="注册时间" width="100">
           </el-table-column>
           <el-table-column prop="name" label="手机号" width="100">
           </el-table-column>
-          <el-table-column prop="name" label="邮箱" width="120">
+          <el-table-column prop="email" label="邮箱" width="120">
           </el-table-column>
           <el-table-column prop="name" label="购买次数" width="80">
           </el-table-column>
@@ -58,11 +58,21 @@
           </el-table-column>
         </el-table>
       </el-main>
+	  <el-pagination
+	      background
+	      class="my-10"
+	      layout="prev, pager, next"
+	      @current-change="handleUserList"
+	      :page-size="pagesize"
+	      :current-page.sync="currentPage"
+	      :total="this.min.total">
+	  </el-pagination>
     </div>
   </div>
 </template>
 
 <script>
+import {selectUser} from '@/api/api/AgreementRequest.js'
  export default{
    name: 'UserList',
    data() {
@@ -75,10 +85,40 @@
      return {
        activeIndex: '2',
        phoneVal: null, // 输入手机号查找
-       tableData: Array(20).fill(item)
+       tableData: Array(20).fill(item),
+	   pageInfo:[
+	    {
+	       id: '',
+	       name: '',
+	       email: '',
+	       created_at: '',
+	       updated_at: ''
+	    }
+	   ],
+	   currentPage:1, //初始页
+	   pagesize:20,    //    每页的数据
+	   pageNum: 1, // 第几页
+	   min: '',
      }
    },
+   mounted () {
+     this.handleUserList()   //获取用户列表
+   },
    methods: {
+	 handleUserList () { // 获取用户
+	     selectUser({page:this.currentPage}).then((data)=>{
+	         this.pageInfo = data.data.data.data
+	         this.min = data.data.data
+	     }).catch((data)=>{
+	         this.$router.replace("/");
+	     })
+	 },
+	 handleSizeChange (size) {   // 点击分页
+	     this.pagesize = size;
+	 },
+	 handleCurrentChange (currentPage) {    //点击哪一页
+	     this.currentPage = currentPage;
+	 },
      GoUserWenShu(index, row) { // 跳转文书下载历史界面
        this.$router.push({
          path: '/UserWenShu',

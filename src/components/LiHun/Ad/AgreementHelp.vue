@@ -11,12 +11,12 @@
             </div>
             <div class="mt-10">
               <h3 class="text-center text-lg font-bold">帮助分类</h3>
-              <ul class="mt-5 pl-10">
-                <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-left">
+              <ul class="mt-5">
+                <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-center">
                   <h2 :class="ins === index?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
-                  <ul class="pl-2" v-if="item.data.length>0">
+                  <!-- <ul class="pl-2" v-if="item.data.length>0">
                     <li v-for="($item, $index) in item.data" :key="$index" @click="searchList($item, $index)">{{ $item.title }}</li>
-                  </ul>
+                  </ul> -->
                 </li>
               </ul>
             </div>
@@ -64,7 +64,7 @@ export default {
   methods: {
     goKnowledgeMin (id) {
       this.$router.push({
-        name: 'KnowledgeCon',
+        name: 'AgreementHelpCon',
         params: {
           id: id
         }
@@ -72,7 +72,7 @@ export default {
     },
     getWenType () { // 查询分类
       selectAction().then((data) => {
-        this.fenleiAll = data.data
+        this.fenleiAll = data.data[1].data
         if (this.$route.params.id != undefined) {
           this.firstType = this.$route.params.id
         } else {

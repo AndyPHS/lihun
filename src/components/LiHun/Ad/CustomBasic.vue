@@ -48,55 +48,55 @@
                             <div v-for="(item,index) in aa[mo.part]" :key="index">
                               <!-- 大问题块 -->
                               <div>
-                                <div class="flex justify-center mb-4" v-if="mo.title=='子女抚养' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='子女抚养' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个孩子</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='房产' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='房产' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">房产{{index+1}}</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='车辆' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='车辆' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}辆车辆</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='存款' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='存款' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔存款</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='理财' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='理财' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔理财</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='公积金' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='公积金' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔公积金</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='保险' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='保险' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}份保险</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='股权（股份）' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='股权（股份）' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔股权（股份）</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='股票账户' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='股票账户' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个股票账户</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='家具家电' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='家具家电' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个家具家电</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='珠宝首饰收藏品' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='珠宝首饰收藏品' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}件珠宝首饰收藏品</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='债券' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='债券' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个债券</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='店铺' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='店铺' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个店铺</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='宅基地房屋' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='宅基地房屋' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}处宅基地房屋</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='其他' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='其他' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个其他</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='债权' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='债权' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔债权</h2>
                                 </div>
-                                <div class="flex justify-center" v-if="mo.title=='债务' ">
+                                <div class="flex justify-center my-4" v-if="mo.title=='债务' ">
                                    <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔债务</h2>
                                 </div>
                               </div>
@@ -275,6 +275,13 @@
                   <span class="cbt re" @click="alreadySave">确认已保存，返回列表</span>
                 </div>
               </el-dialog>
+			  <el-dialog title="提示" :visible.sync="dialogDelete" class="tishi">
+			    <h2 class="text-red-500 text-xl text-center py-8">确认删除该模块?</h2>
+			    <div slot="footer" class="dialog-footer tishi_bot pb-3">
+			      <span class="cbt" @click="canceldialogDelete">取消</span>
+			      <span class="cbt re" @click="alreadyDelete">确认</span>
+			    </div>
+			  </el-dialog>
               <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
               <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
               <el-button class="step_btn my-5" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
@@ -319,6 +326,9 @@ export default {
       zhaiIns: 16, // 债权
       caichanNav: false,
       zhaiquanNav: false,
+	  dialogDelete: false, // 删除模块弹窗
+	  DeleteId: null, // 要删除模块的ID
+	  DeleteIndex: null, // 要删除模块的下标
       demo: 4,
       hours: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
       days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
@@ -471,6 +481,7 @@ export default {
     },
     getZiNvMsg () { // 查询子女模块数据
       returnQuestionnaireJson({'qpid': 3859}).then((data) => { // 查询子女模块数据
+		this.fullscreenLoading = false
         this.aa.ZiNv = data.data.data
         this.mokuai.sort(this.compare('id'))
         // console.log(this.aa.ZiNv[0][1].questions[7].childQuestion[1][2].answer)
@@ -499,6 +510,7 @@ export default {
     },
     getFangChanMsg () { // 查询房产模块数据
       returnQuestionnaireJson({'qpid': 521}).then((data) => { // 查询房产模块数据
+		this.fullscreenLoading = false
         this.aa.FangChan = data.data.data
         for (let i = 0; i < this.aa.FangChan.length; i++) {
           this.aa.FangChan[i][0].questions[2].answer = JSON.parse(this.aa.FangChan[i][0].questions[2].answer)
@@ -509,6 +521,7 @@ export default {
     },
     getCarMsg () { // 查询车辆模块数据
       returnQuestionnaireJson({'qpid': 522}).then((data) => { // 查询车辆模块数据
+		this.fullscreenLoading = false
         this.aa.Car = data.data.data
         for (let i = 0; i < this.aa.Car.length; i++) {
           this.aa.Car[i][0].questions[2].answer = JSON.parse(this.aa.Car[i][0].questions[2].answer)
@@ -519,6 +532,7 @@ export default {
     },
     getCunKuanMsg () { // 查询存款模块数据
       returnQuestionnaireJson({'qpid': 637}).then((data) => { // 查询存款模块数据
+		this.fullscreenLoading = false
         this.aa.CunKuan = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -526,6 +540,7 @@ export default {
     },
     getLiCaiMsg () { // 查询理财模块数据
       returnQuestionnaireJson({'qpid': 523}).then((data) => { // 查询理财模块数据
+		this.fullscreenLoading = false
         this.aa.LiCai = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -533,6 +548,7 @@ export default {
     },
     getGongJiJinMsg () { // 查询公积金模块数据
       returnQuestionnaireJson({'qpid': 3614}).then((data) => { // 查询公积金模块数据
+		this.fullscreenLoading = false
         this.aa.GongJiJin = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -540,6 +556,7 @@ export default {
     },
     getBaoXianMsg () { // 查询保险模块数据
       returnQuestionnaireJson({'qpid': 524}).then((data) => { // 查询保险模块数据
+		this.fullscreenLoading = false
         this.aa.BaoXian = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -548,6 +565,7 @@ export default {
     },
     getGuQuanGuFenMsg () { // 查询股权（股份）
       returnQuestionnaireJson({'qpid': 3636}).then((data) => { // 查询股权（股份）模块数据
+		this.fullscreenLoading = false
         this.aa.GuQuanGuFen = data.data.data
         this.loading = false
         // for (let i = 0; i < this.aa.QiTaCaiChan.length; i++) {
@@ -563,6 +581,7 @@ export default {
     },
     getGuPiaoZhangHuMsg () { // 查询股票账户
       returnQuestionnaireJson({'qpid': 3637}).then((data) => { // 查询股票账户模块数据
+		this.fullscreenLoading = false
         this.aa.GuPiaoZhangHu = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -570,6 +589,7 @@ export default {
     },
     getJiaDianMsg () { // 查询家具家电
       returnQuestionnaireJson({'qpid': 636}).then((data) => { // 查询家具家电模块数据
+		this.fullscreenLoading = false
         this.aa.JiaDian = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -577,6 +597,7 @@ export default {
     },
     getZhuBaoShouShiMsg () { // 查询珠宝首饰收藏品
       returnQuestionnaireJson({'qpid': 3638}).then((data) => { // 查询珠宝首饰收藏品模块数据
+		this.fullscreenLoading = false
         this.aa.ZhuBaoShouShi = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -584,6 +605,7 @@ export default {
     },
     getZhaiJuanMsg () { // 查询债券
       returnQuestionnaireJson({'qpid': 3639}).then((data) => { // 查询债券模块数据
+		this.fullscreenLoading = false
         this.aa.ZhaiJuan = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -591,6 +613,7 @@ export default {
     },
     getDianPuMsg () { // 查询店铺
       returnQuestionnaireJson({'qpid': 3640}).then((data) => { // 查询店铺模块数据
+		this.fullscreenLoading = false
         this.aa.DianPu = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -598,6 +621,7 @@ export default {
     },
     getZhaiJiDiMsg () { // 查询宅基地房屋
       returnQuestionnaireJson({'qpid': 3641}).then((data) => { // 查询宅基地房屋模块数据
+		this.fullscreenLoading = false
         this.aa.ZhaiJiDi = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -605,6 +629,7 @@ export default {
     },
     getQiTaMsg () { // 查询其他
       returnQuestionnaireJson({'qpid': 3642}).then((data) => { // 查询其他模块数据
+		this.fullscreenLoading = false
         this.aa.QiTa = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -612,6 +637,7 @@ export default {
     },
     getZhaiQuanMsg () { // 查询债权模块数据
       returnQuestionnaireJson({'qpid': 655}).then((data) => { // 查询债权模块数据
+		this.fullscreenLoading = false
         this.aa.ZhaiQuan = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -619,6 +645,7 @@ export default {
     },
     getZhaiWuMsg () { // 查询债务模块数据
       returnQuestionnaireJson({'qpid': 656}).then((data) => { // 查询债务模块数据
+		this.fullscreenLoading = false
         this.aa.ZhaiWu = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -626,6 +653,7 @@ export default {
     },
     getQiTaZhaiQuanMsg () { // 查询其他债权债务模块数据
       returnQuestionnaireJson({'qpid': 3855}).then((data) => { // 查询其他债权债务模块数据
+		this.fullscreenLoading = false
         this.aa.QiTaZhaiQuan = data.data.data
         this.loading = false
       }).catch((data) => {
@@ -633,6 +661,7 @@ export default {
     },
     getTeShuYueDingMsg () { // 查询特殊约定模块数据
       returnQuestionnaireJson({'qpid': 332}).then((data) => { // 查询特殊约定模块数据
+		this.fullscreenLoading = false
         this.aa.TeShuYueDing = data.data.data
         if (this.aa.TeShuYueDing[0][0].questions[0].answer === 1 || this.aa.TeShuYueDing[0][0].questions[0].answer == '') {
           this.aa.TeShuYueDing[0][0].questions[0].answer = []
@@ -677,6 +706,7 @@ export default {
         message: '添加中请稍后……',
         duration: 1000
       })
+	  this.fullscreenLoading = true
       userAddSelectAnswer({
         qpid: e,
         quid: localStorage.getItem('quid')
@@ -719,78 +749,76 @@ export default {
           } else if (e === 3855) {
             this.getQiTaZhaiQuanMsg() // 查询其他债权债务模块数据
           }
-          this.$message({
-            message: '添加成功',
-            type: 'success'
-          })
         }
       }).catch((data) => {
         this.$message.error('添加失败，请联系管理员')
       })
     },
+	canceldialogDelete () { // 取消删除按钮
+		this.dialogDelete = false
+		this.DeleteId = null;
+		this.DeleteIndex = null;
+	},
+	alreadyDelete () {  // 确认删除按钮
+		this.fullscreenLoading = true
+		const e = this.DeleteId
+		const index = this.DeleteIndex
+		userDeleteSelectAnswer({
+		  qpid: e,
+		  quid: localStorage.getItem('quid'),
+		  fornum: index + 1
+		}).then((data) => {
+		  if (e === 3859) {
+		    this.getZiNvMsg() // 查询子女模块数据
+		  } else if (e === 521) {
+		    this.getFangChanMsg() // 查询房产模块数据
+		  } else if (e === 522) {
+		    this.getCarMsg() // 查询车辆模块数据
+		  } else if (e === 637) {
+		    this.getCunKuanMsg() // 查询存款模块数据
+		  } else if (e === 523) {
+		    this.getLiCaiMsg() // 查询理财模块数据
+		  } else if (e === 3614) {
+		    this.getGongJiJinMsg() // 查询公积金模块数据
+		  } else if (e === 524) {
+		    this.getBaoXian() // 查询保险模块数据
+		  } else if (e === 3636) {
+		    this.getGuQuanGuFenMsg() // 查询股权股份模块数据
+		  } else if (e === 3637) {
+		    this.getGuPiaoZhangHuMsg() // 查询股票账户模块数据
+		  } else if (e === 636) {
+		    this.getJiaDianMsg() // 查询家具家电模块数据
+		  } else if (e === 3638) {
+		    this.getZhuBaoShouShiMsg() // 查询珠宝首饰收藏品模块数据
+		  } else if (e === 3639) {
+		    this.getZhaiJuanMsg() // 查询债券模块数据
+		  } else if (e === 3640) {
+		    this.getDianPuMsg() // 查询店铺模块数据
+		  } else if (e === 3641) {
+		    this.getZhaiJiDiMsg() // 查询宅基地房屋模块数据
+		  } else if (e === 3642) {
+		    this.getQiTaMsg() // 查询其他模块数据
+		  } else if (e === 655) {
+		    this.getZhaiQuanMsg() // 查询债权模块数据
+		  } else if (e === 656) {
+		    this.getZhaiWuMsg() // 查询债务模块数据
+		  } else if (e === 3855) {
+		    this.getQiTaZhaiQuanMsg() // 查询其他债权债务模块数据
+		  }
+		  this.$message({
+		    message: '删除成功',
+		    type: 'success',
+		    duration: 1000
+		  })
+		  this.dialogDelete = false
+		}).catch((data) => {
+		  this.$message.error('删除失败，请联系管理员')
+		})
+	},
     userDeleteSelectAnswerAction (e, index) { // 删除子女或者房产等信息
-      this.$confirm('是否删除该选项？', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        // this.fullscreenLoading = true
-        userDeleteSelectAnswer({
-          qpid: e,
-          quid: localStorage.getItem('quid'),
-          fornum: index + 1
-        }).then((data) => {
-          if (e === 3859) {
-            this.getZiNvMsg() // 查询子女模块数据
-          } else if (e === 521) {
-            this.getFangChanMsg() // 查询房产模块数据
-          } else if (e === 522) {
-            this.getCarMsg() // 查询车辆模块数据
-          } else if (e === 637) {
-            this.getCunKuanMsg() // 查询存款模块数据
-          } else if (e === 523) {
-            this.getLiCaiMsg() // 查询理财模块数据
-          } else if (e === 3614) {
-            this.getGongJiJinMsg() // 查询公积金模块数据
-          } else if (e === 524) {
-            this.getBaoXian() // 查询保险模块数据
-          } else if (e === 3636) {
-            this.getGuQuanGuFenMsg() // 查询股权股份模块数据
-          } else if (e === 3637) {
-            this.getGuPiaoZhangHuMsg() // 查询股票账户模块数据
-          } else if (e === 636) {
-            this.getJiaDianMsg() // 查询家具家电模块数据
-          } else if (e === 3638) {
-            this.getZhuBaoShouShiMsg() // 查询珠宝首饰收藏品模块数据
-          } else if (e === 3639) {
-            this.getZhaiJuanMsg() // 查询债券模块数据
-          } else if (e === 3640) {
-            this.getDianPuMsg() // 查询店铺模块数据
-          } else if (e === 3641) {
-            this.getZhaiJiDiMsg() // 查询宅基地房屋模块数据
-          } else if (e === 3642) {
-            this.getQiTaMsg() // 查询其他模块数据
-          } else if (e === 655) {
-            this.getZhaiQuanMsg() // 查询债权模块数据
-          } else if (e === 656) {
-            this.getZhaiWuMsg() // 查询债务模块数据
-          } else if (e === 3855) {
-            this.getQiTaZhaiQuanMsg() // 查询其他债权债务模块数据
-          }
-          this.$message({
-            message: '删除成功',
-            type: 'success',
-            duration: 1000
-          })
-        }).catch((data) => {
-          this.$message.error('删除失败，请联系管理员')
-        })
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '已取消删除'
-        })
-      })
+		this.DeleteId = e;
+		this.DeleteIndex = index;
+		this.dialogDelete = true;
     },
     stepClick (item, index) {
       this.ins = index
