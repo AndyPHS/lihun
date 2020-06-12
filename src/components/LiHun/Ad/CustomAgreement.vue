@@ -3498,10 +3498,9 @@ export default {
                           listData: [
                             { label: '珠宝首饰收藏', value: '1' },
                             { label: '债券', value: '2' },
-                            { label: '存款', value: '3' },
-                            { label: '店铺', value: '4' },
-                            { label: '宅基地房屋', value: '5' },
-                            { label: '其他', value: '6' }
+                            { label: '店铺', value: '3' },
+                            { label: '宅基地房屋', value: '4' },
+                            { label: '其他', value: '5' }
                           ]
                         }
                       ]
