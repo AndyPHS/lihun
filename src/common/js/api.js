@@ -18,7 +18,7 @@ var host = location.host,
   baseLiHunURL = '',
   adminBaseURL, compBaseURL
 
-if(host.indexOf('线上环境') > -1){
+if(host.indexOf('jiawen.jialilawyer.com') > -1){
   //线上环境
   baseHost = environment.onLine
 }else {
