@@ -189,7 +189,7 @@
         </dl>
       </div>
       <div class="w qianyue_02">
-        <el-carousel :interval="5000" arrow="nerver" indicator-position="outside" height="254px">
+        <el-carousel :interval="5000" arrow="never" indicator-position="outside" height="254px">
             <el-carousel-item >
               <ul class="flex justify-between">
                 <li class="w-1/4 mr-4">
