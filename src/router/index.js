@@ -26,6 +26,7 @@ const UserOperate = () => import('@/components/LiHun/houtai/UserOperate')  // �
 Vue.use(Router)
 
 export default new Router({
+  // mode: 'history',
   routes: [
     {path: '/', name: 'Home', component: Home},
     // 离婚协议书推广我的协议书
