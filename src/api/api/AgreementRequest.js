@@ -397,7 +397,16 @@ export const selectNews = params => {
     data: params
   });
 };
-
+// 问卷付费
+export const newsPay = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.newsPay + localStorage.getItem('quid'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
 // 查询文章内容selectNewsContent
 export const selectNewsContent = params => {
   return axios({

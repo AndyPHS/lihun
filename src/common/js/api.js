@@ -272,6 +272,8 @@ const apiUrl = {
   updateNews: baseLiHunURL + 'news/update_news/',
   // 查询文章
   selectNews: baseLiHunURL + 'news/select_news/',
+  // 问卷付费/news/pay/
+  newsPay: baseLiHunURL + 'news/pay/',
   // 查询文章内容
   selectNewsContent: baseLiHunURL + 'news/select_news_content/',
   // 关键字搜索文章news/select_os_news/

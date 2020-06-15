@@ -14,6 +14,7 @@ const UserAgreement = () => import('@/components/LiHun/Ad/UserAgreement')  // �
 const Knowledge = () => import('@/components/LiHun/Ad/Knowledge') // 知识列表页面
 const KnowledgeCon = () => import('@/components/LiHun/Ad/KnowledgeCon') // 知识详情页面
 const Pay = () => import('@/components/LiHun/Ad/Pay') // 支付页面
+const onPay = () => import('@/components/LiHun/Ad/onPay') // 正支付支付页面
 
 const Article = () => import('@/components/LiHun/houtai/Article')         // 后台文章列表页面
 const ArticleUpload = () => import('@/components/LiHun/houtai/ArticleUpload')         // 后台文章上传页面
@@ -55,6 +56,8 @@ export default new Router({
     {path: '/KnowledgeCon', name: 'KnowledgeCon', component: KnowledgeCon},
     // 支付页面
     {path: '/Pay', name: 'Pay', component: Pay},
+	// 正支付页面
+	{path: '/onPay', name: 'onPay', component: onPay},
 
     // 后台文章列表页面
     {path: '/Article', name: 'Article', component: Article},

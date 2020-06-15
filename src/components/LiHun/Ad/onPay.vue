@@ -1,24 +1,8 @@
 <template>
   <div class="all">
     <lihun-head></lihun-head>
-    <div class="c_m w">
-      <div class="m">
-        <h2>
-          若您需要定制一份离婚协议，请预先前往支付
-        </h2>
-        <dl>
-          <dt class="py-10">
-            <img class="inline-block" src="../../../assets/images/lihun/pay_page.png" alt="">
-          </dt>
-          <dd class="text-18">
-            协议定价<span class="money">￥188</span>
-          </dd>
-        </dl>
-        <div class="m_b">
-          <span>返回我的协议列表</span>
-          <span @click="gopay">去支付</span>
-        </div>
-      </div>
+    <div class="c_m w ht">
+      <div v-html="this.payform"></div>
     </div>
     <!-- 正在验证 -->
     <el-dialog :visible.sync="dialogYanZheng">
@@ -57,7 +41,7 @@
 import lihun_head from '../../partials/lihun_head.vue'
 import {userAddQuestionnaire, newsPay} from '@/api/api/AgreementRequest.js'
 export default {
-  name: 'Pay',
+  name: 'onPay',
   components: {
     'lihun-head': lihun_head
   },
@@ -67,21 +51,16 @@ export default {
       dialogFail: false, // 失败
       dialogSucess: false,  // 成功
       Time: 5,
-      dialogQueRen: false  // 确认是否支付
+      dialogQueRen: false,  // 确认是否支付
+	  payform: '' // 支付表单
 
     }
   },
   mounted () {
-
+	this.gopay()
   },
   methods: {
-    goPay () {
-      // this.dialogYanZheng = true
-      // this.dialogFail = true
-      // this.dialogSucess = true
-      // this.Timer()
-      this.dialogQueRen = true
-    },
+    
     Timer () {
       setInterval(()=>{
         this.countDown()
@@ -112,19 +91,20 @@ export default {
         })
     },
 	gopay () { // 去支付
-		// localStorage.setItem('qid', 3)
-		// userAddQuestionnaire({
-		//     qid: 3
-		//   }).then((data) => {
-		//     localStorage.setItem('quid', data.data.data)
-		//     localStorage.setItem('questionnaireType', 1)
-		//     // this.$router.replace('http://jiawen.jialilawyer.com/#/CustomAgreement')
-		// 		  // this.dialogQueRen = false
-		// 		  newsPay().then((data) => {
-		// 		  	console.log(data.data.data)
-		// 		  })
-		//   })
-		this.$router.replace('onPay')
+		localStorage.setItem('qid', 3)
+		userAddQuestionnaire({
+		    qid: 3
+		  }).then((data) => {
+		    localStorage.setItem('quid', data.data.data)
+		    localStorage.setItem('questionnaireType', 1)
+		    this.dialogYanZheng = true;
+				  // this.dialogQueRen = false
+			  newsPay().then((data) => {
+				this.payform = data.data.data
+				setTimeout("document.alipaysubmit.submit()",2000)
+			  })
+		  })
+		
 	}
   }
 }
@@ -134,6 +114,7 @@ export default {
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
 .all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
+.ht{height: 500px;}
 .c_m{background-color: #fff;margin-top: 39px;}
 .m{width: 530px;margin:0 auto;padding-top:58px;padding-bottom: 124px;}
 .m h2{font-size: 25px;font-weight: bold;}
