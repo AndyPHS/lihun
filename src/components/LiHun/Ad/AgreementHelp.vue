@@ -110,7 +110,7 @@ export default {
 .c_m_l{width: 239px;border-right: 1px solid #eceff4;}
 .ding_btn{width: 153px;height: 37px;margin:0 auto;text-align: center;line-height: 37px;border-radius: 18px;font-size: 16px;color: #fff;font-weight: bold;display: inline-block;background-color: #ff3f68;border: 1px solid #ff3f68;}
 .c_m_l_t{}
-.c_m_r{width: 950px;padding-left: 65px;padding-right: 65px;}
+.c_m_r{width: 950px;padding-left: 65px;padding-right: 65px;border-left: none;}
 .m_r_m ul li{border-color: #eceff4;}
 .m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
 .m_r_m ul li span{color: #d1d1d1;font-size: 14px;}
