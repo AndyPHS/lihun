@@ -60,36 +60,6 @@ export default {
 	this.gopay()
   },
   methods: {
-    
-    Timer () {
-      setInterval(()=>{
-        this.countDown()
-      }, 1000)
-    },
-    countDown () {
-      var that = this
-      if (that.Time === 0 ) {
-        this.dialogSucess = false
-        this.Time = 5
-        clearInterval(this.Timer())
-      } else {
-        that.Time = that.Time - 1
-      }
-    },
-    cancleQueRen () {
-      this.dialogQueRen = false
-    },
-    alreadyPay () {
-      localStorage.setItem('qid', 3)
-      userAddQuestionnaire({
-          qid: 3
-        }).then((data) => {
-          localStorage.setItem('quid', data.data.data)
-          localStorage.setItem('questionnaireType', 1)
-          this.$router.replace('/CustomAgreement')
-		  this.dialogQueRen = false
-        })
-    },
 	gopay () { // 去支付
 		localStorage.setItem('qid', 3)
 		userAddQuestionnaire({

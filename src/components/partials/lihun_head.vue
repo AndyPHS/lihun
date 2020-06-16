@@ -68,7 +68,7 @@
                   <div class="el-form-item__content flex justify-between">
                     <input type="number" v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
                     <span class="spa" v-if="this.registYan == false" @click="getYan">获取验证码</span>
-                    <el-button v-if="this.registYan" class="ml-5" type="primary" :loading="registYan">已发送,请查收</el-button>
+                    <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
                   </div>
                   <div class="el-form-item__content text-right underline text-blue-300 my-4">
                    <el-popover
@@ -137,9 +137,7 @@
                 </div>
                 <div class="el-form-item">
                   <div class="el-form-item__content">
-                    <div class="el-input">
-                      <input type="password" v-model="form.password" placeholder="请输入密码,由数字和字母组成(区分大小写)" autocomplete="off" class="el-input__inner">
-                    </div>
+                    <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
                   </div>
                 </div>
                 <div class="logyan el-form-item__content flex justify-between items-center">
@@ -159,7 +157,7 @@
                 </div>
                 <div class="el-dialog__footer text-center mt-10 pb-12">
                   <span class="nextSt" @click="loginBt">登录</span>
-                  <p class="text-center pt-4">登录即表示阅读并同意《家文使用协议》</p>
+                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer">《家文使用协议》</span></p>
                 </div>
               </div>
             </form>
@@ -181,7 +179,7 @@
                   <div class="el-form-item__content">
                     <div class="el-input p text-left">
                       <span class="inline-block text-lg">请输入要重置密码的手机号码</span>
-                      <input type="number" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input type="number" v-model="newform.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
                     </div>
                   </div>
                 </div>
@@ -207,35 +205,137 @@
                 <div class="py-5 mt-0">
                   <div class="el-form-item__content">
                     <div class="el-input p text-center">
-                      <span class="inline-block text-lg py-3">您正在对账号<span class="text-red-500">{{this.form.phone}}</span>进行重置密码操作</span>
+                      <span class="inline-block text-lg py-3">您正在对账号<span class="text-red-500">{{this.newform.phone}}</span>进行重置密码操作</span>
                       <div>
-                        <img class="inline-block mb-3" src="../../assets/images/lihun/yanzheng01.png" alt="">
-                        <img class="inline-block mb-3" src="../../assets/images/lihun/yanzheng02.png" alt="">
+                        <img @click="byPhone" class="inline-block cursor-pointer mb-3" src="../../assets/images/lihun/yanzheng01.png" alt="">
+                        <img @click="byEmail" class="inline-block mb-3" src="../../assets/images/lihun/yanzheng02.png" alt="">
                       </div>
-                      <p class="py-8 text-center">若上述方式均无法验证，您可以<span class="text-blue-500 underline" @click="xiufu">申请账号修复</span></p>
+                      <p class="py-8 text-center">若上述方式均无法验证，您可以
+						  <div class="el-form-item__content  underline text-blue-300">
+						   <el-popover
+							 placement="right"
+							 width="400"
+							 trigger="hover">
+							 <div>
+							   <h5>请拨打客服电话，申请人工修复</h5>
+							   <p class="text-center">010-5210 1314</p>
+							 </div>
+							 <span class="underline cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
+						   </el-popover>
+						  </div>
+					  </p>
                     </div>
                   </div>
                 </div>
                 <div class="el-dialog__footer steall text-center pb-12 flex justify-between">
                   <span class="ste" @click="forgetPrev">上一步</span>
-                  <span class="ste" @click="forgetNext2">下一步</span>
+                  <span class="ste" @click="byPhone">下一步</span>
                 </div>
               </div>
             </form>
           </div>
         </div>
       </div>
+	  <!-- 通过手机找回验证手机 -->
+	  <div v-if="dialogFindByPhone==true" class="el-dialog__wrapper regist" style="z-index: 2001;">
+		  <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
+			  <div class="el-dialog__header">
+				  <div class="w-full text-xl text-left pt-10 pl-10">
+				  		重置密码
+				  </div>
+				  <span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeFindByPhone"
+			      class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
+			  <div class="el-dialog__body">
+			    <form class="el-form">
+				  
+			      <div>
+			        <div class="el-form-item">
+			          <div class="el-form-item__content">
+			            <div class="el-input">
+			              <input type="text" v-model="newform.phone" placeholder="请输入手机号码"  disabled="disabled" autocomplete="off" class="el-input__inner">
+			            </div>
+			          </div>
+			        </div>
+			        <div class="yanzheng el-form-item">
+			          <div class="el-form-item__content flex justify-between">
+			            <input type="number" v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
+			            <span class="spa" v-if="this.registYan == false" @click="findYan">获取验证码</span>
+			            <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
+			          </div>
+			          <div class="el-form-item__content text-right underline text-blue-300 my-4">
+			           <el-popover
+			             placement="right"
+			             width="400"
+			             trigger="hover">
+			             <div>
+			               <h5>手机接收不到验证码，可能有以下几种原因</h5>
+			               <ul>
+			                 <li>1) 输入的手机号错误；</li>
+			                 <li>2) 手机网络环境差；</li>
+			                 <li>3）手机已欠费；</li>
+			                 <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
+			                 <li>5）您曾向运营商申请屏蔽通知类短信；</li>
+			                 <li>6）系统出现了错误。</li>
+			               </ul>
+			               <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
+			               <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
+			             </div>
+			             <span class="underline cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+			           </el-popover>
+			          </div>
+			        </div>
+			        <div class="el-dialog__footer text-center mt-4 pb-12">
+					  <span class="ste" @click="resetPrev">上一步</span>
+			          <span class="ste" @click="resetnext">下一步</span>
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+		  </div>
+	  </div>
+	  <div v-if="dialogPhonePw==true" class="el-dialog__wrapper regist" style="z-index: 2001;">
+		  <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
+			  <div class="el-dialog__header">
+				  <div class="w-full text-xl text-center pt-10 pl-10">
+				  		设置新密码
+				  </div>
+				  <span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closePhonePw"
+			      class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
+			  <div class="el-dialog__body">
+			    <form class="el-form">
+			      <div>
+					<div class="el-form-item">
+					  <div class="el-form-item__content">
+					    <el-input placeholder="请输入密码" v-model="newform.password" show-password></el-input>
+					  </div>
+					</div>
+					<div class="el-form-item">
+					  <div class="el-form-item__content">
+					    <el-input placeholder="请确认密码" v-model="newform.passwordAgain" show-password></el-input>
+					  </div>
+					</div>
+			        <div class="el-dialog__footer text-center mt-4 pb-12">
+					  <span class="ste" @click="resetPWprev">上一步</span>
+			          <span class="ste" @click="resetPW">完成</span>
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+		  </div>
+	  </div>
     </div>
   </div>
 </template>
 
 <script>
-import {addUser, phoneCode, frontLogin, verifyCode} from '@/api/api/AgreementRequest.js'
+import {addUser, phoneCode, frontLogin, verifyCode, updatePasswordPhone} from '@/api/api/AgreementRequest.js'
 
 export default {
   name: 'lihun_head',
   data () {
     return {
+	  dialogFindByPhone: false, // 通过手机号找回密码弹窗
+	  dialogPhonePw: false,  // 新密码弹窗
       dialogFormVisible: false, // 注册弹窗
       dialogLogin: false, // 登录弹窗
       userPhone: null, // 登录后存储用户手机号
@@ -246,6 +346,12 @@ export default {
         valueCode: null, // 验证码
         code_key: '' // 验证码的KEY
       },
+	  newform: {
+		  phone: null, // 新密码
+		  valueCode: null, // 新验证码
+		  password: '',  // 新密码
+		  passwordAgain: '' //新密码重复
+	  },
       identifyCodeMsg: {
         type:'text',
         placeholder: '请输入验证码',
@@ -255,9 +361,11 @@ export default {
       },
       checkOne: false,
       registYan: false, // 注册时候手机验证码状态
+	  registYanType: false,
       zhuce: true, // 注册成功状态码
       forgetDialog: false, // 忘记密码弹窗
-      forgetDialog2: false // 忘记密码2
+      forgetDialog2: false ,// 忘记密码2
+	  innerVisible: false,
 
     }
   },
@@ -284,6 +392,7 @@ export default {
       localStorage.removeItem('token') // 存储token
       localStorage.removeItem('phone')
       localStorage.removeItem('isLogin')
+	  this.$router.replace('/')
     },
     registAc () { // 点击注册按钮
       this.form = {}
@@ -294,13 +403,17 @@ export default {
       this.registYan = false
     },
     handleCheckedCitiesChange () {
-      console.log(this.checkOne)
+      // const {href} = this.$router.resolve({
+      // 	path: '/UserAgreement'
+      // })
+      // window.open(href, '_blank')
     },
     getYan () { // 获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
 			this.$message.error('手机号有误，请重新填写'); 
 			return false; 
 		} else {
+			this.registYan = true
 			phoneCode({
 			  phone: this.form.phone,
 			  type: 1
@@ -308,10 +421,9 @@ export default {
 			  if (data.data.status_code !== 200) {
 			    this.$message.error('手机号格式不正确')
 			  } else {
-			    this.registYan = true
-			    setInterval(function () {
-			      this.registYan = false
-			    }, 10000)
+				setTimeout(()=>{
+					this.registYan = false
+				},3000)
 			  }
 			})
 		}
@@ -357,6 +469,7 @@ export default {
 	gologin () { // 去登陆
 		this.dialogFormVisible = false
 		this.dialogLogin = true
+		this.form.valueCode = ''
 	},
     loginAc () { // 点击登录按钮
       this.form.phone = ''
@@ -435,7 +548,13 @@ export default {
 			})
 		}
     },
-    changeCode (val) {
+	checkXieyi () { // 查看协议
+		const {href} = this.$router.resolve({
+			path: '/UserAgreement'
+		})
+		window.open(href, '_blank')
+	},
+    changeCode (val) { // 获取验证码
       verifyCode({cache:new Date().getTime()}).then((data) => {
         this.identifyCodeMsg.codeUrl = data.data.img
         this.form.code_key = data.data.key
@@ -447,6 +566,73 @@ export default {
         this.isLogin = false
       }
     },
+	byPhone () { // 点击通过验证手机找回密码
+		this.forgetDialog2 = false
+		this.dialogFindByPhone = true
+	},
+	closeFindByPhone () {
+		this.dialogFindByPhone = false
+	},
+	findYan () { // 找回密码获取验证码
+		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
+			this.$message.error('手机号有误，请重新填写'); 
+			return false; 
+		} else {
+			this.registYan = true
+			phoneCode({
+			  phone: this.newform.phone,
+			  type: 3
+			}).then((data) => {
+			  if (data.data.status_code !== 200) {
+			    this.$message.error('手机号格式不正确')
+			  } else {
+				setTimeout(()=>{
+					this.registYan = false
+				},3000)
+			  }
+			})
+		}
+	},
+	resetPrev () {
+		this.dialogFindByPhone = false
+		this.forgetDialog2 = true
+	},
+	resetnext () {
+		this.dialogFindByPhone = false
+		this.dialogPhonePw = true
+	},
+	closePhonePw () { // 关闭设置新密码弹窗
+		this.dialogPhonePw = false
+	},
+	resetPWprev () { // 设置新密码弹窗上一步
+		this.dialogPhonePw = false
+		this.dialogFindByPhone = true
+	},
+	resetPW () { // 设置新密码弹窗确认
+		if( this.newform.password == ''){
+			this.$message.error('密码不能为空')
+		} else if (this.newform.password == this.newform.passwordAgain){
+			updatePasswordPhone({
+				phone: this.newform.phone,
+				code: this.newform.valueCode,
+				password: this.newform.password
+			}).then((data) => {
+				if(data.data.status_code ==200){
+					this.$message({
+						message: '新密码设置成功',
+						type: 'success'
+					})
+					this.dialogPhonePw = false
+					this.dialogLogin = true
+				} else {
+					this.$message.error(data.data.message)
+				}
+			})
+		}
+	},
+	byEmail () { // 点击通过邮箱找回密码
+		
+	},
     forgetAc () { // 点击忘记密码
       this.forgetDialog = true
       this.form.phone = ''
@@ -467,7 +653,7 @@ export default {
 
     },
     xiufu () {
-      console.log('修复')
+      this.innerVisible =true
     },
     closeforgetDialog2 () {
       this.forgetDialog2 = false
@@ -540,7 +726,7 @@ export default {
   .registOk span:first-of-type{border:1px solid #ff3f68;color: #fff;background-color: #ff3f68;}
   .registOk span:last-of-type{border:1px solid #535353;color:#535353;}
   .steall{width: 525px;margin:0 auto;}
-  .ste{width: 220px;height: 38px;text-align: center;line-height: 38px;border-radius: 19px;font-size: 18px;}
+  .ste{width: 220px;height: 38px;text-align: center;line-height: 38px;border-radius: 19px;font-size: 18px;display: inline-block;}
   .ste:first-of-type{border:1px solid #343434;color:#343434;}
   .ste:first-of-type:hover{background-color: grey;color:#fff}
   .ste:last-of-type{border:1px solid red;color:red;}
