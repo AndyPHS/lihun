@@ -1057,7 +1057,7 @@ export default {
       }).then((data) => {
         this.userWenJuan.title = ''
         this.dialogSavedWenJuan = false
-        this.$router.replace('/MyConsult')
+        // this.$router.replace('/MyConsult')
       }).catch((data) => {
 
       })

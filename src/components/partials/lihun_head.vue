@@ -211,8 +211,10 @@
                         <img @click="byEmail" class="inline-block mb-3" src="../../assets/images/lihun/yanzheng02.png" alt="">
                       </div>
                       <p class="py-8 text-center">若上述方式均无法验证，您可以
-						  <div class="el-form-item__content  underline text-blue-300">
-						   <el-popover
+						  
+					  </p>
+					  <div class="el-form-item__content  underline text-blue-300">
+					   <el-popover
 							 placement="right"
 							 width="400"
 							 trigger="hover">
@@ -221,9 +223,8 @@
 							   <p class="text-center">010-5210 1314</p>
 							 </div>
 							 <span class="underline cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
-						   </el-popover>
-						  </div>
-					  </p>
+					   </el-popover>
+					  </div>
                     </div>
                   </div>
                 </div>
