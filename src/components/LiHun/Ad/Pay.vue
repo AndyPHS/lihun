@@ -38,7 +38,7 @@
     <el-dialog :visible.sync="dialogSucess">
       <div class="yanzheng">
         <img src="../../../assets/images/lihun/pay_success.png" alt="">
-        <h2>支付成功，正在跳转……（{{ Time }}秒）</h2>
+        <h2>支付成功，正在跳转……</h2>
       </div>
     </el-dialog>
     <!-- 请确认是否支付 -->
@@ -55,7 +55,7 @@
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
-import {userAddQuestionnaire, newsPay} from '@/api/api/AgreementRequest.js'
+import {userAddQuestionnaire, newsPay, verificationPay} from '@/api/api/AgreementRequest.js'
 export default {
   name: 'Pay',
   components: {
@@ -75,55 +75,44 @@ export default {
 
   },
   methods: {
-    goPay () {
-      // this.dialogYanZheng = true
-      // this.dialogFail = true
-      // this.dialogSucess = true
-      // this.Timer()
-      this.dialogQueRen = true
-    },
-    Timer () {
-      setInterval(()=>{
-        this.countDown()
-      }, 1000)
-    },
-    countDown () {
-      var that = this
-      if (that.Time === 0 ) {
-        this.dialogSucess = false
-        this.Time = 5
-        clearInterval(this.Timer())
-      } else {
-        that.Time = that.Time - 1
-      }
-    },
+  //   Timer () {
+  //     setTimeout(()=>{
+  //       this.countDown()
+  //     }, 1000)
+  //   },
+  //   countDown () {
+  //     var that = this
+  //     if (that.Time === 0 ) {
+  //       this.dialogSucess = false
+		// this.$router.replace('/CustomAgreement')
+  //       this.Time = 5
+  //       clearInterval(this.Timer())
+  //     } else {
+  //       that.Time = that.Time - 1
+  //     }
+  //   },
     cancleQueRen () {
       this.dialogQueRen = false
     },
     alreadyPay () {
-      localStorage.setItem('qid', 3)
-      userAddQuestionnaire({
-          qid: 3
-        }).then((data) => {
-          localStorage.setItem('quid', data.data.data)
-          localStorage.setItem('questionnaireType', 1)
-          this.$router.replace('/CustomAgreement')
+	  this.dialogYanZheng = true
+	  verificationPay().then((data) => {
 		  this.dialogQueRen = false
-        })
+		  if (data.data.data==1) {
+			 this.dialogSucess = true
+			 this.dialogYanZheng = false
+			 setTimeout(()=>{
+			   this.dialogSucess = false
+			   this.$router.replace('/CustomAgreement')
+			 }, 2000)
+		  } else {
+			  this.dialogYanZheng = false
+			  this.dialogFail = true
+		  }
+	  })
     },
 	gopay () { // 去支付
-		// localStorage.setItem('qid', 3)
-		// userAddQuestionnaire({
-		//     qid: 3
-		//   }).then((data) => {
-		//     localStorage.setItem('quid', data.data.data)
-		//     localStorage.setItem('questionnaireType', 1)
-		//     // this.$router.replace('http://jiawen.jialilawyer.com/#/CustomAgreement')
-		// 		  // this.dialogQueRen = false
-		// 		  newsPay().then((data) => {
-		// 		  	console.log(data.data.data)
-		// 		  })
-		//   })
+		this.dialogQueRen = true
 		const {href} = this.$router.resolve({
 			path: '/onPay'
 		})

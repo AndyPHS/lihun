@@ -427,3 +427,14 @@ export const selectFaIDNews = params => {
     data: params
   });
 };
+
+// 支付查询
+export const verificationPay = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.verificationPay + localStorage.getItem('quid'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};

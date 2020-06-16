@@ -97,11 +97,11 @@ export default {
 		  }).then((data) => {
 		    localStorage.setItem('quid', data.data.data)
 		    localStorage.setItem('questionnaireType', 1)
-		    this.dialogYanZheng = true;
+		    // this.dialogYanZheng = true;
 				  // this.dialogQueRen = false
 			  newsPay().then((data) => {
 				this.payform = data.data.data
-				setTimeout("document.alipaysubmit.submit()",2000)
+				setTimeout("document.alipaysubmit.submit()",100)
 			  })
 		  })
 		

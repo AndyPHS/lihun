@@ -274,6 +274,8 @@ const apiUrl = {
   selectNews: baseLiHunURL + 'news/select_news/',
   // 问卷付费/news/pay/
   newsPay: baseLiHunURL + 'news/pay/',
+  // 支付查询
+  verificationPay: baseLiHunURL + 'news/verification_pay/',
   // 查询文章内容
   selectNewsContent: baseLiHunURL + 'news/select_news_content/',
   // 关键字搜索文章news/select_os_news/
