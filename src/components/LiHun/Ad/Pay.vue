@@ -124,7 +124,10 @@ export default {
 		// 		  	console.log(data.data.data)
 		// 		  })
 		//   })
-		this.$router.replace('onPay')
+		const {href} = this.$router.resolve({
+			path: '/onPay'
+		})
+		window.open(href, '_blank')
 	}
   }
 }

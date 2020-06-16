@@ -3,7 +3,7 @@
     <div class="head flex items-center">
       <div class="w flex justify-between">
         <div class="flex justify-between items-center">
-          <img class="mr-3" src="../../assets/images/lihun/logo.png" alt="">
+          <img @click="goHome" class="mr-3" src="../../assets/images/lihun/logo.png" alt="">
           <el-divider direction="vertical"></el-divider>
           <span class="log_r">北京家理律师事务所出品</span>
         </div>
@@ -265,6 +265,9 @@ export default {
     this.changeCode()
   },
   methods: {
+	goHome () { // 点击图标返回首页
+		this.$router.replace('/')
+	},
 	goDingZhi () { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
 		var isLogin = localStorage.getItem('token')
 		if (isLogin == undefined){
