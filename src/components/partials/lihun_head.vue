@@ -52,15 +52,16 @@
                 <div class="el-form-item">
                   <div class="el-form-item__content">
                     <div class="el-input">
-                      <input type="number" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
                     </div>
                   </div>
                 </div>
                 <div class="el-form-item">
                   <div class="el-form-item__content">
-                    <div class="el-input">
+					  <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
+                    <!-- <div class="el-input">
                       <input type="password" v-model="form.password" placeholder="请输入密码,由数字和字母组成(区分大小写)" autocomplete="off" class="el-input__inner">
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="yanzheng el-form-item">
@@ -107,8 +108,8 @@
                      <h2 class="text-center pt-3">恭喜您注册成功</h2>
                    </dt>
                    <dd class="registOk">
-                     <span>开始定制我的协议</span>
-                     <span>进入官网主页</span>
+                     <span @click="gologin">开始定制我的协议</span>
+                     <span @click="goguanwang">进入官网主页</span>
                    </dd>
                  </dl>
               </div>
@@ -293,51 +294,67 @@ export default {
       console.log(this.checkOne)
     },
     getYan () { // 获取验证码
-      if (this.form.phone != null) {
-        phoneCode({
-          phone: this.form.phone,
-          type: 1
-        }).then((data) => {
-          if (data.data.status_code !== 200) {
-            this.$message.error('手机号格式不正确')
-          } else {
-            this.registYan = true
-            setInterval(function () {
-              this.registYan = false
-            }, 10000)
-          }
-        })
-      } else {
-        this.$message.error('手机号不能为空')
-      }
+		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
+			this.$message.error('手机号有误，请重新填写'); 
+			return false; 
+		} else {
+			phoneCode({
+			  phone: this.form.phone,
+			  type: 1
+			}).then((data) => {
+			  if (data.data.status_code !== 200) {
+			    this.$message.error('手机号格式不正确')
+			  } else {
+			    this.registYan = true
+			    setInterval(function () {
+			      this.registYan = false
+			    }, 10000)
+			  }
+			})
+		}
     },
     nextSt () { // 点击注册成功下一步
       if (this.checkOne) {
-        addUser({
-          phone: this.form.phone,
-          password: this.form.password,
-          code: JSON.parse(this.form.valueCode)
-        }).then((data) => {
-          if (data.data.status_code === 200) {
-            this.$message({
-              message: '恭喜你，注册成功',
-              type: 'success'
-            })
-            this.zhuce = false
-          } else {
-            this.$message({
-              message: data.data.message,
-              type: 'error'
-            })
-          }
-        })
+		  if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
+		  	this.$message.error('手机号有误，请重新填写'); 
+		  	return false; 
+		  } else if(this.form.password =='') {
+			  this.$message.error('密码不能为空');
+		  } else if(this.form.valueCode==null|| this.form.valueCode.length != 6){
+			  this.$message.error('验证码不正确');
+		  } else {
+			  addUser({
+			    phone: this.form.phone,
+			    password: this.form.password,
+			    code: JSON.parse(this.form.valueCode)
+			  }).then((data) => {
+			    if (data.data.status_code === 200) {
+			      this.$message({
+			        message: '恭喜你，注册成功',
+			        type: 'success'
+			      })
+			      this.zhuce = false
+			    } else {
+			      this.$message({
+			        message: data.data.message,
+			        type: 'error'
+			      })
+			    }
+			  }) 
+		  }
       } else {
         this.$message({
           message: '请先阅读家文使用协议',
+		  offset: -50,
           type: 'warning'
         })
+		this.$message.error('请先阅读家文使用协议');
       }
     },
+	gologin () { // 去登陆
+		this.dialogFormVisible = false
+		this.dialogLogin = true
+	},
     loginAc () { // 点击登录按钮
       this.form.phone = ''
       this.form.password = ''
@@ -352,30 +369,68 @@ export default {
       this.dialogLogin = false
       this.dialogFormVisible = true
     },
+	goguanwang () { // 登录官网
+		this.dialogFormVisible = false
+		this.$router.replace('http://www.jialilaw.com/')
+	},
+	checkPhone (phoneNum) { // 手机号验证
+		var phone = phoneNum
+		if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+			this.$message.error('手机号有误，请重新填写'); 
+			return false; 
+		} 
+	},
+	CheckPassWord (password) {//必须为字母加数字且长度不小于8位
+	   var str = password;
+	    if (str == null || str.length <8) {
+	        return false;
+			this.$message.error('密码长度至少为8位数');
+	    }
+	    var reg1 = new RegExp(/^[0-9A-Za-z]+$/);
+	    if (!reg1.test(str)) {
+	        return false;
+			this.$message.error('密码必须包含数字字母');
+	    }
+	    var reg = new RegExp(/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/);
+	    if (reg.test(str)) {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	},
     loginBt () { // 点击登录中的登录按钮
-      frontLogin({
-        phone: this.form.phone,
-        password: this.form.password,
-        code: this.form.valueCode,
-        code_key: this.form.code_key
-      }).then((data) => {
-        if(data.data.status_code ===200){
-          this.dialogLogin = false
-          this.$message({
-            message: '登录成功',
-            type: 'success'
-          })
-          this.userPhone = this.form.phone
-          localStorage.setItem('token', data.data.data.token) // 存储token
-          localStorage.setItem('phone', this.form.phone)
-          localStorage.setItem('isLogin', true)
-          this.form = {}
-          this.isLogin = true
-          this.$emit('sendPhone', this.userPhone)
-        } else {
-          this.$message.error(data.data.message);
-        }
-      })
+		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
+			this.$message.error('手机号有误，请重新填写'); 
+			return false; 
+		} else if(this.form.password =='') {
+			this.$message.error('密码不能为空');
+		} else if(this.form.valueCode==null){
+			this.$message.error('验证码不正确');
+		} else {
+			frontLogin({
+			  phone: this.form.phone,
+			  password: this.form.password,
+			  code: this.form.valueCode,
+			  code_key: this.form.code_key
+			}).then((data) => {
+			  if(data.data.status_code ===200){
+			    this.dialogLogin = false
+			    this.$message({
+			      message: '登录成功',
+			      type: 'success'
+			    })
+			    this.userPhone = this.form.phone
+			    localStorage.setItem('token', data.data.data.token) // 存储token
+			    localStorage.setItem('phone', this.form.phone)
+			    localStorage.setItem('isLogin', true)
+			    this.form = {}
+			    this.isLogin = true
+			    this.$emit('sendPhone', this.userPhone)
+			  } else {
+			    this.$message.error(data.data.message);
+			  }
+			})
+		}
     },
     changeCode (val) {
       verifyCode({cache:new Date().getTime()}).then((data) => {
