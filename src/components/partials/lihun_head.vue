@@ -27,7 +27,7 @@
             <span class="cursor-pointer" @click="registAc">注册</span>
           </div>
           <div v-else class="flex justify-around items-center">
-            <el-dropdown>
+            <el-dropdown trigger="click">
               <span v-if="this.name == '' " class="el-dropdown-link text-blue-500 border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 			  <span v-if="this.name !='' " class="el-dropdown-link text-blue-500 cursor-pointer">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
               <el-dropdown-menu slot="dropdown">

@@ -15,7 +15,7 @@
           </dd>
         </dl>
         <div class="m_b">
-          <span>返回我的协议列表</span>
+          <span @click="gomyconsult">返回我的协议列表</span>
           <span @click="gopay">去支付</span>
         </div>
       </div>
@@ -117,6 +117,9 @@ export default {
 			path: '/onPay'
 		})
 		window.open(href, '_blank')
+	},
+	gomyconsult () {
+		this.$router.replace('/MyConsult')
 	}
   }
 }
