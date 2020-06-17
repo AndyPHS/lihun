@@ -7,14 +7,14 @@
           定制我的协议书
         </h2>
         <div class="c_m_h_r">
-          <span><router-link to="AgreementHelp">协议书定制帮助</router-link></span>
+          <span @click="goAgreementHelp">协议书定制帮助</span>
         </div>
       </div>
       <div class="c_m_m mx-auto">
         <div>
           <el-form >
             <div class="ml-5">
-              <div class="text-lg text-left my-2">根据您填写的信息，您与配偶生育有{{ this.ChuShiMsg.child }}个子女，需要处理的夫妻共同财产有<span class="inline" v-if="this.ChuShiMsg.house">房产、</span><span class="inline" v-if="this.ChuShiMsg.car">车子、</span><span class="inline" v-if="this.ChuShiMsg.money">存款、</span><span class="inline" v-if="this.ChuShiMsg.liCai">理财、</span><span class="inline" v-if="this.ChuShiMsg.jiaDian">家具家电</span>以及<span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span><span class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>。为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
+              <div class="text-lg text-left my-2">根据您填写的信息，您与配偶生育有{{ this.ChuShiMsg.child }}个子女，需要处理的夫妻共同财产有<span class="inline" v-if="this.CommonCaiChan.fangchan">房产、</span><span class="inline" v-if="this.CommonCaiChan.cheliang">车辆、</span><span class="inline" v-if="this.CommonCaiChan.cunkuan">存款、</span><span class="inline" v-if="this.CommonCaiChan.licai">理财、</span><span class="inline" v-if="this.CommonCaiChan.gongjijin">公积金、</span></span><span class="inline" v-if="this.CommonCaiChan.baoxian">保险、</span></span><span class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份）、</span><span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户、</span><span class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电、</span><span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品、</span><span class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券、</span><span class="inline" v-if="this.CommonCaiChan.dianpu">店铺、</span><span class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋、</span>以及<span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span><span class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>。为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
               <div>
                 <div class="w-full mx-auto py-10">
                   <ul class="px-10 flex flex-wrap">
@@ -180,7 +180,22 @@ export default {
         jiaDian: false,
         zhaiQuan: false,
         zhaiWu: false
-      }
+      },
+	  CommonCaiChan:{
+		fangchan: false,
+		cheliang: false,
+		cunkuan: false,
+		licai: false,
+		gongjijin: false,
+		baoxian: false,
+		guquangufen: false,
+		gupiaozhanghu: false,
+		jiajujiadian: false,
+		zhubaoshoushi: false,
+		zhuaijuan: false,
+		dianpu: false,
+		zhaijidi: false
+	  }
     }
   },
   mounted () {
@@ -235,6 +250,25 @@ export default {
                 img: ''
              })
           }
+		  if (item==1){
+			  this.CommonCaiChan.fangchan = true
+		  } else if (item==2){
+			  this.CommonCaiChan.cheliang = true
+		  } else if (item==3){
+			  this.CommonCaiChan.cunkuan = true
+		  } else if (item==4){
+			  this.CommonCaiChan.licai = true
+		  } else if (item==5){
+			  this.CommonCaiChan.gongjijin = true
+		  } else if (item==6){
+			  this.CommonCaiChan.baoxian = true
+		  } else if (item==7){
+			  this.CommonCaiChan.guquangufen = true
+		  } else if (item==8){
+			  this.CommonCaiChan.gupiaozhanghu = true
+		  } else if (item==9){
+			  this.CommonCaiChan.jiajujiadian = true
+		  }
         })
 
       }).catch((data)=>{
@@ -256,7 +290,7 @@ export default {
 
       })
       getOnlyValue({
-        qpid: 518, // 关联id
+        qpid: 3859, // 关联id
         quid: Number(localStorage.getItem('quid')) //用户的问卷id
       }).then((data)=>{
         if(data.data.data ==1){
@@ -283,10 +317,36 @@ export default {
       }).catch((data)=>{
 
       })
+	  getOnlyValue({ // 其他财产
+	    qpid: 3853, // 关联id
+	    quid: Number(localStorage.getItem('quid')) //用户的问卷id
+	  }).then((data)=>{
+	    let getmodel = JSON.parse(data.data.data)
+	    getmodel.forEach((item)=>{
+	      if(item==1){
+	         this.CommonCaiChan.zhubaoshoushi = true
+	      }else if(item==2){
+	         this.CommonCaiChan.zhuaijuan = true
+	      }else if(item==3){
+	         this.CommonCaiChan.dianpu = true
+	      }else if(item==4){
+	         this.CommonCaiChan.zhaijidi = true
+	      }
+		  
+	    })
+	  }).catch((data)=>{
+	  
+	  })
     },
     NextPage () {
       this.$router.replace("/CustomBasic");
-    }
+    },
+	goAgreementHelp () {
+		const {href} = this.$router.resolve({
+			path: '/AgreementHelp'
+		})
+		window.open(href, '_blank')
+	}
   }
 }
 </script>

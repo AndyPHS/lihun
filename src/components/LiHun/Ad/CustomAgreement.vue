@@ -7,7 +7,7 @@
           定制我的协议书
         </h2>
         <div class="c_m_h_r">
-          <span><router-link to="AgreementHelp">协议书定制帮助</router-link></span>
+          <span @click="goAgreementHelp">协议书定制帮助</span>
         </div>
       </div>
       <div class="pb-5">
@@ -3660,7 +3660,13 @@ export default {
     },
     returnUserList () {
       this.$router.replace('/MyConsult')
-    }
+    },
+	goAgreementHelp () {
+		const {href} = this.$router.resolve({
+			path: '/AgreementHelp'
+		})
+		window.open(href, '_blank')
+	}
   }
 }
 </script>

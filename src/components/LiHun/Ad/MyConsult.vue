@@ -245,14 +245,6 @@
 		methods: {
 			dingzhiBtn() { // 点击定制协议跳转到小问卷页面
 				this.$router.replace('/Pay')
-				// localStorage.setItem('qid', 3)
-				// userAddQuestionnaire({
-				//     qid: 3
-				//   }).then((data) => {
-				//     localStorage.setItem('quid', data.data.data)
-				//     localStorage.setItem('questionnaireType', 1)
-				//     this.$router.replace('/CustomAgreement')
-				//   })
 			},
 			getWenShu() { // 查找用户文书
 				selectUserQuestionnaire({
@@ -286,25 +278,6 @@
 				} else {
 					this.historys = index
 				}
-			   
-				// var sta = item.isHistory
-				// if (sta == false || sta == undefined) {
-				// 	sta = true
-				// } else {
-				// 	sta = false
-				// }
-				// localStorage.setItem('quid', item.id)
-				// userUpdateQuestionnaire({
-				// 	isHistory: sta
-				// }).then((data) => {
-				// 	this.getWenShu()
-				// })
-				// if (this.historys) {
-				// 	this.historys = false
-				// } else {
-				// 	this.historys = true
-				// }
-				
 			},
 			dialogDownLoadWenJuanOk() { // 点击下载弹出确定按钮
 				if (this.form.type) {
@@ -330,6 +303,7 @@
 				this.dialogDownLoadWenJuan = false
 			},
 			DownLoadWord(e) { // 点击下载按钮
+				this.form.type = false
 				localStorage.setItem('quid', e)
 				this.dialogDownLoadWenJuan = true
 			},
@@ -346,7 +320,7 @@
 					}).then((data) => {
 						if (data.data.status_code == 200) {
 							localStorage.removeItem('quid')
-							this.wenshuList.splice(index, 1)
+							this.getWenShu()
 							this.$message({
 								message: '删除成功',
 								type: 'success',

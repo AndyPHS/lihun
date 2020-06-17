@@ -7,7 +7,7 @@
           定制我的协议书
         </h2>
         <div class="c_m_h_r">
-          <span><router-link to="AgreementHelp">协议书定制帮助</router-link></span>
+          <span @click="goAgreementHelp">协议书定制帮助</span>
         </div>
       </div>
       <div class="">
@@ -1074,7 +1074,13 @@ export default {
     },
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true
-    }
+    },
+	goAgreementHelp () { // 协议定制帮助
+		const {href} = this.$router.resolve({
+			path: '/AgreementHelp'
+		})
+		window.open(href, '_blank')
+	}
   }
 }
 </script>
