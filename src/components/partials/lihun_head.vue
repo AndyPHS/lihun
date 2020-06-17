@@ -135,7 +135,7 @@
                 <div class="el-form-item">
                   <div class="el-form-item__content">
                     <div class="el-input">
-                      <input type="number" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
                     </div>
                   </div>
                 </div>
@@ -214,17 +214,16 @@
                         <img @click="byPhone" class="inline-block cursor-pointer mb-3" src="../../assets/images/lihun/yanzheng01.png" alt="">
                         <img @click="byEmail" class="inline-block mb-3" src="../../assets/images/lihun/yanzheng02.png" alt="">
                       </div>
-                      <p class="py-8 text-center">若上述方式均无法验证，您可以
-						  
-					  </p>
-					  <div class="el-form-item__content  underline text-blue-300">
+                      
+					  <div class="el-form-item__content">
+					   <span class="inline-block ">若上述方式均无法验证，您可以</span>
 					   <el-popover
 							 placement="right"
-							 width="400"
+							 width="300"
 							 trigger="hover">
 							 <div>
 							   <h5>请拨打客服电话，申请人工修复</h5>
-							   <p class="text-center">010-5210 1314</p>
+							   <p class="py-2">电话：010-5210 1314</p>
 							 </div>
 							 <span class="underline cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
 					   </el-popover>
@@ -383,13 +382,11 @@ export default {
   },
   mounted () {
     this.changeCode()
-	this.getUserMsg()
+	// this.getUserMsg()
   },
   methods: {
 	getUserMsg () { // 查询用户基本信息
-	  usersSelect().then((data) => {
-	    this.name = data.data.name
-	  })
+	  this.name = localStorage.getItem('name')
 	},
 	goHome () { // 点击图标返回首页
 		this.$router.replace('/')
@@ -569,6 +566,10 @@ export default {
 			    this.form = {}
 			    this.isLogin = true
 			    this.$emit('sendPhone', this.userPhone)
+				usersSelect().then((data) => {
+					localStorage.setItem('name', data.data.name)
+					this.getUserMsg()
+				})
 			  } else {
 			    this.$message.error(data.data.message);
 			  }

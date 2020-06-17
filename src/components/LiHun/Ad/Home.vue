@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lihun-head></lihun-head>
+    <lihun-head ref="lihun"></lihun-head>
     <el-carousel :interval="5000" arrow="always" height="550px">
       <el-carousel-item>
         <div class="swiper01">
@@ -329,7 +329,7 @@ export default {
   },
   methods: {
 	goDingZhi () {
-		this.$router.replace('MyConsult')
+		this.$refs.lihun.goDingZhi(2)
 	},
 	goMoreKnowledge () {
 		this.$router.replace('Knowledge')
