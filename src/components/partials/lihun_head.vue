@@ -29,7 +29,7 @@
           <div v-else class="flex justify-around items-center">
             <el-dropdown>
               <span v-if="this.name == '' " class="el-dropdown-link text-blue-500 border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
-			  <span v-if="this.name !='' " class="el-dropdown-link text-blue-500 cursor-pointer">{{ name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+			  <span v-if="this.name !='' " class="el-dropdown-link text-blue-500 cursor-pointer">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item  @click.native="goAgreementUser">个人中心</el-dropdown-item>
                 <el-dropdown-item class="text-center" @click.native="liveOut">退出</el-dropdown-item>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="text-center">
                   <el-checkbox-group v-model="checkOne" class="checkGroup" >
-                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意《家文使用协议》</el-checkbox>
+                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意《家文用户注册和使用协议》</el-checkbox>
                   </el-checkbox-group>
                 </div>
                 <div class="el-dialog__footer text-center mt-4 pb-12">
@@ -161,7 +161,7 @@
                 </div>
                 <div class="el-dialog__footer text-center mt-10 pb-12">
                   <span class="nextSt" @click="loginBt">登录</span>
-                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer">《家文使用协议》</span></p>
+                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer">《家文用户注册和使用协议》</span></p>
                 </div>
               </div>
             </form>
@@ -336,6 +336,9 @@ import {addUser, phoneCode, frontLogin, verifyCode, updatePasswordPhone, usersSe
 
 export default {
   name: 'lihun_head',
+  props:[
+	  name
+  ],
   data () {
     return {
 	  dialogFindByPhone: false, // 通过手机号找回密码弹窗
@@ -427,10 +430,10 @@ export default {
       this.registYan = false
     },
     handleCheckedCitiesChange () {
-      // const {href} = this.$router.resolve({
-      // 	path: '/UserAgreement'
-      // })
-      // window.open(href, '_blank')
+      const {href} = this.$router.resolve({
+      	path: '/UserAgreement'
+      })
+      window.open(href, '_blank')
     },
     getYan () { // 获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
@@ -483,7 +486,7 @@ export default {
 		  }
       } else {
         this.$message({
-          message: '请先阅读家文使用协议',
+          message: '请先阅读家文用户注册和使用协议',
 		  offset: -50,
           type: 'warning'
         })

@@ -176,6 +176,7 @@
 				chooseList: {
 					title: '' // 新建副本
 				},
+				name: '',
 				formLabelWidth: '80px',
 				dialogZhiDao: false,
 				zhidaoArr: [ // 离婚指导轮播图

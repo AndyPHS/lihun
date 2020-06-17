@@ -325,7 +325,6 @@ export default {
     }
   },
   mounted () {
-
   },
   methods: {
 	goDingZhi () {

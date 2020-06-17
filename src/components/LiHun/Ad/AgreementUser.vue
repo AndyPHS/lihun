@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <lihun-head ref="lihun"></lihun-head>
     <div class="c_m w">
       <div class="py-12 px-12">
         <h2 class="text-left text-lg c_m_t">个人中心</h2>
