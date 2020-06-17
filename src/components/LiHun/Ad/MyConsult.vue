@@ -44,8 +44,8 @@
 								</h2>
 								<div class="w-1/2 flex justify-around items-center">
 									<dl class="w-1/3">
-										<dt>第10版本</dt>
-										<dd>
+										<dt>第{{ item.number }}版</dt>
+										<dd @click="checkHistory(index)">
 											查看历史版本
 										</dd>
 									</dl>
@@ -74,6 +74,56 @@
 										<span v-if="item.signed ==0" class="inline-block">未签订</span>
 									</div>
 								</div>
+							</div>
+							<div v-if="historys == index">
+								<ul>
+									<li v-for="($item, $index) in item.historys" :key="$index">
+										<h4 class="flex justify-between items-center px-6">
+											<div class="flex w-1/2 text-gray-600">
+												<span class="inline-block">{{ $item.UpdateTime }}</span>
+												<span class="inline-block ml-10">文书编号:{{ $item.agreement_number }}</span>
+											</div>
+											<div class="w-1/6 flex justify-around items-center pl-5">
+												<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="NewCopy($item, $index)">创建副本</span>
+												<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan($item, $index)">删除</span>
+											</div>
+										</h4>
+										<div class="c_m_m_m_m flex justify-between items-center">
+											<h2 class="w-1/2 overflow-hidden pl-6 text-left">
+												{{ $item.title }}
+											</h2>
+											<div class="w-1/2 flex justify-around items-center">
+												<dl class="w-1/3">
+													<dt>第{{ $item.number }}版本</dt>
+												</dl>
+												<dl v-if="$item.complete == 2" class="w-1/3">
+													<dt class="text-blue-400">起草中</dt>
+													<dd @click="goOnTianxie($item.id)" class="text-red">
+														继续起草
+													</dd>
+												</dl>
+												<dl v-if="$item.complete == 1" class="w-1/3 ">
+													<dt>起草完</dt>
+													<dd @click="goComplete($item.id)">
+														查看协议书
+													</dd>
+												</dl>
+												<!-- 已完成complete 1 -->
+												<div v-if="$item.complete == 1" class="w-1/3 c_m_m_m_m_r flex justify-around">
+													<span @click="DownLoadWord($item.id)" class="inline-block">下 载</span>
+													<span v-if="$item.signed == 1" @click="isQianAction($item)" class="inline-block">已签订</span>
+													<span v-if="$item.signed == 0 " @click="isQianAction($item)" class="inline-block">未签订</span>
+												</div>
+												<!-- 未完成 -->
+												<div v-if="$item.complete == 2" class="w-1/3 c_m_m_m_m_r_n flex justify-around">
+													<span class="inline-block">下 载</span>
+													<span v-if="$item.signed ==1" class="inline-block">已签订</span>
+													<span v-if="$item.signed ==0" class="inline-block">未签订</span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</li>
 					</ul>
@@ -168,6 +218,7 @@
 		data() {
 			return {
 				wenshuList: [], // 文书汇总
+				historys: -1, // 历史版本
 				dialogDownLoadWenJuan: false, // 免责弹窗
 				form: { // 免责条款
 					type: false
@@ -228,6 +279,32 @@
 			goOnTianxie(e) { // 点击继续起草
 				localStorage.setItem('quid', e)
 				this.$router.replace('/CustomBasic')
+			},
+			checkHistory (index) { // 查看历史版本
+				if( this.historys == index ){
+					 this.historys = -1
+				} else {
+					this.historys = index
+				}
+			   
+				// var sta = item.isHistory
+				// if (sta == false || sta == undefined) {
+				// 	sta = true
+				// } else {
+				// 	sta = false
+				// }
+				// localStorage.setItem('quid', item.id)
+				// userUpdateQuestionnaire({
+				// 	isHistory: sta
+				// }).then((data) => {
+				// 	this.getWenShu()
+				// })
+				// if (this.historys) {
+				// 	this.historys = false
+				// } else {
+				// 	this.historys = true
+				// }
+				
 			},
 			dialogDownLoadWenJuanOk() { // 点击下载弹出确定按钮
 				if (this.form.type) {
