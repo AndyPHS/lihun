@@ -284,7 +284,7 @@
           <el-divider class="mx-5" direction="vertical"></el-divider>
           <span class="cursor-pointer">定制我的离婚协议书</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer"><a href="http://www.jialilaw.com/">家理律所官网</a></span>
+          <span class="cursor-pointer"><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></span>
         </div>
         <div class="bot02 border-b-2 flex justify-between  items-end">
           <div class="w-1/3 text-left text-white bot02_l">
@@ -303,7 +303,7 @@
           </dl>
         </div>
         <div class="bot03 text-left text-white">
-          <p>友情链接：<a href="http://www.jialilaw.com/">北京家理律师事务所</a></p>
+          <p>友情链接：<a href="http://www.jialilaw.com/" target="_blank">北京家理律师事务所</a></p>
           <p>©2017 北京家理律师事务所      备案号：京ICP备14011260号-2      京公网安备：11010502037274号</p>
         </div>
       </div>
