@@ -18,7 +18,7 @@
               <ul class="zan mt-4">
                 <li class="lis text-left">
                   <span class="no-underline text-gray-400" v-if="this.userMsg.name != ''">{{this.userMsg.name}}</span>
-                  <span v-else>暂无</span>
+                  <span v-if="this.userMsg.name == ''">暂无</span>
                 </li>
                 <li class="lis text-left">
                   <span class="no-underline text-gray-400" v-if="this.userMsg.sex == 1">男</span>

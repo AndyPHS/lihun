@@ -24,6 +24,16 @@ const UserList = () => import('@/components/LiHun/houtai/UserList')  // 用户�
 const UserWenShu = () => import('@/components/LiHun/houtai/UserWenShu')  // 用户文书列表信息
 
 const UserOperate = () => import('@/components/LiHun/houtai/UserOperate')  // 用户浏览操作页面
+
+
+/**
+ * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
+ */
+const routerPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error => error)
+}
+
 Vue.use(Router)
 
 export default new Router({

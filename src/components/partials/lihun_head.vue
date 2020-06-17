@@ -9,14 +9,17 @@
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
-            <li>
+			<li v-for="(item,index) in nav" :key="index" :class="{activered:topins == index}" @click="goDingZhi(index)">
+				{{ item.name }}
+			</li>
+            <!-- <li @click="this.topins=1" :class="{activered:topins ==1}">
               <router-link to="/">首页</router-link>
             </li>
-            <li>
+            <li @click="this.topins=2 " :class="{activered:topins ==2}">
               <router-link to="Knowledge">离婚知识</router-link>
             </li>
-            <li @click="goDingZhi">定制我的离婚协议书</li>
-            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li>
+            <li :class="{activered:topins ==3}" @click="goDingZhi">定制我的离婚协议书</li>
+            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li> -->
           </ul>
           <div v-if="this.isLogin==false" class="loginBox flex justify-around items-center">
             <span class="cursor-pointer" @click="loginAc">登录</span>
@@ -25,7 +28,8 @@
           </div>
           <div v-else class="flex justify-around items-center">
             <el-dropdown>
-              <span class="el-dropdown-link text-blue-500 border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+              <span v-if="this.name == '' " class="el-dropdown-link text-blue-500 border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+			  <span v-if="this.name !='' " class="el-dropdown-link text-blue-500 cursor-pointer">{{ name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item  @click.native="goAgreementUser">个人中心</el-dropdown-item>
                 <el-dropdown-item class="text-center" @click.native="liveOut">退出</el-dropdown-item>
@@ -329,7 +333,7 @@
 </template>
 
 <script>
-import {addUser, phoneCode, frontLogin, verifyCode, updatePasswordPhone} from '@/api/api/AgreementRequest.js'
+import {addUser, phoneCode, frontLogin, verifyCode, updatePasswordPhone, usersSelect} from '@/api/api/AgreementRequest.js'
 
 export default {
   name: 'lihun_head',
@@ -347,6 +351,7 @@ export default {
         valueCode: null, // 验证码
         code_key: '' // 验证码的KEY
       },
+	  name: '',
 	  newform: {
 		  phone: null, // 新密码
 		  valueCode: null, // 新验证码
@@ -367,22 +372,43 @@ export default {
       forgetDialog: false, // 忘记密码弹窗
       forgetDialog2: false ,// 忘记密码2
 	  innerVisible: false,
-
+	  topins:-1, // 导航状态
+	  nav:[
+		  {name: '首页'},
+		  {name: '离婚知识'},
+		  {name: '定制我的离婚协议书'},
+		  {name: '家理律所官网'},
+	  ]
     }
   },
   mounted () {
     this.changeCode()
+	this.getUserMsg()
   },
   methods: {
+	getUserMsg () { // 查询用户基本信息
+	  usersSelect().then((data) => {
+	    this.name = data.data.name
+	  })
+	},
 	goHome () { // 点击图标返回首页
 		this.$router.replace('/')
 	},
-	goDingZhi () { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
-		var isLogin = localStorage.getItem('token')
-		if (isLogin == undefined){
-			this.dialogLogin = true
-		} else {
-			this.$router.replace('/MyConsult')
+	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
+		this.topins = index;
+		if(index == 0){
+			this.$router.replace('/')
+		} else if (index == 1){
+			this.$router.replace('/Knowledge')
+		} else if(index == 2){
+			var isLogin = localStorage.getItem('token')
+			if (isLogin == undefined){
+				this.dialogLogin = true
+			} else {
+				this.$router.replace('/MyConsult')
+			}
+		} else if (index == 3){
+			window.open('http://www.jialilaw.com/', '_blank')
 		}
 	},
     goAgreementUser () {
@@ -732,4 +758,5 @@ export default {
   .ste:first-of-type:hover{background-color: grey;color:#fff}
   .ste:last-of-type{border:1px solid red;color:red;}
   .ste:last-of-type:hover{background-color: red;color:#fff;}
+  .activered{color:#ff3f68;}
 </style>
