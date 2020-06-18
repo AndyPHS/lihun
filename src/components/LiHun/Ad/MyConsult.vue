@@ -11,9 +11,7 @@
 						<router-link to="CustomAgreement">定制我的协议书</router-link>
 					</span>
 					<router-link to="AgreementHelp">协议书定制说明</router-link>
-					<a class="hover:text-blue-400" href="">协议书如何谈判</a>
-					<!-- <span><router-link to="UserAgreement">协议书定制说明</router-link></span>
-          <span>协议书如何谈判</span> -->
+					<div class="cursor-pointer hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
 				</div>
 			</div>
 			<div class="c_m_m px-12">
@@ -33,9 +31,9 @@
 									<span class="inline-block">{{ item.UpdateTime }}</span>
 									<span class="inline-block ml-10">文书编号:{{ item.agreement_number }}</span>
 								</div>
-								<div class="w-1/6 flex justify-around items-center pl-5">
+								<div class="w-1/6 flex justify-end items-center pl-5">
 									<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="NewCopy(item, index)">创建副本</span>
-									<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span>
+									<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span> -->
 								</div>
 							</h4>
 							<div class="c_m_m_m_m flex justify-between items-center">
@@ -83,9 +81,9 @@
 												<span class="inline-block">{{ $item.UpdateTime }}</span>
 												<span class="inline-block ml-10">文书编号:{{ $item.agreement_number }}</span>
 											</div>
-											<div class="w-1/6 flex justify-around items-center pl-5">
+											<div class="w-1/6 flex justify-end items-center pl-5">
 												<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="NewCopy($item, $index)">创建副本</span>
-												<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan($item, $index)">删除</span>
+												<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan($item, $index)">删除</span> -->
 											</div>
 										</h4>
 										<div class="c_m_m_m_m flex justify-between items-center">
@@ -384,6 +382,14 @@
 			},
 			closeZhiDao () { // 关闭指导弹窗
 				this.dialogZhiDao = false
+			},
+			goKnowledgeMin (id) { // 协议书如何谈判
+			  this.$router.push({
+			    name: 'KnowledgeCon',
+			    params: {
+			      id: id
+			    }
+			  })
 			}
 		}
 	}
@@ -397,7 +403,7 @@
 
 	.all {
 		background-color: #f2f4f7;
-		height: 100vh;
+		height: auto;
 	}
 
 	.w {

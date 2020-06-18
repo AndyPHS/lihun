@@ -15,7 +15,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -45,7 +45,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -79,7 +79,7 @@
               <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                 <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                 <i class="el-icon-question"></i>
               </el-tooltip>
@@ -115,7 +115,7 @@
               <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                 <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                 <i class="el-icon-question"></i>
               </el-tooltip>
@@ -150,7 +150,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -183,7 +183,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -216,7 +216,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -249,7 +249,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -282,7 +282,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" placeholder="" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -311,7 +311,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -344,7 +344,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -377,7 +377,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -410,7 +410,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -443,7 +443,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -473,7 +473,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -503,7 +503,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+								  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -536,7 +536,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -569,7 +569,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -602,7 +602,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -635,7 +635,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -665,7 +665,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -698,7 +698,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -731,7 +731,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -768,7 +768,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -802,7 +802,7 @@
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
                     </el-tooltip>
@@ -838,7 +838,7 @@
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
                     </el-tooltip>
@@ -873,7 +873,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -902,7 +902,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -935,7 +935,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -968,7 +968,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1001,7 +1001,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1034,7 +1034,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1064,7 +1064,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1092,7 +1092,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1126,7 +1126,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -1162,7 +1162,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -1197,7 +1197,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1225,7 +1225,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1258,7 +1258,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1291,7 +1291,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1324,7 +1324,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1357,7 +1357,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1393,7 +1393,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -1427,7 +1427,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1460,7 +1460,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1493,7 +1493,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1526,7 +1526,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1559,7 +1559,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1589,7 +1589,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1617,7 +1617,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1651,7 +1651,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -1687,7 +1687,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -1722,7 +1722,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1750,7 +1750,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1783,7 +1783,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1816,7 +1816,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1849,7 +1849,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1882,7 +1882,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -1918,7 +1918,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -1951,7 +1951,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -1984,7 +1984,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -2017,7 +2017,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -2053,7 +2053,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -2083,7 +2083,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2116,7 +2116,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2149,7 +2149,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2182,7 +2182,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2215,7 +2215,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2245,7 +2245,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2274,7 +2274,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2307,7 +2307,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2340,7 +2340,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2373,7 +2373,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2406,7 +2406,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2436,7 +2436,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2464,7 +2464,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2492,7 +2492,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2525,7 +2525,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2559,7 +2559,7 @@
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -2594,7 +2594,7 @@
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -2630,7 +2630,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2666,7 +2666,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2696,7 +2696,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+									<div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -2729,7 +2729,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -2762,7 +2762,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -2795,7 +2795,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -2828,7 +2828,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -2856,7 +2856,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -2890,7 +2890,7 @@
                               <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                 <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -2933,7 +2933,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -2966,7 +2966,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -3000,7 +3000,7 @@
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3035,7 +3035,7 @@
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3071,7 +3071,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -3104,7 +3104,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -3137,7 +3137,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -3170,7 +3170,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -3207,7 +3207,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -3241,7 +3241,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3274,7 +3274,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3307,7 +3307,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3340,7 +3340,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3373,7 +3373,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3403,7 +3403,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3433,7 +3433,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3466,7 +3466,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3499,7 +3499,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3532,7 +3532,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3565,7 +3565,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3595,7 +3595,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3628,7 +3628,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3661,7 +3661,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -3698,7 +3698,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3732,7 +3732,7 @@
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
                     </el-tooltip>
@@ -3768,7 +3768,7 @@
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
                     </el-tooltip>
@@ -3803,7 +3803,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -3832,7 +3832,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -3865,7 +3865,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -3898,7 +3898,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -3931,7 +3931,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -3964,7 +3964,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -3994,7 +3994,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4022,7 +4022,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4056,7 +4056,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -4092,7 +4092,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -4127,7 +4127,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4155,7 +4155,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4188,7 +4188,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4221,7 +4221,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4254,7 +4254,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4287,7 +4287,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4323,7 +4323,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -4357,7 +4357,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4390,7 +4390,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4423,7 +4423,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4456,7 +4456,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4489,7 +4489,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4519,7 +4519,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4547,7 +4547,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4581,7 +4581,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -4617,7 +4617,7 @@
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
                           </el-tooltip>
@@ -4652,7 +4652,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4680,7 +4680,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4713,7 +4713,7 @@
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
                                 <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -4749,7 +4749,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -4782,7 +4782,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -4815,7 +4815,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -4848,7 +4848,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -4884,7 +4884,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -4919,7 +4919,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -4952,7 +4952,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -4985,7 +4985,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5018,7 +5018,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5051,7 +5051,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5081,7 +5081,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5110,7 +5110,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5143,7 +5143,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5176,7 +5176,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5209,7 +5209,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5242,7 +5242,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5272,7 +5272,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5300,7 +5300,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5328,7 +5328,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5361,7 +5361,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5395,7 +5395,7 @@
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -5430,7 +5430,7 @@
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
                             </el-tooltip>
@@ -5466,7 +5466,7 @@
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -5502,7 +5502,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5532,7 +5532,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -5565,7 +5565,7 @@
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -5602,7 +5602,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5635,7 +5635,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5669,7 +5669,7 @@
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -5704,7 +5704,7 @@
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -5740,7 +5740,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5773,7 +5773,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5806,7 +5806,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5839,7 +5839,7 @@
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -5876,7 +5876,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -5909,7 +5909,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -5942,7 +5942,7 @@
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                    <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
                 </el-tooltip>
@@ -5980,7 +5980,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6010,7 +6010,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6044,7 +6044,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6080,7 +6080,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6115,7 +6115,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6148,7 +6148,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6181,7 +6181,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6214,7 +6214,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6247,7 +6247,7 @@
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
                           <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                          <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                          <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
                       </el-tooltip>
@@ -6277,7 +6277,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6307,7 +6307,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6340,7 +6340,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6373,7 +6373,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6406,7 +6406,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6439,7 +6439,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6472,7 +6472,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6505,7 +6505,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6542,7 +6542,7 @@
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -6572,7 +6572,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6602,7 +6602,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6635,7 +6635,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6668,7 +6668,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6701,7 +6701,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6734,7 +6734,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6767,7 +6767,7 @@
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
                                     <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                    <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                    <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
                                 </el-tooltip>
@@ -6804,7 +6804,7 @@
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -6829,7 +6829,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -6859,7 +6859,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -6893,7 +6893,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -6929,7 +6929,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -6964,7 +6964,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -6997,7 +6997,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7030,7 +7030,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7063,7 +7063,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7096,7 +7096,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7124,7 +7124,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7158,7 +7158,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7191,7 +7191,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7224,7 +7224,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7257,7 +7257,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7290,7 +7290,7 @@
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
                                   <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                                  <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                                  <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
                               </el-tooltip>
@@ -7326,7 +7326,7 @@
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -7359,7 +7359,7 @@
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -7392,7 +7392,7 @@
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>
@@ -7425,7 +7425,7 @@
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
                             <h3 class="text-base w-full font-bold">小贴士</h3><br/>
-                            <textarea :rows="20" id="caseMsg" class="textarea w-full" placeholder="" v-model="$$$item.description" readonly="readonly" disabled="disabled"></textarea>
+                            <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
                         </el-tooltip>

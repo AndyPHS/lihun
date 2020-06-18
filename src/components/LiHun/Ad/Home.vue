@@ -41,7 +41,7 @@
         <span>准备离婚图省事 &nbsp; 草草签字就了事 &nbsp; 招来一堆麻烦事</span>
       </div>
       <div class="w flex justify-between">
-        <dl class="w-1/4 mr-10">
+        <dl class="w-1/4 cursor-pointer mr-10" @click="goKnowledgeMin(21)">
           <dt>
             <img src="../../../assets/images/lihun/wuqu01.png" alt="">
           </dt>
@@ -49,7 +49,7 @@
             <p>找网上协议模板</br>能尽快离婚就行</p>
           </dd>
         </dl>
-        <dl class="w-1/4 mr-10">
+        <dl class="w-1/4 cursor-pointer mr-10" @click="goKnowledgeMin(21)">
           <dt>
             <img src="../../../assets/images/lihun/wuqu02.png" alt="">
           </dt>
@@ -57,7 +57,7 @@
             <p>离婚协议</br>可以随意修改</p>
           </dd>
         </dl>
-        <dl class="w-1/4 mr-10">
+        <dl class="w-1/4 cursor-pointer mr-10" @click="goKnowledgeMin(21)">
           <dt>
             <img src="../../../assets/images/lihun/wuqu03.png" alt="">
           </dt>
@@ -65,7 +65,7 @@
             <p>签完离婚协议</br>就一劳永逸了</p>
           </dd>
         </dl>
-        <dl class="w-1/4">
+        <dl class="w-1/4 cursor-pointer" @click="goKnowledgeMin(21)">
           <dt>
             <img src="../../../assets/images/lihun/wuqu04.png" alt="">
           </dt>
@@ -198,65 +198,241 @@
         <el-carousel :interval="5000" arrow="never" indicator-position="outside" height="254px">
             <el-carousel-item >
               <ul class="flex justify-between">
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue01.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+					<div class="pinjia_s">
+						<dl>
+							<dt>
+								<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+							</dt>
+							<dd>
+								<h2>王女士&nbsp;北京</h2>
+								<span>2020.04.28</span>
+							</dd>
+						</dl>
+					</div>
+					<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue02.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue03.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4">
-                  <img src="@/assets/images/lihun/qianyue04.png" alt="">
+                <li class="w-1/4 pinjia_li px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
               </ul>
             </el-carousel-item>
             <el-carousel-item >
               <ul class="flex justify-between">
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue01.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue02.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+					<div class="pinjia_s">
+						<dl>
+							<dt>
+								<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+							</dt>
+							<dd>
+								<h2>王女士&nbsp;北京</h2>
+								<span>2020.04.28</span>
+							</dd>
+						</dl>
+					</div>
+					<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue03.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4">
-                  <img src="@/assets/images/lihun/qianyue04.png" alt="">
+                <li class="w-1/4 pinjia_li px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
               </ul>
             </el-carousel-item>
             <el-carousel-item >
               <ul class="flex justify-between">
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue01.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue02.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue03.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4">
-                  <img src="@/assets/images/lihun/qianyue04.png" alt="">
+                <li class="w-1/4 pinjia_li px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
               </ul>
             </el-carousel-item>
             <el-carousel-item >
               <ul class="flex justify-between">
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue01.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue02.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4 mr-4">
-                  <img src="@/assets/images/lihun/qianyue03.png" alt="">
+                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
-                <li class="w-1/4">
-                  <img src="@/assets/images/lihun/qianyue04.png" alt="">
+                <li class="w-1/4 pinjia_li px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
+                				<h2>王女士&nbsp;北京</h2>
+                				<span>2020.04.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
                 </li>
               </ul>
             </el-carousel-item>
@@ -282,7 +458,7 @@
           <el-divider class="mx-5" direction="vertical"></el-divider>
           <span class="cursor-pointer"> <router-link to="Knowledge">离婚知识</router-link></span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer">定制我的离婚协议书</span>
+          <span @click="goDingZhi(2)" class="cursor-pointer">定制我的离婚协议书</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
           <span class="cursor-pointer"><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></span>
         </div>
@@ -332,7 +508,15 @@ export default {
 	},
 	goMoreKnowledge () {
 		this.$router.replace('Knowledge')
-	}
+	},
+	goKnowledgeMin (id) { // 协议书如何谈判
+	  this.$router.push({
+	    name: 'KnowledgeCon',
+	    params: {
+	      id: id
+	    }
+	  })
+	},
 
   }
 }
@@ -379,4 +563,12 @@ export default {
 .bot02_l p{font-size: 14px;}
 .bot03{padding-top: 15px;}
 .bot03 p{font-size: 14px;}
+.pinjia_s{width: 168px;height: 58px;margin:0 auto}
+.pinjia_s dl{display: flex;align-items: center;}
+.pinjia_s dl dt img{display: inline-block;}
+.pinjia_s dl dd{margin-left: 16px;text-align: left;}
+.pinjia_s dl dd h2{font-size: 16px;color: #5e5e5e;line-height: 18px;}
+.pinjia_s dl dd span{display: inline-block;font-size: 12px;color: #bebebe;line-height: 18px;}
+.pinjia_p{margin-top: 34px;line-height: 25px;color: #535353;text-align: left;}
+.pinjia_li{width: 290px;height: 249px;background-color: #fff;}
 </style>

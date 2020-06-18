@@ -10,8 +10,8 @@
           <span @click="goAgreementHelp">协议书定制帮助</span>
         </div>
       </div>
-      <div class="">
-        <div class="w-full bg-white relative pb-10">
+      <div class="basicmin">
+        <div class="w-full  bg-white relative pb-10">
           <div class="container mx-auto">
             <div>
               <div class="py-4">
@@ -486,23 +486,19 @@ export default {
         this.mokuai.sort(this.compare('id'))
         // console.log(this.aa.ZiNv[0][1].questions[7].childQuestion[1][2].answer)
         for (let i = 0; i < this.aa.ZiNv.length; i++) {
-          if (this.aa.ZiNv[i][1].questions[0].answer === 1) {
-            this.aa.ZiNv[i][1].questions[7].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[7].childQuestion[1][2].answer)
-            this.aa.ZiNv[i][1].questions[8].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[8].childQuestion[2][0].answer)
-          } else if (this.aa.ZiNv[i][1].questions[1].answer === 2) {
-            this.aa.ZiNv[i][1].questions[14].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[14].childQuestion[1][2].answer)
-            this.aa.ZiNv[i][1].questions[15].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[15].childQuestion[2][0].answer)
-          } if (this.aa.ZiNv[i][1].questions[1].answer === 2) {
-            this.aa.ZiNv[i][1].questions[1].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[1].childQuestion[2][0].answer)
-            this.aa.ZiNv[i][1].questions[1].childQuestion[2][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[1].childQuestion[2][1].answer)
-          } else if (this.aa.ZiNv[i][1].questions[1].answer === 3) {
-            this.aa.ZiNv[i][1].questions[1].childQuestion[3][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[1].childQuestion[3][0].answer)
-            this.aa.ZiNv[i][1].questions[1].childQuestion[3][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[1].childQuestion[3][1].answer)
-          }
-          this.aa.ZiNv[i][1].questions[21].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[21].childQuestion[1][2].answer)
-          this.aa.ZiNv[i][1].questions[22].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[22].childQuestion[2][0].answer)
-          this.aa.ZiNv[i][1].questions[28].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[28].childQuestion[1][2].answer)
-          this.aa.ZiNv[i][1].questions[29].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[29].childQuestion[2][0].answer)
+			this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer)
+			this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer)
+			this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer)
+			this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer)
+			this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer)
+			this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer)
+			this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer)
+			this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer)
+			this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer)
+			this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer)
+			this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer)
+			this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer)
+          
         }
         this.loading = false
       }).catch((data) => {
@@ -856,67 +852,102 @@ export default {
       localStorage.setItem('active', _that.active)
     },
     prev () {
-      this.prevLoading = true
+      // this.prevLoading = true
       let mokuai = this.mokuai
       for (var i = 0; i < mokuai.length; i++) {
         if (this.mokuai[this.active].title === mokuai[i].title) {
           localStorage.setItem('qpid', mokuai[i].num)
-          demoYanZheng({
-            qpid: mokuai[i].num
-          }).then((data) => {
-            if (data.data.status_code === 330) {
-              this.missMsgBox = true
-              this.missMsg = data.data.data
-              this.loading = false
-            } else {
-              this.loading = false
-              this.caichanNav = false
-              this.zhaiquanNav = false
-              this.prevLoading = false
-              if (this.ins < 3) {
-                --this.ins
-                --this.active
-                var _that = this
-                localStorage.setItem('active', _that.active)
-              } else if (this.ins === 3) {
-                // this.active = 3
-                --this.active
-                var _that = this
-                if (_that.CaiIns > 3) {
-                  --_that.CaiIns
-                  this.caichanNav = true
-                } else if (_that.CaiIns ===3) {
-                  --this.ins
-                  this.caichanNav = false
-                }
-                localStorage.setItem('active', this.active)
-              } else if (this.ins === 4) {
-                --this.active
-                var _that = this
-                if (_that.zhaiIns > 16) {
-                 --_that.zhaiIns
-                 this.zhaiquanNav = true
-                } else if (_that.zhaiIns ===16) {
-                  this.CaiIns = 16
-                  --this.ins
-                  this.zhaiquanNav = false
-                }
-                localStorage.setItem('active', this.active)
-              } else if (this.ins ===5 ){
-                --this.ins
-                this.active = 19
-                this.zhaiIns = 18
-                this.zhaiquanNav = true
-              }
+          // demoYanZheng({
+          //   qpid: mokuai[i].num
+          // }).then((data) => {
+          //   if (data.data.status_code === 330) {
+          //     this.missMsgBox = true
+          //     this.missMsg = data.data.data
+          //     this.loading = false
+          //   } else {
+          //     this.loading = false
+          //     this.caichanNav = false
+          //     this.zhaiquanNav = false
+          //     this.prevLoading = false
+          //     if (this.ins < 3) {
+          //       --this.ins
+          //       --this.active
+          //       var _that = this
+          //       localStorage.setItem('active', _that.active)
+          //     } else if (this.ins === 3) {
+          //       // this.active = 3
+          //       --this.active
+          //       var _that = this
+          //       if (_that.CaiIns > 3) {
+          //         --_that.CaiIns
+          //         this.caichanNav = true
+          //       } else if (_that.CaiIns ===3) {
+          //         --this.ins
+          //         this.caichanNav = false
+          //       }
+          //       localStorage.setItem('active', this.active)
+          //     } else if (this.ins === 4) {
+          //       --this.active
+          //       var _that = this
+          //       if (_that.zhaiIns > 16) {
+          //        --_that.zhaiIns
+          //        this.zhaiquanNav = true
+          //       } else if (_that.zhaiIns ===16) {
+          //         this.CaiIns = 16
+          //         --this.ins
+          //         this.zhaiquanNav = false
+          //       }
+          //       localStorage.setItem('active', this.active)
+          //     } else if (this.ins ===5 ){
+          //       --this.ins
+          //       this.active = 19
+          //       this.zhaiIns = 18
+          //       this.zhaiquanNav = true
+          //     }
 
-              this.$notify({
-                title: '保存成功',
-                message: mokuai[i].title + '模块已成功保存',
-                type: 'success'
-              })
-            }
-          }).catch((data) => {
-          })
+          //     this.$notify({
+          //       title: '保存成功',
+          //       message: mokuai[i].title + '模块已成功保存',
+          //       type: 'success'
+          //     })
+          //   }
+          // }).catch((data) => {
+          // })
+		  if (this.ins < 3) {
+		    --this.ins
+		    --this.active
+		    var _that = this
+		    localStorage.setItem('active', _that.active)
+		  } else if (this.ins === 3) {
+		    // this.active = 3
+		    --this.active
+		    var _that = this
+		    if (_that.CaiIns > 3) {
+		      --_that.CaiIns
+		      this.caichanNav = true
+		    } else if (_that.CaiIns ===3) {
+		      --this.ins
+		      this.caichanNav = false
+		    }
+		    localStorage.setItem('active', this.active)
+		  } else if (this.ins === 4) {
+		    --this.active
+		    var _that = this
+		    if (_that.zhaiIns > 16) {
+		     --_that.zhaiIns
+		     this.zhaiquanNav = true
+		    } else if (_that.zhaiIns ===16) {
+		      this.CaiIns = 16
+		      --this.ins
+		      this.zhaiquanNav = false
+		    }
+		    localStorage.setItem('active', this.active)
+		  } else if (this.ins ===5 ){
+		    --this.ins
+		    this.active = 19
+		    this.zhaiIns = 18
+		    this.zhaiquanNav = true
+		  }
         }
       }
       if (this.active < 0) this.active = 0
@@ -1140,4 +1171,5 @@ html{height: 100%;background-color: #f7fafc;}
 .tishi_bot{width:502px;margin:0 auto;display: flex;justify-content: space-between;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
 .re{border: 1px solid #ff3f68;color: #ff3f68;background-color: #fff;}
+.basicmin{height: 750px;overflow-y: scroll;}
 </style>

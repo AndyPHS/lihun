@@ -6,9 +6,9 @@
         <div class="c_m_t">协议书定制帮助</div>
         <div class="flex justify-between items-center mt-12">
           <div class="c_m_l">
-            <div class="c_m_l_t">
+            <!-- <div class="c_m_l_t">
               <span class="ding_btn"><router-link to="CustomAgreement">定制我的协议书</router-link></span>
-            </div>
+            </div> -->
             <div class="mt-10">
               <h3 class="text-center text-lg font-bold">帮助分类</h3>
               <ul class="mt-5">

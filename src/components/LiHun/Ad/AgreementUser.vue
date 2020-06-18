@@ -41,7 +41,7 @@
                   <span class="no-underline text-gray-400" v-if="this.userMsg.phone != ''">{{this.userMsg.phone}}</span>
                   <span v-else>暂无</span>
                 </li>
-                <li class="lis text-left">暂无</li>
+                <li class="lis text-left">******</li>
                 <li class="lis text-left">
                   <span class="no-underline text-gray-400" v-if="this.userMsg.email != null">{{this.userMsg.email}}</span>
                   <span v-else>暂无</span>

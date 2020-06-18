@@ -136,7 +136,7 @@ export default {
 </script>
 <style>
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
-.all{background-color: #f2f4f7;height: 100vh;}
+.all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;margin-top: 39px;}
 .c_m_l{width: 239px;padding:150px 0;}

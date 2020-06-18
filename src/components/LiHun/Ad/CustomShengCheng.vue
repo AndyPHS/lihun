@@ -219,7 +219,7 @@ export default {
 .outputword{padding:20px;border:1px solid #ecf5ec;}
 .outputword>h2{border-bottom: 1px solid #dbe2db;}
 .outputword .msg{white-space:pre-wrap;}
-#outputwordmsg{width: 900px;margin:0 20px}
+#outputwordmsg{width: 800px;margin:0 20px;padding-left: 100px;}
 #outputwordmsg p{font-weight:bolder !important;}
 .returnUserList{top:110px;right: 20px;}
 .tishi .el-dialog__header{text-align: left;padding-left: 50px;}
