@@ -486,6 +486,8 @@ export default {
 			this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer)
 			this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer)
 			this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer)
+			console.log(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer)
+			console.log(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
 			this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer)
 			this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer)
 			this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer)
@@ -495,6 +497,8 @@ export default {
 			this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer)
           
         }
+		this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
+		console.log(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
         this.loading = false
       }).catch((data) => {
       })

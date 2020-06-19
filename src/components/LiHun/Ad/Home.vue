@@ -262,15 +262,15 @@
                 	<div class="pinjia_s">
                 		<dl>
                 			<dt>
-                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                				<img src="../../../assets/images/lihun/zhangshiya_icon.jpeg" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>张女士&nbsp;乌鲁木齐</h2>
+                				<span>2020.06.19</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">这个系统还挺好用的，我年前就想离婚了，因为疫情也不敢去找律师起草协议。现在这个生成协议之后，和律师写的一样，也不用来回往律所跑了。还是很方便的，在家就全搞定了，被失败的婚姻折磨了三年，终于解脱了！</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
 					<div class="pinjia_s">
@@ -293,12 +293,12 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
+                				<h2>张女士&nbsp;北京</h2>
                 				<span>2020.04.28</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">协议内容很详细，操作也简单，比自己写的专业多了！不仅完成了协议，还学了很多专业知识，让我少走了很多弯路，太好用了！</p>
                 </li>
                 <li class="w-1/4 pinjia_li px-8 py-8">
                 	<div class="pinjia_s">
@@ -563,12 +563,13 @@ export default {
 .bot02_l p{font-size: 14px;}
 .bot03{padding-top: 15px;}
 .bot03 p{font-size: 14px;}
-.pinjia_s{width: 168px;height: 58px;margin:0 auto}
+.pinjia_s{width: 198px;height: 58px;margin:0 auto}
 .pinjia_s dl{display: flex;align-items: center;}
-.pinjia_s dl dt img{display: inline-block;}
+.pinjia_s dl dt {width: 53px;height: 53px;}
+.pinjia_s dl dt img{display: inline-block;border-radius: 50%;}
 .pinjia_s dl dd{margin-left: 16px;text-align: left;}
 .pinjia_s dl dd h2{font-size: 16px;color: #5e5e5e;line-height: 18px;}
 .pinjia_s dl dd span{display: inline-block;font-size: 12px;color: #bebebe;line-height: 18px;}
-.pinjia_p{margin-top: 34px;line-height: 25px;color: #535353;text-align: left;}
+.pinjia_p{margin-top: 14px;line-height: 25px;color: #535353;text-align: left;font-size: 14px;height: 125px;overflow: hidden;}
 .pinjia_li{width: 290px;height: 249px;background-color: #fff;}
 </style>

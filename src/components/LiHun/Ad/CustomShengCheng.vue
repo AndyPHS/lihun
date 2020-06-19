@@ -220,7 +220,6 @@ export default {
 .outputword .msg{white-space:pre-wrap;}
 #outputwordmsg{width: 800px;margin:0 20px;padding-left: 100px;}
 #outputwordmsg p{font-weight:bolder !important;}
-.returnUserList{top:110px;right: 20px;}
 .tishi .el-dialog__header{text-align: left;padding-left: 50px;}
 .tishi .el-dialog__header h2{font-size: 25px;}
 .tishi .el-dialog__header .el-dialog__title{font-size: 25px;}

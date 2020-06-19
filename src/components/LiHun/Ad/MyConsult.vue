@@ -427,16 +427,6 @@
 		margin-top: 39px;
 	}
 
-	.c_m_h h2 {
-		width: 143px;
-		font-size: 25px;
-		color: #535353;
-		font-weight: bold;
-	}
-
-	.c_m_h_r {
-		width: 542px;
-	}
 
 	.c_m_h_r span {
 		display: inline-block;
