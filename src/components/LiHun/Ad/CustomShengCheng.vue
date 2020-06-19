@@ -2,7 +2,7 @@
   <div class="all">
     <lihun-head></lihun-head>
     <div class="w-full bg-color relative" v-loading="fullscreenLoading">
-      <div class="w py-10">
+      <div class="shengcheng_w py-10">
         <div class="bg-white rounded-lg">
           <div class="outputword rounded-lg shadow-lg relative">
             <h2 class="py-2 text-2xl py-5 font-bold">{{ this.TitleMsg }}</h2>
@@ -208,7 +208,7 @@ export default {
 </script>
 <style >
 .bg-color{background: #eee;}
-.w{width: 1000px;margin:0 auto;}
+.shengcheng_w{width: 1000px;margin:0 auto;}
 .fanhuitianxie {top:34px;right: 194px;margin:0}
 .fanhuitianxie span{width: 132px;height: 35px;font-size: 16px;text-align: center;line-height: 35px;border:1px solid #343434;color:#343434;border-radius: 18px;display: inline-block;}
 .fanhuilist{position: absolute;top:34px;right: 44px;margin: 0;}
