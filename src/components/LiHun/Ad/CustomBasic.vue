@@ -218,6 +218,7 @@
                   </div>
                 </div>
               </div>
+			  <!-- 确认生成弹窗 -->
 			  <el-dialog :visible.sync="IsShow">
 			    <h2 class="py-8 text-xl">您已填写完毕，确认生成协议吗？</h2>
 			    <div slot="footer" class="dialog-footer tishi_bot pb-3">
@@ -225,21 +226,7 @@
 			      <span class="cbt re" v-loading.fullscreen.lock="fullscreenLoading" @click="complate">保 存</span>
 			    </div>
 			  </el-dialog>
-             <!-- <div v-show='IsShow' id="alert_xieyi">
-                <h2>您已填写完毕，确认生成协议吗？</h2>
-                <div class="queren flex mx-auto">
-                   <div class="w-24 mr-2">
-                    <div class="ml-1 mb-3 py-1 text-base bg-orange-400 text-white px-1 rounded border border-1 hover:bg-orange-500 cursor-pointer" @click='quxiao'>
-                      取消
-                    </div>
-                  </div>
-                  <div class="w-24">
-                    <div class="ml-1 mb-3 py-1 text-base bg-orange-400 text-white px-1 rounded border border-1 hover:bg-orange-500 cursor-pointer" v-loading.fullscreen.lock="fullscreenLoading" @click='complate'>
-                      确认
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+             
               <div v-show="missMsgBox" id="missBox">
 				  <div id="missMsgBox" class="border border-green-200 rounded-lg shadow-lg">
 					  <h2 class="text-red-400 text-2xl">以下信息未填写无法跳转到下一步</h2>
@@ -466,11 +453,11 @@ export default {
     this.getQiTaZhaiQuanMsg() // 查询其他财产
     this.getTeShuYueDingMsg()
   },
-  mounted () {
-
-  },
   methods: {
-
+	  
+	// closeWindowAc (e) {
+		
+	// },
     getBasicInformation () { // 查询双方基本信息模块数据
       returnQuestionnaireJson({'qpid': 595}).then((data) => { // 查询双方基本信息模块数据
         this.aa.BasicInformation = data.data.data
@@ -1148,7 +1135,7 @@ html{height: 100%;background-color: #f7fafc;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
 .allmin{width: 1024px;margin:0 auto;}
-.caichanul{position: absolute; top:0;left: 50px; text-align: left;}
+.caichanul{position: absolute; top:0;left: 50px; width: 100px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
 .caichanul li:nth-of-type(10){margin-top:35px}
 .caichanul li.active{color:#0055AA;border-left: 1px solid #0055AA;}
