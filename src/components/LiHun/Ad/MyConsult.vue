@@ -55,7 +55,7 @@
 									</dl>
 									<dl v-if="item.complete == 1" class="w-1/3 ">
 										<dt>起草完</dt>
-										<dd @click="goComplete(item.id)">
+										<dd @click="goComplete(item)">
 											查看协议书
 										</dd>
 									</dl>
@@ -102,7 +102,7 @@
 												</dl>
 												<dl v-if="$item.complete == 1" class="w-1/3 ">
 													<dt>起草完</dt>
-													<dd @click="goComplete($item.id)">
+													<dd @click="goComplete($item)">
 														查看协议书
 													</dd>
 												</dl>
@@ -262,9 +262,15 @@
 					}
 				})
 			},
-			goComplete(e) { // 点击查看协议跳转到生成协议页面
+			goComplete(item) { // 点击查看协议跳转到生成协议页面
+				const e = item.id
 				localStorage.setItem('quid', e)
-				this.$router.replace('/CustomShengCheng')
+				this.$router.push({
+				  name: 'CustomShengCheng',
+				  params: {
+				    title: item.title
+				  }
+				})
 			},
 			goOnTianxie(e) { // 点击继续起草
 				localStorage.setItem('quid', e)

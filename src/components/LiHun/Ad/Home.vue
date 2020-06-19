@@ -279,12 +279,12 @@
 								<img src="../../../assets/images/lihun/touxiang02.png" alt="">
 							</dt>
 							<dd>
-								<h2>王女士&nbsp;北京</h2>
-								<span>2020.04.28</span>
+								<h2>彭先生&nbsp;石家庄</h2>
+								<span>2020.06.19</span>
 							</dd>
 						</dl>
 					</div>
-					<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+					<p class="pinjia_p">相比其他律所的产品，家理律师很专业，用智能系统生成的文书直接就可以提交民政局了，基本没有什么修改，从开始到最后生成大概用了不到半小时，方便快捷，为智能系统点赞</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">

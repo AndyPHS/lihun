@@ -1135,7 +1135,7 @@ html{height: 100%;background-color: #f7fafc;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
 .allmin{width: 1024px;margin:0 auto;}
-.caichanul{position: absolute; top:0;left: 50px; width: 100px; text-align: left;}
+.caichanul{position: absolute; top:0;left: 50px; width: 150px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
 .caichanul li:nth-of-type(10){margin-top:35px}
 .caichanul li.active{color:#0055AA;border-left: 1px solid #0055AA;}

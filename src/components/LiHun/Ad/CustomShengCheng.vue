@@ -120,6 +120,7 @@ export default {
   },
   methods: {
     GetOutPutWord () { // 获取协议
+	  this.userWenJuan.title = this.$route.params.title
       this.fullscreenLoading = true
       this.TitleMsg = '离婚协议书'
       this.downLoadBtnMsg = '下载协议'
