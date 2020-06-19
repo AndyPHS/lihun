@@ -10,7 +10,7 @@
 					<span @click="dingzhiBtn">
 						<router-link to="CustomAgreement">定制我的协议书</router-link>
 					</span>
-					<router-link to="AgreementHelp">协议书定制说明</router-link>
+					<router-link to="AgreementHelp">协议书定制帮助</router-link>
 					<div class="cursor-pointer hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
 				</div>
 			</div>

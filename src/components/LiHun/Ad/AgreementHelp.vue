@@ -10,7 +10,7 @@
               <span class="ding_btn"><router-link to="CustomAgreement">定制我的协议书</router-link></span>
             </div> -->
             <div class="mt-10">
-              <h3 class="text-center text-lg font-bold">帮助分类</h3>
+              <h3 class="text-center text-lg font-bold">协议书定制帮助</h3>
               <ul class="mt-5">
                 <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-center">
                   <h2 :class="ins === index?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>

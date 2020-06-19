@@ -397,15 +397,27 @@ export default {
 	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
 		this.topins = index;
 		if(index == 0){
-			this.$router.replace('/')
+			// this.$router.replace('/')
+			const {href} = this.$router.resolve({
+				path: '/'
+			})
+			window.open(href, '_blank')
 		} else if (index == 1){
-			this.$router.replace('/Knowledge')
+			// this.$router.replace('/Knowledge')
+			const {href} = this.$router.resolve({
+				path: '/Knowledge'
+			})
+			window.open(href, '_blank')
 		} else if(index == 2){
 			var isLogin = localStorage.getItem('token')
 			if (isLogin == undefined){
 				this.dialogLogin = true
 			} else {
-				this.$router.replace('/MyConsult')
+				// this.$router.replace('/MyConsult')
+				const {href} = this.$router.resolve({
+					path: '/MyConsult'
+				})
+				window.open(href, '_blank')
 			}
 		} else if (index == 3){
 			window.open('http://www.jialilaw.com/', '_blank')
