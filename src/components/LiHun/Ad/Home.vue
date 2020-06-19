@@ -205,12 +205,12 @@
 								<img src="../../../assets/images/lihun/touxiang01.png" alt="">
 							</dt>
 							<dd>
-								<h2>王女士&nbsp;北京</h2>
+								<h2>陈女士&nbsp;浙江</h2>
 								<span>2020.04.28</span>
 							</dd>
 						</dl>
 					</div>
-					<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+					<p class="pinjia_p">我进入网站后就被大量的离婚知识吸引了。所有关于离婚的知识都能搜到，不用花时间去其他网站一个一个找，又全面又专业。填的过程很简单，下载后的格式全部是调整好的，非常好用。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -219,12 +219,12 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>吴先生&nbsp;张家口</h2>
+                				<span>2020.06.19</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">定制一份协议，并且免费修改次数不限，价格太便宜了吧！而且相比于网上随便下载一份模板改半天，这里的定制质量真的没的说，体验很好，感觉就是为我量身定制的协议。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -233,12 +233,12 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>张女士&nbsp;邯郸</h2>
+                				<span>2020.05.08</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">定制协议上手很简单，根据个人情况选择问题填写就可以了，个性化很强。填完之后能免费多次修改，而且下载后格式很完美，不用再专门调整，这点也很满意。</p>
                 </li>
                 <li class="w-1/4 pinjia_li px-8 py-8">
                 	<div class="pinjia_s">
@@ -247,12 +247,12 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>彭先生&nbsp;石家庄</h2>
+                				<span>2020.06.18</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">在这里自主操作就能生成一份协议，不用把个人信息告诉代理起草协议的律师，感觉特别安全。填信息过程中还有很多解释注明的地方，一目了然，服务很贴心。</p>
                 </li>
               </ul>
             </el-carousel-item>

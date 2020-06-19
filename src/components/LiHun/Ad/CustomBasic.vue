@@ -218,8 +218,14 @@
                   </div>
                 </div>
               </div>
-
-              <div v-show='IsShow' id="alert_xieyi">
+			  <el-dialog :visible.sync="IsShow">
+			    <h2 class="py-8 text-xl">您已填写完毕，确认生成协议吗？</h2>
+			    <div slot="footer" class="dialog-footer tishi_bot pb-3">
+			      <span class="cbt" @click="quxiao">取 消</span>
+			      <span class="cbt re" v-loading.fullscreen.lock="fullscreenLoading" @click="complate">保 存</span>
+			    </div>
+			  </el-dialog>
+             <!-- <div v-show='IsShow' id="alert_xieyi">
                 <h2>您已填写完毕，确认生成协议吗？</h2>
                 <div class="queren flex mx-auto">
                    <div class="w-24 mr-2">
@@ -233,21 +239,23 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div v-show="missMsgBox" id="missMsgBox" class="border border-green-200 rounded-lg shadow-lg">
-                <h2>以下信息未填写无法跳转到下一步</h2>
-                <div class="w-3/4 mx-auto text-red-500" style="overflow-y: scroll;height: 60%" >
-                  <ul>
-                    <li class="my-2 text-left" v-for="(item, index) in missMsg" :key="index">{{item.title}}</li>
-                  </ul>
-                </div>
-                <div class="queren flex mx-auto">
-                  <div class="w-24">
-                    <div class="ml-1 mb-3 py-1 text-base bg-orange-400 text-white px-1 rounded border border-1 hover:bg-orange-500 cursor-pointer" @click='closeMissMsgBox'>
-                      继续填写
-                    </div>
-                  </div>
-                </div>
+              </div> -->
+              <div v-show="missMsgBox" id="missBox">
+				  <div id="missMsgBox" class="border border-green-200 rounded-lg shadow-lg">
+					  <h2 class="text-red-400 text-2xl">以下信息未填写无法跳转到下一步</h2>
+					  <div class="w-3/4 mx-auto text-gray-800" style="overflow-y: scroll;height: 60%" >
+					    <ul>
+					      <li class="my-2 text-left" v-for="(item, index) in missMsg" :key="index">{{item.title}}</li>
+					    </ul>
+					  </div>
+					  <div class="queren flex mx-auto">
+					    <div class="w-24">
+					      <div class="goonwhite cursor-pointer" @click='closeMissMsgBox'>
+					        继续填写
+					      </div>
+					    </div>
+					  </div>
+				  </div>
               </div>
               <div v-show="missAlert" id="missAlert" v-if="this.status_code == 330">
                 <h2>尚未填写的信息</h2>
@@ -1120,7 +1128,7 @@ export default {
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;}
 .c_m_h{height:109px;border-bottom: 2px solid #f2f4f7;margin-top: 39px;}
-.c_m_h h2{width:243px;font-size: 25px;color:#535353;font-weight: bold;}
+.c_m_h h2{width:303px;font-size: 25px;color:#535353;font-weight: bold;}
 .c_m_h_r{width:542px;text-align: right;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}
@@ -1129,7 +1137,7 @@ html{height: 100%;background-color: #f7fafc;}
 #tab-0,#tab-1,#tab-2,#tab-3,#tab-4,#tab-5,#tab-6,#tab-7,#tab-8{font-size: 16px;}
 #tab-8{padding-bottom: 80px;}
 #tab-9{border-top: 1px solid #d2d2d2;}
-.othercai{position: absolute;top: 360px;right: 80px;width: 96px;height: 30px;line-height: 30px;font-weight: bold;font-size: 16px;color: #303133;}
+.othercai{position: absolute;top: 360px;left: 50px;width: 96px;height: 30px;line-height: 30px;font-weight: bold;font-size: 16px;color: #303133;}
 .othercai img{position: absolute;top:6px;right:-2px;}
 .navUl{width: 1024px;margin:0 auto;background-color: #f7f7f7;border-radius: 10px;padding:10px}
 .navUl li{width: 150px;position: relative;color:#c0c0c0;}
@@ -1140,14 +1148,14 @@ html{height: 100%;background-color: #f7fafc;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
 .allmin{width: 1024px;margin:0 auto;}
-.caichanul{position: absolute; top:0;right: 50px; text-align: left;}
+.caichanul{position: absolute; top:0;left: 50px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
 .caichanul li:nth-of-type(10){margin-top:35px}
 .caichanul li.active{color:#0055AA;border-left: 1px solid #0055AA;}
 .min{width:600px;margin:0 auto;}
 .ban{width:100% !important;}
-.returnUserList{top:120px;right: 20px;z-index: 2;}
-.saveWenShu{top:170px;right: 20px;z-index: 2;}
+.returnUserList{top:120px;right: 40px;z-index: 2;}
+.saveWenShu{top:170px;right: 40px;z-index: 2;}
 .returnUserList_span{width: 132px;height: 35px;font-size: 16px;text-align: center;line-height: 35px;border:1px solid #343434;color:#343434;border-radius: 18px;display: inline-block;}
 .step_btn{width: 220px;height: 44px;font-size: 16px;text-align: center;border:1px solid #343434;color:#343434;border-radius: 22px;display: inline-block;margin-right: 22px;cursor: pointer;}
 .step_btn_re{border:1px solid #ff3f68;color:#ff3f68;margin-left: 22px;}
@@ -1159,9 +1167,12 @@ html{height: 100%;background-color: #f7fafc;}
 #alert_xieyi{width:400px;height:300px;border:1px solid #343434;position:fixed;top:50%;margin-top:-150px;left:50%;margin-left:-200px;z-index: 1;background: #fff}
 #alert_xieyi h2{margin-top:100px;}
 #alert_xieyi .queren{width:80%;text-align: center;justify-content: space-around;margin-top:80px;margin-left: 20%}
-#missMsgBox{width:400px;height:400px;position:fixed;top:50%;margin-top:-200px;left:50%;margin-left:-200px;z-index: 1;background: #e2e5d9}
-#missMsgBox h2{margin:20px 0;font-weight: bold;font-size: 20px;}
-#missMsgBox .queren{width:80%;justify-content: space-around;position: absolute;bottom:10px;left:10%;}
+
+#missMsgBox{width:640px;height:490px;position:fixed;top:50%;margin-top:-245px;left:50%;margin-left:-320px;z-index: 1;background: #fff}
+#missBox{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
+#missMsgBox h2{margin:30px 0;font-weight: bold;}
+#missMsgBox .queren{width:100%;justify-content: space-around;position: absolute;bottom:40px;}
+.goonwhite{width: 192px;height: 38px;border: 1px solid #ff7a96;text-align: center;margin:0 auto;line-height: 38px;font-size: 18px;color: #ff7a96;border-radius: 19px;}
 #missAlert{width:250px;height:450px;position:fixed;top:24%;right:2%;z-index: 1;background: #e2e5d9}
 #missAlert h2{margin:10px 0;font-weight: bold;font-size: 20px;}
 #caseMsg{line-height:30px !important;text-indent:2em;}
