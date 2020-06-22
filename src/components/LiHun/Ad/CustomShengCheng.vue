@@ -20,12 +20,15 @@
                     <li v-for="(item, index) in missField" :key="index">{{index+1}}、{{item.problemTitle}}</li>
                   </ul>
                 </div>
-                <div v-if="this.status_code ==200">
-                  <div id="outputwordmsg" v-html="outputWord"></div>
+                <div v-if="this.status_code ==200 && this.$route.params.content==undefined">
+                  <div id="outputwordmsg" v-html="this.outputWord"></div>
                 </div>
+				<div v-if="this.$route.params.content!==undefined">
+				  <div id="outputwordmsg" v-html="this.outputWord"></div>
+				</div>
               </div>
               <div class="my-4 save_box">
-                <span class="save_box_span" @click='SaveQuestionnaire'>保 存</span>
+                <span v-if="this.$route.params.content==undefined" class="save_box_span" @click='SaveQuestionnaire'>保 存</span>
                 <span class="save_box_span re" @click='DownLoadWord'>下载协议</span>
               </div>
             </div>
@@ -115,26 +118,33 @@ export default {
       dialogTiShi: false
     }
   },
-  mounted () {
+  beforeMount () {
     this.GetOutPutWord() // 获取离婚协议书
   },
   methods: {
     GetOutPutWord () { // 获取协议
 	  this.userWenJuan.title = this.$route.params.title
-      this.fullscreenLoading = true
-      this.TitleMsg = '离婚协议书'
-      this.downLoadBtnMsg = '下载协议'
-      outPutWord().then((data) => {
-        this.status_code = data.data.status_code
-        this.fullscreenLoading = false
-        if (this.status_code == 330) {
-          this.missField = data.data.data
-        } else if (this.status_code == 200) {
-          this.outputWord = data.data.data.content
-        }
-      }).catch((data) => {
-        // this.$router.replace("/");
-      })
+	  this.TitleMsg = '离婚协议书'
+	  this.outputWord = this.$route.params.content
+	  console.log(this.outputWord)
+	  if (this.$route.params.content==undefined){
+		  this.fullscreenLoading = true
+		  this.downLoadBtnMsg = '下载协议'
+		  outPutWord().then((data) => {
+		    this.status_code = data.data.status_code
+		    this.fullscreenLoading = false
+		    if (this.status_code == 330) {
+		      this.missField = data.data.data
+		    } else if (this.status_code == 200) {
+		      this.outputWord = data.data.data.content
+		    }
+		  }).catch((data) => {
+		    // this.$router.replace("/");
+		  })
+	  } else {
+		 this.outputWord = this.$route.params.content
+	  }
+      
     },
     GoBasicInformationPage () { // 点击返回基本信息
       this.$router.replace('/CustomBasic')
@@ -216,7 +226,7 @@ export default {
 .containermin{width:800px;}
 .returnUserList{top:110px;right: 20px;}
 .outputword{padding:20px;border:1px solid #ecf5ec;}
-.outputword>h2{border-bottom: 1px solid #dbe2db;}
+.outputword>h2{border-bottom: 1px solid #dbe2db;height: 70px;}
 .outputword .msg{white-space:pre-wrap;}
 #outputwordmsg{width: 800px;margin:0 20px;padding-left: 100px;}
 #outputwordmsg p{font-weight:bolder !important;}
@@ -227,8 +237,8 @@ export default {
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
 
 .el-dialog{width: 640px !important;}
-.save_box{width: 430px;margin:0 auto;display: flex;justify-content: space-between;padding-bottom: 100px;}
-.save_box_span{width: 192px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;cursor: pointer;}
+.save_box{width: 430px;margin:0 auto;display: flex;justify-content: space-between;padding-bottom: 100px;text-align: center;align-items: center;}
+.save_box_span{width: 192px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;cursor: pointer;margin:0 auto;}
 .mianze p{text-indent: 2em;}
 .re{background-color: #ff3f68;border: 1px solid #ff3f68;color: #fff;}
 </style>

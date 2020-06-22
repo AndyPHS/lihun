@@ -284,12 +284,12 @@
               <el-button class="step_btn re my-5" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
             </div>
           </div>
-          <!-- <div class="absolute returnUserList">
-            <span class="returnUserList_span" @click="returnUserList">返回文书列表</span>
+          <div v-show="shengchengloading" id="shengchengloading">
+			<div class="shengchengloding_min">
+				<img src="../../../assets/images/lihun/loadingword.gif" alt="">
+				<div>正在生成中，请稍后……</div>
+			</div>
           </div>
-          <div class="absolute saveWenShu">
-            <span class="returnUserList_span re" @click="saveWenShu">保存</span>
-          </div> -->
         </div>
       </div>
     </div>
@@ -316,6 +316,7 @@ export default {
   },
   data () {
     return {
+	  shengchengloading: false,
       tabPosition: 'right',
       loading: true,
       ins: 0,
@@ -1049,16 +1050,16 @@ export default {
       this.flag = false
     },
     complate () { // 点击生成协议确定按钮
-      this.fullscreenLoading = true
+      this.shengchengloading = true
 	  this.IsShow = false
       setTimeout(() => {
         var dd = this.a
         if (dd.indexOf(330) > -1 ) {
           this.missMsgBox = true
           this.a = []
-          this.fullscreenLoading = false
+          this.shengchengloading = false
         } else {
-			// this.fullscreenLoading = false
+			// this.shengchengloading = false
           this.GetOutPutWord() // 请求是否能获取到
         }
       }, 4000)
@@ -1179,4 +1180,8 @@ html{height: 100%;background-color: #f7fafc;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
 .re{border: 1px solid #ff3f68;color: #ff3f68;background-color: #fff;}
 .basicmin{height: 750px;overflow-y: scroll;}
+#shengchengloading{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
+.shengchengloding_min{width: 500px;height: 200px;top:50%;margin-top: -100px;left: 50%;margin-left: -250px;position: fixed;}
+.shengchengloding_min img{display: inline-block;margin:20px auto}
+.shengchengloding_min div{text-align: center;font-size: 20px;padding:20px;color:#fff;font-weight: bolder;}
 </style>

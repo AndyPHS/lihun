@@ -75,7 +75,7 @@
 									</div>
 								</div>
 							</div>
-							<div v-if="historys == index">
+							<div v-if="historys == index" class="c_m_m_m_child">
 								<ul>
 									<li v-for="($item, $index) in item.historys" :key="$index">
 										<h4 class="flex justify-between items-center px-6">
@@ -84,12 +84,12 @@
 												<span class="inline-block ml-10">文书编号:{{ $item.agreement_number }}</span>
 											</div>
 											<div class="w-1/6 flex justify-end items-center pl-5">
-												<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="NewCopy($item, $index)">创建副本</span>
+												<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="NewCopy($item, $index)">创建副本</span> -->
 												<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan($item, $index)">删除</span> -->
 											</div>
 										</h4>
 										<div class="c_m_m_m_m flex justify-between items-center">
-											<h2 class="w-1/2 overflow-hidden pl-6 text-left">
+											<h2 class="w-1/2 overflow-hidden pl-12 text-left">
 												{{ $item.title }}
 											</h2>
 											<div class="w-1/2 flex justify-around items-center">
@@ -279,7 +279,8 @@
 				this.$router.push({
 				  name: 'CustomShengCheng',
 				  params: {
-				    title: item.title
+				    title: item.title,
+					content: item.content
 				  }
 				})
 			},
@@ -470,11 +471,12 @@
 		font-size: 12px;
 		background-color: #f2f4f7;
 	}
-
+	.c_m_m_m_child ul li h4{height: 30px;font-size: 12px;background-color: #fff;    border-top: 2px solid #f2f4f7;}
+	.c_m_m_m_child .c_m_m_m_m{height: 75px;}
 	.c_m_m_m_m {
 		height: 98px;
 	}
-
+	.c_m_m_m_child .c_m_m_m_m h2 {color: #878787;font-weight:400;}
 	.c_m_m_m_m h2 {
 		font-size: 22px;
 		font-weight: bold;
