@@ -236,7 +236,7 @@
 					    </ul>
 					  </div>
 					  <div class="queren flex mx-auto">
-					    <div class="w-24">
+					    <div>
 					      <div class="goonwhite cursor-pointer" @click='closeMissMsgBox'>
 					        继续填写
 					      </div>
@@ -1045,18 +1045,18 @@ export default {
     },
     complate () { // 点击生成协议确定按钮
       this.fullscreenLoading = true
+	  this.IsShow = false
       setTimeout(() => {
         var dd = this.a
         if (dd.indexOf(330) > -1 ) {
-          this.IsShow = false
           this.missMsgBox = true
           this.a = []
           this.fullscreenLoading = false
         } else {
+			// this.fullscreenLoading = false
           this.GetOutPutWord() // 请求是否能获取到
-          this.fullscreenLoading = false
         }
-      }, 3000)
+      }, 4000)
     },
     GetOutPutWord () {  // 生成离婚协议书
       outPutWord().then((data) => {
