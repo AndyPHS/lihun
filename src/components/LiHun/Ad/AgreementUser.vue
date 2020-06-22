@@ -71,20 +71,24 @@
     <div class="text-left">
       <!-- 基础资料 -->
       <el-dialog title="编辑基础资料" :visible.sync="dialogFormVisible">
-        <el-form :model="form">
-          <el-form-item label="姓名" :label-width="formLabelWidth">
-            <el-input v-model="form.name" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="性别" :label-width="formLabelWidth">
-            <el-radio-group v-model="form.sex">
-              <el-radio label="1">男</el-radio>
-              <el-radio label="2">女</el-radio>
-            </el-radio-group>
-          </el-form-item>
-        </el-form>
+		<div class="pr-5 -ml-10">
+			  <el-form :model="form" >
+			    <el-form-item label="姓名" :label-width="formLabelWidth">
+			      <el-input v-model="form.name" autocomplete="off"></el-input>
+			    </el-form-item>
+			    <el-form-item label="性别" :label-width="formLabelWidth">
+			      <el-radio-group v-model="form.sex">
+			        <el-radio label="1">男</el-radio>
+			        <el-radio label="2">女</el-radio>
+			      </el-radio-group>
+			    </el-form-item>
+			  </el-form>
+		</div>
         <div slot="footer" class="dialog-footer pb-4">
-          <span class="anniu" @click="saveBtn">保存</span>
-          <span class="anniu" @click="cancleBtn">取消</span>
+			<div class="flex justify-around">
+				<span class="anniu" @click="saveBtn">保存</span>
+				<span class="anniu" @click="cancleBtn">取消</span>
+			</div>
         </div>
       </el-dialog>
       <!-- 修改手机号01 -->
