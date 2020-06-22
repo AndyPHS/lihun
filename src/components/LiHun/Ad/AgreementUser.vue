@@ -444,7 +444,7 @@ export default {
     sendPsCode () {
       phoneCode({
         phone: this.userMsg.phone,
-        type: 2
+        type: 4
       }).then((data) => {
         if (data.data.status_code == 200) {
           this.IsGetPsCode01 = true
@@ -472,7 +472,7 @@ export default {
           if (data.data.status_code == 200) {
             this.dialogPassword02 = false
             this.$message({
-              message: '手机密码修改成功',
+              message: '密码修改成功',
               type: 'success'
             })
           } else {
