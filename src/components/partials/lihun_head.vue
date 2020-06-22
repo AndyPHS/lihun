@@ -32,6 +32,7 @@
 			  <span v-if="this.name !='' " class="el-dropdown-link text-blue-500 cursor-pointer">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item  @click.native="goAgreementUser">个人中心</el-dropdown-item>
+				<el-dropdown-item  @click.native="goMyconsult">我的协议</el-dropdown-item>
                 <el-dropdown-item class="text-center" @click.native="liveOut">退出</el-dropdown-item>
               </el-dropdown-menu>
               <!-- <img class="ml-2 cursor-pointer" src="../../assets/images/lihun/user_icon.png" alt=""> -->
@@ -395,7 +396,7 @@ export default {
 		this.$router.replace('/')
 	},
 	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
-		this.topins = index;
+		this.topins = index
 		if(index == 0){
 			// this.$router.replace('/')
 			const {href} = this.$router.resolve({
@@ -403,7 +404,6 @@ export default {
 			})
 			window.open(href, '_blank')
 		} else if (index == 1){
-			// this.$router.replace('/Knowledge')
 			const {href} = this.$router.resolve({
 				path: '/Knowledge'
 			})
@@ -422,10 +422,14 @@ export default {
 		} else if (index == 3){
 			window.open('http://www.jialilaw.com/', '_blank')
 		}
+		this.topins = localStorage.getItem('topins')
 	},
     goAgreementUser () {
       this.$router.replace('/AgreementUser')
     },
+	goMyconsult () { // 点击我的协议返回到协议列表
+		this.$router.replace('/MyConsult')
+	},
     liveOut () { // 点击退出登录
       this.isLogin = false
       localStorage.removeItem('token') // 存储token

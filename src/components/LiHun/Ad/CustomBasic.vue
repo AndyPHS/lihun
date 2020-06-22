@@ -8,6 +8,8 @@
         </h2>
         <div class="c_m_h_r">
           <span @click="goAgreementHelp">协议书定制帮助</span>
+		  <span @click="returnUserList">返回文书列表</span>
+		  <span @click="saveWenShu">保存</span>
         </div>
       </div>
       <div class="basicmin">
@@ -279,15 +281,15 @@
 			  </el-dialog>
               <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
               <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
-              <el-button class="step_btn my-5" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
+              <el-button class="step_btn re my-5" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
             </div>
           </div>
-          <div class="absolute returnUserList">
+          <!-- <div class="absolute returnUserList">
             <span class="returnUserList_span" @click="returnUserList">返回文书列表</span>
           </div>
           <div class="absolute saveWenShu">
             <span class="returnUserList_span re" @click="saveWenShu">保存</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -453,8 +455,11 @@ export default {
     this.getQiTaZhaiQuanMsg() // 查询其他财产
     this.getTeShuYueDingMsg()
   },
+  mounted () {
+  
+  
+  },
   methods: {
-	  
 	// closeWindowAc (e) {
 		
 	// },
@@ -1120,7 +1125,7 @@ export default {
 .c_m{background-color: #fff;}
 .c_m_h{height:109px;border-bottom: 2px solid #f2f4f7;margin-top: 39px;}
 .c_m_h h2{width:303px;font-size: 25px;color:#535353;font-weight: bold;}
-.c_m_h_r{width:542px;text-align: right;}
+.c_m_h_r{width:482px;display: flex;justify-content: space-between;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}
 html{height: 100%;background-color: #f7fafc;}
@@ -1138,7 +1143,7 @@ html{height: 100%;background-color: #f7fafc;}
 .insNum{width: 24px;height: 24px;line-height: 24px;text-align: center;font-size: 14px;border-radius: 50%;border:2px solid #C0C4CC;color:#C0C4CC;margin:10px auto;display: block;font-weight: bold;background: #fff;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
-.allmin{width: 1024px;margin:0 auto;}
+.allmin{width: 1024px;margin:0 auto;margin-bottom: 50px;}
 .caichanul{position: absolute; top:0;left: 50px; width: 150px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
 .caichanul li:nth-of-type(10){margin-top:35px}

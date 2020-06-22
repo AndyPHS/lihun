@@ -34,7 +34,8 @@
                 <h2 class="w-4/5 overflow-hidden" v-html="item.title"></h2>
                 <span class="w-1/5 text-right">{{ item.createdTime }}</span>
               </div>
-              <p v-html="item.description"></p>
+              <p v-if="item.content==undefined" v-html="item.description"></p>
+			  <p v-if="item.content !==undefined" v-html="item.content"></p>
             </li>
           </ul>
           <div class="" v-if="this.tableDataNull">

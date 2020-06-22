@@ -256,6 +256,15 @@
 						if (this.wenshuList.length === 0) {
 							this.dialogZhiDao = true
 						}
+					} else if (data.data.status_code === 401) { // token过期重新登录
+						localStorage.removeItem('token') // 存储token
+						localStorage.removeItem('phone')
+						localStorage.removeItem('isLogin')
+						this.$message({
+							message: '账号过期，请重新登录',
+							type: 'error'
+						})
+						this.$router.replace('/')
 					} else {
 						this.$message({
 							message: '协议获取失败，请联系管理员',
