@@ -286,8 +286,8 @@
           </div>
           <div v-show="shengchengloading" id="shengchengloading">
 			<div class="shengchengloding_min">
-				<img src="../../../assets/images/lihun/loadingword.gif" alt="">
-				<div>正在生成中，请稍后……</div>
+				<img src="../../../assets/images/lihun/loadingword02.gif" alt="">
+				<!-- <div>正在生成中，请稍后……</div> -->
 			</div>
           </div>
         </div>
@@ -484,24 +484,70 @@ export default {
       returnQuestionnaireJson({'qpid': 3859}).then((data) => { // 查询子女模块数据
 		this.fullscreenLoading = false
         this.aa.ZiNv = data.data.data
-        this.mokuai.sort(this.compare('id'))
+		// this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
+		console.log(this.aa.ZiNv.length)
         // console.log(this.aa.ZiNv[0][1].questions[7].childQuestion[1][2].answer)
         for (let i = 0; i < this.aa.ZiNv.length; i++) {
-			this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer)
-			this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer)
-			this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer)
-			this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer)
-			this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer)
-			console.log(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer)
-			console.log(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
-			this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer)
-			this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer)
-			this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer)
-			this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer)
-			this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer)
-			this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer)
-			this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer)
-          
+			if(this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer == ''){
+				this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer == ''){
+				this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[2][1].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer == ''){
+				this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][0].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer == ''){
+				this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer = JSON.parse(this.aa.ZiNv[i][1].questions[2].childQuestion[3][1].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer == ''){
+				this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[8].childQuestion[1][2].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer == ''){
+				this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[9].childQuestion[2][0].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer == ''){
+				this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[15].childQuestion[1][2].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer == ''){
+				this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[16].childQuestion[2][0].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer == ''){
+				this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[22].childQuestion[1][2].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer == ''){
+				this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[23].childQuestion[2][0].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer == ''){
+				this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[i][1].questions[29].childQuestion[1][2].answer)
+			}
+			if(this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer == ''){
+				this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer = []
+			} else {
+				this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer = JSON.parse(this.aa.ZiNv[i][1].questions[30].childQuestion[2][0].answer)
+			}
         }
 		this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
 		console.log(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
@@ -1181,7 +1227,7 @@ html{height: 100%;background-color: #f7fafc;}
 .re{border: 1px solid #ff3f68;color: #ff3f68;background-color: #fff;}
 .basicmin{height: 750px;overflow-y: scroll;}
 #shengchengloading{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
-.shengchengloding_min{width: 500px;height: 200px;top:50%;margin-top: -100px;left: 50%;margin-left: -250px;position: fixed;}
+.shengchengloding_min{width: 500px;height: 200px;top:30%;margin-top: -100px;left: 50%;margin-left: -250px;position: fixed;}
 .shengchengloding_min img{display: inline-block;margin:20px auto}
-.shengchengloding_min div{text-align: center;font-size: 20px;padding:20px;color:#fff;font-weight: bolder;}
+/* .shengchengloding_min div{text-align: center;font-size: 20px;padding:20px;color:#fff;font-weight: bolder;} */
 </style>
