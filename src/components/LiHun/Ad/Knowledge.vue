@@ -100,10 +100,18 @@ export default {
         status: 1,
         faId: this.firstType
       }).then((data) => {
-        this.tableData = data.data.data
-		if (this.tableData.length == 0 ) {
-			this.tableDataNull = true
-		}
+		  if(data.data.status_code ==200){
+			  this.tableData = data.data.data
+			  if (this.tableData.length == 0 ) {
+			  	this.tableDataNull = true
+			  }
+		  } else if (data.data.status_code == 401) {
+			  localStorage.removeItem('token') // 存储token
+			  localStorage.removeItem('phone')
+			  localStorage.removeItem('isLogin')
+			  this.$message.error('账号过期，请重新登录')
+			  this.$router.replace('/')
+		  }
       })
     },
     searchList (item, index) { // 点击分类查找文章
