@@ -350,6 +350,7 @@ export default {
 			  this.userMsg.email = data.data.email
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
+			  this.form.sex = this.userMsg.sex
 		  } 
         
       })
@@ -358,7 +359,6 @@ export default {
       this.phoneNum = localStorage.getItem('phone')
     },
     editBasic () { // 点击编辑基础资料
-      this.form.sex = null
       this.dialogFormVisible = true
     },
     saveBtn () { // 确认编辑基础资料
@@ -382,6 +382,7 @@ export default {
     cancleBtn () { // 取消编辑基础资料
       this.dialogFormVisible = false
 	  this.form.name = ''
+	  this.form.sex = null
     },
     editPhone () { // 点击修改手机号
       this.dialogPhone01 = true
