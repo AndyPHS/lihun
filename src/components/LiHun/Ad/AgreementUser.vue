@@ -350,7 +350,7 @@ export default {
 			  this.userMsg.email = data.data.email
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
-			  this.form.sex = this.userMsg.sex
+			  this.form.sex = JSON.stringify(this.userMsg.sex)
 		  } 
         
       })
