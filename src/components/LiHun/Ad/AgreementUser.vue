@@ -349,6 +349,7 @@ export default {
 			  this.userMsg.sex = data.data.sex
 			  this.userMsg.email = data.data.email
 			  this.userMsg.photo = data.data.photo
+			  this.form.name = this.userMsg.name
 		  } 
         
       })
@@ -357,7 +358,6 @@ export default {
       this.phoneNum = localStorage.getItem('phone')
     },
     editBasic () { // 点击编辑基础资料
-      this.form.name = ''
       this.form.sex = null
       this.dialogFormVisible = true
     },
@@ -381,6 +381,7 @@ export default {
     },
     cancleBtn () { // 取消编辑基础资料
       this.dialogFormVisible = false
+	  this.form.name = ''
     },
     editPhone () { // 点击修改手机号
       this.dialogPhone01 = true
