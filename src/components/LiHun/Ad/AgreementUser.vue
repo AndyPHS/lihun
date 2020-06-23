@@ -337,18 +337,18 @@ export default {
   methods: {
     getUserMsg () { // 查询用户基本信息
       usersSelect().then((data) => {
-		  if (data.data.status_code == 200) {
-			  this.userMsg.phone = data.data.phone
-			  this.userMsg.name = data.data.name
-			  this.userMsg.sex = data.data.sex
-			  this.userMsg.email = data.data.email
-			  this.userMsg.photo = data.data.photo
-		  } else if (data.data.status_code == 401) {
+		  if (data.data.status_code == 401) {
 			  localStorage.removeItem('token') // 存储token
 			  localStorage.removeItem('phone')
 			  localStorage.removeItem('isLogin')
 			  this.$message.error('账号过期，请重新登录')
 			  this.$router.replace('/')
+		  } else  {
+			  this.userMsg.phone = data.data.phone
+			  this.userMsg.name = data.data.name
+			  this.userMsg.sex = data.data.sex
+			  this.userMsg.email = data.data.email
+			  this.userMsg.photo = data.data.photo
 		  } 
         
       })

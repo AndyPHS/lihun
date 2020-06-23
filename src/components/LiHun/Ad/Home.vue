@@ -211,7 +211,7 @@
 							</dd>
 						</dl>
 					</div>
-					<p class="pinjia_p">我进入网站后就被大量的离婚知识吸引了。所有关于离婚的知识都能搜到，不用花时间去其他网站一个一个找，又全面又专业。填的过程很简单，下载后的格式全部是调整好的，非常好用。</p>
+					<p class="pinjia_p">有很多的不理解的都能在网站的离婚知识中找到解释，填的过程中还有很多注明，很贴心，又全面又专业。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -225,7 +225,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">定制一份协议，并且免费修改次数不限，价格太便宜了吧！而且相比于网上随便下载一份模板改半天，这里的定制质量真的没的说，体验很好，感觉就是为我量身定制的协议。</p>
+                	<p class="pinjia_p">试着写了一份，跟之前在网上随便下载的模板差别太大了，这里的协议看着就很认真专业，体验很好。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -239,7 +239,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">定制协议上手很简单，根据个人情况选择问题填写就可以了，个性化很强。填完之后能免费多次修改，而且下载后格式很完美，不用再专门调整，这点也很满意。</p>
+                	<p class="pinjia_p">上手很简单，根据个人情况选内容填就可以了，个性化很强。还能无限修改，下载后直接就可以用，对整个过程都很满意。</p>
                 </li>
                 <li class="w-1/4 pinjia_li px-8 py-8">
                 	<div class="pinjia_s">
@@ -253,7 +253,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">在这里自主操作就能生成一份协议，不用把个人信息告诉代理起草协议的律师，感觉特别安全。填信息过程中还有很多解释注明的地方，一目了然，服务很贴心。</p>
+                	<p class="pinjia_p">不用把个人信息告诉其他人，自己写完就能打印出来使用了，感觉特别安全。</p>
                 </li>
               </ul>
             </el-carousel-item>
@@ -263,7 +263,7 @@
                 	<div class="pinjia_s">
                 		<dl>
                 			<dt>
-                				<img src="../../../assets/images/lihun/zhangshiya_icon.jpeg" alt="">
+                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
                 				<h2>张女士&nbsp;乌鲁木齐</h2>
@@ -271,7 +271,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">这个系统还挺好用的，我年前就想离婚了，因为疫情也不敢去找律师起草协议。现在这个生成协议之后，和律师写的一样，也不用来回往律所跑了。还是很方便的，在家就全搞定了，被失败的婚姻折磨了三年，终于解脱了！</p>
+                	<p class="pinjia_p">这个系统还挺好用的，我年前就想离婚了，因为疫情也不敢去找律师。现在这个生成后直接就能用。很方便，在家就全搞定。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
 					<div class="pinjia_s">
@@ -285,7 +285,7 @@
 							</dd>
 						</dl>
 					</div>
-					<p class="pinjia_p">相比其他律所的产品，家理律师很专业，用智能系统生成的文书直接就可以提交民政局了，基本没有什么修改，从开始到最后生成大概用了不到半小时，方便快捷，为智能系统点赞</p>
+					<p class="pinjia_p">家理出品的离婚协议很专业，从开始到最后生成大概用了不到半小时，方便快捷，为智能系统点赞</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -294,27 +294,27 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
+                				<h2>郝先生&nbsp;吉林</h2>
+                				<span>2020.05.28</span>
+                			</dd>
+                		</dl>
+                	</div>
+                	<p class="pinjia_p">这个文书生成挺好用的，对比了一下自己在网上下载的模板，也不懂该怎么填，这个蛮好的 回答选择问题就好了。</p>
+                </li>
+                <li class="w-1/4 pinjia_li px-8 py-8">
+                	<div class="pinjia_s">
+                		<dl>
+                			<dt>
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
+                			</dt>
+                			<dd>
                 				<h2>张女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<span>2020.04.18</span>
                 			</dd>
                 		</dl>
                 	</div>
                 	<p class="pinjia_p">协议内容很详细，操作也简单，比自己写的专业多了！不仅完成了协议，还学了很多专业知识，让我少走了很多弯路，太好用了！</p>
                 </li>
-                <li class="w-1/4 pinjia_li px-8 py-8">
-                	<div class="pinjia_s">
-                		<dl>
-                			<dt>
-                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
-                			</dt>
-                			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
-                			</dd>
-                		</dl>
-                	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
-                </li>
               </ul>
             </el-carousel-item>
             <el-carousel-item >
@@ -326,12 +326,12 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>王先生&nbsp;北京</h2>
+                				<span>2020.01.20</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">挺好用的，里面的东西也全，能满足我的需求，比自己随便写的安全多了。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -340,12 +340,12 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>李先生&nbsp;北京</h2>
+                				<span>2020.03.15</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">很专业啊，完全物超所值！这年头专业的离婚协议少说好几千呢，这个又便宜又高质量，可以可以赚到了！</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -354,12 +354,12 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
+                				<h2>孙先生&nbsp;湖北</h2>
                 				<span>2020.04.28</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">朋友推荐过来的，确实非常好，里面的内容很详细，里面关于离婚谈判技巧的介绍，让我顺利争取到了应得的利益。</p>
                 </li>
                 <li class="w-1/4 pinjia_li px-8 py-8">
                 	<div class="pinjia_s">
@@ -368,72 +368,12 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
+                				<h2>钱女士&nbsp;北京</h2>
+                				<span>2020.04.02</span>
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
-                </li>
-              </ul>
-            </el-carousel-item>
-            <el-carousel-item >
-              <ul class="flex justify-between">
-                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
-                	<div class="pinjia_s">
-                		<dl>
-                			<dt>
-                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
-                			</dt>
-                			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
-                			</dd>
-                		</dl>
-                	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
-                </li>
-                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
-                	<div class="pinjia_s">
-                		<dl>
-                			<dt>
-                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
-                			</dt>
-                			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
-                			</dd>
-                		</dl>
-                	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
-                </li>
-                <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
-                	<div class="pinjia_s">
-                		<dl>
-                			<dt>
-                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
-                			</dt>
-                			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
-                			</dd>
-                		</dl>
-                	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
-                </li>
-                <li class="w-1/4 pinjia_li px-8 py-8">
-                	<div class="pinjia_s">
-                		<dl>
-                			<dt>
-                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
-                			</dt>
-                			<dd>
-                				<h2>王女士&nbsp;北京</h2>
-                				<span>2020.04.28</span>
-                			</dd>
-                		</dl>
-                	</div>
-                	<p class="pinjia_p">家理始终坚持将细节做到极致，始终以工匠品质办案。家理团队精心研究大量文书案例</p>
+                	<p class="pinjia_p">页面简洁，操作方便，价格实惠。用这个系统写了离婚协议，半个小时就搞定了，和律师写的没啥差别。良心系统！良心商家！赞！</p>
                 </li>
               </ul>
             </el-carousel-item>
