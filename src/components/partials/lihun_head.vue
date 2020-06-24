@@ -26,17 +26,26 @@
             <el-divider direction="vertical"></el-divider>
             <span class="cursor-pointer" @click="registAc">注册</span>
           </div>
-          <div v-else class="flex justify-around items-center">
-            <el-dropdown trigger="click">
-              <span v-if="this.name == '' " class="el-dropdown-link text-blue-500 border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
-			  <span v-if="this.name !='' " class="el-dropdown-link text-blue-500 cursor-pointer">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+          <div v-else class="flex justify-around items-center relative">
+			<div @click="dengluBox = !dengluBox">
+				<span v-if="this.name == '' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-if="this.name !='' " class="el-dropdown-link text-b cursor-pointer">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+			</div>
+			<div v-if="this.dengluBox" class="absolute denglu">
+				<ul>
+					<li @click="goAgreementUser">个人中心</li>
+					<li @click="goMyconsult">我的协议</li>
+					<li @click="liveOut">退出</li>
+				</ul>
+			</div>
+            <!-- <el-dropdown trigger="click">
+              
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item  @click.native="goAgreementUser">个人中心</el-dropdown-item>
 				<el-dropdown-item  @click.native="goMyconsult">我的协议</el-dropdown-item>
                 <el-dropdown-item class="text-center" @click.native="liveOut">退出</el-dropdown-item>
               </el-dropdown-menu>
-              <!-- <img class="ml-2 cursor-pointer" src="../../assets/images/lihun/user_icon.png" alt=""> -->
-            </el-dropdown>
+            </el-dropdown> -->
           </div>
         </div>
       </div>
@@ -342,6 +351,7 @@ export default {
   ],
   data () {
     return {
+	  dengluBox: false, // 右上角个人中心表框
 	  dialogFindByPhone: false, // 通过手机号找回密码弹窗
 	  dialogPhonePw: false,  // 新密码弹窗
       dialogFormVisible: false, // 注册弹窗
@@ -386,11 +396,12 @@ export default {
   },
   mounted () {
     this.changeCode()
-	// this.getUserMsg()
+	this.getUserMsg()
   },
   methods: {
 	getUserMsg () { // 查询用户基本信息
-	  this.name = localStorage.getItem('name')
+	  var that = this
+	  that.name = localStorage.getItem('name')
 	},
 	goHome () { // 点击图标返回首页
 		this.$router.replace('/')
@@ -426,12 +437,15 @@ export default {
 	},
     goAgreementUser () {
       this.$router.replace('/AgreementUser')
+	  this.dengluBox = false
     },
 	goMyconsult () { // 点击我的协议返回到协议列表
 		this.$router.replace('/MyConsult')
+		this.dengluBox = false
 	},
     liveOut () { // 点击退出登录
       this.isLogin = false
+	  this.dengluBox = false
       localStorage.removeItem('token') // 存储token
       localStorage.removeItem('phone')
       localStorage.removeItem('isLogin')
@@ -749,7 +763,10 @@ export default {
     color: #547ce0;
     cursor: pointer;
   }
-
+.denglu{position: absolute;top:30px;right: -10px;z-index: 3;border: 1px solid #fcf6f6;width: 100px;border-radius: 5px;background-color: #fff;box-shadow: 0px 0px 5px 0px #ddd7d7;}
+.denglu ul li{text-align: center;width: 100%;font-size: 15px;height: 35px;line-height: 35px;border-bottom: 1px solid #e1dcdc;}
+.denglu ul li:last-of-type{border-bottom: none;}
+.denglu ul li:hover{color:#557ce1}
   .regist .el-dialog__header {padding: 0px 0}
   .regist_header>span{width: 50%; font-size: 22px; text-align: center;padding: 16px 0;}
   .registOkbg{background-color: #eceff4;}
@@ -779,4 +796,5 @@ export default {
   .ste:last-of-type{border:1px solid red;color:red;}
   .ste:last-of-type:hover{background-color: red;color:#fff;}
   .activered{color:#ff3f68;}
+  .text-b{color:#557ce1}
 </style>
