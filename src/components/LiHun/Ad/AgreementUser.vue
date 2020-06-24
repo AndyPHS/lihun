@@ -262,7 +262,7 @@
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.email" type="text" autocomplete="off" class="el-input__inner">
               </div>
-              <el-button v-if="this.IsSendEmail" class="ml-5" type="primary" :loading="IsSendEmail">已发送</el-button>
+              <el-button v-if="this.IsSendEmail==true" class="ml-5" type="primary" :loading="IsSendEmail">已发送</el-button>
               <el-button v-if="this.IsSendEmail==false" class="ml-5" type="primary" @click="sendEmailAc">发送邮件</el-button>
             </div>
           </div>
@@ -544,6 +544,7 @@ export default {
     },
     editEmail () { // 绑定电子邮箱
       this.dialogEmail01 = true
+	  this.IsSendEmail = false
     },
     saveEmailBtn () { // 确认绑定邮件
       updateUserEmail({
@@ -566,22 +567,32 @@ export default {
       })
     },
     sendEmailAc () { // 发送邮件验证码
+	  this.IsSendEmail = true
       sendEmail({
         email: this.form.email
       }).then((data) => {
         if (data.data.status_code == 200) {
-          this.IsSendEmail = false
           this.$message({
             message: '邮件验证码发送成功，请查看邮箱',
             type: 'success'
           })
+		  setTimeout(()=>{
+		  	this.IsSendEmail = false
+		  },3000)
         } else {
           this.$message({
             message: data.data.message,
             type: 'error'
           })
+		  setTimeout(()=>{
+		  	this.IsSendEmail = false
+		  },3000)
         }
-      })
+      }).catch(()=>{
+		  setTimeout(()=>{
+		  	this.IsSendEmail = false
+		  },3000)
+	  })
     }
   }
 }
