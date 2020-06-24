@@ -94,7 +94,7 @@
 											</h2>
 											<div class="w-1/2 flex justify-around items-center">
 												<dl class="w-1/3">
-													<dt>第{{ $item.number }}版本</dt>
+													<dt>第{{ $item.number }}版</dt>
 												</dl>
 												<dl v-if="$item.complete == 2" class="w-1/3">
 													<dt class="text-blue-400">起草中</dt>
