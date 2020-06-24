@@ -57,7 +57,7 @@
           <div class="m_r w-1/3">
             <dl>
               <dt>
-                <img class="inline-block" :src="this.userMsg.photo" alt="">
+                <img class="inline-block toux" :src="this.userMsg.photo" alt="">
               </dt>
               <dd @click="setImg">
                 设置头像
@@ -595,6 +595,7 @@ export default {
 .m_l{width: 320px;}
 .m_l span{font-size: 15px;color:#829fe8;text-decoration: underline;cursor: pointer;}
 .m_r dl dd{width: 87px;height: 25px;text-align: center;line-height: 25px;font-size: 15px;color: #547ce0; border:1px solid #547ce0;border-radius: 12px;margin:18px auto;}
+.toux{width: 200px;height: 200px;border-radius: 50%;}
 .m_l_t, .xing{width: 83px;}
 .zan{width: 229px;}
 .lis{font-size: 15px;color:#818181;margin:5px 0;}
