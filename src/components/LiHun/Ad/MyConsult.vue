@@ -3,7 +3,7 @@
 		<lihun-head></lihun-head>
 		<div class="c_m w">
 			<div class="c_m_h flex justify-between items-center px-12">
-				<h2>
+				<h2 style="font-size: 25px;">
 					我的协议书
 				</h2>
 				<div class="c_m_h_r flex justify-between items-center">
@@ -129,7 +129,7 @@
 					</ul>
 				</div>
 				<div v-if="this.wenshuList.length == 0 " class="no_consult ">
-					<div class="w py-20">
+					<div class="w py-40">
 						<img class="inline-block mb-6" src="../../../assets/images/lihun/no_consult_icon.png" alt="">
 						<h3 class="text-base text-center">暂无协议书，可以点击<span class="inline-block text-red-500 underline cursor-pointer"
 							 @click="dingzhiBtn">定制我的协议书</span></h3>
