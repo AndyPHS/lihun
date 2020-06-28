@@ -9,17 +9,17 @@
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
-			<!-- <li v-for="(item,index) in nav" :key="index" :class="{activered:topins == index}" @click="goDingZhi(index)">
+			<li v-for="(item,index) in nav" :key="index" :class="topins == index?'activered':'default'" @click="goDingZhi(index)">
 				{{ item.name }}
-			</li> -->
-            <li @click="goDingZhi(0)" :class="{activered:topins ==1}">
+			</li>
+            <!-- <li @click="goDingZhi(0)" :class="{activered:topins ==1}">
               首页
             </li>
             <li @click="goDingZhi(1)" :class="{activered:topins ==2}">
               离婚知识
             </li>
             <li  @click="goDingZhi(2)" :class="{activered:topins ==3}">定制我的离婚协议书</li>
-            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li>
+            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li> -->
           </ul>
           <div v-if="this.isLogin==false" class="loginBox flex justify-around items-center">
             <span class="cursor-pointer hover:underline" @click="loginAc">登录</span>
@@ -408,6 +408,7 @@ export default {
 	getUserMsg () { // 查询用户基本信息
 	  var that = this
 	  that.name = localStorage.getItem('name')
+	  this.topins = localStorage.getItem('topins')
 	},
 	goHome () { // 点击图标返回首页
 		this.$router.replace('/')
@@ -417,28 +418,34 @@ export default {
 		this.$emit('headActiveEvent',this.topins)
 		if(index == 0){
 			// this.$router.replace('/')
-			const {href} = this.$router.resolve({
+			const {href} = this.$router.replace({
 				path: '/',
 				params: {
 				  topins: this.topins
 				}
 			})
-			window.open(href, '_blank')
+			// window.open(href, '_blank')
 		} else if (index == 1){
-			const {href} = this.$router.resolve({
-				path: '/Knowledge'
+			const {href} = this.$router.replace({
+				path: '/Knowledge',
+				params: {
+				  topins: this.topins
+				}
 			})
-			window.open(href, '_blank')
+			// window.open(href, '_blank')
 		} else if(index == 2){
 			var isLogin = localStorage.getItem('token')
 			if (isLogin == undefined){
 				this.dialogLogin = true
 			} else {
 				// this.$router.replace('/MyConsult')
-				const {href} = this.$router.resolve({
-					path: '/MyConsult'
+				const {href} = this.$router.replace({
+					path: '/MyConsult',
+					params: {
+					  topins: this.topins
+					}
 				})
-				window.open(href, '_blank')
+				// window.open(href, '_blank')
 			}
 		} else if (index == 3){
 			window.open('http://www.jialilaw.com/', '_blank')
@@ -829,6 +836,7 @@ export default {
   .ste:last-of-type{border:1px solid red;color:red;}
   .ste:last-of-type:hover{background-color: red;color:#fff;}
   .activered{color:#ff3f68;}
+  .default{color:#343434;}
   .text-b{color:#557ce1}
   .errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
 </style>

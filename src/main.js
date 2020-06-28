@@ -17,7 +17,11 @@ import '../static/UE/ueditor.config.js'
 import '../static/UE/ueditor.all.min.js'
 import '../static/UE/lang/zh-cn/zh-cn.js'
 import '../static/UE/ueditor.parse.min.js'
-
+import Router from 'vue-router'
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 Vue.prototype.$axios = Axios
 Axios.defaults.baseURL = '/api'

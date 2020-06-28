@@ -1,6 +1,6 @@
 <template>
 	<div class="all">
-		<lihun-head></lihun-head>
+		<lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
 		<div class="c_m w">
 			<div class="c_m_h flex justify-between items-center px-12">
 				<h2 style="font-size: 25px;">
@@ -411,6 +411,9 @@
 			      id: id
 			    }
 			  })
+			},
+			getHeadActive (data) {
+				localStorage.setItem('topins',data)
 			}
 		}
 	}

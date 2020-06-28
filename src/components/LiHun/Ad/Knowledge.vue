@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <div class="c_m w flex justify-between">
       <div class="c_m_l">
         <div class="pt-10">
@@ -147,7 +147,10 @@ export default {
 				}
 			})
 		}
-    }
+    },
+	getHeadActive (data) {
+		localStorage.setItem('topins',data)
+	}
   }
 }
 </script>

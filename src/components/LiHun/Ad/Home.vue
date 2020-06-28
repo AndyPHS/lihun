@@ -408,18 +408,11 @@ export default {
   },
   data () {
     return{
-		topins: null
     }
   },
   mounted () {
-	  this.getmsg()
   },
   methods: {
-	getmsg () {
-		this.topins = this.$route.params.topins
-		localStorage.setItem('topins',this.topins)
-		console.log(this.topins)
-	},
 	goDingZhi () {
 		this.$refs.lihun.goDingZhi(2)
 	},
@@ -435,7 +428,7 @@ export default {
 	  })
 	},
 	getHeadActive (data) {
-		console.log(data)
+		localStorage.setItem('topins',data)
 	}
   }
 }
