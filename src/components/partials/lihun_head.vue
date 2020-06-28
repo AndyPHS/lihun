@@ -9,27 +9,27 @@
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
-			<li v-for="(item,index) in nav" :key="index" :class="{activered:topins == index}" @click="goDingZhi(index)">
+			<!-- <li v-for="(item,index) in nav" :key="index" :class="{activered:topins == index}" @click="goDingZhi(index)">
 				{{ item.name }}
-			</li>
-            <!-- <li @click="this.topins=1" :class="{activered:topins ==1}">
-              <router-link to="/">首页</router-link>
+			</li> -->
+            <li @click="goDingZhi(0)" :class="{activered:topins ==1}">
+              首页
             </li>
-            <li @click="this.topins=2 " :class="{activered:topins ==2}">
-              <router-link to="Knowledge">离婚知识</router-link>
+            <li @click="goDingZhi(1)" :class="{activered:topins ==2}">
+              离婚知识
             </li>
-            <li :class="{activered:topins ==3}" @click="goDingZhi">定制我的离婚协议书</li>
-            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li> -->
+            <li  @click="goDingZhi(2)" :class="{activered:topins ==3}">定制我的离婚协议书</li>
+            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li>
           </ul>
           <div v-if="this.isLogin==false" class="loginBox flex justify-around items-center">
-            <span class="cursor-pointer" @click="loginAc">登录</span>
+            <span class="cursor-pointer hover:underline" @click="loginAc">登录</span>
             <el-divider direction="vertical"></el-divider>
-            <span class="cursor-pointer" @click="registAc">注册</span>
+            <span class="cursor-pointer hover:underline" @click="registAc">注册</span>
           </div>
           <div v-else class="flex justify-around items-center relative">
 			<div @click="dengluBox = !dengluBox">
 				<span v-if="this.name == '' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
-				<span v-if="this.name !='' " class="el-dropdown-link text-b cursor-pointer">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-if="this.name !='' " class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 			</div>
 			<div v-if="this.dengluBox" class="absolute denglu">
 				<ul>
@@ -102,13 +102,13 @@
                        <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
                        <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
                      </div>
-                     <span class="underline cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+                     <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
                    </el-popover>
                   </div>
                 </div>
                 <div class="text-center">
                   <el-checkbox-group v-model="checkOne" class="checkGroup" >
-                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意《家文用户注册和使用协议》</el-checkbox>
+                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意<span class="hover:underline text-blue-500">《家文用户注册和使用协议》</span></el-checkbox>
                   </el-checkbox-group>
                 </div>
                 <div class="el-dialog__footer text-center mt-4 pb-12">
@@ -164,14 +164,14 @@
                 </div>
                 <div class="mt-3">
                   <p class="de text-right text-blue-400 mt-3">
-                    <span class="cursor-pointer" @click="forgetAc">忘记密码</span>
+                    <span class="cursor-pointer hover:underline" @click="forgetAc">忘记密码</span>
                     <el-divider direction="vertical"></el-divider>
-                    <span class="cursor-pointer" @click="goregist">注册</span>
+                    <span class="cursor-pointer hover:underline" @click="goregist">注册</span>
                   </p>
                 </div>
                 <div class="el-dialog__footer text-center mt-10 pb-12">
                   <span class="nextSt" @click="loginBt">登录</span>
-                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer">《家文用户注册和使用协议》</span></p>
+                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer hover:underline">《家文用户注册和使用协议》</span></p>
                 </div>
               </div>
             </form>
@@ -337,6 +337,9 @@
 			  </div>
 		  </div>
 	  </div>
+	  <div v-if="dengluerrorBox==true" class="fixed errorBox">
+		  {{errorMsg}}
+	  </div>
     </div>
   </div>
 </template>
@@ -352,12 +355,14 @@ export default {
   data () {
     return {
 	  dengluBox: false, // 右上角个人中心表框
+	  dengluerrorBox: false, // 登录错误弹窗提示
 	  dialogFindByPhone: false, // 通过手机号找回密码弹窗
 	  dialogPhonePw: false,  // 新密码弹窗
       dialogFormVisible: false, // 注册弹窗
       dialogLogin: false, // 登录弹窗
       userPhone: null, // 登录后存储用户手机号
       isLogin: false,  // 判断用户是否登录
+	  errorMsg: '',
       form: {
         phone: null,
         password: '',
@@ -408,10 +413,14 @@ export default {
 	},
 	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
 		this.topins = index
+		this.$emit('headActiveEvent',this.topins)
 		if(index == 0){
 			// this.$router.replace('/')
 			const {href} = this.$router.resolve({
-				path: '/'
+				path: '/',
+				params: {
+				  topins: this.topins
+				}
 			})
 			window.open(href, '_blank')
 		} else if (index == 1){
@@ -573,7 +582,11 @@ export default {
 	},
     loginBt () { // 点击登录中的登录按钮
 		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
-			this.$message.error('手机号有误，请重新填写'); 
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
 			return false; 
 		} else if(this.form.password =='') {
 			this.$message.error('密码不能为空');
@@ -703,8 +716,13 @@ export default {
       this.forgetDialog = false
     },
     forgetNext () { // 点击忘记密码弹窗1下一步
-      this.forgetDialog = false
-      this.forgetDialog2 = true
+		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
+			this.$message.error('手机号有误，请重新填写'); 
+			return false; 
+		} else {
+			this.forgetDialog = false
+			this.forgetDialog2 = true
+		}
     },
     forgetPrev () { // 点击忘记密码弹窗2上一步
       this.forgetDialog = true
@@ -797,4 +815,5 @@ export default {
   .ste:last-of-type:hover{background-color: red;color:#fff;}
   .activered{color:#ff3f68;}
   .text-b{color:#557ce1}
+  .errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
 </style>

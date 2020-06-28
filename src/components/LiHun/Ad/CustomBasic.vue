@@ -457,13 +457,18 @@ export default {
     this.getTeShuYueDingMsg()
   },
   mounted () {
-  
+	window.isCloseHint = true;
+	//初始化关闭
+	window.addEventListener("beforeunload", function(e) {
+	    if (window.isCloseHint) {
+	        var confirmationMessage = "要记得保存！你确定要离开我吗？";
+	        (e || window.event).returnValue = confirmationMessage; // 兼容 Gecko + IE
+	        return confirmationMessage; // 兼容 Gecko + Webkit, Safari, Chrome
+	    }
+	});
   
   },
   methods: {
-	// closeWindowAc (e) {
-		
-	// },
     getBasicInformation () { // 查询双方基本信息模块数据
       returnQuestionnaireJson({'qpid': 595}).then((data) => { // 查询双方基本信息模块数据
         this.aa.BasicInformation = data.data.data

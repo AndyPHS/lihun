@@ -10,10 +10,10 @@
 					<span @click="dingzhiBtn">
 						<router-link to="CustomAgreement">定制我的协议书</router-link>
 					</span>
-					<div class="mx-5">
+					<div class="mx-5 hover:underline">
 						<router-link to="AgreementHelp">协议书定制帮助</router-link>
 					</div>
-					<div class="cursor-pointer hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
+					<div class="cursor-pointer  hover:underline hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
 				</div>
 			</div>
 			<div class="c_m_m px-12">

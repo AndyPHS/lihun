@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lihun-head ref="lihun"></lihun-head>
+    <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <el-carousel :interval="5000" arrow="always" height="550px">
       <el-carousel-item>
         <div class="swiper01">
@@ -395,13 +395,13 @@
     <div class="bot">
       <div class="w">
         <div class="bot01 text-left text-white">
-          <span class="cursor-pointer"><router-link to="/">首页</router-link></span>
+          <span class="cursor-pointer hover:underline"><router-link to="/">首页</router-link></span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer"> <router-link to="Knowledge">离婚知识</router-link></span>
+          <span class="cursor-pointer hover:underline"> <router-link to="Knowledge">离婚知识</router-link></span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span @click="goDingZhi(2)" class="cursor-pointer">定制我的离婚协议书</span>
+          <span @click="goDingZhi(2)" class="cursor-pointer hover:underline">定制我的离婚协议书</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer"><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></span>
+          <span class="cursor-pointer hover:underline"><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></span>
         </div>
         <div class="bot02 border-b-2 flex justify-between  items-end">
           <div class="w-1/3 text-left text-white bot02_l">
@@ -438,12 +438,18 @@ export default {
   },
   data () {
     return{
-
+		topins: null
     }
   },
   mounted () {
+	  this.getmsg()
   },
   methods: {
+	getmsg () {
+		this.topins = this.$route.params.topins
+		localStorage.setItem('topins',this.topins)
+		console.log(this.topins)
+	},
 	goDingZhi () {
 		this.$refs.lihun.goDingZhi(2)
 	},
@@ -458,7 +464,9 @@ export default {
 	    }
 	  })
 	},
-
+	getHeadActive (data) {
+		console.log(data)
+	}
   }
 }
 </script>
@@ -475,6 +483,7 @@ export default {
 .wuqu dl {width: 290px;height:282px ;}
 .wuqu dl dd{height: 76px;background-color:#91aad2;line-height: 76px;}
 .wuqu dl dd p{font-size:18px;width:197px;color: #fff;line-height:30px;margin:0 auto;padding-top: 10px;}
+.wuqu dl dd p:hover{text-decoration: underline;}
 .moreZhiShi{padding:58px 0 116px}
 .moreZhiShi span{width: 194px;height: 46px;border: 1px solid #ff3f68;color: #ff3f68;text-align: center;line-height: 46px;border-radius: 23px;display: inline-block;}
 .fuwu{height:713px;width: 100%;background: url(../../../assets/images/lihun/fuwu_bg.png)no-repeat;background-size: 100% 100%;}

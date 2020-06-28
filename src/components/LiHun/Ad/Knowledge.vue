@@ -21,17 +21,17 @@
             <input class="ml-3" v-model="keyMsg" type="text" placeholder="请输入要搜索的内容关键词" autocomplete="off" >
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
-          <ul class="c_m_r_t flex justify-around pt-3">
-            <li class="w-1/3 text-center cursor-pointer">2020年婚姻法最新规定</li>
-            <li class="w-1/3 text-center cursor-pointer">女方争取抚养权的技巧</li>
-            <li class="w-1/3 text-center cursor-pointer">男方争取抚养权的技巧</li>
+          <ul class="c_m_r_t flex pt-3">
+            <li class="w-1/3 text-left hover:underline cursor-pointer">2020年婚姻法最新规定</li>
+            <li class="w-1/3 text-left hover:underline cursor-pointer">女方争取抚养权的技巧</li>
+            <li class="w-1/3 text-left hover:underline cursor-pointer">男方争取抚养权的技巧</li>
           </ul>
         </div>
         <div class="m_r_m">
           <ul class="">
             <li v-for="(item, index) in tableData" :key="index"  class="pb-8 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
               <div class="py-8 flex justify-between items-center">
-                <h2 class="w-4/5 overflow-hidden" v-html="item.title"></h2>
+                <h2 class="w-4/5 overflow-hidden hover:underline" v-html="item.title"></h2>
                 <span class="w-1/5 text-right">{{ item.createdTime }}</span>
               </div>
               <p v-if="item.content==undefined" v-html="item.description"></p>
@@ -154,7 +154,7 @@ export default {
 .keyinput input{height: 32px;line-height: 34px;width: 626px;border:none;}
 .keyinput input:focus{border:none;outline: none;}
 .keyinput img{display: inline-block;margin-right: 15px;}
-.c_m_r_t{width: 530px;margin:0 auto;}
+.c_m_r_t{width: 680px;margin:0 auto;}
 .m_r_m ul li{border-color: #eceff4;}
 .m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
 .m_r_m ul li h2 em{color:red;margin-right: 3px;}
