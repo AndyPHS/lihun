@@ -293,11 +293,13 @@
         </div>
       </div>
     </div>
-
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom from '../../partials/lihun_bottom.vue'
+
 import QuestionModel from '../../partials/QuestionModel.vue' // 引入子组件
 import {returnQuestionnaireJson} from '@/api/api/AgreementRequest.js' // 查询问卷json
 import {userUpdateQuestionnaire} from '@/api/api/AgreementRequest.js' // 修改离婚协议书
@@ -312,7 +314,8 @@ export default {
   name: 'CustomBasic',
   components: {
     'lihun-head': lihun_head,
-    'question-model': QuestionModel
+    'question-model': QuestionModel,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {

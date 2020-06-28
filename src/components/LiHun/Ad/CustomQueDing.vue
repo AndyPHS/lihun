@@ -141,11 +141,12 @@
 				</div>
 			</div>
 		</div>
-
+		<lihun-bottom></lihun-bottom>
 	</div>
 </template>
 <script>
 	import lihun_head from '../../partials/lihun_head.vue'
+	import lihun_bottom from '../../partials/lihun_bottom.vue'
 	import {
 		getOnlyValue
 	} from '@/api/api/AgreementRequest.js' // 获取单独问题的值
@@ -153,7 +154,8 @@
 	export default {
 		name: 'CustomQueDing',
 		components: {
-			'lihun-head': lihun_head
+			'lihun-head': lihun_head,
+			'lihun-bottom': lihun_bottom
 		},
 		data() {
 			return {

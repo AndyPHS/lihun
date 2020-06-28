@@ -51,16 +51,18 @@
       </div>
     </div>
     <div class="live"></div>
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
-
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementHelp',
   components: {
-    'lihun-head': lihun_head
+    'lihun-head': lihun_head,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {

@@ -38,8 +38,8 @@
 			  <p v-if="item.content !==undefined" v-html="item.content"></p>
             </li>
           </ul>
-          <div class="" v-if="this.tableDataNull">
-            <div class="pt-12 text-center mx-auto">
+          <div class="errorMin" v-if="this.tableDataNull">
+            <div class="pt-40 text-center mx-auto">
               <img class="inline-block" src="../../../assets/images/lihun/no_consult_icon.png" alt="">
               <p class="text-center text-sm pt-5">
                 共找到<span class="text-red-400 font-bold">0条</span> 与 <span class="text-red-400 font-bold">"{{ keyMsg }}"</span> 相关的内容</br>
@@ -51,16 +51,20 @@
       </div>
     </div>
     <div class="live"></div>
+	<!-- 共用底部 -->
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 import {selectAction, selectFaIDNews, selectOsNews} from '@/api/api/AgreementRequest.js'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'Knowledge',
   components: {
-    'lihun-head': lihun_head
+    'lihun-head': lihun_head,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {
@@ -128,17 +132,21 @@ export default {
       })
     },
     searchAction () {
-		selectOsNews({title:this.keyMsg}).then((data) => {
-			if ( data.data.status_code ==200 ) {
-				this.tableData = data.data.data
-				this.ins = null
-				if (this.tableData.length == 0 ) {
-					this.tableDataNull = true
+		if(this.keyMsg ==''){
+			this.$message.error('请输入关键词')
+		} else {
+			selectOsNews({title:this.keyMsg}).then((data) => {
+				if ( data.data.status_code ==200 ) {
+					this.tableData = data.data.data
+					this.ins = null
+					if (this.tableData.length == 0 ) {
+						this.tableDataNull = true
+					}
+				} else {
+					this.$message.error('查询失败，请重新尝试')
 				}
-			} else {
-				this.$message.error('查询失败，请重新尝试')
-			}
-		})
+			})
+		}
     }
   }
 }
@@ -163,4 +171,5 @@ export default {
 .m_r_m ul li p em{color:red;margin:0 3px;}
 .default_active{color:red}
 .default{color:#343434;}
+.errorMin{height: 500px;}
 </style>

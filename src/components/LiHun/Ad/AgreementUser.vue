@@ -281,17 +281,20 @@
         </div>
       </el-dialog>
     </div>
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 import {updateUserName, phoneCode, updatePhone, uploadUserPhoto, updatePasswordPhone, sendEmail, updateUserEmail, usersSelect} from '@/api/api/AgreementRequest.js'
 
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementUser',
   components: {
-    'lihun-head': lihun_head
+    'lihun-head': lihun_head,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {

@@ -76,18 +76,20 @@
         <el-button type="primary" @click="saveWenShu">保存</el-button>
       </div>
     </div>
-
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 import {outPutWord} from '@/api/api/AgreementRequest.js' // 离婚协议书生成数据接口
 import {getWord} from '@/api/api/AgreementRequest.js' // 起诉状生成数据接口
 import {userUpdateQuestionnaire} from '@/api/api/AgreementRequest.js' // 修改离婚协议书
 export default {
   name: 'CustomShengCheng',
   components: {
-    'lihun-head': lihun_head
+    'lihun-head': lihun_head,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {

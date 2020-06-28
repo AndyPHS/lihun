@@ -197,10 +197,12 @@
 
 		</div>
 		<div class="live"></div>
+		<lihun-bottom></lihun-bottom>
 	</div>
 </template>
 <script>
 	import lihun_head from '../../partials/lihun_head.vue'
+	import lihun_bottom from '../../partials/lihun_bottom.vue'
 	import {
 		userAddQuestionnaire
 	} from '@/api/api/AgreementRequest.js'
@@ -213,7 +215,8 @@
 	export default {
 		name: 'MyConsult',
 		components: {
-			'lihun-head': lihun_head
+			'lihun-head': lihun_head,
+			'lihun-bottom': lihun_bottom
 		},
 		data() {
 			return {
@@ -267,7 +270,7 @@
 						this.$router.replace('/')
 					} else {
 						this.$message({
-							message: '协议获取失败，请联系管理员',
+							message: '协议获取失败，请先登录',
 							type: 'error'
 						})
 					}

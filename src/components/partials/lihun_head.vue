@@ -193,7 +193,7 @@
                   <div class="el-form-item__content">
                     <div class="el-input p text-left">
                       <span class="inline-block text-lg">请输入要重置密码的手机号码</span>
-                      <input type="number" v-model="newform.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input v-model="newform.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
                     </div>
                   </div>
                 </div>
@@ -222,7 +222,7 @@
                       <span class="inline-block text-lg py-3">您正在对账号<span class="text-red-500">{{this.newform.phone}}</span>进行重置密码操作</span>
                       <div>
                         <img @click="byPhone" class="inline-block cursor-pointer mb-3" src="../../assets/images/lihun/yanzheng01.png" alt="">
-                        <img @click="byEmail" class="inline-block mb-3" src="../../assets/images/lihun/yanzheng02.png" alt="">
+                        <!-- <img @click="byEmail" class="inline-block mb-3" src="../../assets/images/lihun/yanzheng02.png" alt=""> -->
                       </div>
                       
 					  <div class="el-form-item__content">
@@ -235,7 +235,7 @@
 							   <h5>请拨打客服电话，申请人工修复</h5>
 							   <p class="py-2">电话：010-5210 1314</p>
 							 </div>
-							 <span class="underline cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
+							 <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
 					   </el-popover>
 					  </div>
                     </div>
@@ -251,7 +251,7 @@
         </div>
       </div>
 	  <!-- 通过手机找回验证手机 -->
-	  <div v-if="dialogFindByPhone==true" class="el-dialog__wrapper regist" style="z-index: 2001;">
+	  <div v-if="dialogFindByPhone==true" class="el-dialog__wrapper regist registsp" style="z-index: 2001;">
 		  <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
 			  <div class="el-dialog__header">
 				  <div class="w-full text-xl text-left pt-10 pl-10">
@@ -262,14 +262,15 @@
 			  <div class="el-dialog__body">
 			    <form class="el-form">
 				  
-			      <div>
-			        <div class="el-form-item">
+			      <div class="text-left">
+			        <!-- <div class="el-form-item">
 			          <div class="el-form-item__content">
 			            <div class="el-input">
 			              <input type="text" v-model="newform.phone" placeholder="请输入手机号码"  disabled="disabled" autocomplete="off" class="el-input__inner">
 			            </div>
 			          </div>
-			        </div>
+			        </div> -->
+					<span class="yanphone inline-block text-lg py-3">请获取<span class="text-red-500">{{this.newform.phone}}</span>手机验证码</span>
 			        <div class="yanzheng el-form-item">
 			          <div class="el-form-item__content flex justify-between">
 			            <input type="number" v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
@@ -294,11 +295,11 @@
 			               <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
 			               <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
 			             </div>
-			             <span class="underline cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+			             <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
 			           </el-popover>
 			          </div>
 			        </div>
-			        <div class="el-dialog__footer text-center mt-4 pb-12">
+			        <div class="el-dialog__footer steall flex justify-between text-center mt-4 pb-12">
 					  <span class="ste" @click="resetPrev">上一步</span>
 			          <span class="ste" @click="resetnext">下一步</span>
 			        </div>
@@ -497,7 +498,11 @@ export default {
     nextSt () { // 点击注册成功下一步
       if (this.checkOne) {
 		  if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
-		  	this.$message.error('手机号有误，请重新填写'); 
+		  	this.dengluerrorBox = true
+		  	this.errorMsg = '手机号有误，请重新填写'
+		  	setTimeout(()=>{
+		  		this.dengluerrorBox = false
+		  	},1000)
 		  	return false; 
 		  } else if(this.form.password =='') {
 			  this.$message.error('密码不能为空');
@@ -558,7 +563,11 @@ export default {
 	checkPhone (phoneNum) { // 手机号验证
 		var phone = phoneNum
 		if(!(/^1[3456789]\d{9}$/.test(phone))){ 
-			this.$message.error('手机号有误，请重新填写'); 
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
 			return false; 
 		} 
 	},
@@ -717,7 +726,11 @@ export default {
     },
     forgetNext () { // 点击忘记密码弹窗1下一步
 		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
-			this.$message.error('手机号有误，请重新填写'); 
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
 			return false; 
 		} else {
 			this.forgetDialog = false
@@ -792,9 +805,11 @@ export default {
   .regist .el-dialog{width: 640px;}
   .regist .el-dialog__body{padding:0px 0px;}
   .regist .el-dialog__body .el-form-item:first-of-type{margin-top: 46px;margin-bottom:22px}
+  .registsp .el-dialog__body .el-form-item:first-of-type{margin-top: 0px;margin-bottom:22px}
   .regist .el-form-item__content, .de{width: 485px;margin:0 auto;}
   .regist .el-dialog__headerbtn{top:-30px;right: 0px;}
   .regist .el-dialog__headerbtn .el-dialog__close{color: #fff;}
+  .yanphone{margin:20px 90px;}
   .yanzheng input{width: 348px;height: 40px;line-height: 40px;}
   .logyan input{width: 208px;height: 40px;line-height: 40px;}
   .code_key_img{width: 100px;}

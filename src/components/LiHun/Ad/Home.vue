@@ -392,49 +392,19 @@
         <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
       </div>
     </div>
-    <div class="bot">
-      <div class="w">
-        <div class="bot01 text-left text-white">
-          <span class="cursor-pointer hover:underline"><router-link to="/">首页</router-link></span>
-          <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer hover:underline"> <router-link to="Knowledge">离婚知识</router-link></span>
-          <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span @click="goDingZhi(2)" class="cursor-pointer hover:underline">定制我的离婚协议书</span>
-          <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer hover:underline"><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></span>
-        </div>
-        <div class="bot02 border-b-2 flex justify-between  items-end">
-          <div class="w-1/3 text-left text-white bot02_l">
-            <h2>联系我们</h2>
-            <p>电话：400-8989-818    &nbsp;  时间：周一至周六 09:00-18:00 </p>
-            <p>地址：北京市朝阳区建国门外大街22号赛特大厦3层</p>
-          </div>
-          <dl class="w-1/5 text-white">
-            <dd>
-              <img class="inline-block" src="../../../assets/images/lihun/weichat.png" alt="">
-            </dd>
-            <dt>
-              <h2 class="mt-2">扫码关注</h2>
-              <p class="text-sm">蜗牛说家事</p>
-            </dt>
-          </dl>
-        </div>
-        <div class="bot03 text-left text-white">
-          <p>友情链接：<a href="http://www.jialilaw.com/" target="_blank">北京家理律师事务所</a></p>
-          <p>©2017 北京家理律师事务所      备案号：京ICP备14011260号-2      京公网安备：11010502037274号</p>
-        </div>
-      </div>
-    </div>
+    <!-- 公共底部 -->
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
-
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'Home',
   components:{
-    'lihun-head':lihun_head
+    'lihun-head':lihun_head,
+	'lihun-bottom':lihun_bottom
   },
   data () {
     return{

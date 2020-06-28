@@ -3148,16 +3148,19 @@
       </div>
     </div>
     <div class="live"></div>
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 import {userAddAnswer, getOnlyValue, userAddSelectAnswer} from '@/api/api/AgreementRequest.js' // 用户添加问卷的内容
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'CustomAgreement',
   components: {
-    'lihun-head': lihun_head
+    'lihun-head': lihun_head,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {

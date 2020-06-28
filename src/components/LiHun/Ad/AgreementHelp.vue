@@ -2,7 +2,7 @@
   <div class="all">
     <lihun-head></lihun-head>
     <div class="c_m w">
-      <div class="py-12">
+      <div class="py-12 h-500">
         <div class="c_m_t">协议书定制帮助</div>
         <div class="flex justify-between items-center mt-12">
           <div class="c_m_l">
@@ -38,17 +38,20 @@
 
       </div>
     </div>
-    <div class="live"></div>
+    <div class="live hidden"></div>
+	<lihun-bottom></lihun-bottom>
   </div>
 </template>
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom from '../../partials/lihun_bottom.vue'
 import {selectAction, selectFaIDNews} from '@/api/api/AgreementRequest.js'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementHelp',
   components: {
-    'lihun-head': lihun_head
+    'lihun-head': lihun_head,
+	'lihun-bottom': lihun_bottom
   },
   data () {
     return {
@@ -105,8 +108,9 @@ export default {
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
 .all{background-color: #f2f4f7;height: 100vh;}
 .w{width: 1200px; margin: 0 auto;}
-.c_m{background-color: #fff;margin-top: 39px;}
+.c_m{background-color: #fff;margin-top: 39px;margin-bottom: 39px;}
 .c_m_t{margin-left: 239px;text-align: center;font-size: 25px;font-weight: bold;}
+.h-500{height: 500px;}
 .c_m_l{width: 239px;border-right: 1px solid #eceff4;}
 .ding_btn{width: 153px;height: 37px;margin:0 auto;text-align: center;line-height: 37px;border-radius: 18px;font-size: 16px;color: #fff;font-weight: bold;display: inline-block;background-color: #ff3f68;border: 1px solid #ff3f68;}
 .c_m_l_t{}
