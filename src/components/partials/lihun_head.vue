@@ -28,8 +28,8 @@
           </div>
           <div v-else class="flex justify-around items-center relative">
 			<div @click="dengluBox = !dengluBox">
-				<span v-if="this.name == '' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
-				<span v-if="this.name !='' " class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-if="this.name == '' || this.name== null " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-else class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 			</div>
 			<div v-if="this.dengluBox" class="absolute denglu">
 				<ul>
@@ -421,39 +421,78 @@ export default {
 	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面	  
 		this.topins = index
 		this.$emit('headActiveEvent',this.topins)
-		if(index == 0){
-			// this.$router.replace('/')
-			const {href} = this.$router.replace({
-				path: '/',
-				params: {
-				  topins: this.topins
+		if(this.$route.path=='/CustomBasic'){
+			if(index == 0){
+				localStorage.setItem('topins',0)
+				const {href} = this.$router.resolve({
+					path: '/',
+					params: {
+					  topins: this.topins
+					}
+				})
+				window.open(href, '_blank')
+			} else if (index == 1){
+				localStorage.setItem('topins',1)
+				const {href} = this.$router.resolve({
+					path: '/Knowledge',
+					params: {
+					  topins: this.topins
+					}
+				})
+				window.open(href, '_blank')
+			} else if(index == 2){
+				localStorage.setItem('topins',2)
+				var isLogin = localStorage.getItem('token')
+				if (isLogin == undefined){
+					this.dialogLogin = true
+				} else {
+					// this.$router.resolve('/MyConsult')
+					const {href} = this.$router.resolve({
+						path: '/MyConsult',
+						params: {
+						  topins: this.topins
+						}
+					})
+					window.open(href, '_blank')
 				}
-			})
-			// window.open(href, '_blank')
-		} else if (index == 1){
-			const {href} = this.$router.replace({
-				path: '/Knowledge',
-				params: {
-				  topins: this.topins
-				}
-			})
-			// window.open(href, '_blank')
-		} else if(index == 2){
-			var isLogin = localStorage.getItem('token')
-			if (isLogin == undefined){
-				this.dialogLogin = true
-			} else {
-				// this.$router.replace('/MyConsult')
+			} else if (index == 3){
+				window.open('http://www.jialilaw.com/', '_blank')
+			}
+		} else {
+			if(index == 0){
+				// this.$router.replace('/')
 				const {href} = this.$router.replace({
-					path: '/MyConsult',
+					path: '/',
 					params: {
 					  topins: this.topins
 					}
 				})
 				// window.open(href, '_blank')
+			} else if (index == 1){
+				const {href} = this.$router.replace({
+					path: '/Knowledge',
+					params: {
+					  topins: this.topins
+					}
+				})
+				// window.open(href, '_blank')
+			} else if(index == 2){
+				var isLogin = localStorage.getItem('token')
+				if (isLogin == undefined){
+					this.dialogLogin = true
+				} else {
+					// this.$router.replace('/MyConsult')
+					const {href} = this.$router.replace({
+						path: '/MyConsult',
+						params: {
+						  topins: this.topins
+						}
+					})
+					// window.open(href, '_blank')
+				}
+			} else if (index == 3){
+				window.open('http://www.jialilaw.com/', '_blank')
 			}
-		} else if (index == 3){
-			window.open('http://www.jialilaw.com/', '_blank')
 		}
 		this.topins = localStorage.getItem('topins')
 	},

@@ -469,6 +469,7 @@ export default {
 	        return confirmationMessage; // 兼容 Gecko + Webkit, Safari, Chrome
 	    }
 	});
+	localStorage.setItem('topins',2)
   
   },
   methods: {
@@ -1160,7 +1161,10 @@ export default {
     },
     alreadySave () { // 确认已保存，返回列表
       this.dialogTiShi = false
-      this.$router.replace('/MyConsult')
+	  const {href} = this.$router.resolve({
+	  	path: '/MyConsult'
+	  })
+	  window.open(href, '_blank')
     },
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true

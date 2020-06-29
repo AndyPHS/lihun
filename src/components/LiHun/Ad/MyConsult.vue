@@ -35,7 +35,7 @@
 								</div>
 								<div class="w-1/6 flex justify-end items-center pl-5">
 									<span class="inline-block hover:font-bold cursor-pointer underline text-blue-500 text-sm" @click="NewCopy(item, index)">创建副本</span>
-									<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span> -->
+									<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span>
 								</div>
 							</h4>
 							<div class="c_m_m_m_m flex justify-between items-center">
@@ -167,14 +167,15 @@
 					</div>
 				</el-dialog>
 				<!-- 离婚指导弹窗 -->
-				<div class="zhidaopage">
-					<div  v-if="dialogZhiDao == true" class="el-dialog__wrapper" style="z-index: 2002;background: rgba(0,0,0,0.5);">
-						<div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;width: 761px;height: 554px;">
-							<div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close"
-								 class="el-dialog__headerbtn" @click="closeZhiDao"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-							<div class="el-dialog__body">
-								<el-carousel :interval="5000" width="761" arrow="always">
-									<el-carousel-item v-for="item in zhidaoArr" :key="item">
+				<div class="zhidaopage"  v-if="this.dialogZhiDao == true">
+					<div style="width: 761px;height: 554px;position: absolute;top:50%;left: 50%;margin-top: -280px;margin-left: -380px;background-color: #fff;">
+						<div>
+							<div class="text-right py-2">
+								<span class="mr-4 mt-1" @click="closeZhiDao">X</span>
+							</div>
+							<div >
+								<el-carousel :interval="5000" width="761" style="height: 550px;" arrow="always">
+									<el-carousel-item v-for="item in zhidaoArr" :key="item" style="height: 550px;">
 										<img :src="item" alt="">
 									</el-carousel-item>
 								</el-carousel>
@@ -556,8 +557,14 @@
 		background-color: #ff3f68;
 	}
 
-	.zhidaopage .el-dialog__body {
-		padding: 20px 0px 0px 0px;
+	.zhidaopage {
+		position: fixed;
+		top:0;
+		left: 0;
+		z-index: 200;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0,0,0,0.5);
 	}
 
 	.zhidaopage .el-carousel__container {
@@ -569,4 +576,5 @@
 		border: 1px solid #ff3f68;
 	}
 	.mianze p{text-indent: 2em;}
+	
 </style>
