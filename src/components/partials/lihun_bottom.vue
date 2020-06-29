@@ -3,13 +3,13 @@
     <div class="bot">
       <div class="w">
         <div class="bot01 text-left text-white">
-          <span class="cursor-pointer hover:underline"><router-link to="/">首页</router-link></span>
+          <span class="cursor-pointer hover:underline" @click="goNewpage(0)">首页</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer hover:underline"> <router-link to="Knowledge">离婚知识</router-link></span>
+          <span class="cursor-pointer hover:underline"  @click="goNewpage(1)">离婚知识</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer hover:underline"> <router-link to="MyConsult">定制我的离婚协议书</router-link></span>
+          <span class="cursor-pointer hover:underline"  @click="goNewpage(2)">定制我的离婚协议书</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
-          <span class="cursor-pointer hover:underline"><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></span>
+          <span class="cursor-pointer hover:underline"  @click="goNewpage(3)">家理律所官网</span>
         </div>
         <div class="bot02 border-b-2 flex justify-between  items-end">
           <div class="w-1/3 text-left text-white bot02_l">
@@ -94,7 +94,21 @@ export default {
   mounted () {
   },
   methods: {
-	
+	goNewpage (e) {
+		if (e==0) {
+			localStorage.setItem('topins',0)
+			this.$router.replace('/')
+		} else if (e==1) {
+			localStorage.setItem('topins',1)
+			this.$router.replace('Knowledge')
+		} else if (e==2) {
+			localStorage.setItem('topins',2)
+			this.$router.replace('MyConsult')
+		}  else if (e==3) {
+			localStorage.setItem('topins',-1)
+			window.open('http://www.jialilaw.com/', '_blank')
+		}
+	},
 	goDingZhi (e) {
 		this.$refs.lihun.goDingZhi(2)
 	}

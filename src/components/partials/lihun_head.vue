@@ -458,14 +458,20 @@ export default {
 		this.topins = localStorage.getItem('topins')
 	},
     goAgreementUser () {
+	  this.topins = -1
+	  this.$emit('headActiveEvent',this.topins)
       this.$router.replace('/AgreementUser')
 	  this.dengluBox = false
     },
 	goMyconsult () { // 点击我的协议返回到协议列表
+		this.topins = 2
+		this.$emit('headActiveEvent',this.topins)
 		this.$router.replace('/MyConsult')
 		this.dengluBox = false
 	},
     liveOut () { // 点击退出登录
+	  this.topins = -1
+	  this.$emit('headActiveEvent',this.topins)
       this.isLogin = false
 	  this.dengluBox = false
       localStorage.removeItem('token') // 存储token

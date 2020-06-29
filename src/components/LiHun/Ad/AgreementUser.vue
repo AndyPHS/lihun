@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <lihun-head ref="lihun"></lihun-head>
+    <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <div class="c_m w">
       <div class="pt-12 px-12">
         <h2 class="text-left text-lg c_m_t">个人中心</h2>
@@ -23,7 +23,7 @@
                 <li class="lis text-left">
                   <span class="no-underline text-gray-400" v-if="this.userMsg.sex == 1">男</span>
                   <span class="no-underline text-gray-400" v-else-if="this.userMsg.sex == 2">女</span>
-                  <span v-else>暂无</span>
+                  <span v-if="this.userMsg.sex == null"暂无</span>
                 </li>
               </ul>
             </div>
@@ -651,7 +651,10 @@ export default {
 		  	this.IsSendEmail = false
 		  },3000)
 	  })
-    }
+    },
+	getHeadActive (data) {
+		localStorage.setItem('topins',data)
+	}
   }
 }
 </script>

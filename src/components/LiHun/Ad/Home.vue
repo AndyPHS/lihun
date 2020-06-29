@@ -301,7 +301,7 @@
                 	<div class="pinjia_s">
                 		<dl>
                 			<dt>
-                				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
+                				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
                 				<h2>郝先生&nbsp;吉林</h2>
@@ -318,7 +318,7 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>张女士&nbsp;北京</h2>
+                				<h2>张先生&nbsp;北京</h2>
                 				<span>2020.04.18</span>
                 			</dd>
                 		</dl>
@@ -336,7 +336,7 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>王先生&nbsp;北京</h2>
+                				<h2>王女士&nbsp;北京</h2>
                 				<span>2020.01.20</span>
                 			</dd>
                 		</dl>
@@ -364,7 +364,7 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>孙先生&nbsp;湖北</h2>
+                				<h2>孙女士&nbsp;湖北</h2>
                 				<span>2020.04.28</span>
                 			</dd>
                 		</dl>
@@ -378,7 +378,7 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>钱女士&nbsp;北京</h2>
+                				<h2>钱先生&nbsp;北京</h2>
                 				<span>2020.04.02</span>
                 			</dd>
                 		</dl>
@@ -430,6 +430,7 @@ export default {
 		this.$refs.lihun.goDingZhi(2)
 	},
 	goMoreKnowledge () {
+		localStorage.setItem('topins',1)
 		this.$router.replace('Knowledge')
 	},
 	goKnowledgeMin (id) { // 协议书如何谈判

@@ -22,9 +22,9 @@
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/3 text-left hover:underline cursor-pointer">2020年婚姻法最新规定</li>
-            <li class="w-1/3 text-left hover:underline cursor-pointer">女方争取抚养权的技巧</li>
-            <li class="w-1/3 text-left hover:underline cursor-pointer">男方争取抚养权的技巧</li>
+            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer">2020年婚姻法最新规定</li>
+            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer">女方争取抚养权的技巧</li>
+            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer">男方争取抚养权的技巧</li>
           </ul>
         </div>
         <div class="m_r_m">
