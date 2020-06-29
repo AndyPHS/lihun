@@ -43,6 +43,10 @@
             <el-radio label="0">否</el-radio>
           </el-radio-group>
         </el-form-item>
+		
+	    <el-form-item label="阅读数量"  prop="view" >
+		  <el-input type="view" v-model.number="ruleForm.view" autocomplete="off"></el-input>
+		</el-form-item>
         <div class="editor-container">
           <UE :defaultMsg=defaultMsg :config=config :id=ue1 ref="ue"></UE>
         </div>
@@ -93,7 +97,8 @@ export default{
         description: '',
         content: '',
         faId: null,  // 分类ID
-        topping: '' // 置顶 1置顶0取消
+        topping: '', // 置顶 1置顶0取消
+		view: null  // 文章阅读数量
       },
       articleId: null,
       rules: {
@@ -109,7 +114,11 @@ export default{
         ],
         topping: [
           { required: true, message: '文章是否置顶', trigger: 'change' }
-        ]
+        ],
+		view: [
+			{ required: true, message: '阅读数不能为空'},
+			{ type: 'number', message: '阅读数必须为数字值'}
+		]
       }
     }
   },
@@ -203,7 +212,8 @@ export default{
           description: this.ruleForm.description,
           content: this.ruleForm.content,
           faId: this.ruleForm.faId.toString(),  // 分类ID
-          topping: this.ruleForm.topping //
+          topping: this.ruleForm.topping ,//
+		  view: this.ruleForm.view
         }).then((data) => {
           if(data.data.status_code == 200){
             this.$message({

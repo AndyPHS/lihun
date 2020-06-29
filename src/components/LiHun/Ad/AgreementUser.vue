@@ -8,7 +8,7 @@
           <div class="m_l">
             <div class="flex justify-between mt-12">
               <h3 class="m_l_t font-bold">基础资料</h3>
-              <span class="inline-block text-base" @click="editBasic">编辑</span>
+              <span class="inline-block text-base hover:font-bold" @click="editBasic">编辑</span>
             </div>
             <div class="flex justify-between items-center">
               <ul class="xing mt-4">
@@ -48,9 +48,9 @@
                 </li>
               </ul>
               <ul class="xiu mt-4">
-                <li class="lis text-left underline" @click="editPhone">修改</li>
-                <li class="lis text-left underline" @click="editPassword">修改</li>
-                <li class="lis text-left underline" @click="editEmail">修改</li>
+                <li class="lis text-left underline  hover:font-bold" @click="editPhone">修改</li>
+                <li class="lis text-left underline  hover:font-bold" @click="editPassword">修改</li>
+                <li class="lis text-left underline  hover:font-bold" @click="editEmail">修改</li>
               </ul>
             </div>
           </div>
@@ -86,8 +86,8 @@
 		</div>
         <div slot="footer" class="dialog-footer pb-4">
 			<div class="flex justify-around">
-				<span class="anniu" @click="saveBtn">保存</span>
 				<span class="anniu" @click="cancleBtn">取消</span>
+				<span class="anniu" @click="saveBtn">保存</span>
 			</div>
         </div>
       </el-dialog>
@@ -107,7 +107,7 @@
           </div>
         </el-form>
         <div slot="footer" class="dialog-footer text-center pb-10">
-          <span class="anniu" @click="nextBtn">下一步</span>
+          <span class="anniu anniumima" @click="nextBtn">下一步</span>
           <el-popover
             placement="right"
             width="400"
@@ -125,7 +125,7 @@
               <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
               <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
             </div>
-            <span class="underline cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+            <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
           </el-popover>
         </div>
       </el-dialog>
@@ -153,7 +153,7 @@
           </div>
         </el-form>
         <div slot="footer" class="dialog-footer text-center pb-10">
-          <span class="anniu" @click="savePhoneBtn">保存</span>
+          <span class="anniu anniumima" @click="savePhoneBtn">保存</span>
           <el-popover
             placement="right"
             width="400"
@@ -171,7 +171,7 @@
               <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
               <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
             </div>
-            <span class="underline cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+            <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
           </el-popover>
         </div>
       </el-dialog>
@@ -183,7 +183,7 @@
             <label class="el-form-item__label" style="width: 120px;">验证码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.PasswordCode" type="number" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.PasswordCode" autocomplete="off" class="el-input__inner">
               </div>
               <el-button v-if="this.IsGetPsCode01" class="ml-5" type="primary" :loading="IsGetPsCode01">已发送</el-button>
               <el-button v-if="this.IsGetPsCode01==false" class="ml-5" type="primary" @click="sendPsCode">获取</el-button>
@@ -191,7 +191,7 @@
           </div>
         </el-form>
         <div slot="footer" class="dialog-footer text-center pb-10">
-          <span class="anniu" @click="PassWordnextBtn">下一步</span>
+          <span class="anniu anniumima" @click="PassWordnextBtn">下一步</span>
           <el-popover
             placement="right"
             width="400"
@@ -209,7 +209,7 @@
               <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
               <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
             </div>
-            <span class="underline cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+            <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
           </el-popover>
         </div>
       </el-dialog>
@@ -244,13 +244,13 @@
         <div class="touxiang">
             <form action="" class="text-center imbox">
               <img :src="this.userMsg.photo" alt="">
-              <input name="imgs" class=" mx-auto" placeholder="上传头像" type="file" id='upfile' @change="selectFile">
+              <input name="imgs" class=" mx-auto mt-5 w-1/3" placeholder="上传头像" type="file" id='upfile' @change="selectFile">
             </form>
         </div>
         <h4 class="mt-3 text-center">图片格式JPG\JPEG\PNG\GIF格式，大小不超过10MB</h4>
         <div slot="footer" class="dialog-footer flex justify-around pb-4">
-          <span class="anniu" @click="saveImg">保存</span>
           <span class="anniu" @click="cancleImg">取消</span>
+		  <span class="anniu" @click="saveImg">保存</span>
         </div>
       </el-dialog>
       <!-- 绑定邮箱 -->
@@ -281,6 +281,9 @@
         </div>
       </el-dialog>
     </div>
+	<div v-if="dengluerrorBox==true" class="fixed errorBox">
+			  {{errorMsg}}
+	</div>
 	<lihun-bottom></lihun-bottom>
   </div>
 </template>
@@ -298,6 +301,8 @@ export default {
   },
   data () {
     return {
+	  dengluerrorBox: false, // 登录错误弹窗提示
+	  errorMsg: '',
       phoneNum: null, // 用户手机号
       dialogFormVisible: false, // 基本信息弹窗
       dialogPhone01: false, // 修改手机号第一个弹窗
@@ -402,17 +407,29 @@ export default {
             message: '发送成功，请查看',
             type: 'success'
           })
+		  setTimeout(()=>{
+		  	this.IsGetCode01 = false
+		  },3000)
         } else {
           this.$message.error('发送失败，请联系后台人员')
         }
       })
     },
-    nextBtn () { // 手机号弹窗下一步
-      this.form.newPhone = ''
-      this.form.PhoneCode02 = ''
-      this.dialogPhone01 = false
-      this.dialogPhone02 = true
-      this.IsGetCode01 = false
+    nextBtn () { // 手机号弹窗下一步	
+	  if(!(/^\d{6}$/.test(this.form.PhoneCode01))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '验证码有误，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+	  	return false; 
+	  } else {
+		  this.form.newPhone = ''
+		  this.form.PhoneCode02 = ''
+		  this.dialogPhone01 = false
+		  this.dialogPhone02 = true
+		  this.IsGetCode01 = false
+	  }
     },
     sendCode02 () { // 发送新手机号验证码
       phoneCode({
@@ -425,6 +442,9 @@ export default {
             message: '发送成功，请查看',
             type: 'success'
           })
+		  setTimeout(()=>{
+		  	this.IsGetCode02 = false
+		  },3000)
         } else {
           this.$message.error('发送失败，请联系后台人员')
         }
@@ -470,15 +490,27 @@ export default {
             message: '发送成功，请查看',
             type: 'success'
           })
+		  setTimeout(()=>{
+		  	this.IsGetPsCode01 = false
+		  },3000)
         } else {
           this.$message.error('发送失败，请联系后台人员')
         }
       })
     },
     PassWordnextBtn () { // 修改密码弹窗下一步
-      this.dialogPassword01 = false
-      this.dialogPassword02 = true
-      this.IsGetPsCode01 = false
+	  if(!(/^\d{6}$/.test(this.form.PasswordCode))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '验证码有误，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+	  	return false; 
+	  } else {
+		this.dialogPassword01 = false
+		this.dialogPassword02 = true
+		this.IsGetPsCode01 = false
+	  }
     },
     PassWordsaveBtn () {
       if (this.form.passwordNew == this.form.passwordAgain) {
@@ -550,24 +582,47 @@ export default {
 	  this.IsSendEmail = false
     },
     saveEmailBtn () { // 确认绑定邮件
-      updateUserEmail({
-        email: this.form.email,
-        code: this.form.emailCode
-      }).then((data) => {
-        if (data.data.status_code === 200) {
-          this.dialogEmail01 = false
-          this.$message({
-            message: '邮箱绑定成功',
-            type: 'success'
-          })
-          this.getUserMsg()
-        } else {
-          this.$message({
-            message: data.data.message,
-            type: 'error'
-          })
-        }
-      })
+	  if(!(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.form.email))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '邮箱格式不正确，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+	  	return false; 
+	  } else {
+		if(!(/^\d{6}$/.test(this.form.emailCode))){
+			this.dengluerrorBox = true
+			this.errorMsg = '验证码有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			return false; 
+		} else {
+			updateUserEmail({
+			  email: this.form.email,
+			  code: this.form.emailCode
+			}).then((data) => {
+			  if (data.data.status_code === 200) {
+			    this.dialogEmail01 = false
+			    this.$message({
+			      message: '邮箱绑定成功',
+			      type: 'success'
+			    })
+			    this.getUserMsg()
+			  } else if(data.data.status_code == '32046') {
+			    this.$message({
+			      message: '验证码错误，请重新输入',
+			      type: 'error'
+			    })
+			  } else {
+				  this.$message({
+				    message: data.data.message,
+				    type: 'error'
+				  })
+			  }
+			})
+		}
+	  }
     },
     sendEmailAc () { // 发送邮件验证码
 	  this.IsSendEmail = true
@@ -609,6 +664,7 @@ export default {
 .m_l{width: 320px;}
 .m_l span{font-size: 15px;color:#829fe8;text-decoration: underline;cursor: pointer;}
 .m_r dl dd{width: 87px;height: 25px;text-align: center;line-height: 25px;font-size: 15px;color: #547ce0; border:1px solid #547ce0;border-radius: 12px;margin:18px auto;}
+.m_r dl dd:hover{background-color: #547ce0;color: #fff;}
 .toux{width: 200px;height: 200px;border-radius: 50%;}
 .m_l_t, .xing{width: 83px;}
 .zan{width: 229px;}
@@ -618,12 +674,14 @@ export default {
 .xiu{width: 33px;}
 .xiu li{color:#7696e6;cursor: pointer;}
 .anniu{width: 220px;height: 40px;text-align: center;line-height: 40px;font-size: 18px;border:1px solid #878787;border-radius:20px;margin:0 20px;display: inline-block;cursor: pointer;}
-.anniu:first-of-type{color:#ff3f68;border: 1px solid #ff3f68;}
-.anniu:first-of-type:hover{color:#fff;border: 1px solid #ff3f68;background-color: #ff3f68;}
-.anniu:last-of-type:hover{color: #fff;background-color: #878787;}
+.anniu:last-of-type{color:#ff3f68;border: 1px solid #ff3f68;}
+.anniumima{color:#ff3f68;border: 1px solid #ff3f68;}
+.anniu:hover{color:#fff;border: 1px solid #ff3f68;background-color: #ff3f68;}
+/* .anniu:last-of-type:hover{color: #fff;background-color: #878787;} */
 .phoneBox .el-form-item__content {display: flex !important;}
 .phoneBox .el-input{width: 372px;}
 .touxiang{width: 520px;height: 300px;margin:0 auto;background-color: #eceff4;}
 .imbox{text-align: center;margin: 0;display: flex;flex-direction: column;align-items: center;padding-top: 40px;}
 .imbox img{width: 149px;height: 149px;background: #fff;border-radius: 50%;display: inline-block;}
+.errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
 </style>
