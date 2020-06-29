@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <div class="w-full bg-color relative" v-loading="fullscreenLoading">
       <div class="shengcheng_w py-10">
         <div class="bg-white rounded-lg">
@@ -28,7 +28,7 @@
 				</div>
               </div>
               <div class="my-4 save_box">
-                <span v-if="this.$route.params.content==undefined" class="save_box_span" @click='SaveQuestionnaire'>保 存</span>
+                <span v-if="this.$route.params.content==undefined" class="save_box_span re" @click='SaveQuestionnaire'>保 存</span>
                 <span class="save_box_span re" @click='DownLoadWord'>下载协议</span>
               </div>
             </div>
@@ -62,7 +62,7 @@
               </div>
             </el-dialog>
             <el-dialog title="提示" :visible.sync="dialogTiShi" class="tishi">
-              <h2 class="text-red-500 text-xl text-center py-8">确认已经保存该文件</h2>
+              <h2 class="text-red-500 text-xl text-center py-8">请确认已经保存该协议</h2>
               <div slot="footer" class="dialog-footer tishi_bot pb-3">
                 <span class="cbt" @click="canceldialogTiShi">取消返回</span>
                 <span class="cbt re" @click="alreadySave">确认已保存，返回列表</span>
@@ -213,7 +213,10 @@ export default {
     },
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true
-    }
+    },
+	getHeadActive (data) {
+		localStorage.setItem('topins',data)
+	}
 
   }
 }
@@ -223,8 +226,10 @@ export default {
 .shengcheng_w{width: 1000px;margin:0 auto;}
 .fanhuitianxie {top:34px;right: 194px;margin:0}
 .fanhuitianxie span{width: 132px;height: 35px;font-size: 16px;text-align: center;line-height: 35px;border:1px solid #343434;color:#343434;border-radius: 18px;display: inline-block;}
+.fanhuitianxie span:hover{color: #fff;background-color: #ff3f68;border:1px solid  #ff3f68;}
 .fanhuilist{position: absolute;top:34px;right: 44px;margin: 0;}
 .fanhuilist span{width: 132px;height: 35px;font-size: 16px;text-align: center;line-height: 35px;border:1px solid #343434;color:#343434;border-radius: 18px;display: inline-block;}
+.fanhuilist span:hover{color: #fff;background-color: #ff3f68;border:1px solid  #ff3f68;}
 .containermin{width:800px;}
 .returnUserList{top:110px;right: 20px;}
 .outputword{padding:20px;border:1px solid #ecf5ec;}
@@ -237,10 +242,12 @@ export default {
 .tishi .el-dialog__header .el-dialog__title{font-size: 25px;}
 .tishi_bot{width:502px;margin:0 auto;display: flex;justify-content: space-between;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
+.cbt:hover{background-color: #ff3f68;color: #fff;border:1px solid #ff3f68;}
 
 .el-dialog{width: 640px !important;}
-.save_box{width: 430px;margin:0 auto;display: flex;justify-content: space-between;padding-bottom: 100px;text-align: center;align-items: center;}
+.save_box{width: 530px;margin:0 auto;display: flex;justify-content: space-between;padding-bottom: 100px;text-align: center;align-items: center;}
 .save_box_span{width: 192px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;cursor: pointer;margin:0 auto;}
+.save_box_span:hover{background-color: #ff3f68;color: #fff;}
 .mianze p{text-indent: 2em;}
-.re{background-color: #ff3f68;border: 1px solid #ff3f68;color: #fff;}
+.re{border: 1px solid #ff3f68;color: #ff3f68;}
 </style>

@@ -14,7 +14,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -44,7 +44,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -78,7 +78,7 @@
               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
               <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                 <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                 <i class="el-icon-question"></i>
@@ -114,7 +114,7 @@
               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
               <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                 <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                 <i class="el-icon-question"></i>
@@ -149,7 +149,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -182,7 +182,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -215,7 +215,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -248,7 +248,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -281,7 +281,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" placeholder="" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -310,7 +310,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -343,7 +343,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -376,7 +376,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -409,7 +409,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -442,7 +442,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -472,7 +472,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -502,7 +502,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
 								  <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -535,7 +535,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -568,7 +568,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -601,7 +601,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -634,7 +634,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -664,7 +664,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -697,7 +697,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -730,7 +730,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -767,7 +767,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -801,7 +801,7 @@
                     <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
@@ -837,7 +837,7 @@
                     <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
@@ -872,7 +872,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -901,7 +901,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -934,7 +934,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -967,7 +967,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1000,7 +1000,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1033,7 +1033,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1063,7 +1063,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1091,7 +1091,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1125,7 +1125,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -1161,7 +1161,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -1196,7 +1196,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1224,7 +1224,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1257,7 +1257,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1290,7 +1290,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1323,7 +1323,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1356,7 +1356,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1392,7 +1392,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -1426,7 +1426,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1459,7 +1459,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1492,7 +1492,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1525,7 +1525,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1558,7 +1558,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1588,7 +1588,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1616,7 +1616,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1650,7 +1650,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -1686,7 +1686,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -1721,7 +1721,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1749,7 +1749,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1782,7 +1782,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1815,7 +1815,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1848,7 +1848,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1881,7 +1881,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -1917,7 +1917,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -1950,7 +1950,7 @@
                        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -1983,7 +1983,7 @@
                        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -2016,7 +2016,7 @@
                        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -2052,7 +2052,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -2082,7 +2082,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2115,7 +2115,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2148,7 +2148,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2181,7 +2181,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2214,7 +2214,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2244,7 +2244,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2273,7 +2273,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2306,7 +2306,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2339,7 +2339,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2372,7 +2372,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2405,7 +2405,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2435,7 +2435,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2463,7 +2463,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2491,7 +2491,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2524,7 +2524,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2558,7 +2558,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
@@ -2593,7 +2593,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
@@ -2629,7 +2629,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -2665,7 +2665,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2695,7 +2695,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
 									<div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -2728,7 +2728,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -2761,7 +2761,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -2794,7 +2794,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -2827,7 +2827,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -2855,7 +2855,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -2889,7 +2889,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                 <i class="el-icon-question"></i>
@@ -2932,7 +2932,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2965,7 +2965,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -2999,7 +2999,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
@@ -3034,7 +3034,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
@@ -3070,7 +3070,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -3103,7 +3103,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -3136,7 +3136,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -3169,7 +3169,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -3206,7 +3206,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -3240,7 +3240,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3273,7 +3273,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3306,7 +3306,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3339,7 +3339,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3372,7 +3372,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3402,7 +3402,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3432,7 +3432,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3465,7 +3465,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3498,7 +3498,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3531,7 +3531,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3564,7 +3564,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3594,7 +3594,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3627,7 +3627,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3660,7 +3660,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -3697,7 +3697,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3731,7 +3731,7 @@
                     <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
@@ -3767,7 +3767,7 @@
                     <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                     <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                       <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                       <i class="el-icon-question"></i>
@@ -3802,7 +3802,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -3831,7 +3831,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -3864,7 +3864,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -3897,7 +3897,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -3930,7 +3930,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -3963,7 +3963,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -3993,7 +3993,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4021,7 +4021,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4055,7 +4055,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -4091,7 +4091,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -4126,7 +4126,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4154,7 +4154,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4187,7 +4187,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4220,7 +4220,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4253,7 +4253,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4286,7 +4286,7 @@
                              <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4322,7 +4322,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -4356,7 +4356,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4389,7 +4389,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4422,7 +4422,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4455,7 +4455,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4488,7 +4488,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4518,7 +4518,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4546,7 +4546,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4580,7 +4580,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -4616,7 +4616,7 @@
                           <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                           <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                             <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                             <i class="el-icon-question"></i>
@@ -4651,7 +4651,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4679,7 +4679,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4712,7 +4712,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                               <div slot="content">
-                                <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                 <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                               </div>
                               <i class="el-icon-question"></i>
@@ -4748,7 +4748,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -4781,7 +4781,7 @@
                        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -4814,7 +4814,7 @@
                        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -4847,7 +4847,7 @@
                        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -4883,7 +4883,7 @@
                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -4918,7 +4918,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -4951,7 +4951,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -4984,7 +4984,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5017,7 +5017,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5050,7 +5050,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5080,7 +5080,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5109,7 +5109,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5142,7 +5142,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5175,7 +5175,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5208,7 +5208,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5241,7 +5241,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5271,7 +5271,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5299,7 +5299,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5327,7 +5327,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5360,7 +5360,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5394,7 +5394,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
@@ -5429,7 +5429,7 @@
                             <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                             <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                               <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                               <i class="el-icon-question"></i>
@@ -5465,7 +5465,7 @@
                               <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -5501,7 +5501,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5531,7 +5531,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -5564,7 +5564,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -5601,7 +5601,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5634,7 +5634,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5668,7 +5668,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
@@ -5703,7 +5703,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                       <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                         <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                         <i class="el-icon-question"></i>
@@ -5739,7 +5739,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5772,7 +5772,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5805,7 +5805,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5838,7 +5838,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                         <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -5875,7 +5875,7 @@
                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -5908,7 +5908,7 @@
                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -5941,7 +5941,7 @@
                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
                 <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right">
                   <div slot="content">
-                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                     <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
                   </div>
                   <i class="el-icon-question"></i>
@@ -5979,7 +5979,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6009,7 +6009,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6043,7 +6043,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6079,7 +6079,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6114,7 +6114,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6147,7 +6147,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6180,7 +6180,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6213,7 +6213,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6246,7 +6246,7 @@
                       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                       <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                         <div slot="content">
-                          <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                           <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                         </div>
                         <i class="el-icon-question"></i>
@@ -6276,7 +6276,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6306,7 +6306,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6339,7 +6339,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6372,7 +6372,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6405,7 +6405,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6438,7 +6438,7 @@
                                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6471,7 +6471,7 @@
                                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6504,7 +6504,7 @@
                                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6541,7 +6541,7 @@
                         <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -6571,7 +6571,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6601,7 +6601,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6634,7 +6634,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6667,7 +6667,7 @@
                                 <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6700,7 +6700,7 @@
                                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6733,7 +6733,7 @@
                                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6766,7 +6766,7 @@
                                  <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
                                 <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right">
                                   <div slot="content">
-                                    <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                    <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                     <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
                                   </div>
                                   <i class="el-icon-question"></i>
@@ -6803,7 +6803,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -6828,7 +6828,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -6858,7 +6858,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -6892,7 +6892,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -6928,7 +6928,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -6963,7 +6963,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -6996,7 +6996,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7029,7 +7029,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7062,7 +7062,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7095,7 +7095,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7123,7 +7123,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7157,7 +7157,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7190,7 +7190,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7223,7 +7223,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7256,7 +7256,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7289,7 +7289,7 @@
                                <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
                               <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right">
                                 <div slot="content">
-                                  <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                                  <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                                   <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
                                 </div>
                                 <i class="el-icon-question"></i>
@@ -7325,7 +7325,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -7358,7 +7358,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -7391,7 +7391,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>
@@ -7424,7 +7424,7 @@
                          <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
                         <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right">
                           <div slot="content">
-                            <h3 class="text-base w-full font-bold">小贴士</h3><br/>
+                            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
                             <div id="caseMsg" class="h-auto w-full" v-model="$$$item.description"></div>
                           </div>
                           <i class="el-icon-question"></i>

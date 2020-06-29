@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <div class="c_m w flex justify-between">
       <div class="c_m_l">
         <div class="pt-10">
@@ -18,7 +18,12 @@
       <div class="c_m_r text-left pb-10">
         <div class="pt-10 text-center">
           <h2 class="text-center pb-4 text-bold text-xl">{{ this.wenCon.title }}</h2>
-          <span class="inline-block pb-6 text-sm">{{ this.wenCon.time }}</span>
+		  <div>
+			  <span class="inline-block pb-6 text-sm">{{ this.wenCon.time }}</span>
+			  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-sm ml-4">阅读量 {{ this.wenCon.view }}</span>
+			  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-sm ml-4">阅读量 1245</span>
+		  </div>
+          
         </div>
         <div class="m_r_m py-5" v-html="wenCon.con">
         </div>
@@ -53,7 +58,8 @@ export default {
       wenCon: { // 文章内容
         title: '',
         time: '',
-        con: ''
+        con: '',
+		view: null
       }
     }
   },
@@ -68,8 +74,9 @@ export default {
          id: Id
        }).then((data) => {
          this.wenCon.title = data.data.data.title;
-         this.wenCon.time = data.data.data.updateTime;
+         this.wenCon.time = data.data.data.createdTime;
          this.wenCon.con = data.data.data.content;
+		 this.wenCon.view = data.data.data.view;
        })
      },
      getWenType () { // 查询分类
@@ -84,7 +91,10 @@ export default {
            id: item.id
          }
        })
-     }
+     },
+	getHeadActive (data) {
+		localStorage.setItem('topins',data)
+	}
   }
 }
 </script>

@@ -1174,7 +1174,7 @@ export default {
   }
 }
 </script>
-<style >
+<style>
 .all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;}
@@ -1182,6 +1182,7 @@ export default {
 .c_m_h h2{width:303px;font-size: 25px;color:#535353;font-weight: bold;}
 .c_m_h_r{width:482px;display: flex;justify-content: space-between;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
+.c_m_h_r span:last-of-type{border:1px solid #ff3f68;color:#ff3f68;}
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}
 html{height: 100%;background-color: #f7fafc;}
 .el-loading-spinner{left:50% !important}
@@ -1223,7 +1224,8 @@ html{height: 100%;background-color: #f7fafc;}
 #missBox{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
 #missMsgBox h2{margin:30px 0;font-weight: bold;}
 #missMsgBox .queren{width:100%;justify-content: space-around;position: absolute;bottom:40px;}
-.goonwhite{width: 192px;height: 38px;border: 1px solid #ff7a96;text-align: center;margin:0 auto;line-height: 38px;font-size: 18px;color: #ff7a96;border-radius: 19px;}
+.goonwhite{width: 192px;height: 38px;border: 1px solid #ff3f68;text-align: center;margin:0 auto;line-height: 38px;font-size: 18px;color: #ff3f68;border-radius: 19px;}
+.goonwhite:hover{background-color: #ff3f68;color: #fff;}
 #missAlert{width:250px;height:450px;position:fixed;top:24%;right:2%;z-index: 1;background: #e2e5d9}
 #missAlert h2{margin:10px 0;font-weight: bold;font-size: 20px;}
 #caseMsg{line-height:30px !important;text-indent:2em;}

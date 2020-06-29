@@ -28,7 +28,7 @@
           </dl>
         </div>
         <div class="bot03 text-left text-white">
-          <p>友情链接：<a href="http://www.jialilaw.com/" target="_blank">北京家理律师事务所</a></p>
+          <p>友情链接：<a class="hover:underline" href="http://www.jialilaw.com/" target="_blank">北京家理律师事务所</a></p>
           <p>©2017 北京家理律师事务所      备案号：京ICP备14011260号-2      京公网安备：11010502037274号</p>
         </div>
       </div>

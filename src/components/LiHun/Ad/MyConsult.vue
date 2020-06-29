@@ -3,17 +3,17 @@
 		<lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
 		<div class="c_m w">
 			<div class="c_m_h flex justify-between items-center px-12">
-				<h2 style="font-size: 25px;">
+				<h2 class="text-left" style="font-size: 25px;">
 					我的协议书
 				</h2>
 				<div class="c_m_h_r flex justify-between items-center">
 					<span @click="dingzhiBtn">
 						<router-link to="CustomAgreement">定制我的协议书</router-link>
 					</span>
-					<div class="mx-5 hover:underline">
+					<div class="mx-5 underline hover:font-bold">
 						<router-link to="AgreementHelp">协议书定制帮助</router-link>
 					</div>
-					<div class="cursor-pointer  hover:underline hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
+					<div class="cursor-pointer  hover:font-bold underline hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
 				</div>
 			</div>
 			<div class="c_m_m px-12">
@@ -34,7 +34,7 @@
 									<span class="inline-block ml-10">文书编号:{{ item.agreement_number }}</span>
 								</div>
 								<div class="w-1/6 flex justify-end items-center pl-5">
-									<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="NewCopy(item, index)">创建副本</span>
+									<span class="inline-block hover:font-bold cursor-pointer underline text-blue-500 text-sm" @click="NewCopy(item, index)">创建副本</span>
 									<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span> -->
 								</div>
 							</h4>
@@ -45,19 +45,19 @@
 								<div class="w-1/2 flex justify-around items-center">
 									<dl class="w-1/3">
 										<dt>第{{ item.number }}版</dt>
-										<dd @click="checkHistory(index)">
+										<dd class="hover:font-bold" @click="checkHistory(index)">
 											查看历史版本
 										</dd>
 									</dl>
 									<dl v-if="item.complete == 2" class="w-1/3">
 										<dt class="text-blue-400">起草中</dt>
-										<dd @click="goOnTianxie(item.id)" class="text-red">
+										<dd @click="goOnTianxie(item.id)" class="text-red hover:font-bold">
 											继续起草
 										</dd>
 									</dl>
 									<dl v-if="item.complete == 1" class="w-1/3 ">
 										<dt>起草完</dt>
-										<dd @click="goComplete(item)">
+										<dd class="hover:font-bold" @click="goComplete(item)">
 											查看协议书
 										</dd>
 									</dl>
@@ -98,13 +98,13 @@
 												</dl>
 												<dl v-if="$item.complete == 2" class="w-1/3">
 													<dt class="text-blue-400">起草中</dt>
-													<dd @click="goOnTianxie($item.id)" class="text-red">
+													<dd @click="goOnTianxie($item.id)" class="text-red hover:font-bold">
 														继续起草
 													</dd>
 												</dl>
 												<dl v-if="$item.complete == 1" class="w-1/3 ">
 													<dt>起草完</dt>
-													<dd @click="goComplete($item)">
+													<dd class="hover:font-bold" @click="goComplete($item)">
 														查看协议书
 													</dd>
 												</dl>
@@ -137,19 +137,17 @@
 				</div>
 				<!-- 下载时的免责 -->
 				<el-dialog title="免责条款" :visible.sync="dialogDownLoadWenJuan">
-					<div class="text-left">
-						<p class="leading-loose">1.办理离婚登记后，备案于民政局的离婚协议是生效的，很难反悔。因此，签订离婚协议书时要心平气和、保持理智，注意协议内容的合理性、合法性和可操作性，不要过于简单、宽泛。</p>
-						<p class="leading-loose">2.双方系自愿离婚。一方或双方非自愿离婚的，本协议无效。</p>
-						<p class="leading-loose">3.若房产仍在按揭贷款中的，在离婚协议书分割房产前，要注意银行是否同意变更主贷人或减少共同抵押人，以免离婚协议书约定无法实际执行。</p>
-						<p class="leading-loose">4.对债务承担的约定，除非经债权人同意，否则该约定对债权人没有约束力，债权人依然有权要求夫妻双方对债务承担连带责任。</p>
-						<p class="leading-loose">5.在离婚时，很难有证据证明对方存在隐瞒或转移夫妻共同财产的行为。因此，应明确对该行为所涉及财产的处置方式，便于事后追溯，以达到警戒及惩处的作用。</p>
-						<p class="leading-loose">6.应约定违约条款，若给付义务人不按期履行，其就会受到罚息的压力，从而可以达到惩戒的目的。</p>
-						<p class="leading-loose">7.离婚协议书不因双方签字盖章即生效，而是自正式离婚后生效。</p>
-						<p class="leading-loose">8.把房产赠与孩子时需要注意一些风险：孩子成年后独自处分房产给父母带来不便的情形；房子没有办理过户时，房子所有权并没有转移，如果房产上存在其他纠纷，依然存在被其他第三人主张权利的风险；考虑孩子偏向对方，对自己产生不公平的情形。</p>
-						<p class="leading-loose">9.孩子归夫妻双方共同抚养时，需要注意双方各自抚养的时间选择不能重合和有空档，否则日后会引起不必要的纠纷。</p>
+					<div class="text-left mianze px-2">
+					  <h2>尊敬的家文用户：</h2>
+					  <p class="leading-loose">欢迎您使用家文系统！为了让您更好地达成协议，维护您的合法权益，请您在下载、使用协议前仔细阅读、充分了解并清楚知晓以下重要内容：</p>
+					  <p class="leading-loose">离婚协议自双方办理离婚登记后生效，因此在约定离婚协议条款时应具体、全面，尽量避免双方离婚后因草率、随意订立条款而引起诉讼纠纷。</p>
+					  <p class="leading-loose">离婚协议约定内容应符合法律强制性规定，例如，不得限制离婚后一方的再婚自由，不得概括约定一方名下所有财产归其所有等，否则会导致协议部分条款效力待定或无效。</p>
+					  <p class="leading-loose">签订离婚协议时应明确各类财产的具体信息和离婚后归属，例如房产写明地址、在谁名下、取得时间、出资情况、离婚后归谁所有、是否支付补偿；银行存款写明数额、在谁名下、开户行、账号、离婚后归谁所有、是否支付补偿等，否则可能因无法确定财产具体信息或归属而引起纠纷。</p>
+					  <p class="leading-loose">由于夫妻共同财产具有复杂性和变化性，若在订立时涉及新型财产（例如：网上店铺、虚拟财产等）和非常规分割方式的约定，建议您委托律师专业起草协议，以更好的避免相关协议风险。</p>
+					  <p class="leading-loose">家文基于《中华人民共和国婚姻法（2001修正）》和最高法院关于适用《中华人民共和国婚姻法》若干问题的三个司法解释等法律规定，系统数据来源于数千份真实的离婚协议书样本，具有内容专业、信息精准的特点。在填写和修改离婚协议时，用户提供的信息须真实、完整、准确，因信息不真实、不准确、不完整或输入错误而造成的一切后果均由用户自行承担。</p>
 					</div>
-					<div>
-						<el-checkbox v-model="form.type">我已核实上述内容并确认无误</el-checkbox>
+					<div class="mt-5">
+						<el-checkbox v-model="form.type">本人已仔细阅读上述内容，充分了解、清楚知晓并自愿承担离婚协议可能带来的风险。</el-checkbox>
 					</div>
 					<div slot="footer" class="dialog-footer tishi_bot pb-3">
 						<span class="cbt" @click="canceldialogDownLoadWenJuan">取 消</span>
@@ -159,7 +157,7 @@
 				<!-- 新建副本 -->
 				<el-dialog title="新建副本" :visible.sync="dialogNewCopy">
 					<el-form :model="chooseList">
-						<el-form-item label="副本名称" :label-width="formLabelWidth" class="mb-1">
+						<el-form-item label="副本名称" label-width="130px" class="mb-1">
 							<el-input v-model="chooseList.title" class="w-2/3" autocomplete="off"></el-input>
 						</el-form-item>
 					</el-form>
@@ -418,7 +416,7 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
 	.live {
 		height: 39px;
 		background-color: #f2f4f7;
@@ -458,7 +456,7 @@
 		color: #535353;
 		font-weight: bold;
 	}
-
+	.c_m_h_r span:first-of-type{border: 1px solid #ff3f68;color:#ff3f68;}
 	.c_m_h_r span:hover {
 		border: 1px solid #ff3f68;
 		background-color: #ff3f68;
@@ -552,6 +550,11 @@
 		border-radius: 19px;
 		display: inline-block;
 	}
+	.cbt:hover{
+		color: #fff;
+		border: 1px solid #ff3f68;
+		background-color: #ff3f68;
+	}
 
 	.zhidaopage .el-dialog__body {
 		padding: 20px 0px 0px 0px;
@@ -562,8 +565,8 @@
 	}
 	.zhidaopage .el-dialog__wrapper .dialog{width: 761px;height: 554px;}
 	.re {
-		background-color: #ff3f68;
+		color: #ff3f68;
 		border: 1px solid #ff3f68;
-		color: #fff;
 	}
+	.mianze p{text-indent: 2em;}
 </style>

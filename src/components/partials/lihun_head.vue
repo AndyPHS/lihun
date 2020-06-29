@@ -80,8 +80,8 @@
                 </div>
                 <div class="yanzheng el-form-item">
                   <div class="el-form-item__content flex justify-between">
-                    <input type="number" v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
-                    <span class="spa" v-if="this.registYan == false" @click="getYan">获取验证码</span>
+                    <input v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
+                    <span class="spa hover:underline" v-if="this.registYan == false" @click="getYan">获取验证码</span>
                     <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
                   </div>
                   <div class="el-form-item__content text-right underline text-blue-300 my-4">
@@ -107,9 +107,14 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <el-checkbox-group v-model="checkOne" class="checkGroup" >
-                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意<span class="hover:underline text-blue-500">《家文用户注册和使用协议》</span></el-checkbox>
-                  </el-checkbox-group>
+				  <div class="flex justify-start items-center mx-auto" style="width: 302px;">
+					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==false" src="../../assets/images/lihun/unchecked.png" alt="">
+					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==true" src="../../assets/images/lihun/checked.png" alt="">
+					  <p class="ml-1">我已阅读并同意<span @click="handleCheckedCitiesChange" class="hover:font-bold underline inline-block text-blue-500">《家文用户注册和使用协议》</span></p>
+				  </div>
+                  <!-- <el-checkbox-group v-model="checkOne" class="checkGroup" >
+                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意<span class="hover:font-bold underline text-blue-500">《家文用户注册和使用协议》</span></el-checkbox>
+                  </el-checkbox-group> -->
                 </div>
                 <div class="el-dialog__footer text-center mt-4 pb-12">
                   <span class="nextSt" @click="nextSt">下一步</span>
@@ -159,7 +164,7 @@
                   <div>
                     <img class="code_key_img inline-block mx-2" :src='identifyCodeMsg.codeUrl' :key='form.code_key'  alt="">
                   </div>
-                  <span class="spa"  @click="changeCode">刷新验证码</span>
+                  <span class="spa hover:underline"  @click="changeCode">刷新验证码</span>
 
                 </div>
                 <div class="mt-3">
@@ -171,7 +176,7 @@
                 </div>
                 <div class="el-dialog__footer text-center mt-10 pb-12">
                   <span class="nextSt" @click="loginBt">登录</span>
-                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer hover:underline">《家文用户注册和使用协议》</span></p>
+                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer underline hover:font-bold">《家文用户注册和使用协议》</span></p>
                 </div>
               </div>
             </form>
@@ -273,8 +278,8 @@
 					<span class="yanphone inline-block text-lg py-3">请获取<span class="text-red-500">{{this.newform.phone}}</span>手机验证码</span>
 			        <div class="yanzheng el-form-item">
 			          <div class="el-form-item__content flex justify-between">
-			            <input type="number" v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
-			            <span class="spa" v-if="this.registYan == false" @click="findYan">获取验证码</span>
+			            <input v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
+			            <span class="spa hover:underline" v-if="this.registYan == false" @click="findYan">获取验证码</span>
 			            <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
 			          </div>
 			          <div class="el-form-item__content text-right underline text-blue-300 my-4">
@@ -329,7 +334,7 @@
 					    <el-input placeholder="请确认密码" v-model="newform.passwordAgain" show-password></el-input>
 					  </div>
 					</div>
-			        <div class="el-dialog__footer text-center mt-4 pb-12">
+			        <div class="el-dialog__footer steall flex justify-between text-center mt-4 pb-12">
 					  <span class="ste" @click="resetPWprev">上一步</span>
 			          <span class="ste" @click="resetPW">完成</span>
 			        </div>
@@ -413,7 +418,7 @@ export default {
 	goHome () { // 点击图标返回首页
 		this.$router.replace('/')
 	},
-	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面
+	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面	  
 		this.topins = index
 		this.$emit('headActiveEvent',this.topins)
 		if(index == 0){
@@ -476,6 +481,9 @@ export default {
       this.dialogFormVisible = false
       this.registYan = false
     },
+	changeSelectAc () {
+		this.checkOne = !this.checkOne
+	},
     handleCheckedCitiesChange () {
       const {href} = this.$router.resolve({
       	path: '/UserAgreement'
@@ -688,8 +696,17 @@ export default {
 		this.forgetDialog2 = true
 	},
 	resetnext () {
-		this.dialogFindByPhone = false
-		this.dialogPhonePw = true
+		if(!(/^\d{6}$/.test(this.newform.valueCode))){
+			this.dengluerrorBox = true
+			this.errorMsg = '验证码有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			return false; 
+		} else {
+			this.dialogFindByPhone = false
+			this.dialogPhonePw = true
+		}
 	},
 	closePhonePw () { // 关闭设置新密码弹窗
 		this.dialogPhonePw = false
@@ -827,14 +844,16 @@ export default {
   .nextSt:hover{background-color: #ff3f68;color:#fff}
   .registOk{width: 428px;display: flex;margin: 0 auto;padding-bottom: 70px;justify-content: space-between;}
   .registOk span{width:194px;text-align: center;height: 38px;line-height: 38px;font-size: 18px;display: inline-block;cursor: pointer;border-radius: 19px;}
-  .registOk span:first-of-type{border:1px solid #ff3f68;color: #fff;background-color: #ff3f68;}
+  .registOk span:first-of-type{border:1px solid #ff3f68;color: #ff3f68;}
+  .registOk span:first-of-type:hover{color: #fff;background-color: #ff3f68;}
   .registOk span:last-of-type{border:1px solid #535353;color:#535353;}
+  .registOk span:last-of-type:hover{color: #fff;background-color: #ff3f68;border:1px solid #ff3f68;}
   .steall{width: 525px;margin:0 auto;}
   .ste{width: 220px;height: 38px;text-align: center;line-height: 38px;border-radius: 19px;font-size: 18px;display: inline-block;}
   .ste:first-of-type{border:1px solid #343434;color:#343434;}
-  .ste:first-of-type:hover{background-color: grey;color:#fff}
-  .ste:last-of-type{border:1px solid red;color:red;}
-  .ste:last-of-type:hover{background-color: red;color:#fff;}
+  .ste:first-of-type:hover{background-color: #ff3f68;color:#fff;border:1px solid #ff3f68}
+  .ste:last-of-type{border:1px solid #ff3f68;color:#ff3f68;}
+  .ste:last-of-type:hover{background-color: #ff3f68;color:#fff;}
   .activered{color:#ff3f68;}
   .default{color:#343434;}
   .text-b{color:#557ce1}

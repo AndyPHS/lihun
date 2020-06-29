@@ -26,7 +26,7 @@
               <ul class="">
                 <li v-for="(item, index) in tableData" :key="index"  class="pb-8 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
                   <div class="py-8 flex justify-between items-center">
-                    <h2 class="w-4/5 overflow-hidden">{{ item.title }}</h2>
+                    <h2 class="w-4/5 overflow-hidden hover:underline">{{ item.title }}</h2>
                     <span class="w-1/5 text-right">{{ item.createdTime }}</span>
                   </div>
                   <p>{{ item.description }}</p>

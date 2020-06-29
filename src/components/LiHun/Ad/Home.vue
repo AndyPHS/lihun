@@ -9,7 +9,10 @@
               <p>离婚协议在线生成，20分钟个性化定制</p>
               <h2 class="font-thin">已累计起草2585份</h2>
               <div>
-                <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+				<div @click="goDingZhi" class="shouyedingzhibtn">
+					<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+					<span class="inline-block text-white">定制我的离婚协议书</span>
+				</div>
               </div>
             </div>
             <div>
@@ -25,7 +28,10 @@
               <p>离婚协议书自动生成，20分钟专属定制</p>
               <h2 class="font-thin">已累计定制3500份</h2>
               <div>
-                <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+                <div @click="goDingZhi" class="shouyedingzhibtn">
+                	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+                	<span class="inline-block text-white">定制我的离婚协议书</span>
+                </div>
               </div>
             </div>
             <div>
@@ -138,9 +144,10 @@
       </div>
       <div class="w guanyu_min flex justify-between">
         <div>
-          <video src="http://sem.jialilaw.com/sem/video/xuanchuan.mp4" id="player" controls="controls" width="600" height="339" poster="../../../assets/images/lihun/guanyu_video.png" >
+		  <img src="../../../assets/images/lihun/video_img.jpeg" alt="">
+          <!-- <video src="http://sem.jialilaw.com/sem/video/xuanchuan.mp4" id="player" controls="controls" width="600" height="339" poster="../../../assets/images/lihun/guanyu_video.png" >
           	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="http://sem.jialilaw.com/sem/video/xuanchuan.mp4">下载视频</a>
-          </video>
+          </video> -->
         </div>
         <div class="guanyu_min_r">
           <div class="guanyu_min_r_con">
@@ -161,7 +168,10 @@
         </div>
       </div>
       <div class="dingzhi">
-        <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+        <div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
+        	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+        	<span class="inline-block text-white">定制我的离婚协议书</span>
+        </div>
       </div>
     </div>
     <div class="qianyue">
@@ -389,7 +399,10 @@
         <img class="inline-block" src="../../../assets/images/lihun/liucheng.png" alt="">
       </div>
       <div class="dingzhi">
-        <img @click="goDingZhi" class="cursor-pointer" src="../../../assets/images/lihun/swiper_btn.png" alt="">
+        <div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
+        	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+        	<span class="inline-block text-white">定制我的离婚协议书</span>
+        </div>
       </div>
     </div>
     <!-- 公共底部 -->
@@ -434,6 +447,9 @@ export default {
 }
 </script>
 <style scoped >
+.shouyedingzhibtn{width: 300px;height: 50px;background-color: #ff3f68;display: flex;align-items: center;border-radius: 25px;justify-content: center}
+.shouyedingzhibtn:hover{background-color: #ff6687;cursor: pointer;}
+.shouyedingzhibtn span{font-size:24px;margin-left: 10px;}
 .swiper01{background: url(../../../assets/images/lihun/swiper01_bg.png)no-repeat;}
 .w{width: 1200px; margin: 0 auto;}
 .swi{padding:50px 0;}
@@ -449,6 +465,7 @@ export default {
 .wuqu dl dd p:hover{text-decoration: underline;}
 .moreZhiShi{padding:58px 0 116px}
 .moreZhiShi span{width: 194px;height: 46px;border: 1px solid #ff3f68;color: #ff3f68;text-align: center;line-height: 46px;border-radius: 23px;display: inline-block;}
+.moreZhiShi span:hover{background-color: #ff3f68;color:#fff}
 .fuwu{height:713px;width: 100%;background: url(../../../assets/images/lihun/fuwu_bg.png)no-repeat;background-size: 100% 100%;}
 .fuwu dl dt h3{font-size: 30px;color:#535353;margin:16px 0 50px}
 .fuwu dl dd p{color:#535353;width: 147px;margin:0 auto;font-size: 16px;display: inherit;}
