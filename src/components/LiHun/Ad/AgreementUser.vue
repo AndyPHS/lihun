@@ -2,9 +2,9 @@
   <div class="all">
     <lihun-head ref="lihun"></lihun-head>
     <div class="c_m w">
-      <div class="py-12 px-12">
+      <div class="pt-12 px-12">
         <h2 class="text-left text-lg c_m_t">个人中心</h2>
-        <div class="flex justify-around items-center">
+        <div class="flex justify-around items-center" style="height: 500px;">
           <div class="m_l">
             <div class="flex justify-between mt-12">
               <h3 class="m_l_t font-bold">基础资料</h3>
