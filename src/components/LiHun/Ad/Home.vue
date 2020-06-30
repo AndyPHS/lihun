@@ -176,7 +176,7 @@
     </div>
     <div class="qianyue">
       <div class="head_com">
-        <h2>家理出品，让您签“约”更放心</h2>
+        <h2>家理出品，让您定制更放心</h2>
         <span>国内最大的婚姻家事律师事务所</span>
       </div>
       <div class="w quanyue_01 flex justify-between">
@@ -355,7 +355,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">很专业啊，完全物超所值！这年头专业的离婚协议少说好几千呢，这个又便宜又高质量，可以可以赚到了！</p>
+                	<p class="pinjia_p">太专业了，完全物超所值！这年头专业的离婚协议少说好几千呢，这个居然免费，可以可以赚到了！</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -383,7 +383,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">页面简洁，操作方便，价格实惠。用这个系统写了离婚协议，半个小时就搞定了，和律师写的没啥差别。良心系统！良心商家！赞！</p>
+                	<p class="pinjia_p">页面简洁，操作方便。用这个系统写了离婚协议，半个小时就搞定了，和律师写的没啥差别。赞！</p>
                 </li>
               </ul>
             </el-carousel-item>
