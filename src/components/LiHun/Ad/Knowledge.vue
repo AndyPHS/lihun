@@ -28,7 +28,7 @@
           </ul>
         </div>
         <div class="m_r_m">
-          <ul class="">
+          <ul class="min_l">
             <li v-for="(item, index) in tableData" :key="index"  class="pb-8 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
               <div class="py-8 flex justify-between items-center">
                 <h2 class="w-4/5 overflow-hidden hover:underline" v-html="item.title"></h2>
@@ -175,4 +175,9 @@ export default {
 .default_active{color:red}
 .default{color:#343434;}
 .errorMin{height: 500px;}
+.min_l{height: 500px;overflow-y: scroll;}
+::-webkit-scrollbar {
+	width:1px;
+	background-color: #FFF;
+}
 </style>

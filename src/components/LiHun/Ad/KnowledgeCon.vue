@@ -86,6 +86,7 @@ export default {
        })
      },
      searchList (item) { // 点击文章分类跳转到文章列表页
+	   localStorage.setItem('topins',1)
        this.$router.push({
          name: 'Knowledge',
          params: {

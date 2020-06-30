@@ -1232,7 +1232,7 @@ html{height: 100%;background-color: #f7fafc;}
 #missAlert h2{margin:10px 0;font-weight: bold;font-size: 20px;}
 #caseMsg{line-height:30px !important;text-indent:2em;}
 .el-tooltip__popper.is-dark{background-color: #f7fafc !important;color:#343434 !important; border:1px solid #eae3e3 !important;border-radius: 15px !important;box-shadow: 0px 0px 5px 2px #e6dddd}
-.el-tooltip__popper {width: 200px !important;height: 150px !important;overflow-y: scroll !important;}
+.el-tooltip__popper {width: 200px !important;height: 150px !important;overflow-y: scroll !important;border:1px solid red !important}
 .el-radio{line-height: 30px !important;}
 .tishi_bot{width:502px;margin:0 auto;display: flex;justify-content: space-between;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
