@@ -17,13 +17,13 @@
               </ul>
               <ul class="zan mt-4">
                 <li class="lis text-left">
-                  <span class="no-underline text-gray-400" v-if="this.userMsg.name != ''">{{this.userMsg.name}}</span>
-                  <span v-if="this.userMsg.name == ''">暂无</span>
+                  <span v-if="this.userMsg.name == null ">暂无</span>
+				  <span v-else class="no-underline text-gray-400">{{this.userMsg.name}}</span>
                 </li>
                 <li class="lis text-left">
                   <span class="no-underline text-gray-400" v-if="this.userMsg.sex == 1">男</span>
                   <span class="no-underline text-gray-400" v-else-if="this.userMsg.sex == 2">女</span>
-                  <span v-if="this.userMsg.sex == null"暂无</span>
+                  <span v-if="this.userMsg.sex == null ">暂无</span>
                 </li>
               </ul>
             </div>
@@ -57,7 +57,8 @@
           <div class="m_r w-1/3">
             <dl>
               <dt>
-                <img class="inline-block toux" :src="this.userMsg.photo" alt="">
+				<img v-if="this.userMsg.photo==null" class="inline-block toux" src="../../../assets/images/lihun/no_photo_img.jpg" alt="">
+                <img v-else class="inline-block toux" :src="this.userMsg.photo" alt="">
               </dt>
               <dd @click="setImg">
                 设置头像
@@ -341,6 +342,7 @@ export default {
   mounted () {
     this.getPhone()
     this.getUserMsg() // 查询用户基本信息
+	localStorage.setItem('topins',-1)
   },
   methods: {
     getUserMsg () { // 查询用户基本信息
@@ -359,6 +361,8 @@ export default {
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
 			  this.form.sex = JSON.stringify(this.userMsg.sex)
+			  console.log(this.userMsg.name)
+			  console.log(this.userMsg.sex)
 		  } 
         
       })

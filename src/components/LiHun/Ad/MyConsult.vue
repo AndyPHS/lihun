@@ -10,8 +10,8 @@
 					<span @click="dingzhiBtn">
 						<router-link to="CustomAgreement">定制我的协议书</router-link>
 					</span>
-					<div class="mx-5 underline hover:font-bold">
-						<router-link to="AgreementHelp">协议书定制帮助</router-link>
+					<div class="mx-5 underline hover:font-bold" @click="goBangZhu">
+						协议书定制帮助
 					</div>
 					<div class="cursor-pointer  hover:font-bold underline hover\:text-blue-400" @click="goKnowledgeMin(20)">协议书如何谈判</div>
 				</div>
@@ -26,7 +26,7 @@
 							<span class="w-1/3 inline-block text-center font-bold">操作</span>
 						</div>
 					</div>
-					<ul>
+					<ul class="min_l">
 						<li v-for="(item, index) in wenshuList" :key="index">
 							<h4 class="flex justify-between items-center px-6">
 								<div class="flex w-1/2 text-gray-600">
@@ -35,7 +35,7 @@
 								</div>
 								<div class="w-1/6 flex justify-end items-center pl-5">
 									<span class="inline-block hover:font-bold cursor-pointer underline text-blue-500 text-sm" @click="NewCopy(item, index)">创建副本</span>
-									<span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span>
+									<!-- <span class="inline-block cursor-pointer underline text-blue-500 text-sm" @click="DeleteWenJuan(item, index)">删除</span> -->
 								</div>
 							</h4>
 							<div class="c_m_m_m_m flex justify-between items-center">
@@ -248,6 +248,10 @@
 			dingzhiBtn() { // 点击定制协议跳转到小问卷页面
 				this.$router.replace('/Pay')
 			},
+			goBangZhu () { // 点击协议书定制帮助
+				localStorage.setItem('topins',1)
+				this.$router.replace('/AgreementHelp')
+			},
 			getWenShu() { // 查找用户文书
 				selectUserQuestionnaire({
 					qid: 3,
@@ -404,6 +408,7 @@
 				this.dialogZhiDao = false
 			},
 			goKnowledgeMin (id) { // 协议书如何谈判
+			  localStorage.setItem('topins',1)
 			  this.$router.push({
 			    name: 'KnowledgeCon',
 			    params: {
@@ -443,8 +448,11 @@
 		border-bottom: 2px solid #f2f4f7;
 		margin-top: 39px;
 	}
-
-
+	.min_l{height: 500px;overflow-y: scroll;}
+	::-webkit-scrollbar {
+		width:1px;
+		background-color: #FFF;
+	}
 	.c_m_h_r span {
 		display: inline-block;
 		width: 151px;

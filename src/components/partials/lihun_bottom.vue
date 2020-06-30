@@ -95,18 +95,43 @@ export default {
   },
   methods: {
 	goNewpage (e) {
-		if (e==0) {
-			localStorage.setItem('topins',0)
-			this.$router.replace('/')
-		} else if (e==1) {
-			localStorage.setItem('topins',1)
-			this.$router.replace('Knowledge')
-		} else if (e==2) {
-			localStorage.setItem('topins',2)
-			this.$router.replace('MyConsult')
-		}  else if (e==3) {
-			localStorage.setItem('topins',-1)
-			window.open('http://www.jialilaw.com/', '_blank')
+		if(this.$route.path=='/CustomBasic' || this.$route.path=='/CustomAgreement' || this.$route.path=='/CustomQueDing' || this.$route.path=='/CustomShengCheng' ){
+			if (e==0) {
+				localStorage.setItem('topins',0)
+				const {href} = this.$router.resolve({
+					path: '/'
+				})
+				window.open(href, '_blank')
+			} else if (e==1) {
+				localStorage.setItem('topins',1)
+				const {href} = this.$router.resolve({
+					path: '/Knowledge'
+				})
+				window.open(href, '_blank')
+			} else if (e==2) {
+				localStorage.setItem('topins',2)
+				const {href} = this.$router.resolve({
+					path: '/MyConsult'
+				})
+				window.open(href, '_blank')
+			}  else if (e==3) {
+				localStorage.setItem('topins',-1)
+				window.open('http://www.jialilaw.com/', '_blank')
+			}
+		} else {
+			if (e==0) {
+				localStorage.setItem('topins',0)
+				this.$router.replace('/')
+			} else if (e==1) {
+				localStorage.setItem('topins',1)
+				this.$router.replace('/Knowledge')
+			} else if (e==2) {
+				localStorage.setItem('topins',2)
+				this.$router.replace('/MyConsult')
+			}  else if (e==3) {
+				localStorage.setItem('topins',-1)
+				window.open('http://www.jialilaw.com/', '_blank')
+			}
 		}
 	},
 	goDingZhi (e) {

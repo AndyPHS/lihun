@@ -63,6 +63,7 @@ export default {
   },
   mounted () {
     this.getWenType()
+	localStorage.setItem('topins',2)
   },
   methods: {
     goKnowledgeMin (id) {

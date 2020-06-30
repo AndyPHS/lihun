@@ -58,6 +58,7 @@ export default {
   },
   mounted () {
 	this.gopay()
+	localStorage.setItem('topins',-1)
   },
   methods: {
 	gopay () { // 去支付

@@ -8,6 +8,10 @@
         </h2>
         <div class="c_m_h_r">
           <span @click="goAgreementHelp">协议书定制帮助</span>
+		  <span class="ml-5" @click="returnUserList">返回文书列表</span>
+		  <!-- <div class="absolute returnUserList right-0">
+		    
+		  </div> -->
         </div>
       </div>
       <div class="pb-5">
@@ -3141,9 +3145,6 @@
               </div>
             </div>
           </div>
-          <div class="absolute returnUserList right-0">
-            <span class="returnUserList_span" @click="returnUserList">返回文书列表</span>
-          </div>
         </div>
       </div>
     </div>
@@ -3176,6 +3177,7 @@ export default {
   },
   mounted () {
      this.childList()
+	 localStorage.setItem('topins',2)
   },
   methods: {
     getChuShi () {
@@ -3665,6 +3667,7 @@ export default {
       this.$router.replace('/MyConsult')
     },
 	goAgreementHelp () {
+		localStorage.setItem('topins',1)
 		const {href} = this.$router.resolve({
 			path: '/AgreementHelp'
 		})
@@ -3686,8 +3689,8 @@ export default {
 
 .ban{width:220px !important;}
 .ban{width:100% !important;}
-.returnUserList{top:120px;right: 48px;}
-.returnUserList_span{width: 132px;height: 35px;font-size: 16px;text-align: center;line-height: 35px;border:1px solid #343434;color:#343434;border-radius: 18px;display: inline-block;cursor: pointer;}
+/* .returnUserList{top:120px;right: 48px;}
+.returnUserList_span{width: 132px;height: 35px;font-size: 16px;text-align: center;line-height: 35px;border:1px solid #343434;color:#343434;border-radius: 18px;display: inline-block;cursor: pointer;} */
 .el-form-item{margin-bottom:8px !important;}
 .el-form--label-top .el-form-item__label{padding-bottom:0 !important;}
 .el-date-editor.el-input, .el-date-editor.el-input__inner{width:100% !important;}

@@ -28,8 +28,8 @@
           </div>
           <div v-else class="flex justify-around items-center relative">
 			<div @click="dengluBox = !dengluBox">
-				<span v-if="this.name == '' || this.name== null " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
-				<span v-else class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.name }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-if="this.UserName== 'null' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-else class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.UserName }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 			</div>
 			<div v-if="this.dengluBox" class="absolute denglu">
 				<ul>
@@ -375,7 +375,7 @@ export default {
         valueCode: null, // 验证码
         code_key: '' // 验证码的KEY
       },
-	  name: '',
+	  UserName: null,
 	  newform: {
 		  phone: null, // 新密码
 		  valueCode: null, // 新验证码
@@ -411,17 +411,17 @@ export default {
   },
   methods: {
 	getUserMsg () { // 查询用户基本信息
-	  var that = this
-	  that.name = localStorage.getItem('name')
+	  this.UserName = localStorage.getItem('name')
 	  this.topins = localStorage.getItem('topins')
 	},
 	goHome () { // 点击图标返回首页
+		localStorage.setItem('topins',0)
 		this.$router.replace('/')
 	},
 	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面	  
 		this.topins = index
 		this.$emit('headActiveEvent',this.topins)
-		if(this.$route.path=='/CustomBasic'){
+		if(this.$route.path=='/CustomBasic' || this.$route.path=='/CustomAgreement' || this.$route.path=='/CustomQueDing' || this.$route.path=='/CustomShengCheng' ){
 			if(index == 0){
 				localStorage.setItem('topins',0)
 				const {href} = this.$router.resolve({
@@ -499,13 +499,33 @@ export default {
     goAgreementUser () {
 	  this.topins = -1
 	  this.$emit('headActiveEvent',this.topins)
-      this.$router.replace('/AgreementUser')
+	  if(this.$route.path=='/CustomBasic' || this.$route.path=='/CustomAgreement' || this.$route.path=='/CustomQueDing' || this.$route.path=='/CustomShengCheng' ) {
+		  const {href} = this.$router.resolve({
+		  	path: '/AgreementUser',
+		  	params: {
+		  	  topins: this.topins
+		  	}
+		  })
+		  window.open(href, '_blank')
+	  } else {
+		  this.$router.replace('/AgreementUser')
+	  }
 	  this.dengluBox = false
     },
 	goMyconsult () { // 点击我的协议返回到协议列表
 		this.topins = 2
 		this.$emit('headActiveEvent',this.topins)
-		this.$router.replace('/MyConsult')
+		if(this.$route.path=='/CustomBasic' || this.$route.path=='/CustomAgreement' || this.$route.path=='/CustomQueDing' || this.$route.path=='/CustomShengCheng' ) {
+				  const {href} = this.$router.resolve({
+				  	path: '/MyConsult',
+				  	params: {
+				  	  topins: this.topins
+				  	}
+				  })
+				  window.open(href, '_blank')
+		} else {
+				  this.$router.replace('/MyConsult')
+		}
 		this.dengluBox = false
 	},
     liveOut () { // 点击退出登录

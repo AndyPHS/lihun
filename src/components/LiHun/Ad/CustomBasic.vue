@@ -460,6 +460,7 @@ export default {
     this.getTeShuYueDingMsg()
   },
   mounted () {
+	localStorage.setItem('topins',2)
 	window.isCloseHint = true;
 	//初始化关闭
 	window.addEventListener("beforeunload", function(e) {
@@ -1178,7 +1179,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;}
@@ -1238,10 +1239,14 @@ html{height: 100%;background-color: #f7fafc;}
 .el-radio{line-height: 30px !important;}
 .tishi_bot{width:502px;margin:0 auto;display: flex;justify-content: space-between;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
+.cbt:hover{background-color: #ff3f68;color: #fff;border:1px solid #ff3f68}
 .re{border: 1px solid #ff3f68;color: #ff3f68;background-color: #fff;}
 .basicmin{height: 750px;overflow-y: scroll;}
 #shengchengloading{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
 .shengchengloding_min{width: 500px;height: 200px;top:30%;margin-top: -100px;left: 50%;margin-left: -250px;position: fixed;}
 .shengchengloding_min img{display: inline-block;margin:20px auto}
-/* .shengchengloding_min div{text-align: center;font-size: 20px;padding:20px;color:#fff;font-weight: bolder;} */
+::-webkit-scrollbar {
+		width:1px;
+		background-color: #FFF;
+	}
 </style>

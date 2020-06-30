@@ -66,6 +66,7 @@ export default {
   mounted () {
     this.getWenZhangCon()
     this.getWenType()
+	localStorage.setItem('topins',2)
   },
   methods: {
      getWenZhangCon () { // 查询单独文章

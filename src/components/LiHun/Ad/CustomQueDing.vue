@@ -210,6 +210,7 @@
 		},
 		mounted() {
 			this.getMsg(); // 获取初始页面的信息
+			localStorage.setItem('topins',2)
 		},
 		methods: {
 			getId(index) {
@@ -437,12 +438,15 @@
 		width: 193px;
 		height: 40px;
 		line-height: 40px;
-		background-color: #ff5375;
+		background-color: #ff3f68;
 		color: #fff;
 		border-radius: 20px;
 		font-size: 18px;
 		cursor: pointer;
 		text-align: center;
+	}
+	.dingzhi:hover{
+		background-color: #ff6687;
 	}
 
 	.shili_img {

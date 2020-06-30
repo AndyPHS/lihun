@@ -424,6 +424,7 @@ export default {
     }
   },
   mounted () {
+	  localStorage.setItem('topins',0)
   },
   methods: {
 	goDingZhi () {
