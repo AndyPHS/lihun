@@ -346,6 +346,14 @@
 	  <div v-if="dengluerrorBox==true" class="fixed errorBox">
 		  {{errorMsg}}
 	  </div>
+	  <!-- 退出弹窗 -->
+	  <el-dialog title="退出账号" left :visible.sync="dialogExit">
+	  	<div class="mx-auto text-center text-lg text-red-500 py-5">请确认是否退出账号</div>
+	  	<div slot="footer" class="dialog-footer tishi_bot pb-3">
+	  		<span class="cbt" @click="canceldialogExit">取 消</span>
+	  		<span class="cbt re" @click="dialogExitOk">确 定</span>
+	  	</div>
+	  </el-dialog>
     </div>
   </div>
 </template>
@@ -360,6 +368,7 @@ export default {
   ],
   data () {
     return {
+	  dialogExit: false, // 退出提示弹窗
 	  dengluBox: false, // 右上角个人中心表框
 	  dengluerrorBox: false, // 登录错误弹窗提示
 	  dialogFindByPhone: false, // 通过手机号找回密码弹窗
@@ -460,13 +469,13 @@ export default {
 			}
 		} else {
 			if(index == 0){
-				// this.$router.replace('/')
-				const {href} = this.$router.replace({
-					path: '/',
-					params: {
-					  topins: this.topins
-					}
-				})
+				this.$router.replace('/')
+				// const {href} = this.$router.replace({
+				// 	path: '/',
+				// 	params: {
+				// 	  topins: this.topins
+				// 	}
+				// })
 				// window.open(href, '_blank')
 			} else if (index == 1){
 				const {href} = this.$router.replace({
@@ -529,15 +538,22 @@ export default {
 		this.dengluBox = false
 	},
     liveOut () { // 点击退出登录
-	  this.topins = -1
-	  this.$emit('headActiveEvent',this.topins)
-      this.isLogin = false
-	  this.dengluBox = false
-      localStorage.removeItem('token') // 存储token
-      localStorage.removeItem('phone')
-      localStorage.removeItem('isLogin')
-	  this.$router.replace('/')
+	  this.dialogExit = true
     },
+	canceldialogExit () { // 取消退出
+		this.dialogExit = false
+	},
+	dialogExitOk () {  // 确认退出
+		this.topins = 0
+		this.$emit('headActiveEvent',this.topins)
+		this.isLogin = false
+		this.dengluBox = false
+		localStorage.removeItem('token') // 存储token
+		localStorage.removeItem('phone')
+		localStorage.removeItem('isLogin')
+		this.$router.replace('/')
+		this.dialogExit = false
+	},
     registAc () { // 点击注册按钮
       this.form = {}
       this.dialogFormVisible = true
@@ -923,4 +939,31 @@ export default {
   .default{color:#343434;}
   .text-b{color:#557ce1}
   .errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
+  .tishi_bot {
+  	width: 502px;
+  	margin: 0 auto;
+  	display: flex;
+  	justify-content: space-between;
+  }
+  
+  .cbt {
+  	width: 218px;
+  	height: 38px;
+  	line-height: 38px;
+  	text-align: center;
+  	color: #535353;
+  	border: 1px solid #535353;
+  	font-size: 16px;
+  	border-radius: 19px;
+  	display: inline-block;
+  }
+  .cbt:hover{
+  	color: #fff;
+  	border: 1px solid #ff3f68;
+  	background-color: #ff3f68;
+  }
+  .re {
+  	color: #ff3f68;
+  	border: 1px solid #ff3f68;
+  }
 </style>
