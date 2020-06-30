@@ -19,6 +19,8 @@
         <div class="pt-10 text-center">
           <h2 class="text-center pb-4 text-bold text-xl">{{ this.wenCon.title }}</h2>
           <span class="inline-block pb-6 text-sm">{{ this.wenCon.time }}</span>
+		  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-sm ml-4">阅读量 {{ this.wenCon.view }}</span>
+		  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-sm ml-4">阅读量 1245</span>
         </div>
         <div class="m_r_m py-5" v-html="wenCon.con">
         </div>
@@ -56,7 +58,8 @@ export default {
       wenCon: { // 文章内容
         title: '',
         time: '',
-        con: ''
+        con: '',
+		view: null
       }
     }
   },
@@ -71,8 +74,9 @@ export default {
          id: Id
        }).then((data) => {
          this.wenCon.title = data.data.data.title;
-         this.wenCon.time = data.data.data.updateTime;
+         this.wenCon.time = data.data.data.createdTime;
          this.wenCon.con = data.data.data.content;
+		 this.wenCon.view = data.data.data.view;
        })
      },
      getWenType () { // 查询分类
