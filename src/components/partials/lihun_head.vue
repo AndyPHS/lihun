@@ -478,6 +478,7 @@ export default {
 				// })
 				// window.open(href, '_blank')
 			} else if (index == 1){
+				localStorage.setItem('topins',1)
 				const {href} = this.$router.replace({
 					path: '/Knowledge',
 					params: {

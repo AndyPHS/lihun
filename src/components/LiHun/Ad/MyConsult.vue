@@ -250,7 +250,7 @@
 				// this.$router.replace('/Pay')
 			},
 			goBangZhu () { // 点击协议书定制帮助
-				localStorage.setItem('topins',1)
+				localStorage.setItem('topins',2)
 				this.$router.replace('/AgreementHelp')
 			},
 			getWenShu() { // 查找用户文书

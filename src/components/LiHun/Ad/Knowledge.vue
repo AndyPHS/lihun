@@ -154,7 +154,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
 .all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
