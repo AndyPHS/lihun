@@ -119,7 +119,7 @@ export default {
 .m_r_m ul li{border-color: #eceff4;}
 .m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
 .m_r_m ul li span{color: #d1d1d1;font-size: 14px;}
-.m_r_m ul li p{font-size: 15px;color: #818181;line-height: 28px;white-space: pre-wrap;text-indent: 2em;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+.m_r_m ul li p{font-size: 15px;color: #818181;line-height: 28px;white-space: nowrap;text-indent: 2em;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
 .default_active{color:red}
 .default{color:#343434;}
 </style>

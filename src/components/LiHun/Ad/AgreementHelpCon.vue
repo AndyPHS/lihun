@@ -4,7 +4,7 @@
     <div class="c_m w flex justify-between">
       <div class="c_m_l">
         <div class="pt-10">
-          <h3 class="text-center text-lg font-bold">离婚帮助</h3>
+          <h3 class="text-center text-lg font-bold">协议书定制帮助</h3>
           <ul class="mt-5">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose text-center">
               <h2 @click="searchList(item)">{{ item.title }}</h2>
