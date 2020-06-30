@@ -1162,10 +1162,7 @@ export default {
     },
     alreadySave () { // 确认已保存，返回列表
       this.dialogTiShi = false
-	  const {href} = this.$router.resolve({
-	  	path: '/MyConsult'
-	  })
-	  window.open(href, '_blank')
+	  this.$router.replace('/MyConsult')
     },
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true
