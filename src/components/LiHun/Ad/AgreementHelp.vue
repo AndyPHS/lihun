@@ -73,6 +73,7 @@ export default {
           id: id
         }
       })
+	  localStorage.setItem('AgreementHelpId',id)
     },
     getWenType () { // 查询分类
       selectAction().then((data) => {
