@@ -246,7 +246,8 @@
 		},
 		methods: {
 			dingzhiBtn() { // 点击定制协议跳转到小问卷页面
-				this.$router.replace('/Pay')
+				this.$router.replace('/CustomAgreement')
+				// this.$router.replace('/Pay')
 			},
 			goBangZhu () { // 点击协议书定制帮助
 				localStorage.setItem('topins',1)
