@@ -1,7 +1,7 @@
 <template>
   <div>
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
-    <el-carousel :interval="500000" arrow="always" height="550px">
+    <el-carousel :interval="5000" arrow="always" height="550px">
       <el-carousel-item>
         <div class="swiper01 swiperCommon">
           <div class="w flex justify-between items-center swi">
