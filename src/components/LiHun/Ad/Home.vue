@@ -1,9 +1,9 @@
 <template>
   <div>
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
-    <el-carousel :interval="5000" arrow="always" height="550px">
+    <el-carousel :interval="500000" arrow="always" height="550px">
       <el-carousel-item>
-        <div class="swiper01">
+        <div class="swiper01 swiperCommon">
           <div class="w flex justify-between items-center swi">
             <div class="swiper01_min">
               <p>离婚协议在线生成，20分钟个性化定制</p>
@@ -22,11 +22,11 @@
         </div>
       </el-carousel-item>
       <el-carousel-item >
-        <div class="swiper01">
-          <div class="w flex justify-between items-center swi">
-            <div class="swiper01_min">
-              <p>离婚协议书自动生成，20分钟专属定制</p>
-              <h2 class="font-thin">已累计定制3500份</h2>
+        <div class="swiper02 swiperCommon">
+          <div class="w flex justify-between items-top swi">
+            <div class="swiper02_min" style="margin-top: 100px;">
+              <p class="text-left text-white">起草  ->  签定</p>
+              <h2 class="font-thin pl-10 text-white">一步到位</h2>
               <div>
                 <div @click="goDingZhi" class="shouyedingzhibtn">
                 	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
@@ -35,11 +35,49 @@
               </div>
             </div>
             <div>
-              <img src="../../../assets/images/lihun/swiper01_img01.png" alt="">
+              <img style="margin-top: -50px;" src="../../../assets/images/lihun/swiper02_img02.png" alt="">
             </div>
           </div>
         </div>
       </el-carousel-item>
+	  <el-carousel-item >
+	    <div class="swiper03 swiperCommon">
+	      <div class="w flex justify-between items-center swi">
+	        <div class="swiper01_min" style="margin-bottom: 20px;">
+	          <p><img src="../../../assets/images/lihun/swiper03_head.png" alt=""></p>
+	          <h2 class="font-thin">打破传统协议定制</h2>
+	          <div>
+	            <div @click="goDingZhi" class="shouyedingzhibtn">
+	            	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+	            	<span class="inline-block text-white">定制我的离婚协议书</span>
+	            </div>
+	          </div>
+	        </div>
+	        <div>
+	          <img style="margin-top: -23px;" src="../../../assets/images/lihun/swiper03_img03.png" alt="">
+	        </div>
+	      </div>
+	    </div>
+	  </el-carousel-item>
+	  <el-carousel-item >
+	    <div class="swiper04 swiperCommon">
+	      <div class="w flex justify-between items-center swi">
+	        <div class="swiper04_min" style="margin-bottom: 20px;">
+	          <p>便捷  自主  线上服务</p>
+	          <h2 >安全  专业  协议环境</h2>
+	          <div>
+	            <div @click="goDingZhi" class="shouyedingzhibtn">
+	            	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+	            	<span class="inline-block text-white">定制我的离婚协议书</span>
+	            </div>
+	          </div>
+	        </div>
+	        <div>
+	          <img style="margin-top: -37px;" src="../../../assets/images/lihun/swiper04_img04.png" alt="">
+	        </div>
+	      </div>
+	    </div>
+	  </el-carousel-item>
     </el-carousel>
     <div class="wuqu">
       <div class="head_com">
@@ -453,11 +491,18 @@ export default {
 .shouyedingzhibtn:hover{background-color: #ff6687;cursor: pointer;}
 .shouyedingzhibtn span{font-size:24px;margin-left: 10px;}
 .swiper01{background: url(../../../assets/images/lihun/swiper01_bg.png)no-repeat;}
+.swiper02{background: url(../../../assets/images/lihun/swiper02_bg.png)no-repeat;}
+.swiper03{background: url(../../../assets/images/lihun/swiper03_bg.png)no-repeat;}
+.swiper04{background: url(../../../assets/images/lihun/swiper04_bg.png)no-repeat;}
+
 .w{width: 1200px; margin: 0 auto;}
 .swi{padding:50px 0;}
 .swiper01_min p{font-size: 25px;color:#02005b;font-weight: bold;}
 .swiper01_min h2{font-size:53px;color:#02005b;margin-bottom: 80px;text-align: left;}
-
+.swiper02_min p{color: #fff;font-weight: bold;font-size: 25px;}
+.swiper02_min h2{color:#fff;font-size:53px;margin-bottom: 80px;text-align: left;}
+.swiper04_min p{font-size: 38px;color:#fff;text-align: left;}
+.swiper04_min h2{font-size: 38px;color:#fff;margin-bottom: 80px;text-align: left;}
 .head_com{width: 1200px;margin:0 auto;text-align: center;padding-top:110px;padding-bottom: 83px;}
 .head_com h2{font-size:43px;color:#535353;height: 43px;line-height: 43px;}
 .head_com span{font-size: 16px;color:#818181;padding:5px 13px;border:1px solid #535353;margin-top: 18px;display: inline-block;}
