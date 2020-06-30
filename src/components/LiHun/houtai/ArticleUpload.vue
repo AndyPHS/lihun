@@ -225,6 +225,9 @@ export default{
             localStorage.removeItem('articleId');
             this.articleId = null;
             this.$refs.ue.setUEContent('')
+          }else if(data.data.status_code == 401){
+            this.$message.error('账号过期，请重新登录');
+			this.$router.replace('/')
           }else{
             this.$message.error('更新失败，请填写必填项');
           }
