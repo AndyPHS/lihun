@@ -22,9 +22,9 @@
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(20)">2020年婚姻法最新规定</li>
-            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(21)">女方争取抚养权的技巧</li>
-            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(20)">男方争取抚养权的技巧</li>
+            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(20)">协议书如何谈判</li>
+            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(21)">离婚协议常见误区</li>
+            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(25)">离婚方式与选择</li>
           </ul>
         </div>
         <div class="m_r_m">
@@ -72,14 +72,22 @@ export default {
       fenleiAll: [], // 文章分类汇总
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
-      ins: 0,
+      ins: -1,
 	  tableDataNull: false // 无文章
     }
   },
   mounted () {
     this.getWenType()
+	this.getIns()
   },
   methods: {
+	getIns () {
+		if (this.$route.params.ins === undefined ) {
+			this.ins =0
+		} else {
+			this.ins = this.$route.params.ins
+		}
+	},
     goKnowledgeMin (id) {
       this.$router.push({
         name: 'KnowledgeCon',
