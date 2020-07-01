@@ -470,6 +470,9 @@ export default {
   methods: {
 	goDingZhi () {
 		this.$refs.lihun.goDingZhi(2)
+		if (!!window.ActiveXObject || "ActiveXObject" in window){ 
+			alert('为了您有更好的体验，建议您使用360浏览器，谷歌浏览器')
+		} 
 	},
 	goMoreKnowledge () {
 		localStorage.setItem('topins',1)

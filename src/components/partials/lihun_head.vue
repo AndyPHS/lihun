@@ -3,7 +3,7 @@
     <div class="head flex items-center">
       <div class="w flex justify-between">
         <div class="flex justify-between items-center">
-          <img @click="goHome" class="mr-3" src="../../assets/images/lihun/logo.png" alt="">
+          <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
           <el-divider direction="vertical"></el-divider>
           <span class="log_r">北京家理律师事务所出品</span>
         </div>

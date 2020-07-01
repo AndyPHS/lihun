@@ -690,5 +690,5 @@ export default {
 .touxiang{width: 520px;height: 300px;margin:0 auto;background-color: #eceff4;}
 .imbox{text-align: center;margin: 0;display: flex;flex-direction: column;align-items: center;padding-top: 40px;}
 .imbox img{width: 149px;height: 149px;background: #fff;border-radius: 50%;display: inline-block;}
-.errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
+.errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 3000;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
 </style>
