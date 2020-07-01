@@ -38,6 +38,13 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',  //去掉url中的#
+  scrollBehavior (to, from, savedPosition) { // 新开页面回到顶部
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
   routes: [
     {path: '/', name: 'Home', component: Home},
     // 离婚协议书推广我的协议书
