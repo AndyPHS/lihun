@@ -479,6 +479,7 @@ export default {
 	      id: id
 	    }
 	  })
+	  localStorage.setItem('KnowledgeId',id)
 	},
 	getHeadActive (data) {
 		localStorage.setItem('topins',data)
