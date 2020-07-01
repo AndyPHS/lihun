@@ -12,7 +12,7 @@
             <div class="mt-10">
               <h3 class="text-center text-lg font-bold">协议书定制帮助</h3>
               <ul class="mt-5">
-                <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose cursor-pointer hover:underline text-center">
+                <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose cursor-pointer hover:font-bold text-center">
                   <h2 :class="ins === index?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
                   <!-- <ul class="pl-2" v-if="item.data.length>0">
                     <li v-for="($item, $index) in item.data" :key="$index" @click="searchList($item, $index)">{{ $item.title }}</li>
