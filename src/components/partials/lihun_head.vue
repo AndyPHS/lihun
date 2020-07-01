@@ -711,6 +711,7 @@ export default {
 			      message: '登录成功',
 			      type: 'success'
 			    })
+				localStorage.setItem('topins',0)
 			    this.userPhone = this.form.phone
 			    localStorage.setItem('token', data.data.data.token) // 存储token
 			    localStorage.setItem('phone', this.form.phone)

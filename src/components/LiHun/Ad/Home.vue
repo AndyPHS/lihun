@@ -461,6 +461,9 @@ export default {
     return{
     }
   },
+  beforeMount() {
+  	localStorage.setItem('topins',0)
+  },
   mounted () {
 	  localStorage.setItem('topins',0)
   },
