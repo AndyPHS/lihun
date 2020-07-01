@@ -476,6 +476,7 @@ export default {
 		this.$router.replace('Knowledge')
 	},
 	goKnowledgeMin (id) { // 协议书如何谈判
+	  localStorage.setItem('topins',1)
 	  this.$router.push({
 	    name: 'KnowledgeCon',
 	    params: {

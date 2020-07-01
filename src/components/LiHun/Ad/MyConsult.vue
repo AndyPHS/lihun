@@ -246,12 +246,22 @@
 		},
 		methods: {
 			dingzhiBtn() { // 点击定制协议跳转到小问卷页面
-				this.$router.replace('/CustomAgreement')
+				localStorage.setItem('qid', 3)
+				userAddQuestionnaire({
+				  qid: 3
+				}).then((data)=>{
+					localStorage.setItem('quid', data.data.data)
+					this.$router.replace('/CustomAgreement')
+				})
 				// this.$router.replace('/Pay')
 			},
 			goBangZhu () { // 点击协议书定制帮助
 				localStorage.setItem('topins',2)
-				this.$router.replace('/AgreementHelp')
+				// this.$router.replace('/AgreementHelp')
+				const {href} = this.$router.resolve({
+					path: '/AgreementHelp'
+				})
+				window.open(href, '_blank')
 			},
 			getWenShu() { // 查找用户文书
 				selectUserQuestionnaire({
@@ -410,12 +420,13 @@
 			},
 			goKnowledgeMin (id) { // 协议书如何谈判
 			  localStorage.setItem('topins',1)
-			  this.$router.push({
-			    name: 'KnowledgeCon',
-			    params: {
-			      id: id
-			    }
+			  const {href} = this.$router.resolve({
+			  	path: '/KnowledgeCon',
+			  	params: {
+			  	  id: id
+			  	}
 			  })
+			  window.open(href, '_blank')
 			  localStorage.setItem('KnowledgeId',id)
 			},
 			getHeadActive (data) {
