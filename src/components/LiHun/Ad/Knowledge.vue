@@ -18,7 +18,7 @@
       <div class="c_m_r text-left">
         <div class="border-b pb-10 pt-16">
           <div action="" class="keyinput flex justify-between items-center">
-            <input class="ml-3" v-model="keyMsg" type="text" placeholder="请输入要搜索的内容关键词" autocomplete="off" >
+            <input class="ml-3" v-model="keyMsg" type="text" placeholder="请输入要搜索的内容关键词" autocomplete="off" @keyup.enter="searchAction">
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
