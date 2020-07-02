@@ -471,7 +471,10 @@ export default {
 	    }
 	});
 	localStorage.setItem('topins',2)
-  
+	window.addEventListener('scroll', this.scrollToTop)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
     getBasicInformation () { // 查询双方基本信息模块数据
@@ -1012,6 +1015,14 @@ export default {
         }
       }
       if (this.active < 0) this.active = 0
+	  const that = this
+		let timer = setInterval(() => {
+		  let ispeed = Math.floor(-that.scrollTop / 5)
+		  document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
+		  if (that.scrollTop === 0) {
+			clearInterval(timer)
+		  }
+		}, 16)
     },
     next () {
       this.nextLoading = true
@@ -1070,11 +1081,20 @@ export default {
                 type: 'success'
               })
               if (this.active++ > this.mokuai.length - 1) this.$router.replace('/ShengChengXieYi')
+			  
             }
           }).catch((data) => {
           })
         }
       }
+	  const that = this
+		let timer = setInterval(() => {
+		  let ispeed = Math.floor(-that.scrollTop / 5)
+		  document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
+		  if (that.scrollTop === 0) {
+			clearInterval(timer)
+		  }
+		}, 16)
     },
     closeMissMsgBox () { // 关闭未填写项弹窗
       this.missMsgBox = false
@@ -1172,6 +1192,16 @@ export default {
 			path: '/AgreementHelp'
 		})
 		window.open(href, '_blank')
+	},
+	scrollToTop () { // 回到顶部判断
+	    const that = this
+	    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+	    that.scrollTop = scrollTop
+	    if (that.scrollTop > 60) {
+			
+	    } else {
+	      // that.btnFlag = false
+	    }
 	}
   }
 }

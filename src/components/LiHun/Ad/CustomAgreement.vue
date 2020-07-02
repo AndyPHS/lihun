@@ -4,7 +4,7 @@
     <div class="c_m w">
       <div class="c_m_h flex justify-between items-center px-12">
         <h2>
-          定制我的协议书
+          基本信息
         </h2>
         <div class="c_m_h_r">
           <span @click="goAgreementHelp">协议书定制帮助</span>
@@ -3698,4 +3698,5 @@ export default {
 .el-select{width:100% !important;}
 .step_btn{width: 220px;height: 44px;line-height: 44px;font-size: 16px;text-align: center;border:1px solid #343434;color:#343434;border-radius: 22px;display: inline-block;margin-right: 22px;cursor: pointer;}
 .step_btn_re{border:1px solid #ff3f68;color:#ff3f68;margin-left: 22px;}
+.step_btn_re:hover{background-color: #ff3f68;color:#fff;}
 </style>

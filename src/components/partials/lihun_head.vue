@@ -33,9 +33,9 @@
 			</div>
 			<div v-if="this.dengluBox" class="absolute denglu">
 				<ul>
-					<li @click="goAgreementUser">个人中心</li>
-					<li @click="goMyconsult">我的协议</li>
-					<li @click="liveOut">退出</li>
+					<li class="cursor-pointer" @click="goMyconsult">我的协议</li>
+					<li class="cursor-pointer" @click="goAgreementUser">个人中心</li>
+					<li class="cursor-pointer" @click="liveOut">退出</li>
 				</ul>
 			</div>
             <!-- <el-dropdown trigger="click">

@@ -254,7 +254,7 @@
 								<img src="../../../assets/images/lihun/touxiang01.png" alt="">
 							</dt>
 							<dd>
-								<h2>陈女士&nbsp;浙江</h2>
+								<h2>陈女士&nbsp;嘉兴市</h2>
 								<span>2020.04.28</span>
 							</dd>
 						</dl>
@@ -342,7 +342,7 @@
                 				<img src="../../../assets/images/lihun/touxiang02.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>郝先生&nbsp;吉林</h2>
+                				<h2>郝先生&nbsp;延边市</h2>
                 				<span>2020.05.28</span>
                 			</dd>
                 		</dl>
@@ -402,7 +402,7 @@
                 				<img src="../../../assets/images/lihun/touxiang01.png" alt="">
                 			</dt>
                 			<dd>
-                				<h2>孙女士&nbsp;湖北</h2>
+                				<h2>孙女士&nbsp;武汉市</h2>
                 				<span>2020.04.28</span>
                 			</dd>
                 		</dl>
