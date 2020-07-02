@@ -4,8 +4,8 @@
       <div class="w flex justify-between">
         <div class="flex justify-between items-center">
           <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
-          <el-divider direction="vertical"></el-divider>
-          <span class="log_r">北京家理律师事务所出品</span>
+          <el-divider class="hidden md:block" direction="vertical"></el-divider>
+          <span class="log_r hidden md:block">北京家理律师事务所出品</span>
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
@@ -425,7 +425,18 @@ export default {
 	},
 	goHome () { // 点击图标返回首页
 		localStorage.setItem('topins',0)
-		this.$router.replace('/')
+		if(this.$route.path=='/CustomBasic' || this.$route.path=='/CustomAgreement' || this.$route.path=='/CustomQueDing' || this.$route.path=='/CustomShengCheng' ) {
+			const {href} = this.$router.resolve({
+				path: '/',
+				params: {
+				  topins: this.topins
+				}
+			})
+			window.open(href, '_blank')
+		} else {
+			this.$router.replace('/')
+		}
+		
 	},
 	goDingZhi (index) { // 点击定制如果没有登录则直接让登录，如果登录则直接跳转到定制页面	  
 		this.topins = index
@@ -862,10 +873,12 @@ export default {
 </script>
 
 <style scoped>
-  .w {
-    width: 1200px;
-    margin: 0 auto;
-  }
+	@media (min-width: 1200px) {
+		.w {
+		  width: 1200px;
+		  margin: 0 auto;
+		}
+	}
 
   .head {
     height: 92px;

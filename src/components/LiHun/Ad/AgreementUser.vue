@@ -361,8 +361,7 @@ export default {
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
 			  this.form.sex = JSON.stringify(this.userMsg.sex)
-			  console.log(this.userMsg.name)
-			  console.log(this.userMsg.sex)
+			  localStorage.setItem('name',this.userMsg.name)
 		  } 
         
       })
