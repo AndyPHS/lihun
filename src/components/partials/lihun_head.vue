@@ -66,13 +66,13 @@
                 <div class="el-form-item">
                   <div class="el-form-item__content">
                     <div class="el-input">
-                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner" ref="zhucePhone">
                     </div>
                   </div>
                 </div>
                 <div class="el-form-item">
                   <div class="el-form-item__content">
-					  <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
+					  <el-input placeholder="请输入密码" v-model="form.password" show-password ref="zhucePassword"></el-input>
                     <!-- <div class="el-input">
                       <input type="password" v-model="form.password" placeholder="请输入密码,由数字和字母组成(区分大小写)" autocomplete="off" class="el-input__inner">
                     </div> -->
@@ -80,7 +80,7 @@
                 </div>
                 <div class="yanzheng el-form-item">
                   <div class="el-form-item__content flex justify-between">
-                    <input v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
+                    <input v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="zhuceValueCode">
                     <span class="spa hover:underline" v-if="this.registYan == false" @click="getYan">获取验证码</span>
                     <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
                   </div>
@@ -150,17 +150,17 @@
                 <div class="el-form-item">
                   <div class="el-form-item__content">
                     <div class="el-input">
-                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner" ref="loginPhone">
                     </div>
                   </div>
                 </div>
                 <div class="el-form-item">
                   <div class="el-form-item__content">
-                    <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
+                    <el-input placeholder="请输入密码" v-model="form.password" show-password  ref="loginPassword"></el-input>
                   </div>
                 </div>
                 <div class="logyan el-form-item__content flex justify-between items-center">
-                  <input type="text" v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
+                  <input type="text" v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="loginValueCode">
                   <div>
                     <img class="code_key_img inline-block mx-2" :src='identifyCodeMsg.codeUrl' :key='form.code_key'  alt="">
                   </div>
@@ -198,7 +198,7 @@
                   <div class="el-form-item__content">
                     <div class="el-input p text-left">
                       <span class="inline-block text-lg">请输入要重置密码的手机号码</span>
-                      <input v-model="newform.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner">
+                      <input v-model="newform.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner" ref="newformPhone">
                     </div>
                   </div>
                 </div>
@@ -278,7 +278,7 @@
 					<span class="yanphone inline-block text-lg py-3">请获取<span class="text-red-500">{{this.newform.phone}}</span>手机验证码</span>
 			        <div class="yanzheng el-form-item">
 			          <div class="el-form-item__content flex justify-between">
-			            <input v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner">
+			            <input v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="newformValueCode">
 			            <span class="spa hover:underline" v-if="this.registYan == false" @click="findYan">获取验证码</span>
 			            <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
 			          </div>
@@ -326,12 +326,12 @@
 			      <div>
 					<div class="el-form-item">
 					  <div class="el-form-item__content">
-					    <el-input placeholder="请输入密码" v-model="newform.password" show-password></el-input>
+					    <el-input placeholder="请输入密码" v-model="newform.password" show-password ref="newformPassword"></el-input>
 					  </div>
 					</div>
 					<div class="el-form-item">
 					  <div class="el-form-item__content">
-					    <el-input placeholder="请确认密码" v-model="newform.passwordAgain" show-password></el-input>
+					    <el-input placeholder="请确认密码" v-model="newform.passwordAgain" show-password ref="newformPasswordAgain"></el-input>
 					  </div>
 					</div>
 			        <div class="el-dialog__footer steall flex justify-between text-center mt-4 pb-12">
@@ -611,11 +611,14 @@ export default {
 		  	setTimeout(()=>{
 		  		this.dengluerrorBox = false
 		  	},1000)
+			this.$refs.zhucePhone.focus()
 		  	return false; 
 		  } else if(this.form.password =='') {
 			  this.$message.error('密码不能为空');
+			  this.$refs.zhucePassword.focus()
 		  } else if(this.form.valueCode==null|| this.form.valueCode.length != 6){
 			  this.$message.error('验证码不正确');
+			  this.$refs.zhuceValueCode.focus()
 		  } else {
 			  addUser({
 			    phone: this.form.phone,
@@ -704,10 +707,13 @@ export default {
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
+			this.$refs.loginPhone.focus()
 			return false; 
 		} else if(this.form.password =='') {
 			this.$message.error('密码不能为空');
+			this.$refs.loginPassword.focus()
 		} else if(this.form.valueCode==null){
+			this.$refs.loginValueCode.focus()
 			this.$message.error('验证码不正确');
 		} else {
 			frontLogin({
@@ -796,6 +802,7 @@ export default {
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
+			this.$refs.newformValueCode.focus()
 			return false; 
 		} else {
 			this.dialogFindByPhone = false
@@ -812,6 +819,7 @@ export default {
 	resetPW () { // 设置新密码弹窗确认
 		if( this.newform.password == ''){
 			this.$message.error('密码不能为空')
+			this.$refs.newformPassword.focus()
 		} else if (this.newform.password == this.newform.passwordAgain){
 			updatePasswordPhone({
 				phone: this.newform.phone,
@@ -829,6 +837,9 @@ export default {
 					this.$message.error(data.data.message)
 				}
 			})
+		} else if (this.newform.passwordAgain=='') {
+			this.$message.error('重置密码不能为空')
+			this.$refs.newformPasswordAgain.focus()
 		}
 	},
 	byEmail () { // 点击通过邮箱找回密码
@@ -849,6 +860,7 @@ export default {
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
+			this.$refs.newformPhone.focus()
 			return false; 
 		} else {
 			this.forgetDialog = false
@@ -893,6 +905,7 @@ export default {
   .nav {
     width: 530px;
     font-size: 18px;
+	margin-right: 25px;
   }
 
   .nav li:hover {

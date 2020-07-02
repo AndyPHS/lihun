@@ -100,7 +100,7 @@
             <label class="el-form-item__label" style="width: 120px;">验证码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.PhoneCode01" type="text" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.PhoneCode01" type="text" autocomplete="off" class="el-input__inner" ref="formPhoneCode01">
               </div>
               <el-button v-if="this.IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送</el-button>
               <el-button v-if="this.IsGetCode01==false" class="ml-5" type="primary" @click="sendCode01">获取</el-button>
@@ -137,7 +137,7 @@
             <label class="el-form-item__label" style="width: 120px;">手机号</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.newPhone" type="text" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.newPhone" type="text" autocomplete="off" class="el-input__inner" ref="formNewPhone">
               </div>
               <el-button v-if="this.IsGetCode02" class="ml-5" type="primary" :loading="IsGetCode02">已发送</el-button>
               <el-button v-if="this.IsGetCode02==false" class="ml-5" type="primary" @click="sendCode02">获取</el-button>
@@ -147,7 +147,7 @@
             <label class="el-form-item__label" style="width: 120px;">验证码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.PhoneCode02" type="text" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.PhoneCode02" type="text" autocomplete="off" class="el-input__inner" ref="formPhoneCode02">
               </div>
 
             </div>
@@ -184,7 +184,7 @@
             <label class="el-form-item__label" style="width: 120px;">验证码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.PasswordCode" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.PasswordCode" autocomplete="off" class="el-input__inner" ref="formPasswordCode">
               </div>
               <el-button v-if="this.IsGetPsCode01" class="ml-5" type="primary" :loading="IsGetPsCode01">已发送</el-button>
               <el-button v-if="this.IsGetPsCode01==false" class="ml-5" type="primary" @click="sendPsCode">获取</el-button>
@@ -221,7 +221,7 @@
             <label class="el-form-item__label" style="width: 120px;">新密码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.passwordNew" type="password" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.passwordNew" type="password" autocomplete="off" class="el-input__inner" ref="formPasswordNew">
               </div>
 
             </div>
@@ -230,9 +230,8 @@
             <label class="el-form-item__label" style="width: 120px;">确认新密码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.passwordAgain" type="password" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.passwordAgain" type="password" autocomplete="off" class="el-input__inner" ref="formPasswordAgain">
               </div>
-
             </div>
           </div>
         </el-form>
@@ -258,10 +257,10 @@
       <el-dialog title="绑定电子邮件" :visible.sync="dialogEmail01">
         <el-form class="mt-6" :model="form">
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
-            <label class="el-form-item__label" style="width: 120px;">账号</label>
+            <label class="el-form-item__label" style="width: 120px;">邮箱</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.email" type="text" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.email" type="text" autocomplete="off" class="el-input__inner" ref="formEmail">
               </div>
               <el-button v-if="this.IsSendEmail==true" class="ml-5" type="primary" :loading="IsSendEmail">已发送</el-button>
               <el-button v-if="this.IsSendEmail==false" class="ml-5" type="primary" @click="sendEmailAc">发送邮件</el-button>
@@ -271,7 +270,7 @@
             <label class="el-form-item__label" style="width: 120px;">验证码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.emailCode" type="text" autocomplete="off" class="el-input__inner">
+                <input  v-model="form.emailCode" type="text" autocomplete="off" class="el-input__inner" ref="formEmailCode">
               </div>
 
             </div>
@@ -425,6 +424,7 @@ export default {
 	  	setTimeout(()=>{
 	  		this.dengluerrorBox = false
 	  	},1000)
+		this.$refs.formPhoneCode01.focus()
 	  	return false; 
 	  } else {
 		  this.form.newPhone = ''
@@ -454,29 +454,48 @@ export default {
       })
     },
     savePhoneBtn () { // 保存新手机号
-      updatePhone({
-        phone: this.form.newPhone,
-        code: this.form.PhoneCode02,
-        old_phone: this.userMsg.phone,
-        old_code: this.form.PhoneCode01
-      }).then((data) => {
-        if (data.data.status_code == 200) {
-          this.IsGetCode02 = false
-          this.phoneNum = this.form.newPhone
-          localStorage.setItem('phone', this.phoneNum)
-          this.dialogPhone02 = false
-          this.$message({
-            message: '手机号码修改成功',
-            type: 'success'
-          })
-          this.getUserMsg()
-        } else {
-          this.$message({
-            message: data.data.message,
-            type: 'error'
-          })
-        }
-      })
+	  if(!(/^1[3456789]\d{9}$/.test(this.form.newPhone))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '手机号有误，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+	  			this.$refs.formNewPhone.focus()
+	  	return false; 
+	  } else if(!(/^\d{6}$/.test(this.form.PhoneCode02))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '验证码有误，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+		this.$refs.formPhoneCode02.focus()
+	  	return false; 
+	  } else {
+		  updatePhone({
+		    phone: this.form.newPhone,
+		    code: this.form.PhoneCode02,
+		    old_phone: this.userMsg.phone,
+		    old_code: this.form.PhoneCode01
+		  }).then((data) => {
+		    if (data.data.status_code == 200) {
+		      this.IsGetCode02 = false
+		      this.phoneNum = this.form.newPhone
+		      localStorage.setItem('phone', this.phoneNum)
+		      this.dialogPhone02 = false
+		      this.$message({
+		        message: '手机号码修改成功',
+		        type: 'success'
+		      })
+		      this.getUserMsg()
+		    } else {
+		      this.$message({
+		        message: data.data.message,
+		        type: 'error'
+		      })
+		    }
+		  })
+	  }
+      
     },
     editPassword () { // 点击修改密码弹窗
       this.dialogPassword01 = true
@@ -508,6 +527,7 @@ export default {
 	  	setTimeout(()=>{
 	  		this.dengluerrorBox = false
 	  	},1000)
+		this.$refs.formPasswordCode.focus()
 	  	return false; 
 	  } else {
 		this.dialogPassword01 = false
@@ -516,7 +536,21 @@ export default {
 	  }
     },
     PassWordsaveBtn () {
-      if (this.form.passwordNew == this.form.passwordAgain) {
+	  if(this.form.passwordNew==''){
+		  this.dengluerrorBox = true
+		  this.errorMsg = '密码不能为空'
+		  setTimeout(()=>{
+		  	this.dengluerrorBox = false
+		  },1000)
+		  this.$refs.formPasswordNew.focus()
+	  } else if (this.form.passwordAgain=='') {
+		  this.dengluerrorBox = true
+		  this.errorMsg = '密码不能为空'
+		  setTimeout(()=>{
+		  	this.dengluerrorBox = false
+		  },1000)
+		  this.$refs.formPasswordAgain.focus()
+	  } else if (this.form.passwordNew == this.form.passwordAgain) {
         updatePasswordPhone({
           phone: this.userMsg.phone,
           code: this.form.PasswordCode,
@@ -591,6 +625,7 @@ export default {
 	  	setTimeout(()=>{
 	  		this.dengluerrorBox = false
 	  	},1000)
+		this.$refs.formEmail.focus()
 	  	return false; 
 	  } else {
 		if(!(/^\d{6}$/.test(this.form.emailCode))){
@@ -599,6 +634,7 @@ export default {
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
+			this.$refs.formEmailCode.focus()
 			return false; 
 		} else {
 			updateUserEmail({

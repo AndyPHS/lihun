@@ -281,7 +281,7 @@
 			  </el-dialog>
               <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
               <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
-              <el-button class="step_btn re my-5" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
+              <el-button class="step_btn re my-5 act" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
             </div>
           </div>
           <div v-show="shengchengloading" id="shengchengloading">
@@ -1268,6 +1268,7 @@ html{height: 100%;background-color: #f7fafc;}
 .cbt{width: 218px;height: 38px;line-height: 38px;text-align: center;color: #535353;border:1px solid #535353;font-size: 16px;border-radius: 19px;display: inline-block;}
 .cbt:hover{background-color: #ff3f68;color: #fff;border:1px solid #ff3f68}
 .re{border: 1px solid #ff3f68;color: #ff3f68;background-color: #fff;}
+.act:hover{background-color:#ff3f68;color: #fff;}
 .basicmin{height: 750px;overflow-y: scroll;}
 #shengchengloading{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
 .shengchengloding_min{width: 500px;height: 200px;top:30%;margin-top: -100px;left: 50%;margin-left: -250px;position: fixed;}

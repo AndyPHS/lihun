@@ -177,7 +177,7 @@
     </div>
     <div class="guanyu">
       <div class="head_com">
-        <h2>关于离婚协议在线生成</h2>
+        <h2>关于离婚协议书的产品故事</h2>
         <span>基于大数据研发</span>
       </div>
       <div class="w guanyu_min flex justify-between">
@@ -192,13 +192,7 @@
             <div class="text-left w-full">
 				<img class="inline-block" src="../../../assets/images/lihun/yinhao1.png" alt="">
 			</div>
-			<ul>
-				<li>无论何时何地，您都可以享受便捷的线上定制服务。
-</li>
-				<li>无论您的诉求为何，您只需花费最少的时间，即可拥有一份个性化专属协议。</li>
-				<li>不用担心隐患和风险，我们为您提供最便捷、安全、专业的定制环境。</li>
-				<li>相信我们，选择我们，我们始终与您同在。</li>
-			</ul>
+			<p @click="goAgreementHelpMin(45)">2018年的一天，以为当事人通过朋友辗转联系，千里迢迢来到北京，上门委托我们起诉。她风尘仆仆、面容憔悴的样子与其他客户迥然不同。我们得知，她来自南方的一个三线城市，由于找寻专业婚姻律师未果，才四处打听，找到了我们…………</p>
 			<div class="text-right w-full">
 				<img class="inline-block" src="../../../assets/images/lihun/yinhao2.png" alt="">
 			</div>
@@ -259,7 +253,7 @@
 							</dd>
 						</dl>
 					</div>
-					<p class="pinjia_p">有很多的不理解的都能在网站的离婚知识中找到解释，填的过程中还有很多注明，很贴心，又全面又专业。</p>
+					<p class="pinjia_p">这个网站的离婚知识通俗易懂，内容很全面，一下子懂了很多，写协议的时候也不那么懵了。</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -287,7 +281,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">上手很简单，根据个人情况选内容填就可以了，个性化很强。还能无限修改，下载后直接就可以用，对整个过程都很满意。</p>
+                	<p class="pinjia_p">填写过程很简单，能根据自己有的东西出相应的问题，个性化不错，修改起来也挺方便，整个起草过程还是很顺利的哈哈。</p>
                 </li>
                 <li class="w-1/4 pinjia_li px-8 py-8">
                 	<div class="pinjia_s">
@@ -490,7 +484,17 @@ export default {
 	},
 	getHeadActive (data) {
 		localStorage.setItem('topins',data)
-	}
+	},
+	goAgreementHelpMin (id) { // 产品故事
+	  localStorage.setItem('topins',2)
+	  this.$router.push({
+	    name: 'AgreementHelpCon',
+	    params: {
+	      id: id
+	    }
+	  })
+	  localStorage.setItem('AgreementHelpId',id)
+	},
   }
 }
 </script>
@@ -526,8 +530,8 @@ export default {
 .fuwu dl dd p{color:#535353;width: 147px;margin:0 auto;font-size: 16px;display: inherit;}
 .guanyu_min_r{width: 600px;height: 337px;background: #f2f4f7;position: relative;}
 .guanyu_min_r .guanyu_min_r_con{width: 520px;height: 207px;margin:45px auto;font-size:16px;color:#737374;text-align: left;}
-.guanyu_min_r_con ul{margin: 20px 0;}
-.guanyu_min_r_con ul li{list-style: disc;color:#535353;line-height: 30px;list-style-position: inside;}
+.guanyu_min_r_con p{margin: 20px 0; text-indent: 2em;line-height: 35px;}
+.guanyu_min_r_con p:hover{text-decoration: underline;cursor: pointer;}
 .dingzhi{text-align: center;padding:100px 0;}
 .dingzhi img{display: inline-block;}
 .quanyue_01{padding-bottom: 37px;}
