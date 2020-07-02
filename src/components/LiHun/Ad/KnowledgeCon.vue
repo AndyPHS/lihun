@@ -27,14 +27,13 @@
         </div>
         <div class="m_r_m py-5" v-html="wenCon.con">
         </div>
-        <div class="m_r_b py-6 px-6 hidden">
+        <div class="m_r_b py-6 px-6">
           <div class="flex items-center m_r_b_t">
             <div></div>
             <span class="font-bold text-sm">相关知识</span>
           </div>
           <ul class="mt-6">
-            <li class="mb-2 text-sm list-disc list-inside">小孩子抚养权判定标准</li>
-            <li class="mb-2 text-sm list-disc list-inside">小孩子抚养权判定标准</li>
+            <li v-for="(item, index) in relevantAll" :key="index" class="mb-2 text-sm list-disc cursor-pointer hover:underline list-inside" @click="goKnowledgeMin(item.id)">{{ item.title }}</li>
           </ul>
         </div>
       </div>
@@ -63,7 +62,8 @@ export default {
         time: '',
         con: '',
 		view: null
-      }
+      },
+	  relevantAll: []   // 相关文章
     }
   },
   mounted () {
@@ -81,6 +81,7 @@ export default {
          this.wenCon.time = data.data.data.createdTime;
          this.wenCon.con = data.data.data.content;
 		 this.wenCon.view = data.data.data.view;
+		 this.relevantAll = data.data.data.relevant;
        })
      },
      getWenType () { // 查询分类
@@ -98,9 +99,13 @@ export default {
          }
        })
      },
-	getHeadActive (data) {
+	getHeadActive (data) { // 导航选中状态
 		localStorage.setItem('topins',data)
-	}
+	},
+	goKnowledgeMin (id) { // 相关文章
+	  localStorage.setItem('KnowledgeId',id)
+	  this.getWenZhangCon()
+	},
   }
 }
 </script>
