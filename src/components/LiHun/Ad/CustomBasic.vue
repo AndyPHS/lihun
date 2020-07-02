@@ -107,7 +107,7 @@
                               <question-model :newlist = 'item'></question-model>
                               <div>
                                 <div v-if="mo.title==='子女抚养' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3859,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除孩子</span></div>
+                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3859,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除子女抚养约定</span></div>
                                 </div>
                                 <div v-if="mo.title==='房产' " class="border-b-2 flex justify-center">
                                   <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(521,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除房产</span></div>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="mt-4">
                               <div v-if="mo.title== '子女抚养' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(3859)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加孩子</span></div>
+                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(3859)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加子女抚养约定</span></div>
                               </div>
                               <div v-if="mo.title== '房产' " class="flex justify-center">
                                 <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(521)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加房产</span></div>

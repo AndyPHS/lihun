@@ -5,7 +5,7 @@
         <div class="flex justify-between items-center">
           <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
           <el-divider class="hidden md:block" direction="vertical"></el-divider>
-          <span class="log_r hidden md:block">北京家理律师事务所出品</span>
+          <span class="log_r hidden md:block">只为家的幸福</span>
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
@@ -770,6 +770,7 @@ export default {
 	},
 	closeFindByPhone () {
 		this.dialogFindByPhone = false
+		this.newform.valueCode = null
 	},
 	findYan () { // 找回密码获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
@@ -849,9 +850,11 @@ export default {
       this.forgetDialog = true
       this.form.phone = ''
       this.dialogLogin = false
+	  this.newform.phone = null
     },
     closeforgetDialog () { // 点击忘记密码弹窗关闭按钮
       this.forgetDialog = false
+	  this.newform.valueCode = null
     },
     forgetNext () { // 点击忘记密码弹窗1下一步
 		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){

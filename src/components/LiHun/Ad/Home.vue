@@ -208,7 +208,7 @@
     </div>
     <div class="qianyue">
       <div class="head_com">
-        <h2>家理出品，让您定制更放心</h2>
+        <h2>家理团队研发，让您定制更放心</h2>
         <span>国内最大的婚姻家事律师事务所</span>
       </div>
       <div class="w quanyue_01 flex justify-between">
