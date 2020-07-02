@@ -35,6 +35,7 @@
           <ul class="mt-6">
             <li v-for="(item, index) in relevantAll" :key="index" class="mb-2 text-sm list-disc cursor-pointer hover:underline list-inside" @click="goKnowledgeMin(item.id)">{{ item.title }}</li>
           </ul>
+		  <el-backtop target=".page-component__scroll .el-scrollbar__wrap"  :bottom="100">123</el-backtop>
         </div>
       </div>
     </div>
@@ -70,6 +71,10 @@ export default {
     this.getWenZhangCon()
     this.getWenType()
 	localStorage.setItem('topins',1)
+	window.addEventListener('scroll', this.scrollToTop)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
      getWenZhangCon () { // 查询单独文章
@@ -105,7 +110,25 @@ export default {
 	goKnowledgeMin (id) { // 相关文章
 	  localStorage.setItem('KnowledgeId',id)
 	  this.getWenZhangCon()
+	  const that = this
+		let timer = setInterval(() => {
+		  let ispeed = Math.floor(-that.scrollTop / 5)
+		  document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
+		  if (that.scrollTop === 0) {
+			clearInterval(timer)
+		  }
+		}, 16)
 	},
+	scrollToTop () {
+	    const that = this
+	    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+	    that.scrollTop = scrollTop
+	    if (that.scrollTop > 60) {
+			
+	    } else {
+	      // that.btnFlag = false
+	    }
+	}
   }
 }
 </script>
