@@ -741,7 +741,30 @@ export default {
 					this.getUserMsg()
 				})
 			  } else {
-			    this.$message.error(data.data.message);
+				if (data.data.status_code=="102") {
+					this.dengluerrorBox = true
+					this.errorMsg = '密码不正确'
+					setTimeout(()=>{
+						this.dengluerrorBox = false
+					},1000)
+					this.$refs.loginPassword.focus()
+				} else if (data.data.status_code=="100") {
+					this.dengluerrorBox = true
+					this.errorMsg = '验证码错误'
+					setTimeout(()=>{
+						this.dengluerrorBox = false
+					},1000)
+					this.$refs.loginValueCode.focus()
+				} else if (data.data.status_code=="101") {
+					this.dengluerrorBox = true
+					this.errorMsg = '用户名错误'
+					setTimeout(()=>{
+						this.dengluerrorBox = false
+					},1000)
+					this.$refs.loginPhone.focus()
+				} else {
+					this.$message.error(data.data.message);
+				}
 			  }
 			})
 		}

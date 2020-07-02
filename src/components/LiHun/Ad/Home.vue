@@ -6,7 +6,7 @@
         <div class="swiper01 swiperCommon">
           <div class="w flex justify-between items-center swi">
             <div class="swiper01_min">
-              <p>离婚协议在线生成，20分钟个性化定制</p>
+              <p>离婚协议书在线生成，20分钟个性化定制</p>
               <h2 class="font-thin">已累计起草2585份</h2>
               <div>
 				<div @click="goDingZhi" class="shouyedingzhibtn">
@@ -81,7 +81,7 @@
     </el-carousel>
     <div class="wuqu">
       <div class="head_com">
-        <h2>常见离婚协议误区</h2>
+        <h2>常见离婚协议书误区</h2>
         <span>准备离婚图省事 &nbsp; 草草签字就了事 &nbsp; 招来一堆麻烦事</span>
       </div>
       <div class="w flex justify-between">
@@ -98,7 +98,7 @@
             <img src="../../../assets/images/lihun/wuqu02.png" alt="">
           </dt>
           <dd>
-            <p>离婚协议</br>可以随意修改</p>
+            <p>离婚协议书</br>可以随意修改</p>
           </dd>
         </dl>
         <dl class="w-1/4 cursor-pointer mr-10" @click="goKnowledgeMin(21)">
@@ -106,7 +106,7 @@
             <img src="../../../assets/images/lihun/wuqu03.png" alt="">
           </dt>
           <dd>
-            <p>签完离婚协议</br>就一劳永逸了</p>
+            <p>签完离婚协议书</br>就一劳永逸了</p>
           </dd>
         </dl>
         <dl class="w-1/4 cursor-pointer" @click="goKnowledgeMin(21)">
@@ -124,7 +124,7 @@
     </div>
     <div class="fuwu">
       <div class="head_com">
-        <h2>专业离婚协议定制服务</h2>
+        <h2>专业离婚协议书定制服务</h2>
         <span>基于家理起草的1000+份离婚协议书研发</span>
       </div>
       <div class="w flex justify-between">
@@ -327,7 +327,7 @@
 							</dd>
 						</dl>
 					</div>
-					<p class="pinjia_p">家理出品的离婚协议很专业，从开始到最后生成大概用了不到半小时，方便快捷，为智能系统点赞</p>
+					<p class="pinjia_p">家理出品的离婚协议书很专业，从开始到最后生成大概用了不到半小时，方便快捷，为智能系统点赞</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -387,7 +387,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">太专业了！这年头专业的离婚协议少说好几千呢，这个居然免费，可以可以赚到了！</p>
+                	<p class="pinjia_p">太专业了！这年头专业的离婚协议书少说好几千呢，这个居然免费，可以可以赚到了！</p>
                 </li>
                 <li class="w-1/4 pinjia_li mr-4 px-8 py-8">
                 	<div class="pinjia_s">
@@ -415,7 +415,7 @@
                 			</dd>
                 		</dl>
                 	</div>
-                	<p class="pinjia_p">页面简洁，操作方便。用这个系统写了离婚协议，半个小时就搞定了，和律师写的没啥差别。赞！</p>
+                	<p class="pinjia_p">页面简洁，操作方便。用这个系统写了离婚协议书，半个小时就搞定了，和律师写的没啥差别。赞！</p>
                 </li>
               </ul>
             </el-carousel-item>
