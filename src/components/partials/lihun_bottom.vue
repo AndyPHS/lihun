@@ -143,11 +143,11 @@ export default {
 </script>
 
 <style scoped>
-  .bot{background-color: #2c2c2c;padding:23px 0 97px;color:#fff;}
+  .bot{background-color: #2c2c2c;padding:23px 0 51px;color:#fff;}
   .bot01{display: flex;align-items: center;}
-  .bot01 span{font-size: 18px;}
+  .bot01 span{font-size: 16px;}
   .bot02{border-color: #a0a0a0;padding-bottom: 15px;}
-  .bot02_l h2{padding-top:79px;line-height:47px;font-size: 18px;font-weight: bold;}
+  .bot02_l h2{padding-top:40px;line-height:47px;font-size: 18px;font-weight: bold;}
   .bot02_l p{font-size: 14px;}
   .bot03{padding-top: 15px;}
   .bot03 p{font-size: 14px;}
