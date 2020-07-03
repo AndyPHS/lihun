@@ -38,6 +38,15 @@
 			  <p v-if="item.content !==undefined" v-html="item.content"></p>
             </li>
           </ul>
+		  <el-pagination
+			  background
+			  class="mb-10"
+			  layout="prev, pager, next"
+			  @current-change="handleUserList"
+			  :page-size="pagesize"
+			  :current-page.sync="currentPage"
+			  :total="this.min.total">
+		  </el-pagination>
           <div class="errorMin" v-if="this.tableDataNull">
             <div class="pt-40 text-center mx-auto">
               <img class="inline-block" src="../../../assets/images/lihun/no_consult_icon.png" alt="">
@@ -73,7 +82,19 @@ export default {
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
       ins: -1,
-	  tableDataNull: false // 无文章
+	  tableDataNull: false, // 无文章
+	  // 分页
+	  first_page_url: '',
+	  last_page_url: '',
+	  next_page_url: '',
+	  path: '',
+	  from: 1,
+	  per_page: null,
+	  last_page: null,
+	  userList: [],
+	  currentPage: 1, // 初始页
+	  pagesize: 20, //    每页的数据
+	  total: 0, // 总页数
     }
   },
   mounted () {
@@ -109,9 +130,11 @@ export default {
       })
     },
     startList () { // 初始化页面查找第一个分类下的文章
+	  this.currentPage = 1
       selectFaIDNews({
         status: 1,
-        faId: this.firstType
+        faId: this.firstType,
+		page: this.currentPage
       }).then((data) => {
 		  if(data.data.status_code ==200){
 			  this.tableData = data.data.data
@@ -159,6 +182,20 @@ export default {
     },
 	getHeadActive (data) {
 		localStorage.setItem('topins',data)
+	},
+	// 初始页currentPage、初始每页数据数pagesize和数据data
+	// 上一页
+	nextClick () {
+	  console.log('下一页')
+	},
+	prevClick () {
+	  console.log('上一页')
+	},
+	// pagesize (size) {
+	//   this.pagesize = size
+	// },
+	handleCurrentChange (currentPage) {
+	  this.currentPage = currentPage// 点击第几页
 	}
   }
 }

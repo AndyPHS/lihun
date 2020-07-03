@@ -422,7 +422,7 @@ export const selectFaIDNews = params => {
   return axios({
     method: "get",
     dataType: 'json',
-    url: apiUrl.selectNews + '?status=' + params.status + '&faId=' + params.faId,
+    url: apiUrl.selectNews + '?status=' + params.status + '&faId=' + params.faId + '&page=' + params.page,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });

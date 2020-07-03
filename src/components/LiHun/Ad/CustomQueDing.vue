@@ -23,7 +23,7 @@
 								 class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份）、</span><span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户、</span><span
 								 class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电、</span><span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品、</span><span
 								 class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券、</span><span class="inline" v-if="this.CommonCaiChan.dianpu">店铺、</span><span
-								 class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋、</span>以及<span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span><span
+								 class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋、</span><span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span><span
 								 class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>。为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
 							<div>
 								<div class="w-full mx-auto py-10">
