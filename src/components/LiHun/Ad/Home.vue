@@ -178,7 +178,7 @@
     <div class="guanyu">
       <div class="head_com">
         <h2>关于离婚协议书的产品故事</h2>
-        <span>基于大数据研发</span>
+        <span>基于法律服务的初心和使命</span>
       </div>
       <div class="w guanyu_min flex justify-between">
         <div>
