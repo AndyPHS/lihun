@@ -1,19 +1,20 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <!-- <lihun-head></lihun-head> -->
+	<div class="w-full bg-white" style="margin-bottom: 13px;">
+		<div class="w c_m_h flex justify-between items-center px-12">
+		  <h2>
+				  <img class="inline-block mr-5" src="../../../assets/images/lihun/logo.png" alt="">
+		    基本信息
+		  </h2>
+		  <div class="c_m_h_r">
+				  <span @click="goHome">返回首页</span>
+		    <span class="ml-5" @click="goAgreementHelp">协议书定制帮助</span>
+				  <span class="ml-5" @click="returnUserList">返回文书列表</span>
+		  </div>
+		</div>
+	</div>
     <div class="c_m w">
-      <div class="c_m_h flex justify-between items-center px-12">
-        <h2>
-          基本信息
-        </h2>
-        <div class="c_m_h_r">
-          <span @click="goAgreementHelp">协议书定制帮助</span>
-		  <span class="ml-5" @click="returnUserList">返回文书列表</span>
-		  <!-- <div class="absolute returnUserList right-0">
-		    
-		  </div> -->
-        </div>
-      </div>
       <div class="pb-5">
         <div class="relative">
           <div class=" mx-auto">
@@ -3149,19 +3150,19 @@
       </div>
     </div>
     <div class="live"></div>
-	<lihun-bottom></lihun-bottom>
+	<lihun-bottom-common></lihun-bottom-common>
   </div>
 </template>
 <script>
-import lihun_head from '../../partials/lihun_head.vue'
-import lihun_bottom from '../../partials/lihun_bottom.vue'
+// import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom_com from '../../partials/lihun_bottom_com.vue'
 import {userAddAnswer, getOnlyValue, userAddSelectAnswer} from '@/api/api/AgreementRequest.js' // 用户添加问卷的内容
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'CustomAgreement',
   components: {
-    'lihun-head': lihun_head,
-	'lihun-bottom': lihun_bottom
+    // 'lihun-head': lihun_head,
+	'lihun-bottom-common': lihun_bottom_com
   },
   data () {
     return {
@@ -3666,6 +3667,13 @@ export default {
     returnUserList () {
       this.$router.replace('/MyConsult')
     },
+	goHome () {
+		localStorage.setItem('topins',0)
+		const {href} = this.$router.resolve({
+			path: '/'
+		})
+		window.open(href, '_blank')
+	},
 	goAgreementHelp () {
 		localStorage.setItem('topins',1)
 		const {href} = this.$router.resolve({
@@ -3681,8 +3689,8 @@ export default {
 .all{background-color: #f2f4f7;height:auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;}
-.c_m_h{height:109px;border-bottom: 2px solid #f2f4f7;margin-top: 39px;}
-.c_m_h h2{width:243px;font-size: 25px;color:#535353;font-weight: bold;}
+.c_m_h{height:90px;}
+.c_m_h h2{width:297px;font-size: 25px;color:#535353;font-weight: bold;}
 .c_m_h_r{width:542px;text-align: right;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}

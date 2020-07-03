@@ -1,15 +1,18 @@
 <template>
 	<div class="all">
-		<lihun-head></lihun-head>
-		<div class="c_m w">
-			<div class="c_m_h flex justify-between items-center px-12">
-				<h2>
-					定制我的协议书
-				</h2>
-				<div class="c_m_h_r">
-					<span @click="goAgreementHelp">协议书定制帮助</span>
-				</div>
+		<div class="w-full bg-white" style="margin-bottom: 13px;">
+			<div class="w c_m_h flex justify-between items-center px-12">
+			  <h2>
+				<img class="inline-block mr-5" src="../../../assets/images/lihun/logo.png" alt="">
+			    定制我的协议书
+			  </h2>
+			  <div class="c_m_h_r">
+				<span @click="goHome">返回首页</span>
+			    <span class="ml-5" @click="goAgreementHelp">协议书定制帮助</span>
+			  </div>
 			</div>
+		</div>
+		<div class="c_m w">
 			<div class="c_m_m mx-auto">
 				<div>
 					<el-form>
@@ -24,8 +27,8 @@
 								 class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>。为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
 							<div>
 								<div class="w-full mx-auto py-10">
-									<ul class="px-10 flex flex-wrap">
-										<li class="w-1/3 text-left pl-12 lis_red" v-for="(item, index) in this.ChuShiMsgArr" :key="index">{{index+1}}、{{ item.title }}</li>
+									<ul class="shili flex flex-wrap">
+										<li class="lis_red" v-for="(item, index) in this.ChuShiMsgArr" :key="index">{{index+1}}、{{ item.title }}<span class="">{{ item.title2 }}</span></li>
 									</ul>
 								</div>
 							</div>
@@ -141,12 +144,12 @@
 				</div>
 			</div>
 		</div>
-		<lihun-bottom></lihun-bottom>
+		<lihun-bottom-common></lihun-bottom-common>
 	</div>
 </template>
 <script>
-	import lihun_head from '../../partials/lihun_head.vue'
-	import lihun_bottom from '../../partials/lihun_bottom.vue'
+	// import lihun_head from '../../partials/lihun_head.vue'
+	import lihun_bottom_com from '../../partials/lihun_bottom_com.vue'
 	import {
 		getOnlyValue
 	} from '@/api/api/AgreementRequest.js' // 获取单独问题的值
@@ -154,29 +157,33 @@
 	export default {
 		name: 'CustomQueDing',
 		components: {
-			'lihun-head': lihun_head,
-			'lihun-bottom': lihun_bottom
+			'lihun-bottom-common': lihun_bottom_com
 		},
 		data() {
 			return {
 				ChuShiMsgArr: [{
-						title: '结婚证（示例一）',
+						title: '结婚证',
+						title2: '(示例一)',
 						img: ''
 					},
 					{
-						title: '身份证（示例二）',
+						title: '身份证',
+						title2: '(示例二)',
 						img: ''
 					},
 					{
-						title: '户口本（示例三）',
+						title: '户口本',
+						title2: '(示例三)',
 						img: ''
 					},
 					{
-						title: '银行账户（示例四）',
+						title: '银行账户',
+						title2: '(示例四)',
 						img: ''
 					},
 					{
-						title: '存折（示例五）',
+						title: '存折',
+						title2: '(示例五)',
 						img: ''
 					}
 				],
@@ -227,28 +234,33 @@
 						if (item == 1) {
 							this.ChuShiMsg.house = true
 							this.ChuShiMsgArr.push({
-								title: '房产证（示例六）',
+								title: '房产证',
+								title2: '(示例六)',
 								img: ''
 							})
 							this.ChuShiMsgArr.push({
-								title: '房屋买卖合同（示例七）',
+								title: '房屋买卖合同',
+								title2: '(示例七)',
 								img: ''
 							})
 						} else if (item == 2) {
 							this.ChuShiMsg.money = true
 						} else if (item == 3) {
 							this.ChuShiMsgArr.push({
-								title: '理财协议（示例八）',
+								title: '理财协议',
+								title2: '(示例八)',
 								img: ''
 							})
 							this.ChuShiMsg.liCai = true
 						} else if (item == 4) {
 							this.ChuShiMsgArr.push({
-								title: '机动车登记证（示例九）',
+								title: '机动车登记证',
+								title2: '(示例九)',
 								img: ''
 							})
 							this.ChuShiMsgArr.push({
-								title: '机动车行驶证（示例十）',
+								title: '机动车行驶证',
+								title2: '(示例十)',
 								img: ''
 							})
 							this.ChuShiMsg.car = true
@@ -257,7 +269,8 @@
 						} else if (item == 6) {
 							this.ChuShiMsg.baoXian = true
 							this.ChuShiMsgArr.push({
-								title: '保险合同（示例十一）',
+								title: '保险合同',
+								title2: '(示例十一)',
 								img: ''
 							})
 						}
@@ -321,7 +334,8 @@
 					}
 					if (data.data.data !== '') {
 						this.ChuShiMsgArr.push({
-							title: '孩子出生证明（示例十二）',
+							title: '孩子出生证明',
+							title2: '(示例十二)',
 							img: ''
 						})
 					}
@@ -352,10 +366,16 @@
 			NextPage() {
 				this.$router.replace("/CustomBasic");
 			},
-			goAgreementHelp() {
-				const {
-					href
-				} = this.$router.resolve({
+			goHome () {
+				localStorage.setItem('topins',0)
+				const {href} = this.$router.resolve({
+					path: '/'
+				})
+				window.open(href, '_blank')
+			},
+			goAgreementHelp () {
+				localStorage.setItem('topins',1)
+				const {href} = this.$router.resolve({
 					path: '/AgreementHelp'
 				})
 				window.open(href, '_blank')
@@ -385,13 +405,11 @@
 	}
 
 	.c_m_h {
-		height: 109px;
-		border-bottom: 2px solid #f2f4f7;
-		margin-top: 39px;
+		height: 90px;
 	}
 
 	.c_m_h h2 {
-		width: 243px;
+		width: 297px;
 		font-size: 25px;
 		color: #535353;
 		font-weight: bold;
@@ -429,10 +447,20 @@
 	.c_m_m {
 		padding: 40px 100px;
 	}
-
+	.shili{width: 770px;margin:0 auto;display: flex;justify-content: space-around;}
 	.lis_red {
-		color: #ff5375;
+		color: #ff3f68 ;
+		width: 233px;
+		height: 49px;
+		line-height: 49px;
+		text-align: center;
+		border:1px solid #ff4a70;
+		background-color: #fff6f8;
+		border-radius: 5px;
+		margin-bottom: 22px;
+		font-size: 18px;
 	}
+	.lis_red span{display: inline-block;font-size:16px;margin-left: 10px;}
 
 	.dingzhi {
 		width: 193px;

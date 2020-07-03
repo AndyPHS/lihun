@@ -1,22 +1,25 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <div class="w-full bg-white" style="margin-bottom: 13px;">
+    	<div class="w c_m_h flex justify-between items-center px-12">
+    	  <h2>
+    		<img class="inline-block mr-5" src="../../../assets/images/lihun/logo.png" alt="">
+    	    定制我的协议书
+    	  </h2>
+    	  <div class="c_m_h_r">
+    		<span @click="goHome">返回首页</span>
+			<span @click="goAgreementHelp">协议书定制帮助</span>
+			<span @click="returnUserList">返回文书列表</span>
+			<span @click="saveWenShu">保存</span>
+    	  </div>
+    	</div>
+    </div>
     <div class="c_m w">
-      <div class="c_m_h flex justify-between items-center px-12">
-        <h2>
-          定制我的协议书
-        </h2>
-        <div class="c_m_h_r">
-          <span @click="goAgreementHelp">协议书定制帮助</span>
-		  <span @click="returnUserList">返回文书列表</span>
-		  <span @click="saveWenShu">保存</span>
-        </div>
-      </div>
       <div class="basicmin">
         <div class="w-full  bg-white relative pb-10">
-          <div class="container mx-auto">
+          <div class="">
             <div>
-              <div class="py-4">
+              <div class="py-4" style="border-bottom: 1px solid #eceff4;">
                 <ul class="flex justify-around navUl">
                   <li v-bind:class="{active:index == ins}" v-for="(item, index) in nav" :key="index" @click="stepClick(item,index)">
                     <span class="insNum">{{ index+1 }}</span>
@@ -293,12 +296,12 @@
         </div>
       </div>
     </div>
-	<lihun-bottom></lihun-bottom>
+	<lihun-bottom-common></lihun-bottom-common>
   </div>
 </template>
 <script>
-import lihun_head from '../../partials/lihun_head.vue'
-import lihun_bottom from '../../partials/lihun_bottom.vue'
+// import lihun_head from '../../partials/lihun_head.vue'
+import lihun_bottom_com from '../../partials/lihun_bottom_com.vue'
 
 import QuestionModel from '../../partials/QuestionModel.vue' // 引入子组件
 import {returnQuestionnaireJson} from '@/api/api/AgreementRequest.js' // 查询问卷json
@@ -313,9 +316,9 @@ import {regionData, CodeToText, TextToCode} from 'element-china-area-data' //
 export default {
   name: 'CustomBasic',
   components: {
-    'lihun-head': lihun_head,
+    // 'lihun-head': lihun_head,
     'question-model': QuestionModel,
-	'lihun-bottom': lihun_bottom
+	'lihun-bottom-common': lihun_bottom_com
   },
   data () {
     return {
@@ -1187,6 +1190,13 @@ export default {
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true
     },
+	goHome () {
+		localStorage.setItem('topins',0)
+		const {href} = this.$router.resolve({
+			path: '/'
+		})
+		window.open(href, '_blank')
+	},
 	goAgreementHelp () { // 协议定制帮助
 		const {href} = this.$router.resolve({
 			path: '/AgreementHelp'
@@ -1210,9 +1220,9 @@ export default {
 .all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;}
-.c_m_h{height:109px;border-bottom: 2px solid #f2f4f7;margin-top: 39px;}
-.c_m_h h2{width:303px;font-size: 25px;color:#535353;font-weight: bold;}
-.c_m_h_r{width:482px;display: flex;justify-content: space-between;}
+.c_m_h{height:90px;}
+.c_m_h h2{width:356px;font-size: 25px;color:#535353;font-weight: bold;}
+.c_m_h_r{width:648px;display: flex;justify-content: space-between;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
 .c_m_h_r span:last-of-type{border:1px solid #ff3f68;color:#ff3f68;}
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}
@@ -1223,15 +1233,15 @@ html{height: 100%;background-color: #f7fafc;}
 #tab-9{border-top: 1px solid #d2d2d2;}
 .othercai{position: absolute;top: 360px;left: 50px;width: 96px;height: 30px;line-height: 30px;font-weight: bold;font-size: 16px;color: #303133;}
 .othercai img{position: absolute;top:6px;right:-2px;}
-.navUl{width: 1024px;margin:0 auto;background-color: #f7f7f7;border-radius: 10px;padding:10px}
+.navUl{width: 100%;margin:0 auto;padding:10px}
 .navUl li{width: 150px;position: relative;color:#c0c0c0;}
-.divider-line{position: absolute;height: 2px;background-color: #C0C4CC;top:21px;left:86px;width: 150px;}
+.divider-line{position: absolute;height: 2px;background-color: #C0C4CC;top:21px;left:86px;width: 180px;}
 .navUl li:last-of-type .divider-line{display: none;}
 .navUl li.active{color: #ff3f68;}
 .insNum{width: 24px;height: 24px;line-height: 24px;text-align: center;font-size: 14px;border-radius: 50%;border:2px solid #C0C4CC;color:#C0C4CC;margin:10px auto;display: block;font-weight: bold;background: #fff;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
-.allmin{width: 1024px;margin:0 auto;margin-bottom: 50px;}
+.allmin{width: 1024px;margin:0 auto;margin-bottom: 50px;height: 750px;overflow-y: scroll;}
 .caichanul{position: absolute; top:0;left: 50px; width: 150px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
 .caichanul li:nth-of-type(10){margin-top:35px}
@@ -1269,7 +1279,6 @@ html{height: 100%;background-color: #f7fafc;}
 .cbt:hover{background-color: #ff3f68;color: #fff;border:1px solid #ff3f68}
 .re{border: 1px solid #ff3f68;color: #ff3f68;background-color: #fff;}
 .act:hover{background-color:#ff3f68;color: #fff;}
-.basicmin{height: 750px;overflow-y: scroll;}
 #shengchengloading{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
 .shengchengloding_min{width: 500px;height: 200px;top:30%;margin-top: -100px;left: 50%;margin-left: -250px;position: fixed;}
 .shengchengloding_min img{display: inline-block;margin:20px auto}
