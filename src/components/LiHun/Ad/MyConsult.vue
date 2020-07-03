@@ -40,7 +40,7 @@
 							</h4>
 							<div class="c_m_m_m_m flex justify-between items-center">
 								<h2 class="w-1/2 overflow-hidden pl-6 text-left">
-									{{ item.title }}
+									{{ item.title }} <img @click="ReName(item, index)" class="ml-5 inline-block cursor-pointer" src="../../../assets/images/lihun/edit_icon.png" alt="">
 								</h2>
 								<div class="w-1/2 flex justify-around items-center">
 									<dl class="w-1/3">
@@ -90,7 +90,7 @@
 										</h4>
 										<div class="c_m_m_m_m flex justify-between items-center">
 											<h2 class="w-1/2 overflow-hidden pl-12 text-left">
-												{{ $item.title }}
+												{{ $item.title }} <img @click="ReName($item, $index)" class="ml-5 inline-block cursor-pointer" src="../../../assets/images/lihun/edit_icon.png" alt="">
 											</h2>
 											<div class="w-1/2 flex justify-around items-center">
 												<dl class="w-1/3">
@@ -166,6 +166,18 @@
 						<span class="cbt re" @click="dialogNewCopyOk">确 定</span>
 					</div>
 				</el-dialog>
+				<!-- 重命名 -->
+				<el-dialog title="重命名" :visible.sync="dialogReName">
+					<el-form>
+						<el-form-item label="名称" label-width="130px" class="mb-1">
+							<el-input v-model="reNameTitle" class="w-2/3" autocomplete="off"></el-input>
+						</el-form-item>
+					</el-form>
+					<div slot="footer" class="dialog-footer tishi_bot pb-3">
+						<span class="cbt" @click="canceldialogReName">取 消</span>
+						<span class="cbt re" @click="dialogReNameOk">确 定</span>
+					</div>
+				</el-dialog>
 				<!-- 离婚指导弹窗 -->
 				<div class="zhidaopage"  v-if="this.dialogZhiDao == true">
 					<div style="width: 761px;height: 554px;position: absolute;top:50%;left: 50%;margin-top: -280px;margin-left: -380px;background-color: #fff;">
@@ -225,6 +237,8 @@
 				form: { // 免责条款
 					type: false
 				},
+				dialogReName: false, // 重命名弹窗
+				reNameTitle: '',  // 新名字
 				dialogNewCopy: false, // 新建副本弹窗
 				chooseList: {
 					title: '' // 新建副本
@@ -399,6 +413,23 @@
 					}
 				}).catch((data) => {
 					this.$message.error('重命名失败，请联系管理员')
+				})
+			},
+			ReName (item, index) { // 点击重新命名
+				this.dialogReName = true
+				this.reNameTitle = item.title
+				localStorage.setItem('quid', item.id)
+			},
+			canceldialogReName() { // 点击重命名弹窗取消按钮
+				this.dialogReName = false
+				this.reNameTitle = ''
+			},
+			dialogReNameOk () { // 点击确定提交重新命名
+				userUpdateQuestionnaire({
+					title: this.reNameTitle
+				}).then((data) => {
+					this.getWenShu()
+					this.dialogReName = false
 				})
 			},
 			isQianAction(item) { // 签订与否切换
