@@ -81,8 +81,8 @@
                 <div class="yanzheng el-form-item">
                   <div class="el-form-item__content flex justify-between">
                     <input v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="zhuceValueCode">
-                    <span class="spa hover:underline" v-if="this.registYan == false" @click="getYan">获取验证码</span>
-                    <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
+                    <span class="spa hover:underline" v-show="registYan" @click="getYan">获取验证码</span>
+                    <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ count }}s）</el-button>
                   </div>
                   <div class="el-form-item__content text-right underline text-blue-300 my-4">
                    <el-popover
@@ -279,8 +279,8 @@
 			        <div class="yanzheng el-form-item">
 			          <div class="el-form-item__content flex justify-between">
 			            <input v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="newformValueCode">
-			            <span class="spa hover:underline" v-if="this.registYan == false" @click="findYan">获取验证码</span>
-			            <el-button v-if="this.registYan == true" class="ml-5" type="primary" :loading="registYanType">已发送,请查收</el-button>
+			            <span class="spa hover:underline" v-show="registYan" @click="findYan">获取验证码</span>
+			            <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ count }}s）</el-button>
 			          </div>
 			          <div class="el-form-item__content text-right underline text-blue-300 my-4">
 			           <el-popover
@@ -378,6 +378,8 @@ export default {
       userPhone: null, // 登录后存储用户手机号
       isLogin: false,  // 判断用户是否登录
 	  errorMsg: '',
+	  count: '', // 倒计时60秒
+	  timer: null,  // 倒计时定时器
       form: {
         phone: null,
         password: '',
@@ -399,7 +401,7 @@ export default {
         widthClass: 'vertical'
       },
       checkOne: false,
-      registYan: false, // 注册时候手机验证码状态
+      registYan: true, // 注册时候手机验证码状态
 	  registYanType: false,
       zhuce: true, // 注册成功状态码
       forgetDialog: false, // 忘记密码弹窗
@@ -572,7 +574,7 @@ export default {
     },
     closeDialog () { // 点击注册弹窗关闭按钮
       this.dialogFormVisible = false
-      this.registYan = false
+      this.registYan = true
     },
 	changeSelectAc () {
 		this.checkOne = !this.checkOne
@@ -585,10 +587,15 @@ export default {
     },
     getYan () { // 获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
-			this.$message.error('手机号有误，请重新填写'); 
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			this.$refs.zhucePhone.focus()
 			return false; 
 		} else {
-			this.registYan = true
+			// this.registYan = true
 			phoneCode({
 			  phone: this.form.phone,
 			  type: 1
@@ -596,9 +603,20 @@ export default {
 			  if (data.data.status_code !== 200) {
 			    this.$message.error('手机号格式不正确')
 			  } else {
-				setTimeout(()=>{
-					this.registYan = false
-				},3000)
+				const TIME_COUNT = 60;
+				 if (!this.timer) {
+				   this.count = TIME_COUNT;
+				   this.registYan = false;
+				   this.timer = setInterval(() => {
+				   if (this.count > 0 && this.count <= TIME_COUNT) {
+					 this.count--;
+					} else {
+					 this.registYan = true;
+					 clearInterval(this.timer);
+					 this.timer = null;
+					}
+				   }, 1000)
+				  }
 			  }
 			})
 		}
@@ -800,7 +818,7 @@ export default {
 			this.$message.error('手机号有误，请重新填写'); 
 			return false; 
 		} else {
-			this.registYan = true
+			// this.registYan = true
 			phoneCode({
 			  phone: this.newform.phone,
 			  type: 3
@@ -808,9 +826,20 @@ export default {
 			  if (data.data.status_code !== 200) {
 			    this.$message.error('手机号格式不正确')
 			  } else {
-				setTimeout(()=>{
-					this.registYan = false
-				},3000)
+				const TIME_COUNT = 60;
+				 if (!this.timer) {
+				   this.count = TIME_COUNT;
+				   this.registYan = false;
+				   this.timer = setInterval(() => {
+				   if (this.count > 0 && this.count <= TIME_COUNT) {
+					 this.count--;
+					} else {
+					 this.registYan = true;
+					 clearInterval(this.timer);
+					 this.timer = null;
+					}
+				   }, 1000)
+				  }
 			  }
 			})
 		}

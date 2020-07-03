@@ -204,8 +204,14 @@ export default{
       })
     },
     updateForm (formName) {
+	  if (this.ruleForm.faId.length == 2) {
+	    this.ruleForm.faId = this.ruleForm.faId[1]
+	  } else {
+	    this.ruleForm.faId = this.ruleForm.faId[0]
+	  }
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
       this.ruleForm.content = content;
+      this.ruleForm.faId = this.ruleForm.faId;
       this.$refs[formName].validate((valid) => {
         updateNews({
           title: this.ruleForm.title,
