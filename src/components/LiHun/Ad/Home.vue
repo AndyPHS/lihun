@@ -192,7 +192,7 @@
             <div class="text-left w-full">
 				<img class="inline-block" src="../../../assets/images/lihun/yinhao1.png" alt="">
 			</div>
-			<p @click="goAgreementHelpMin(45)">2018年的一天，以为当事人通过朋友辗转联系，千里迢迢来到北京，上门委托我们起诉。她风尘仆仆、面容憔悴的样子与其他客户迥然不同。我们得知，她来自南方的一个三线城市，由于找寻专业婚姻律师未果，才四处打听，找到了我们…………</p>
+			<p @click="goAgreementHelpMin(45)">2018年的一天，一位当事人通过朋友辗转联系，千里迢迢来到北京，上门委托我们起诉。她风尘仆仆、面容憔悴的样子与其他客户迥然不同。我们得知，她来自南方的一个三线城市，由于找寻专业婚姻律师未果，才四处打听，找到了我们…………</p>
 			<div class="text-right w-full">
 				<img class="inline-block" src="../../../assets/images/lihun/yinhao2.png" alt="">
 			</div>
