@@ -248,7 +248,8 @@
       <el-dialog title="设置头像" :visible.sync="dialogImg">
         <div class="touxiang">
             <form action="" class="text-center imbox">
-              <img :src="this.userMsg.photo" alt="">
+			  <img v-if="this.userMsg.photo=='' " src="../../../assets/images/lihun/user_img.png" alt="">
+			  <img v-else :src="this.userMsg.photo" alt="">
               <input name="imgs" class=" mx-auto mt-5 w-1/3" placeholder="上传头像" type="file" id='upfile' @change="selectFile">
             </form>
         </div>
