@@ -202,7 +202,11 @@ export default {
       })
     },
     returnUserList () { // 返回协议列表
-      this.dialogTiShi = true
+	  if (this.$route.params.content!==undefined) {
+		  this.$router.replace('/MyConsult')
+	  } else {
+		 this.dialogTiShi = true
+	  }
     },
     canceldialogTiShi () { // 取消返回
       this.dialogTiShi = false

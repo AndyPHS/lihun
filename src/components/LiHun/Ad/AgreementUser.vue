@@ -102,8 +102,11 @@
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.PhoneCode01" type="text" autocomplete="off" class="el-input__inner" ref="formPhoneCode01">
               </div>
-              <el-button v-if="this.IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送</el-button>
-              <el-button v-if="this.IsGetCode01==false" class="ml-5" type="primary" @click="sendCode01">获取</el-button>
+			  <span class="spa hover:underline" v-show="IsGetCode01" @click="sendCode01">获取验证码</span>
+			  <el-button v-show="!IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送，请查收（{{ count }}s）</el-button>
+			  <!-- <el-button v-if="this.IsGetCode01==false" class="ml-5" type="primary" @click="sendCode01">获取</el-button>
+              <el-button v-if="this.IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送</el-button> -->
+              
             </div>
           </div>
         </el-form>
@@ -139,8 +142,9 @@
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.newPhone" type="text" autocomplete="off" class="el-input__inner" ref="formNewPhone">
               </div>
-              <el-button v-if="this.IsGetCode02" class="ml-5" type="primary" :loading="IsGetCode02">已发送</el-button>
-              <el-button v-if="this.IsGetCode02==false" class="ml-5" type="primary" @click="sendCode02">获取</el-button>
+			  
+              <!-- <el-button v-if="this.IsGetCode02" class="ml-5" type="primary" :loading="IsGetCode02">已发送</el-button>
+              <el-button v-if="this.IsGetCode02==false" class="ml-5" type="primary" @click="sendCode02">获取</el-button> -->
             </div>
           </div>
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
@@ -149,7 +153,8 @@
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.PhoneCode02" type="text" autocomplete="off" class="el-input__inner" ref="formPhoneCode02">
               </div>
-
+			  <span class="spa hover:underline" v-show="IsGetCode02" @click="sendCode02">获取验证码</span>
+			  <el-button v-show="!IsGetCode02" class="ml-5" type="primary" :loading="IsGetCode02">已发送，请查收({{ count }}s)</el-button>
             </div>
           </div>
         </el-form>
@@ -181,13 +186,13 @@
         <el-form class="mt-6" :model="form">
           <h2 class="text-red-500 mb-2 ml-32">请输入{{this.userMsg.phone}}收到的验证码</h2>
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
-            <label class="el-form-item__label" style="width: 120px;">验证码</label>
-            <div class="el-form-item__content" style="margin-left: 120px;">
+            <label class="el-form-item__label" style="width: 80px;">验证码</label>
+            <div class="el-form-item__content" style="margin-left: 100px;text-align: center;">
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.PasswordCode" autocomplete="off" class="el-input__inner" ref="formPasswordCode">
               </div>
-              <el-button v-if="this.IsGetPsCode01" class="ml-5" type="primary" :loading="IsGetPsCode01">已发送</el-button>
-              <el-button v-if="this.IsGetPsCode01==false" class="ml-5" type="primary" @click="sendPsCode">获取</el-button>
+			  <span class="spa hover:underline" v-show="IsGetPsCode01" @click="sendPsCode">获取验证码</span>
+			  <el-button v-show="!IsGetPsCode01" class="ml-5" type="primary" :loading="IsGetPsCode01">已发送，请查收({{ count }}s)</el-button>
             </div>
           </div>
         </el-form>
@@ -218,19 +223,19 @@
       <el-dialog title="修改密码" :visible.sync="dialogPassword02">
         <el-form class="mt-6" :model="form">
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
-            <label class="el-form-item__label" style="width: 120px;">新密码</label>
+            <label class="el-form-item__label" style="width: 150px;text-align:center">新密码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.passwordNew" type="password" autocomplete="off" class="el-input__inner" ref="formPasswordNew">
+                <input  v-model="form.passwordNew" type="password" autocomplete="off" class="el-input__inner" ref="formPasswordNew" style="width: 450px;">
               </div>
 
             </div>
           </div>
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
-            <label class="el-form-item__label" style="width: 120px;">确认新密码</label>
+            <label class="el-form-item__label" style="width: 150px;text-align:center">确认新密码</label>
             <div class="el-form-item__content" style="margin-left: 120px;">
               <div data-v-6b6fd6b8="" class="el-input">
-                <input  v-model="form.passwordAgain" type="password" autocomplete="off" class="el-input__inner" ref="formPasswordAgain">
+                <input  v-model="form.passwordAgain" type="password" autocomplete="off" class="el-input__inner" ref="formPasswordAgain" style="width: 450px;">
               </div>
             </div>
           </div>
@@ -262,8 +267,6 @@
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.email" type="text" autocomplete="off" class="el-input__inner" ref="formEmail">
               </div>
-              <el-button v-if="this.IsSendEmail==true" class="ml-5" type="primary" :loading="IsSendEmail">已发送</el-button>
-              <el-button v-if="this.IsSendEmail==false" class="ml-5" type="primary" @click="sendEmailAc">发送邮件</el-button>
             </div>
           </div>
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
@@ -272,7 +275,8 @@
               <div data-v-6b6fd6b8="" class="el-input">
                 <input  v-model="form.emailCode" type="text" autocomplete="off" class="el-input__inner" ref="formEmailCode">
               </div>
-
+			  <span class="spa hover:underline" v-show="IsSendEmail" @click="sendEmailAc">获取验证码</span>
+			  <el-button v-show="!IsSendEmail" class="ml-5" type="primary" :loading="IsSendEmail">已发送，请查收（{{ count }}s）</el-button>
             </div>
           </div>
         </el-form>
@@ -306,15 +310,17 @@ export default {
       phoneNum: null, // 用户手机号
       dialogFormVisible: false, // 基本信息弹窗
       dialogPhone01: false, // 修改手机号第一个弹窗
-      IsGetCode01: false, // 是否发送旧手机验证码
+      IsGetCode01: true, // 是否发送旧手机验证码
       dialogPhone02: false, // 修改手机号第二个弹窗
-      IsGetCode02: false, // 是否发送新手机验证码
+      IsGetCode02: true, // 是否发送新手机验证码
       dialogPassword01: false, // 修改密码第一个弹窗
       dialogPassword02: false, // 修改密码第二个弹窗
       dialogEmail01: false, // 邮件弹窗
-      IsGetPsCode01: false, // 是否发送密码验证码
-      IsSendEmail: false, // 是否发送电子邮件
+      IsGetPsCode01: true, // 是否发送密码验证码
+      IsSendEmail: true, // 是否发送电子邮件
       dialogImg: false, // 设置头像弹窗
+	  count: '', // 倒计时60秒
+	  timer: null,  // 倒计时定时器
       form: {
         name: '',
         sex: '',
@@ -404,14 +410,20 @@ export default {
         type: 2
       }).then((data) => {
         if (data.data.status_code == 200) {
-          this.IsGetCode01 = true
-          this.$message({
-            message: '发送成功，请查看',
-            type: 'success'
-          })
-		  setTimeout(()=>{
-		  	this.IsGetCode01 = false
-		  },3000)
+          const TIME_COUNT = 60;
+           if (!this.timer) {
+             this.count = TIME_COUNT;
+             this.IsGetCode01 = false;
+             this.timer = setInterval(() => {
+				 if (this.count > 0 && this.count <= TIME_COUNT) {
+				 this.count--;
+				} else {
+				 this.IsGetCode01 = true;
+				 clearInterval(this.timer);
+				 this.timer = null;
+				}
+             }, 1000)
+           }
         } else {
           this.$message.error('发送失败，请联系后台人员')
         }
@@ -435,23 +447,39 @@ export default {
 	  }
     },
     sendCode02 () { // 发送新手机号验证码
-      phoneCode({
-        phone: this.form.newPhone,
-        type: 2
-      }).then((data) => {
-        if (data.data.status_code == 200) {
-          this.IsGetCode02 = true
-          this.$message({
-            message: '发送成功，请查看',
-            type: 'success'
-          })
-		  setTimeout(()=>{
-		  	this.IsGetCode02 = false
-		  },3000)
-        } else {
-          this.$message.error('发送失败，请联系后台人员')
-        }
-      })
+	  if(!(/^1[3456789]\d{9}$/.test(this.form.newPhone))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '手机号有误，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+	  	this.$refs.formNewPhone.focus()
+	  	return false; 
+	  } else {
+		phoneCode({
+		  phone: this.form.newPhone,
+		  type: 2
+		}).then((data) => {
+		  if (data.data.status_code == 200) {
+		    const TIME_COUNT = 60;
+		     if (!this.timer) {
+		       this.count = TIME_COUNT;
+		       this.IsGetCode02 = false;
+		       this.timer = setInterval(() => {
+				 if (this.count > 0 && this.count <= TIME_COUNT) {
+				 this.count--;
+				} else {
+				 this.IsGetCode02 = true;
+				 clearInterval(this.timer);
+				 this.timer = null;
+				}
+		       }, 1000)
+		     }
+		  } else {
+				   this.$message.error('手机号输入错误，请重新输入')
+		  }
+		})
+	  }
     },
     savePhoneBtn () { // 保存新手机号
 	  if(!(/^1[3456789]\d{9}$/.test(this.form.newPhone))){
@@ -460,7 +488,7 @@ export default {
 	  	setTimeout(()=>{
 	  		this.dengluerrorBox = false
 	  	},1000)
-	  			this.$refs.formNewPhone.focus()
+	  	this.$refs.formNewPhone.focus()
 	  	return false; 
 	  } else if(!(/^\d{6}$/.test(this.form.PhoneCode02))){
 	  	this.dengluerrorBox = true
@@ -499,7 +527,7 @@ export default {
     },
     editPassword () { // 点击修改密码弹窗
       this.dialogPassword01 = true
-      this.IsGetPsCode01 = false
+	  this.form.PasswordCode = ''
     },
     sendPsCode () {
       phoneCode({
@@ -507,14 +535,20 @@ export default {
         type: 4
       }).then((data) => {
         if (data.data.status_code == 200) {
-          this.IsGetPsCode01 = true
-          this.$message({
-            message: '发送成功，请查看',
-            type: 'success'
-          })
-		  setTimeout(()=>{
-		  	this.IsGetPsCode01 = false
-		  },3000)
+          const TIME_COUNT = 60;
+           if (!this.timer) {
+             this.count = TIME_COUNT;
+             this.IsGetPsCode01 = false;
+             this.timer = setInterval(() => {
+          	 if (this.count > 0 && this.count <= TIME_COUNT) {
+          	 this.count--;
+          	} else {
+          	 this.IsGetPsCode01 = true;
+          	 clearInterval(this.timer);
+          	 this.timer = null;
+          	}
+             }, 1000)
+           }
         } else {
           this.$message.error('发送失败，请联系后台人员')
         }
@@ -616,7 +650,6 @@ export default {
     },
     editEmail () { // 绑定电子邮箱
       this.dialogEmail01 = true
-	  this.IsSendEmail = false
     },
     saveEmailBtn () { // 确认绑定邮件
 	  if(!(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.form.email))){
@@ -664,32 +697,50 @@ export default {
 	  }
     },
     sendEmailAc () { // 发送邮件验证码
-	  this.IsSendEmail = true
-      sendEmail({
-        email: this.form.email
-      }).then((data) => {
-        if (data.data.status_code == 200) {
-          this.$message({
-            message: '邮件验证码发送成功，请查看邮箱',
-            type: 'success'
-          })
+	  if (this.form.email==''){
+		  this.dengluerrorBox = true
+		  this.errorMsg = '邮箱不能为空，请重新填写'
 		  setTimeout(()=>{
-		  	this.IsSendEmail = false
-		  },3000)
-        } else {
-          this.$message({
-            message: data.data.message,
-            type: 'error'
-          })
-		  setTimeout(()=>{
-		  	this.IsSendEmail = false
-		  },3000)
-        }
-      }).catch(()=>{
-		  setTimeout(()=>{
-		  	this.IsSendEmail = false
-		  },3000)
-	  })
+		  	this.dengluerrorBox = false
+		  },1000)
+		  this.$refs.formEmail.focus()
+	  } else if(!(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(this.form.email))){
+	  	this.dengluerrorBox = true
+	  	this.errorMsg = '邮箱格式不正确，请重新填写'
+	  	setTimeout(()=>{
+	  		this.dengluerrorBox = false
+	  	},1000)
+		this.$refs.formEmail.focus()
+	  	return false; 
+	  } else {
+		 sendEmail({
+		   email: this.form.email
+		 }).then((data) => {
+		   if (data.data.status_code == 200) {
+		     const TIME_COUNT = 60;
+		      if (!this.timer) {
+		        this.count = TIME_COUNT;
+		        this.IsSendEmail = false;
+		        this.timer = setInterval(() => {
+		     	 if (this.count > 0 && this.count <= TIME_COUNT) {
+		     	 this.count--;
+		     	} else {
+		     	 this.IsSendEmail = true;
+		     	 clearInterval(this.timer);
+		     	 this.timer = null;
+		     	}
+		        }, 1000)
+		      }
+		   } else {
+		     this.$message({
+		       message: data.data.message,
+		       type: 'error'
+		     })
+		   }
+		 }).catch(()=>{
+		 		  
+		 }) 
+	  }
     },
 	getHeadActive (data) {
 		localStorage.setItem('topins',data)
@@ -726,4 +777,6 @@ export default {
 .imbox{text-align: center;margin: 0;display: flex;flex-direction: column;align-items: center;padding-top: 40px;}
 .imbox img{width: 149px;height: 149px;background: #fff;border-radius: 50%;display: inline-block;}
 .errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 3000;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
+.spa{display: inline-block;width: 120px;height: 38px;line-height:38px;text-align: center;color: #fff;font-size:16px;background: #547ce0;cursor: pointer;border-radius: 10px;border:1px solid #547ce0;margin-left: 20px;}
+.regist .el-dialog{width: 640px;}
 </style>
