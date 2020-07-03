@@ -864,6 +864,9 @@ export default {
 	},
 	closePhonePw () { // 关闭设置新密码弹窗
 		this.dialogPhonePw = false
+		this.newform.password = ''
+		this.newform.passwordAgain = ''
+		this.newform.valueCode = null
 	},
 	resetPWprev () { // 设置新密码弹窗上一步
 		this.dialogPhonePw = false

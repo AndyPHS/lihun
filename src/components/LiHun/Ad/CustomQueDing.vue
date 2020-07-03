@@ -409,7 +409,7 @@
 	}
 
 	.c_m_h h2 {
-		width: 297px;
+		width: 350px;
 		font-size: 25px;
 		color: #535353;
 		font-weight: bold;
@@ -447,7 +447,7 @@
 	.c_m_m {
 		padding: 40px 100px;
 	}
-	.shili{width: 770px;margin:0 auto;display: flex;justify-content: space-around;}
+	.shili{width: 770px;margin:0 auto;display: flex;justify-content: flex-start;}
 	.lis_red {
 		color: #ff3f68 ;
 		width: 233px;
@@ -459,6 +459,7 @@
 		border-radius: 5px;
 		margin-bottom: 22px;
 		font-size: 18px;
+		margin-left: 20px;
 	}
 	.lis_red span{display: inline-block;font-size:16px;margin-left: 10px;}
 
