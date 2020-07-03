@@ -687,7 +687,7 @@ export default {
     },
 	goguanwang () { // 登录官网
 		this.dialogFormVisible = false
-		this.$router.replace('http://www.jialilaw.com/')
+		window.open('http://www.jialilaw.com/', '_blank')
 	},
 	checkPhone (phoneNum) { // 手机号验证
 		var phone = phoneNum
@@ -755,6 +755,9 @@ export default {
 			    this.isLogin = true
 			    this.$emit('sendPhone', this.userPhone)
 				usersSelect().then((data) => {
+					if (data.data.name !=''){
+						this.UserName = data.data.name
+					}
 					localStorage.setItem('name', data.data.name)
 					this.getUserMsg()
 				})
