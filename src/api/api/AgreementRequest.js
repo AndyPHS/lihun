@@ -392,7 +392,7 @@ export const selectNews = params => {
   return axios({
     method: "get",
     dataType: 'json',
-    url: apiUrl.selectNews + '?status=' + params.status,
+    url: apiUrl.selectNews + '?status=' + params.status + '&page=' + params.page,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });

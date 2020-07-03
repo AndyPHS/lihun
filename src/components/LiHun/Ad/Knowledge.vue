@@ -40,12 +40,12 @@
           </ul>
 		  <el-pagination
 			  background
-			  class="mb-10"
+			  class="mb-10 text-center"
 			  layout="prev, pager, next"
-			  @current-change="handleUserList"
+			  @current-change="startList"
 			  :page-size="pagesize"
 			  :current-page.sync="currentPage"
-			  :total="this.min.total">
+			  :total="total">
 		  </el-pagination>
           <div class="errorMin" v-if="this.tableDataNull">
             <div class="pt-40 text-center mx-auto">
@@ -130,14 +130,15 @@ export default {
       })
     },
     startList () { // 初始化页面查找第一个分类下的文章
-	  this.currentPage = 1
+	  // this.currentPage = 1
       selectFaIDNews({
         status: 1,
-        faId: this.firstType,
+        faId: 18,
 		page: this.currentPage
       }).then((data) => {
 		  if(data.data.status_code ==200){
-			  this.tableData = data.data.data
+			  this.tableData = data.data.data.data
+			  this.total = data.data.data.total
 			  if (this.tableData.length == 0 ) {
 			  	this.tableDataNull = true
 			  }
@@ -154,9 +155,11 @@ export default {
       this.ins = index
       selectFaIDNews({
         status: 1,
-        faId: item.id
+        faId: item.id,
+		page: this.currentPage
       }).then((data) => {
-        this.tableData = data.data.data
+        this.tableData = data.data.data.data
+		this.total = data.data.data.total
 		if (this.tableData.length == 0 ) {
 			this.tableDataNull = true
 			this.keyMsg = item.title

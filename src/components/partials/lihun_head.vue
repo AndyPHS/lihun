@@ -110,10 +110,10 @@
 				  <div class="flex justify-start items-center mx-auto" style="width: 302px;">
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==false" src="../../assets/images/lihun/unchecked.png" alt="">
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==true" src="../../assets/images/lihun/checked.png" alt="">
-					  <p class="ml-1">我已阅读并同意<span @click="handleCheckedCitiesChange" class="hover:font-bold underline inline-block text-blue-500">《家文用户注册和使用协议》</span></p>
+					  <p class="ml-1">我已阅读并同意<span @click="handleCheckedCitiesChange" class="hover:font-bold underline inline-block text-blue-500">《蜗牛家事用户注册和使用协议》</span></p>
 				  </div>
                   <!-- <el-checkbox-group v-model="checkOne" class="checkGroup" >
-                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意<span class="hover:font-bold underline text-blue-500">《家文用户注册和使用协议》</span></el-checkbox>
+                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意<span class="hover:font-bold underline text-blue-500">《蜗牛家事用户注册和使用协议》</span></el-checkbox>
                   </el-checkbox-group> -->
                 </div>
                 <div class="el-dialog__footer text-center mt-4 pb-12">
@@ -176,7 +176,7 @@
                 </div>
                 <div class="el-dialog__footer text-center mt-10 pb-12">
                   <span class="nextSt" @click="loginBt">登录</span>
-                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer underline hover:font-bold">《家文用户注册和使用协议》</span></p>
+                  <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer underline hover:font-bold">《蜗牛家事用户注册和使用协议》</span></p>
                 </div>
               </div>
             </form>
@@ -659,11 +659,11 @@ export default {
 		  }
       } else {
         this.$message({
-          message: '请先阅读家文用户注册和使用协议',
+          message: '请先阅读蜗牛家事用户注册和使用协议',
 		  offset: -50,
           type: 'warning'
         })
-		this.$message.error('请先阅读家文使用协议');
+		this.$message.error('请先阅读蜗牛家事使用协议');
       }
     },
 	gologin () { // 去登陆

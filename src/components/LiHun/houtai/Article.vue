@@ -58,6 +58,15 @@
           </el-table-column>
         </el-table>
       </el-main>
+	  <el-pagination
+		  background
+		  class="mb-10 text-center"
+		  layout="prev, pager, next"
+		  @current-change="getFenLeiList"
+		  :page-size="pagesize"
+		  :current-page.sync="currentPage"
+		  :total="total">
+	  </el-pagination>
     </div>
   </div>
 </template>
@@ -83,7 +92,19 @@ export default{
       status: 1,
       fenleiAll: [], // 全部分类
       selectFenLei: null, // 已选分类
-      fullscreenLoading: false // 加载图标
+      fullscreenLoading: false ,// 加载图标
+	  // 分页
+	  first_page_url: '',
+	  last_page_url: '',
+	  next_page_url: '',
+	  path: '',
+	  from: 1,
+	  per_page: null,
+	  last_page: null,
+	  userList: [],
+	  currentPage: 1, // 初始页
+	  pagesize: 20, //    每页的数据
+	  total: 0, // 总页数
     }
   },
   mounted () {
@@ -118,9 +139,11 @@ export default{
         })
       } else {
         selectNews({
-          status: 1
+          status: 1,
+		  page: this.currentPage
         }).then((data) => {
-          this.tableData = data.data.data
+          this.tableData = data.data.data.data
+		  this.total = data.data.data.total
           this.fullscreenLoading = false
         })
       }
@@ -199,7 +222,21 @@ export default{
           message: '取消恢复'
         })
       })
-    }
+    },
+	// 初始页currentPage、初始每页数据数pagesize和数据data
+	// 上一页
+	nextClick () {
+	  console.log('下一页')
+	},
+	prevClick () {
+	  console.log('上一页')
+	},
+	// pagesize (size) {
+	//   this.pagesize = size
+	// },
+	handleCurrentChange (currentPage) {
+	  this.currentPage = currentPage// 点击第几页
+	}
   }
 }
 </script>
