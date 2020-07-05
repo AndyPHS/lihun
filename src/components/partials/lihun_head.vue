@@ -107,7 +107,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-				  <div class="flex justify-start items-center mx-auto" style="width: 302px;">
+				  <div class="flex justify-start items-center mx-auto" style="width: 342px;">
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==false" src="../../assets/images/lihun/unchecked.png" alt="">
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==true" src="../../assets/images/lihun/checked.png" alt="">
 					  <p class="ml-1">我已阅读并同意<span @click="handleCheckedCitiesChange" class="hover:font-bold underline inline-block text-blue-500">《蜗牛家事用户注册和使用协议》</span></p>
