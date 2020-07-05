@@ -102,10 +102,6 @@ export default {
   mounted () {
     this.getWenType()
 	this.getIns()
-	window.addEventListener('scroll', this.scrollToTop)
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
 	getIns () {
