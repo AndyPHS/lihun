@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
-    <div class="c_m w flex justify-between">
+    <div class="c_m w flex justify-between" name="top">
       <div class="c_m_l">
         <div class="pt-10">
           <h3 class="text-center text-lg font-bold">离婚知识</h3>
@@ -28,7 +28,7 @@
           </ul>
         </div>
         <div class="m_r_m">
-          <ul class="min_l">
+          <ul v-if="!this.tableDataNull" class="min_l">
             <li v-for="(item, index) in tableData" :key="index"  class="pb-8 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
               <div class="py-8 flex justify-between items-center">
                 <h2 class="w-4/5 overflow-hidden hover:underline" v-html="item.title"></h2>
@@ -39,7 +39,9 @@
             </li>
           </ul>
 		  <el-pagination
+			  v-if="!this.tableDataNull"
 			  background
+			  href="#top"
 			  class="mb-10 text-center"
 			  layout="prev, pager, next"
 			  @current-change="startList"
@@ -100,6 +102,10 @@ export default {
   mounted () {
     this.getWenType()
 	this.getIns()
+	window.addEventListener('scroll', this.scrollToTop)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
 	getIns () {
@@ -130,7 +136,7 @@ export default {
       })
     },
     startList () { // 初始化页面查找第一个分类下的文章
-	  // this.currentPage = 1
+	  this.tableDataNull = false
       selectFaIDNews({
         status: 1,
         faId: 18,
@@ -142,6 +148,8 @@ export default {
 			  if (this.tableData.length == 0 ) {
 			  	this.tableDataNull = true
 			  }
+			   var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+				document.documentElement.scrollTop = document.body.scrollTop =0; 
 		  } else if (data.data.status_code == 401) {
 			  localStorage.removeItem('token') // 存储token
 			  localStorage.removeItem('phone')
@@ -153,6 +161,7 @@ export default {
     },
     searchList (item, index) { // 点击分类查找文章
       this.ins = index
+	  this.tableDataNull = false
       selectFaIDNews({
         status: 1,
         faId: item.id,
@@ -190,6 +199,7 @@ export default {
 	// 上一页
 	nextClick () {
 	  console.log('下一页')
+	  
 	},
 	prevClick () {
 	  console.log('上一页')
@@ -224,7 +234,7 @@ export default {
 .default_active{color:red}
 .default{color:#343434;}
 .errorMin{height: 500px;}
-.min_l{height: 500px;overflow-y: scroll;}
+/* .min_l{height: 500px;overflow-y: scroll;} */
 ::-webkit-scrollbar {
 	width:1px;
 	background-color: #FFF;

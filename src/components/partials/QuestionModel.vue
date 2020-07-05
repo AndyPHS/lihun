@@ -7749,10 +7749,10 @@
                   })
                 }
               }else if(e.input_type =='PhoneNum'){
-                if(e.answer.length >= 16 || e.answer.length <= 6 ){
-                  this.errorAlert('电话号位数不正确,请重新输入')
-                  e.answer =''
-                }else{
+				if (!(/^1[3456789]\d{9}$/.test(e.answer))){
+					this.errorAlert('电话号码不正确,请重新输入')
+					e.answer =''
+				} else {
                   userAddAnswer({
                     value: e.answer,  // 值
                     qpid: e.id, // 关联id
@@ -7778,9 +7778,9 @@
                   })
                 }
               }else if(e.input_type =='PhoneNum'){
-                if(e.answer.length >= 16 || e.answer.length <= 6 ){
-                  this.errorAlert('电话号位数不正确,请重新输入')
-                  e.answer =''
+                if (!(/^1[3456789]\d{9}$/.test(e.answer))){
+                	this.errorAlert('电话号码不正确,请重新输入')
+                	e.answer =''
                 }else{
                   userAddAnswer({
                     value: e.answer,  // 值
@@ -7839,9 +7839,9 @@
                 })
               }
             }else if(e.input_type =='PhoneNum'){
-              if(e.answer.length >= 16 || e.answer.length <= 6 ){
-                this.errorAlert('电话号位数不正确,请重新输入')
-                e.answer =''
+              if (!(/^1[3456789]\d{9}$/.test(e.answer))){
+              	this.errorAlert('电话号码不正确,请重新输入')
+              	e.answer =''
               }else{
                 userAddAnswer({
                   value: e.answer,  // 值
