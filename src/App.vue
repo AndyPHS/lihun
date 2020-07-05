@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  
+  data() {
+	  return{
+		  // isRouterAlive: true                    //控制视图是否显示的变量
+	  }
+  },
+  methods: {
+	  
+  }
 }
 </script>
 

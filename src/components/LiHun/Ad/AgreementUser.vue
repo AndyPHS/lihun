@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
-    <div class="c_m w">
+    <div class="c_m w" v-loading="fullscreenLoading">
       <div class="pt-12 px-12">
         <h2 class="text-left text-lg c_m_t">个人中心</h2>
         <div class="flex justify-around items-center" style="height: 500px;">
@@ -300,12 +300,14 @@ import {updateUserName, phoneCode, updatePhone, uploadUserPhoto, updatePasswordP
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementUser',
+  inject:['reload'], 
   components: {
     'lihun-head': lihun_head,
 	'lihun-bottom': lihun_bottom
   },
   data () {
     return {
+	  fullscreenLoading: false, // 加载框
 	  dengluerrorBox: false, // 登录错误弹窗提示
 	  errorMsg: '',
       phoneNum: null, // 用户手机号
@@ -383,18 +385,29 @@ export default {
         name: this.form.name,
         sex: this.form.sex
       }).then((data) => {
+		this.fullscreenLoading = true
         if (data.data.status_code == 200) {
-          this.$message({
-            message: '修改成功',
-            type: 'success'
-          })
-          this.getUserMsg()
           this.dialogFormVisible = false
+          this.getUserMsg()
+		  setTimeout(()=>{
+			
+			this.$message({
+			  message: '修改成功',
+			  type: 'success'
+			})
+			this.fullscreenLoading = false
+			let NewPage = '_empty' + '?time=' + new Date().getTime()/1000
+			// 之后将页面push进去
+			this.$router.push(NewPage)
+			// 再次返回上一页即可
+			this.$router.go(-1)
+		  },2000)
+		  
         } else {
           this.$message.error(data.data.message)
         }
       })
-      this.dialogFormVisible = false
+      // this.dialogFormVisible = false
     },
     cancleBtn () { // 取消编辑基础资料
       this.dialogFormVisible = false
