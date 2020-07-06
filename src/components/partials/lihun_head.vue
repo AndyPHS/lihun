@@ -5,7 +5,7 @@
         <div class="flex justify-between items-center">
           <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
           <el-divider class="hidden md:block" direction="vertical"></el-divider>
-          <span class="log_r hidden md:block">只为家的幸福</span>
+          <span class="log_r hidden md:block">离婚协议书</span>
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">

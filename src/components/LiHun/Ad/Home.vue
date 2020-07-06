@@ -487,12 +487,13 @@ export default {
 	},
 	goAgreementHelpMin (id) { // 产品故事
 	  localStorage.setItem('topins',2)
-	  this.$router.push({
-	    name: 'AgreementHelpCon',
-	    params: {
-	      id: id
-	    }
+	  const {href} = this.$router.resolve({
+	  	path: '/AgreementHelpCon',
+	  	params: {
+	  	  id: id
+	  	}
 	  })
+	  window.open(href, '_blank')
 	  localStorage.setItem('AgreementHelpId',id)
 	},
   }

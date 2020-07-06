@@ -3,7 +3,7 @@
     <div class="w-full bg-white" style="margin-bottom: 13px;">
     	<div class="w c_m_h flex justify-between items-center px-12">
     	  <h2>
-    		<img class="inline-block mr-5" src="../../../assets/images/lihun/logo.png" alt="">
+    		<img @click="goHome" class="inline-block mr-5" src="../../../assets/images/lihun/logo.png" alt="">
     	    定制我的协议书
     	  </h2>
     	  <div class="c_m_h_r">
@@ -160,7 +160,7 @@
 					                </div>
 					              </div>
 					            </div>
-					            <div class="mt-20">
+					            <div class="mt-2">
 					              <div v-if="mo.title== '子女抚养' " class="flex justify-center">
 					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(3859)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加子女抚养约定</span></div>
 					              </div>
@@ -219,7 +219,7 @@
 					    </div>
 					  </div>
 					</div>
-					<div>
+					<div class="mt-10">
 					  <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
 					  <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
 					  <el-button class="step_btn re my-5 act" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
