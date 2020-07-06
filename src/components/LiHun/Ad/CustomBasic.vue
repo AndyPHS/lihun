@@ -163,7 +163,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-20">
                               <div v-if="mo.title== '子女抚养' " class="flex justify-center">
                                 <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(3859)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加子女抚养约定</span></div>
                               </div>

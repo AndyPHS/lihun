@@ -281,6 +281,8 @@ const apiUrl = {
   // 关键字搜索文章news/select_os_news/
   selectOsNews: baseLiHunURL + 'news/select_os_news/',
 
+  // 验证手机号
+  phoneCodeV: baseLiHunURL +'front_user/phone_code_v',
   // 修改手机号
   updatePhone: baseLiHunURL + 'front_user/update_phone',
   // 修改用户基本信息

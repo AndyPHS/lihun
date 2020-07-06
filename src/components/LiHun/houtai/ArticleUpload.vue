@@ -146,6 +146,7 @@ export default{
           this.ruleForm.title = data.data.data.title;
           this.ruleForm.description = data.data.data.description;
           this.ruleForm.faId = data.data.data.faId;
+		  this.ruleForm.view = data.data.data.view;
           this.ruleForm.topping = JSON.stringify(data.data.data.topping);
           // this.ruleForm.content = data.data.data.content;
           this.$refs.ue.setUEContent(data.data.data.content)
@@ -162,7 +163,6 @@ export default{
       //   message: content,
       //   type: 'success'
       // })
-      console.log(content)
     },
     getUEContentTxt () {
       let content = this.$refs.ue.getUEContentTxt() // 调用子组件方法
@@ -171,12 +171,11 @@ export default{
       //   message: content,
       //   type: 'success'
       // })
-      console.log(content)
     },
     submitForm(formName) {
       if (this.ruleForm.faId.length == 2) {
         this.ruleForm.faId = this.ruleForm.faId[1]
-      } else {
+      } else if (this.ruleForm.faId.length == 1) {
         this.ruleForm.faId = this.ruleForm.faId[0]
       }
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
@@ -206,7 +205,7 @@ export default{
     updateForm (formName) {
 	  if (this.ruleForm.faId.length == 2) {
 	    this.ruleForm.faId = this.ruleForm.faId[1]
-	  } else {
+	  } else if (this.ruleForm.faId.length == 1) {
 	    this.ruleForm.faId = this.ruleForm.faId[0]
 	  }
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
@@ -217,7 +216,7 @@ export default{
           title: this.ruleForm.title,
           description: this.ruleForm.description,
           content: this.ruleForm.content,
-          faId: this.ruleForm.faId.toString(),  // 分类ID
+          faId: this.ruleForm.faId,  // 分类ID
           topping: this.ruleForm.topping ,//
 		  view: this.ruleForm.view
         }).then((data) => {

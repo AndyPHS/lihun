@@ -2,7 +2,16 @@ import {apiUrl} from '@/common/js/api.js'
 import axios from 'axios'
 import qs from 'qs'
 
-
+// 单独验证手机号
+export const phoneCodeV = params => {
+  return axios({
+    method: 'post',
+    dataType: 'json',
+    url: apiUrl.phoneCodeV,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
 // 修改手机号
 export const updatePhone = params => {
   return axios({

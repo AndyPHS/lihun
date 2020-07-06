@@ -295,12 +295,11 @@
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
-import {updateUserName, phoneCode, updatePhone, uploadUserPhoto, updatePasswordPhone, sendEmail, updateUserEmail, usersSelect} from '@/api/api/AgreementRequest.js'
+import {updateUserName, phoneCode, phoneCodeV, updatePhone, uploadUserPhoto, updatePasswordPhone, sendEmail, updateUserEmail, usersSelect} from '@/api/api/AgreementRequest.js'
 
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementUser',
-  inject:['reload'], 
   components: {
     'lihun-head': lihun_head,
 	'lihun-bottom': lihun_bottom
@@ -453,11 +452,28 @@ export default {
 		this.$refs.formPhoneCode01.focus()
 	  	return false; 
 	  } else {
-		  this.form.newPhone = ''
-		  this.form.PhoneCode02 = ''
-		  this.dialogPhone01 = false
-		  this.dialogPhone02 = true
-		  this.IsGetCode01 = false
+		  phoneCodeV({   // 验证手机号
+			  phone: this.phoneNum,
+			  type: 2,
+			  code: this.form.PhoneCode01
+		  }).then((data)=>{
+			  if (data.data.status_code == 200){
+				  this.form.newPhone = ''
+				  this.form.PhoneCode02 = ''
+				  this.dialogPhone01 = false
+				  this.dialogPhone02 = true
+				  this.IsGetCode01 = false
+			  } else {
+				  this.dengluerrorBox = true
+				  this.errorMsg = '验证码有误，请重新填写'
+				  setTimeout(()=>{
+				  	this.dengluerrorBox = false
+				  },1000)
+				  this.$refs.formPhoneCode01.focus()
+			  }
+			  
+		  })
+		  
 	  }
     },
     sendCode02 () { // 发送新手机号验证码
