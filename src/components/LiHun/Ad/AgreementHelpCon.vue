@@ -17,12 +17,12 @@
       </div>
       <div class="c_m_r text-left pb-10">
         <div class="pt-10 text-center">
-          <h2 class="text-center pb-4 text-bold text-xl">{{ this.wenCon.title }}</h2>
-          <span class="inline-block pb-6 text-sm">{{ this.wenCon.time }}</span>
-		  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-sm ml-4">阅读量 {{ this.wenCon.view }}</span>
-		  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-sm ml-4">阅读量 1245</span>
+          <h2 class="text-center pb-4 text-bold text-25">{{ this.wenCon.title }}</h2>
+          <span class="inline-block pb-6 text-14">{{ this.wenCon.time }}</span>
+		  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-14 ml-4">阅读量 {{ this.wenCon.view }}</span>
+		  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-14 ml-4">阅读量 1245</span>
         </div>
-        <div class="m_r_m py-5" v-html="wenCon.con">
+        <div class="m_r_m pb-5" v-html="wenCon.con">
         </div>
         <div class="m_r_b py-6 px-6 hidden">
           <div class="flex items-center m_r_b_t">
@@ -110,4 +110,6 @@ export default {
 .m_r_b{background-color: #f2f4f7;}
 .m_r_b_t>div{width: 2px;height: 15px;background-color: #343434;margin-right: 8px;}
 .m_r_b_t span{font-size: 15px;}
+.text-25{font-size: 25px;color: #535353;}
+.text-14{font-size: 14px;color:#c0c0c0;}
 </style>
