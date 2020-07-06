@@ -103,7 +103,7 @@
                 <input  v-model="form.PhoneCode01" type="text" autocomplete="off" class="el-input__inner" ref="formPhoneCode01">
               </div>
 			  <span class="spa hover:underline" v-show="IsGetCode01" @click="sendCode01">获取验证码</span>
-			  <el-button v-show="!IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送，请查收（{{ count }}s）</el-button>
+			  <el-button v-show="!IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送，请查收（{{ PhoneCount }}s）</el-button>
 			  <!-- <el-button v-if="this.IsGetCode01==false" class="ml-5" type="primary" @click="sendCode01">获取</el-button>
               <el-button v-if="this.IsGetCode01" class="ml-5" type="primary" :loading="IsGetCode01">已发送</el-button> -->
               
@@ -192,7 +192,7 @@
                 <input  v-model="form.PasswordCode" autocomplete="off" class="el-input__inner" ref="formPasswordCode">
               </div>
 			  <span class="spa hover:underline" v-show="IsGetPsCode01" @click="sendPsCode">获取验证码</span>
-			  <el-button v-show="!IsGetPsCode01" class="ml-5" type="primary" :loading="IsGetPsCode01">已发送，请查收({{ count }}s)</el-button>
+			  <el-button v-show="!IsGetPsCode01" class="ml-5" type="primary" :loading="IsGetPsCode01">已发送，请查收({{ PWcount }}s)</el-button>
             </div>
           </div>
         </el-form>
@@ -277,7 +277,7 @@
                 <input  v-model="form.emailCode" type="text" autocomplete="off" class="el-input__inner" ref="formEmailCode">
               </div>
 			  <span class="spa hover:underline" v-show="IsSendEmail" @click="sendEmailAc">获取验证码</span>
-			  <el-button v-show="!IsSendEmail" class="ml-5" type="primary" :loading="IsSendEmail">已发送，请查收（{{ count }}s）</el-button>
+			  <el-button v-show="!IsSendEmail" class="ml-5" type="primary" :loading="IsSendEmail">已发送，请查收（{{ EmailCount }}s）</el-button>
             </div>
           </div>
         </el-form>
@@ -321,8 +321,14 @@ export default {
       IsGetPsCode01: true, // 是否发送密码验证码
       IsSendEmail: true, // 是否发送电子邮件
       dialogImg: false, // 设置头像弹窗
-	  count: '', // 倒计时60秒
-	  timer: null,  // 倒计时定时器
+	  PhoneCount: '', // 修改手机号倒计时60秒
+	  PhoneTimer: null,  // 修改手机号倒计时定时器
+	  PWcount: '', // 修改密码倒计时60秒
+	  PWtimer: null,  // 修改密码倒计时定时器
+	  EmailCount: '', // 修改邮件倒计时60秒
+	  EmailTimer: null,  // 修改邮件密码倒计时定时器
+	  count: '',
+	  timer: null,
       form: {
         name: '',
         sex: '',
@@ -424,16 +430,16 @@ export default {
       }).then((data) => {
         if (data.data.status_code == 200) {
           const TIME_COUNT = 60;
-           if (!this.timer) {
-             this.count = TIME_COUNT;
+           if (!this.PhoneTimer) {
+             this.PhoneCount = TIME_COUNT;
              this.IsGetCode01 = false;
-             this.timer = setInterval(() => {
-				 if (this.count > 0 && this.count <= TIME_COUNT) {
-				 this.count--;
+             this.PhoneTimer = setInterval(() => {
+				 if (this.PhoneCount > 0 && this.PhoneCount <= TIME_COUNT) {
+				 this.PhoneCount--;
 				} else {
 				 this.IsGetCode01 = true;
-				 clearInterval(this.timer);
-				 this.timer = null;
+				 clearInterval(this.PhoneTimer);
+				 this.PhoneTimer = null;
 				}
              }, 1000)
            }
@@ -452,7 +458,7 @@ export default {
 		this.$refs.formPhoneCode01.focus()
 	  	return false; 
 	  } else {
-		  phoneCodeV({   // 验证手机号
+		  phoneCodeV({   // 单独验证手机号
 			  phone: this.phoneNum,
 			  type: 2,
 			  code: this.form.PhoneCode01
@@ -559,23 +565,23 @@ export default {
       this.dialogPassword01 = true
 	  this.form.PasswordCode = ''
     },
-    sendPsCode () {
+    sendPsCode () {   // 发送修改密码验证码
       phoneCode({
         phone: this.userMsg.phone,
-        type: 4
+        type: 3
       }).then((data) => {
         if (data.data.status_code == 200) {
           const TIME_COUNT = 60;
-           if (!this.timer) {
-             this.count = TIME_COUNT;
+           if (!this.PWtimer) {
+             this.PWcount = TIME_COUNT;
              this.IsGetPsCode01 = false;
-             this.timer = setInterval(() => {
-          	 if (this.count > 0 && this.count <= TIME_COUNT) {
-          	 this.count--;
+             this.PWtimer = setInterval(() => {
+          	 if (this.PWcount > 0 && this.PWcount <= TIME_COUNT) {
+          	 this.PWcount--;
           	} else {
           	 this.IsGetPsCode01 = true;
-          	 clearInterval(this.timer);
-          	 this.timer = null;
+          	 clearInterval(this.PWtimer);
+          	 this.PWtimer = null;
           	}
              }, 1000)
            }
@@ -594,9 +600,15 @@ export default {
 		this.$refs.formPasswordCode.focus()
 	  	return false; 
 	  } else {
-		this.dialogPassword01 = false
-		this.dialogPassword02 = true
-		this.IsGetPsCode01 = false
+		phoneCodeV ({
+			phone: this.phoneNum,
+			type: 3,
+			code: this.form.PasswordCode
+		}).then((data)=>{
+			this.dialogPassword01 = false
+			this.dialogPassword02 = true
+			this.IsGetPsCode01 = false
+		})
 	  }
     },
     PassWordsaveBtn () {
@@ -617,8 +629,8 @@ export default {
 	  } else if (this.form.passwordNew == this.form.passwordAgain) {
         updatePasswordPhone({
           phone: this.userMsg.phone,
-          code: this.form.PasswordCode,
-          password: this.form.passwordNew
+          password: this.form.passwordNew,
+		  passwordagain: this.form.passwordAgain
         }).then((data) => {
           if (data.data.status_code == 200) {
             this.dialogPassword02 = false
@@ -748,16 +760,16 @@ export default {
 		 }).then((data) => {
 		   if (data.data.status_code == 200) {
 		     const TIME_COUNT = 60;
-		      if (!this.timer) {
-		        this.count = TIME_COUNT;
+		      if (!this.EmailTimer) {
+		        this.EmailCount = TIME_COUNT;
 		        this.IsSendEmail = false;
-		        this.timer = setInterval(() => {
-		     	 if (this.count > 0 && this.count <= TIME_COUNT) {
-		     	 this.count--;
+		        this.EmailTimer = setInterval(() => {
+		     	 if (this.EmailCount > 0 && this.EmailCount <= TIME_COUNT) {
+		     	 this.EmailCount--;
 		     	} else {
 		     	 this.IsSendEmail = true;
-		     	 clearInterval(this.timer);
-		     	 this.timer = null;
+		     	 clearInterval(this.EmailTimer);
+		     	 this.EmailTimer = null;
 		     	}
 		        }, 1000)
 		      }
@@ -780,7 +792,7 @@ export default {
 </script>
 <style scoped >
 .live{height: 39px;background-color:#f2f4f7;width: 100%;}
-.all{background-color: #f2f4f7;height: 100vh;}
+.all{background-color: #f2f4f7;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;margin-top: 39px;}
 .c_m_t{font-size: 20px;}

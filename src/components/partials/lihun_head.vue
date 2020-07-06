@@ -280,7 +280,7 @@
 			          <div class="el-form-item__content flex justify-between">
 			            <input v-model="newform.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="newformValueCode">
 			            <span class="spa hover:underline" v-show="registYan" @click="findYan">获取验证码</span>
-			            <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ count }}s）</el-button>
+			            <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ SetPwagainCount }}s）</el-button>
 			          </div>
 			          <div class="el-form-item__content text-right underline text-blue-300 my-4">
 			           <el-popover
@@ -359,7 +359,7 @@
 </template>
 
 <script>
-import {addUser, phoneCode, frontLogin, verifyCode, updatePasswordPhone, usersSelect} from '@/api/api/AgreementRequest.js'
+import {addUser, phoneCode, frontLogin, phoneCodeV, verifyCode, updatePasswordPhone, usersSelect} from '@/api/api/AgreementRequest.js'
 
 export default {
   name: 'lihun_head',
@@ -380,6 +380,8 @@ export default {
 	  errorMsg: '',
 	  count: '', // 倒计时60秒
 	  timer: null,  // 倒计时定时器
+	  SetPwagainCount: '', // 3重置密码倒计时
+	  SetPwagainTimer: null,  // 倒计时定时器
       form: {
         phone: null,
         password: '',
@@ -830,16 +832,16 @@ export default {
 			    this.$message.error('手机号格式不正确')
 			  } else {
 				const TIME_COUNT = 60;
-				 if (!this.timer) {
-				   this.count = TIME_COUNT;
+				 if (!this.SetPwagainTimer) {
+				   this.SetPwagainCount = TIME_COUNT;
 				   this.registYan = false;
-				   this.timer = setInterval(() => {
-				   if (this.count > 0 && this.count <= TIME_COUNT) {
-					 this.count--;
+				   this.SetPwagainTimer = setInterval(() => {
+				   if (this.SetPwagainCount > 0 && this.SetPwagainCount <= TIME_COUNT) {
+					 this.SetPwagainCount--;
 					} else {
 					 this.registYan = true;
-					 clearInterval(this.timer);
-					 this.timer = null;
+					 clearInterval(this.SetPwagainTimer);
+					 this.SetPwagainTimer = null;
 					}
 				   }, 1000)
 				  }
@@ -861,8 +863,24 @@ export default {
 			this.$refs.newformValueCode.focus()
 			return false; 
 		} else {
-			this.dialogFindByPhone = false
-			this.dialogPhonePw = true
+			phoneCodeV({   // 单独验证手机号
+			  phone: this.newform.phone,
+			  type: 3,
+			  code: this.newform.valueCode
+			}).then((data)=>{
+				if (data.data.status_code == 200) {
+					this.dialogFindByPhone = false
+					this.dialogPhonePw = true
+				} else {
+					this.dengluerrorBox = true
+					this.errorMsg = '验证码有误，请重新填写'
+					setTimeout(()=>{
+						this.dengluerrorBox = false
+					},1000)
+					this.$refs.newformValueCode.focus()
+				}
+			})
+			
 		}
 	},
 	closePhonePw () { // 关闭设置新密码弹窗
@@ -882,8 +900,8 @@ export default {
 		} else if (this.newform.password == this.newform.passwordAgain){
 			updatePasswordPhone({
 				phone: this.newform.phone,
-				code: this.newform.valueCode,
-				password: this.newform.password
+				password: this.newform.password,
+				passwordagain: this.newform.passwordAgain
 			}).then((data) => {
 				if(data.data.status_code ==200){
 					this.$message({
