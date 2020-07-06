@@ -177,6 +177,8 @@ export default{
         this.ruleForm.faId = this.ruleForm.faId[1]
       } else if (this.ruleForm.faId.length == 1) {
         this.ruleForm.faId = this.ruleForm.faId[0]
+      } else if (this.ruleForm.faId.length == 3) {
+        this.ruleForm.faId = this.ruleForm.faId[2]
       }
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
       this.ruleForm.content = content;
@@ -207,7 +209,9 @@ export default{
 	    this.ruleForm.faId = this.ruleForm.faId[1]
 	  } else if (this.ruleForm.faId.length == 1) {
 	    this.ruleForm.faId = this.ruleForm.faId[0]
-	  }
+	  } else if (this.ruleForm.faId.length == 3) {
+        this.ruleForm.faId = this.ruleForm.faId[2]
+      }
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
       this.ruleForm.content = content;
       this.ruleForm.faId = this.ruleForm.faId;

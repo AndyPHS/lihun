@@ -5,12 +5,14 @@
       <div class="c_m_l">
         <div class="pt-10">
           <h3 class="text-center text-lg font-bold">离婚知识</h3>
-          <ul class="mt-5">
-            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-center">
-              <h2 :class="ins === index?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
-              <!-- <ul class="pl-2" v-if="item.data.length>0">
-                <li v-for="($item, $index) in item.data" :key="$index" @click="searchList($item, $index)">{{ $item.title }}</li>
-              </ul> -->
+          <ul class="mt-5 px-10">
+            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
+              <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
+              <ul class="pl-5 " v-if="item.data.length>0">
+                <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
+					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
+				</li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -156,7 +158,7 @@ export default {
       })
     },
     searchList (item, index) { // 点击分类查找文章
-      this.ins = index
+	  this.ins = item.id
 	  this.tableDataNull = false
       selectFaIDNews({
         status: 1,
@@ -229,6 +231,7 @@ export default {
 .m_r_m ul li p em{color:red;margin:0 3px;}
 .default_active{color:red}
 .default{color:#343434;}
+.default_erji{color: #818181;font-size: 15px;}
 .errorMin{height: 500px;}
 /* .min_l{height: 500px;overflow-y: scroll;} */
 ::-webkit-scrollbar {
