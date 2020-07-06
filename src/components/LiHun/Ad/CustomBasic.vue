@@ -29,199 +29,203 @@
                 </ul>
               </div>
               <div class="relative allmin" v-loading="loading">
-                <!-- <el-tabs v-if="this.ins ===3" :tab-position="tabPosition" @tab-click="`" style="position: absolute; top:0;right: 0px; text-align: left;">
-                  <el-tab-pane v-for="(item, index) in caichanNavList" :id="item.id" :key="index" :label="item.title"></el-tab-pane>
-                </el-tabs> -->
-                <ul class="caichanul" v-if="this.ins ===3" >
-                  <li v-bind:class="{active:index+3 == CaiIns}" @click="caichanNavBtn(index)" v-for="(item, index) in caichanNavList" :key="index" >{{ item.title }}</li>
-                </ul>
-                <div v-if="this.ins ===3" class="othercai">其他财产 <img src="../../../assets/images/open.png" alt=""></div>
-                <ul class="caichanul" style="right: 100px;" v-if="zhaiquanNav">
-                  <li v-bind:class="{active:index+16 == zhaiIns}" @click="zhaiquanNavBtn(index)" v-for="(item, index) in zhaiquanNavList" :key="index" >{{ item.title }}</li>
-                </ul>
-                <!-- <el-tabs v-if="zhaiquanNav" :tab-position="tabPosition" @tab-click="zhaiquanNavBtn" style="position: absolute; top:0;right: 70px;">
-                  <el-tab-pane v-for="(item, index) in zhaiquanNavList" :id="item.id" :key="index" :label="item.title"></el-tab-pane>
-                </el-tabs> -->
-                <div v-for="(mo, key) in mokuai" :key="key" class="min">
-                  <div v-if="active=== key">
-                    <div>
-                      <el-form label-position="top" label-width="160px">
-                        <div class="text-left mx-auto bg-white px-5 py-5">
-                          <!--遍历有几个孩子-->
-                          <div>
-                            <!--遍历孩子的基本信息-->
-                            <div v-for="(item,index) in aa[mo.part]" :key="index">
-                              <!-- 大问题块 -->
-                              <div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='子女抚养' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个孩子</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='房产' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">房产{{index+1}}</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='车辆' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}辆车辆</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='存款' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔存款</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='理财' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔理财</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='公积金' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔公积金</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='保险' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}份保险</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='股权（股份）' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔股权（股份）</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='股票账户' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个股票账户</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='家具家电' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个家具家电</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='珠宝首饰收藏品' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}件珠宝首饰收藏品</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='债券' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个债券</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='店铺' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个店铺</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='宅基地房屋' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}处宅基地房屋</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='其他' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个其他</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='债权' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔债权</h2>
-                                </div>
-                                <div class="flex justify-center my-4" v-if="mo.title=='债务' ">
-                                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔债务</h2>
-                                </div>
-                              </div>
-
-                              <!-- 大问题块 -->
-                              <question-model :newlist = 'item'></question-model>
-                              <div>
-                                <div v-if="mo.title==='子女抚养' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3859,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除子女抚养约定</span></div>
-                                </div>
-                                <div v-if="mo.title==='房产' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(521,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除房产</span></div>
-                                </div>
-                                <div v-if="mo.title==='车辆' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(522,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除车辆</span></div>
-                                </div>
-                                <div v-if="mo.title==='存款' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(637,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除存款</span></div>
-                                </div>
-                                <div v-if="mo.title==='理财' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(523,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除理财</span></div>
-                                </div>
-                                <div v-if="mo.title==='公积金' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3614,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除公积金</span></div>
-                                </div>
-                                <div v-if="mo.title==='保险' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(524,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除保险</span></div>
-                                </div>
-
-                                <div v-if="mo.title==='股权（股份）' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3636,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除股权（股份）</span></div>
-                                </div>
-                                <div v-if="mo.title==='股票账户' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3637,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除股票账户</span></div>
-                                </div>
-                                <div v-if="mo.title==='家具家电' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(636,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除家具家电</span></div>
-                                </div>
-                                <div v-if="mo.title==='珠宝首饰收藏品' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3638,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除珠宝首饰收藏品</span></div>
-                                </div>
-                                <div v-if="mo.title==='债券' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3639,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除债券</span></div>
-                                </div>
-                                <div v-if="mo.title==='店铺' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3640,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除店铺</span></div>
-                                </div>
-                                <div v-if="mo.title==='宅基地房屋' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3641,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除宅基地房屋</span></div>
-                                </div>
-                                <div v-if="mo.title==='其他' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3642,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除其他</span></div>
-                                </div>
-                                <div v-if="mo.title==='债权' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(655,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除债权</span></div>
-                                </div>
-                                <div v-if="mo.title==='债务' " class="border-b-2 flex justify-center">
-                                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(656,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除债务</span></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="mt-20">
-                              <div v-if="mo.title== '子女抚养' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(3859)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加子女抚养约定</span></div>
-                              </div>
-                              <div v-if="mo.title== '房产' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(521)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加房产</span></div>
-                              </div>
-                              <div v-if="mo.title== '车辆' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(522)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加车辆</span></div>
-                              </div>
-                              <div v-if="mo.title== '存款' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(637)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加存款</span></div>
-                              </div>
-                              <div v-if="mo.title== '理财' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(523)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加理财</span></div>
-                              </div>
-                              <div v-if="mo.title== '公积金' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3614)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加公积金</span></div>
-                              </div>
-                              <div v-if="mo.title== '保险' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(524)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加保险</span></div>
-                              </div>
-                              <div v-if="mo.title== '股权（股份）' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3636)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加股权（股份）</span></div>
-                              </div>
-                              <div v-if="mo.title== '股票账户' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3637)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加股票账户</span></div>
-                              </div>
-                              <div v-if="mo.title== '家具家电' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(636)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加家具家电</span></div>
-                              </div>
-                              <div v-if="mo.title== '珠宝首饰收藏品' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3638)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加珠宝首饰收藏品</span></div>
-                              </div>
-                              <div v-if="mo.title== '债券' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3639)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加债券</span></div>
-                              </div>
-                              <div v-if="mo.title== '店铺' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3640)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加店铺</span></div>
-                              </div>
-                              <div v-if="mo.title== '宅基地房屋' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3641)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加宅基地房屋</span></div>
-                              </div>
-                              <div v-if="mo.title== '其他' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3642)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加其他</span></div>
-                              </div>
-                              <div v-if="mo.title== '债权' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(655)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加债权</span></div>
-                              </div>
-                              <div v-if="mo.title== '债务' " class="flex justify-center">
-                                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(656)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加债务</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </el-form>
-                    </div>
-                  </div>
-                </div>
+                <div v-if="this.ins ===3 || this.zhaiquanNav==true" class="allmin_l">
+					<ul class="caichanul" v-if="this.ins ===3" >
+					  <li v-bind:class="{active:index+3 == CaiIns}" @click="caichanNavBtn(index)" v-for="(item, index) in caichanNavList" :key="index" >{{ item.title }}</li>
+					</ul>
+					<div v-if="this.ins ===3" class="othercai">其他财产 <img src="../../../assets/images/open.png" alt=""></div>
+					<ul class="caichanul" style="right: 100px;" v-if="zhaiquanNav">
+					  <li v-bind:class="{active:index+16 == zhaiIns}" @click="zhaiquanNavBtn(index)" v-for="(item, index) in zhaiquanNavList" :key="index" >{{ item.title }}</li>
+					</ul>
+				</div>
+                <div>
+					<div v-if="active=== key" v-for="(mo, key) in mokuai" :key="key" class="min">
+					  <div>
+					    <div>
+					      <el-form label-position="top" label-width="160px">
+					        <div class="text-left mx-auto bg-white px-5 py-5">
+					          <!--遍历有几个孩子-->
+					          <div>
+					            <!--遍历孩子的基本信息-->
+					            <div v-for="(item,index) in aa[mo.part]" :key="index">
+					              <!-- 大问题块 -->
+					              <div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='子女抚养' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个孩子</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='房产' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">房产{{index+1}}</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='车辆' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}辆车辆</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='存款' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔存款</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='理财' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔理财</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='公积金' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔公积金</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='保险' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}份保险</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='股权（股份）' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔股权（股份）</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='股票账户' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个股票账户</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='家具家电' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个家具家电</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='珠宝首饰收藏品' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}件珠宝首饰收藏品</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='债券' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个债券</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='店铺' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个店铺</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='宅基地房屋' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}处宅基地房屋</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='其他' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}个其他</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='债权' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔债权</h2>
+					                </div>
+					                <div class="flex justify-center my-4" v-if="mo.title=='债务' ">
+					                   <h2 class="border w-24 text-left text-base text-blue-800 px-1 py-1 text-center rounded">第{{index+1}}笔债务</h2>
+					                </div>
+					              </div>
+					
+					              <!-- 大问题块 -->
+					              <question-model :newlist = 'item'></question-model>
+					              <div>
+					                <div v-if="mo.title==='子女抚养' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3859,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除子女抚养约定</span></div>
+					                </div>
+					                <div v-if="mo.title==='房产' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(521,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除房产</span></div>
+					                </div>
+					                <div v-if="mo.title==='车辆' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(522,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除车辆</span></div>
+					                </div>
+					                <div v-if="mo.title==='存款' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(637,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除存款</span></div>
+					                </div>
+					                <div v-if="mo.title==='理财' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(523,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除理财</span></div>
+					                </div>
+					                <div v-if="mo.title==='公积金' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3614,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除公积金</span></div>
+					                </div>
+					                <div v-if="mo.title==='保险' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(524,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除保险</span></div>
+					                </div>
+					
+					                <div v-if="mo.title==='股权（股份）' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3636,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除股权（股份）</span></div>
+					                </div>
+					                <div v-if="mo.title==='股票账户' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3637,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除股票账户</span></div>
+					                </div>
+					                <div v-if="mo.title==='家具家电' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(636,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除家具家电</span></div>
+					                </div>
+					                <div v-if="mo.title==='珠宝首饰收藏品' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3638,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除珠宝首饰收藏品</span></div>
+					                </div>
+					                <div v-if="mo.title==='债券' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3639,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除债券</span></div>
+					                </div>
+					                <div v-if="mo.title==='店铺' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3640,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除店铺</span></div>
+					                </div>
+					                <div v-if="mo.title==='宅基地房屋' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3641,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除宅基地房屋</span></div>
+					                </div>
+					                <div v-if="mo.title==='其他' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(3642,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除其他</span></div>
+					                </div>
+					                <div v-if="mo.title==='债权' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(655,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除债权</span></div>
+					                </div>
+					                <div v-if="mo.title==='债务' " class="border-b-2 flex justify-center">
+					                  <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center" @click="userDeleteSelectAnswerAction(656,index)"><img class="inline-block mr-2" src="../../../assets/images/lihun/less.png" alt=""><span class="underline inline-block">删除债务</span></div>
+					                </div>
+					              </div>
+					            </div>
+					            <div class="mt-20">
+					              <div v-if="mo.title== '子女抚养' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(3859)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加子女抚养约定</span></div>
+					              </div>
+					              <div v-if="mo.title== '房产' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer" @click="userAddSelectAnswerAction(521)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加房产</span></div>
+					              </div>
+					              <div v-if="mo.title== '车辆' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(522)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加车辆</span></div>
+					              </div>
+					              <div v-if="mo.title== '存款' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(637)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加存款</span></div>
+					              </div>
+					              <div v-if="mo.title== '理财' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(523)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加理财</span></div>
+					              </div>
+					              <div v-if="mo.title== '公积金' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3614)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加公积金</span></div>
+					              </div>
+					              <div v-if="mo.title== '保险' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(524)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加保险</span></div>
+					              </div>
+					              <div v-if="mo.title== '股权（股份）' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3636)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加股权（股份）</span></div>
+					              </div>
+					              <div v-if="mo.title== '股票账户' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3637)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加股票账户</span></div>
+					              </div>
+					              <div v-if="mo.title== '家具家电' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(636)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加家具家电</span></div>
+					              </div>
+					              <div v-if="mo.title== '珠宝首饰收藏品' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3638)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加珠宝首饰收藏品</span></div>
+					              </div>
+					              <div v-if="mo.title== '债券' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3639)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加债券</span></div>
+					              </div>
+					              <div v-if="mo.title== '店铺' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3640)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加店铺</span></div>
+					              </div>
+					              <div v-if="mo.title== '宅基地房屋' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3641)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加宅基地房屋</span></div>
+					              </div>
+					              <div v-if="mo.title== '其他' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(3642)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加其他</span></div>
+					              </div>
+					              <div v-if="mo.title== '债权' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(655)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加债权</span></div>
+					              </div>
+					              <div v-if="mo.title== '债务' " class="flex justify-center">
+					                <div class="ml-1 mb-2 py-1 text-base text-blue-800 px-1 cursor-pointer flex items-center cursor-pointer"  @click="userAddSelectAnswerAction(656)"><img class="inline-block mr-2" src="../../../assets/images/lihun/add.png" alt=""><span class="underline inline-block">添加债务</span></div>
+					              </div>
+					            </div>
+					          </div>
+					        </div>
+					      </el-form>
+					    </div>
+					  </div>
+					</div>
+					<div>
+					  <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
+					  <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
+					  <el-button class="step_btn re my-5 act" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
+					</div>
+				</div>
+                
               </div>
 			  <!-- 确认生成弹窗 -->
 			  <el-dialog :visible.sync="IsShow">
@@ -282,9 +286,7 @@
 			      <span class="cbt re" @click="alreadyDelete">确认</span>
 			    </div>
 			  </el-dialog>
-              <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
-              <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
-              <el-button class="step_btn re my-5 act" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
+			  
             </div>
           </div>
           <div v-show="shengchengloading" id="shengchengloading">
@@ -296,6 +298,7 @@
         </div>
       </div>
     </div>
+	<div class="clear-both"></div>
 	<lihun-bottom-common></lihun-bottom-common>
   </div>
 </template>
@@ -1217,7 +1220,7 @@ export default {
 }
 </script>
 <style scoped>
-.all{background-color: #f2f4f7;height: auto;}
+.all{height: auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;}
 .c_m_h{height:90px;}
@@ -1241,12 +1244,14 @@ html{height: 100%;background-color: #f7fafc;}
 .insNum{width: 24px;height: 24px;line-height: 24px;text-align: center;font-size: 14px;border-radius: 50%;border:2px solid #C0C4CC;color:#C0C4CC;margin:10px auto;display: block;font-weight: bold;background: #fff;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
-.allmin{width: 1024px;margin:0 auto;margin-bottom: 50px;height: 750px;overflow-y: scroll;}
+.allmin{width: 1024px;margin:0 auto;display: flex;justify-content: center;}
+.allmin_l{width: 150px;float: left;height: 620px;}
 .caichanul{position: absolute; top:0;left: 50px; width: 150px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
 .caichanul li:nth-of-type(10){margin-top:35px}
 .caichanul li.active{color:#0055AA;border-left: 1px solid #0055AA;}
 .min{width:600px;margin:0 auto;}
+.min:nth-of-type(3){margin-top: 50px;}
 .ban{width:100% !important;}
 .returnUserList{top:120px;right: 40px;z-index: 2;}
 .saveWenShu{top:170px;right: 40px;z-index: 2;}
