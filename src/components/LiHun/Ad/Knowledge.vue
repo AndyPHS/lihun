@@ -44,7 +44,7 @@
 			  v-if="!this.tableDataNull"
 			  background
 			  href="#top"
-			  class="mb-10 text-center"
+			  class="my-10 text-center"
 			  layout="prev, pager, next"
 			  @current-change="startList"
 			  :page-size="pagesize"

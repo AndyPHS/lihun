@@ -35,7 +35,7 @@
 			  <el-pagination
 				  v-if="!this.tableDataNull"
 				  background
-				  class="mb-10 mt-2 text-center"
+				  class="my-10 mt-2 text-center"
 				  layout="prev, pager, next"
 				  @current-change="startList"
 				  :page-size="pagesize"
