@@ -660,12 +660,11 @@ export default {
 			  }) 
 		  }
       } else {
-        this.$message({
-          message: '请先阅读蜗牛家事用户注册和使用协议',
-		  offset: -50,
-          type: 'warning'
-        })
-		this.$message.error('请先阅读蜗牛家事使用协议');
+		  this.dengluerrorBox = true
+		  this.errorMsg = '请先阅读蜗牛家事使用协议'
+		  setTimeout(()=>{
+		  	this.dengluerrorBox = false
+		  },1000)
       }
     },
 	gologin () { // 去登陆
