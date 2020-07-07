@@ -85,26 +85,32 @@
                     <span class="spa hover:underline" v-show="registYan" @click="getYan">获取验证码</span>
                     <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ count }}s）</el-button>
                   </div>
-                  <div class="el-form-item__content text-right underline text-blue-300 my-4">
-                   <el-popover
-                     placement="right"
-                     width="400"
-                     trigger="hover">
-                     <div>
-                       <h5>手机接收不到验证码，可能有以下几种原因</h5>
-                       <ul>
-                         <li>1) 输入的手机号错误；</li>
-                         <li>2) 手机网络环境差；</li>
-                         <li>3）手机已欠费；</li>
-                         <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
-                         <li>5）您曾向运营商申请屏蔽通知类短信；</li>
-                         <li>6）系统出现了错误。</li>
-                       </ul>
-                       <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
-                       <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
-                     </div>
-                     <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
-                   </el-popover>
+                  <div class="el-form-item__content flex justify-end mt-2 underline text-blue-300 my-4">
+					<div>
+					   <el-popover
+						 placement="right"
+						 width="400"
+						 trigger="hover">
+						 <div>
+						   <h5>手机接收不到验证码，可能有以下几种原因</h5>
+						   <ul>
+							 <li>1) 输入的手机号错误；</li>
+							 <li>2) 手机网络环境差；</li>
+							 <li>3）手机已欠费；</li>
+							 <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
+							 <li>5）您曾向运营商申请屏蔽通知类短信；</li>
+							 <li>6）系统出现了错误。</li>
+						   </ul>
+						   <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
+						   <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
+						 </div>
+						 <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+					   </el-popover>
+				    </div>
+					<div class="flex items-center ml-2">
+						<el-divider class="hidden md:block" direction="vertical"></el-divider>
+						<span @click="goLoginAction" class="inline-block hover:font-bold cursor-pointer text-blue-500">已有账号，登录</span>
+					</div>
                   </div>
                 </div>
                 <div class="text-center">
@@ -594,9 +600,14 @@ export default {
     closeDialog () { // 点击注册弹窗关闭按钮
       this.dialogFormVisible = false
       this.registYan = true
+	  this.zhuce = true
     },
 	changeSelectAc () {
 		this.checkOne = !this.checkOne
+	},
+	goLoginAction () {  // 已有账号，去登录
+		this.dialogFormVisible = false
+		this.dialogLogin = true
 	},
     handleCheckedCitiesChange () {
       const {href} = this.$router.resolve({
@@ -688,6 +699,7 @@ export default {
 		this.dialogFormVisible = false
 		this.dialogLogin = true
 		this.form.valueCode = ''
+		this.zhuce = true
 	},
     loginAc () { // 点击登录按钮
       this.form.phone = ''
@@ -706,6 +718,7 @@ export default {
 	goguanwang () { // 登录官网
 		this.dialogFormVisible = false
 		window.open('http://www.jialilaw.com/', '_blank')
+		this.zhuce = true
 	},
 	checkPhone (phoneNum) { // 手机号验证
 		var phone = phoneNum
