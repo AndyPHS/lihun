@@ -7,7 +7,7 @@
           <h3 class="text-center text-lg font-bold">协议书定制帮助</h3>
           <ul class="mt-5">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose hover:font-bold text-center">
-              <h2 @click="searchList(item)">{{ item.title }}</h2>
+              <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item)">{{ item.title }}</h2>
               <!-- <ul class="pl-2" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index"  @click="searchList($item)">{{ $item.title }}</li>
               </ul> -->
@@ -60,7 +60,8 @@ export default {
         time: '',
         con: '',
 		view: null
-      }
+      },
+	  ins: 0
     }
   },
   mounted () {
@@ -77,6 +78,7 @@ export default {
          this.wenCon.time = data.data.data.createdTime;
          this.wenCon.con = data.data.data.content;
 		 this.wenCon.view = data.data.data.view;
+		 this.ins = data.data.data.faId
        })
      },
      getWenType () { // 查询分类
@@ -112,4 +114,6 @@ export default {
 .m_r_b_t span{font-size: 15px;}
 .text-25{font-size: 25px;color: #535353;}
 .text-14{font-size: 14px;color:#c0c0c0;}
+.default_active{color:red}
+.default{color:#343434;}
 </style>

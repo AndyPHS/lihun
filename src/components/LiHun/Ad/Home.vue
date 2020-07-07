@@ -489,9 +489,9 @@ export default {
 	goAgreementHelpMin (id) { // 产品故事
 	  localStorage.setItem('topins',2)
 	  const {href} = this.$router.resolve({
-	  	path: '/AgreementHelpCon',
+	  	path: 'AgreementHelpCon',
 	  	params: {
-	  	  id: id
+	  	  id: id,
 	  	}
 	  })
 	  window.open(href, '_blank')

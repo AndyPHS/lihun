@@ -7,7 +7,7 @@
           <h3 class="text-center text-lg font-bold">离婚知识</h3>
           <ul class="mt-5">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose hover:font-bold text-center">
-              <h2 @click="searchList(item, index)">{{ item.title }}</h2>
+              <h2  @click="searchList(item, index)">{{ item.title }}</h2>
               <!-- <ul class="pl-2" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index"  @click="searchList($item)">{{ $item.title }}</li>
               </ul> -->
@@ -63,6 +63,7 @@ export default {
         con: '',
 		view: null
       },
+	  ins: 0,
 	  relevantAll: []   // 相关文章
     }
   },
@@ -147,4 +148,5 @@ export default {
 .m_r_b_t span{font-size: 15px;}
 .text-25{font-size: 25px;color: #535353;}
 .text-14{font-size: 14px;color:#c0c0c0;}
+
 </style>
