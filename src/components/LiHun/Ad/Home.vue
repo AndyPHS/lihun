@@ -11,7 +11,7 @@
               <div>
 				<div @click="goDingZhi" class="shouyedingzhibtn">
 					<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-					<span class="inline-block text-white">定制我的离婚协议书</span>
+					<span class="inline-block text-white">免费定制离婚协议书</span>
 				</div>
               </div>
             </div>
@@ -22,7 +22,7 @@
         </div>
       </el-carousel-item>
       <el-carousel-item >
-        <div class="swiper02 swiperCommon">
+        <div class="swiper02 swiperCommon">免费
           <div class="w flex justify-between items-center swi">
             <div class="swiper02_min" >
               <p class="text-left text-white">量身打造专属于您的离婚协议书</p>
@@ -39,9 +39,9 @@
             </div>
           </div>
         </div>
-      </el-carousel-item>
+    </el-carousel-item>
 	  <el-carousel-item >
-	    <div class="swiper03 swiperCommon">
+	    <div class="swiper03 swiperCommon">免费
 	      <div class="w flex justify-between items-center swi">
 	        <div class="swiper03_min">
 	          <p>起草 → 下载   20分钟便捷操作</p>
@@ -59,7 +59,7 @@
 	        </div>
 	      </div>
 	    </div>
-	  </el-carousel-item>
+	</el-carousel-item>
 	  <el-carousel-item >
 	    <div class="swiper04 swiperCommon">
 	      <div class="w flex justify-between items-center swi">
@@ -69,7 +69,7 @@
 	          <div>
 	            <div @click="goDingZhi" class="shouyedingzhibtn">
 	            	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-	            	<span class="inline-block text-white">定制我的离婚协议书</span>
+	            	<span class="inline-block text-white">免费定制离婚协议书</span>
 	            </div>
 	          </div>
 	        </div>
@@ -203,7 +203,7 @@
       <div class="dingzhi">
         <div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
         	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-        	<span class="inline-block text-white">定制我的离婚协议书</span>
+        	<span class="inline-block text-white">免费定制离婚协议书</span>
         </div>
       </div>
     </div>
@@ -434,7 +434,7 @@
       <div class="dingzhi">
         <div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
         	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-        	<span class="inline-block text-white">定制我的离婚协议书</span>
+        	<span class="inline-block text-white">免费定制离婚协议书</span>
         </div>
       </div>
     </div>
