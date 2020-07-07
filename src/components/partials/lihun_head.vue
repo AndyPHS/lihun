@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="head flex items-center">
+    <div class="head flex items-center" ref="queryDown">
       <div class="w flex justify-between">
         <div class="flex justify-between items-center">
           <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
@@ -26,6 +26,7 @@
             <el-divider direction="vertical"></el-divider>
             <span class="cursor-pointer hover:underline" @click="registAc">注册</span>
           </div>
+		  
           <div v-else class="flex justify-around items-center relative">
 			<div @click="dengluBox = !dengluBox">
 				<span v-if="this.UserName== 'null' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
@@ -56,7 +57,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeDialog"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body">
+          <div class="el-dialog__body" ref="queryBox">
             <form class="el-form">
               <div class="flex mb-12 w-full items-center regist_header">
                 <span :class="{'registOkbg':!this.zhuce}">1.填写注册资料</span>
@@ -141,7 +142,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeLoginDialog"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body">
+          <div class="el-dialog__body" ref="queryBox">
             <form class="el-form">
               <div class="w-full text-xl text-center pt-12">
                 登录
@@ -188,7 +189,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeforgetDialog"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body">
+          <div class="el-dialog__body" ref="queryBox">
             <form class="el-form">
               <div class="w-full text-xl text-left pt-12 pl-12">
                 重置密码
@@ -215,7 +216,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeforgetDialog2"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body">
+          <div class="el-dialog__body"  ref="queryBox">
             <form class="el-form">
               <div class="w-full text-xl text-left pt-12 pl-12">
                 重置密码
@@ -264,7 +265,7 @@
 				  </div>
 				  <span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeFindByPhone"
 			      class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-			  <div class="el-dialog__body">
+			  <div class="el-dialog__body" ref="queryBox">
 			    <form class="el-form">
 				  
 			      <div class="text-left">
@@ -321,7 +322,7 @@
 				  </div>
 				  <span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closePhonePw"
 			      class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-			  <div class="el-dialog__body">
+			  <div class="el-dialog__body"  ref="queryBox">
 			    <form class="el-form">
 			      <div>
 					<div class="el-form-item">
@@ -421,8 +422,24 @@ export default {
   mounted () {
     this.changeCode()
 	this.getUserMsg()
+	// document.addEventListener('click', this.queryHide)
   },
+  // 清除click监听
+    beforeDestroy () {
+      // document.removeEventListener('click',this.queryHide)
+    },
   methods: {
+	  queryHide (e) {
+		if ((!this.$refs.queryBox.contains(e.target)) && (!this.$refs.queryDown.contains(e.target))) {
+	  /* 关闭元素 */
+		  // this.dialogLogin = false
+		  // this.dialogFormVisible = false
+		  // this.forgetDialog = false
+		  // this.forgetDialog2 = false
+		  // this.dialogFindByPhone = false
+		  // this.dialogPhonePw = false
+		}
+	  },
 	getUserMsg () { // 查询用户基本信息
 	  this.UserName = localStorage.getItem('name')
 	  this.topins = localStorage.getItem('topins')

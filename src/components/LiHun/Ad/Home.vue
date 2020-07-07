@@ -566,4 +566,5 @@ export default {
 .pinjia_s dl dd span{display: inline-block;font-size: 12px;color: #bebebe;line-height: 18px;}
 .pinjia_p{margin-top: 14px;line-height: 25px;color: #535353;text-align: left;font-size: 14px;height: 125px;overflow: hidden;}
 .pinjia_li{width: 290px;height: 249px;background-color: #fff;}
+.el-carousel__arrow--right:focus{outline: none !important;}
 </style>

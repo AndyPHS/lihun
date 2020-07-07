@@ -6,13 +6,13 @@
         <div class="pt-10">
           <h3 class="text-center text-lg font-bold">离婚知识</h3>
           <ul class="mt-5 px-10">
-            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
+            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-center">
               <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
-              <ul class="pl-5 " v-if="item.data.length>0">
+              <!-- <ul class="pl-5 " v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
 					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
 				</li>
-              </ul>
+              </ul> -->
             </li>
           </ul>
         </div>
@@ -35,6 +35,8 @@
               <div class="py-8 flex justify-between items-center">
                 <h2 class="w-4/5 overflow-hidden hover:underline" v-html="item.title"></h2>
                 <span class="w-1/5 text-right">{{ item.createdTime }}</span>
+				<span v-if="item.description==undefined" class="w-1/5 text-right">{{ item.createdTime }}</span>
+				 
               </div>
               <p v-if="item.content==undefined" v-html="item.description"></p>
 			  <p v-if="item.content !==undefined" v-html="item.content"></p>

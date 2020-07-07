@@ -2,7 +2,7 @@
   <div>
     <div class="bot">
       <div class="w">
-        <div class="bot01 text-left text-white">
+        <!-- <div class="bot01 text-left hidden text-white">
           <span class="cursor-pointer hover:underline" @click="goNewpage(0)">首页</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
           <span class="cursor-pointer hover:underline"  @click="goNewpage(1)">离婚知识</span>
@@ -10,18 +10,18 @@
           <span class="cursor-pointer hover:underline"  @click="goNewpage(2)">定制我的离婚协议书</span>
           <el-divider class="mx-5" direction="vertical"></el-divider>
           <span class="cursor-pointer hover:underline"  @click="goNewpage(3)">家理律所官网</span>
-        </div>
+        </div> -->
         <div class="bot02 border-b-2 flex justify-between  items-end">
           <div class="w-1/3 text-left text-white bot02_l">
             <h2>联系我们</h2>
             <p>电话：400-8989-818    &nbsp;  时间：周一至周日 09:00-18:00 </p>
             <p>地址：北京市朝阳区建国门外大街22号赛特大厦3层</p>
           </div>
-          <dl class="w-1/5 text-white">
+          <dl class="w-1/5 text-white flex items-center">
             <dd>
               <img class="inline-block" src="../../assets/images/lihun/weichat.png" alt="">
             </dd>
-            <dt>
+            <dt class="ml-5">
               <h2 class="mt-2">扫码关注</h2>
               <p class="text-sm">蜗牛说家事</p>
             </dt>
