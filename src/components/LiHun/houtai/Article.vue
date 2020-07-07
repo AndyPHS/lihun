@@ -65,7 +65,7 @@
 		  @current-change="getFenLeiList"
 		  :page-size="pagesize"
 		  :current-page.sync="currentPage"
-		  :total="total">
+		  :total="this.total">
 	  </el-pagination>
     </div>
   </div>
@@ -103,7 +103,7 @@ export default{
 	  last_page: null,
 	  userList: [],
 	  currentPage: 1, // 初始页
-	  pagesize: 20, //    每页的数据
+	  pagesize: 10, //    每页的数据
 	  total: 0, // 总页数
     }
   },
