@@ -17,14 +17,25 @@
 				<div>
 					<el-form>
 						<div class="ml-5">
-							<div class="text-lg text-left my-2">根据您填写的信息，您与配偶<span v-if="this.ChuShiMsg.child !='' ">生育有{{ this.ChuShiMsg.child }}个子女，</span>需要处理的夫妻共同财产为:<span class="inline" v-if="this.CommonCaiChan.fangchan">房产、</span><span class="inline" v-if="this.CommonCaiChan.cheliang">车辆、</span><span
-								 class="inline" v-if="this.CommonCaiChan.cunkuan">存款、</span><span class="inline" v-if="this.CommonCaiChan.licai">理财、</span><span
-								 class="inline" v-if="this.CommonCaiChan.gongjijin">公积金、</span></span><span class="inline" v-if="this.CommonCaiChan.baoxian">保险、</span></span><span
-								 class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份）、</span><span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户、</span><span
-								 class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电、</span><span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品、</span><span
-								 class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券、</span><span class="inline" v-if="this.CommonCaiChan.dianpu">店铺、</span><span
-								 class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋、</span><span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span><span
-								 class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span><span class="inline" v-else>无</span>。为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
+							<div class="text-lg text-left my-2">根据您填写的信息，您与配偶
+								<span v-if="this.ChuShiMsg.child !='' ">生育有{{ this.ChuShiMsg.child }}个子女，</span>需要处理的夫妻共同财产为:
+								<span class="inline" v-if="this.CommonCaiChan.fangchan">房产 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.cheliang">车辆 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.cunkuan">存款 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.licai">理财 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.gongjijin">公积金 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.baoxian">保险 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份） &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.dianpu">店铺 &nbsp;</span>
+								<span class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋 &nbsp;</span>
+								<span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span>
+								<span class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>
+								<span class="inline" v-if="!this.CommonCaiChan.fangchan && this.CommonCaiChan.cheliang && this.CommonCaiChan.cunkuan && this.CommonCaiChan.licai && this.CommonCaiChan.baoxian && this.CommonCaiChan.guquangufen && this.CommonCaiChan.gupiaozhanghu && this.CommonCaiChan.jiajujiadian && this.CommonCaiChan.zhubaoshoushi && this.CommonCaiChan.zhuaijuan && this.CommonCaiChan.dianpu && this.CommonCaiChan.zhaijidi && this.ChuShiMsg.zhaiQuan && this.ChuShiMsg.zhaiWu">无</span>.为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：
+							</div>
 							<div>
 								<div class="w-full mx-auto py-10">
 									<ul class="shili flex flex-wrap">
@@ -233,6 +244,7 @@
 					getmodel.forEach((item) => {
 						if (item == 1) {
 							this.ChuShiMsg.house = true
+							this.CommonCaiChan.fangchan = true
 							this.ChuShiMsgArr.push({
 								title: '房产证',
 								title2: '(示例六)',
@@ -244,15 +256,6 @@
 								img: ''
 							})
 						} else if (item == 2) {
-							this.ChuShiMsg.money = true
-						} else if (item == 3) {
-							this.ChuShiMsgArr.push({
-								title: '理财协议',
-								title2: '(示例八)',
-								img: ''
-							})
-							this.ChuShiMsg.liCai = true
-						} else if (item == 4) {
 							this.ChuShiMsgArr.push({
 								title: '机动车登记证',
 								title2: '(示例九)',
@@ -264,8 +267,20 @@
 								img: ''
 							})
 							this.ChuShiMsg.car = true
+							// this.ChuShiMsg.money = true
+						} else if (item == 3) {
+							this.CommonCaiChan.cunkuan = true
+						} else if (item == 4) {
+							this.ChuShiMsgArr.push({
+								title: '理财协议',
+								title2: '(示例八)',
+								img: ''
+							})
+							this.ChuShiMsg.liCai = true
+							this.CommonCaiChan.licai = true
 						} else if (item == 5) {
-							this.ChuShiMsg.jiaDian = true
+							this.CommonCaiChan.gongjijin = true
+							// this.ChuShiMsg.jiaDian = true
 						} else if (item == 6) {
 							this.ChuShiMsg.baoXian = true
 							this.ChuShiMsgArr.push({
