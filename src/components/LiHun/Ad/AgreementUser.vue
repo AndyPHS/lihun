@@ -75,7 +75,7 @@
 		<div class="pr-5 -ml-10">
 			  <el-form :model="form" >
 			    <el-form-item label="姓名" :label-width="formLabelWidth">
-			      <el-input v-model="form.name" autocomplete="off"></el-input>
+			      <el-input v-model="form.name" autocomplete="off" ref="formName"></el-input>
 			    </el-form-item>
 			    <el-form-item label="性别" :label-width="formLabelWidth">
 			      <el-radio-group v-model="form.sex">
@@ -359,11 +359,7 @@ export default {
   },
   methods: {
 	plusXing (name) {  //身份证，姓名加星号
-	    return [...name]
-			.map((item, index, arr) => {
-				return Math.floor(arr.length / 2) === index ? '*' : item;
-			})
-			.join('')
+	     return new Array(str.length).join('*') + str.substr(-1);
 	},
     getUserMsg () { // 查询用户基本信息
       usersSelect().then((data) => {
@@ -376,7 +372,8 @@ export default {
 		  } else  {
 			  var tel = data.data.phone
 			  this.userMsg.phone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
-			  this.userMsg.name = this.plusXing(data.data.name)
+			  var testname = data.data.name
+			  this.userMsg.name = testname.replace(/^(.).*(.)$/,"$1**")
 			  this.userMsg.sex = data.data.sex
 			  this.userMsg.email = data.data.email
 			  this.userMsg.photo = data.data.photo
@@ -394,32 +391,42 @@ export default {
       this.dialogFormVisible = true
     },
     saveBtn () { // 确认编辑基础资料
-      updateUserName({
-        name: this.form.name,
-        sex: this.form.sex
-      }).then((data) => {
-		this.fullscreenLoading = true
-        if (data.data.status_code == 200) {
-          this.dialogFormVisible = false
-          this.getUserMsg()
-		  setTimeout(()=>{
-			
-			this.$message({
-			  message: '修改成功',
-			  type: 'success'
-			})
-			this.fullscreenLoading = false
-			let NewPage = '_empty' + '?time=' + new Date().getTime()/1000
-			// 之后将页面push进去
-			this.$router.push(NewPage)
-			// 再次返回上一页即可
-			this.$router.go(-1)
-		  },2000)
-		  
-        } else {
-          this.$message.error(data.data.message)
-        }
-      })
+	  var nameReg = /^[\u4E00-\u9FA5]{2,4}$/;
+	  if( !nameReg.test(this.form.name)) {
+		  this.$message({
+		    message: '名字过长请重新输入',
+		    type: 'error'
+		  })
+		  this.$refs.formName.focus()
+	  } else {
+		  updateUserName({
+		    name: this.form.name,
+		    sex: this.form.sex
+		  }).then((data) => {
+		  		this.fullscreenLoading = true
+		    if (data.data.status_code == 200) {
+		      this.dialogFormVisible = false
+		      this.getUserMsg()
+		  		  setTimeout(()=>{
+		  			
+		  			this.$message({
+		  			  message: '修改成功',
+		  			  type: 'success'
+		  			})
+		  			this.fullscreenLoading = false
+		  			let NewPage = '_empty' + '?time=' + new Date().getTime()/1000
+		  			// 之后将页面push进去
+		  			this.$router.push(NewPage)
+		  			// 再次返回上一页即可
+		  			this.$router.go(-1)
+		  		  },2000)
+		  		  
+		    } else {
+		      this.$message.error(data.data.message)
+		    }
+		  })
+	  }
+      
       // this.dialogFormVisible = false
     },
     cancleBtn () { // 取消编辑基础资料
