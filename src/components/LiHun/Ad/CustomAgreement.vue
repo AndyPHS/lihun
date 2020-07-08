@@ -23,6 +23,27 @@
                 <div class="ml-5">
                   <div class="text-2xl font-bold text-center py-8">为了更高效地为您定制专属协议，请填写如下问题：</div>
                   <div class="w-3/5 text-left mx-auto bg-white px-5 py-5">
+					<div data-v-0c739cf0="">
+						<div data-v-0c739cf0="">
+							<div data-v-0c739cf0="">
+								<div data-v-0c739cf0="" class="el-form-item">
+									<label class="el-form-item__label">
+										<label data-v-0c739cf0="">
+											离婚协议书名称是
+										</label>
+									</label>
+									<div class="el-form-item__content"> 
+										<div data-v-0c739cf0="" class="el-select">
+											<div class="el-input el-input--suffix">
+												<input type="text" v-model="wenjuanName"  autocomplete="off" placeholder="离婚协议书" class="el-input__inner">
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
                     <!--遍历孩子的基本信息-->
                     <div v-for="(item,index) in childAll" :key="index">
                       <!-- <h2 class="text-left my-5 border-b pb-5 text-base text-orange-500">其他财产</h2> -->
@@ -3156,7 +3177,7 @@
 <script>
 // import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom_com from '../../partials/lihun_bottom_com.vue'
-import {userAddAnswer, getOnlyValue, userAddSelectAnswer} from '@/api/api/AgreementRequest.js' // 用户添加问卷的内容
+import {userAddAnswer, getOnlyValue, userAddSelectAnswer, userUpdateQuestionnaire} from '@/api/api/AgreementRequest.js' // 用户添加问卷的内容
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'CustomAgreement',
@@ -3173,7 +3194,8 @@ export default {
       answerMsg: [],
       childAll: [],
       ChildBirthday: '',
-      ChildName: ''
+      ChildName: '',
+	  wenjuanName: '离婚协议书'
     }
   },
   mounted () {
@@ -3662,7 +3684,14 @@ export default {
     },
     NextPage () {
       this.getChuShi() // 初始化保存当前页面
-      this.$router.replace('/CustomQueDing')
+	  userUpdateQuestionnaire({
+        status: 1,
+        title: this.wenjuanName,
+        exemption: 0,
+        complete: 2
+      }).then((data)=>{
+		  this.$router.replace('/CustomQueDing')
+	  })
     },
     returnUserList () {
       this.$router.replace('/MyConsult')
