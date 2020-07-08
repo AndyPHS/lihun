@@ -12,14 +12,6 @@
 			<li v-for="(item,index) in nav" :key="index" :class="topins == index?'activered':'default'" @click="goDingZhi(index)">
 				{{ item.name }}
 			</li>
-            <!-- <li @click="goDingZhi(0)" :class="{activered:topins ==1}">
-              首页
-            </li>
-            <li @click="goDingZhi(1)" :class="{activered:topins ==2}">
-              离婚知识
-            </li>
-            <li  @click="goDingZhi(2)" :class="{activered:topins ==3}">定制我的离婚协议书</li>
-            <li><a href="http://www.jialilaw.com/" target="_blank">家理律所官网</a></li> -->
           </ul>
           <div v-if="this.isLogin==false" class="loginBox flex justify-around items-center">
             <span class="cursor-pointer hover:underline" @click="loginAc">登录</span>
@@ -32,21 +24,13 @@
 				<span v-if="this.UserName== 'null' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 				<span v-else class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.UserName }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 			</div>
-			<div v-if="this.dengluBox" class="absolute denglu">
+			<div v-if="this.dengluBox" class="absolute denglu" id="dengluBox">
 				<ul>
 					<li class="cursor-pointer" @click="goMyconsult">我的协议</li>
 					<li class="cursor-pointer" @click="goAgreementUser">个人中心</li>
 					<li class="cursor-pointer" @click="liveOut">退出</li>
 				</ul>
 			</div>
-            <!-- <el-dropdown trigger="click">
-              
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item  @click.native="goAgreementUser">个人中心</el-dropdown-item>
-				<el-dropdown-item  @click.native="goMyconsult">我的协议</el-dropdown-item>
-                <el-dropdown-item class="text-center" @click.native="liveOut">退出</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown> -->
           </div>
         </div>
       </div>
@@ -74,9 +58,6 @@
                 <div class="el-form-item">
                   <div class="el-form-item__content">
 					  <el-input placeholder="请输入密码" v-model="form.password" show-password ref="zhucePassword"></el-input>
-                    <!-- <div class="el-input">
-                      <input type="password" v-model="form.password" placeholder="请输入密码,由数字和字母组成(区分大小写)" autocomplete="off" class="el-input__inner">
-                    </div> -->
                   </div>
                 </div>
                 <div class="yanzheng el-form-item">
@@ -119,9 +100,6 @@
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==true" src="../../assets/images/lihun/checked.png" alt="">
 					  <p class="ml-1">我已阅读并同意<span @click="handleCheckedCitiesChange" class="hover:font-bold underline inline-block text-blue-500">《蜗牛家事用户注册和使用协议》</span></p>
 				  </div>
-                  <!-- <el-checkbox-group v-model="checkOne" class="checkGroup" >
-                    <el-checkbox  label="" @change="handleCheckedCitiesChange">我已阅读并同意<span class="hover:font-bold underline text-blue-500">《蜗牛家事用户注册和使用协议》</span></el-checkbox>
-                  </el-checkbox-group> -->
                 </div>
                 <div class="el-dialog__footer text-center mt-4 pb-12">
                   <span class="nextSt" @click="nextSt">下一步</span>
@@ -150,42 +128,90 @@
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
           <div class="el-dialog__body" id='dialogLogin'>
             <form class="el-form">
-              <div class="w-full text-xl text-center pt-12">
-                登录
+              <div class="flex mb-12 w-full items-center regist_header">
+                <span @click="dengluTabAc" :class="{'registOkbg':!this.dengluTab}">快捷登录</span>
+                <span @click="dengluTabAc" :class="{'registOkbg':this.dengluTab}">账号登录</span>
               </div>
-              <div>
+              <div v-if="this.dengluTab == false">
                 <div class="el-form-item">
                   <div class="el-form-item__content">
                     <div class="el-input">
-                      <input type="text" v-model="form.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner" ref="loginPhone">
+                      <input type="text" v-model="loginForm.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner" ref="loginmmPhone">
                     </div>
                   </div>
                 </div>
-                <div class="el-form-item">
+                <div class="el-form-item mt-5">
                   <div class="el-form-item__content">
-                    <el-input placeholder="请输入密码" v-model="form.password" show-password  ref="loginPassword"></el-input>
+                    <el-input placeholder="请输入密码(区分大小写)" v-model="loginForm.password" show-password  ref="loginmmPassword"></el-input>
                   </div>
                 </div>
-                <div class="logyan el-form-item__content flex justify-between items-center">
-                  <input type="text" v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="loginValueCode">
+               <!-- <div class="logyan el-form-item__content flex justify-between items-center">
+                  <input type="text" v-model="loginForm.valueCode" placeholder="请输入验证码(区分大小写)" autocomplete="off" class="el-input__inner" ref="loginValueCode">
                   <div>
                     <img class="code_key_img inline-block mx-2" :src='identifyCodeMsg.codeUrl' :key='form.code_key'  alt="">
                   </div>
                   <span class="spa hover:underline"  @click="changeCode">刷新验证码</span>
 
-                </div>
+                </div> -->
                 <div class="mt-3">
                   <p class="de text-right text-blue-400 mt-3">
-                    <span class="cursor-pointer hover:underline" @click="forgetAc">忘记密码</span>
+                    <span class="underline inline-block hover:font-bold cursor-pointer text-blue-500" @click="forgetAc">忘记密码</span>
                     <el-divider direction="vertical"></el-divider>
-                    <span class="cursor-pointer hover:underline" @click="goregist">注册</span>
+                    <span class="underline inline-block hover:font-bold cursor-pointer text-blue-500" @click="goregist">注册</span>
                   </p>
                 </div>
-                <div class="el-dialog__footer text-center mt-10 pb-12">
+                <div class="el-dialog__footer text-center mt-6 pb-12">
                   <span class="nextSt" @click="loginBt">登录</span>
                   <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer underline hover:font-bold">《蜗牛家事用户注册和使用协议》</span></p>
                 </div>
               </div>
+			  <div v-if="this.dengluTab == true">
+				  <div class="el-form-item">
+				    <div class="el-form-item__content">
+				      <div class="el-input">
+				        <input type="text" v-model="loginForm.phone" placeholder="请输入手机号码" autocomplete="off" class="el-input__inner" ref="loginfsPhone">
+				      </div>
+				    </div>
+				  </div>
+				  <div class="yanzheng el-form-item mt-5">
+				    <div class="el-form-item__content flex justify-between">
+				      <input v-model="loginForm.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="loginfsValueCode">
+				      <span class="spa hover:underline" v-show="loginFormregistYan" @click="loginFormgetYan">获取验证码</span>
+				      <el-button v-show="!loginFormregistYan" class="ml-5" type="primary" :loading="loginFormregistYanType">已发送，请查收（{{ loginFormcount }}s）</el-button>
+				    </div>
+				    <div class="el-form-item__content flex justify-end mt-2 underline text-blue-300 my-4">
+						<div>
+						   <el-popover
+							 placement="right"
+							 width="400"
+							 trigger="hover">
+							 <div>
+							   <h5>手机接收不到验证码，可能有以下几种原因</h5>
+							   <ul>
+								 <li>1) 输入的手机号错误；</li>
+								 <li>2) 手机网络环境差；</li>
+								 <li>3）手机已欠费；</li>
+								 <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
+								 <li>5）您曾向运营商申请屏蔽通知类短信；</li>
+								 <li>6）系统出现了错误。</li>
+							   </ul>
+							   <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
+							   <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
+							 </div>
+							 <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
+						   </el-popover>
+						  </div>
+						<div class="flex items-center ml-2">
+							<el-divider class="hidden md:block" direction="vertical"></el-divider>
+							<span @click="goRegistAction" class="inline-block hover:font-bold cursor-pointer text-blue-500">注册</span>
+						</div>
+				    </div>
+				  </div>
+				  <div class="el-dialog__footer text-center mt-5 pb-12">
+				    <span class="nextSt" @click="fastloginBt">登录</span>
+				    <p class="text-center pt-4">登录即表示阅读并同意<span @click="checkXieyi" class="text-blue-500 cursor-pointer underline hover:font-bold">《蜗牛家事用户注册和使用协议》</span></p>
+				  </div>
+			  </div>
             </form>
           </div>
         </div>
@@ -366,7 +392,7 @@
 </template>
 
 <script>
-import {addUser, phoneCode, frontLogin, phoneCodeV, verifyCode, updatePasswordPhone, usersSelect} from '@/api/api/AgreementRequest.js'
+import {addUser, phoneCode, codeLoginPhone,frontLogin, phoneCodeV, verifyCode, updatePasswordPhone, usersSelect} from '@/api/api/AgreementRequest.js'
 
 export default {
   name: 'lihun_head',
@@ -387,8 +413,15 @@ export default {
 	  errorMsg: '',
 	  count: '', // 倒计时60秒
 	  timer: null,  // 倒计时定时器
+	  loginFormcount: '', // 快捷登录倒计时60秒
+	  loginFormtimer: null,  // 快捷登录倒计时定时器
 	  SetPwagainCount: '', // 3重置密码倒计时
 	  SetPwagainTimer: null,  // 倒计时定时器
+	  loginForm: {
+		  phone: null,
+		  password: '',
+		  valueCode: null
+	  },
       form: {
         phone: null,
         password: '',
@@ -411,8 +444,11 @@ export default {
       },
       checkOne: false,
       registYan: true, // 注册时候手机验证码状态
+	  loginFormregistYan: true, 
 	  registYanType: false,
+	  loginFormregistYanType: false,
       zhuce: true, // 注册成功状态码
+	  dengluTab: true, // 登录方式的切换
       forgetDialog: false, // 忘记密码弹窗
       forgetDialog2: false ,// 忘记密码2
 	  innerVisible: false,
@@ -473,6 +509,12 @@ export default {
 		    }
 		  }
 		  
+		  var dengluBox_con = document.getElementById('dengluBox')
+		  if(dengluBox_con) {
+		    if(!dengluBox_con.contains(e.target)) {
+		  	this.dengluBox = false
+		    }
+		  }
 		// if ((!this.$refs.queryBox.contains(e.target)) && (!this.$refs.queryDown.contains(e.target))) {
 	 //  /* 关闭元素 */
 		//   // this.dialogLogin = false
@@ -482,6 +524,9 @@ export default {
 		//   // this.dialogFindByPhone = false
 		//   // this.dialogPhonePw = false
 		// }
+	  },
+	  dengluTabAc () { // 登录方式切换
+		  this.dengluTab = !this.dengluTab
 	  },
 	getUserMsg () { // 查询用户基本信息
 	  this.UserName = localStorage.getItem('name')
@@ -646,11 +691,51 @@ export default {
 		this.dialogFormVisible = false
 		this.dialogLogin = true
 	},
+	goRegistAction () {  // 没有账号去注册
+		this.dialogFormVisible = true
+		this.dialogLogin = false
+	},
     handleCheckedCitiesChange () {
       const {href} = this.$router.resolve({
       	path: '/UserAgreement'
       })
       window.open(href, '_blank')
+    },
+	loginFormgetYan () { // 快捷登录获取验证码
+		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			this.$refs.loginfsPhone.focus()
+			return false; 
+		} else {
+			// this.registYan = true
+			phoneCode({
+			  phone: this.loginForm.phone,
+			  type: 5
+			}).then((data) => {
+			  if (data.data.status_code !== 200) {
+			    this.$message.error('手机号格式不正确')
+			  } else {
+				const TIME_COUNT = 60;
+				 if (!this.loginFormtimer) {
+				   this.loginFormcount = TIME_COUNT;
+				   this.loginFormregistYan = false;
+				   this.loginFormtimer = setInterval(() => {
+				   if (this.loginFormcount > 0 && this.loginFormcount <= TIME_COUNT) {
+					 this.loginFormcount--;
+					} else {
+					 this.loginFormregistYan = true;
+					 clearInterval(this.loginFormtimer);
+					 this.loginFormtimer = null;
+					}
+				   }, 1000)
+				  }
+			  }
+			})
+		}
     },
     getYan () { // 获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
@@ -743,6 +828,11 @@ export default {
       this.form.password = ''
       this.form.valueCode = ''
       this.dialogLogin = true
+	  this.loginForm.phone = ''
+	  this.loginForm.password = ''
+	  this.loginForm.valueCode = ''
+	  this.dengluTab = true
+	  this.loginFormregistYan = true
     },
     closeLoginDialog () { // 点击登录关闭按钮
       this.dialogLogin = false
@@ -786,27 +876,88 @@ export default {
 	        return false;
 	    }
 	},
-    loginBt () { // 点击登录中的登录按钮
-		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
+	fastloginBt () { //快捷登录按钮
+		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
 			this.dengluerrorBox = true
 			this.errorMsg = '手机号有误，请重新填写'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
-			this.$refs.loginPhone.focus()
+			this.$refs.loginfsPhone.focus()
 			return false; 
-		} else if(this.form.password =='') {
+		} else if(!(/^\d{6}$/.test(this.loginForm.valueCode))){
+			this.dengluerrorBox = true
+			this.errorMsg = '验证码有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			this.$refs.loginfsValueCode.focus()
+			return false; 
+		} else {
+			codeLoginPhone({
+				phone: this.loginForm.phone,
+				code: this.loginForm.valueCode
+			}).then((data)=>{
+				if(data.data.status_code ===200){
+				  this.dialogLogin = false
+				  this.$message({
+				    message: '登录成功',
+				    type: 'success'
+				  })
+				  localStorage.setItem('topins',0)
+				  this.userPhone = this.loginForm.phone
+				  localStorage.setItem('token', data.data.data.token) // 存储token
+				  localStorage.setItem('phone', this.loginForm.phone)
+				  localStorage.setItem('isLogin', true)
+				  this.loginForm = {}
+				  this.isLogin = true
+				  this.loginFormregistYan = true
+				  this.$emit('sendPhone', this.userPhone)
+					usersSelect().then((data) => {
+						if (data.data.name !=''){
+							this.UserName = data.data.name
+						}
+						localStorage.setItem('name', data.data.name)
+						this.getUserMsg()
+					})
+				} else { 
+					if (data.data.status_code=="100") {
+						this.dengluerrorBox = true
+						this.errorMsg = '验证码错误'
+						setTimeout(()=>{
+							this.dengluerrorBox = false
+						},1000)
+						this.$refs.loginfsValueCode.focus()
+					} else if (data.data.status_code=="101") {
+						this.dengluerrorBox = true
+						this.errorMsg = '用户名错误'
+						setTimeout(()=>{
+							this.dengluerrorBox = false
+						},1000)
+						this.$refs.loginfsPhone.focus()
+					} else {
+						this.$message.error(data.data.message);
+					}
+				}
+			})
+		}
+	},
+    loginBt () { // 点击登录中的登录按钮
+		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			this.$refs.loginmmPhone.focus()
+			return false; 
+		} else if(this.loginForm.password =='') {
 			this.$message.error('密码不能为空');
-			this.$refs.loginPassword.focus()
-		} else if(this.form.valueCode==null){
-			this.$refs.loginValueCode.focus()
-			this.$message.error('验证码不正确');
+			this.$refs.loginmmPassword.focus()
 		} else {
 			frontLogin({
-			  phone: this.form.phone,
-			  password: this.form.password,
-			  code: this.form.valueCode,
-			  code_key: this.form.code_key
+			  phone: this.loginForm.phone,
+			  password: this.loginForm.password
 			}).then((data) => {
 			  if(data.data.status_code ===200){
 			    this.dialogLogin = false
@@ -815,11 +966,11 @@ export default {
 			      type: 'success'
 			    })
 				localStorage.setItem('topins',0)
-			    this.userPhone = this.form.phone
+			    this.userPhone = this.loginForm.phone
 			    localStorage.setItem('token', data.data.data.token) // 存储token
-			    localStorage.setItem('phone', this.form.phone)
+			    localStorage.setItem('phone', this.loginForm.phone)
 			    localStorage.setItem('isLogin', true)
-			    this.form = {}
+			    this.loginForm = {}
 			    this.isLogin = true
 			    this.$emit('sendPhone', this.userPhone)
 				usersSelect().then((data) => {
@@ -836,21 +987,14 @@ export default {
 					setTimeout(()=>{
 						this.dengluerrorBox = false
 					},1000)
-					this.$refs.loginPassword.focus()
-				} else if (data.data.status_code=="100") {
-					this.dengluerrorBox = true
-					this.errorMsg = '验证码错误'
-					setTimeout(()=>{
-						this.dengluerrorBox = false
-					},1000)
-					this.$refs.loginValueCode.focus()
-				} else if (data.data.status_code=="101") {
+					this.$refs.loginmmPassword.focus()
+				}else if (data.data.status_code=="101") {
 					this.dengluerrorBox = true
 					this.errorMsg = '用户名错误'
 					setTimeout(()=>{
 						this.dengluerrorBox = false
 					},1000)
-					this.$refs.loginPhone.focus()
+					this.$refs.loginmmPhone.focus()
 				} else {
 					this.$message.error(data.data.message);
 				}

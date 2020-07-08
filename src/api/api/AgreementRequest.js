@@ -81,6 +81,15 @@ export const uploadUserPhoto = params => {
     data: params
   });
 };
+// 手机号验证码登录
+export const codeLoginPhone = params => {
+  return axios({
+    method: 'post',
+    dataType: 'json',
+    url: apiUrl.codeLoginPhone,
+    data: params
+  });
+};
 // 登录
 export const frontLogin = params => {
   return axios({

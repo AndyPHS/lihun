@@ -301,6 +301,8 @@ const apiUrl = {
   uploadUserPhoto: baseLiHunURL + 'front_user/upload_user_photo',
   // 登录
   frontLogin: baseLiHunURL + 'front_user/front_login',
+  // 手机号验证码登录
+  codeLoginPhone: baseLiHunURL + 'front_user/code_login_phone',
   // 邮件修改密码
   updatePasswordEmail: baseLiHunURL + 'front_user/update_password_email'
 }
