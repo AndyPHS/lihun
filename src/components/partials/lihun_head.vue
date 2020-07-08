@@ -62,12 +62,37 @@
                 </div>
                 <div class="yanzheng el-form-item">
                   <div class="el-form-item__content flex justify-between">
-                    <input v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="zhuceValueCode">
+					<div class="relative">
+					  <input v-model="form.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="zhuceValueCode">
+					  <div class="wenti">
+						 <el-popover
+						 placement="right"
+						 width="400"
+						 trigger="click">
+						 <div>
+						   <h5>手机接收不到验证码，可能有以下几种原因</h5>
+						   <ul>
+							 <li>1) 输入的手机号错误；</li>
+							 <li>2) 手机网络环境差；</li>
+							 <li>3）手机已欠费；</li>
+							 <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
+							 <li>5）您曾向运营商申请屏蔽通知类短信；</li>
+							 <li>6）系统出现了错误。</li>
+						   </ul>
+						   <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
+						   <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
+						 </div>
+						 <!-- <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span> -->
+						 <div class="wenhaobox" slot="reference"></div>
+						 <!-- <img src="../../assets/images/lihun/wenhao.png" alt=""> -->
+						 </el-popover>
+					  </div>
+					</div>
                     <span class="spa hover:underline" v-show="registYan" @click="getYan">获取验证码</span>
-                    <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ count }}s）</el-button>
+                    <span v-show="!registYan" class="spa" type="primary" :loading="registYanType">已发送({{ count }}s）</span>
                   </div>
                   <div class="el-form-item__content flex justify-end mt-2 underline text-blue-300 my-4">
-					<div>
+					<!-- <div>
 					   <el-popover
 						 placement="right"
 						 width="400"
@@ -87,9 +112,9 @@
 						 </div>
 						 <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
 					   </el-popover>
-				    </div>
+				    </div> -->
 					<div class="flex items-center ml-2">
-						<el-divider class="hidden md:block" direction="vertical"></el-divider>
+						<!-- <el-divider class="hidden md:block" direction="vertical"></el-divider> -->
 						<span @click="goLoginAction" class="inline-block hover:font-bold cursor-pointer text-blue-500">已有账号，登录</span>
 					</div>
                   </div>
@@ -175,35 +200,41 @@
 				  </div>
 				  <div class="yanzheng el-form-item mt-5">
 				    <div class="el-form-item__content flex justify-between">
-				      <input v-model="loginForm.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="loginfsValueCode">
+				      <div class="relative">
+						  <input v-model="loginForm.valueCode" placeholder="请输入验证码" autocomplete="off" class="el-input__inner" ref="loginfsValueCode">
+						  <div class="wenti">
+						     <el-popover
+						  	 placement="right"
+						  	 width="400"
+						  	 trigger="click">
+						  	 <div>
+						  	   <h5>手机接收不到验证码，可能有以下几种原因</h5>
+						  	   <ul>
+						  		 <li>1) 输入的手机号错误；</li>
+						  		 <li>2) 手机网络环境差；</li>
+						  		 <li>3）手机已欠费；</li>
+						  		 <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
+						  		 <li>5）您曾向运营商申请屏蔽通知类短信；</li>
+						  		 <li>6）系统出现了错误。</li>
+						  	   </ul>
+						  	   <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
+						  	   <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
+						  	 </div>
+						  	 <!-- <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span> -->
+							 <div class="wenhaobox" slot="reference"></div>
+							 <!-- <img src="../../assets/images/lihun/wenhao.png" alt=""> -->
+						     </el-popover>
+						  </div>
+					  </div>
+					  
 				      <span class="spa hover:underline" v-show="loginFormregistYan" @click="loginFormgetYan">获取验证码</span>
-				      <el-button v-show="!loginFormregistYan" class="ml-5" type="primary" :loading="loginFormregistYanType">已发送，请查收（{{ loginFormcount }}s）</el-button>
+				      <span v-show="!loginFormregistYan" class="spa" type="primary" :loading="loginFormregistYanType">已发送({{ loginFormcount }}s）</span>
 				    </div>
 				    <div class="el-form-item__content flex justify-end mt-2 underline text-blue-300 my-4">
-						<div>
-						   <el-popover
-							 placement="right"
-							 width="400"
-							 trigger="hover">
-							 <div>
-							   <h5>手机接收不到验证码，可能有以下几种原因</h5>
-							   <ul>
-								 <li>1) 输入的手机号错误；</li>
-								 <li>2) 手机网络环境差；</li>
-								 <li>3）手机已欠费；</li>
-								 <li>4）将发送验证码的号码加入了黑名单或被手机中安装的安全软件拦截；</li>
-								 <li>5）您曾向运营商申请屏蔽通知类短信；</li>
-								 <li>6）系统出现了错误。</li>
-							   </ul>
-							   <p>若是您手机原因，您可以拨打手机网络运营商，转接到人工服务，说明情况以后由他们帮您处理。</p>
-							   <p>若是系统出现错误，您需要耐心等待，若还是接收不到，可联系客服。</p>
-							 </div>
-							 <span class="hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
-						   </el-popover>
-						  </div>
+						
 						<div class="flex items-center ml-2">
-							<el-divider class="hidden md:block" direction="vertical"></el-divider>
-							<span @click="goRegistAction" class="inline-block hover:font-bold cursor-pointer text-blue-500">注册</span>
+							
+							<span @click="goRegistAction" class="inline-block hover:font-bold cursor-pointer text-blue-500">注册账号</span>
 						</div>
 				    </div>
 				  </div>
@@ -227,7 +258,7 @@
                 重置密码
               </div>
               <div>
-                <div class="el-form-item py-20 mt-0">
+                <div class="el-form-item py-10 mt-0" style="margin-top: 0;">
                   <div class="el-form-item__content">
                     <div class="el-input p text-left">
                       <span class="inline-block text-lg">请输入要重置密码的手机号码</span>
@@ -235,7 +266,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="el-dialog__footer text-center mt-10 pb-12">
+                <div class="el-dialog__footer text-center pb-12">
                   <span class="nextSt" @click="forgetNext">下一步</span>
                 </div>
               </div>
@@ -335,6 +366,19 @@
 			             </div>
 			             <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
 			           </el-popover>
+					   <!-- <div class="el-form-item__content">
+					    <span class="inline-block ">若上述方式均无法验证，您可以</span>
+					    <el-popover
+							 placement="right"
+							 width="300"
+							 trigger="hover">
+							 <div>
+							   <h5>请拨打客服电话，申请人工修复</h5>
+							   <p class="py-2">电话：010-5210 1314</p>
+							 </div>
+							 <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
+					    </el-popover>
+					   </div> -->
 			          </div>
 			        </div>
 			        <div class="el-dialog__footer steall flex justify-between text-center mt-4 pb-12">
@@ -362,12 +406,12 @@
 					    <el-input placeholder="请输入密码" v-model="newform.password" show-password ref="newformPassword"></el-input>
 					  </div>
 					</div>
-					<div class="el-form-item">
+					<div class="el-form-item mt-5">
 					  <div class="el-form-item__content">
 					    <el-input placeholder="请确认密码" v-model="newform.passwordAgain" show-password ref="newformPasswordAgain"></el-input>
 					  </div>
 					</div>
-			        <div class="el-dialog__footer steall flex justify-between text-center mt-4 pb-12">
+			        <div class="el-dialog__footer steall flex justify-between text-center mt-10 pb-12" style="margin-top:30px;">
 					  <span class="ste" @click="resetPWprev">上一步</span>
 			          <span class="ste" @click="resetPW">完成</span>
 			        </div>
@@ -678,6 +722,7 @@ export default {
     registAc () { // 点击注册按钮
       this.form = {}
       this.dialogFormVisible = true
+	  this.registYan = true
     },
     closeDialog () { // 点击注册弹窗关闭按钮
       this.dialogFormVisible = false
@@ -1029,6 +1074,7 @@ export default {
 		this.newform.valueCode = null
 	},
 	findYan () { // 找回密码获取验证码
+		this.newform.valueCode = null
 		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
 			this.$message.error('手机号有误，请重新填写'); 
 			return false; 
@@ -1061,7 +1107,7 @@ export default {
 	},
 	resetPrev () {
 		this.dialogFindByPhone = false
-		this.forgetDialog2 = true
+		this.forgetDialog = true
 	},
 	resetnext () {
 		if(!(/^\d{6}$/.test(this.newform.valueCode))){
@@ -1153,7 +1199,7 @@ export default {
 			return false; 
 		} else {
 			this.forgetDialog = false
-			this.forgetDialog2 = true
+			this.dialogFindByPhone = true
 		}
     },
     forgetPrev () { // 点击忘记密码弹窗2上一步
@@ -1283,4 +1329,7 @@ export default {
   	color: #ff3f68;
   	border: 1px solid #ff3f68;
   }
+  .wenti{position: absolute;right: 16px;top:10px}
+  .wenhaobox{width: 17px;height: 17px;border-radius: 50%;background:url(../../assets/images/lihun/wenhao.png)no-repeat;}
+  .wenhaobox:hover{background:url(../../assets/images/lihun/wenhao_active.png)no-repeat;}
 </style>
