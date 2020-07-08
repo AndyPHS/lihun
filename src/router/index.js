@@ -70,7 +70,7 @@ export default new Router({
     // 离婚协议书推广知识列表页面
     {path: '/Knowledge', name: 'Knowledge', component: Knowledge},
     // 离婚协议书推广知识详情页面
-    {path: '/KnowledgeCon', name: 'KnowledgeCon', component: KnowledgeCon},
+    {path: '/KnowledgeCon/:id', name: 'KnowledgeCon', component: KnowledgeCon},
     // 支付页面
     {path: '/Pay', name: 'Pay', component: Pay},
 	// 正支付页面

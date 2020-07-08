@@ -78,7 +78,8 @@ export default {
   },
   methods: {
      getWenZhangCon () { // 查询单独文章
-       var Id = localStorage.getItem('KnowledgeId')
+       // var Id = localStorage.getItem('KnowledgeId')
+	   var Id = this.$route.params.id
        selectNewsContent({
          id: Id
        }).then((data) => {

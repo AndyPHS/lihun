@@ -117,10 +117,7 @@ export default {
 	},
     goKnowledgeMin (id) {
       this.$router.push({
-        name: 'KnowledgeCon',
-        params: {
-          id: id
-        }
+        path: `/KnowledgeCon/${id}`,
       })
 	  localStorage.setItem('KnowledgeId',id)
     },
