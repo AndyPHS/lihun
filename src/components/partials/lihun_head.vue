@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="head flex items-center" ref="queryDown">
+    <div class="head flex items-center">
       <div class="w flex justify-between">
         <div class="flex justify-between items-center">
           <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
@@ -57,7 +57,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeDialog"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body" ref="queryBox">
+          <div class="el-dialog__body" id="dialogFormVisible">
             <form class="el-form">
               <div class="flex mb-12 w-full items-center regist_header">
                 <span :class="{'registOkbg':!this.zhuce}">1.填写注册资料</span>
@@ -148,7 +148,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeLoginDialog"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body" ref="queryBox">
+          <div class="el-dialog__body" id='dialogLogin'>
             <form class="el-form">
               <div class="w-full text-xl text-center pt-12">
                 登录
@@ -195,7 +195,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeforgetDialog"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body" ref="queryBox">
+          <div class="el-dialog__body" id="forgetDialog">
             <form class="el-form">
               <div class="w-full text-xl text-left pt-12 pl-12">
                 重置密码
@@ -222,7 +222,7 @@
         <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top: 15vh;">
           <div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeforgetDialog2"
               class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-          <div class="el-dialog__body"  ref="queryBox">
+          <div class="el-dialog__body"  id="forgetDialog2">
             <form class="el-form">
               <div class="w-full text-xl text-left pt-12 pl-12">
                 重置密码
@@ -271,7 +271,7 @@
 				  </div>
 				  <span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closeFindByPhone"
 			      class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-			  <div class="el-dialog__body" ref="queryBox">
+			  <div class="el-dialog__body" id="dialogFindByPhone">
 			    <form class="el-form">
 				  
 			      <div class="text-left">
@@ -328,7 +328,7 @@
 				  </div>
 				  <span class="el-dialog__title"></span><button type="button" aria-label="Close" @click="closePhonePw"
 			      class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
-			  <div class="el-dialog__body"  ref="queryBox">
+			  <div class="el-dialog__body"  id="dialogPhonePw">
 			    <form class="el-form">
 			      <div>
 					<div class="el-form-item">
@@ -428,7 +428,7 @@ export default {
   mounted () {
     this.changeCode()
 	this.getUserMsg()
-	// document.addEventListener('click', this.queryHide)
+	document.addEventListener('mouseup', this.queryHide)
   },
   // 清除click监听
     beforeDestroy () {
@@ -436,15 +436,52 @@ export default {
     },
   methods: {
 	  queryHide (e) {
-		if ((!this.$refs.queryBox.contains(e.target)) && (!this.$refs.queryDown.contains(e.target))) {
-	  /* 关闭元素 */
-		  // this.dialogLogin = false
-		  // this.dialogFormVisible = false
-		  // this.forgetDialog = false
-		  // this.forgetDialog2 = false
-		  // this.dialogFindByPhone = false
-		  // this.dialogPhonePw = false
-		}
+		  var dialogLogin_con = document.getElementById('dialogLogin')
+		  if(dialogLogin_con) {
+		    if(!dialogLogin_con.contains(e.target)) {
+		  	this.dialogLogin = false
+		    }
+		  }
+		  var dialogFormVisible_con = document.getElementById('dialogFormVisible')
+		  if(dialogFormVisible_con) {
+		    if(!dialogFormVisible_con.contains(e.target)) {
+		  	this.dialogFormVisible = false
+		    }
+		  }
+		  var forgetDialog_con = document.getElementById('forgetDialog')
+		  if(forgetDialog_con) {
+		    if(!forgetDialog_con.contains(e.target)) {
+		  	this.forgetDialog = false
+		    }
+		  }
+		  var forgetDialog2_con = document.getElementById('forgetDialog2')
+		  if(forgetDialog2_con) {
+		    if(!forgetDialog2_con.contains(e.target)) {
+		  	this.forgetDialog2 = false
+		    }
+		  }
+		  var dialogFindByPhone_con = document.getElementById('dialogFindByPhone')
+		  if(dialogFindByPhone_con) {
+		    if(!dialogFindByPhone_con.contains(e.target)) {
+		  	this.dialogFindByPhone = false
+		    }
+		  }
+		  var dialogPhonePw_con = document.getElementById('dialogPhonePw')
+		  if(dialogPhonePw_con) {
+		    if(!dialogPhonePw_con.contains(e.target)) {
+		  	this.dialogPhonePw = false
+		    }
+		  }
+		  
+		// if ((!this.$refs.queryBox.contains(e.target)) && (!this.$refs.queryDown.contains(e.target))) {
+	 //  /* 关闭元素 */
+		//   // this.dialogLogin = false
+		//   // this.dialogFormVisible = false
+		//   // this.forgetDialog = false
+		//   // this.forgetDialog2 = false
+		//   // this.dialogFindByPhone = false
+		//   // this.dialogPhonePw = false
+		// }
 	  },
 	getUserMsg () { // 查询用户基本信息
 	  this.UserName = localStorage.getItem('name')
