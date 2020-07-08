@@ -429,11 +429,56 @@
         <span>20分钟即可完成专属定制</span>
       </div>
       <div class="w liucheng_min ">
-        <img class="inline-block" src="../../../assets/images/lihun/liucheng.png" alt="">
+        <div class="flex justify-between">
+        	<div class="liucheng_li flex justify-around">
+        		<dl >
+        			<dt>
+        				<img class="mx-auto" src="../../../assets/images/lihun/liucheng01.png" alt="">
+        			</dt>
+        			<dd>注册账户</dd>
+        		</dl>
+        		<img class="inline-block" src="../../../assets/images/lihun/liucheng_next.png" alt="">
+        	</div>
+        	<div class="liucheng_li flex justify-around">
+        		<dl >
+        			<dt>
+        				<img class="mx-auto" src="../../../assets/images/lihun/liucheng02.png" alt="">
+        			</dt>
+        			<dd>免费定制协议</dd>
+        		</dl>
+        		<img class="inline-block" src="../../../assets/images/lihun/liucheng_next.png" alt="">
+        	</div>
+        	<div class="liucheng_li flex justify-around">
+        		<dl >
+        			<dt>
+        				<img class="mx-auto" src="../../../assets/images/lihun/liucheng03.png" alt="">
+        			</dt>
+        			<dd>按需修改协议</dd>
+        		</dl>
+        		<img class="inline-block" src="../../../assets/images/lihun/liucheng_next.png" alt="">
+        	</div>
+        	<div class="liucheng_li flex justify-around">
+        		<dl >
+        			<dt>
+        				<img class="mx-auto" src="../../../assets/images/lihun/liucheng04.png" alt="">
+        			</dt>
+        			<dd>下载离婚协议</dd>
+        		</dl>
+        		<img class="inline-block" src="../../../assets/images/lihun/liucheng_next.png" alt="">
+        	</div>
+        	<div class="liucheng_li flex justify-around">
+        		<dl >
+        			<dt>
+        				<img class="mx-auto" src="../../../assets/images/lihun/liucheng05.png" alt="">
+        			</dt>
+        			<dd>打印离婚协议</dd>
+        		</dl>
+        	</div>
+        </div>
       </div>
       <div class="dingzhi">
         <div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
-        	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+        	<img src="../../../assets/images/lihun/ding_icon.png" alt="">
         	<span class="inline-block text-white">免费定制离婚协议书</span>
         </div>
       </div>
@@ -538,7 +583,7 @@ export default {
 .guanyu_min_r .guanyu_min_r_con{width: 520px;height: 207px;margin:45px auto;font-size:16px;color:#737374;text-align: left;}
 .guanyu_min_r_con p{margin: 20px 0; text-indent: 2em;line-height: 35px;}
 .guanyu_min_r_con p:hover{text-decoration: underline;cursor: pointer;}
-.dingzhi{text-align: center;padding:100px 0;}
+.dingzhi{text-align: center;padding:135px 0;}
 .dingzhi img{display: inline-block;}
 .quanyue_01{padding-bottom: 37px;}
 .quanyue_01 dl dt{height: 102px;background-color: #fff;font-size:37px;color: #547ce0;line-height: 102px;text-align: center;}
@@ -567,4 +612,8 @@ export default {
 .pinjia_p{margin-top: 14px;line-height: 25px;color: #535353;text-align: left;font-size: 14px;height: 125px;overflow: hidden;}
 .pinjia_li{width: 290px;height: 249px;background-color: #fff;}
 .el-carousel__arrow--right:focus{outline: none !important;}
+.liucheng_li{width: 245px;align-items: flex-start;}
+.liucheng_li:last-of-type{width: 209px;}
+.liucheng_li dl dd{margin-top:27px;font-size: 30px;color:#535353;}
+.liucheng_li>img{margin-top:52px;}
 </style>
