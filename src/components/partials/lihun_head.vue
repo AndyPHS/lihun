@@ -950,14 +950,15 @@ export default {
 				    type: 'success'
 				  })
 				  localStorage.setItem('topins',0)
-				  this.userPhone = this.loginForm.phone
+				  var tel = this.loginForm.phone
+				  this.userPhone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
 				  localStorage.setItem('token', data.data.data.token) // 存储token
-				  localStorage.setItem('phone', this.loginForm.phone)
+				  localStorage.setItem('phone', this.userPhone)
 				  localStorage.setItem('isLogin', true)
 				  this.loginForm = {}
 				  this.isLogin = true
 				  this.loginFormregistYan = true
-				  this.$emit('sendPhone', this.userPhone)
+				  this.$emit('sendPhone', this.loginForm.phone)
 					usersSelect().then((data) => {
 						if (data.data.name !=''){
 							this.UserName = data.data.name

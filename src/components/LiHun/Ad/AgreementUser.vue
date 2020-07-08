@@ -358,6 +358,13 @@ export default {
 	localStorage.setItem('topins',-1)
   },
   methods: {
+	plusXing (name) {  //身份证，姓名加星号
+	    return [...name]
+			.map((item, index, arr) => {
+				return Math.floor(arr.length / 2) === index ? '*' : item;
+			})
+			.join('')
+	},
     getUserMsg () { // 查询用户基本信息
       usersSelect().then((data) => {
 		  if (data.data.status_code == 401) {
@@ -367,8 +374,9 @@ export default {
 			  this.$message.error('账号过期，请重新登录')
 			  this.$router.replace('/')
 		  } else  {
-			  this.userMsg.phone = data.data.phone
-			  this.userMsg.name = data.data.name
+			  var tel = data.data.phone
+			  this.userMsg.phone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+			  this.userMsg.name = this.plusXing(data.data.name)
 			  this.userMsg.sex = data.data.sex
 			  this.userMsg.email = data.data.email
 			  this.userMsg.photo = data.data.photo
