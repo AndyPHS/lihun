@@ -347,6 +347,17 @@
 			            <el-button v-show="!registYan" class="ml-5" type="primary" :loading="registYanType">已发送，请查收（{{ SetPwagainCount }}s）</el-button>
 			          </div>
 			          <div class="el-form-item__content text-right underline text-blue-300 my-4">
+					   <el-popover
+					   	 placement="right"
+					   	 width="300"
+					   	 trigger="hover">
+					   	 <div>
+					   	   <h5>请拨打客服电话，申请人工修复</h5>
+					   	   <p class="py-2">电话：010-5210 1314</p>
+					   	 </div>
+					   	 <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
+					   </el-popover>
+					   <el-divider direction="vertical"></el-divider>
 			           <el-popover
 			             placement="right"
 			             width="400"
@@ -366,18 +377,11 @@
 			             </div>
 			             <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">收不到验证码？</span>
 			           </el-popover>
+					   
+					   
 					   <!-- <div class="el-form-item__content">
 					    <span class="inline-block ">若上述方式均无法验证，您可以</span>
-					    <el-popover
-							 placement="right"
-							 width="300"
-							 trigger="hover">
-							 <div>
-							   <h5>请拨打客服电话，申请人工修复</h5>
-							   <p class="py-2">电话：010-5210 1314</p>
-							 </div>
-							 <span class="underline hover:font-bold cursor-pointer text-blue-500" slot="reference">申请账号修复</span>
-					    </el-popover>
+					    
 					   </div> -->
 			          </div>
 			        </div>
@@ -881,6 +885,7 @@ export default {
     },
     closeLoginDialog () { // 点击登录关闭按钮
       this.dialogLogin = false
+	  localStorage.setItem('topins',0)
     },
     goregist () { // 点击登录弹窗中的注册按钮
       this.form = {}
