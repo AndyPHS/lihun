@@ -179,7 +179,7 @@
 					</div>
 				</el-dialog>
 				<!-- 离婚指导弹窗 -->
-				<div class="zhidaopage"  v-if="this.dialogZhiDao == true">
+				<div class="zhidaopage myconsult"  v-if="this.dialogZhiDao == true">
 					<div style="width: 761px;height: 554px;position: absolute;top:50%;left: 50%;margin-top: -280px;margin-left: -380px;background-color: #fff;">
 						<div>
 							<div class="text-right py-2">
@@ -257,6 +257,7 @@
 		},
 		mounted() {
 			this.getWenShu()
+			localStorage.setItem('topins',2)
 		},
 		methods: {
 			dingzhiBtn() { // 点击定制协议跳转到小问卷页面
@@ -619,9 +620,6 @@
 		background-color: rgba(0,0,0,0.5);
 	}
 
-	.zhidaopage .el-carousel__container {
-		height: 554px;
-	}
 	.zhidaopage .el-dialog__wrapper .dialog{width: 761px;height: 554px;}
 	.re {
 		color: #ff3f68;

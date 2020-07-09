@@ -1,85 +1,87 @@
 <template>
   <div>
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
-    <el-carousel :interval="5000" arrow="always" height="589px">
-      <el-carousel-item>
-        <div class="swiper01 swiperCommon">
-          <div class="w flex justify-between items-center swi">
-            <div class="swiper01_min">
-              <p>自主操作，私密定制</p>
-              <h2 class="font-thin">资深律师团队精心研发</h2>
-              <div>
-				<div @click="goDingZhi" class="shouyedingzhibtn">
-					<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-					<span class="inline-block text-white">免费定制离婚协议书</span>
+	<div class="home">
+		<el-carousel :interval="5000" arrow="always" height="589px">
+		  <el-carousel-item>
+			<div class="swiper01 swiperCommon">
+			  <div class="w flex justify-between items-center swi">
+				<div class="swiper01_min">
+				  <p>自主操作，私密定制</p>
+				  <h2 class="font-thin">资深律师团队精心研发</h2>
+				  <div>
+					<div @click="goDingZhi" class="shouyedingzhibtn">
+						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+						<span class="inline-block text-white">免费定制离婚协议书</span>
+					</div>
+				  </div>
 				</div>
-              </div>
-            </div>
-            <div>
-              <img src="../../../assets/images/lihun/swiper01_img01.png" alt="">
-            </div>
-          </div>
-        </div>
-      </el-carousel-item>
-      <el-carousel-item >
-        <div class="swiper02 swiperCommon">
-          <div class="w flex justify-between items-center swi">
-            <div class="swiper02_min" >
-              <p class="text-left text-white">量身打造专属于您的离婚协议书</p>
-              <h2 class="font-thin text-white">已累计定制3500份</h2>
-              <div>
-                <div @click="goDingZhi" class="shouyedingzhibtn">
-                	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-                	<span class="inline-block text-white">免费定制离婚协议书</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img src="../../../assets/images/lihun/swiper02_img02.png" alt="">
-            </div>
-          </div>
-        </div>
-    </el-carousel-item>
-	  <el-carousel-item >
-	    <div class="swiper03 swiperCommon">
-	      <div class="w flex justify-between items-center swi">
-	        <div class="swiper03_min">
-	          <p>起草 → 下载   20分钟便捷操作</p>
-	          <h2 class="font-weight">海量知识，一站查阅</h2>
-			  <h2 class="font-weight">全程指引，一步到位</h2>
-	          <div>
-	            <div @click="goDingZhi" class="shouyedingzhibtn">
-	            	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-	            	<span class="inline-block text-white">免费定制离婚协议书</span>
-	            </div>
-	          </div>
-	        </div>
-	        <div>
-	          <img src="../../../assets/images/lihun/swiper03_img03.png" alt="">
-	        </div>
-	      </div>
-	    </div>
-	</el-carousel-item>
-	  <el-carousel-item >
-	    <div class="swiper04 swiperCommon">
-	      <div class="w flex justify-between items-center swi">
-	        <div class="swiper04_min">
-	          <p>服务50000+客户</p>
-	          <p>4年+婚姻家事大数据分析</p>
-	          <div>
-	            <div @click="goDingZhi" class="shouyedingzhibtn">
-	            	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-	            	<span class="inline-block text-white">免费定制离婚协议书</span>
-	            </div>
-	          </div>
-	        </div>
-	        <div>
-	          <img style="margin-top: -37px;" src="../../../assets/images/lihun/swiper04_img04.png" alt="">
-	        </div>
-	      </div>
-	    </div>
-	  </el-carousel-item>
-    </el-carousel>
+				<div>
+				  <img src="../../../assets/images/lihun/swiper01_img01.png" alt="">
+				</div>
+			  </div>
+			</div>
+		  </el-carousel-item>
+		  <el-carousel-item >
+			<div class="swiper02 swiperCommon">
+			  <div class="w flex justify-between items-center swi">
+				<div class="swiper02_min" >
+				  <p class="text-left text-white">量身打造专属于您的离婚协议书</p>
+				  <h2 class="font-thin text-white">已累计定制3500份</h2>
+				  <div>
+					<div @click="goDingZhi" class="shouyedingzhibtn">
+						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+						<span class="inline-block text-white">免费定制离婚协议书</span>
+					</div>
+				  </div>
+				</div>
+				<div>
+				  <img src="../../../assets/images/lihun/swiper02_img02.png" alt="">
+				</div>
+			  </div>
+			</div>
+		  </el-carousel-item>
+		  <el-carousel-item >
+			<div class="swiper03 swiperCommon">
+			  <div class="w flex justify-between items-center swi">
+				<div class="swiper03_min">
+				  <p>起草 → 下载   20分钟便捷操作</p>
+				  <h2 class="font-weight">海量知识，一站查阅</h2>
+				  <h2 class="font-weight">全程指引，一步到位</h2>
+				  <div>
+					<div @click="goDingZhi" class="shouyedingzhibtn">
+						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+						<span class="inline-block text-white">免费定制离婚协议书</span>
+					</div>
+				  </div>
+				</div>
+				<div>
+				  <img src="../../../assets/images/lihun/swiper03_img03.png" alt="">
+				</div>
+			  </div>
+			</div>
+		  </el-carousel-item>
+		  <el-carousel-item >
+			<div class="swiper04 swiperCommon">
+			  <div class="w flex justify-between items-center swi">
+				<div class="swiper04_min">
+				  <p>服务50000+客户</p>
+				  <p>4年+婚姻家事大数据分析</p>
+				  <div>
+					<div @click="goDingZhi" class="shouyedingzhibtn">
+						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+						<span class="inline-block text-white">免费定制离婚协议书</span>
+					</div>
+				  </div>
+				</div>
+				<div>
+				  <img style="margin-top: -37px;" src="../../../assets/images/lihun/swiper04_img04.png" alt="">
+				</div>
+			  </div>
+			</div>
+		  </el-carousel-item>
+		</el-carousel>
+	</div>
     <div class="wuqu">
       <div class="head_com">
         <h2>常见离婚协议书误区</h2>

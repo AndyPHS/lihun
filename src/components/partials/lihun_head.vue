@@ -115,20 +115,21 @@
 				    </div> -->
 					<div class="flex items-center ml-2">
 						<!-- <el-divider class="hidden md:block" direction="vertical"></el-divider> -->
-						<span @click="goLoginAction" class="inline-block hover:font-bold cursor-pointer text-blue-500">已有账号，登录</span>
+						<span @click="goLoginAction" class="inline-block hover:font-bold cursor-pointer">已有账号，<span class="inline-block text-blue-500">登录</span></span>
 					</div>
                   </div>
                 </div>
-                <div class="text-center">
+                
+                <div class="el-dialog__footer text-center mt-4">
+                  <span class="nextSt" @click="nextSt">注 &nbsp;册</span>
+                </div>
+				<div class="text-center pb-12">
 				  <div class="flex justify-start items-center mx-auto" style="width: 342px;">
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==false" src="../../assets/images/lihun/unchecked.png" alt="">
 					  <img style="width:16px;height:16px" class="inline-block" @click="changeSelectAc" v-if="this.checkOne==true" src="../../assets/images/lihun/checked.png" alt="">
 					  <p class="ml-1">我已阅读并同意<span @click="handleCheckedCitiesChange" class="hover:font-bold underline inline-block text-blue-500">《蜗牛家事用户注册和使用协议》</span></p>
 				  </div>
-                </div>
-                <div class="el-dialog__footer text-center mt-4 pb-12">
-                  <span class="nextSt" @click="nextSt">下一步</span>
-                </div>
+				</div>
               </div>
               <div v-else class="">
                  <dl>
@@ -720,6 +721,7 @@ export default {
 		localStorage.removeItem('token') // 存储token
 		localStorage.removeItem('phone')
 		localStorage.removeItem('isLogin')
+		localStorage.removeItem('name')
 		this.$router.replace('/')
 		this.dialogExit = false
 	},
@@ -850,6 +852,28 @@ export default {
 			        type: 'success'
 			      })
 			      this.zhuce = false
+				  
+				  this.$message({
+				    message: '登录成功',
+				    type: 'success'
+				  })
+				  localStorage.setItem('topins',0)
+				  var tel = this.form.phone
+				  this.userPhone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+				  localStorage.setItem('token', data.data.data.token) // 存储token
+				  localStorage.setItem('phone', this.userPhone)
+				  localStorage.setItem('name', this.UserName)
+				  localStorage.setItem('isLogin', true)
+				  this.form = {}
+				  this.isLogin = true
+				  // this.loginFormregistYan = true
+				  this.$emit('sendPhone', this.form.phone)
+					usersSelect().then((data) => {
+						this.UserName = data.data.name
+						// this.UserName = testName.replace(/^(.).*(.)$/,"$1**")
+						localStorage.setItem('name', this.UserName)
+						this.getUserMsg()
+					})
 			    } else {
 			      this.$message({
 			        message: data.data.message,
@@ -868,9 +892,11 @@ export default {
     },
 	gologin () { // 去登陆
 		this.dialogFormVisible = false
-		this.dialogLogin = true
+		// this.dialogLogin = true
 		this.form.valueCode = ''
 		this.zhuce = true
+		this.$router.replace('/MyConsult')
+		localStorage.setItem('topins',2)
 	},
     loginAc () { // 点击登录按钮
       this.form.phone = ''
