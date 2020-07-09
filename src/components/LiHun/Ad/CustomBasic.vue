@@ -7,10 +7,11 @@
     	    定制我的协议书
     	  </h2>
     	  <div class="c_m_h_r">
+			
     		<span @click="goHome">返回首页</span>
-			<span @click="goAgreementHelp">协议书定制帮助</span>
-			<span @click="returnUserList">返回文书列表</span>
-			<span @click="saveWenShu">保存</span>
+			<span class="ml-5" @click="returnUserList">返回文书列表</span>
+			<div class="help ml-2" @click="goAgreementHelp">协议书定制帮助</div>
+			<!-- <span @click="saveWenShu">保存</span> -->
     	  </div>
     	</div>
     </div>
@@ -1225,9 +1226,11 @@ export default {
 .c_m{background-color: #fff;}
 .c_m_h{height:90px;}
 .c_m_h h2{width:356px;font-size: 25px;color:#535353;font-weight: bold;}
-.c_m_h_r{width:648px;display: flex;justify-content: space-between;}
+.c_m_h_r{width:430px;display: flex;justify-content: space-between;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
-.c_m_h_r span:last-of-type{border:1px solid #ff3f68;color:#ff3f68;}
+.c_m_h_r .help{width: 151px;height: 35px;text-align: center;line-height: 35px;font-size:16px;color:#535353;font-weight: bold;display: initial;}
+.c_m_h_r .help:hover{font-weight: bolder;text-decoration: underline;cursor: pointer;}
+/* .c_m_h_r span:last-of-type{border:1px solid #ff3f68;color:#ff3f68;} */
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}
 html{height: 100%;background-color: #f7fafc;}
 .el-loading-spinner{left:50% !important}
