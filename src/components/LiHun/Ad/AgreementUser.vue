@@ -358,8 +358,26 @@ export default {
 	localStorage.setItem('topins',-1)
   },
   methods: {
-	plusXing (name) {  //身份证，姓名加星号
-	     return new Array(str.length).join('*') + str.substr(-1);
+	hideEmailInfo (email) {  //身份证，姓名加星号
+	     if (String (email).indexOf ('@') > 0) {
+			 let newEmail, str = email.split('@'), _s = '';
+	 
+			 if (str[0].length > 4) {
+				 _s = str[0].substr (0, 4);
+				 for (let i = 0; i < str[0].length - 4; i++) {
+					 _s += '*';
+				 }
+			 } else {
+				 _s = str[0].substr (0, 1);
+				 for (let i = 0; i < str[0].length - 1; i++) {
+					 _s += '*';
+				 }
+			 }
+			 newEmail = _s + '@' + str[1];
+			 return newEmail;
+		 } else {
+			 return email;
+		 }
 	},
     getUserMsg () { // 查询用户基本信息
       usersSelect().then((data) => {
@@ -375,7 +393,8 @@ export default {
 			  var testname = data.data.name
 			  this.userMsg.name = testname.replace(/^(.).*(.)$/,"$1**")
 			  this.userMsg.sex = data.data.sex
-			  this.userMsg.email = data.data.email
+			  var  markEmail = data.data.email
+			  this.userMsg.email = this.hideEmailInfo(markEmail)
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
 			  this.form.sex = JSON.stringify(this.userMsg.sex)
