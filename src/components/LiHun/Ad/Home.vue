@@ -45,9 +45,8 @@
 			<div class="swiper03 swiperCommon">
 			  <div class="w flex justify-between items-center swi">
 				<div class="swiper03_min">
-				  <p>起草 → 下载   20分钟便捷操作</p>
-				  <h2 class="font-weight">海量知识，一站查阅</h2>
-				  <h2 class="font-weight">全程指引，一步到位</h2>
+				  <p>起草 → 下载   20分钟即可完成</p>
+				  <h2 class="font-thin">在线快捷修改，不限次数</h2>
 				  <div>
 					<div @click="goDingZhi" class="shouyedingzhibtn">
 						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
@@ -66,7 +65,7 @@
 			  <div class="w flex justify-between items-center swi">
 				<div class="swiper04_min">
 				  <p>服务50000+客户</p>
-				  <p>4年+婚姻家事大数据分析</p>
+				  <h2 class="font-thin text-white">4年+婚姻家事大数据分析</h2>
 				  <div>
 					<div @click="goDingZhi" class="shouyedingzhibtn">
 						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
@@ -75,7 +74,7 @@
 				  </div>
 				</div>
 				<div>
-				  <img style="margin-top: -37px;" src="../../../assets/images/lihun/swiper04_img04.png" alt="">
+				  <img style="margin-left: 100px;" src="../../../assets/images/lihun/swiper04_img04.png" alt="">
 				</div>
 			  </div>
 			</div>
@@ -563,11 +562,9 @@ export default {
 .swiper02_min p{color: #fff;font-weight: bold;font-size: 25px;text-align: left;}
 .swiper02_min h2{color:#fff;font-size:53px;margin-bottom: 78px;text-align: left;}
 .swiper03_min p{color: #02005b;font-size: 30px;text-align: left;margin-bottom: 15px;}
-.swiper03_min h2{color:  #02005b;font-size: 41px; text-align: left;line-height: 57px;}
-.swiper03_min h2:last-of-type{margin-bottom: 55px;}
-.swiper04_min p{font-size: 38px;color:#fff;text-align: left;font-weight: bold;}
-.swiper04_min p:first-of-type{margin-bottom: 28px;}
-.swiper04_min p:last-of-type{margin-bottom: 100px;}
+.swiper03_min h2{font-size:42px;color:#02005b;margin-bottom: 89px;text-align: left;margin-top: 19px;}
+.swiper04_min p{color: #fff;font-weight: bold;font-size: 33px;text-align: left;}
+.swiper04_min h2{color:#fff;font-size:42px;margin-bottom: 78px;text-align: left;}
 .head_com{width: 1200px;margin:0 auto;text-align: center;padding-top:110px;padding-bottom: 83px;}
 .head_com h2{font-size:43px;color:#535353;height: 43px;line-height: 43px;}
 .head_com span{font-size: 16px;color:#818181;padding:5px 13px;border:1px solid #535353;margin-top: 18px;display: inline-block;}

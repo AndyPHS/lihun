@@ -7,7 +7,7 @@
           <h3 class="text-center text-lg font-bold">协议书定制帮助</h3>
           <ul class="mt-5">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose hover:font-bold text-center">
-              <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item)">{{ item.title }}</h2>
+              <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
               <!-- <ul class="pl-2" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index"  @click="searchList($item)">{{ $item.title }}</li>
               </ul> -->
@@ -69,6 +69,15 @@ export default {
     this.getWenType()
   },
   methods: {
+	  goKnowledgeMin (id) {
+	    this.$router.push({
+	      name: 'AgreementHelpCon',
+	      params: {
+	        id: id
+	      }
+	    })
+	    localStorage.setItem('AgreementHelpId',id)
+	  },
      getWenZhangCon () { // 查询单独文章
        var Id = localStorage.getItem('AgreementHelpId')
        selectNewsContent({
@@ -87,13 +96,21 @@ export default {
          this.fenleiAll = data.data[1].data
        })
      },
-     searchList (item) { // 点击文章分类跳转到文章列表页
-       this.$router.push({
-         name: 'AgreementHelp',
-         params: {
-           id: item.id
-         }
-       })
+     searchList (item, index) { // 点击文章分类跳转到文章列表页
+		if (index ==0){
+			localStorage.setItem('AgreementHelpId',17)
+			this.getWenZhangCon ()
+		} else if (index ==2){
+			localStorage.setItem('AgreementHelpId',45)
+			this.getWenZhangCon ()
+		} else {
+			this.$router.push({
+			  name: 'AgreementHelp',
+			  params: {
+			    id: item.id
+			  }
+			})
+		}
      }
   }
 }

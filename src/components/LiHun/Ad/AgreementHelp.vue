@@ -10,7 +10,7 @@
               <span class="ding_btn"><router-link to="CustomAgreement">定制我的协议书</router-link></span>
             </div> -->
             <div class="mt-10">
-              <h3 class="text-center text-lg font-bold">协议书定制帮助</h3>
+              <h3 class="text-center text-lg font-bold">协议书帮助</h3>
               <ul class="mt-5">
                 <li v-for="(item, index) in fenleiAll" :key="index" class="text-base leading-loose cursor-pointer hover:font-bold text-center">
                   <h2 :class="ins === index?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
@@ -135,20 +135,26 @@ export default {
       })
     },
     searchList (item, index) { // 点击分类查找文章
-      this.ins = index
-	  this.tableDataNull = false
-      selectFaIDNews({
-        status: 1,
-        faId: item.id,
-		page: this.currentPage
-      }).then((data) => {
-        this.tableData = data.data.data.data
-		this.total = data.data.data.total
-		if (this.tableData.length == 0 ) {
-			this.tableDataNull = true
-			this.keyMsg = item.title
-		}
-      })
+	  if (index ==0){
+		  this.goKnowledgeMin (17)
+	  } else if (index ==2){
+		  this.goKnowledgeMin (45)
+	  } else {
+		  this.ins = index
+		  this.tableDataNull = false
+		  selectFaIDNews({
+		    status: 1,
+		    faId: item.id,
+		  		page: this.currentPage
+		  }).then((data) => {
+		    this.tableData = data.data.data.data
+		  		this.total = data.data.data.total
+		  		if (this.tableData.length == 0 ) {
+		  			this.tableDataNull = true
+		  			this.keyMsg = item.title
+		  		}
+		  })
+	  }
     },
 	// 初始页currentPage、初始每页数据数pagesize和数据data
 	// 上一页
