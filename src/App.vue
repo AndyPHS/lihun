@@ -24,8 +24,10 @@ export default {
 @import "./common/css/app.css";
 
 @import "./common/css/tailwindcss.css";
+@import "./common/font/font.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: '微软雅黑'; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

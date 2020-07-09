@@ -35,17 +35,15 @@
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
         , toolbars: [[
-            'fullscreen', 'source', '|', 'undo', 'redo', '|',
-            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'fullscreen', 'source', '|', 'undo','|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
             'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
             'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
             'directionalityltr', 'directionalityrtl', 'indent', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
-            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'link', 'anchor', '|', 
             'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
-            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-            'print', 'preview', 'searchreplace', 'drafts', 'help'
+            'horizontal', 'date', 'time'
         ]]
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{
@@ -178,19 +176,26 @@
 
         //fontfamily
         //字体设置 label留空支持多语言自动切换，若配置，则以配置值为准
-        //,'fontfamily':[
-        //    { label:'',name:'songti',val:'宋体,SimSun'},
-        //    { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
-        //    { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
-        //    { label:'',name:'heiti',val:'黑体, SimHei'},
-        //    { label:'',name:'lishu',val:'隶书, SimLi'},
-        //    { label:'',name:'andaleMono',val:'andale mono'},
-        //    { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
-        //    { label:'',name:'arialBlack',val:'arial black,avant garde'},
-        //    { label:'',name:'comicSansMs',val:'comic sans ms'},
-        //    { label:'',name:'impact',val:'impact,chicago'},
-        //    { label:'',name:'timesNewRoman',val:'times new roman'}
-        //]
+        ,'fontfamily':[
+           { label:'',name:'songti',val:'宋体,SimSun'},
+		   { label: '', name: 'SimSun', val: '仿宋,SimSun' },
+		   { label:'',name:'FangSong_GB2312',val:'仿宋_GB2312 ,FangSong_GB2312'},
+           { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
+           { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
+           { label:'',name:'heiti',val:'黑体, SimHei'},
+           { label:'',name:'lishu',val:'隶书, SimLi'},
+           { label:'',name:'andaleMono',val:'andale mono'},
+           { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
+           { label:'',name:'arialBlack',val:'arial black,avant garde'},
+           { label:'',name:'comicSansMs',val:'comic sans ms'},
+           { label:'',name:'impact',val:'impact,chicago'},
+           { label:'',name:'timesNewRoman',val:'times new roman'},
+		   { label:'',name:'OPPOSans-B',val:'OPPOSans-B'},
+		   { label:'',name:'OPPOSans-H',val:'OPPOSans-H'},
+		   { label:'',name:'OPPOSans-L',val:'OPPOSans-L'},
+		   { label:'',name:'OPPOSans-M',val:'OPPOSans-L'},
+		   { label:'',name:'OPPOSans-R',val:'OPPOSans-L'}
+        ]
 
         //fontsize
         //字号
