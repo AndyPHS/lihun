@@ -564,7 +564,7 @@ export default {
 .swiper03_min p{color: #02005b;font-size: 30px;text-align: left;margin-bottom: 15px;}
 .swiper03_min h2{font-size:42px;color:#02005b;margin-bottom: 89px;text-align: left;margin-top: 19px;}
 .swiper04_min p{color: #fff;font-weight: bold;font-size: 33px;text-align: left;}
-.swiper04_min h2{color:#fff;font-size:42px;margin-bottom: 78px;text-align: left;}
+.swiper04_min h2{color:#fff;font-size:42px;margin-bottom: 78px;text-align: left; width:480px;}
 .head_com{width: 1200px;margin:0 auto;text-align: center;padding-top:110px;padding-bottom: 83px;}
 .head_com h2{font-size:43px;color:#535353;height: 43px;line-height: 43px;}
 .head_com span{font-size: 16px;color:#818181;padding:5px 13px;border:1px solid #535353;margin-top: 18px;display: inline-block;}
