@@ -180,7 +180,7 @@ export default {
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;margin-top: 39px;margin-bottom: 39px;}
 .c_m_t{margin-left: 239px;text-align: center;font-size: 25px;font-weight: bold;}
-.h-500{height: 500px;}
+/* .h-500{height: 500px;} */
 .c_m_l{width: 239px;border-right: 1px solid #eceff4;}
 .ding_btn{width: 153px;height: 37px;margin:0 auto;text-align: center;line-height: 37px;border-radius: 18px;font-size: 16px;color: #fff;font-weight: bold;display: inline-block;background-color: #ff3f68;border: 1px solid #ff3f68;}
 .c_m_l_t{}

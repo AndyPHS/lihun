@@ -3,10 +3,10 @@
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <div class="c_m w flex justify-between" name="top">
       <div class="c_m_l">
-        <div class="pt-10">
-          <h3 class="text-center text-lg font-bold">离婚知识</h3>
-          <ul class="mt-5 px-10">
-            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-center">
+        <div class="">
+          <h3 class="text-22 text-left font-bold">离婚知识</h3>
+          <ul class="mt-5 zhishiul">
+            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
               <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
               <!-- <ul class="pl-5 " v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
@@ -237,4 +237,6 @@ export default {
 	width:1px;
 	background-color: #FFF;
 }
+.text-22{font-size: 22px;padding-left: 56px;}
+.zhishiul{padding-left: 56px;}
 </style>
