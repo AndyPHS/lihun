@@ -966,9 +966,10 @@ export default {
 				  this.$emit('sendPhone', this.loginForm.phone)
 					usersSelect().then((data) => {
 						if (data.data.name !=''){
-							this.UserName = data.data.name
+							var testName = data.data.name
+							this.UserName = testName.replace(/^(.).*(.)$/,"$1**")
 						}
-						localStorage.setItem('name', data.data.name)
+						localStorage.setItem('name', this.UserName)
 						this.getUserMsg()
 					})
 				} else { 
@@ -1026,9 +1027,10 @@ export default {
 			    this.$emit('sendPhone', this.userPhone)
 				usersSelect().then((data) => {
 					if (data.data.name !=''){
-						this.UserName = data.data.name
+						var testName = data.data.name
+						this.UserName = testName.replace(/^(.).*(.)$/,"$1**")
 					}
-					localStorage.setItem('name', data.data.name)
+					localStorage.setItem('name', this.UserName)
 					this.getUserMsg()
 				})
 			  } else {
