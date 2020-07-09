@@ -248,7 +248,7 @@
       <el-dialog title="设置头像" :visible.sync="dialogImg">
         <div class="touxiang">
             <form action="" class="text-center imbox">
-			  <img v-if="this.userMsg.photo=='' " src="../../../assets/images/lihun/user_img.png" alt="">
+			  <img v-if="this.userMsg.photo==''|| this.userMsg.photo==null " src="../../../assets/images/lihun/user_img.png" alt="">
 			  <img v-else :src="this.userMsg.photo" alt="">
               <input name="imgs" class=" mx-auto mt-5 w-1/3" placeholder="上传头像" type="file" id='upfile' @change="selectFile">
             </form>
@@ -390,15 +390,21 @@ export default {
 		  } else  {
 			  var tel = data.data.phone
 			  this.userMsg.phone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
-			  var testname = data.data.name
-			  this.userMsg.name = testname.replace(/^(.).*(.)$/,"$1**")
+			  if (data.data.name !=null) {
+				  var testname = data.data.name
+				  this.userMsg.name = testname.replace(/^(.).*(.)$/,"$1**")
+			  } else {
+				  this.userMsg.name = data.data.name
+			  }
+			 
 			  this.userMsg.sex = data.data.sex
 			  var  markEmail = data.data.email
 			  this.userMsg.email = this.hideEmailInfo(markEmail)
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
 			  this.form.sex = JSON.stringify(this.userMsg.sex)
-			  localStorage.setItem('name',this.userMsg.name)
+			  localStorage.setItem('name',data.data.name)
+			  console.log(data.data.name)
 		  } 
         
       })

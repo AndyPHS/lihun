@@ -869,8 +869,12 @@ export default {
 				  // this.loginFormregistYan = true
 				  this.$emit('sendPhone', this.form.phone)
 					usersSelect().then((data) => {
-						this.UserName = data.data.name
-						// this.UserName = testName.replace(/^(.).*(.)$/,"$1**")
+						if (data.data.name !=null) {
+							var testName = data.data.name
+							this.UserName = testName.replace(/^(.).*(.)$/,"$1**")
+						} else {
+							this.UserName = data.data.name
+						}
 						localStorage.setItem('name', this.UserName)
 						this.getUserMsg()
 					})
