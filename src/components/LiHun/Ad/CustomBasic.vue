@@ -1247,7 +1247,7 @@ html{height: 100%;background-color: #f7fafc;}
 .insNum{width: 24px;height: 24px;line-height: 24px;text-align: center;font-size: 14px;border-radius: 50%;border:2px solid #C0C4CC;color:#C0C4CC;margin:10px auto;display: block;font-weight: bold;background: #fff;}
 .active .insNum{color:#fff;border:2px solid #ff3f68;background-color: #ff3f68;}
 html{height: 100%;background-color: #f7fafc;}
-.allmin{width: 1024px;margin:0 auto;display: flex;justify-content: center;}
+.allmin{width: 1024px;margin:0 auto;display: flex;justify-content: center;min-height: 400px;}
 .allmin_l{width: 150px;float: left;height: 620px;}
 .caichanul{position: absolute; top:0;left: 50px; width: 150px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
