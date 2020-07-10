@@ -10,6 +10,7 @@ const AgreementHelp = () => import('@/components/LiHun/Ad/AgreementHelp')  // �
 const AgreementHelpCon = () => import('@/components/LiHun/Ad/AgreementHelpCon')  // 推广页定制我的离婚协议书帮助详情页
 
 const AgreementUser = () => import('@/components/LiHun/Ad/AgreementUser')  // 推广页定制我的离婚协议书帮助
+const AgreementModel = () => import('@/components/LiHun/Ad/AgreementModel')  // 协议范文
 const UserAgreement = () => import('@/components/LiHun/Ad/UserAgreement')  // 推广页使用帮助
 const Knowledge = () => import('@/components/LiHun/Ad/Knowledge') // 知识列表页面
 const KnowledgeCon = () => import('@/components/LiHun/Ad/KnowledgeCon') // 知识详情页面
@@ -65,6 +66,8 @@ export default new Router({
 	
 	// 离婚协议书推广定制协议书用户页面
     {path: '/AgreementUser', name: 'AgreementUser', component: AgreementUser},
+	// 离婚协议书范文
+	{path: '/AgreementModel', name: 'AgreementModel', component: AgreementModel},
     // 离婚协议书推广使用协议帮助
     {path: '/UserAgreement', name: 'UserAgreement', component: UserAgreement},
     // 离婚协议书推广知识列表页面

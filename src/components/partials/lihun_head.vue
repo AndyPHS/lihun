@@ -115,7 +115,7 @@
 				    </div> -->
 					<div class="flex items-center ml-2">
 						<!-- <el-divider class="hidden md:block" direction="vertical"></el-divider> -->
-						<span @click="goLoginAction" class="inline-block hover:font-bold cursor-pointer">已有账号，<span class="inline-block text-blue-500">登录</span></span>
+						<span  class="inline-block ">已有账号，<span @click="goLoginAction" class="inline-block text-blue-500 hover:font-bold cursor-pointer">登录</span></span>
 					</div>
                   </div>
                 </div>
@@ -506,6 +506,7 @@ export default {
 		  {name: '首页'},
 		  {name: '离婚知识'},
 		  {name: '定制我的离婚协议书'},
+		  {name: '协议书范文'},
 		  {name: '家理律所官网'},
 	  ]
     }
@@ -633,7 +634,22 @@ export default {
 					})
 					window.open(href, '_blank')
 				}
-			} else if (index == 3){
+			} else if(index == 3){
+				localStorage.setItem('topins',3)
+				var isLogin = localStorage.getItem('token')
+				if (isLogin == undefined){
+					this.dialogLogin = true
+				} else {
+					// this.$router.resolve('/AgreementModel')
+					const {href} = this.$router.resolve({
+						path: '/AgreementModel',
+						params: {
+						  topins: this.topins
+						}
+					})
+					window.open(href, '_blank')
+				}
+			} else if (index == 4){
 				window.open('http://www.jialilaw.com/', '_blank')
 			}
 		} else {
@@ -669,7 +685,22 @@ export default {
 					})
 					// window.open(href, '_blank')
 				}
-			} else if (index == 3){
+			}else if(index == 3){
+				localStorage.setItem('topins',3)
+				var isLogin = localStorage.getItem('token')
+				if (isLogin == undefined){
+					this.dialogLogin = true
+				} else {
+					// this.$router.resolve('/AgreementModel')
+					const {href} = this.$router.replace({
+						path: '/AgreementModel',
+						params: {
+						  topins: this.topins
+						}
+					})
+					// window.open(href, '_blank')
+				}
+			} else if (index == 4){
 				window.open('http://www.jialilaw.com/', '_blank')
 			}
 		}
@@ -1276,7 +1307,7 @@ export default {
   }
 
   .nav {
-    width: 530px;
+    width: 656px;
     font-size: 18px;
 	margin-right: 25px;
   }

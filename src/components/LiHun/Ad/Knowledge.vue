@@ -8,11 +8,11 @@
           <ul class="mt-5 zhishiul">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
               <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
-              <!-- <ul class="pl-5 " v-if="item.data.length>0">
+              <ul class="pl-5 " v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
 					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
 				</li>
-              </ul> -->
+              </ul>
             </li>
           </ul>
         </div>
