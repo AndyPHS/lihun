@@ -11,7 +11,7 @@
 					</div>
 					<div class="min">
 						<p style="white-space: normal; text-align: center;margin-bottom: 25px;">
-							<span style="font-size: 24px; color: rgb(63, 63, 63);"><strong>离婚协议书</strong><br /></span>
+							<span style="font-size: 24px; color: rgb(63, 63, 63);"><strong>离婚协议书范文</strong><br /></span>
 						</p>
 						<p style="white-space: normal; font-family: 仿宋; line-height: 2.6em; margin-top: 5px; margin-bottom: 20px;">
 							<span style="color: rgb(63, 63, 63);"><span style="color: rgb(63, 63, 63); font-size: 18px;"><strong>男方：</strong></span>李四，汉族，1989年06月21日出生，证件号码：22061019890621XXXX<br />&nbsp;
@@ -144,6 +144,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="live"></div>
 		<lihun-bottom></lihun-bottom>
 	</div>
 </template>
@@ -183,7 +184,7 @@
 <style>
 	.w{width: 1200px; margin: 0 auto;}
 	.bg-color {
-		background: #eee;
+		background: #f2f4f7;
 	}
 
 	.shengcheng_w {
@@ -192,8 +193,8 @@
 	}
 	.min_title{width: 100%;text-align: center;font-size: 14px;color: #b7b7b7;padding-top: 17px;padding-bottom: 17px;border-bottom: 1px solid #d8d8d8;}
 	.min {
-		width: 945px;
-		height: 500px;
+		width: 850px;
+		height: 800px;
 		overflow-y: scroll;
 		margin: 0px auto;
 		text-align: left;
@@ -203,7 +204,7 @@
 		background-color: #FFF;
 	}
 	.min_top {
-		width: 986px;
+		width: 890px;
 		display: flex;
 		justify-content: space-between;
 		padding-top: 73px;
@@ -211,7 +212,7 @@
 	}
 
 	.min_bottom {
-		width: 986px;
+		width: 890px;
 		display: flex;
 		justify-content: space-between;
 		padding-bottom: 80px;
@@ -223,12 +224,13 @@
 	.liucheng_li dl dd{margin-top:27px;font-size: 23px;color:#535353;}
 	.liucheng_li>img{margin-top:52px;}
 	.liucheng_min{width: 905px;margin:0 auto;}
-	.head_com{width: 1200px;margin:0 auto;text-align: center;padding-top:110px;padding-bottom: 83px;}
+	.head_com{width: 1200px;margin:0 auto;text-align: center;padding-top:90px;padding-bottom: 63px;}
 	.head_com h2{font-size:43px;color:#535353;height: 43px;line-height: 43px;}
 	.head_com span{font-size: 16px;color:#818181;padding:5px 13px;border:1px solid #535353;margin-top: 18px;display: inline-block;}
 	.shouyedingzhibtn{width: 300px;height: 50px;background-color: #ff3f68;display: flex;align-items: center;border-radius: 25px;justify-content: center}
 	.shouyedingzhibtn:hover{background-color: #ff6687;cursor: pointer;}
 	.shouyedingzhibtn span{font-size:24px;margin-left: 10px;}
-	.dingzhi{text-align: center;padding:88px 0;}
+	.dingzhi{text-align: center;padding:68px 0;}
 	.dingzhi img{display: inline-block;}
+	.live{height: 39px;background-color:#f2f4f7;width: 100%;}
 </style>

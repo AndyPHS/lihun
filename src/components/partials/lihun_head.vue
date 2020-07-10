@@ -3,7 +3,8 @@
     <div class="head flex items-center">
       <div class="w flex justify-between">
         <div class="flex justify-between items-center">
-          <img @click="goHome" class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt="">
+		  <router-link to="/"><img class="mr-3 cursor-pointer" src="../../assets/images/lihun/logo.png" alt=""></router-link>
+          
           <el-divider class="hidden md:block" direction="vertical"></el-divider>
           <span class="log_r hidden md:block">离婚协议书</span>
         </div>
@@ -505,9 +506,9 @@ export default {
 	  nav:[
 		  {name: '首页'},
 		  {name: '离婚知识'},
-		  {name: '定制我的离婚协议书'},
-		  {name: '协议书范文'},
-		  {name: '家理律所官网'},
+		  {name: '定制离婚协议书'},
+		  {name: '离婚协议书范文'},
+		  {name: '家理律所'},
 	  ]
     }
   },
@@ -636,19 +637,13 @@ export default {
 				}
 			} else if(index == 3){
 				localStorage.setItem('topins',3)
-				var isLogin = localStorage.getItem('token')
-				if (isLogin == undefined){
-					this.dialogLogin = true
-				} else {
-					// this.$router.resolve('/AgreementModel')
-					const {href} = this.$router.resolve({
-						path: '/AgreementModel',
-						params: {
-						  topins: this.topins
-						}
-					})
-					window.open(href, '_blank')
-				}
+				const {href} = this.$router.resolve({
+					path: '/AgreementModel',
+					params: {
+					  topins: this.topins
+					}
+				})
+				window.open(href, '_blank')
 			} else if (index == 4){
 				window.open('http://www.jialilaw.com/', '_blank')
 			}

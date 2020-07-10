@@ -576,7 +576,7 @@ export default {
 .moreZhiShi span{width: 194px;height: 46px;border: 1px solid #ff3f68;color: #ff3f68;text-align: center;line-height: 46px;border-radius: 23px;display: inline-block;}
 .moreZhiShi span:hover{background-color: #ff3f68;color:#fff}
 .fuwu{height:713px;width: 100%;background: url(../../../assets/images/lihun/fuwu_bg.png)no-repeat;background-size: 100% 100%;}
-.fuwu dl dt h3{font-size: 30px;color:#535353;margin:16px 0 50px}
+.fuwu dl dt h3{font-size: 30px;color:#535353;margin:16px 0 25px}
 .fuwu dl dd p{color:#535353;width: 147px;margin:0 auto;font-size: 16px;display: inherit;}
 .guanyu_min_r{width: 600px;height: 337px;background: #f2f4f7;position: relative;}
 .guanyu_min_r .guanyu_min_r_con{width: 520px;height: 207px;margin:45px auto;font-size:16px;color:#737374;text-align: left;}

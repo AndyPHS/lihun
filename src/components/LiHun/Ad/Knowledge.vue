@@ -4,11 +4,11 @@
     <div class="c_m w flex justify-between" name="top">
       <div class="c_m_l">
         <div class="">
-          <h3 class="text-22 text-left font-bold">离婚知识</h3>
-          <ul class="mt-5 zhishiul">
-            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
+          <h3 class="text-22 text-center font-bold">离婚知识</h3>
+          <ul class="mt-5 px-16 text-center ml-3 zhishiul">
+            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base mb-3 cursor-pointer leading-loose text-left">
               <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
-              <ul class="pl-5 " v-if="item.data.length>0">
+              <ul class="" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
 					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
 				</li>
@@ -18,23 +18,25 @@
         </div>
       </div>
       <div class="c_m_r text-left">
+		
         <div class="border-b pb-10 pt-16">
           <div action="" class="keyinput flex justify-between items-center">
             <input class="ml-3" v-model="keyMsg" type="text" placeholder="请输入要搜索的内容关键词" autocomplete="off" @keyup.enter="searchAction">
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(20)">协议书如何谈判</li>
-            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(21)">离婚协议常见误区</li>
-            <li class="w-1/3 text-left hover:font-bold underline cursor-pointer" @click="goKnowledgeMin(25)">离婚方式与选择</li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" @click="goKnowledgeMin(20)">协议书如何谈判</li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" @click="goKnowledgeMin(21)">离婚协议常见误区</li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" @click="goKnowledgeMin(25)">离婚方式与选择</li>
           </ul>
         </div>
         <div class="m_r_m">
           <ul v-if="!this.tableDataNull" class="min_l">
-            <li v-for="(item, index) in tableData" :key="index"  class="pb-8 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
-              <div class="py-8 flex justify-between items-center">
+            <li v-for="(item, index) in tableData" :key="index"  class="pb-6 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
+              <div class="pt-6 pb-4 flex justify-between items-center">
                 <h2 class="w-4/5 overflow-hidden hover:underline" v-html="item.title"></h2>
-                <span class="w-1/5 text-right">{{ item.createdTime }}</span>
+				<span class="w-1/8 text-sm mr-3 text-left font-thin">帮助&nbsp;<span>{{ item.view }}</span><span v-if="item.view==null ">1254</span> 人</span>
+                <!-- <span class="w-1/5 text-right">{{ item.createdTime }}</span> -->
 				<span v-if="item.description==undefined" class="w-1/5 text-right">{{ item.createdTime }}</span>
 				 
               </div>
@@ -215,18 +217,19 @@ export default {
 .all{background-color: #f2f4f7;height: auto;}
 .w{width: 1200px; margin: 0 auto;}
 .c_m{background-color: #fff;margin-top: 39px;}
-.c_m_l{width: 239px;padding:150px 0;}
+.c_m_l{width: 239px;padding:75px 0;}
 .c_m_r{width: 960px;padding-left: 65px;padding-right: 65px;border-left: 2px solid #eceff4;}
 .keyinput{width: 680px;height: 34px;border:1px solid #c9c9c9;line-height: 34px;font-size: 16px;color:#535353;margin: 0 auto;border-radius: 17px;}
 .keyinput input{height: 32px;line-height: 34px;width: 626px;border:none;}
 .keyinput input:focus{border:none;outline: none;}
 .keyinput img{display: inline-block;margin-right: 15px;}
 .c_m_r_t{width: 680px;margin:0 auto;}
+.c_m_r_t li{font-size: 14px;color:#818181}
 .m_r_m ul li{border-color: #eceff4;}
-.m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
+.m_r_m ul li h2{font-size: 18px;color: #6a6a6a;font-weight: bold;}
 .m_r_m ul li h2 em{color:red;margin-right: 3px;}
-.m_r_m ul li span{font-size: 14px;}
-.m_r_m ul li p{font-size: 15px;color: #818181;line-height: 28px;white-space: pre-wrap;text-indent: 2em;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+.m_r_m ul li span{font-size: 12px;width: 80px;}
+.m_r_m ul li p{font-size: 14px;color: #818181;line-height: 28px;white-space: pre-wrap;text-indent: 2em;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
 .m_r_m ul li p em{color:red;margin:0 3px;}
 .default_active{color:red}
 .default{color:#343434;}
@@ -237,6 +240,6 @@ export default {
 	width:1px;
 	background-color: #FFF;
 }
-.text-22{font-size: 22px;padding-left: 56px;}
-.zhishiul{padding-left: 56px;}
+.text-22{font-size: 22px;}
+/* .zhishiul{padding-left: 56px;} */
 </style>
