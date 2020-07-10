@@ -3722,9 +3722,9 @@ export default {
 .c_m_h h2{width:297px;font-size: 25px;color:#535353;font-weight: bold;}
 .c_m_h_r{width:542px;text-align: right;}
 .c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
-.c_m_h_r .help{width: 151px;height: 35px;text-align: center;line-height: 35px;font-size:16px;color:#535353;font-weight: bold;display: initial;}
+.c_m_h_r .help{width: 151px;height: 35px;text-align: center;line-height: 35px;font-size:16px;color:#535353;font-weight: bold;display: initial;text-decoration: underline;}
 .c_m_h_r span:hover{border:1px solid #ff3f68;background-color: #ff3f68;color:#fff;cursor:pointer}
-.c_m_h_r .help:hover{font-weight: bolder;text-decoration: underline;cursor: pointer;}
+.c_m_h_r .help:hover{font-weight: bolder;cursor: pointer;}
 
 .ban{width:220px !important;}
 .ban{width:100% !important;}
