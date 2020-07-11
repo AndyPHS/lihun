@@ -390,7 +390,7 @@ export default {
 		  } else  {
 			  var tel = data.data.phone
 			  this.userMsg.phone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
-			  if (data.data.name !=null) {
+			  if (data.data.name !='') {
 				  var testname = data.data.name
 				  this.userMsg.name = testname.replace(/^(.).*(.)$/,"$1**")
 			  } else {
@@ -403,8 +403,8 @@ export default {
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
 			  this.form.sex = JSON.stringify(this.userMsg.sex)
-			  localStorage.setItem('name',data.data.name)
-			  console.log(data.data.name)
+			  localStorage.setItem('name',this.userMsg.name)
+			  // console.log(data.data.name)
 		  } 
         
       })
@@ -431,20 +431,21 @@ export default {
 		  		this.fullscreenLoading = true
 		    if (data.data.status_code == 200) {
 		      this.dialogFormVisible = false
+			  
 		      this.getUserMsg()
-		  		  setTimeout(()=>{
-		  			
-		  			this.$message({
-		  			  message: '修改成功',
-		  			  type: 'success'
-		  			})
-		  			this.fullscreenLoading = false
-		  			let NewPage = '_empty' + '?time=' + new Date().getTime()/1000
-		  			// 之后将页面push进去
-		  			this.$router.push(NewPage)
-		  			// 再次返回上一页即可
-		  			this.$router.go(-1)
-		  		  },2000)
+			  setTimeout(()=>{
+				
+				this.$message({
+				  message: '修改成功',
+				  type: 'success'
+				})
+				this.fullscreenLoading = false
+				let NewPage = '_empty' + '?time=' + new Date().getTime()/1000
+				// 之后将页面push进去
+				this.$router.push(NewPage)
+				// 再次返回上一页即可
+				this.$router.go(-1)
+			  },2000)
 		  		  
 		    } else {
 		      this.$message.error(data.data.message)
