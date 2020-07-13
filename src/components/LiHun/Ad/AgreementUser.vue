@@ -379,6 +379,22 @@ export default {
 			 return email;
 		 }
 	},
+	formatName(name) {
+	    let newStr;
+	    if (name.length === 2) {
+	    newStr = name.substr(0, 1) + '*';
+	    } else if (name.length > 2) {
+	      let char = '';
+	      for (let i = 0, len = name.length - 2; i < len; i++) {
+	        char += '*';
+	      }
+	      newStr = name.substr(0, 1) + char + name.substr(-1, 1);
+	    } else {
+	      newStr = name;
+	    }
+	
+	    return newStr;
+	 },
     getUserMsg () { // 查询用户基本信息
       usersSelect().then((data) => {
 		  if (data.data.status_code == 401) {
@@ -388,11 +404,14 @@ export default {
 			  this.$message.error('账号过期，请重新登录')
 			  this.$router.replace('/')
 		  } else  {
-			  var tel = data.data.phone
-			  this.userMsg.phone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+			  if(data.data.phone !=null){
+				  var tel = data.data.phone
+				  this.userMsg.phone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+			  }
 			  if (data.data.name !='') {
 				  var testname = data.data.name
-				  this.userMsg.name = testname.replace(/^(.).*(.)$/,"$1**")
+				  this.userMsg.name = this.formatName(testname)
+				  console.log( this.userMsg.name)
 			  } else {
 				  this.userMsg.name = data.data.name
 			  }

@@ -32,21 +32,21 @@
         <el-table :data="pageInfo" stripe height="500" :header-row-style="{height:'40px'}" :row-style="{height:'40px'}">
           <el-table-column prop="id" label="ID" width="80" height="50">
           </el-table-column>
-          <el-table-column prop="name" label="用户名" width="100">
+          <el-table-column prop="name" label="用户名" width="80">
           </el-table-column>
-          <el-table-column prop="created_at" label="注册时间" width="100">
+          <el-table-column prop="created_at" label="注册时间" width="180">
           </el-table-column>
-          <el-table-column prop="name" label="手机号" width="100">
+          <el-table-column prop="phone" label="手机号" width="150">
           </el-table-column>
-          <el-table-column prop="email" label="邮箱" width="120">
+          <el-table-column prop="email" label="邮箱" width="150">
           </el-table-column>
-          <el-table-column prop="name" label="购买次数" width="80">
+          <!-- <el-table-column prop="name" label="购买次数" width="80">
           </el-table-column>
           <el-table-column prop="name" label="购买时间" width="120">
-          </el-table-column>
+          </el-table-column> -->
           <el-table-column prop="name" label="上次登录时间" width="120">
           </el-table-column>
-          <el-table-column prop="name" label="文书信息" width="100">
+          <el-table-column prop="name" label="文书信息" width="120">
             <template slot-scope="scope">
               <el-button type="success" size="mini" round @click="GoUserWenShu(scope.$index, scope.row)">详情</el-button>
             </template>
@@ -88,11 +88,21 @@ import {selectUser} from '@/api/api/AgreementRequest.js'
        tableData: Array(20).fill(item),
 	   pageInfo:[
 	    {
-	       id: '',
-	       name: '',
-	       email: '',
-	       created_at: '',
-	       updated_at: ''
+	       created_at: " ",
+	       email: " ",
+	       fid: null,
+	       id: null,
+	       last_login: null,
+	       name: " ",
+	       password: " ",
+	       phone: " ",
+	       photo: " ",
+	       qqpucount: null,
+	       remember_token: null,
+	       sex: null,
+	       status: null,
+	       type: null,
+	       updated_at: " "
 	    }
 	   ],
 	   currentPage:1, //初始页
@@ -124,10 +134,15 @@ import {selectUser} from '@/api/api/AgreementRequest.js'
          path: '/UserWenShu',
          name: 'UserWenShu',
          params: {
-           row: row
+           row: row.id,
+		   name: row.name,
+		   created_at: row.created_at,
+		   phone: row.phone,
+		   email: row.email
+		   
          }
        })
-       console.log(row)
+       // console.log(row.id)
      },
      GoUserOperate(index,row) { // 跳转用户操作历史界面
        this.$router.push({

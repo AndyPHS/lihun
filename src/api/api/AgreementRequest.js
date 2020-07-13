@@ -165,7 +165,7 @@ export const selectUser = params => {
   return axios({
     method: "get",
     dataType: 'json',
-    url: apiUrl.selectUser+'?page='+params.page,
+    url: apiUrl.selectUser+'?type=2&page='+params.page,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });
@@ -207,6 +207,26 @@ export const selectUserQuestionnaire = params => {
     method: "get",
     dataType: 'json',
     url: apiUrl.selectUserQuestionnaire + '?qid=' + params.qid + '&&status=' + params.status,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+// 查找单独用户问卷
+export const selectOnlyUserQuestionnaire = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectUserQuestionnaire + '?uid=' + params.uid + '&&status=' + params.status,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+// 查询用户日志selectUserLog
+export const selectUserLog = params => {
+  return axios({
+    method: "post",
+    dataType: 'json',
+    url: apiUrl.selectUserLog,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });

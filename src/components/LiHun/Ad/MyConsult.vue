@@ -62,16 +62,16 @@
 										</dd>
 									</dl>
 									<!-- 已完成complete 1 -->
-									<div v-if="item.complete == 1" class="w-1/3 c_m_m_m_m_r flex justify-around">
+									<div v-if="item.complete == 1" class="w-full c_m_m_m_m_r flex justify-end pr-6">
 										<span @click="DownLoadWord(item.id)" class="inline-block">下 载</span>
-										<span v-if="item.signed == 1" @click="isQianAction(item)" class="inline-block">已签订</span>
-										<span v-if="item.signed == 0 " @click="isQianAction(item)" class="inline-block">未签订</span>
+										<!-- <span v-if="item.signed == 1" @click="isQianAction(item)" class="inline-block">已签订</span>
+										<span v-if="item.signed == 0 " @click="isQianAction(item)" class="inline-block">未签订</span> -->
 									</div>
 									<!-- 未完成 -->
-									<div v-if="item.complete == 2" class="w-1/3 c_m_m_m_m_r_n flex justify-around">
+									<div v-if="item.complete == 2" class="w-full c_m_m_m_m_r_n flex justify-end pr-6">
 										<span class="inline-block">下 载</span>
-										<span v-if="item.signed ==1" class="inline-block">已签订</span>
-										<span v-if="item.signed ==0" class="inline-block">未签订</span>
+										<!-- <span v-if="item.signed ==1" class="inline-block">已签订</span>
+										<span v-if="item.signed ==0" class="inline-block">未签订</span> -->
 									</div>
 								</div>
 							</div>
@@ -109,16 +109,16 @@
 													</dd>
 												</dl>
 												<!-- 已完成complete 1 -->
-												<div v-if="$item.complete == 1" class="w-1/3 c_m_m_m_m_r flex justify-around">
+												<div v-if="$item.complete == 1" class="w-full c_m_m_m_m_r flex justify-end pr-6">
 													<span @click="DownLoadWord($item.id)" class="inline-block">下 载</span>
-													<span v-if="$item.signed == 1" @click="isQianAction($item)" class="inline-block">已签订</span>
-													<span v-if="$item.signed == 0 " @click="isQianAction($item)" class="inline-block">未签订</span>
+													<!-- <span v-if="$item.signed == 1" @click="isQianAction($item)" class="inline-block">已签订</span>
+													<span v-if="$item.signed == 0 " @click="isQianAction($item)" class="inline-block">未签订</span> -->
 												</div>
 												<!-- 未完成 -->
-												<div v-if="$item.complete == 2" class="w-1/3 c_m_m_m_m_r_n flex justify-around">
+												<div v-if="$item.complete == 2" class="w-full c_m_m_m_m_r_n flex justify-end pr-6">
 													<span class="inline-block">下 载</span>
-													<span v-if="$item.signed ==1" class="inline-block">已签订</span>
-													<span v-if="$item.signed ==0" class="inline-block">未签订</span>
+													<!-- <span v-if="$item.signed ==1" class="inline-block">已签订</span>
+													<span v-if="$item.signed ==0" class="inline-block">未签订</span> -->
 												</div>
 											</div>
 										</div>
@@ -241,7 +241,8 @@
 				reNameTitle: '',  // 新名字
 				dialogNewCopy: false, // 新建副本弹窗
 				chooseList: {
-					title: '' // 新建副本
+					title: '', // 新建副本
+					number: null
 				},
 				name: '',
 				formLabelWidth: '80px',
@@ -389,7 +390,15 @@
 			},
 			NewCopy(item, index) { // 点击新建副本按钮
 				this.dialogNewCopy = true
-				this.chooseList.title = item.title
+				this.chooseList.number = item.number +1
+				var texttitle = item.title
+				if(texttitle.indexOf("版") != -1 ) {
+					texttitle = texttitle.substring(0,texttitle.length-3);
+					this.chooseList.title = texttitle + '第'+ this.chooseList.number + '版'
+				} else {
+					this.chooseList.title = item.title + '第'+ this.chooseList.number + '版'
+				}
+				
 				localStorage.setItem('quid', item.id)
 			},
 			canceldialogNewCopy() { // 点击新建副本弹窗取消按钮

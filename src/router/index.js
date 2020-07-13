@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'       // 问题管理页面      // 关联管理页面
+const Login = () => import('@/components/LiHun/houtai/login')
 const Home = () => import('@/components/LiHun/Ad/Home') // 离婚协议书推广首页
 const MyConsult = () => import('@/components/LiHun/Ad/MyConsult')  // 我的离婚协议书
 const CustomAgreement = () => import('@/components/LiHun/Ad/CustomAgreement')  // 推广页定制我的离婚协议书
@@ -48,6 +49,7 @@ export default new Router({
   },
   routes: [
     {path: '/', name: 'Home', component: Home},
+	{path: '/login', name: 'login', component: Login},
     // 离婚协议书推广我的协议书
     {path: '/MyConsult', name: 'MyConsult', component: MyConsult},
     // 离婚协议书推广定制协议书

@@ -156,8 +156,8 @@
           <div class="el-dialog__body" id='dialogLogin'>
             <form class="el-form">
               <div class="flex mb-12 w-full items-center regist_header">
-                <span @click="dengluTabAc" :class="{'registOkbg':!this.dengluTab}">快捷登录</span>
-                <span @click="dengluTabAc" :class="{'registOkbg':this.dengluTab}">账号登录</span>
+                <span @click="dengluTabAc" :class="{'registOkbg':!this.dengluTab}" class="cursor-pointer">快捷登录</span>
+                <span @click="dengluTabAc" :class="{'registOkbg':this.dengluTab}" class="cursor-pointer">账号登录</span>
               </div>
               <div v-if="this.dengluTab == false">
                 <div class="el-form-item">

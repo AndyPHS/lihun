@@ -34,8 +34,8 @@
           <h2 class="text-center pb-4 text-bold text-25">{{ this.wenCon.title }}</h2>
 		  <div>
 			  <span class="inline-block pb-6 text-14">{{ this.wenCon.time }}</span>
-			  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-14 ml-4">阅读量 {{ this.wenCon.view }}</span>
-			  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-14 ml-4">阅读量 1245</span>
+			  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-14 ml-4">帮助 {{ this.wenCon.view }} 人</span>
+			  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-14 ml-4">帮助 1245 人</span>
 		  </div>
           
         </div>

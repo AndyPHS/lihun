@@ -13,39 +13,65 @@
       </div>
     </div>
     <div>
-      <p class="text-left ml-2 text-sm">
-        <span class="mx-1">张三</span>
-        <span>2020.05.06</span>注册，
-        手机号：<span class="mr-2">15033336666,</span>
-        邮箱：<span class="mr-2">11111111111@163.com,</span>
-        购买次数: <span>1</span>次,
-        购买时间: <span>2020.05.14</span>
+      <p class="text-left ml-2 text-sm py-3">
+        <span class="mx-1">{{ user.name }}</span>
+        <span class="ml-2">{{ user.created_at }}</span>注册，
+        手机号：<span class="mx-2">{{ user.phone }},</span>
+        邮箱：<span class="mx-2">{{ user.email }}</span>
+       <!-- 购买次数: <span>1</span>次,
+        购买时间: <span>2020.05.14</span> -->
       </p>
     </div>
-    <div>
-      <el-main>
-        <el-table :data="tableData" stripe height="500" :header-row-style="{height:'40px'}" :row-style="{height:'40px'}">
-          <el-table-column prop="date" label="ID" width="100" height="50">
-          </el-table-column>
-          <el-table-column prop="name" label="协议名称" width="200">
-          </el-table-column>
-          <el-table-column prop="address" label="协议编号" width="200">
-          </el-table-column>
-          <el-table-column prop="name" label="生成时间" width="150">
-          </el-table-column>
-          <el-table-column prop="name" label="历史版本" width="120">
-          </el-table-column>
-          <el-table-column prop="name" label="下载次数" width="80">
-          </el-table-column>
-          <el-table-column prop="name" label="签订状态" width="150">
-          </el-table-column>
-        </el-table>
-      </el-main>
-    </div>
+    
+	<div class="c_m_m">
+		<div v-if="this.userMsg.length !== 0 " class="c_m_m_m ">
+			<ul class="c_m_m_h flex justify-between items-center border-b-2">
+				<li class="w-1/5 text-center leading-loose">id</li>
+				<li class="w-1/5 text-center leading-loose">协议书名称</li>
+				<li class="w-1/5 text-center leading-loose">协议书编号</li>
+				<li class="w-1/5 text-center leading-loose">创建时间</li>
+				<li class="w-1/5 text-center leading-loose">是否完成</li>
+				<li class="w-1/5 text-center leading-loose">历史版本</li>
+			</ul>
+			<ul class="min_l">
+				<li v-for="(item, index) in userMsg" :key="index">
+					<ul class=" flex justify-between items-center border-b-2">
+						<li class="w-1/5 text-center leading-loose">{{ index }}</li>
+						<li class="w-1/5 text-center leading-loose">{{ item.title }}</li>
+						<li class="w-1/5 text-center leading-loose">{{ item.agreement_number }}</li>
+						<li class="w-1/5 text-center leading-loose">{{ item.createdTime }}</li>
+						<li class="w-1/5 text-center leading-loose"><span v-if="item.complete ==1">是</span><span v-if="item.complete ==2">否</span></li>
+						<li class="w-1/5 text-center leading-loose" ><span v-if="item.historys.length>0"  @click="checkHistory(index)" class="text-blue-400 hover\:text-blue-600 cursor-pointer">点击查看历史版本</span></li>
+					</ul>
+					<div v-if="historys == index" class="c_m_m_m_child">
+						<ul>
+							<li v-for="($item, $index) in item.historys" :key="$index">
+								<ul class="text-gray-500 flex justify-between items-center border-b-2">
+									<li class="w-1/5 text-center leading-loose">{{ $index }}</li>
+									<li class="w-1/5 text-center leading-loose">{{ $item.title }}</li>
+									<li class="w-1/5 text-center leading-loose">{{ $item.agreement_number }}</li>
+									<li class="w-1/5 text-center leading-loose">{{ $item.createdTime }}</li>
+									<li class="w-1/5 text-center leading-loose"><span v-if="$item.complete ==1">是</span><span v-if="$item.complete ==2">否</span></li>
+									<li class="w-1/5 text-center leading-loose" ></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div v-if="this.userMsg.length == 0 " class="no_consult ">
+			<div class="w py-40">
+				<img class="inline-block mb-6" src="../../../assets/images/lihun/no_consult_icon.png" alt="">
+				<h3 class="text-base text-center leading-loose">暂无协议书</h3>
+			</div>
+		</div>
+	</div>
   </div>
 </template>
 
 <script>
+import {selectOnlyUserQuestionnaire} from '@/api/api/AgreementRequest.js'
  export default{
    name: 'UserWenShu',
    data() {
@@ -58,16 +84,41 @@
        activeIndex: '2',
        phoneVal: null, // 输入手机号查找
        tableData: Array(20).fill(item),
-       row: null
+       row: null,
+	   user: {},  // 用户信息
+	   userMsg: [] ,// 用户信息
+	   historys: -1, // 历史版本
+	   // currentPage:1, //初始页
+	   // pagesize:20,    //    每页的数据
+	   // pageNum: 1, // 第几页
+	   // min: '',
      }
+   },
+   mounted () {
+	   this.getParams()
    },
    methods: {
      getParams () {
        // 取到路由带过来的参数
-       let routerParams = this.$route.params.row
+       let routerParams = this.$route.params
+	   this.user = routerParams
        // 将数据放在当前组件的数据内
-       this.row = routerParams
+       this.row = routerParams.row
+	   selectOnlyUserQuestionnaire({
+		   status: 1,
+		   uid: this.row
+	   }).then((data)=>{
+		   this.userMsg = data.data.data
+		   console.log(this.userMsg)
+	   })
      },
+	 checkHistory (index) { // 查看历史版本
+	 	if( this.historys == index ){
+	 		 this.historys = -1
+	 	} else {
+	 		this.historys = index
+	 	}
+	 },
      backUserList () {
        this.$router.push({
          path: '/UserList',
@@ -75,9 +126,7 @@
        })
      }
    },
-   mounted () {
-     this.getParams ()
-   },
+  
    watch: {
    // 监测路由变化,只要变化了就调用获取路由参数方法将数据存储本组件即可
      '$route': 'getParams'
