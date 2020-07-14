@@ -45,8 +45,8 @@
           <div class="el-dialog__body" id="dialogFormVisible">
             <form class="el-form">
               <div class="flex mb-12 w-full items-center regist_header">
-                <span :class="{'registOkbg':!this.zhuce}">1.填写注册资料</span>
-                <span :class="{'registOkbg':this.zhuce}">2.完成注册</span>
+                <span :class="{'registOkbg':!this.zhuce}" class="cursor-pointer">1.填写注册资料</span>
+                <span :class="{'registOkbg':this.zhuce}" class="cursor-pointer">2.完成注册</span>
               </div>
               <div v-if="this.zhuce">
                 <div class="el-form-item">
@@ -116,7 +116,7 @@
 				    </div> -->
 					<div class="flex items-center ml-2">
 						<!-- <el-divider class="hidden md:block" direction="vertical"></el-divider> -->
-						<span  class="inline-block ">已有账号，<span @click="goLoginAction" class="inline-block text-blue-500 hover:font-bold cursor-pointer">登录</span></span>
+						<span  class="inline-block text-gray-500">已有账号，<span @click="goLoginAction" class="inline-block text-blue-500 hover:font-bold cursor-pointer">登录</span></span>
 					</div>
                   </div>
                 </div>

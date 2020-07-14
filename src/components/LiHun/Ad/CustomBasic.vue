@@ -11,7 +11,7 @@
     		<span @click="goHome">返回首页</span>
 			<span class="ml-5" @click="returnUserList">返回文书列表</span>
 			<div class="help ml-2" @click="goAgreementHelp">协议书定制帮助</div>
-			<!-- <span @click="saveWenShu">保存</span> -->
+			<div class="help ml-2" style="width: 81px" @click="checkCaiLiao">所需材料</div>
     	  </div>
     	</div>
     </div>
@@ -296,6 +296,149 @@
 				<!-- <div>正在生成中，请稍后……</div> -->
 			</div>
           </div>
+		  <div v-if="checkcailiaoDialog" id="checkcailiaoDialog">
+			  <div id="checkcailiaoDialogmin">
+				  <img class="closecheckcailiaoDialog" src="../../../assets/images/close_icon.png" alt="" @click="closecheckcailiaoDialogac">
+				  <div class="c_m_m mx-auto">
+				  	<div>
+				  		<h2 class="c_m_m_tit">所需材料</h2>
+				  		<el-form>
+				  			<div class="ml-5">
+				  				<div class="text-lg text-left mt-8">根据您填写的信息，您与配偶
+				  					<span v-if="this.ChuShiMsg.child !='' ">生育有{{ this.ChuShiMsg.child }}个子女，</span>需要处理的夫妻共同财产为:
+				  					
+				  					
+				  				</div>
+				  				<div class="cailist flex flex-wrap">
+				  					<span class="inline" v-if="this.CommonCaiChan.fangchan">房产</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.cheliang">车辆</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.cunkuan">存款</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.licai">理财</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.gongjijin">公积金</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.baoxian">保险</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份）</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.dianpu">店铺</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋</span>
+				  					<span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span>
+				  					<span class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>
+				  					<span class="inline" v-if="this.CommonCaiChan.fangchan == false && this.CommonCaiChan.cheliang == false && this.CommonCaiChan.cunkuan == false && this.CommonCaiChan.licai == false && this.CommonCaiChan.baoxian == false && this.CommonCaiChan.guquangufen == false && this.CommonCaiChan.gupiaozhanghu == false && this.CommonCaiChan.jiajujiadian == false && this.CommonCaiChan.zhubaoshoushi == false && this.CommonCaiChan.zhuaijuan == false && this.CommonCaiChan.dianpu == false && this.CommonCaiChan.zhaijidi == false && this.ChuShiMsg.zhaiQuan == false && this.ChuShiMsg.zhaiWu == false">无</span>
+				  				</div>
+				  				<div class="text-left">为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
+				  			</div>
+				  		</el-form>
+				  		
+				  		<div class="flex flex-wrap pt-10">
+				  			<div class="tupian">
+				  				<div class="w-full tupian_tit">1.结婚证</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/jiehunzheng01.png" alt="结婚证图片">
+				  				</div>
+				  			</div>
+				  			<div class="tupian">
+				  				<div class="w-full tupian_tit">
+				  					2.身份证
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/idcard.png" alt="身份证示例图">
+				  				</div>
+				  			</div>
+				  			<div class="tupian">
+				  				<div class="w-full tupian_tit">
+				  					3.户口本
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/hukouben01.png" alt="户口本图片">
+				  				</div>
+				  			</div>
+				  			<div class="tupian">
+				  				<div class="w-full tupian_tit">
+				  					4.银行账户
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/yinhangzhanghu01.png" alt="银行账户">
+				  				</div>
+				  			</div>
+				  			<div class="tupian">
+				  				<div class="w-full tupian_tit">
+				  					5.存折
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/cunzhe01.png" alt="存折">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.house">
+				  				<div class="w-full tupian_tit">
+				  					6.房产证
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/fangchanzheng01.jpg" alt="房产证">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.house">
+				  				<div class="w-full tupian_tit">
+				  					7.房屋买卖合同
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/fangwumaimaihetong01.png" alt="房屋买卖合同">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.liCai">
+				  				<div class="w-full tupian_tit">
+				  					8.理财协议
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/licaixieyi01.jpg" alt="理财协议">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.car">
+				  				<div class="w-full tupian_tit">
+				  					9.机动车登记证
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/jidongchedengjizheng01.jpg" alt="机动车登记证">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.car">
+				  				<div class="w-full tupian_tit">
+				  					10.机动车登记证
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/jidongchexingshizheng01.jpg" alt="机动车行驶证">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.baoXian">
+				  				<div class="w-full tupian_tit">
+				  					11.保险合同
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/baoxian01.jpg" alt="保险合同">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.ChuShiMsg.child !=='' ">
+				  				<div class="w-full tupian_tit">
+				  					12.孩子出生证明
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/haizichushengzhengming01.jpg" alt="孩子出生证明">
+				  				</div>
+				  			</div>
+				  			<div class="tupian" v-if="this.CommonCaiChan.dianpu">
+				  				<div class="w-full tupian_tit">
+				  					13.营业执照
+				  				</div>
+				  				<div class="shili_img">
+				  					<img src="@/assets/images/lihun/yingyezhizhao.jpeg" alt="孩子出生证明">
+				  				</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </div>
+			  </div>
+		  </div>
         </div>
       </div>
     </div>
@@ -314,7 +457,7 @@ import {userUpdateQuestionnaire} from '@/api/api/AgreementRequest.js' // 修改�
 import {userAddSelectAnswer} from '@/api/api/AgreementRequest.js' // 添加子女或者房产等
 import {userDeleteSelectAnswer} from '@/api/api/AgreementRequest.js' // 删除子女或者房产等
 import {demoYanZheng} from '@/api/api/AgreementRequest.js' // 验证单独word demo
-
+import {getOnlyValue} from '@/api/api/AgreementRequest.js' // 获取单独问题的值
 import {outPutWord} from '@/api/api/AgreementRequest.js' // 生成数据接口
 import {regionData, CodeToText, TextToCode} from 'element-china-area-data' // 省市联动信息
 export default {
@@ -326,6 +469,7 @@ export default {
   },
   data () {
     return {
+	  checkcailiaoDialog: false, // 所需材料弹窗
 	  shengchengloading: false,
       tabPosition: 'right',
       loading: true,
@@ -440,7 +584,59 @@ export default {
           { min: 17, max: 18, message: '身份证位数不对', trigger: 'blur' }
         ]
       },
-      dialogTiShi: false
+      dialogTiShi: false,
+	  ChuShiMsgArr: [{
+	  		title: '结婚证',
+	  		title2: '(示例一)',
+	  		img: ''
+	  	},
+	  	{
+	  		title: '身份证',
+	  		title2: '(示例二)',
+	  		img: ''
+	  	},
+	  	{
+	  		title: '户口本',
+	  		title2: '(示例三)',
+	  		img: ''
+	  	},
+	  	{
+	  		title: '银行账户',
+	  		title2: '(示例四)',
+	  		img: ''
+	  	},
+	  	{
+	  		title: '存折',
+	  		title2: '(示例五)',
+	  		img: ''
+	  	}
+	  ],
+	  ChuShiMsg: {
+	  	child: '',
+	  	house: false,
+	  	car: false,
+	  	money: false,
+	  	baoXian: false,
+	  	liCai: false,
+	  	jiaDian: false,
+	  	zhaiQuan: false,
+	  	zhaiWu: false
+	  },
+	  CommonCaiChan: {
+	  	fangchan: false,
+	  	cheliang: false,
+	  	cunkuan: false,
+	  	licai: false,
+	  	gongjijin: false,
+	  	baoxian: false,
+	  	guquangufen: false,
+	  	gupiaozhanghu: false,
+	  	jiajujiadian: false,
+	  	zhubaoshoushi: false,
+	  	zhuaijuan: false,
+	  	dianpu: false,
+	  	zhaijidi: false
+	  }
     }
   },
   beforeMount () {
@@ -467,6 +663,7 @@ export default {
     this.getTeShuYueDingMsg()
   },
   mounted () {
+	this.getMsg(); // 获取初始页面的信息
 	localStorage.setItem('topins',2)
 	window.isCloseHint = true;
 	//初始化关闭
@@ -479,11 +676,20 @@ export default {
 	});
 	localStorage.setItem('topins',2)
 	window.addEventListener('scroll', this.scrollToTop)
+	document.addEventListener('mouseup', this.queryHide) // 鼠标点击空白关闭弹窗 
   },
   destroyed () {
     window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
+	queryHide (e) {
+		var checkcailiaoDialogmin_con = document.getElementById('checkcailiaoDialogmin')
+		if(checkcailiaoDialogmin_con) {
+		  if(!checkcailiaoDialogmin_con.contains(e.target)) {
+			this.checkcailiaoDialog = false
+		  }
+		}
+	},
     getBasicInformation () { // 查询双方基本信息模块数据
       returnQuestionnaireJson({'qpid': 595}).then((data) => { // 查询双方基本信息模块数据
         this.aa.BasicInformation = data.data.data
@@ -1216,7 +1422,157 @@ export default {
 	    } else {
 	      // that.btnFlag = false
 	    }
-	}
+	},
+	checkCaiLiao () { // 所需材料按钮
+		this.checkcailiaoDialog = true
+	},
+	closecheckcailiaoDialogac () { // 关闭所需材料弹窗
+		this.checkcailiaoDialog = false
+	},
+	getMsg() {
+		getOnlyValue({
+			qpid: 520, // 关联id
+			quid: Number(localStorage.getItem('quid')) //用户的问卷id
+		}).then((data) => {
+	
+			let getmodel = JSON.parse(data.data.data)
+			getmodel.forEach((item) => {
+				if (item == 1) {
+					this.ChuShiMsg.house = true
+					this.CommonCaiChan.fangchan = true
+					this.ChuShiMsgArr.push({
+						title: '房产证',
+						title2: '(示例六)',
+						img: ''
+					})
+					this.ChuShiMsgArr.push({
+						title: '房屋买卖合同',
+						title2: '(示例七)',
+						img: ''
+					})
+				} else if (item == 2) {
+					this.ChuShiMsgArr.push({
+						title: '机动车登记证',
+						title2: '(示例九)',
+						img: ''
+					})
+					this.ChuShiMsgArr.push({
+						title: '机动车行驶证',
+						title2: '(示例十)',
+						img: ''
+					})
+					this.ChuShiMsg.car = true
+					// this.ChuShiMsg.money = true
+				} else if (item == 3) {
+					this.CommonCaiChan.cunkuan = true
+				} else if (item == 4) {
+					this.ChuShiMsgArr.push({
+						title: '理财协议',
+						title2: '(示例八)',
+						img: ''
+					})
+					this.ChuShiMsg.liCai = true
+					this.CommonCaiChan.licai = true
+				} else if (item == 5) {
+					this.CommonCaiChan.gongjijin = true
+					// this.ChuShiMsg.jiaDian = true
+				} else if (item == 6) {
+					this.ChuShiMsg.baoXian = true
+					this.ChuShiMsgArr.push({
+						title: '保险合同',
+						title2: '(示例十一)',
+						img: ''
+					})
+				}
+				if (item == 1) {
+					this.CommonCaiChan.fangchan = true
+				} else if (item == 2) {
+					this.CommonCaiChan.cheliang = true
+				} else if (item == 3) {
+					this.CommonCaiChan.cunkuan = true
+				} else if (item == 4) {
+					this.CommonCaiChan.licai = true
+				} else if (item == 5) {
+					this.CommonCaiChan.gongjijin = true
+				} else if (item == 6) {
+					this.CommonCaiChan.baoxian = true
+				} else if (item == 7) {
+					this.CommonCaiChan.guquangufen = true
+				} else if (item == 8) {
+					this.CommonCaiChan.gupiaozhanghu = true
+				} else if (item == 9) {
+					this.CommonCaiChan.jiajujiadian = true
+				}
+			})
+	
+		}).catch((data) => {
+	
+		})
+		getOnlyValue({
+			qpid: 654, // 关联id
+			quid: Number(localStorage.getItem('quid')) //用户的问卷id
+		}).then((data) => {
+			let getmodel = JSON.parse(data.data.data)
+			getmodel.forEach((item) => {
+				if (item == 1) {
+					this.ChuShiMsg.zhaiQuan = true
+				} else if (item == 2) {
+					this.ChuShiMsg.zhaiWu = true
+				}
+			})
+		}).catch((data) => {
+	
+		})
+		getOnlyValue({
+			qpid: 3859, // 关联id
+			quid: Number(localStorage.getItem('quid')) //用户的问卷id
+		}).then((data) => {
+			if (data.data.data == 1) {
+				this.ChuShiMsg.child = '一'
+			} else if (data.data.data == 2) {
+				this.ChuShiMsg.child = '二'
+			} else if (data.data.data == 3) {
+				this.ChuShiMsg.child = '三'
+			} else if (data.data.data == 4) {
+				this.ChuShiMsg.child = '四'
+			} else if (data.data.data == 5) {
+				this.ChuShiMsg.child = '五'
+			} else if (data.data.data == 6) {
+				this.ChuShiMsg.child = '六'
+			} else if (data.data.data == 7) {
+				this.ChuShiMsg.child = '七'
+			}
+			if (data.data.data !== '') {
+				this.ChuShiMsgArr.push({
+					title: '孩子出生证明',
+					title2: '(示例十二)',
+					img: ''
+				})
+			}
+		}).catch((data) => {
+	
+		})
+		getOnlyValue({ // 其他财产
+			qpid: 3853, // 关联id
+			quid: Number(localStorage.getItem('quid')) //用户的问卷id
+		}).then((data) => {
+			let getmodel = JSON.parse(data.data.data)
+			getmodel.forEach((item) => {
+				if (item == 1) {
+					this.CommonCaiChan.zhubaoshoushi = true
+				} else if (item == 2) {
+					this.CommonCaiChan.zhuaijuan = true
+				} else if (item == 3) {
+					this.CommonCaiChan.dianpu = true
+				} else if (item == 4) {
+					this.CommonCaiChan.zhaijidi = true
+				}
+	
+			})
+		}).catch((data) => {
+	
+		})
+	},
   }
 }
 </script>
@@ -1226,8 +1582,8 @@ export default {
 .c_m{background-color: #fff;}
 .c_m_h{height:90px;}
 .c_m_h h2{width:356px;font-size: 25px;color:#535353;font-weight: bold;}
-.c_m_h_r{width:430px;display: flex;justify-content: space-between;}
-.c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;}
+.c_m_h_r{width:490px;display: flex;justify-content: space-between;}
+.c_m_h_r span{display: inline-block;width: 151px;height: 35px;border:1px solid #535353;text-align: center;line-height: 35px;border-radius: 18px;font-size:16px;color:#535353;font-weight: bold;cursor: pointer;}
 .c_m_h_r .help{width: 151px;height: 35px;text-align: center;line-height: 35px;font-size:16px;color:#535353;display: initial;text-decoration: underline;}
 .c_m_h_r .help:hover{font-weight: bolder;cursor: pointer;}
 /* .c_m_h_r span:last-of-type{border:1px solid #ff3f68;color:#ff3f68;} */
@@ -1271,7 +1627,7 @@ html{height: 100%;background-color: #f7fafc;}
 #alert_xieyi .queren{width:80%;text-align: center;justify-content: space-around;margin-top:80px;margin-left: 20%}
 
 #missMsgBox{width:640px;height:490px;position:fixed;top:50%;margin-top:-245px;left:50%;margin-left:-320px;z-index: 1;background: #fff}
-#missBox{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
+#missBox, #checkcailiaoDialog{width: 100vw;height: 100vh;background:rgba(0,0,0,0.5);position: fixed;top:0;left: 0;z-index: 3;}
 #missMsgBox h2{margin:30px 0;font-weight: bold;}
 #missMsgBox .queren{width:100%;justify-content: space-around;position: absolute;bottom:40px;}
 .goonwhite{width: 192px;height: 38px;border: 1px solid #ff3f68;text-align: center;margin:0 auto;line-height: 38px;font-size: 18px;color: #ff3f68;border-radius: 19px;}
@@ -1294,4 +1650,14 @@ html{height: 100%;background-color: #f7fafc;}
 		width:1px;
 		background-color: #FFF;
 	}
+#checkcailiaoDialogmin{width:910px;height:553px;margin:20px auto;overflow-y: scroll;background: #fff;position: relative;}
+.closecheckcailiaoDialog{position: absolute;top: 10px;right: 10px;cursor: pointer;display: inline;}
+.c_m_m {padding: 40px 50px;}
+.c_m_m_tit{font-size: 25px;color: #535353;width: 100%;text-align: center;font-weight: bold;}
+.shili{width: 770px;margin:0 auto;display: flex;justify-content: flex-start;}
+.tupian{width:186px;height: 158px;background:#f4f4f4;border: 1px solid #e5e4e4;border-radius: 10px;margin-right: 14px;margin-bottom:37px;}
+.tupian_tit{font-size: 20px;color: #ff3f68;text-align: center;margin:18px 0 10px}
+.shili_img {width: 129px;height: 90px;margin: 0 auto;}
+.cailist{padding-top: 34px;padding-bottom: 34px;}
+.cailist span{padding:5px 12px;background-color:#fff4f6;border:1px solid #ff3f68;color:#ff3f68;border-radius: 5px; margin-right: 17px;margin-bottom: 19px;}
 </style>

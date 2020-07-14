@@ -15,140 +15,182 @@
 		<div class="c_m w">
 			<div class="c_m_m mx-auto">
 				<div>
+					<h2 class="c_m_m_tit">所需材料</h2>
 					<el-form>
 						<div class="ml-5">
-							<div class="text-lg text-left my-2">根据您填写的信息，您与配偶
+							<div class="text-lg text-left mt-8">根据您填写的信息，您与配偶
 								<span v-if="this.ChuShiMsg.child !='' ">生育有{{ this.ChuShiMsg.child }}个子女，</span>需要处理的夫妻共同财产为:
-								<span class="inline" v-if="this.CommonCaiChan.fangchan">房产 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.cheliang">车辆 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.cunkuan">存款 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.licai">理财 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.gongjijin">公积金 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.baoxian">保险 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份） &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.dianpu">店铺 &nbsp;</span>
-								<span class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋 &nbsp;</span>
+								
+								
+							</div>
+							<div class="cailist flex flex-wrap">
+								<span class="inline" v-if="this.CommonCaiChan.fangchan">房产</span>
+								<span class="inline" v-if="this.CommonCaiChan.cheliang">车辆</span>
+								<span class="inline" v-if="this.CommonCaiChan.cunkuan">存款</span>
+								<span class="inline" v-if="this.CommonCaiChan.licai">理财</span>
+								<span class="inline" v-if="this.CommonCaiChan.gongjijin">公积金</span>
+								<span class="inline" v-if="this.CommonCaiChan.baoxian">保险</span>
+								<span class="inline" v-if="this.CommonCaiChan.guquangufen">股权（股份）</span>
+								<span class="inline" v-if="this.CommonCaiChan.gupiaozhanghu">股票账户</span>
+								<span class="inline" v-if="this.CommonCaiChan.jiajujiadian">家具家电</span>
+								<span class="inline" v-if="this.CommonCaiChan.zhubaoshoushi">珠宝首饰收藏品</span>
+								<span class="inline" v-if="this.CommonCaiChan.zhuaijuan">债券</span>
+								<span class="inline" v-if="this.CommonCaiChan.dianpu">店铺</span>
+								<span class="inline" v-if="this.CommonCaiChan.zhaijidi">宅基地房屋</span>
 								<span class="inline" v-if="this.ChuShiMsg.zhaiQuan">债权</span>
 								<span class="inline" v-if="this.ChuShiMsg.zhaiWu">债务</span>
-								<span class="inline" v-if="!this.CommonCaiChan.fangchan && this.CommonCaiChan.cheliang && this.CommonCaiChan.cunkuan && this.CommonCaiChan.licai && this.CommonCaiChan.baoxian && this.CommonCaiChan.guquangufen && this.CommonCaiChan.gupiaozhanghu && this.CommonCaiChan.jiajujiadian && this.CommonCaiChan.zhubaoshoushi && this.CommonCaiChan.zhuaijuan && this.CommonCaiChan.dianpu && this.CommonCaiChan.zhaijidi && this.ChuShiMsg.zhaiQuan && this.ChuShiMsg.zhaiWu">无</span>.为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：
+								<span class="inline" v-if="this.CommonCaiChan.fangchan == false && this.CommonCaiChan.cheliang == false && this.CommonCaiChan.cunkuan == false && this.CommonCaiChan.licai == false && this.CommonCaiChan.baoxian == false && this.CommonCaiChan.guquangufen == false && this.CommonCaiChan.gupiaozhanghu == false && this.CommonCaiChan.jiajujiadian == false && this.CommonCaiChan.zhubaoshoushi == false && this.CommonCaiChan.zhuaijuan == false && this.CommonCaiChan.dianpu == false && this.CommonCaiChan.zhaijidi == false && this.ChuShiMsg.zhaiQuan == false && this.ChuShiMsg.zhaiWu == false">无</span>
 							</div>
-							<div>
+							<!-- <div>
 								<div class="w-full mx-auto py-10">
 									<ul class="shili flex flex-wrap">
 										<li class="lis_red" v-for="(item, index) in this.ChuShiMsgArr" :key="index">{{index+1}}、{{ item.title }}<span class="">{{ item.title2 }}</span></li>
 									</ul>
 								</div>
-							</div>
-							<div class="text-lg clear-both text-left py-2">
-								协议定制共有基本信息、婚姻状况、子女抚养、财产分割、债权债务、特殊约定六个板块，预计耗时20分钟，请您安排好时间。
-							</div>
+							</div> -->
+							<div class="text-left">为了更高效地为您定制专属协议，建议您在填写前先准备好下列材料：</div>
 						</div>
 					</el-form>
-					<div class="my-8">
-						<div class="w-40 mx-auto">
-							<div class="dingzhi" @click="NextPage">
-								开始定制
-							</div>
-						</div>
-					</div>
-					<div class="flex justify-between flex-wrap pt-10">
-						<div class="w-1/2 text-left mb-8 px-4">
-							<div class="w-full mb-2">示例一（结婚证）：</div>
+					
+					<div class="flex flex-wrap pt-10">
+						<div class="tupian">
+							<div class="w-full tupian_tit">1.结婚证</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/jiehunzheng01.png" alt="结婚证图片">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4">
-							<div class="w-full mb-2">
-								示例二（身份证）：
+						<div class="tupian">
+							<div class="w-full tupian_tit">
+								2.身份证
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/idcard.png" alt="身份证示例图">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4">
-							<div class="w-full mb-2">
-								示例三（户口本）：
+						<div class="tupian">
+							<div class="w-full tupian_tit">
+								3.户口本
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/hukouben01.png" alt="户口本图片">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4">
-							<div class="w-full mb-2">
-								示例四（银行账户）：
+						<div class="tupian">
+							<div class="w-full tupian_tit">
+								4.银行账户
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/yinhangzhanghu01.png" alt="银行账户">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4">
-							<div class="w-full mb-2">
-								示例五（存折）：
+						<div class="tupian">
+							<div class="w-full tupian_tit">
+								5.存折
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/cunzhe01.png" alt="存折">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.house">
-							<div class="w-full mb-2">
-								示例六（房产证）：
+						<div class="tupian" v-if="this.ChuShiMsg.house">
+							<div class="w-full tupian_tit">
+								6.房产证
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/fangchanzheng01.jpg" alt="房产证">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.house">
-							<div class="w-full mb-2">
-								示例七（房屋买卖合同）：
+						<div class="tupian" v-if="this.ChuShiMsg.house">
+							<div class="w-full tupian_tit">
+								7.房屋买卖合同
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/fangwumaimaihetong01.png" alt="房屋买卖合同">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.liCai">
-							<div class="w-full mb-2">
-								示例八（理财协议）：
+						<div class="tupian" v-if="this.ChuShiMsg.liCai">
+							<div class="w-full tupian_tit">
+								8.理财协议
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/licaixieyi01.jpg" alt="理财协议">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.car">
-							<div class="w-full mb-2">
-								示例九（机动车登记证）：
+						<div class="tupian" v-if="this.ChuShiMsg.car">
+							<div class="w-full tupian_tit">
+								9.机动车登记证
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/jidongchedengjizheng01.jpg" alt="机动车登记证">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.car">
-							<div class="w-full mb-2">
-								示例十（机动车行驶证）：
+						<div class="tupian" v-if="this.ChuShiMsg.car">
+							<div class="w-full tupian_tit">
+								10.机动车登记证
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/jidongchexingshizheng01.jpg" alt="机动车行驶证">
 							</div>
 						</div>
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.baoXian">
-							<div class="w-full mb-2">
-								示例十一（保险合同）：
+						<div class="tupian" v-if="this.ChuShiMsg.baoXian">
+							<div class="w-full tupian_tit">
+								11.保险合同
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/baoxian01.jpg" alt="保险合同">
 							</div>
 						</div>
 
-						<div class="w-1/2 text-left mb-8 px-4" v-if="this.ChuShiMsg.child !=='' ">
-							<div class="w-full mb-2">
-								示例十二（孩子出生证明）：
+						<div class="tupian" v-if="this.ChuShiMsg.child !=='' ">
+							<div class="w-full tupian_tit">
+								12.孩子出生证明
 							</div>
 							<div class="shili_img">
 								<img src="@/assets/images/lihun/haizichushengzhengming01.jpg" alt="孩子出生证明">
+							</div>
+						</div>
+						<div class="tupian" v-if="this.CommonCaiChan.dianpu">
+							<div class="w-full tupian_tit">
+								13.营业执照
+							</div>
+							<div class="shili_img">
+								<img src="@/assets/images/lihun/yingyezhizhao.jpeg" alt="孩子出生证明">
+							</div>
+						</div>
+					</div>
+					<div class="bankuai">
+						<h2>协议定制共有六个板块，预计耗时20分钟。</h2>
+						<p>定制过程中，系统会自动保存您填写的信息。</p>
+						<ul>
+							<li>
+								<img src="../../../assets/images/lihun/jibenxinxi.png" alt="">
+								<h6>基本信息</h6>
+							</li>
+							<li>
+								<img src="../../../assets/images/lihun/hunyinzhuangkuang.png" alt="">
+								<h6>婚姻状况</h6>
+							</li>
+							<li>
+								<img src="../../../assets/images/lihun/zinvfuyang.png" alt="">
+								<h6>子女抚养</h6>
+							</li>
+							<li>
+								<img src="../../../assets/images/lihun/caichanfenge.png" alt="">
+								<h6>财产分割</h6>
+							</li>
+							<li>
+								<img src="../../../assets/images/lihun/zhaiquanzhaiwu.png" alt="">
+								<h6>债权债务</h6>
+							</li>
+							<li>
+								<img src="../../../assets/images/lihun/teshuyueding.png" alt="">
+								<h6>特殊约定</h6>
+							</li>
+						</ul>
+					</div>
+					<div class="my-8">
+						<div class="dingzhi_btn mx-auto">
+							<div class="dingzhi" @click="NextPage">
+								开始定制我的协议
 							</div>
 						</div>
 					</div>
@@ -462,6 +504,7 @@
 	.c_m_m {
 		padding: 40px 100px;
 	}
+	.c_m_m_tit{font-size: 25px;color: #535353;width: 100%;text-align: center;font-weight: bold;}
 	.shili{width: 770px;margin:0 auto;display: flex;justify-content: flex-start;}
 	.lis_red {
 		color: #ff3f68 ;
@@ -492,10 +535,21 @@
 	.dingzhi:hover{
 		background-color: #ff6687;
 	}
-
+	.tupian{width:186px;height: 158px;background:#f4f4f4;border: 1px solid #e5e4e4;border-radius: 10px;margin-right: 14px;margin-bottom:37px;}
+	.tupian_tit{font-size: 20px;color: #ff3f68;text-align: center;margin:18px 0 10px}
 	.shili_img {
-		width: 490px;
-		height: 320px;
+		width: 129px;
+		height: 90px;
 		margin: 0 auto;
 	}
+	.cailist{padding-top: 34px;padding-bottom: 34px;}
+	.cailist span{padding:5px 12px;background-color:#fff4f6;border:1px solid #ff3f68;color:#ff3f68;border-radius: 5px; margin-right: 17px;margin-bottom: 19px;}
+	.bankuai{width: 760px;margin:0 auto;}
+	.bankuai h2{font-size: ;color:#ff5c7e;font-size: 24px;font-weight: bold;padding-top:23px}
+	.bankuai p{font-size: 16px;color: #6a6a6a;margin-top: 10px;}
+	.bankuai ul{display: flex;justify-content: space-between;margin: 60px auto;}
+	.bankuai ul li{width:110px;height: 100px;background-color:#f4f4f4;color:#535353;border:1px solid #e5e5e5;border-radius: 10px;}
+	.bankuai ul li img{display: inline;margin:20px 0 15px}
+	.bankuai ul li h6{text-align: center;font-size:19px;color: #535353;font-weight: bold;}
+	.dingzhi_btn{width: 192px;}
 </style>

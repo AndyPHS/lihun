@@ -23,7 +23,7 @@
 						<div class="c_m_m_h_r w-1/2 flex justify-around items-center">
 							<span class="w-1/3 inline-block text-center font-bold">版本</span>
 							<span class="w-1/3 inline-block text-center font-bold">状态</span>
-							<span class="w-1/3 inline-block text-center font-bold">操作</span>
+							<span class="w-1/3 inline-block text-right pr-8 font-bold">操作</span>
 						</div>
 					</div>
 					<ul class="min_l">
