@@ -37,6 +37,9 @@
         <el-form-item label="文章简介" prop="description">
           <el-input type="textarea" v-model="ruleForm.description"></el-input>
         </el-form-item>
+		<el-form-item label="文章来源" prop="source">
+		  <el-input  v-model="ruleForm.source"></el-input>
+		</el-form-item>
         <el-form-item label="是否置顶" prop="topping">
           <el-radio-group v-model="ruleForm.topping">
             <el-radio label="1">是</el-radio>
@@ -98,7 +101,8 @@ export default{
         content: '',
         faId: null,  // 分类ID
         topping: '', // 置顶 1置顶0取消
-		view: null  // 文章阅读数量
+		view: null  ,// 文章阅读数量
+		source: ''  // 文章来源
       },
       articleId: null,
       rules: {
@@ -147,6 +151,7 @@ export default{
           this.ruleForm.description = data.data.data.description;
           this.ruleForm.faId = data.data.data.faId;
 		  this.ruleForm.view = data.data.data.view;
+		  this.ruleForm.source = data.data.data.source;
           this.ruleForm.topping = JSON.stringify(data.data.data.topping);
           // this.ruleForm.content = data.data.data.content;
           this.$refs.ue.setUEContent(data.data.data.content)
@@ -222,7 +227,8 @@ export default{
           content: this.ruleForm.content,
           faId: this.ruleForm.faId,  // 分类ID
           topping: this.ruleForm.topping ,//
-		  view: this.ruleForm.view
+		  view: this.ruleForm.view,
+		  source: this.ruleForm.source
         }).then((data) => {
           if(data.data.status_code == 200){
             this.$message({
