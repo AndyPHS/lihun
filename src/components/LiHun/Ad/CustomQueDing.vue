@@ -8,7 +8,7 @@
 			  </h2>
 			  <div class="c_m_h_r">
 				<span @click="goHome">返回首页</span>
-			    <span class="ml-5" @click="goAgreementHelp">协议书定制帮助</span>
+			    <div class="help ml-5" @click="goAgreementHelp">协议书定制帮助</div>
 			  </div>
 			</div>
 		</div>
@@ -552,4 +552,6 @@
 	.bankuai ul li img{display: inline;margin:20px 0 15px}
 	.bankuai ul li h6{text-align: center;font-size:19px;color: #535353;font-weight: bold;}
 	.dingzhi_btn{width: 192px;}
+	.c_m_h_r .help{width: 151px;height: 35px;text-align: center;line-height: 35px;font-size:16px;color:#535353;display: initial;text-decoration: underline;}
+	.c_m_h_r .help:hover{font-weight: bolder;cursor: pointer;}
 </style>

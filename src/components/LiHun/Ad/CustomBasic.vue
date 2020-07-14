@@ -1650,7 +1650,7 @@ html{height: 100%;background-color: #f7fafc;}
 		width:1px;
 		background-color: #FFF;
 	}
-#checkcailiaoDialogmin{width:910px;height:553px;margin:20px auto;overflow-y: scroll;background: #fff;position: relative;}
+#checkcailiaoDialogmin{width:910px;height:553px;margin:80px auto;overflow-y: scroll;background: #fff;position: relative;}
 .closecheckcailiaoDialog{position: absolute;top: 10px;right: 10px;cursor: pointer;display: inline;}
 .c_m_m {padding: 40px 50px;}
 .c_m_m_tit{font-size: 25px;color: #535353;width: 100%;text-align: center;font-weight: bold;}
