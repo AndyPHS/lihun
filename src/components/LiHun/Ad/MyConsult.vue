@@ -68,7 +68,7 @@
 										<span v-if="item.signed == 0 " @click="isQianAction(item)" class="inline-block">未签订</span> -->
 									</div>
 									<!-- 未完成 -->
-									<div v-if="item.complete == 2" class="w-full c_m_m_m_m_r_n flex justify-end pr-6">
+									<div v-if="item.complete == 2" class="w-1/3 c_m_m_m_m_r_n flex justify-end pr-6">
 										<span class="inline-block">下 载</span>
 										<!-- <span v-if="item.signed ==1" class="inline-block">已签订</span>
 										<span v-if="item.signed ==0" class="inline-block">未签订</span> -->
@@ -115,7 +115,7 @@
 													<span v-if="$item.signed == 0 " @click="isQianAction($item)" class="inline-block">未签订</span> -->
 												</div>
 												<!-- 未完成 -->
-												<div v-if="$item.complete == 2" class="w-full c_m_m_m_m_r_n flex justify-end pr-6">
+												<div v-if="$item.complete == 2" class="w-1/3 c_m_m_m_m_r_n flex justify-end pr-6">
 													<span class="inline-block">下 载</span>
 													<!-- <span v-if="$item.signed ==1" class="inline-block">已签订</span>
 													<span v-if="$item.signed ==0" class="inline-block">未签订</span> -->
