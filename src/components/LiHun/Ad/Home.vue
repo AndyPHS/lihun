@@ -3,25 +3,6 @@
     <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
 	<div class="home">
 		<el-carousel :interval="5000" arrow="always" height="589px">
-		  <el-carousel-item>
-			<div class="swiper01 swiperCommon">
-			  <div class="w flex justify-between items-center swi">
-				<div class="swiper01_min">
-				  <p>自主操作，私密定制</p>
-				  <h2 class="font-thin">资深律师团队精心研发</h2>
-				  <div>
-					<div @click="goDingZhi" class="shouyedingzhibtn">
-						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-						<span class="inline-block text-white">免费定制离婚协议书</span>
-					</div>
-				  </div>
-				</div>
-				<div>
-				  <img src="../../../assets/images/lihun/swiper01_img01.png" alt="">
-				</div>
-			  </div>
-			</div>
-		  </el-carousel-item>
 		  <el-carousel-item >
 			<div class="swiper02 swiperCommon">
 			  <div class="w flex justify-between items-center swi">
@@ -75,6 +56,25 @@
 				</div>
 				<div>
 				  <img style="margin-left: 100px;" src="../../../assets/images/lihun/swiper04_img04.png" alt="">
+				</div>
+			  </div>
+			</div>
+		  </el-carousel-item>
+		  <el-carousel-item>
+			<div class="swiper01 swiperCommon">
+			  <div class="w flex justify-between items-center swi">
+				<div class="swiper01_min">
+				  <p>自主操作，私密定制</p>
+				  <h2 class="font-thin">资深律师团队精心研发</h2>
+				  <div>
+					<div @click="goDingZhi" class="shouyedingzhibtn">
+						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+						<span class="inline-block text-white">免费定制离婚协议书</span>
+					</div>
+				  </div>
+				</div>
+				<div>
+				  <img src="../../../assets/images/lihun/swiper01_img01.png" alt="">
 				</div>
 			  </div>
 			</div>
