@@ -682,19 +682,12 @@ export default {
 				}
 			}else if(index == 3){
 				localStorage.setItem('topins',3)
-				var isLogin = localStorage.getItem('token')
-				if (isLogin == undefined){
-					this.dialogLogin = true
-				} else {
-					// this.$router.resolve('/AgreementModel')
-					const {href} = this.$router.replace({
-						path: '/AgreementModel',
-						params: {
-						  topins: this.topins
-						}
-					})
-					// window.open(href, '_blank')
-				}
+				const {href} = this.$router.replace({
+					path: '/AgreementModel',
+					params: {
+					  topins: this.topins
+					}
+				})
 			} else if (index == 4){
 				window.open('http://www.jialilaw.com/', '_blank')
 			}
