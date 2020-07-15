@@ -92,7 +92,7 @@
                     <span class="spa hover:underline" v-show="registYan" @click="getYan">获取验证码</span>
                     <span v-show="!registYan" class="spa" type="primary" :loading="registYanType">已发送({{ count }}s）</span>
                   </div>
-                  <div class="el-form-item__content flex justify-end mt-2 underline text-blue-300 my-4">
+                  <div class="el-form-item__content flex justify-end mt-2 my-4">
 					<!-- <div>
 					   <el-popover
 						 placement="right"
@@ -116,7 +116,7 @@
 				    </div> -->
 					<div class="flex items-center ml-2">
 						<!-- <el-divider class="hidden md:block" direction="vertical"></el-divider> -->
-						<span  class="inline-block text-gray-500">已有账号，<span @click="goLoginAction" class="inline-block text-blue-500 hover:font-bold cursor-pointer">登录</span></span>
+						<span  class="inline-block text-gray-500">已有账号，<span @click="goLoginAction" class="inline-block underline text-blue-500 hover:font-bold cursor-pointer">登录</span></span>
 					</div>
                   </div>
                 </div>
