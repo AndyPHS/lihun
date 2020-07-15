@@ -221,6 +221,26 @@ export const selectOnlyUserQuestionnaire = params => {
     data: params
   });
 };
+// 新增用户问卷时间
+export const addQuestionnaireLog = params => {
+  return axios({
+    method: "post",
+    dataType: 'json',
+    url: apiUrl.addQuestionnaireLog + localStorage.getItem('quid'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+// 结束用户问卷时间
+export const stopQuestionnaireLog = params => {
+  return axios({
+    method: "post",
+    dataType: 'json',
+    url: apiUrl.stopQuestionnaireLog + localStorage.getItem('uqlId'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
 // 查询用户日志selectUserLog
 export const selectUserLog = params => {
   return axios({

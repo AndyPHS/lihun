@@ -203,9 +203,7 @@
 <script>
 	// import lihun_head from '../../partials/lihun_head.vue'
 	import lihun_bottom_com from '../../partials/lihun_bottom_com.vue'
-	import {
-		getOnlyValue
-	} from '@/api/api/AgreementRequest.js' // 获取单独问题的值
+	import {getOnlyValue, addQuestionnaireLog} from '@/api/api/AgreementRequest.js' // 获取单独问题的值
 	// import {answer} from '@/api/api/requestLogin.js'
 	export default {
 		name: 'CustomQueDing',
@@ -421,6 +419,10 @@
 				})
 			},
 			NextPage() {
+				addQuestionnaireLog().then((data) => {
+					console.log(data.data.data)
+				    localStorage.setItem('uqlId',data.data.data)	
+				})
 				this.$router.replace("/CustomBasic");
 			},
 			goHome () {

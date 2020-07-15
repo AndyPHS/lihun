@@ -175,6 +175,39 @@
               ></el-input>
             </el-form-item>
           </div>
+		  <!--输入框-身份证-->
+		  <div v-if="$$item.type == 'input' && $$item.input_type=='IdCard'">
+		    <el-form-item label="" class="text-base">
+		      <div>
+		        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$item.isRequired==false ">选填</span>{{ $$item.title }}</label>
+		        <el-tooltip  v-if="$$item.description !='' && $$item.description !=undefined  && $$item.description != null" placement="right" effect="light">
+		          <div slot="content">
+		            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+		            <div id="caseMsg" class="h-auto w-full" v-html="$$item.description" ></div>
+		          </div>
+		          <i class="el-icon-question"></i>
+		        </el-tooltip>
+		        <el-popover
+		          v-if="$$item.imgDate !=[] && $$item.imgDate !=undefined  && $$item.imgDate != null"
+		          placement="right"
+		          width="400"
+		          trigger="hover">
+		          <div  v-for="(imgModel, imgModelIndex) in $$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+		             <img :src="imgModel">
+		          </div>
+		          <i  slot="reference" class="el-icon-picture"></i>
+		        </el-popover>
+		      </div>
+		      <el-input
+		        type="text"
+		        class="ban"
+		        v-model="$$item.answer"
+		        size="small"
+		        :placeholder="$$item.placeholder"
+		        @blur="userAddAnswerAction($$item)"
+		      ></el-input>
+		    </el-form-item>
+		  </div>
           <!--输入框-数字类型（类似身份证号、金额）-->
           <div v-if="$$item.type == 'input' && $$item.input_type=='number'">
             <el-form-item label="" class="text-base">
@@ -435,6 +468,39 @@
                     ></el-input>
                   </el-form-item>
                 </div>
+				<!--输入框-身份证-->
+				<div v-if="$$$item.type == 'input' && $$$item.input_type=='IdCard'">
+				  <el-form-item label="" class="text-base">
+				    <div>
+				      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
+				      <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right" effect="light">
+				        <div slot="content">
+				          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+				          <div id="caseMsg" class="h-auto w-full" v-html="$$$item.description"></div>
+				        </div>
+				        <i class="el-icon-question"></i>
+				      </el-tooltip>
+				      <el-popover
+				        v-if="$$$item.imgDate !=[] && $$$item.imgDate !=undefined  && $$$item.imgDate != null"
+				        placement="right"
+				        width="400"
+				        trigger="hover">
+				        <div  v-for="(imgModel, imgModelIndex) in $$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+				           <img :src="imgModel">
+				        </div>
+				        <i  slot="reference" class="el-icon-picture"></i>
+				      </el-popover>
+				    </div>
+				    <el-input
+				      type="text"
+				      class="ban"
+				      v-model="$$$item.answer"
+				      size="small"
+				      :placeholder="$$$item.placeholder"
+				      @blur="userAddAnswerAction($$$item)"
+				    ></el-input>
+				  </el-form-item>
+				</div>
                 <!-- 省市三级联动 -->
                 <div v-if="$$$item.type == 'select_city'">
                   <el-form-item label="">
@@ -561,6 +627,39 @@
                             ></el-input>
                           </el-form-item>
                         </div>
+						<!--输入框-身份证-->
+						<div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='IdCard'">
+						  <el-form-item label="" class="text-base">
+						    <div>
+						      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
+						      <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right" effect="light">
+						        <div slot="content">
+						          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						          <div id="caseMsg" class="h-auto w-full" v-model="$$$$$item.description"></div>
+						        </div>
+						        <i class="el-icon-question"></i>
+						      </el-tooltip>
+						      <el-popover
+						        v-if="$$$$$item.imgDate !=[] && $$$$$item.imgDate !=undefined  && $$$$$item.imgDate != null"
+						        placement="right"
+						        width="400"
+						        trigger="hover">
+						        <div  v-for="(imgModel, imgModelIndex) in $$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						           <img :src="imgModel">
+						        </div>
+						        <i  slot="reference" class="el-icon-picture"></i>
+						      </el-popover>
+						    </div>
+						    <el-input
+						      type="text"
+						      class="ban"
+						      v-model="$$$$$item.answer"
+						      size="small"
+						      :placeholder="$$$$$item.placeholder"
+						      @blur="userAddAnswerAction($$$$$item)"
+						    ></el-input>
+						  </el-form-item>
+						</div>
                         <!-- 银行卡 -->
                         <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='BankCard'">
                           <el-form-item label="" class="text-base">
@@ -1026,6 +1125,39 @@
                           ></el-input>
                         </el-form-item>
                       </div>
+					  <!--输入框-身份证-->
+					  <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+					    <el-form-item label="" class="text-base">
+					      <div>
+					        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+					        <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+					          <div slot="content">
+					            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+					            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
+					          </div>
+					          <i class="el-icon-question"></i>
+					        </el-tooltip>
+					        <el-popover
+					          v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+					          placement="right"
+					          width="400"
+					          trigger="hover">
+					          <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+					             <img :src="imgModel">
+					          </div>
+					          <i  slot="reference" class="el-icon-picture"></i>
+					        </el-popover>
+					      </div>
+					      <el-input
+					        type="text"
+					        class="ban"
+					        v-model="$$$$item.answer"
+					        size="small"
+					        :placeholder="$$$$item.placeholder"
+					        @blur="userAddAnswerAction($$$$item)"
+					      ></el-input>
+					    </el-form-item>
+					  </div>
                       <!-- 省市三级联动 -->
                       <div v-if="$$$$item.type == 'select_city'">
                         <el-form-item label="">
@@ -1551,6 +1683,39 @@
                           ></el-input>
                         </el-form-item>
                       </div>
+					  <!--输入框-身份证-->
+					  <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+					    <el-form-item label="" class="text-base">
+					      <div>
+					        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+					        <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+					          <div slot="content">
+					            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+					            <div id="caseMsg" class="h-auto w-full" v-model="$$$$item.description"></div>
+					          </div>
+					          <i class="el-icon-question"></i>
+					        </el-tooltip>
+					        <el-popover
+					          v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+					          placement="right"
+					          width="400"
+					          trigger="hover">
+					          <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+					             <img :src="imgModel">
+					          </div>
+					          <i  slot="reference" class="el-icon-picture"></i>
+					        </el-popover>
+					      </div>
+					      <el-input
+					        type="text"
+					        class="ban"
+					        v-model="$$$$item.answer"
+					        size="small"
+					        :placeholder="$$$$item.placeholder"
+					        @blur="userAddAnswerAction($$$$item)"
+					      ></el-input>
+					    </el-form-item>
+					  </div>
                       <!-- 省市三级联动 -->
                       <div v-if="$$$$item.type == 'select_city'">
                         <el-form-item label="">
@@ -2141,6 +2306,39 @@
                       ></el-input>
                     </el-form-item>
                   </div>
+				  <!--输入框-身份证-->
+				  <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+				    <el-form-item label="" class="text-base">
+				      <div>
+				        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+				        <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+				          <div slot="content">
+				            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+				            <div id="caseMsg" class="h-auto w-full" v-html="$$$$item.description"></div>
+				          </div>
+				          <i class="el-icon-question"></i>
+				        </el-tooltip>
+				        <el-popover
+				          v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+				          placement="right"
+				          width="400"
+				          trigger="hover">
+				          <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+				             <img :src="imgModel">
+				          </div>
+				          <i  slot="reference" class="el-icon-picture"></i>
+				        </el-popover>
+				      </div>
+				      <el-input
+				        type="text"
+				        class="ban"
+				        v-model="$$$$item.answer"
+				        size="small"
+				        :placeholder="$$$$item.placeholder"
+				        @blur="userAddAnswerAction($$$$item)"
+				      ></el-input>
+				    </el-form-item>
+				  </div>
                   <!-- 银行卡 -->
                   <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='BankCard'">
                     <el-form-item label="" class="text-base">
@@ -2332,6 +2530,39 @@
                             ></el-input>
                           </el-form-item>
                         </div>
+						<!-- 输入框身份证 -->
+						<div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='IdCard'">
+						  <el-form-item label="" class="text-base">
+						    <div>
+						      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
+						      <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right" effect="light">
+						        <div slot="content">
+						          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						          <div id="caseMsg" class="h-auto w-full" v-html="$$$$$item.description"></div>
+						        </div>
+						        <i class="el-icon-question"></i>
+						      </el-tooltip>
+						      <el-popover
+						        v-if="$$$$$item.imgDate !=[] && $$$$$item.imgDate !=undefined  && $$$$$item.imgDate != null"
+						        placement="right"
+						        width="400"
+						        trigger="hover">
+						        <div  v-for="(imgModel, imgModelIndex) in $$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						           <img :src="imgModel">
+						        </div>
+						        <i  slot="reference" class="el-icon-picture"></i>
+						      </el-popover>
+						    </div>
+						    <el-input
+						      type="text"
+						      class="ban"
+						      v-model="$$$$$item.answer"
+						      size="small"
+						      :placeholder="$$$$$item.placeholder"
+						      @blur="userAddAnswerAction($$$$$item)"
+						    ></el-input>
+						  </el-form-item>
+						</div>
                         <!-- 手机号 -->
                         <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='PhoneNum'">
                           <el-form-item label="" class="text-base">
@@ -2754,6 +2985,39 @@
                               ></el-input>
                             </el-form-item>
                           </div>
+						  <!-- 输入框身份证 -->
+						  <div v-if="$$$$$$item.type == 'input' && $$$$$$item.input_type=='IdCard'">
+						    <el-form-item label="" class="text-base">
+						      <div>
+						        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
+						        <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right" effect="light">
+						          <div slot="content">
+						            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						            <div id="caseMsg" class="h-auto w-full" v-html="$$$$$$item.description"></div>
+						          </div>
+						          <i class="el-icon-question"></i>
+						        </el-tooltip>
+						        <el-popover
+						          v-if="$$$$$$item.imgDate !=[] && $$$$$$item.imgDate !=undefined  && $$$$$$item.imgDate != null"
+						          placement="right"
+						          width="400"
+						          trigger="hover">
+						          <div  v-for="(imgModel, imgModelIndex) in $$$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						             <img :src="imgModel">
+						          </div>
+						          <i  slot="reference" class="el-icon-picture"></i>
+						        </el-popover>
+						      </div>
+						      <el-input
+						        type="text"
+						        class="ban"
+						        v-model="$$$$$$item.answer"
+						        size="small"
+						        :placeholder="$$$$$$item.placeholder"
+						        @blur="userAddAnswerAction($$$$$$item)"
+						      ></el-input>
+						    </el-form-item>
+						  </div>
                           <!-- 银行卡类型 -->
                           <div v-if="$$$$$$item.type == 'input' && $$$$$$item.input_type=='BankCard'">
                             <el-form-item label="" class="text-base">
@@ -3365,6 +3629,39 @@
                     ></el-input>
                   </el-form-item>
                 </div>
+				<!--输入框-身份证-->
+				<div v-if="$$$item.type == 'input' && $$$item.input_type=='IdCard'">
+				  <el-form-item label="" class="text-base">
+				    <div>
+				      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
+				      <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right" effect="light">
+				        <div slot="content">
+				          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+				          <div id="caseMsg" class="h-auto w-full" v-html="$$$item.description"></div>
+				        </div>
+				        <i class="el-icon-question"></i>
+				      </el-tooltip>
+				      <el-popover
+				        v-if="$$$item.imgDate !=[] && $$$item.imgDate !=undefined  && $$$item.imgDate != null"
+				        placement="right"
+				        width="400"
+				        trigger="hover">
+				        <div  v-for="(imgModel, imgModelIndex) in $$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+				           <img :src="imgModel">
+				        </div>
+				        <i  slot="reference" class="el-icon-picture"></i>
+				      </el-popover>
+				    </div>
+				    <el-input
+				      type="text"
+				      class="ban"
+				      v-model="$$$item.answer"
+				      size="small"
+				      :placeholder="$$$item.placeholder"
+				      @blur="userAddAnswerAction($$$item)"
+				    ></el-input>
+				  </el-form-item>
+				</div>
                 <!-- 省市三级联动 -->
                 <div v-if="$$$item.type == 'select_city'">
                   <el-form-item label="">
@@ -3491,6 +3788,39 @@
                             ></el-input>
                           </el-form-item>
                         </div>
+						<!--输入框-身份证-->
+						<div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='IdCard'">
+						  <el-form-item label="" class="text-base">
+						    <div>
+						      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
+						      <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right" effect="light">
+						        <div slot="content">
+						          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						          <div id="caseMsg" class="h-auto w-full" v-html="$$$$$item.description"></div>
+						        </div>
+						        <i class="el-icon-question"></i>
+						      </el-tooltip>
+						      <el-popover
+						        v-if="$$$$$item.imgDate !=[] && $$$$$item.imgDate !=undefined  && $$$$$item.imgDate != null"
+						        placement="right"
+						        width="400"
+						        trigger="hover">
+						        <div  v-for="(imgModel, imgModelIndex) in $$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						           <img :src="imgModel">
+						        </div>
+						        <i  slot="reference" class="el-icon-picture"></i>
+						      </el-popover>
+						    </div>
+						    <el-input
+						      type="text"
+						      class="ban"
+						      v-model="$$$$$item.answer"
+						      size="small"
+						      :placeholder="$$$$$item.placeholder"
+						      @blur="userAddAnswerAction($$$$$item)"
+						    ></el-input>
+						  </el-form-item>
+						</div>
                         <!-- 银行卡 -->
                         <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='BankCard'">
                           <el-form-item label="" class="text-base">
@@ -3956,6 +4286,39 @@
                           ></el-input>
                         </el-form-item>
                       </div>
+					  <!--输入框-身份证-->
+					  <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+					    <el-form-item label="" class="text-base">
+					      <div>
+					        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+					        <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+					          <div slot="content">
+					            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+					            <div id="caseMsg" class="h-auto w-full" v-html="$$$$item.description"></div>
+					          </div>
+					          <i class="el-icon-question"></i>
+					        </el-tooltip>
+					        <el-popover
+					          v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+					          placement="right"
+					          width="400"
+					          trigger="hover">
+					          <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+					             <img :src="imgModel">
+					          </div>
+					          <i  slot="reference" class="el-icon-picture"></i>
+					        </el-popover>
+					      </div>
+					      <el-input
+					        type="text"
+					        class="ban"
+					        v-model="$$$$item.answer"
+					        size="small"
+					        :placeholder="$$$$item.placeholder"
+					        @blur="userAddAnswerAction($$$$item)"
+					      ></el-input>
+					    </el-form-item>
+					  </div>
                       <!-- 省市三级联动 -->
                       <div v-if="$$$$item.type == 'select_city'">
                         <el-form-item label="">
@@ -4481,6 +4844,39 @@
                           ></el-input>
                         </el-form-item>
                       </div>
+					  <!--输入框-身份证-->
+					  <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+					    <el-form-item label="" class="text-base">
+					      <div>
+					        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+					        <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+					          <div slot="content">
+					            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+					            <div id="caseMsg" class="h-auto w-full" v-html="$$$$item.description"></div>
+					          </div>
+					          <i class="el-icon-question"></i>
+					        </el-tooltip>
+					        <el-popover
+					          v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+					          placement="right"
+					          width="400"
+					          trigger="hover">
+					          <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+					             <img :src="imgModel">
+					          </div>
+					          <i  slot="reference" class="el-icon-picture"></i>
+					        </el-popover>
+					      </div>
+					      <el-input
+					        type="text"
+					        class="ban"
+					        v-model="$$$$item.answer"
+					        size="small"
+					        :placeholder="$$$$item.placeholder"
+					        @blur="userAddAnswerAction($$$$item)"
+					      ></el-input>
+					    </el-form-item>
+					  </div>
                       <!-- 省市三级联动 -->
                       <div v-if="$$$$item.type == 'select_city'">
                         <el-form-item label="">
@@ -4977,6 +5373,39 @@
                       ></el-input>
                     </el-form-item>
                   </div>
+				  <!--输入框-身份证-->
+				  <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+				    <el-form-item label="" class="text-base">
+				      <div>
+				        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+				        <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+				          <div slot="content">
+				            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+				            <div id="caseMsg" class="h-auto w-full" v-html="$$$$item.description"></div>
+				          </div>
+				          <i class="el-icon-question"></i>
+				        </el-tooltip>
+				        <el-popover
+				          v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+				          placement="right"
+				          width="400"
+				          trigger="hover">
+				          <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+				             <img :src="imgModel">
+				          </div>
+				          <i  slot="reference" class="el-icon-picture"></i>
+				        </el-popover>
+				      </div>
+				      <el-input
+				        type="text"
+				        class="ban"
+				        v-model="$$$$item.answer"
+				        size="small"
+				        :placeholder="$$$$item.placeholder"
+				        @blur="userAddAnswerAction($$$$item)"
+				      ></el-input>
+				    </el-form-item>
+				  </div>
                   <!-- 银行卡 -->
                   <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='BankCard'">
                     <el-form-item label="" class="text-base">
@@ -5168,6 +5597,39 @@
                             ></el-input>
                           </el-form-item>
                         </div>
+						<!-- 输入框身份证 -->
+						<div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='IdCard'">
+						  <el-form-item label="" class="text-base">
+						    <div>
+						      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
+						      <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right" effect="light">
+						        <div slot="content">
+						          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						          <div id="caseMsg" class="h-auto w-full" v-html="$$$$$item.description"></div>
+						        </div>
+						        <i class="el-icon-question"></i>
+						      </el-tooltip>
+						      <el-popover
+						        v-if="$$$$$item.imgDate !=[] && $$$$$item.imgDate !=undefined  && $$$$$item.imgDate != null"
+						        placement="right"
+						        width="400"
+						        trigger="hover">
+						        <div  v-for="(imgModel, imgModelIndex) in $$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						           <img :src="imgModel">
+						        </div>
+						        <i  slot="reference" class="el-icon-picture"></i>
+						      </el-popover>
+						    </div>
+						    <el-input
+						      type="text"
+						      class="ban"
+						      v-model="$$$$$item.answer"
+						      size="small"
+						      :placeholder="$$$$$item.placeholder"
+						      @blur="userAddAnswerAction($$$$$item)"
+						    ></el-input>
+						  </el-form-item>
+						</div>
                         <!-- 手机号 -->
                         <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='PhoneNum'">
                           <el-form-item label="" class="text-base">
@@ -5557,6 +6019,39 @@
                               ></el-input>
                             </el-form-item>
                           </div>
+						  <!-- 输入框身份证 -->
+						  <div v-if="$$$$$$item.type == 'input' && $$$$$$item.input_type=='IdCard'">
+						    <el-form-item label="" class="text-base">
+						      <div>
+						        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$$item.isRequired==false ">选填</span>{{ $$$$$$item.title }}</label>
+						        <el-tooltip  v-if="$$$$$$item.description !='' && $$$$$$item.description !=undefined  && $$$$$$item.description != null" placement="right" effect="light">
+						          <div slot="content">
+						            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						            <div id="caseMsg" class="h-auto w-full" v-html="$$$$$$item.description"></div>
+						          </div>
+						          <i class="el-icon-question"></i>
+						        </el-tooltip>
+						        <el-popover
+						          v-if="$$$$$$item.imgDate !=[] && $$$$$$item.imgDate !=undefined  && $$$$$$item.imgDate != null"
+						          placement="right"
+						          width="400"
+						          trigger="hover">
+						          <div  v-for="(imgModel, imgModelIndex) in $$$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						             <img :src="imgModel">
+						          </div>
+						          <i  slot="reference" class="el-icon-picture"></i>
+						        </el-popover>
+						      </div>
+						      <el-input
+						        type="text"
+						        class="ban"
+						        v-model="$$$$$$item.answer"
+						        size="small"
+						        :placeholder="$$$$$$item.placeholder"
+						        @blur="userAddAnswerAction($$$$$$item)"
+						      ></el-input>
+						    </el-form-item>
+						  </div>
                           <!-- 银行卡类型 -->
                           <div v-if="$$$$$$item.type == 'input' && $$$$$$item.input_type=='BankCard'">
                             <el-form-item label="" class="text-base">
@@ -6140,6 +6635,39 @@
                      ></el-input>
                    </el-form-item>
                  </div>
+				 <!--输入框-身份证-->
+				  <div v-if="$$$item.type == 'input' && $$$item.input_type=='IdCard'">
+				   <el-form-item label="" class="text-base">
+				    <div>
+				      <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$item.isRequired==false ">选填</span>{{ $$$item.title }}</label>
+				      <el-tooltip  v-if="$$$item.description !='' && $$$item.description !=undefined  && $$$item.description != null" placement="right" effect="light">
+				        <div slot="content">
+				          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+				          <div id="caseMsg" class="h-auto w-full" v-html="$$$item.description"></div>
+				        </div>
+				        <i class="el-icon-question"></i>
+				      </el-tooltip>
+				      <el-popover
+				        v-if="$$$item.imgDate !=[] && $$$item.imgDate !=undefined  && $$$item.imgDate != null"
+				        placement="right"
+				        width="400"
+				        trigger="hover">
+				        <div  v-for="(imgModel, imgModelIndex) in $$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+				           <img :src="imgModel">
+				        </div>
+				        <i  slot="reference" class="el-icon-picture"></i>
+				      </el-popover>
+				    </div>
+				     <el-input
+				       type="text"
+				       class="ban"
+				       v-model="$$$item.answer"
+				       size="small"
+				       :placeholder="$$$item.placeholder"
+				       @blur="userAddAnswerAction($$$item)"
+				     ></el-input>
+				   </el-form-item>
+				 </div>
                   <!--输入框-数字类型（类似身份证号、金额）-->
                   <div v-if="$$$item.type == 'input' && $$$item.input_type=='number'">
                    <el-form-item label="" class="text-base">
@@ -6431,6 +6959,39 @@
                               ></el-input>
                             </el-form-item>
                           </div>
+						  <!-- 文本类型 身份证 -->
+						  <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='IdCard'">
+						    <el-form-item label="" class="text-base">
+						      <div>
+						        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
+						        <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right" effect="light">
+						          <div slot="content">
+						            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						            <div id="caseMsg" class="h-auto w-full" v-html="$$$$$item.description"></div>
+						          </div>
+						          <i class="el-icon-question"></i>
+						        </el-tooltip>
+						        <el-popover
+						          v-if="$$$$$item.imgDate !=[] && $$$$$item.imgDate !=undefined  && $$$$$item.imgDate != null"
+						          placement="right"
+						          width="400"
+						          trigger="hover">
+						          <div  v-for="(imgModel, imgModelIndex) in $$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						             <img :src="imgModel">
+						          </div>
+						          <i  slot="reference" class="el-icon-picture"></i>
+						        </el-popover>
+						      </div>
+						      <el-input
+						        type="text"
+						        class="ban"
+						        v-model="$$$$$item.answer"
+						        size="small"
+						        :placeholder="$$$$$item.placeholder"
+						        @blur="userAddAnswerAction($$$$$item)"
+						      ></el-input>
+						    </el-form-item>
+						  </div>
                           <!--下拉框选择每月几号-->
                           <div v-if="$$$$$item.type == 'select_day_per'">
                               <el-form-item label="" class="text-base">
@@ -6627,6 +7188,39 @@
                               ></el-input>
                             </el-form-item>
                           </div>
+						  <!-- 身份证 -->
+						  <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='IdCard'">
+						    <el-form-item label="" class="text-base">
+						      <div>
+						        <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$$item.isRequired==false ">选填</span>{{ $$$$$item.title }}</label>
+						        <el-tooltip  v-if="$$$$$item.description !='' && $$$$$item.description !=undefined  && $$$$$item.description != null" placement="right" effect="light">
+						          <div slot="content">
+						            <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						            <div id="caseMsg" class="h-auto w-full" v-html="$$$$$item.description"></div>
+						          </div>
+						          <i class="el-icon-question"></i>
+						        </el-tooltip>
+						        <el-popover
+						          v-if="$$$$$item.imgDate !=[] && $$$$$item.imgDate !=undefined  && $$$$$item.imgDate != null"
+						          placement="right"
+						          width="400"
+						          trigger="hover">
+						          <div  v-for="(imgModel, imgModelIndex) in $$$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						             <img :src="imgModel">
+						          </div>
+						          <i  slot="reference" class="el-icon-picture"></i>
+						        </el-popover>
+						      </div>
+						      <el-input
+						        type="text"
+						        class="ban"
+						        v-model="$$$$$item.answer"
+						        size="small"
+						        :placeholder="$$$$$item.placeholder"
+						        @blur="userAddAnswerAction($$$$$item)"
+						      ></el-input>
+						    </el-form-item>
+						  </div>
                           <!-- 银行卡 -->
                           <div v-if="$$$$$item.type == 'input' && $$$$$item.input_type=='BankCard'">
                             <el-form-item label="" class="text-base">
@@ -6989,6 +7583,39 @@
                             ></el-input>
                           </el-form-item>
                         </div>
+						<!--输入框-身份证-->
+						<div v-if="$$$$item.type == 'input' && $$$$item.input_type=='IdCard'">
+						  <el-form-item label="" class="text-base">
+						    <div>
+						       <label slot="label"><span class="mr-1 px-2 py-1 rounded bg-green-500 text-white" v-if="$$$$item.isRequired==false ">选填</span>{{ $$$$item.title }}</label>
+						      <el-tooltip  v-if="$$$$item.description !='' && $$$$item.description !=undefined  && $$$$item.description != null" placement="right" effect="light">
+						        <div slot="content">
+						          <h3 style="color:#ff3f68" class="text-center text-base w-full font-bold">小贴士</h3><br/>
+						          <div id="caseMsg" class="h-auto w-full" v-html="$$$$item.description"></div>
+						        </div>
+						        <i class="el-icon-question"></i>
+						      </el-tooltip>
+						      <el-popover
+						        v-if="$$$$item.imgDate !=[] && $$$$item.imgDate !=undefined  && $$$$item.imgDate != null"
+						        placement="right"
+						        width="400"
+						        trigger="hover">
+						        <div  v-for="(imgModel, imgModelIndex) in $$$$item.imgDate" :key="imgModelIndex" popper-class="overflow-y:scroll">
+						           <img :src="imgModel">
+						        </div>
+						        <i  slot="reference" class="el-icon-picture"></i>
+						      </el-popover>
+						    </div>
+						    <el-input
+						      type="text"
+						      class="ban"
+						      v-model="$$$$item.answer"
+						      size="small"
+						      :placeholder="$$$$item.placeholder"
+						      @blur="userAddAnswerAction($$$$item)"
+						    ></el-input>
+						  </el-form-item>
+						</div>
                         <!--输入框-数字类型（类似身份证号、金额）-->
                         <div v-if="$$$$item.type == 'input' && $$$$item.input_type=='number'">
                           <el-form-item label="" class="text-base">
@@ -7486,7 +8113,7 @@
           if(e.answer == '' || e.answer == null){
             this.$message.error('必填项内容不能为空');
           }else{
-            if(e.fornum !== undefined){
+            if(e.fornum !== undefined){  //多子女
               if(Array.isArray(e.answer)){
                 if(e.type == "select_city"){
                     userAddAnswer({
@@ -7517,6 +8144,56 @@
                 }).then((data) => {
                 }).catch((data) => {
                 })
+              } else if (e.input_type == 'IdCard' ) {
+				alert(1)
+				var idCard = e.answer
+				var regIdCard=/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;	
+				if (regIdCard.test(idCard)) {
+					if(idCard.length==18){
+						var idCardWi=new Array( 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ); //将前17位加权因子保存在数组里
+						var idCardY=new Array( 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ); //这是除以11后，可能产生的11位余数、验证码，也保存成数组
+						var idCardWiSum=0; //用来保存前17位各自乖以加权因子后的总和
+						for(var i=0;i<17;i++){
+							idCardWiSum+=idCard.substring(i,i+1)*idCardWi[i];
+						}
+						var idCardMod=idCardWiSum%11;//计算出校验码所在数组的位置
+						var idCardLast=idCard.substring(17);//得到最后一位身份证号码
+						//如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+						if(idCardMod==2){
+							if(idCardLast=="X"||idCardLast=="x"){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}else{
+							//用计算出的验证码与最后一位身份证号码匹配，如果一致，说明通过，否则是无效的身份证号码
+							if(idCardLast==idCardY[idCardMod]){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}
+					}
+				} else {
+					this.errorAlert('身份证输入不正确,请重新输入')
+					e.answer = ''
+				}
               } else {
                 userAddAnswer({
                   value: e.answer,  // 值
@@ -7583,7 +8260,56 @@
                 }).then((data) => {
                 }).catch((data) => {
                 })
-              }else{
+              } else if (e.input_type == 'IdCard' ) {
+				var idCard = e.answer
+				var regIdCard=/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;	
+				if (regIdCard.test(idCard)) {
+					if(idCard.length==18){
+						var idCardWi=new Array( 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ); //将前17位加权因子保存在数组里
+						var idCardY=new Array( 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ); //这是除以11后，可能产生的11位余数、验证码，也保存成数组
+						var idCardWiSum=0; //用来保存前17位各自乖以加权因子后的总和
+						for(var i=0;i<17;i++){
+							idCardWiSum+=idCard.substring(i,i+1)*idCardWi[i];
+						}
+						var idCardMod=idCardWiSum%11;//计算出校验码所在数组的位置
+						var idCardLast=idCard.substring(17);//得到最后一位身份证号码
+						//如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+						if(idCardMod==2){
+							if(idCardLast=="X"||idCardLast=="x"){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}else{
+							//用计算出的验证码与最后一位身份证号码匹配，如果一致，说明通过，否则是无效的身份证号码
+							if(idCardLast==idCardY[idCardMod]){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}
+					}
+				} else {
+					this.errorAlert('身份证输入不正确,请重新输入')
+					e.answer = ''
+				}
+              } else {
                 userAddAnswer({
                   value: e.answer,  // 值
                   qpid: e.id, // 关联id
@@ -7658,7 +8384,56 @@
               }).then((data) => {
               }).catch((data) => {
               })
-            }else{
+            } else if (e.input_type == 'IdCard' ) {
+				var idCard = e.answer
+				var regIdCard=/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;	
+				if (regIdCard.test(idCard)) {
+					if(idCard.length==18){
+						var idCardWi=new Array( 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ); //将前17位加权因子保存在数组里
+						var idCardY=new Array( 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ); //这是除以11后，可能产生的11位余数、验证码，也保存成数组
+						var idCardWiSum=0; //用来保存前17位各自乖以加权因子后的总和
+						for(var i=0;i<17;i++){
+							idCardWiSum+=idCard.substring(i,i+1)*idCardWi[i];
+						}
+						var idCardMod=idCardWiSum%11;//计算出校验码所在数组的位置
+						var idCardLast=idCard.substring(17);//得到最后一位身份证号码
+						//如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+						if(idCardMod==2){
+							if(idCardLast=="X"||idCardLast=="x"){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}else{
+							//用计算出的验证码与最后一位身份证号码匹配，如果一致，说明通过，否则是无效的身份证号码
+							if(idCardLast==idCardY[idCardMod]){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}
+					}
+				} else {
+					this.errorAlert('身份证输入不正确,请重新输入')
+					e.answer = ''
+				}
+              } else {
               userAddAnswer({
                 value: e.answer,  // 值
                 qpid: e.id, // 关联id
@@ -7715,7 +8490,56 @@
               }).then((data) => {
               }).catch((data) => {
               })
-            }else{
+            } else if (e.input_type == 'IdCard' ) {
+				var idCard = e.answer
+				var regIdCard=/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;	
+				if (regIdCard.test(idCard)) {
+					if(idCard.length==18){
+						var idCardWi=new Array( 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ); //将前17位加权因子保存在数组里
+						var idCardY=new Array( 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ); //这是除以11后，可能产生的11位余数、验证码，也保存成数组
+						var idCardWiSum=0; //用来保存前17位各自乖以加权因子后的总和
+						for(var i=0;i<17;i++){
+							idCardWiSum+=idCard.substring(i,i+1)*idCardWi[i];
+						}
+						var idCardMod=idCardWiSum%11;//计算出校验码所在数组的位置
+						var idCardLast=idCard.substring(17);//得到最后一位身份证号码
+						//如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+						if(idCardMod==2){
+							if(idCardLast=="X"||idCardLast=="x"){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}else{
+							//用计算出的验证码与最后一位身份证号码匹配，如果一致，说明通过，否则是无效的身份证号码
+							if(idCardLast==idCardY[idCardMod]){
+								userAddAnswer({ // 必填多子女普通类型
+								  value: e.answer, // 值
+								  qpid: e.id, // 关联id
+								  fornum: e.fornum, // 是否为重复问题下的子问题，是的话传for的层级，没有的话不传递
+								  quid: localStorage.getItem('quid') // 用户的问卷id
+								}).then((data) => {
+								}).catch((data) => {
+								})
+							}else{
+								this.errorAlert('身份证输入不正确,请重新输入')
+								e.answer = ''
+							}
+						}
+					}
+				} else {
+					this.errorAlert('身份证输入不正确,请重新输入')
+					e.answer = ''
+				}
+              } else {
               userAddAnswer({
                 value: e.answer,  // 值
                 qpid: e.id, // 关联id

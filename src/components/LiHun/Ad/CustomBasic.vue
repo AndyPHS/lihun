@@ -458,7 +458,7 @@ import {userAddSelectAnswer} from '@/api/api/AgreementRequest.js' // 添加子�
 import {userDeleteSelectAnswer} from '@/api/api/AgreementRequest.js' // 删除子女或者房产等
 import {demoYanZheng} from '@/api/api/AgreementRequest.js' // 验证单独word demo
 import {getOnlyValue} from '@/api/api/AgreementRequest.js' // 获取单独问题的值
-import {outPutWord} from '@/api/api/AgreementRequest.js' // 生成数据接口
+import {outPutWord, stopQuestionnaireLog} from '@/api/api/AgreementRequest.js' // 生成数据接口
 import {regionData, CodeToText, TextToCode} from 'element-china-area-data' // 省市联动信息
 export default {
   name: 'CustomBasic',
@@ -1361,6 +1361,9 @@ export default {
           this.IsShow = false
         } else if (this.status_code === 200) {
           this.loading = false
+		  stopQuestionnaireLog().then((data) => {
+		  	alert(1)
+		  })
           this.$router.replace('/CustomShengCheng')
           this.missAlert = false
         }
