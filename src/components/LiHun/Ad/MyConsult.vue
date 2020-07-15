@@ -62,7 +62,7 @@
 										</dd>
 									</dl>
 									<!-- 已完成complete 1 -->
-									<div v-if="item.complete == 1" class="w-full c_m_m_m_m_r flex justify-end pr-6">
+									<div v-if="item.complete == 1" class="w-1/3 c_m_m_m_m_r flex justify-end pr-6">
 										<span @click="DownLoadWord(item.id)" class="inline-block">下 载</span>
 										<!-- <span v-if="item.signed == 1" @click="isQianAction(item)" class="inline-block">已签订</span>
 										<span v-if="item.signed == 0 " @click="isQianAction(item)" class="inline-block">未签订</span> -->
@@ -109,7 +109,7 @@
 													</dd>
 												</dl>
 												<!-- 已完成complete 1 -->
-												<div v-if="$item.complete == 1" class="w-full c_m_m_m_m_r flex justify-end pr-6">
+												<div v-if="$item.complete == 1" class="w-1/3 c_m_m_m_m_r flex justify-end pr-6">
 													<span @click="DownLoadWord($item.id)" class="inline-block">下 载</span>
 													<!-- <span v-if="$item.signed == 1" @click="isQianAction($item)" class="inline-block">已签订</span>
 													<span v-if="$item.signed == 0 " @click="isQianAction($item)" class="inline-block">未签订</span> -->
