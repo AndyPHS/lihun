@@ -40,6 +40,9 @@
 		<el-form-item label="文章来源" prop="source">
 		  <el-input  v-model="ruleForm.source"></el-input>
 		</el-form-item>
+		<el-form-item label="路径(英文)" prop="route">
+		  <el-input  v-model="ruleForm.route"></el-input>
+		</el-form-item>
         <el-form-item label="是否置顶" prop="topping">
           <el-radio-group v-model="ruleForm.topping">
             <el-radio label="1">是</el-radio>
@@ -102,7 +105,8 @@ export default{
         faId: null,  // 分类ID
         topping: '', // 置顶 1置顶0取消
 		view: null  ,// 文章阅读数量
-		source: ''  // 文章来源
+		source: '',  // 文章来源
+		route: ''  // 路径名称 英文
       },
       articleId: null,
       rules: {
@@ -122,6 +126,12 @@ export default{
 		view: [
 			{ required: true, message: '阅读数不能为空'},
 			{ type: 'number', message: '阅读数必须为数字值'}
+		],
+		source: [
+          { required: true, message: '请填写文章来源', trigger: 'blur' }
+        ],
+		route: [
+		  { required: true, message: '请填写文章路径', trigger: 'blur' }
 		]
       }
     }
@@ -152,6 +162,7 @@ export default{
           this.ruleForm.faId = data.data.data.faId;
 		  this.ruleForm.view = data.data.data.view;
 		  this.ruleForm.source = data.data.data.source;
+		  this.ruleForm.route = data.data.data.route;
           this.ruleForm.topping = JSON.stringify(data.data.data.topping);
           // this.ruleForm.content = data.data.data.content;
           this.$refs.ue.setUEContent(data.data.data.content)
@@ -228,7 +239,8 @@ export default{
           faId: this.ruleForm.faId,  // 分类ID
           topping: this.ruleForm.topping ,//
 		  view: this.ruleForm.view,
-		  source: this.ruleForm.source
+		  source: this.ruleForm.source,
+		  route: this.ruleForm.route
         }).then((data) => {
           if(data.data.status_code == 200){
             this.$message({
