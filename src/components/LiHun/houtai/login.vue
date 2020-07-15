@@ -42,7 +42,7 @@
   import Cookies from 'js-cookie'
   import {requestLogin} from '@/api/api/AgreementRequest.js'
   import {verifyCode} from '@/api/api/AgreementRequest.js'
-  import {usersSelect} from '@/api/api/AgreementRequest.js'  // 查询角色
+  import {usersSelectBack} from '@/api/api/AgreementRequest.js'  // 查询角色
   // import vertical from '@/common/js/gVerify.js'
 export default {
     name: "login",
@@ -104,10 +104,10 @@ export default {
             // 使用 vue-router 路由到指定页面，该方式称之为编程式导航
             requestLogin(this.loginForm).then((data)=>{
               if(data.data.status_code==200){
-                localStorage.setItem('name', this.loginForm.name);
+                // localStorage.setItem('name', this.loginForm.name);
                 // localStorage.setItem('password', this.loginForm.password);
-                localStorage.setItem('token', data.data.data.token)
-                usersSelect().then((data)=>{
+                localStorage.setItem('tokenBack', data.data.data.token)
+                usersSelectBack().then((data)=>{
                     this.permissions = data.data.permissions
                     this.roles = data.data.roles;
                     if (this.permissions !== []) {

@@ -711,7 +711,7 @@ export default {
 		this.fullscreenLoading = false
         this.aa.ZiNv = data.data.data
 		// this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
-		console.log(this.aa.ZiNv.length)
+		// console.log(this.aa.ZiNv.length)
         // console.log(this.aa.ZiNv[0][1].questions[7].childQuestion[1][2].answer)
         for (let i = 0; i < this.aa.ZiNv.length; i++) {
 			if(this.aa.ZiNv[i][1].questions[2].childQuestion[2][0].answer == ''){
@@ -1273,7 +1273,7 @@ export default {
               } else if (this.ins === 4) {
                 this.active++
                 var _that = this
-                console.log(_that.zhaiIns)
+                // console.log(_that.zhaiIns)
                 if (_that.zhaiIns < 20) {
                   _that.zhaiIns++
                 }
@@ -1362,7 +1362,7 @@ export default {
         } else if (this.status_code === 200) {
           this.loading = false
 		  stopQuestionnaireLog().then((data) => {
-		  	alert(1)
+		  	// alert(1)
 		  })
           this.$router.replace('/CustomShengCheng')
           this.missAlert = false

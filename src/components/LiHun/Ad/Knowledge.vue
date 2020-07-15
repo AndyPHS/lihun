@@ -6,8 +6,8 @@
         <div class="">
           <h3 class="text-22 text-center font-bold">离婚知识</h3>
           <ul class="mt-5 px-16 text-center ml-3 zhishiul">
-            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base mb-3 cursor-pointer leading-loose text-left">
-              <h2 :class="ins === item.id?'default_active':'default'" @click="searchList(item, index)">{{ item.title }}</h2>
+            <li v-for="(item, index) in fenleiAll" :key="index" class="text-base mb-3 leading-loose text-left">
+              <h2 :class="ins === item.id?'default_active':'default'">{{ item.title }}</h2>
               <ul class="" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
 					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
@@ -75,7 +75,7 @@
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
-import {selectAction, selectFaIDNews, selectOsNews} from '@/api/api/AgreementRequest.js'
+import {selectAction, selectFaIDNews, selectOsNews, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'Knowledge',
@@ -118,6 +118,22 @@ export default {
 		}
 	},
     goKnowledgeMin (id) {
+	  var keyword
+	  if( this.keyMsg ==''){
+		  keyword = '/'
+	  } else {
+		  keyword = this.keyMsg
+	  }
+	  var isLogin = localStorage.getItem('token')
+	  if (isLogin !== undefined){
+	  	addUserNewsLog({
+		  key_word: keyword,
+		  newsId: id,
+		  type: 3
+	  	}).then((data) => {
+		  localStorage.setItem('unlId',data.data.data)
+	  	})
+	  }
       this.$router.push({
         path: `/KnowledgeCon/${id}`,
       })
@@ -161,6 +177,15 @@ export default {
     searchList (item, index) { // 点击分类查找文章
 	  this.ins = item.id
 	  this.tableDataNull = false
+	  var isLogin = localStorage.getItem('token')
+	  if (isLogin !== undefined){
+		  addUserNewsLog({
+			  key_word: item.title,
+			  type: 2
+		  }).then((data) => {
+		  		  // console.log('搜索栏目')
+		  })
+	  }
       selectFaIDNews({
         status: 1,
         faId: item.id,
@@ -189,6 +214,15 @@ export default {
 					this.$message.error('查询失败，请重新尝试')
 				}
 			})
+			var isLogin = localStorage.getItem('token')
+			if (isLogin !== undefined) {
+				addUserNewsLog({
+					key_word: this.keyMsg,
+					type: 1
+				}).then((data) => {
+					// console.log('关键词搜索文章')
+				})
+			}
 		}
     },
 	getHeadActive (data) {

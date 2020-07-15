@@ -15,27 +15,25 @@
     <div>
       <p class="text-left ml-2 text-sm">
         <span class="text-2xl">浏览文章信息</span>
-        <span class="mx-1">张三</span>
-        <span>2020.05.06</span>注册，
-        文书数量: <span>2,</span>
-        手机号：<span class="mr-2">15033336666,</span>
-        邮箱：<span class="mr-2">11111111111@163.com,</span>
-        购买次数: <span>1</span>次,
-        购买时间: <span>2020.05.14</span>
+        <span class="mx-1">{{ user.name }}</span>
+        <span>{{ user.created_at }}</span>注册，
+        文书数量: <span>{{ user.qqpucount }},</span>
+        手机号：<span class="mr-2">{{ user.phone }},</span>
+        邮箱：<span class="mr-2">{{ user.email }}</span>
       </p>
     </div>
     <div>
       <el-main>
-        <el-table :data="tableData" stripe height="500" :header-row-style="{height:'40px'}" :row-style="{height:'40px'}">
-          <el-table-column prop="date" label="站内搜索关键词" width="150" height="50">
+        <el-table :data="userMsg" stripe height="500" :header-row-style="{height:'40px'}" :row-style="{height:'40px'}">
+          <el-table-column prop="key_word" label="站内搜索关键词" width="150" height="50">
           </el-table-column>
-          <el-table-column prop="name" label="浏览文章名称" width="300">
+          <el-table-column prop="newsTitle" label="浏览文章名称" width="300">
           </el-table-column>
-          <el-table-column prop="address" label="文章类别" width="150">
+          <el-table-column prop="actionTitle" label="文章类别" width="150">
           </el-table-column>
-          <el-table-column prop="name" label="浏览时长" width="100">
+          <el-table-column prop="created_time" label="浏览时长" width="100">
           </el-table-column>
-          <el-table-column prop="name" label="文章来源" width="300">
+          <el-table-column prop="source" label="文章来源" width="300">
           </el-table-column>
         </el-table>
       </el-main>
@@ -44,6 +42,7 @@
 </template>
 
 <script>
+import {selectUserNewsLog} from '@/api/api/AgreementRequest.js'
  export default{
    name: 'UserOperate',
    data() {
@@ -57,15 +56,25 @@
        activeIndex: '2',
        phoneVal: null, // 输入手机号查找
        tableData: Array(20).fill(item),
-       row: null
+       row: null,
+       user: {},  // 用户信息
+       userMsg: []  // 用户信息
      }
    },
    methods: {
      getParams () {
        // 取到路由带过来的参数
-       let routerParams = this.$route.params.row
+       let routerParams = this.$route.params
        // 将数据放在当前组件的数据内
-       this.row = routerParams
+       this.user = routerParams
+	   // 将数据放在当前组件的数据内
+	   this.row = routerParams.row
+	   selectUserNewsLog({
+		   uid: this.row
+	   }).then((data) => {
+		   this.userMsg = data.data.data
+		   
+	   })
      },
      backUserList () {
        this.$router.push({

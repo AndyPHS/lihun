@@ -420,7 +420,7 @@
 			},
 			NextPage() {
 				addQuestionnaireLog().then((data) => {
-					console.log(data.data.data)
+					// console.log(data.data.data)
 				    localStorage.setItem('uqlId',data.data.data)	
 				})
 				this.$router.replace("/CustomBasic");

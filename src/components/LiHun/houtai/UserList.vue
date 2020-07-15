@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import {selectUser} from '@/api/api/AgreementRequest.js'
+import {selectUserBack} from '@/api/api/AgreementRequest.js'
  export default{
    name: 'UserList',
    data() {
@@ -116,7 +116,7 @@ import {selectUser} from '@/api/api/AgreementRequest.js'
    },
    methods: {
 	 handleUserList () { // 获取用户
-	     selectUser({page:this.currentPage}).then((data)=>{
+	     selectUserBack({page:this.currentPage}).then((data)=>{
 	         this.pageInfo = data.data.data.data
 	         this.min = data.data.data
 	     }).catch((data)=>{
@@ -145,14 +145,19 @@ import {selectUser} from '@/api/api/AgreementRequest.js'
        // console.log(row.id)
      },
      GoUserOperate(index,row) { // 跳转用户操作历史界面
+	   // localStorage.setItem('uid',row.id)
        this.$router.push({
          path: '/UserOperate',
          name: 'UserOperate',
          params: {
-           row: row
+           row: row.id,
+		   name: row.name,
+		   created_at: row.created_at,
+		   phone: row.phone,
+		   email: row.email,
+		   qqpucount: row.qqpucount
          }
        })
-       console.log(row)
      }
    }
  }

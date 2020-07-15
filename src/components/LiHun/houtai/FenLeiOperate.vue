@@ -101,7 +101,7 @@
 <script>
 import {addAction} from '@/api/api/AgreementRequest.js' // 新增文章类型
 import {deleteAction} from '@/api/api/AgreementRequest.js' // 删除文章类型
-import {selectAction} from '@/api/api/AgreementRequest.js' // 查询文章类型
+import {selectActionBack} from '@/api/api/AgreementRequest.js' // 查询文章类型
 import {updateAction} from '@/api/api/AgreementRequest.js' // 修改文章类型
 
 export default{
@@ -129,7 +129,7 @@ export default{
   methods: {
     getFenlei () { // 查询分类汇总
       this.fullscreenLoading = true
-      selectAction().then((data) => {
+      selectActionBack().then((data) => {
         this.fullscreenLoading = false
         this.fenleiAll = data.data
       })

@@ -43,7 +43,7 @@
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
-import {selectNewsContent, selectAction} from '@/api/api/AgreementRequest.js' // 查询文章
+import {selectNewsContent, selectAction, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js' // 查询文章
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementHelpCon',
@@ -97,6 +97,18 @@ export default {
        })
      },
      searchList (item, index) { // 点击文章分类跳转到文章列表页
+		var isLogin = localStorage.getItem('token')
+		if (isLogin !== undefined) {
+			stopUserNewsLog().then((data) => {
+					  // localStorage.removeItem('unlId')
+			})
+			addUserNewsLog({
+			  key_word: item.title,
+			  type: 2
+			}).then((data) => {
+				localStorage.setItem('unlId', data.data.data)
+			})
+		}
 		if (index ==0){
 			localStorage.setItem('AgreementHelpId',17)
 			this.getWenZhangCon ()

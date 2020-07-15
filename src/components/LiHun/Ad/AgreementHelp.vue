@@ -64,7 +64,7 @@
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
-import {selectAction, selectFaIDNews} from '@/api/api/AgreementRequest.js'
+import {selectAction, selectFaIDNews, addUserNewsLog} from '@/api/api/AgreementRequest.js'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'AgreementHelp',
@@ -78,6 +78,7 @@ export default {
       fenleiAll: [], // 文章分类汇总
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
+	  tableDataNull: false, // 无文章
       ins: 0,
 	  // 分页
 	  first_page_url: '',
@@ -98,7 +99,18 @@ export default {
 	localStorage.setItem('topins',2)
   },
   methods: {
+	
     goKnowledgeMin (id) {
+	  var isLogin = localStorage.getItem('token')
+	  if (isLogin !== undefined) {
+		 addUserNewsLog({
+		   key_word: '/',
+		   newsId: id,
+		   type: 3
+		 }).then((data) => {
+		   localStorage.setItem('unlId',data.data.data)
+		 })
+	  }
       this.$router.push({
         name: 'AgreementHelpCon',
         params: {
@@ -135,6 +147,15 @@ export default {
       })
     },
     searchList (item, index) { // 点击分类查找文章
+	  var isLogin = localStorage.getItem('token')
+	  if (isLogin !== undefined) {
+		addUserNewsLog({
+		  key_word: item.title,
+		  type: 2
+		}).then((data) => {
+		  localStorage.setItem('unlId',data.data.data)
+		})
+	  }
 	  if (index ==0){
 		  this.goKnowledgeMin (17)
 	  } else if (index ==2){

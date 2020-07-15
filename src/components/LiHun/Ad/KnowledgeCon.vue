@@ -63,7 +63,7 @@
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
-import {selectNewsContent, selectAction} from '@/api/api/AgreementRequest.js' // 查询文章
+import {selectNewsContent, selectAction, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js' // 查询文章
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
   name: 'KnowledgeCon',
@@ -128,8 +128,33 @@ export default {
 		localStorage.setItem('topins',data)
 	},
 	goKnowledgeMin (id) { // 相关文章
+	  var isLogin = localStorage.getItem('token')
+	  if (isLogin !== undefined) {
+		 stopUserNewsLog().then((data) => {
+		 		  
+		 })
+		 addUserNewsLog({
+		   key_word: '/',
+		   newsId: id,
+		   type: 3
+		 }).then((data) => {
+		   localStorage.setItem('unlId', data.data.data)
+		 }) 
+	  }
+	  this.$router.push({
+	    path: `/KnowledgeCon/${id}`,
+	  })
 	  localStorage.setItem('KnowledgeId',id)
-	  this.getWenZhangCon()
+	  selectNewsContent({
+	    id: id
+	  }).then((data) => {
+	    this.wenCon.title = data.data.data.title;
+	    this.wenCon.time = data.data.data.createdTime;
+	    this.wenCon.con = data.data.data.content;
+		this.wenCon.view = data.data.data.view;
+		this.relevantAll = data.data.data.relevant;
+		this.ins = data.data.data.faId
+	  })
 	  const that = this
 		let timer = setInterval(() => {
 		  let ispeed = Math.floor(-that.scrollTop / 5)

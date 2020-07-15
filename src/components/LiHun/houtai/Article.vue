@@ -72,11 +72,11 @@
 </template>
 
 <script>
-import {selectAction} from '@/api/api/AgreementRequest.js' // 查询文章类型
+import {selectActionBack} from '@/api/api/AgreementRequest.js' // 查询文章类型
 import {deleteNews} from '@/api/api/AgreementRequest.js' // 删除文章
 import {recoveryNews} from '@/api/api/AgreementRequest.js' // 恢复文章
 import {selectNews} from '@/api/api/AgreementRequest.js' // 查询文章
-import {selectFaIDNews} from '@/api/api/AgreementRequest.js' // 通过分类查询文章
+import {selectFaIDNewsBack} from '@/api/api/AgreementRequest.js' // 通过分类查询文章
 export default{
   name: 'Article',
   data () {
@@ -113,7 +113,7 @@ export default{
   },
   methods: {
     getFenlei () { // 查询分类汇总
-      selectAction().then((data) => {
+      selectActionBack().then((data) => {
         this.fenleiAll = data.data
       })
     },

@@ -74,10 +74,10 @@
 <script>
 // import {selectAction} from '@/api/api/requestLogin.js' // 查询文章类型
 import UE from '@/components/ue/ue.vue' // 引入组件
-import {selectAction} from '@/api/api/AgreementRequest.js' // 查询文章类型
+import {selectActionBack} from '@/api/api/AgreementRequest.js' // 查询文章类型
 import {addNews} from '@/api/api/AgreementRequest.js' // 新增文章
 import {updateNews} from '@/api/api/AgreementRequest.js' // 修改文章
-import {selectNewsContent} from '@/api/api/AgreementRequest.js' // 查询文章
+import {selectNewsContentBack} from '@/api/api/AgreementRequest.js' // 查询文章
 
 export default{
   components: {UE},
@@ -143,7 +143,7 @@ export default{
   },
   methods: {
     getFenlei () { // 查询分类汇总
-      selectAction().then((data) => {
+      selectActionBack().then((data) => {
         this.fenleiAll = data.data;
       })
     },
@@ -154,7 +154,7 @@ export default{
       this.articleId = routerParams
       if (this.articleId != null) {
         localStorage.setItem('articleId',this.articleId)
-        selectNewsContent({
+        selectNewsContentBack({
           id: this.articleId
         }).then((data) => {
           this.ruleForm.title = data.data.data.title;

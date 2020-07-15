@@ -225,8 +225,13 @@ const apiUrl = {
   addQuestionnaireLog: baseLiHunURL + 'front_user/add_questionnaire_log/',
   // 结束问卷时间
   stopQuestionnaireLog: baseLiHunURL + 'front_user/stop_questionnaire_log/',
+  // 新增用户文章日志
+  addUserNewsLog: baseLiHunURL + 'front_user/add_user_news_log',
+  // 结束用户文章日志
+  stopUserNewsLog: baseLiHunURL + 'front_user/stop_user_news_log/',
+  
   // 查询用户日志
-  selectUserLog: baseLiHunURL + 'front_user/select_user_log/',
+  selectUserNewsLog: baseLiHunURL + 'front_user/select_user_news_log/',
   // 查找用户回收站
   selectUserDeleteQuestionnaire: baseLiHunURL + 'page/select_user_questionnaire/',
   // 修改用户问卷

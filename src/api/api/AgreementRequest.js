@@ -135,7 +135,7 @@ export const requestLogin = params => {
     method: 'post',
     dataType: 'json',
     url: apiUrl.login,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -170,6 +170,15 @@ export const selectUser = params => {
     data: params
   });
 };
+export const selectUserBack = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectUser+'?type=2&page='+params.page,
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
+    data: params
+  });
+};
 // usersSelect查找用户基本信息
 export const usersSelect = params => {
   return axios({
@@ -177,6 +186,15 @@ export const usersSelect = params => {
     dataType: 'json',
     url: apiUrl.usersSelect,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+export const usersSelectBack = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.usersSelect,
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -241,12 +259,32 @@ export const stopQuestionnaireLog = params => {
     data: params
   });
 };
-// 查询用户日志selectUserLog
-export const selectUserLog = params => {
+// 新增用户文章日志
+export const addUserNewsLog = params => {
   return axios({
     method: "post",
     dataType: 'json',
-    url: apiUrl.selectUserLog,
+    url: apiUrl.addUserNewsLog,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+// 结束用户文章日志
+export const stopUserNewsLog = params => {
+  return axios({
+    method: "post",
+    dataType: 'json',
+    url: apiUrl.stopUserNewsLog + localStorage.getItem('unlId'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+// 查询用户日志selectUserNewsLog
+export const selectUserNewsLog = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectUserNewsLog + params.uid,
     headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });
@@ -371,7 +409,7 @@ export const addAction = params => {
     method: "post",
     dataType: 'json',
     url: apiUrl.addAction,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -405,13 +443,22 @@ export const selectAction = params => {
     data: params
   });
 };
+export const selectActionBack = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectAction + '1',
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack'),"Content-Type":'application/x-www-form-urlencoded; charset=UTF-8'},
+    data: params
+  });
+};
 // 新增文章
 export const addNews = params => {
   return axios({
     method: "post",
     dataType: 'json',
     url: apiUrl.addNews,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -421,7 +468,7 @@ export const deleteNews = params => {
     method: "delete",
     dataType: 'json',
     url: apiUrl.deleteNews + params.id,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -431,7 +478,7 @@ export const recoveryNews = params => {
     method: "put",
     dataType: 'json',
     url: apiUrl.recoveryNews + params.id,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -441,7 +488,7 @@ export const updateNews = params => {
     method: "put",
     dataType: 'json',
     url: apiUrl.updateNews + localStorage.getItem('articleId'),
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -451,7 +498,7 @@ export const selectNews = params => {
     method: "get",
     dataType: 'json',
     url: apiUrl.selectNews + '?status=' + params.status + '&page=' + params.page,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
@@ -475,6 +522,16 @@ export const selectNewsContent = params => {
     data: params
   });
 };
+// 查询文章内容selectNewsContent
+export const selectNewsContentBack = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectNewsContent + params.id,
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
+    data: params
+  });
+};
 // 筛选查找文章
 export const selectFaIDNews = params => {
   return axios({
@@ -485,7 +542,15 @@ export const selectFaIDNews = params => {
     data: params
   });
 };
-
+export const selectFaIDNewsBack = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectNews + '?status=' + params.status + '&faId=' + params.faId + '&page=' + params.page,
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
+    data: params
+  });
+};
 // 支付查询
 export const verificationPay = params => {
   return axios({
