@@ -23,22 +23,22 @@
 			<el-carousel :interval="5000" arrow="always" height="170px">
 				<el-carousel-item >
 					<div class="swiper01 swiperCommon">
-					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.png" alt="">
+					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.jpg" alt="">
 					</div>
 				</el-carousel-item>
 				<el-carousel-item >
 					<div class="swiper01 swiperCommon">
-					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.png" alt="">
+					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper02.jpg" alt="">
 					</div>
 				</el-carousel-item>
 				<el-carousel-item >
 					<div class="swiper01 swiperCommon">
-					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.png" alt="">
+					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper03.jpg" alt="">
 					</div>
 				</el-carousel-item>
 				<el-carousel-item >
 					<div class="swiper01 swiperCommon">
-					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.png" alt="">
+					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper04.jpg" alt="">
 					</div>
 				</el-carousel-item>
 			</el-carousel>
