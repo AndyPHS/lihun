@@ -97,7 +97,7 @@ export default new Router({
     {path: '/UserOperate', name: 'UserOperate', component: UserOperate},
 	
 	// 移动端首页
-	{path: '/mhome', name: 'mhome', component: mhome}
+	{path: '/m/mhome', name: 'mhome', component: mhome}
     
   ]
 })
