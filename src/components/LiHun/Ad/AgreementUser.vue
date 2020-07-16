@@ -598,7 +598,7 @@ export default {
 		  updatePhone({
 		    phone: this.form.newPhone,
 		    code: this.form.PhoneCode02,
-		    old_phone: this.userMsg.phone,
+		    old_phone: this.phoneNum,
 		    old_code: this.form.PhoneCode01
 		  }).then((data) => {
 		    if (data.data.status_code == 200) {
@@ -627,7 +627,7 @@ export default {
     },
     sendPsCode () {   // 发送修改密码验证码
       phoneCode({
-        phone: this.userMsg.phone,
+        phone: this.phoneNum,
         type: 3
       }).then((data) => {
         if (data.data.status_code == 200) {
@@ -688,7 +688,7 @@ export default {
 		  this.$refs.formPasswordAgain.focus()
 	  } else if (this.form.passwordNew == this.form.passwordAgain) {
         updatePasswordPhone({
-          phone: this.userMsg.phone,
+          phone: this.phoneNum,
           password: this.form.passwordNew,
 		  passwordagain: this.form.passwordAgain
         }).then((data) => {
