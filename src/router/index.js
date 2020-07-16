@@ -27,6 +27,8 @@ const UserWenShu = () => import('@/components/LiHun/houtai/UserWenShu')  // 用�
 
 const UserOperate = () => import('@/components/LiHun/houtai/UserOperate')  // 用户浏览操作页面
 
+// 移动端页面
+const mhome = () => import('@/components/LiHun/m/mhome') // 移动端首页
 
 /**
  * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
@@ -92,7 +94,10 @@ export default new Router({
     // 后台用户文书页面
     {path: '/UserWenShu', name: 'UserWenShu', component: UserWenShu},
     // 后台用户操作界面
-    {path: '/UserOperate', name: 'UserOperate', component: UserOperate}
+    {path: '/UserOperate', name: 'UserOperate', component: UserOperate},
+	
+	// 移动端首页
+	{path: '/mhome', name: 'mhome', component: mhome}
     
   ]
 })

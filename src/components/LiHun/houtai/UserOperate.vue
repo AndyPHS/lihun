@@ -31,8 +31,10 @@
           </el-table-column>
           <el-table-column prop="actionTitle" label="文章类别" width="150">
           </el-table-column>
-          <el-table-column prop="created_time" label="浏览时长" width="100">
+          <el-table-column prop="created_time" label="打开时间" width="100">
           </el-table-column>
+		  <el-table-column prop="stop_time" label="关闭时间" width="100">
+		  </el-table-column>
           <el-table-column prop="source" label="文章来源" width="300">
           </el-table-column>
         </el-table>
@@ -81,7 +83,26 @@ import {selectUserNewsLog} from '@/api/api/AgreementRequest.js'
          path: '/UserList',
          name: 'UserList'
        })
-     }
+     },
+	  DateDiff(d1,d2){ // 时间差
+	     var day = 24 * 60 * 60 *1000;
+		 try{    
+				 var dateArr = d1.split("-");
+			var checkDate = new Date();
+				 checkDate.setFullYear(dateArr[0], dateArr[1]-1, dateArr[2]);
+			var checkTime = checkDate.getTime();
+		   
+			var dateArr2 = d2.split("-");
+			var checkDate2 = new Date();
+				 checkDate2.setFullYear(dateArr2[0], dateArr2[1]-1, dateArr2[2]);
+			var checkTime2 = checkDate2.getTime();
+			 
+			var cha = (checkTime - checkTime2)/day;  
+				 return cha;
+			 }catch(e){
+			return false;
+		 }
+	 }
    },
    mounted () {
      this.getParams ()

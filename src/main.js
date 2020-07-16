@@ -6,10 +6,6 @@ import Axios from 'axios'
 import $ from 'jquery'
 import router from './router/index'
 import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
-// import 'tailwindcss/base.css'
-// import 'tailwindcss/components.css'
-// import 'tailwindcss/utilities.css'
 import VueResource from 'vue-resource'  // 请求数据
 // 引入mock.js
 // require('./mock.js')
@@ -22,7 +18,7 @@ const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
-
+// 引入移动端框架vant
 Vue.prototype.$axios = Axios
 Axios.defaults.baseURL = '/api'
 // Axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
