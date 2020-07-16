@@ -31,7 +31,7 @@
 <style scoped="scoped">
 	.mmin{margin:0 auto}
 	.mhead_l span{color: #b7b7b7;}
-	/* .mlogo{width: 26%;} */
+	.mlogo{width:94px;height: 31px;display: inline-block;}
 	.denglu{color:#547ce0;}
 	.mhead{margin: 0.8125rem 1.5rem;}
 	.m_nav{background-color:#547ce0;}
