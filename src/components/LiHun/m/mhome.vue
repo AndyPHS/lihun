@@ -23,8 +23,8 @@
 
 <style scoped="scoped">
 	.mmin{max-width: 40rem; margin:0 auto}
-	.mhead_l span{font-size: 20px;color: #b7b7b7;}
+	.mhead_l span{font-size: 10px;color: #b7b7b7;}
 	.mlogo{width: auto;}
-	.denglu{font-size: 24px;color:#547ce0;}
-	.mhead{margin:1.5625rem 2.875rem;}
+	.denglu{font-size: 12px;color:#547ce0;}
+	.mhead{margin: 0.8125rem 1.5rem;}
 </style>
