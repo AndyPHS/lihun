@@ -242,7 +242,7 @@
 	.m_nav{background-color:#547ce0;}
 	.m_nav ul{margin:0 1.5rem;}
 	.m_wuqu_t h2{color: #535353;}
-	.m_wuqu_min ul li{width: 169px;height: 165px;}
+	.m_wuqu_min ul li{width: 48%;height: 165px;}
 	.m_wuqu_min ul li img{height:120px;width: 100%;display: block;}
 	.m_wuqu_min ul li p{color: #fff;background-color: #91aad2;padding-left: 37px;padding-right: 37px;text-align: center;height: 45px;width: 100%;}
 	.m_fuwu{background:url(../../../assets/images/lihun/m/m_fuwu_bg.png)no-repeat; background-size: cover;}
@@ -257,7 +257,7 @@
 	.m_gushi_min p{text-indent: 2em;color:#777777}
 	.m_gushi_min span{display: inherit;color: #829fe8;}
 	.m_yanfa_t h2{color: #535353;}
-	.m_yanfa_min  ul li{width: 169px;height: 100px;}
+	.m_yanfa_min  ul li{width: 48%;height: 100px;}
 	.m_yanfa_min  ul li h2{height: 50px;background-color: #fff;color:#547ce0;font-weight: 900;font-size: 18px;line-height: 50px;}
 	.m_yanfa_min  ul li div{height: 50px;background-color: #547ce0;color:#fff;padding:7px 0px;}
 	.m_yanfa{background:url(../../../assets/images/lihun/m/m_yanfa_bg.png)no-repeat; background-size: cover;}
