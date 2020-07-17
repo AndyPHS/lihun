@@ -180,7 +180,7 @@
 				</el-dialog>
 				<!-- 离婚指导弹窗 -->
 				<div class="zhidaopage myconsult"  v-if="this.dialogZhiDao == true">
-					<div style="width: 761px;height: 554px;position: absolute;top:50%;left: 50%;margin-top: -280px;margin-left: -380px;background-color: #fff;">
+					<div style="width: 761px;height: 554px;position: absolute;top:50%;left: 50%;margin-top: -280px;margin-left: -380px;background-color: #fff;box-shadow: 6px 14px 20px 1px #141313;">
 						<div>
 							<div class="text-right py-2">
 								<span class="mr-4 mt-1" @click="closeZhiDao">X</span>
