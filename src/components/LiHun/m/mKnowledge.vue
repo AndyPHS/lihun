@@ -3,7 +3,7 @@
 		<div class="queding_head">
 			<div class="com_head mx-3 relative">
 				<img @click="gohome" src="../../../assets/images/lihun/m/back_white_icon.png" alt="">
-				<h2 class="py-4 font-bold text-center text-white text-base">离婚知识</h2>
+				<h2 class="py-4 font-bold text-center text-white text-lg">离婚知识</h2>
 				<img src="../../../assets/images/lihun/m/m_search_icon.png" alt="">
 			</div>
 			<div class="px-2">
@@ -31,11 +31,11 @@
 		</div>
 		<div class="mx-3 lihunmin">
 			<ul>
-				<li class="border-b text-left pt-2 pb-4">
+				<li  @click="gomin" class="border-b text-left pt-2 pb-4">
 					<h2 class="py-2 font-bold text-base">离婚需要多长时间</h2>
 					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按……..</p>
 				</li>
-				<li class="border-b text-left pt-2 pb-4">
+				<li  @click="gomin"class="border-b text-left pt-2 pb-4">
 					<h2 class="py-2 font-bold text-base">离婚需要多长时间</h2>
 					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按……..如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按……..</p>
 				</li>
@@ -58,6 +58,9 @@ export default {
 	methods: {
 		gohome () {
 			this.$router.replace('/m/mhome')
+		},
+		gomin () {
+			this.$router.replace('/m/mKnowledgeMin')
 		}
 	}
 }
