@@ -15,7 +15,7 @@
 		<div class="m_nav w-full">
 			<ul class="flex justify-between items-center py-2">
 				<li class="text-white text-base text-bold">离婚知识</li>
-				<li class="text-white text-base text-bold">定制离婚协议书</li>
+				<li @click="goQueDing" class="text-white text-base text-bold">定制离婚协议书</li>
 				<li class="text-white text-base text-bold">离婚协议书范文</li>
 			</ul>
 		</div>
@@ -143,7 +143,7 @@
 				<h2 class="text-xl">专业离婚协议书定制服务</h2>
 				<span class="text-xs mt-2 px-2 border border-gray-500 rouded-sm">基于家理起草的1000+份离婚协议书研发</span>
 			</div>
-			<div class="m_yanfa_min pb-10">
+			<div class="m_yanfa_min pb-8">
 				<ul class="flex justify-between px-3">
 					<li>
 						<h2>10+年</h2>
@@ -232,13 +232,15 @@ export default {
 	
 	},
 	methods: {
-		
+		goQueDing () {
+			this.$router.replace('/m/mQueDing')
+		}
 	}
 }
 </script>
 
 <style scoped="scoped">
-	.mmin{margin:0 auto}
+	.mmin{max-width: 40rem;margin:0 auto}
 	.mhead_l span{color: #b7b7b7;}
 	.mlogo{width:94px;height: 31px;display: inline-block;}
 	.denglu{color:#547ce0;}
