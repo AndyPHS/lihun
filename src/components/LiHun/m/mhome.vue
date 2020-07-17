@@ -106,7 +106,7 @@
 						<p>20分钟完成</p>
 					</dd>
 				</dl>
-				<dl>
+				<dl class="mt-3">
 					<dt>
 						<img src="../../../assets/images/lihun/m/home_fuwu04.png" alt="">
 					</dt>
@@ -116,7 +116,7 @@
 						<p>服务50000+客户</p>
 					</dd>
 				</dl>
-				<dl>
+				<dl class="mt-3">
 					<dt>
 						<img src="../../../assets/images/lihun/m/home_fuwu05.png" alt="">
 					</dt>
@@ -177,25 +177,25 @@
 					</li>
 				</ul>
 				<div class="pingjia px-3 pt-10">
-					<el-carousel :interval="5000" arrow="always" height="146px">
+					<el-carousel :interval="5000" arrow="always" height="152px" indicator-position="outside">
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
 							</div>
 						</el-carousel-item>
 					</el-carousel>
@@ -211,26 +211,30 @@
 				<img src="../../../assets/images/lihun/m/m_liucheng_min.png" alt="">
 			</div>
 		</div>
-		<div class="m_bottom">
-			<div class="m_bottom_all text-left px-3 mt-2">
-				<h2 class="text-lg text-white py-6 text-bold">联系我们</h2>
-				<div class="border-b border-gray-500 pb-3">
-					<p class="text-xs text-white">电话：400-8989-818     时间：周一至周五 09:00-18:00</p>
-					<p class="text-xs text-white">地址：北京市建国门外大街22号赛特大厦3层</p>
-				</div>
-				<div class="pt-3 pb-10">
-					<p class="text-xs text-white">©2017 北京家理律师事务所</p>
-					<p class="text-xs text-white">备案号：京ICP备14011260号-2</p>
-					<p class="text-xs text-white">京公网安备： 11010502037274号</p>
-				</div>
-			</div>
-		</div>
+		<!-- 共用底部 -->
+		<m-bottom></m-bottom>
 	</div>
 </template>
 
 <script>
-// 引入移动端框架vant
-// import { Button } from 'vant'
+import m_bottom from '../../partials/m_bottom.vue'
+export default {
+	name: 'Pay',
+	components: {
+	  'm-bottom': m_bottom
+	},
+	data () {
+		return {
+			
+		}
+	},
+	mounted () {
+	
+	},
+	methods: {
+		
+	}
+}
 </script>
 
 <style scoped="scoped">
@@ -262,5 +266,5 @@
 	.m_yanfa_min  ul li div{height: 50px;background-color: #547ce0;color:#fff;padding:7px 0px;}
 	.m_yanfa{background:url(../../../assets/images/lihun/m/m_yanfa_bg.png)no-repeat; background-size: cover;}
 	.m_liucheng_t h2{color: #535353;}
-	.m_bottom{background: #2c2c2c;}
+	
 </style>
