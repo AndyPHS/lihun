@@ -16,7 +16,7 @@
 			<ul class="flex justify-between items-center py-2">
 				<li @click="goKnowledge" class="text-white text-base text-bold">离婚知识</li>
 				<li @click="goQueDing" class="text-white text-base text-bold">定制离婚协议书</li>
-				<li class="text-white text-base text-bold">离婚协议书范文</li>
+				<li @click="gomAgreementModel" class="text-white text-base text-bold">离婚协议书范文</li>
 			</ul>
 		</div>
 		<div class="m_swiper">
@@ -237,6 +237,9 @@ export default {
 		},
 		goKnowledge () { // 去离婚知识页面
 			this.$router.replace('/m/mKnowledge')
+		},
+		gomAgreementModel () { // 协议书模板
+			this.$router.replace('/m/mAgreementModel')
 		}
 	}
 }

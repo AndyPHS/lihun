@@ -33,6 +33,8 @@ const mhome = () => import('@/components/LiHun/m/mhome') // 移动端首页mQueD
 const mQueDing = () => import('@/components/LiHun/m/mQueDing') // 移动端确定
 const mKnowledge = () => import('@/components/LiHun/m/mKnowledge') // 移动端离婚知识
 const mKnowledgeMin = () => import('@/components/LiHun/m/mKnowledgeMin') // 移动端离婚知识详情页
+const mAgreement = () => import('@/components/LiHun/m/mAgreement') // 移动端离婚协议书内容页
+const mAgreementModel = () => import('@/components/LiHun/m/mAgreementModel') // 移动端离婚协议书模板页
 
 /**
  * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
@@ -108,5 +110,9 @@ export default new Router({
 	{path: '/m/mKnowledge', name: 'mKnowledge', component: mKnowledge},
 	// 移动端离婚知识详情页
 	{path: '/m/mKnowledgeMin', name: 'mKnowledgeMin', component: mKnowledgeMin},
+	// 移动端离婚协议书页面
+	{path: '/m/mAgreement', name: 'mAgreement', component: mAgreement},
+	// 移动端离婚协议书模板页面
+	{path: '/m/mAgreementModel', name: 'mAgreementModel', component: mAgreementModel},
   ]
 })
