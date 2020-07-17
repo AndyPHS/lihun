@@ -14,7 +14,7 @@
 		</div>
 		<div class="m_nav w-full">
 			<ul class="flex justify-between items-center py-2">
-				<li class="text-white text-base text-bold">离婚知识</li>
+				<li @click="goKnowledge" class="text-white text-base text-bold">离婚知识</li>
 				<li @click="goQueDing" class="text-white text-base text-bold">定制离婚协议书</li>
 				<li class="text-white text-base text-bold">离婚协议书范文</li>
 			</ul>
@@ -232,8 +232,11 @@ export default {
 	
 	},
 	methods: {
-		goQueDing () {
+		goQueDing () { // 去定制离婚协议书页面
 			this.$router.replace('/m/mQueDing')
+		},
+		goKnowledge () { // 去离婚知识页面
+			this.$router.replace('/m/mKnowledge')
 		}
 	}
 }

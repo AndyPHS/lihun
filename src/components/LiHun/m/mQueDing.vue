@@ -66,7 +66,7 @@
 <script>
 import m_bottom from '../../partials/m_bottom.vue'
 export default {
-	name: 'Pay',
+	name: 'mQueDing',
 	components: {
 	  'm-bottom': m_bottom
 	},
