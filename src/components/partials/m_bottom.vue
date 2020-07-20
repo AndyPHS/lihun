@@ -9,7 +9,7 @@
 				</div>
 				<div class="pt-3 pb-10">
 					<p class="text-xs text-white">©2017 北京家理律师事务所</p>
-					<p class="text-xs text-white">备案号：京ICP备14011260号-2</p>
+					<p class="text-xs text-white">备案号：京ICP备14011260号-4</p>
 					<p class="text-xs text-white">京公网安备： 11010502037274号</p>
 				</div>
 			</div>

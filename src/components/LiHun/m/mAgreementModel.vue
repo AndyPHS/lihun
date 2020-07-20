@@ -68,12 +68,18 @@
 				</p>
 			</div>
 		</div>
+		<!-- 共用底部 -->
+		<m-bottom></m-bottom>
 	</div>
 </template>
 
 <script>
+	import m_bottom from '../../partials/m_bottom.vue'
 	export default {
 		name: 'mAgreementModel',
+		components: {
+		  'm-bottom': m_bottom
+		},
 		data() {
 			return {
 

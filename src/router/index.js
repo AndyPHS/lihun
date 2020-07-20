@@ -35,7 +35,9 @@ const mKnowledge = () => import('@/components/LiHun/m/mKnowledge') // 移动端�
 const mKnowledgeMin = () => import('@/components/LiHun/m/mKnowledgeMin') // 移动端离婚知识详情页
 const mAgreement = () => import('@/components/LiHun/m/mAgreement') // 移动端离婚协议书内容页
 const mAgreementModel = () => import('@/components/LiHun/m/mAgreementModel') // 移动端离婚协议书模板页
-
+const mMyconsult = () => import('@/components/LiHun/m/mMyconsult') // 移动端我的协议书模板页
+const mShiyongxieyi = () => import('@/components/LiHun/m/mShiyongxieyi') // 移动端用户协议
+const msearchPage = () => import('@/components/LiHun/m/msearchPage') // 移动端搜索页面
 /**
  * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
  */
@@ -114,5 +116,11 @@ export default new Router({
 	{path: '/m/mAgreement', name: 'mAgreement', component: mAgreement},
 	// 移动端离婚协议书模板页面
 	{path: '/m/mAgreementModel', name: 'mAgreementModel', component: mAgreementModel},
+	// 移动端我的协议书
+	{path: '/m/mMyconsult', name: 'mMyconsult', component: mMyconsult},
+	// 移动端用户注册和使用协议
+	{path: '/m/mShiyongxieyi', name: 'mShiyongxieyi', component: mShiyongxieyi},
+	// 移动端离婚知识搜索页面
+	{path: '/m/msearchPage', name: 'msearchPage', component: msearchPage},
   ]
 })
