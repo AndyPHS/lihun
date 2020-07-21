@@ -1,9 +1,15 @@
 <template>
-	<div class="mRegist">
+	<div class="mLogin">
 		<div class="com_head mx-3  relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-lg">注册</h2>
-			<span @click="gologin" class="login">登录</span>
+			<h2 class="py-4 text-bold text-center text-lg">登录</h2>
+			<span @click="goregist" class="regist">注册</span>
+		</div>
+		<div class="mx-3">
+			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+				<el-menu-item class="w-1/2 text-base" index="1">快捷登录</el-menu-item>
+				<el-menu-item class="w-1/2 text-base" index="2">密码登录</el-menu-item>
+			</el-menu>
 		</div>
 		<div class="min px-5 mt-10">
 			<form action="">
@@ -13,15 +19,12 @@
 						<el-divider direction="vertical"></el-divider>
 						<input type="number" class="text-base leading-loose" v-model="form.phone" placeholder="请输入手机号">
 					</li>
-					<li class="pt-8 border-b border-grey-400 relative">
+					<li v-if="this.activeIndex=='1' " class="pt-8 border-b border-grey-400 relative">
 						<input type="text" class="text-base leading-loose" v-model="form.vcode" placeholder="请输入验证码">
 						<span class="yanzheng hidden">获取验证码</span>
 						<span class="time">60s</span>
 					</li>
-					<!-- <li class="mt-8 border-b border-grey-400">
-						<input type="password" show-password class="text-base leading-loose" v-model="form.newpassword" placeholder="设置密码">
-					</li> -->
-					<li class="pt-8 border-b border-grey-400 relative">
+					<li v-if="this.activeIndex=='2' " class="pt-8 border-b border-grey-400 relative">
 						<div class="el-form-item">
 						  <div class="el-form-item__content">
 							  <el-input placeholder="设置密码" class="text-base" v-model="form.newpassword" show-password></el-input>
@@ -29,11 +32,9 @@
 						</div>
 					</li>
 				</ul>
-				<span>注 &nbsp;册</span>
+				<span>登 &nbsp;录</span>
 				<div class="read mt-6 flex items-center justify-center">
-					<img @click="changeSelectAc" v-if="this.checkOne==true" class="" src="../../../assets/images/lihun/m/m_select_icon.png" alt="">
-					<img @click="changeSelectAc" v-if="this.checkOne==false" src="../../../assets/images/lihun/m/m_unselect_icon.png" alt="">
-					<h3>我已阅读并同意<span @click="goshiyongxieyi">《蜗牛家事用户注册和使用协议》</span></h3>
+					<h3>登录即表示阅读并同意<span @click="goshiyongxieyi">《蜗牛家事用户注册和使用协议》</span></h3>
 				</div>
 			</form>
 		</div>
@@ -42,15 +43,16 @@
 
 <script>
 export default {
-	name: 'mRegist',
+	name: 'mLogin',
 	data () {
 		return {
+			activeIndex: '1',
 			form:{
 				phone: '',
 				newpassword: '',
 				vcode: ''
 			},
-			checkOne: false,  // 是否阅读协议
+			
 		}
 	},
 	mounted () {
@@ -63,20 +65,21 @@ export default {
 		goshiyongxieyi () { // 查看协议
 			this.$router.replace('/m/mShiyongxieyi')
 		},
-		changeSelectAc () { // 是否阅读协议
-			this.checkOne = !this.checkOne
+		goregist () { // 去注册
+			this.$router.replace('/m/mRegist')
 		},
-		gologin () { // 去登录
-			this.$router.replace('/m/mLogin')
-		}
+		handleSelect(key, keyPath) {
+		    // console.log(key, keyPath);
+			this.activeIndex = key
+	    }
 	}
 }
 </script>
 
 <style scoped="scoped">
-	.mRegist{max-width: 40rem;margin:0 auto}
+	.mLogin{max-width: 40rem;margin:0 auto}
 	.com_head img{width: 12px;height: 24px;position: absolute;left: 0;top: 17px;}
-	.login{position: absolute;right: 0;top:17px;font-size: 15px;color:#547ce0}
+	.regist{position: absolute;right: 0;top:17px;font-size: 15px;color:#547ce0}
 	.min ul li input{width: 100%;text-align: left;border:none;color: #343434;}
 	.min ul li input:focus{outline: none;}
 	.phone{display: table;}

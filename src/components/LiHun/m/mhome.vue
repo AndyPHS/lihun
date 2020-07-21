@@ -2,14 +2,14 @@
 	<div class="mmin">
 		<div class="mhead flex justify-between items-center">
 			<div class="mhead_l py-1 flex justify-between items-center">
-				<router-link  class="mlogo" to="/mhome"><img src="../../../assets/images/lihun/m/mlogo.png" alt=""></router-link>
+				<router-link  class="mlogo" to="/m/mhome"><img src="../../../assets/images/lihun/m/mlogo.png" alt=""></router-link>
 				<el-divider class="" direction="vertical"></el-divider>
 				<span class="text-sm ">离婚协议书</span>
 			</div>
 			<div class="denglu text-base flex justify-around items-center">
-				<span>登录</span>
+				<span @click="goLogin">登录</span>
 				<el-divider class="" direction="vertical"></el-divider>
-				<span>注册</span>
+				<span @click="goRegist">注册</span>
 			</div>
 		</div>
 		<div class="m_nav w-full">
@@ -240,6 +240,12 @@ export default {
 		},
 		gomAgreementModel () { // 协议书模板
 			this.$router.replace('/m/mAgreementModel')
+		},
+		goLogin () { // 去登录
+			this.$router.replace('/m/mLogin')
+		},
+		goRegist () { // 去注册
+			this.$router.replace('/m/mRegist')
 		}
 	}
 }

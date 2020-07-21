@@ -42,6 +42,8 @@ const mUser = () => import('@/components/LiHun/m/mUser') // 移动端个人中�
 const mUpdatePassword = () => import('@/components/LiHun/m/mUpdatePassword') // 移动端修改密码
 const mResetPassword = () => import('@/components/LiHun/m/mResetPassword') // 移动端重置密码
 const mRegist = () => import('@/components/LiHun/m/mRegist') // 移动端注册页
+const mLogin = () => import('@/components/LiHun/m/mLogin') // 移动端登录页
+const mForgetPassword = () => import('@/components/LiHun/m/mForgetPassword') // 移动端忘记密码
 
 /**
  * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
@@ -135,5 +137,10 @@ export default new Router({
 	{path: '/m/mResetPassword', name: 'mResetPassword', component: mResetPassword},
 	// 移动端注册
 	{path: '/m/mRegist', name: 'mRegist', component: mRegist},
+	// 移动端登录
+	{path: '/m/mLogin', name: 'mLogin', component: mLogin},
+	// 移动端忘记密码
+	{path: '/m/mForgetPassword', name: 'mForgetPassword', component: mForgetPassword},
+	
   ]
 })

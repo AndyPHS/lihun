@@ -2,7 +2,7 @@
 	<div class="mResetPassword">
 		<div class="com_head mx-3  relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-xl">重置密码</h2>
+			<h2 class="py-4 text-bold text-center text-lg">重置密码</h2>
 		</div>
 		<div class="min px-5 mt-10">
 			<form action="">

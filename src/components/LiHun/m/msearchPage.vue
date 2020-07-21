@@ -4,7 +4,7 @@
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
 			<div class="searchBox">
 				<div class="search_min flex justify-between items-center">
-					<input class="text-center" type="text" placeholder="请输入关键词">
+					<input class="text-center text-lg" type="text" placeholder="请输入关键词">
 					<img src="../../../assets/images/lihun/searchM_icon.png" alt="">
 				</div>
 			</div>

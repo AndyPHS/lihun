@@ -2,7 +2,7 @@
 	<div class="mKnowledgeMin">
 		<div class="com_head mx-3 relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-xl">我的协议书</h2>
+			<h2 class="py-4 text-bold text-center text-lg">我的协议书</h2>
 		</div>
 		<div class="min px-3">
 			<p class="px-3 text-xs leading-loose py-3 min_head">手机端仅供查看或下载已有离婚协议书；如需定制，请前往PC端操作。</p>

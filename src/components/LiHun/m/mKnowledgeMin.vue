@@ -2,10 +2,10 @@
 	<div class="mKnowledgeMin">
 		<div class="com_head mx-3 border-b border-gray-400 relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-xl">离婚知识-正文</h2>
+			<h2 class="py-4 text-bold text-center text-lg">离婚知识-正文</h2>
 		</div>
 		<div class="min px-3">
-			<h2 class="py-4 text-bold text-center text-xl">离婚方式与选择</h2>
+			<h2 class="py-4 text-bold text-center text-lg">离婚方式与选择</h2>
 			<div class="flex pb-4 justify-between">
 				<span class="inline-block text-sm text-gray-400">帮助459人</span>
 				<span class="inline-block text-sm text-gray-400">20-06-30</span>

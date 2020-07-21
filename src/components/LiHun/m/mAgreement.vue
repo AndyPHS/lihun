@@ -2,7 +2,7 @@
 	<div class="mKnowledgeMin">
 		<div class="com_head mx-3 border-b border-gray-400 relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-xl">离婚协议书</h2>
+			<h2 class="py-4 text-bold text-center text-lg">离婚协议书</h2>
 			<span class="inline-block download">下载</span>
 		</div>
 		<div class="min px-4">

@@ -2,7 +2,7 @@
 	<div class="mqueding">
 		<div class="com_head mx-3 border-b border-gray-400 relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-xl">定制离婚协议书</h2>
+			<h2 class="py-4 text-bold text-center text-lg">定制离婚协议书</h2>
 		</div>
 		<div class="mx-2">
 			<p class="text-red-600 text-left text-sm py-6">手机端仅供查看所需材料；如需定制，请前往PC端操作。</p>
