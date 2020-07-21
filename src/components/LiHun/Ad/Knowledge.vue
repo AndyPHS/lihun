@@ -207,6 +207,7 @@ export default {
 				if ( data.data.status_code ==200 ) {
 					this.tableData = data.data.data
 					this.ins = null
+					this.tableDataNull = false
 					if (this.tableData.length == 0 ) {
 						this.tableDataNull = true
 					}
