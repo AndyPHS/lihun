@@ -38,6 +38,10 @@ const mAgreementModel = () => import('@/components/LiHun/m/mAgreementModel') // 
 const mMyconsult = () => import('@/components/LiHun/m/mMyconsult') // 移动端我的协议书模板页
 const mShiyongxieyi = () => import('@/components/LiHun/m/mShiyongxieyi') // 移动端用户协议
 const msearchPage = () => import('@/components/LiHun/m/msearchPage') // 移动端搜索页面
+const mUser = () => import('@/components/LiHun/m/mUser') // 移动端个人中心
+const mUpdatePassword = () => import('@/components/LiHun/m/mUpdatePassword') // 移动端修改密码
+const mResetPassword = () => import('@/components/LiHun/m/mResetPassword') // 移动端重置密码
+
 /**
  * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
  */
@@ -122,5 +126,12 @@ export default new Router({
 	{path: '/m/mShiyongxieyi', name: 'mShiyongxieyi', component: mShiyongxieyi},
 	// 移动端离婚知识搜索页面
 	{path: '/m/msearchPage', name: 'msearchPage', component: msearchPage},
+	// 移动端个人中心
+	{path: '/m/mUser', name: 'mUser', component: mUser},
+	// 移动端修改密码
+	{path: '/m/mUpdatePassword', name: 'mUpdatePassword', component: mUpdatePassword},
+	// 移动端重置
+	{path: '/m/mResetPassword', name: 'mResetPassword', component: mResetPassword},
+	
   ]
 })

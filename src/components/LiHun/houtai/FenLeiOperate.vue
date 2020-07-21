@@ -67,6 +67,12 @@
         <el-form-item label="分类简介" :label-width="formLabelWidth">
           <el-input v-model="actionForm.description" autocomplete="off"></el-input>
         </el-form-item>
+		<el-form-item label="关键词" :label-width="formLabelWidth">
+		  <el-input v-model="actionForm.keywords" autocomplete="off"></el-input>
+		</el-form-item>
+		<el-form-item label="路径" :label-width="formLabelWidth">
+		  <el-input v-model="actionForm.route" autocomplete="off"></el-input>
+		</el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -84,11 +90,12 @@
         <el-form-item label="分类简介" :label-width="formLabelWidth">
           <el-input v-model="actionForm.description" autocomplete="off"></el-input>
         </el-form-item>
-        <!-- <el-form-item label="父级分类" :label-width="formLabelWidth">
-          <el-select v-model="actionForm.faId" placeholder="请选择父级分类">
-            <el-option v-for="(item, index) in fenleiAll" :key="index" :label="item.title" :value="item.id"></el-option>
-          </el-select>
-        </el-form-item> -->
+        <el-form-item label="关键词" :label-width="formLabelWidth">
+          <el-input v-model="actionForm.keywords" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="路径" :label-width="formLabelWidth">
+          <el-input v-model="actionForm.route" autocomplete="off"></el-input>
+        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="updateDialogFormVisible = false">取 消</el-button>
@@ -119,7 +126,9 @@ export default{
         title: '', // 标题
         description: '', // 简介
         faId: null, // 父ID
-        id: null
+        id: null,
+		keywords: '',
+		route: ''
       }
     }
   },
@@ -138,11 +147,15 @@ export default{
       this.dialogFormVisible = true
       this.actionForm.title = ''
       this.actionForm.description = ''
+	  this.actionForm.keywords = ''
+	  this.actionForm.route = ''
     },
     addActionBtn () { // 添加分类确认按钮
       addAction({
         title: this.actionForm.title,
-        description: this.actionForm.description
+        description: this.actionForm.description,
+		keywords: this.actionForm.keywords,
+		route: this.actionForm.route
       }).then((data) => {
         this.dialogFormVisible = false
         this.getFenlei()
@@ -153,13 +166,17 @@ export default{
       this.dialogFormVisible = true
       this.actionForm.title = ''
       this.actionForm.description = ''
+	  this.actionForm.keywords = ''
+	  this.actionForm.route = ''
       this.actionForm.faId = row.id
     },
     addChildActionBtn () {
       addAction({
         title: this.actionForm.title,
         description: this.actionForm.description,
-        faId: this.actionForm.faId
+        faId: this.actionForm.faId,
+		keywords: this.actionForm.keywords,
+		route: this.actionForm.route
       }).then((data) => {
         this.dialogFormVisible = false
         this.getFenlei()
@@ -172,13 +189,17 @@ export default{
       this.actionForm.faId = row.faId
       this.actionForm.title = row.title
       this.actionForm.description = row.description
+	  this.actionForm.keywords = row.keywords
+	  this.actionForm.route = row.route
       localStorage.setItem('id', row.id)
     },
     updateActionBtn () {
       updateAction({
         title: this.actionForm.title,
         description: this.actionForm.description,
-        faId: this.actionForm.faId
+        faId: this.actionForm.faId,
+		keywords: this.actionForm.keywords,
+		route: this.actionForm.route
       }).then((data) => {
         this.updateDialogFormVisible = false
         this.getFenlei()
