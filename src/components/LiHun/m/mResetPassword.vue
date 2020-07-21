@@ -16,7 +16,7 @@
 						<input type="password" class="text-base leading-loose" v-model="form.newpassword" placeholder="请输入新密码">
 					</li>
 					<li class="mt-6 border-b border-grey-400">
-						<input type="password" class="text-base leading-loose" v-model="form.newpasswordagain" placeholder="请确认新密码">
+						<input type="password" class="text-base leading-loose" v-model="form.newpasswordagain" placeholder="再次确认密码">
 					</li>
 				</ul>
 				<span>完成</span>
