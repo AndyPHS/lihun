@@ -8,8 +8,8 @@
 			<div class="user_head px-4 py-8">
 				<dl class="flex justify-start items-center">
 					<dt class="mx-5">
-						<img class="photoMsg" v-if="this.isLogin==false" src="../../../assets/images/lihun/user_img.png" alt="">
-						<img class="photoMsg" v-if="this.isLogin==true" :src="this.userMsg.photo" alt="">
+						<img class="photoMsg" v-if="this.userMsg.photo ==null" src="../../../assets/images/lihun/user_img.png" alt="">
+						<img class="photoMsg" v-else :src="this.userMsg.photo" alt="">
 					</dt>
 					<dd class="text-white font-bold text-base">{{this.userMsg.phone}}</dd>
 				</dl>

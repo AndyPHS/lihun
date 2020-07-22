@@ -22,6 +22,9 @@
 					</li>
 				</ul>
 			</div>
+			<div class="noxieyi" v-if="this.wenshuList.length==0">
+				暂无协议书
+			</div>
 		</div>
 	</div>
 </template>
@@ -108,4 +111,5 @@ export default {
 	.border-e5e5e5{border-color: #e5e5e5;}
 	.text-6286e3{color:#6286e3}
 	.text-535353{color: #535353;}
+	.noxieyi{height: 500px;line-height: 200px;}
 </style>

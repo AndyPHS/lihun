@@ -122,6 +122,7 @@ export default {
 	.mKnowledgeMin{max-width: 40rem;margin:0 auto}
 	.com_head img{width: 12px;height: 24px;position: absolute;left: 0;top: 17px;}
 	.con{color:#535353;}
+	.con p span{font-size: 14px;}
 	.aboutArticle{background-color: #eeeeee;}
 	.gui{width: 3px;height: 15px;display: inline-block;background-color: #557ce1;margin-right: 4px;}
 </style>

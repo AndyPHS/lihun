@@ -140,8 +140,9 @@ export default {
 				if(data.data.status_code==200){
 					this.tableDataNull = true
 					this.tableData = data.data.data.qian
+				} else if(data.data.status_code==401){
+					this.$router.replace('/m/mhome')
 				}
-				console.log(data.data)
 			})
 		},
 		searchList (item, index) { // 点击分类查找文章
