@@ -8,28 +8,16 @@
 			<p class="px-3 text-xs leading-loose py-3 min_head">手机端仅供查看或下载已有离婚协议书；如需定制，请前往PC端操作。</p>
 			<div>
 				<ul class="pb-4">
-					<li class="bg-white text-left mb-3 border border-e5e5e5">
-						<h2 class="px-3 text-base font-bold text-535353 py-4">名称：离婚协议书</h2>
-						<h2 class="px-3 text-base font-bold text-535353 pb-6">版本：第一版</h2>
+					<li v-for="(item, index) in wenshuList" :key="index" v-if="item.complete == 1" class="bg-white text-left mb-3 border border-e5e5e5">
+						<h2 class="px-3 text-base font-bold text-535353 py-4">名称：{{ item.title }}</h2>
+						<h2 class="px-3 text-base font-bold text-535353 pb-6">版本：第{{ item.number }}版</h2>
 						<div class="px-3 flex justify-between text-gray-400 pb-2 border-b border-e5e5e5">
-							<span class="inline-block w-1/2 text-2xs">创建时间：2020.7.10  10:25:22</span>
-							<span class="inline-block w-1/2 text-2xs">文书编号：123456445645645</span>
+							<span class="inline-block w-1/2 text-2xs">创建时间：{{ item.UpdateTime }}</span>
+							<span class="inline-block w-1/2 text-2xs">文书编号：{{ item.agreement_number }}</span>
 						</div>
 						<div class="flex py-2">
-							<span class="w-1/2 text-center text-base text-6286e3 border-r" @click="downLoad">下载</span>
-							<span class="w-1/2 text-center text-base text-6286e3" @click="goAgreement">查看</span>
-						</div>
-					</li>
-					<li class="bg-white text-left mb-3 border border-e5e5e5">
-						<h2 class="px-3 text-base font-bold text-535353 py-4">名称：离婚协议书</h2>
-						<h2 class="px-3 text-base font-bold text-535353 pb-6">版本：第一版</h2>
-						<div class="px-3 flex justify-between text-gray-400 pb-2 border-b border-e5e5e5">
-							<span class="inline-block w-1/2 text-2xs">创建时间：2020.7.10  10:25:22</span>
-							<span class="inline-block w-1/2 text-2xs">文书编号：123456445645645</span>
-						</div>
-						<div class="flex py-2">
-							<span class="w-1/2 text-center text-base text-6286e3 border-r" @click="downLoad">下载</span>
-							<span class="w-1/2 text-center text-base text-6286e3" @click="goAgreement">查看</span>
+							<span class="w-1/2 text-center text-base text-6286e3 border-r" @click="DownLoadWord(item.id)">下载</span>
+							<span class="w-1/2 text-center text-base text-6286e3" @click="goComplete(item)">查看</span>
 						</div>
 					</li>
 				</ul>
@@ -39,25 +27,73 @@
 </template>
 
 <script>
+import {selectUserQuestionnaire, getWord, userUpdateQuestionnaire} from '@/api/api/AgreementRequest.js'
 export default {
 	name: 'mMyconsult',
 	data () {
 		return {
-			
+			wenshuList: [], // 文书汇总
 		}
 	},
 	mounted () {
-	
+		this.getWenShu()
 	},
 	methods: {
+		getWenShu() { // 查找用户文书
+			selectUserQuestionnaire({
+				qid: 3,
+				status: 1
+			}).then((data) => {
+				if (data.data.status_code === 200) {
+					this.wenshuList = data.data.data
+				} else if (data.data.status_code === 401) { // token过期重新登录
+					localStorage.removeItem('token') // 存储token
+					localStorage.removeItem('phone')
+					this.$message({
+						message: '账号过期，请重新登录',
+						type: 'error'
+					})
+					this.$router.replace('/m/mhome')
+				} else {
+					this.$message({
+						message: '协议获取失败，请先登录',
+						type: 'error'
+					})
+				}
+			})
+		},
 		gohome () {
 			this.$router.replace('/m/mKnowledge')
 		},
-		downLoad () {
-			alert('下载协议')
+		DownLoadWord (id) { // 下载离婚协议书
+			localStorage.setItem('quid', id)
+			getWord().then((data) => { // 申请书和起诉状等有个性化页面的下载路径
+				if (data.data.status_code == 200) {
+					window.open('http://office365.aladdinlaw.com:3921/word/' + data.data.data)
+				} else {
+					this.$message({
+						message: '下载失败,请重新尝试',
+						type: 'error'
+					})
+				}
+			}).catch((data) => {
+				this.$message({
+					message: '下载失败,请联系管理员',
+					type: 'error'
+				})
+			})
 		},
-		goAgreement () {
-			this.$router.replace('/m/mAgreement')
+		goComplete(item) { // 点击查看协议跳转到生成协议页面
+			const e = item.id
+			localStorage.setItem('quid', e)
+			// this.$router.replace('/m/mAgreement')
+			this.$router.push({
+			  name: 'mAgreement',
+			  params: {
+				  title: item.title,
+				  content: item.content
+			  }
+			})
 		}
 	}
 }

@@ -8,22 +8,23 @@
 			<form action="">
 				<ul>
 					<li class="mt-6 border-b border-grey-400">
-						<input type="text" class="text-base leading-loose" v-model="form.oldpassword" placeholder="请输入原密码">
+						<input type="password" class="text-base leading-loose" v-model="form.oldpassword" placeholder="请输入原密码" ref="oldpassword">
 					</li>
 					<li class="mt-6 border-b border-grey-400">
-						<input type="password" class="text-base leading-loose" v-model="form.newpassword" placeholder="请输入新密码">
+						<input type="password" class="text-base leading-loose" v-model="form.newpassword" placeholder="请输入新密码" ref="newpassword">
 					</li>
 					<li class="mt-6 border-b border-grey-400">
-						<input type="password" class="text-base leading-loose" v-model="form.newpasswordagain" placeholder="请确认新密码">
+						<input type="password" class="text-base leading-loose" v-model="form.newpasswordagain" placeholder="请确认新密码" ref="newpasswordagain">
 					</li>
 				</ul>
-				<span>确认修改新密码</span>
+				<span @click="updatepasswordAc">确认修改新密码</span>
 			</form>
 		</div>
 	</div>
 </template>
 
 <script>
+import {remakePassword} from '@/api/api/AgreementRequest.js'
 export default {
 	name: 'mUpdatePassword',
 	data () {
@@ -41,6 +42,28 @@ export default {
 	methods: {
 		gohome () {
 			this.$router.replace('/m/mUser')
+		},
+		updatepasswordAc () {
+			if (this.form.oldpassword =='') {
+				alert('原密码不能为空')
+				this.$refs.oldpassword.focus()
+			} else  if(this.form.newpassword == '') {
+				alert('新密码不能为空')
+				this.$refs.newpassword.focus()
+			} else if ( this.form.newpasswordagain == '') {
+				alert('新密码格式不正确')
+				this.$refs.newpasswordagain.focus()
+			} else if (this.form.newpassword !==this.form.newpasswordagain){
+				alert('新密码输入不一致')
+			} else {
+				remakePassword({
+					oldPassword: this.form.oldpassword,
+					newPassword: this.form.newpassword
+				}).then((data)=>{
+					alert('修改成功')
+					this.$router.replace('/m/mhome')
+				})
+			}
 		}
 	}
 }

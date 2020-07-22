@@ -22,6 +22,17 @@ export const updatePhone = params => {
     data: params
   });
 };
+// 移动端修改密码
+export const remakePassword = params => {
+  return axios({
+    method: 'post',
+    dataType: 'json',
+    url: apiUrl.remakePassword,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
+
 // 修改用户名基本信息updateUserName
 export const updateUserName = params => {
   return axios({
@@ -225,7 +236,6 @@ export const newsHot = params => {
     method: "get",
     dataType: 'json',
     url: apiUrl.newsHot,
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
     data: params
   });
 };

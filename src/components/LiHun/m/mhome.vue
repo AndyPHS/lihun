@@ -6,7 +6,11 @@
 				<el-divider class="" direction="vertical"></el-divider>
 				<span class="text-sm ">离婚协议书</span>
 			</div>
-			<div class="denglu text-base flex justify-around items-center">
+			<div v-if="this.isLogin==true" class="touxiang">
+				<img v-if="this.userMsg.photo == null || this.userMsg.photo =='' " @click="gomuser" src="../../../assets/images/lihun/m/user_img.png" alt="">
+				<img v-else @click="gomuser" :src="this.userMsg.photo" alt="">
+			</div>
+			<div v-if="this.isLogin==false" class="denglu text-base flex justify-around items-center">
 				<span @click="goLogin">登录</span>
 				<el-divider class="" direction="vertical"></el-divider>
 				<span @click="goRegist">注册</span>
@@ -218,6 +222,7 @@
 
 <script>
 import m_bottom from '../../partials/m_bottom.vue'
+import {usersSelect} from '@/api/api/AgreementRequest.js'
 export default {
 	name: 'Pay',
 	components: {
@@ -225,13 +230,28 @@ export default {
 	},
 	data () {
 		return {
-			
+			userMsg:{
+				photo: ''
+			},
+			isLogin: false
 		}
 	},
 	mounted () {
-	
+		this.getUserMsg()
 	},
 	methods: {
+		getUserMsg () {
+			usersSelect().then((data) => {
+			  if (data.data.status_code == 401) {
+				  localStorage.removeItem('token') // 存储token
+				  this.isLogin = false
+				  this.$router.replace('/m/mhome')
+			  } else  {
+				  this.userMsg.photo = data.data.photo
+				  this.isLogin = true
+			  }
+			})
+		},
 		goQueDing () { // 去定制离婚协议书页面
 			this.$router.replace('/m/mQueDing')
 		},
@@ -246,6 +266,9 @@ export default {
 		},
 		goRegist () { // 去注册
 			this.$router.replace('/m/mRegist')
+		},
+		gomuser () {
+			this.$router.replace('/m/mUser')
 		}
 	}
 }
@@ -280,5 +303,5 @@ export default {
 	.m_yanfa_min  ul li div{height: 50px;background-color: #547ce0;color:#fff;padding:7px 0px;}
 	.m_yanfa{background:url(../../../assets/images/lihun/m/m_yanfa_bg.png)no-repeat; background-size: cover;}
 	.m_liucheng_t h2{color: #535353;}
-	
+	.touxiang img{display: inline-block;width: 32px;height: 32px;border-radius: 50%;}
 </style>
