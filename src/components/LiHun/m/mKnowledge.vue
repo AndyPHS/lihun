@@ -11,69 +11,82 @@
 					<li :class="ins===0?'active_nav':'default' " @click="selectRemen" class="text-base text-white">热门</li>
 					<li v-for="(item, index) in fenleiAll" :key="index" @click="checkChild(index)" class="text-base text-white">
 					  <h2 :class="ins === (index+1)?'active_nav':'default'">{{ item.title }}</h2>
-					  <div  v-if="childList == index" class="nav_list px-3 py-3">
+					  <div  v-if="childList == index" class="nav_list px-3">
 					  	<div class="nav_min">
 					  		<ul  v-if="item.data.length>0" class="text-sm flex">
-					  			<li v-for="($item, $index) in item.data" :key="$index" >{{ $item.title }}</li>
-					  			<!-- <li>离婚常识</li>
-					  			<li>离婚常识</li>
-					  			<li>离婚常识</li>
-					  			<li>离婚常识</li>
-					  			<li>离婚常识</li> -->
+					  			<li v-for="($item, $index) in item.data" :key="$index" :class="insChild === $item.id?'active_nav':'default'"  @click="searchList($item, $index)">{{ $item.title }}</li>
 					  		</ul>
 					  	</div>
 					  </div>
-					  <!-- <ul class="" v-if="item.data.length>0">
-					    <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
-							<h2 :class="ins === $item.id?'active_nav':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
-						</li>
-					  </ul> -->
 					</li>
-					<!-- <li class="text-base text-white">离婚</li>
-					<li class="text-base text-white">子女</li>
-					<li class="text-base text-white">财产</li>
-					<li class="text-base text-white">过错</li>
-					<li class="text-base text-white">其他</li> -->
 				</ul>
 			</div>
 		</div>
 		<div v-if="lihunpart" class="lihunpart"></div>
 		<div class="mx-3 lihunmin">
-			<ul>
-				<li  @click="gomin" class="border-b text-left pt-2 pb-4">
-					<h2 class="py-2 font-bold text-base">离婚需要多长时间</h2>
-					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按……..</p>
-				</li>
-				<li  @click="gomin" class="border-b text-left pt-2 pb-4">
-					<h2 class="py-2 font-bold text-base">离婚需要多长时间</h2>
-					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按……..如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按……..</p>
+			<ul v-if="this.tableDataNull==true">
+				<li v-for="(item, index) in tableData" :key="index" @click="gomin(item.id)" class="border-b text-left pt-2 pb-4">
+					<h2 class="py-2 font-bold text-base">{{ item.title }}</h2>
+					<p class="text-sm">{{ item.description }}</p>
 				</li>
 			</ul>
+			<el-pagination
+			  v-if="this.tableDataNull==true"
+			  small
+			  background
+			  href="#top"
+			  class="my-10 text-center"
+			  layout="prev, pager, next"
+			  @current-change="startList"
+			  :page-size="pagesize"
+			  :current-page.sync="currentPage"
+			  :total="total">
+			</el-pagination>
 		</div>
 	</div>
 </template>
 
 <script>
-import {selectAction, selectFaIDNews, selectOsNews, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js'
+import {selectAction, selectFaIDNews, selectOsNews, addUserNewsLog, stopUserNewsLog, newsHot} from '@/api/api/AgreementRequest.js'
 export default {
 	name: 'mKnowledge',
 	data () {
 		return {
 			fenleiAll: [], // 文章分类汇总
+			tableData: [], // 分类文章汇总
+			tableDataNull: false, // 无文章
 			ins:0,
+			insChild: 0,
 			childList: -1,
-			lihunpart: false
+			lihunpart: false,
+			// 分页
+			first_page_url: '',
+			last_page_url: '',
+			next_page_url: '',
+			path: '',
+			from: 1,
+			per_page: null,
+			last_page: null,
+			userList: [],
+			currentPage: 1, // 初始页
+			pagesize: 10, //    每页的数据
+			total: 0, // 总页数
 		}
 	},
 	mounted () {
 		this.getWenType() // 查询分类
+		this.selectRemen() // 默认显示热门文章
 	},
 	methods: {
 		gohome () {
 			this.$router.replace('/m/mhome')
 		},
-		gomin () {
-			this.$router.replace('/m/mKnowledgeMin')
+		gomin (id) {
+			// this.$router.replace('/m/mKnowledgeMin')
+			this.$router.push({
+			  path: `/m/mKnowledgeMin/${id}`,
+			})
+			localStorage.setItem('mKnowledgeMin',id)
 		},
 		goSearchPage () {
 			this.$router.replace('/m/msearchPage')
@@ -89,16 +102,90 @@ export default {
 		    // this.startList() 
 		  })
 		},
+		startList () { // 初始化页面查找第一个分类下的文章
+		  this.tableDataNull = false
+		  selectFaIDNews({
+		    status: 1,
+		    faId: 18,
+			page: this.currentPage
+		  }).then((data) => {
+			  if(data.data.status_code ==200){
+				  this.tableData = data.data.data.data
+				  this.total = data.data.data.total
+				  if (this.tableData.length == 0 ) {
+				  	this.tableDataNull = true
+				  }
+				   var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+					document.documentElement.scrollTop = document.body.scrollTop =0; 
+			  } else if (data.data.status_code == 401) {
+				  localStorage.removeItem('token') // 存储token
+				  localStorage.removeItem('phone')
+				  localStorage.removeItem('isLogin')
+				  this.$message.error('账号过期，请重新登录')
+				  this.$router.replace('/')
+			  }
+		  })
+		},
 		checkChild (index) { // 查看二级栏目
 			this.lihunpart = true
 			this.ins = index+1
-			console.log(this.ins)
 			this.childList = index
+			
 		},
 		selectRemen () { // 查看热门
 			this.lihunpart = false
 			this.ins = 0
 			this.childList = -1
+			newsHot().then((data) => {
+				if(data.data.status_code==200){
+					this.tableDataNull = true
+					this.tableData = data.data.data.qian
+				}
+				console.log(data.data)
+			})
+		},
+		searchList (item, index) { // 点击分类查找文章
+		  this.insChild = item.id
+		  
+		  // var isLogin = localStorage.getItem('token')
+		  // if (isLogin !== undefined){
+			 //  addUserNewsLog({
+				//   key_word: item.title,
+				//   type: 2
+			 //  }).then((data) => {
+			 //  		  // console.log('搜索栏目')
+			 //  })
+		  // }
+		  selectFaIDNews({
+		    status: 1,
+		    faId: item.id,
+			page: this.currentPage
+		  }).then((data) => {
+		    this.tableData = data.data.data.data
+			console.log(this.tableData)
+			this.total = data.data.data.total
+			if (this.tableData.length !== 0 ) {
+				this.tableDataNull = true
+				// this.keyMsg = item.title
+			} else {
+				this.tableDataNull = false
+			}
+		  })
+		},
+		// 初始页currentPage、初始每页数据数pagesize和数据data
+		// 上一页
+		nextClick () {
+		  console.log('下一页')
+		  
+		},
+		prevClick () {
+		  console.log('上一页')
+		},
+		// pagesize (size) {
+		//   this.pagesize = size
+		// },
+		handleCurrentChange (currentPage) {
+		  this.currentPage = currentPage// 点击第几页
 		}
 	}
 }
@@ -112,7 +199,7 @@ export default {
 	.nav_list{background-color: #e5e5e5;-webkit-box-sizing: border-box;box-sizing: border-box;overflow: hidden;position: absolute;top: 28px;left: 0;width: 100%;}
 	.nav_min{height: 100%;overflow-x: scroll;overflow-y: hidden;-webkit-overflow-scrolling: touch;}
 	.nav_list ul{width: 120%;height: 100%;display: flex;display: -webkit-flex;align-items: center;-webkit-align-items: center;justify-content: flex-start;}
-	.nav_list ul li{width: 75px;color: #343434;}
+	.nav_list ul li{width: 75px;color: #343434;height: 45px;line-height: 45px;}
 	.active_nav{border-bottom: 3px solid goldenrod;}
 	.lihunpart{height: 45px;}
 	.lihunmin ul li h2{color: #535353;}
@@ -121,7 +208,7 @@ export default {
 		content: "......";
 		   position: absolute;
 		   bottom: 0;
-		   right: 5px;
+		   right: 0;
 		   padding-left: 40px;
 		   background: -webkit-linear-gradient(left, transparent, #fff 55%);
 		   background: -o-linear-gradient(right, transparent, #fff 55%);

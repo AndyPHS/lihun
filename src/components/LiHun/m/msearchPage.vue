@@ -4,47 +4,43 @@
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
 			<div class="searchBox">
 				<div class="search_min flex justify-between items-center">
-					<input class="text-center text-lg" type="text" placeholder="请输入关键词">
-					<img src="../../../assets/images/lihun/searchM_icon.png" alt="">
+					<input v-model="keyMsg" class="text-center text-lg" type="text" placeholder="请输入关键词">
+					<img @click="searchAction" src="../../../assets/images/lihun/searchM_icon.png" alt="">
 				</div>
 			</div>
 		</div>
 		<div v-if="fastSearch" class="min px-10 mt-6">
 			<ul class="flex flex-wrap">
-				<li class="text-left leading-loose mr-4">离婚需要多长时间</li>
-				<li class="text-left leading-loose">离婚协议常见误区</li>
-				<li class="text-left leading-loose">关于离婚协议书的产品故事</li>
+				<li @click="gomin(26)" class="text-left leading-loose mr-4">离婚需要多长时间</li>
+				<li @click="gomin(21)" class="text-left leading-loose">离婚协议常见误区</li>
+				<li @click="gomin(32)" class="text-left leading-loose">诉讼离婚流程</li>
 			</ul>
 		</div>
-		<div class="min_list hidden mx-5">
+		<div class="min_list mx-5">
 			<ul class="mt-4">
-				<li>
-					<h2 class="py-4">离婚需要多长时间</h2>
-					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按</p>
-				</li>
-				<li>
-					<h2 class="py-4">离婚需要多长时间</h2>
-					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按</p>
-				</li>
-				<li>
-					<h2 class="py-4">离婚需要多长时间</h2>
-					<p class="text-sm">如果是协议离婚，在双方达成一致意见后就可以去民政局办理离婚手续了。如果选择诉讼离婚，离婚案件按</p>
+				<li v-for="(item, index) in tableData" @click="gomin(item.id)" :key="index" >
+					<h2 class="py-4">{{ item.title }}</h2>
+					<p class="text-sm" v-html="item.content"></p>
 				</li>
 			</ul>
 		</div>
-		<div class="mx-5 min_no">
+		<div class="mx-5 min_no"  v-if="this.tableDataNull">
 			<img src="../../../assets/images/lihun/m/msearch_noresult.png" alt="">
-			<p class="text-sm">共找到<span>0条</span>与<span>"离婚"</span>相关的内容 可尝试更换不同的关键词重新进行搜索</p>
+			<p class="text-sm">共找到<span>0条</span>与<span>"{{keyMsg}}"</span>相关的内容 可尝试更换不同的关键词重新进行搜索</p>
 		</div>
 	</div>
 </template>
 
 <script>
+import {selectOsNews, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js'	
 export default {
 	name: 'msearchPage',
 	data () {
 		return {
-			fastSearch: false
+			fastSearch: true,
+			tableData: [],  // 搜索的列表
+			keyMsg: '',
+			tableDataNull: false
 		}
 	},
 	mounted () {
@@ -53,7 +49,41 @@ export default {
 	methods: {
 		gohome () {
 			this.$router.replace('/m/mKnowledge')
-		}
+		},
+		searchAction () { // 关键词搜索
+			if(this.keyMsg ==''){
+				this.$message.error('请输入关键词')
+			} else {
+				selectOsNews({title:this.keyMsg}).then((data) => {
+					if ( data.data.status_code ==200 ) {
+						this.tableData = data.data.data
+						this.fastSearch = false
+						this.tableDataNull = false
+						if (this.tableData.length == 0 ) {
+							this.tableDataNull = true
+						}
+					} else {
+						this.$message.error('查询失败，请重新尝试')
+					}
+				})
+				var isLogin = localStorage.getItem('token')
+				if (isLogin !== undefined) {
+					addUserNewsLog({
+						key_word: this.keyMsg,
+						type: 1
+					}).then((data) => {
+						// console.log('关键词搜索文章')
+					})
+				}
+			}
+		},
+		gomin (id) { // 详情页
+			// this.$router.replace('/m/mKnowledgeMin')
+			this.$router.push({
+			  path: `/m/mKnowledgeMin/${id}`,
+			})
+			localStorage.setItem('mKnowledgeMin',id)
+		},
 	}
 }
 </script>

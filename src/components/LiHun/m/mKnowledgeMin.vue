@@ -5,14 +5,13 @@
 			<h2 class="py-4 text-bold text-center text-lg">离婚知识-正文</h2>
 		</div>
 		<div class="min px-3">
-			<h2 class="py-4 text-bold text-center text-lg">离婚方式与选择</h2>
+			<h2 class="py-4 text-bold text-center text-lg">{{ this.wenCon.title }}</h2>
 			<div class="flex pb-4 justify-between">
-				<span class="inline-block text-sm text-gray-400">帮助459人</span>
-				<span class="inline-block text-sm text-gray-400">20-06-30</span>
+				<span v-if="this.wenCon.view !=null" class="inline-block text-sm text-gray-400">帮助{{ this.wenCon.view }}人</span>
+				<span v-if="this.wenCon.view ==null" class="inline-block text-sm text-gray-400">帮助1356人</span>
+				<span class="inline-block text-sm text-gray-400">{{ this.wenCon.time }}</span>
 			</div>
-			<div class="text-base text-left con">
-				<p>离婚有两种方式，协议离婚和起诉离婚。相比而言，协议离婚是比较快的离婚方式，双方达成一致意见，去民政局办理离婚登记手续即可。若双方没有办法达成协议，也可以委托律师代理谈判，代理您与对方谈离婚条件，若依然不同意则尽快提起诉讼，律师也可以在法庭上申请法官组织双方调解，法官组织调解的成功率相较于律师而言会更高一些，可以舍弃一些非必要条件作交换，来换取双方尽快离婚。若调解无望，则只能督促法官尽快依法判决了。当然，协议离婚、谈判和诉讼离婚彼此之间并不冲突，您可以三步并行，在提起离婚诉讼的同时，和对方协商或是谈判离婚。若谈判协商成功，二人直接到民政局办理离婚后再到法院撤诉即可。</p>
-			</div>
+			<div class="text-sm text-left con"  v-html="wenCon.con"></div>
 			<div class="aboutArticle my-8 px-5 py-5">
 				<div class="text-left flex items-center">
 					<span class="gui"></span>
@@ -20,9 +19,7 @@
 				</div>
 				<div class="mt-3">
 					<ul class="ml-2 text-left">
-						<li class="text-sm leading-loose">离婚市值尝试</li>
-						<li class="text-sm leading-loose">离婚市值尝试</li>
-						<li class="text-sm leading-loose">离婚市值尝试</li>
+						<li  v-for="(item, index) in relevantAll" :key="index" class="text-sm leading-loose" @click="goKnowledgeMin(item.id)">{{ item.title }}</li>
 					</ul>
 				</div>
 			</div>
@@ -31,19 +28,91 @@
 </template>
 
 <script>
+import {selectNewsContent, selectAction, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js' // 查询文章
 export default {
 	name: 'mKnowledgeMin',
 	data () {
 		return {
-			
+			wenCon: { // 文章内容
+			  title: '',
+			  time: '',
+			  con: '',
+			  view: null
+			},
+			relevantAll: []   // 相关文章
 		}
 	},
 	mounted () {
-	
+		this.getWenZhangCon()
+		window.addEventListener('scroll', this.scrollToTop)
+	},
+	destroyed () {
+	  window.removeEventListener('scroll', this.scrollToTop)
 	},
 	methods: {
 		gohome () {
 			this.$router.replace('/m/mKnowledge')
+		},
+		getWenZhangCon () { // 查询单独文章
+		  // var Id = localStorage.getItem('KnowledgeId')
+		  var Id = this.$route.params.id
+		  selectNewsContent({
+		    id: Id
+		  }).then((data) => {
+		    this.wenCon.title = data.data.data.title;
+		    this.wenCon.time = data.data.data.createdTime;
+		    this.wenCon.con = data.data.data.content;
+			this.wenCon.view = data.data.data.view;
+			this.relevantAll = data.data.data.relevant;
+				 // this.ins = data.data.data.faId
+		  })
+		},
+		goKnowledgeMin (id) { // 相关文章
+		  var isLogin = localStorage.getItem('token')
+		  if (isLogin !== undefined) {
+			 stopUserNewsLog().then((data) => {
+			 		  
+			 })
+			 addUserNewsLog({
+			   key_word: '/',
+			   newsId: id,
+			   type: 3
+			 }).then((data) => {
+			   localStorage.setItem('unlId', data.data.data)
+			 }) 
+		  }
+		  this.$router.push({
+		    path: `/m/mKnowledgeMin/${id}`,
+		  })
+		  localStorage.setItem('mKnowledgeMin',id)
+		  selectNewsContent({
+		    id: id
+		  }).then((data) => {
+		    this.wenCon.title = data.data.data.title;
+		    this.wenCon.time = data.data.data.createdTime;
+		    this.wenCon.con = data.data.data.content;
+			this.wenCon.view = data.data.data.view;
+			this.relevantAll = data.data.data.relevant;
+			// this.ins = data.data.data.faId
+		  })
+		  const that = this
+			let timer = setInterval(() => {
+			  let ispeed = Math.floor(-that.scrollTop / 5)
+			  document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
+			  if (that.scrollTop === 0) {
+				clearInterval(timer)
+			  }
+			}, 16)
+		},
+		scrollToTop () {
+		    const that = this
+		    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+		    that.scrollTop = scrollTop
+		    if (that.scrollTop > 60) {
+				
+		    } else {
+		      // that.btnFlag = false
+		    }
 		}
 	}
 }

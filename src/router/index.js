@@ -118,7 +118,7 @@ export default new Router({
 	// 移动端离婚知识
 	{path: '/m/mKnowledge', name: 'mKnowledge', component: mKnowledge},
 	// 移动端离婚知识详情页
-	{path: '/m/mKnowledgeMin', name: 'mKnowledgeMin', component: mKnowledgeMin},
+	{path: '/m/mKnowledgeMin/:id', name: 'mKnowledgeMin', component: mKnowledgeMin},
 	// 移动端离婚协议书页面
 	{path: '/m/mAgreement', name: 'mAgreement', component: mAgreement},
 	// 移动端离婚协议书模板页面

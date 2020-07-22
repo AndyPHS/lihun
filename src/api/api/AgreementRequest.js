@@ -219,6 +219,16 @@ export const selectOsNews = params => {
     data: params
   });
 };
+// 20篇热门文章
+export const newsHot = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.newsHot,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
 // 查找用户问卷
 export const selectUserQuestionnaire = params => {
   return axios({

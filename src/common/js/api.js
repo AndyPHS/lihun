@@ -291,6 +291,9 @@ const apiUrl = {
   selectNewsContent: baseLiHunURL + 'news/select_news_content/',
   // 关键字搜索文章news/select_os_news/
   selectOsNews: baseLiHunURL + 'news/select_os_news/',
+  // 20篇热门文章
+  newsHot: baseLiHunURL + 'news/news_hot',
+  
 
   // 验证手机号
   phoneCodeV: baseLiHunURL +'front_user/phone_code_v',
