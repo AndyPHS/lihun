@@ -49,7 +49,7 @@ export default {
 	},
 	methods: {
 		gohome () { // 返回上一页
-			this.$router.replace('/m/mhome')
+			this.$router.replace('/m/mLogin')
 		},
 		resetnext () { // 去重置密码
 			if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){

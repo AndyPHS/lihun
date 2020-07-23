@@ -196,5 +196,5 @@ export default {
 	.read img{width: 13px;height: 13px;margin-right: 6px;}
 	.read h3{color: #818181;font-size: 12px;display: inline-block;}
 	.read h3 span{display: inline-block;color:#547ce0}
-	.errorBox{width: 200px;height: 40px;line-height: 40px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -100px;font-size: 15px;border-radius: 5px;}
+	.errorBox{width: 80%;height: 40px;line-height: 40px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;margin-left: 10%;font-size: 15px;border-radius: 5px;}
 </style>

@@ -2,17 +2,18 @@
 	<div class="mKnowledgeMin">
 		<div class="com_head mx-3 border-b border-gray-400 relative">
 			<img @click="gohome" src="../../../assets/images/lihun/m/back_icon.png" alt="">
-			<h2 class="py-4 text-bold text-center text-lg">离婚知识-正文</h2>
+			<h2 v-if="this.lihunPart == false" class="py-4 text-bold text-center text-lg">离婚知识-正文</h2>
+			<h2 v-if="this.lihunPart == true" class="py-4 text-bold text-center text-lg">关于离婚协议书的产品故事</h2>
 		</div>
 		<div class="min px-3">
-			<h2 class="py-4 text-bold text-center text-lg">{{ this.wenCon.title }}</h2>
-			<div class="flex pb-4 justify-between">
+			<h2 v-if="tit" class="py-4 text-bold text-center text-lg">{{ this.wenCon.title }}</h2>
+			<div v-if="tit" class="flex pb-4 justify-between">
 				<span v-if="this.wenCon.view !=null" class="inline-block text-sm text-gray-400">帮助{{ this.wenCon.view }}人</span>
 				<span v-if="this.wenCon.view ==null" class="inline-block text-sm text-gray-400">帮助1356人</span>
 				<span class="inline-block text-sm text-gray-400">{{ this.wenCon.time }}</span>
 			</div>
 			<div class="text-sm text-left con"  v-html="wenCon.con"></div>
-			<div class="aboutArticle my-8 px-5 py-5">
+			<div v-if="tit" class="aboutArticle my-8 px-5 py-5">
 				<div class="text-left flex items-center">
 					<span class="gui"></span>
 					<span class="text-base block font-bold">相关知识</span>
@@ -39,7 +40,9 @@ export default {
 			  con: '',
 			  view: null
 			},
-			relevantAll: []   // 相关文章
+			relevantAll: [],   // 相关文章
+			lihunPart: false,
+			tit: true
 		}
 	},
 	mounted () {
@@ -51,11 +54,22 @@ export default {
 	},
 	methods: {
 		gohome () {
-			this.$router.replace('/m/mKnowledge')
+			var Id = this.$route.params.id
+			if (Id == 45) { 
+				this.$router.replace('/m/mhome')
+			} else {
+				this.$router.replace('/m/mKnowledge')
+			}
 		},
 		getWenZhangCon () { // 查询单独文章
 		  // var Id = localStorage.getItem('KnowledgeId')
 		  var Id = this.$route.params.id
+		  if (Id == 45) {
+			  this.lihunPart = true
+			  this.tit = false
+		  } else {
+			  this.lihunPart = false
+		  }
 		  selectNewsContent({
 		    id: Id
 		  }).then((data) => {
