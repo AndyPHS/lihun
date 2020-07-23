@@ -66,7 +66,7 @@ export default {
 			})
 		},
 		gohome () {
-			this.$router.replace('/m/mKnowledge')
+			this.$router.replace('/m/mUser')
 		},
 		DownLoadWord (id) { // 下载离婚协议书
 			localStorage.setItem('quid', id)

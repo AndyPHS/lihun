@@ -164,15 +164,23 @@ export default {
 	name: 'mShiyongxieyi',
 	data () {
 		return {
-			
+			route : ''
 		}
 	},
 	mounted () {
-	
+		this.geturl()
 	},
 	methods: {
+		geturl () {
+			this.route = this.$route.query.route
+		},
 		gohome () {
-			this.$router.go(-1) 
+			if (this.route == 1 ){
+				this.$router.replace('/m/mLogin')
+			} else if (this.route == 2) {
+				this.$router.replace('/m/mRegist')
+			}
+			// this.$router.go(-1) 
 		}
 	}
 }

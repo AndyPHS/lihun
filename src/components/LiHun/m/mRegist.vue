@@ -30,7 +30,7 @@
 				<div class="read mt-6 flex items-center justify-center">
 					<img @click="changeSelectAc" v-if="this.checkOne==true" class="" src="../../../assets/images/lihun/m/m_select_icon.png" alt="">
 					<img @click="changeSelectAc" v-if="this.checkOne==false" src="../../../assets/images/lihun/m/m_unselect_icon.png" alt="">
-					<h3>我已阅读并同意<span @click="goshiyongxieyi">《蜗牛家事用户注册和使用协议》</span></h3>
+					<h3>我已阅读并同意<span @click="goshiyongxieyi(2)">《蜗牛家事用户注册和使用协议》</span></h3>
 				</div>
 			</form>
 		</div>
@@ -65,8 +65,13 @@ export default {
 		gohome () { // 返回上一页
 			this.$router.replace('/m/mhome')
 		},
-		goshiyongxieyi () { // 查看协议
-			this.$router.replace('/m/mShiyongxieyi')
+		goshiyongxieyi (e) { // 查看协议
+			this.$router.push({
+				path: '/m/mShiyongxieyi',
+				query: {
+					route: e
+				}
+			})
 		},
 		changeSelectAc () { // 是否阅读协议
 			this.checkOne = !this.checkOne

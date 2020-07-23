@@ -34,7 +34,7 @@
 				</ul>
 				<span @click="fastloginBt">登 &nbsp;录</span>
 				<div class="read mt-6 flex items-center justify-center">
-					<h3>登录即表示阅读并同意<span @click="goshiyongxieyi">《蜗牛家事用户注册和使用协议》</span></h3>
+					<h3>登录即表示阅读并同意<span @click="goshiyongxieyi(1)">《蜗牛家事用户注册和使用协议》</span></h3>
 				</div>
 			</form>
 		</div>
@@ -70,8 +70,13 @@ export default {
 		gohome () { // 返回上一页
 			this.$router.replace('/m/mhome')
 		},
-		goshiyongxieyi () { // 查看协议
-			this.$router.replace('/m/mShiyongxieyi')
+		goshiyongxieyi (e) { // 查看协议
+			this.$router.push({
+				path: '/m/mShiyongxieyi',
+				query: {
+					route: e
+				}
+			})
 		},
 		goregist () { // 去注册
 			this.$router.replace('/m/mRegist')

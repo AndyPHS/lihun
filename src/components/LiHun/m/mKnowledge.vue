@@ -163,7 +163,6 @@ export default {
 			page: this.currentPage
 		  }).then((data) => {
 		    this.tableData = data.data.data.data
-			console.log(this.tableData)
 			this.total = data.data.data.total
 			if (this.tableData.length !== 0 ) {
 				this.tableDataNull = true
