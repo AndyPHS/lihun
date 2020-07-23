@@ -28,6 +28,9 @@
 			<img src="../../../assets/images/lihun/m/msearch_noresult.png" alt="">
 			<p class="text-sm">共找到<span>0条</span>与<span>"{{keyMsg}}"</span>相关的内容 可尝试更换不同的关键词重新进行搜索</p>
 		</div>
+		<div v-if="dengluerrorBox==true" class="fixed errorBox">
+			{{errorMsg}}
+		</div>
 	</div>
 </template>
 
@@ -40,7 +43,9 @@ export default {
 			fastSearch: true,
 			tableData: [],  // 搜索的列表
 			keyMsg: '',
-			tableDataNull: false
+			tableDataNull: false,
+			dengluerrorBox: false,
+			errorMsg: ''
 		}
 	},
 	mounted () {
@@ -52,7 +57,11 @@ export default {
 		},
 		searchAction () { // 关键词搜索
 			if(this.keyMsg ==''){
-				this.$message.error('请输入关键词')
+				this.dengluerrorBox = true
+				this.errorMsg = '请输入关键词'
+				setTimeout(()=>{
+					this.dengluerrorBox = false
+				},1000)
 			} else {
 				selectOsNews({title:this.keyMsg}).then((data) => {
 					if ( data.data.status_code ==200 ) {
@@ -115,4 +124,5 @@ export default {
 	.min_no img{width: 120px;height: 80px;margin:0 auto;}
 	.min_no p{margin-top: 14px;color: #535353;}
 	.min_no p span{color:#ff6a8a;}
+	.errorBox{width: 200px;height: 40px;line-height: 40px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;left: 50%;margin-left: -100px;font-size: 15px;border-radius: 5px;}
 </style>
