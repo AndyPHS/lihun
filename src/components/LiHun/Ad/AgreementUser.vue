@@ -349,6 +349,7 @@ export default {
         password: '',
         photo: ''
       },
+	  rename: '', // 修改名字
       formLabelWidth: '120px'
     }
   },
@@ -411,7 +412,7 @@ export default {
 			  if (data.data.name !='') {
 				  var testname = data.data.name
 				  this.userMsg.name = this.formatName(testname)
-				  console.log( this.userMsg.name)
+				  this.rename = data.data.name
 			  } else {
 				  this.userMsg.name = data.data.name
 			  }
@@ -433,6 +434,7 @@ export default {
     },
     editBasic () { // 点击编辑基础资料
       this.dialogFormVisible = true
+	  this.form.name = this.rename
     },
     saveBtn () { // 确认编辑基础资料
 	  var nameReg = /^[\u4E00-\u9FA5]{2,4}$/;
