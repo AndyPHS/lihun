@@ -36,7 +36,6 @@ const mKnowledgeMin = () => import('@/components/LiHun/m/mKnowledgeMin') // 移�
 const mAgreement = () => import('@/components/LiHun/m/mAgreement') // 移动端离婚协议书内容页
 const mAgreementModel = () => import('@/components/LiHun/m/mAgreementModel') // 移动端离婚协议书模板页
 const mMyconsult = () => import('@/components/LiHun/m/mMyconsult') // 移动端我的协议书模板页
-const mShiyongxieyi = () => import('@/components/LiHun/m/mShiyongxieyi') // 移动端用户协议
 const msearchPage = () => import('@/components/LiHun/m/msearchPage') // 移动端搜索页面
 const mUser = () => import('@/components/LiHun/m/mUser') // 移动端个人中心
 const mUpdatePassword = () => import('@/components/LiHun/m/mUpdatePassword') // 移动端修改密码
@@ -125,8 +124,6 @@ export default new Router({
 	{path: '/m/mAgreementModel', name: 'mAgreementModel', component: mAgreementModel},
 	// 移动端我的协议书
 	{path: '/m/mMyconsult', name: 'mMyconsult', component: mMyconsult},
-	// 移动端用户注册和使用协议
-	{path: '/m/mShiyongxieyi', name: 'mShiyongxieyi', component: mShiyongxieyi},
 	// 移动端离婚知识搜索页面
 	{path: '/m/msearchPage', name: 'msearchPage', component: msearchPage},
 	// 移动端个人中心
