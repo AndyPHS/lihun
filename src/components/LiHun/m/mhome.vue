@@ -181,25 +181,53 @@
 					</li>
 				</ul>
 				<div class="pingjia px-3 pt-10">
-					<el-carousel :interval="5000" arrow="always" height="152px" indicator-position="outside">
+					<el-carousel :interval="5000" arrow="always" height="160px" indicator-position="outside">
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
+								  <div class="text-left px-5">
+									  <h2 class="text-base">王女士 北京</h2>
+									  <span class="mb-2 block text-xs text-gray-500">2020.07.05</span>
+									  <p class="text-xs">这个网站的离婚知识通俗易懂，内容很全面，一下子懂了很多，写协议的时候也不那么懵了。</p>
+								  </div>
+							  </div>
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
+								  <div class="text-left px-5">
+									  <h2 class="text-base">赵女士 湖北</h2>
+									  <span class="mb-2 block text-xs text-gray-500">2020.05.01</span>
+									  <p class="text-xs">这个文书生成挺好用的，对比了一下自己在网上下载的模板，也不懂该怎么填，回答选择问题就好了。</p>
+								  </div>
+							  </div>
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
+								  <div class="text-left px-5">
+									  <h2 class="text-base">李女士 河南</h2>
+									  <span class="mb-2 block text-xs text-gray-500">2020.02.01</span>
+									  <p class="text-xs">协议内容很详细，操作也简单，比自己写的专业多了！学了很多专业知识，让我少走了很多弯路。</p>
+								  </div>
+							  </div>
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <img class="inline-block w-full h-full" src="../../../assets/images/lihun/m/home_swiperpingjia01.png" alt="">
+							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
+								  <div class="text-left px-5">
+									  <h2 class="text-base">孙女士 河北</h2>
+									  <span class="mb-2 block text-xs text-gray-500">2020.03.15</span>
+									  <p class="text-xs">朋友推荐过来的，里面的内容很详细，里面关于离婚谈判技巧的介绍，让我顺利争取到了应得的利益。</p>
+								  </div>
+							  </div>
 							</div>
 						</el-carousel-item>
 					</el-carousel>
@@ -256,7 +284,7 @@ export default {
 			this.$router.replace('/m/mQueDing')
 		},
 		goKnowledge () { // 去离婚知识页面
-			this.$router.replace('/m/mKnowledge')
+			this.$router.replace('/m/merror')
 		},
 		gomAgreementModel () { // 协议书模板
 			this.$router.replace('/m/mAgreementModel')
@@ -310,4 +338,5 @@ export default {
 	.m_yanfa{background:url(../../../assets/images/lihun/m/m_yanfa_bg.png)no-repeat; background-size: cover;}
 	.m_liucheng_t h2{color: #535353;}
 	.touxiang img{display: inline-block;width: 32px;height: 32px;border-radius: 50%;}
+	.pingjia .swiperCommon p{line-height: 20px;}
 </style>

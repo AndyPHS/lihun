@@ -26,6 +26,8 @@ const UserList = () => import('@/components/LiHun/houtai/UserList')  // 用户�
 const UserWenShu = () => import('@/components/LiHun/houtai/UserWenShu')  // 用户文书列表信息
 
 const UserOperate = () => import('@/components/LiHun/houtai/UserOperate')  // 用户浏览操作页面
+const errorPc = () => import('@/components/LiHun/Ad/errorPc')  // 404pc页面
+
 
 // 移动端页面
 const mhome = () => import('@/components/LiHun/m/mhome') // 移动端首页mQueDing
@@ -43,6 +45,7 @@ const mResetPassword = () => import('@/components/LiHun/m/mResetPassword') // �
 const mRegist = () => import('@/components/LiHun/m/mRegist') // 移动端注册页
 const mLogin = () => import('@/components/LiHun/m/mLogin') // 移动端登录页
 const mForgetPassword = () => import('@/components/LiHun/m/mForgetPassword') // 移动端忘记密码
+const merror = () => import('@/components/LiHun/m/merror') // 移动端404
 
 /**
  * 重写路由的push方法--->这个是vue-cli4.x以上的坑，不然的话，你是跳转不了的
@@ -109,6 +112,8 @@ export default new Router({
     {path: '/UserWenShu', name: 'UserWenShu', component: UserWenShu},
     // 后台用户操作界面
     {path: '/UserOperate', name: 'UserOperate', component: UserOperate},
+	// errorPc页面
+	{path: '/404.html', name: 'errorPc', component: errorPc},
 	
 	// 移动端首页
 	{path: '/m/mhome', name: 'mhome', component: mhome},
@@ -138,6 +143,9 @@ export default new Router({
 	{path: '/m/mLogin', name: 'mLogin', component: mLogin},
 	// 移动端忘记密码
 	{path: '/m/mForgetPassword', name: 'mForgetPassword', component: mForgetPassword},
+	// 移动端404
+	{path: '/m/merror', name: 'merror', component: merror},
 	
+	{path: "*",redirect: "/404.html"}
   ]
 })
