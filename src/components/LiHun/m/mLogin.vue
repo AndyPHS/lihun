@@ -382,7 +382,7 @@ export default {
 	.errorBox{width: 80%;height: 40px;line-height: 40px;background-color:#feebef;color:#f81b1b;z-index: 2002;top:20px;margin-left: 10%;font-size: 15px;border-radius: 5px;}
 	.mianze{width: 100vw;height: 100vh;position: fixed;top: 0;left: 0; background: rgba(0,0,0,0.5);}
 	.mianzeBox{width: 90%;margin:0 auto;height: 85%;background: #fff;margin-top: 8%;position: relative;}
-	.mianzeBox img{width: 16px;height: 16px;position: absolute;top:5px;right: 5px;}
+	.mianzeBox img{width: 20px;height: 20px;position: absolute;top:5px;right: 5px;}
 	.mianzeMin{height: 90%;overflow-y: scroll;}
 	.mianzeMin p{text-indent: 2em;font-size: 14px;}
 </style>
