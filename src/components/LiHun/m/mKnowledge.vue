@@ -210,10 +210,6 @@ export default {
 		   bottom: 0;
 		   right: 0;
 		   padding-left: 40px;
-		   background: -webkit-linear-gradient(left, transparent, #fff 55%);
-		   background: -o-linear-gradient(right, transparent, #fff 55%);
-		   background: -moz-linear-gradient(right, transparent, #fff 55%);
-		   background: linear-gradient(to right, transparent, #fff 55%);
 	}
 	::-webkit-scrollbar {display: none;height: 1px;}
 	/* .default_active{} */

@@ -31,6 +31,9 @@
 						  </div>
 						</div>
 					</li>
+					<p v-if="this.activeIndex=='2' " class="w-full pt-2 text-right">
+						<span @click="forgetpasswordAc" class="forgetspan text-sm">忘记密码?</span>
+					</p>
 				</ul>
 				<span @click="fastloginBt">登 &nbsp;录</span>
 				<div class="read mt-6 flex items-center justify-center">
@@ -231,6 +234,9 @@ export default {
 				}
 			}
 		},
+		forgetpasswordAc () {
+			this.$router.replace('/m/mForgetPassword')
+		}
 	}
 }
 </script>
@@ -241,6 +247,7 @@ export default {
 	.regist{position: absolute;right: 0;top:17px;font-size: 15px;color:#547ce0}
 	.min ul li input{width: 100%;text-align: left;border:none;color: #343434;}
 	.min ul li input:focus{outline: none;}
+	.forgetspan{display: inline-block;color:#547ce0}
 	.phone{display: table;}
 	.min form>span{display: inline-block;width: 100%;height: 38px;line-height: 38px;border-radius: 19px;border:1px solid #ff7f9a;color:#ff3f68;text-align: center;font-size: 16px;margin-top: 68px;}
 	.yanzheng{position: absolute;top:20px;right: 0;padding:5px 7px;font-size: 15px;color: #727272;border:1px solid #a5a5a5;border-radius: 5px;}

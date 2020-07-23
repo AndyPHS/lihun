@@ -145,4 +145,8 @@ export default {
 .text-14{font-size: 14px;color:#c0c0c0;}
 .default_active{color:red}
 .default{color:#343434;}
+
+.shouyedingzhibtn{width: 300px;height: 50px;background-color: #ff3f68;display: flex;align-items: center;border-radius: 25px;justify-content: center}
+.shouyedingzhibtn:hover{background-color: #ff6687;cursor: pointer;}
+.shouyedingzhibtn span{font-size:24px;margin-left: 10px;}
 </style>
