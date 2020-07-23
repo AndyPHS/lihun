@@ -27,11 +27,6 @@
 			<el-carousel :interval="5000" arrow="always" height="170px">
 				<el-carousel-item >
 					<div class="swiper01 swiperCommon">
-					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.jpg" alt="">
-					</div>
-				</el-carousel-item>
-				<el-carousel-item >
-					<div class="swiper01 swiperCommon">
 					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper02.jpg" alt="">
 					</div>
 				</el-carousel-item>
@@ -45,6 +40,11 @@
 					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper04.jpg" alt="">
 					</div>
 				</el-carousel-item>
+				<el-carousel-item >
+					<div class="swiper01 swiperCommon">
+					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.jpg" alt="">
+					</div>
+				</el-carousel-item>
 			</el-carousel>
 		</div>
 		<div class="m_wuqu">
@@ -54,21 +54,21 @@
 			</div>
 			<div class="m_wuqu_min pb-10">
 				<ul class="flex justify-between px-3">
-					<li>
+					<li @click="goKnowledgeMin(21)">
 						<img src="../../../assets/images/lihun/m/home_wuqu01.png" alt="">
 						<p class="text-sm">找网上协议模板能尽快离婚就行</p>
 					</li>
-					<li>
+					<li @click="goKnowledgeMin(21)">
 						<img src="../../../assets/images/lihun/m/home_wuqu02.png" alt="">
 						<p class="text-sm">离婚协议书可以随意修改</p>
 					</li>
 				</ul>
 				<ul class="flex justify-between px-3 mt-3">
-					<li>
+					<li @click="goKnowledgeMin(21)">
 						<img src="../../../assets/images/lihun/m/home_wuqu03.png" alt="">
 						<p class="text-sm">签完离婚协议书就一劳永逸了</p>
 					</li>
-					<li>
+					<li @click="goKnowledgeMin(21)">
 						<img src="../../../assets/images/lihun/m/home_wuqu04.png" alt="">
 						<p class="text-sm">双方签字后协议立即生效</p>
 					</li>
@@ -139,7 +139,7 @@
 			</div>
 			<div class="m_gushi_min pb-10 px-3">
 				<p class="text-sm text-left">2018年的一天，一位当事人通过朋友辗转联系，千里迢迢来到北京，上门委托我们起诉。她风尘仆仆、面容憔悴的样子与其他客户迥然不同。我们得知，她来自南方的一个三线城市，由于找寻专业婚姻律师未果，才四处打听，找到了我们…………</p>
-				<span class="text-right text-sm  underline">查看></span>
+				<span  @click="goKnowledgeMin(45)" class="text-right text-sm  underline">查看></span>
 			</div>
 		</div>
 		<div class="m_yanfa">
@@ -269,7 +269,13 @@ export default {
 		},
 		gomuser () {
 			this.$router.replace('/m/mUser')
-		}
+		},
+		goKnowledgeMin (id) { // 协议书如何谈判
+		  this.$router.push({
+		    path: `/m/mKnowledgeMin/${id}`,
+		  })
+		  localStorage.setItem('mKnowledgeMin',id)
+		},
 	}
 }
 </script>

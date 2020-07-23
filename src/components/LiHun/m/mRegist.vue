@@ -21,7 +21,7 @@
 					<li class="pt-8 border-b border-grey-400 relative">
 						<div class="el-form-item">
 						  <div class="el-form-item__content">
-							  <el-input placeholder="设置密码" class="text-base" v-model="form.password" show-password  ref="zhucePassword"></el-input>
+							  <el-input placeholder="请输入密码" class="text-base" v-model="form.password" show-password  ref="zhucePassword"></el-input>
 						  </div>
 						</div>
 					</li>
