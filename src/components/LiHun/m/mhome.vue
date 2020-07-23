@@ -184,19 +184,19 @@
 					<el-carousel :interval="5000" arrow="always" height="160px" indicator-position="outside">
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+							  <div class="bg-white swiperm px-5 flex justify-between items-center">
 								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
 								  <div class="text-left px-5">
 									  <h2 class="text-base">王女士 北京</h2>
 									  <span class="mb-2 block text-xs text-gray-500">2020.07.05</span>
-									  <p class="text-xs">这个网站的离婚知识通俗易懂，内容很全面，一下子懂了很多，写协议的时候也不那么懵了。</p>
+									  <p class="text-xs">这个系统还挺好用的，我年前就想离婚了，因为疫情也不敢去找律师。现在这个生成后直接就能用。在家就全搞定。</p>
 								  </div>
 							  </div>
 							</div>
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+							  <div class="bg-white swiperm px-5 flex justify-between items-center">
 								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
 								  <div class="text-left px-5">
 									  <h2 class="text-base">赵女士 湖北</h2>
@@ -208,7 +208,7 @@
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+							  <div class="bg-white swiperm px-5 flex justify-between items-center">
 								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
 								  <div class="text-left px-5">
 									  <h2 class="text-base">李女士 河南</h2>
@@ -220,7 +220,7 @@
 						</el-carousel-item>
 						<el-carousel-item >
 							<div class="swiper01 swiperCommon">
-							  <div class="bg-white py-6 px-5 flex justify-between items-center">
+							  <div class="bg-white swiperm px-5 flex justify-between items-center">
 								  <img src="../../../assets/images/lihun/m/mhome_swiperimg01.png" alt="">
 								  <div class="text-left px-5">
 									  <h2 class="text-base">孙女士 河北</h2>
@@ -339,4 +339,5 @@ export default {
 	.m_liucheng_t h2{color: #535353;}
 	.touxiang img{display: inline-block;width: 32px;height: 32px;border-radius: 50%;}
 	.pingjia .swiperCommon p{line-height: 20px;}
+	.swiperm{height: 160px;}
 </style>
