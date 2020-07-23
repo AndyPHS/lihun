@@ -157,7 +157,7 @@ export default {
 	}
 	#outputwordmsg {text-align: left;}
 	.mianze{width: 100vw;height: 100vh;position: fixed;top: 0;left: 0; background: rgba(0,0,0,0.5);}
-	.mianzeBox{width: 90%;margin:0 auto;height: 85%;background: #fff;margin-top: 10%;}
+	.mianzeBox{width: 90%;margin:0 auto;height: 85%;background: #fff;margin-top: 5%;}
 	.mianzeMin{height: 70%;overflow-y: scroll;}
 	.mianzeMin h2{font-size: 14px;}
 	.mianzeMin p{text-indent: 2em;font-size: 14px;}
