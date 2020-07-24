@@ -1208,9 +1208,20 @@ export default {
 	},
 	resetPW () { // 设置新密码弹窗确认
 		if( this.newform.password == ''){
-			this.$message.error('密码不能为空')
+			this.dengluerrorBox = true
+			this.errorMsg = '密码不能为空'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
 			this.$refs.newformPassword.focus()
-		} else if (this.newform.password == this.newform.passwordAgain){
+		} else if (this.newform.password !== this.newform.passwordAgain){
+			this.dengluerrorBox = true
+			this.errorMsg = '密码输入不一致，请重新输入'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			this.$refs.newformPassword.focus()
+		}else if (this.newform.password == this.newform.passwordAgain){
 			updatePasswordPhone({
 				phone: this.newform.phone,
 				password: this.newform.password,
@@ -1224,11 +1235,19 @@ export default {
 					this.dialogPhonePw = false
 					this.dialogLogin = true
 				} else {
-					this.$message.error(data.data.message)
+					this.dengluerrorBox = true
+					this.errorMsg = data.data.message
+					setTimeout(()=>{
+						this.dengluerrorBox = false
+					},1000)
 				}
 			})
 		} else if (this.newform.passwordAgain=='') {
-			this.$message.error('重置密码不能为空')
+			this.dengluerrorBox = true
+			this.errorMsg = '重置密码不能为空'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
 			this.$refs.newformPasswordAgain.focus()
 		}
 	},

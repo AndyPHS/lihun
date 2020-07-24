@@ -186,6 +186,7 @@ export default {
 		  		  // console.log('搜索栏目')
 		  })
 	  }
+	  localStorage.setItem('insName',item.title)
       selectFaIDNews({
         status: 1,
         faId: item.id,

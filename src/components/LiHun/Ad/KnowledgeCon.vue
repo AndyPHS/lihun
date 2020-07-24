@@ -7,7 +7,7 @@
 		  	<el-breadcrumb separator-class="el-icon-arrow-right text-sm">
 		  	  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
 		  	  <el-breadcrumb-item :to="{ path: '/Knowledge' }">离婚知识</el-breadcrumb-item>
-			  <el-breadcrumb-item :to="{ path: '/Knowledge' }">离婚</el-breadcrumb-item>
+			  <el-breadcrumb-item :to="{ path: '/Knowledge' }">{{this.insName}}</el-breadcrumb-item>
 			  <el-breadcrumb-item>正文</el-breadcrumb-item>
 		  	</el-breadcrumb>
 		  </div>
@@ -114,8 +114,10 @@ export default {
         con: '',
 		view: null
       },
-	  ins: 0,
-	  relevantAll: []   // 相关文章
+	  ins: null,
+	  insName: '离婚',
+	  relevantAll: [],   // 相关文章
+	  fenleiAll: [],
     }
   },
   mounted () {
@@ -129,7 +131,7 @@ export default {
   },
   methods: {
      getWenZhangCon () { // 查询单独文章
-       // var Id = localStorage.getItem('KnowledgeId')
+       this.insName = localStorage.getItem('insName')
 	   var Id = this.$route.params.id
        selectNewsContent({
          id: Id
@@ -142,22 +144,22 @@ export default {
 		 this.ins = data.data.data.faId
        })
      },
-     getWenType () { // 查询分类
+     getWenType () { // 查询热门文章和精彩推荐
        newsHot().then((data) => {
          this.hotAll = data.data.data.qian
 		 this.jingxuanAll = data.data.data.hou
        })
      },
-     searchList (item, index) { // 点击文章分类跳转到文章列表页
-	   localStorage.setItem('topins',1)
-       this.$router.push({
-         name: 'Knowledge',
-         params: {
-           id: item.id,
-		   ins: index
-         }
-       })
-     },
+    //  searchList (item, index) { // 点击文章分类跳转到文章列表页
+	   // localStorage.setItem('topins',1)
+    //    this.$router.push({
+    //      name: 'Knowledge',
+    //      params: {
+    //        id: item.id,
+		  //  ins: index
+    //      }
+    //    })
+    //  },
 	getHeadActive (data) { // 导航选中状态
 		localStorage.setItem('topins',data)
 	},

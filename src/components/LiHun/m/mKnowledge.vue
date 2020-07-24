@@ -209,7 +209,8 @@ export default {
 		   position: absolute;
 		   bottom: 0;
 		   right: 0;
-		   padding-left: 40px;
+		   padding-left: 10px;
+		   background-color: #fff;
 	}
 	::-webkit-scrollbar {display: none;height: 1px;}
 	/* .default_active{} */
