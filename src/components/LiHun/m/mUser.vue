@@ -23,12 +23,21 @@
 				</li>
 				<li>
 					<h2 class="text-base">姓名</h2>
-					<span @click="renameAc">{{ this.userMsg.name }}</span>
+					<span>
+					   <span>{{ this.userMsg.name }}</span>
+					   <img @click="renameAc" src="../../../assets/images/lihun/m/m_right_icon.png" alt="" style="margin-top: 2px;">
+					</span>
 				</li>  
-				<li>
+				<li  @click="resexAc">
 					<h2 class="text-base">性别</h2>
-					<span @click="resexAc" v-if="this.userMsg.sex===1">男</span>
-					<span @click="resexAc" v-if="this.userMsg.sex===2">女</span>
+					<span v-if="this.userMsg.sex===1">
+						<span>男</span>
+						<img src="../../../assets/images/lihun/m/m_right_icon.png" alt="" style="margin-top: 2px;">
+					</span>
+					<span v-if="this.userMsg.sex===2">
+						<span>女</span>
+						<img src="../../../assets/images/lihun/m/m_right_icon.png" alt="" style="margin-top: 2px;">
+					</span>
 				</li>
 				<li>
 					<h2 class="text-base">修改密码</h2>
@@ -58,7 +67,7 @@
 				</div>
 			</div>
 		</div>
-		<div v-if="sexdialog" class="mianze">
+		<div v-if="sexdialog" class="sexAll">
 			<div class="sexBox">
 				<ul>
 					<li @click="changesex(1)" class="text-center">男</li>
@@ -188,10 +197,11 @@ export default {
 	.user_min ul li{border-bottom: 1px solid #c4c4c4; display: flex;justify-content: space-between;align-items: center;padding:12px 0;}
 	.user_min ul li:first-of-type{border-top:1px solid #c4c4c4}
 	.user_min ul li h2{color: #535353;font-weight: bold;}
-	.user_min ul li img{width: 9px;height: 17px;display: inline-block;}
+	.user_min ul li img{width: 9px;height: 17px;display: inline-block;vertical-align: text-top;}
 	.user_min ul li span{color: #a4a4a4;}
 	.tuichu{display: inline-block;width: 100%;height: 38px;line-height: 38px;border-radius: 19px;border:1px solid #ff7f9a;color:#ff3f68;text-align: center;font-size: 16px;margin-top: 88px;}
 	.mianze{width: 100vw;height: 100vh;position: fixed;top: 0;left: 0; background: rgba(0,0,0,0.5);}
+	.sexAll{width: 100%;height: 100%;position: fixed;top: 0;left: 0; background: rgba(0,0,0,0.5);}
 	.mianzeBox{width: 90%;left: 5%;height: 200px;background: #fff;margin-top:-100px;top:50%;position: absolute;}
 	.sexBox{height: 133px;position: absolute;bottom:20px;width: 90%;left: 5%;background: #fff;}
 	.sexBox ul li{height: 42px;line-height: 42px;font-size: 15px;border-bottom: 1px solid #c4c4c4;color: #4d4d4d;}

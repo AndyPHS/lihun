@@ -284,7 +284,7 @@ export default {
 			this.$router.replace('/m/mQueDing')
 		},
 		goKnowledge () { // 去离婚知识页面
-			this.$router.replace('/m/merror')
+			this.$router.replace('/m/mKnowledge')
 		},
 		gomAgreementModel () { // 协议书模板
 			this.$router.replace('/m/mAgreementModel')

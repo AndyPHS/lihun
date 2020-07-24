@@ -113,12 +113,9 @@ export default {
 		content: "......";
 	   position: absolute;
 	   bottom: 0;
-	   right: 5px;
-	   padding-left: 20px;
-	   background: -webkit-linear-gradient(left, transparent, #fff 55%);
-	   background: -o-linear-gradient(right, transparent, #fff 55%);
-	   background: -moz-linear-gradient(right, transparent, #fff 55%);
-	   background: linear-gradient(to right, transparent, #fff 55%);
+	   right: 0;
+	   padding-left: 40px;
+	   background-color: #fff;
 	}
 	.min_no{padding:150px 50px}
 	.min_no img{width: 120px;height: 80px;margin:0 auto;}
