@@ -13,7 +13,7 @@
             </dd>
             <dt class="ml-5">
               <h2 class="mt-2">扫码关注</h2>
-              <p class="text-sm">蜗牛说家事</p>
+              <p class="text-sm">蜗牛小助手</p>
             </dt>
           </dl>
         </div>

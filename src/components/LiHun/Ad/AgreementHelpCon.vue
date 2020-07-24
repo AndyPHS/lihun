@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <lihun-head></lihun-head>
+    <lihun-head ref="lihun" v-on:headActiveEvent="getHeadActive"></lihun-head>
     <div class="c_m w flex justify-between">
       <div class="c_m_l">
         <div class="pt-10">
@@ -22,8 +22,15 @@
 		  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-14 ml-4">阅读量 {{ this.wenCon.view }}</span>
 		  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-14 ml-4">阅读量 1245</span>
         </div>
-        <div class="m_r_m pb-5" v-html="wenCon.con">
-        </div>
+        <div class="m_r_m pb-5" v-html="wenCon.con"></div>
+		<div v-if="dingzhiBtn">
+			<div class="dingzhi">
+			  <div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
+			  	<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
+			  	<span class="inline-block text-white">免费定制离婚协议书</span>
+			  </div>
+			</div>
+		</div>
         <div class="m_r_b py-6 px-6 hidden">
           <div class="flex items-center m_r_b_t">
             <div></div>
@@ -61,7 +68,8 @@ export default {
         con: '',
 		view: null
       },
-	  ins: 0
+	  ins: 0,
+	  dingzhiBtn: false
     }
   },
   mounted () {
@@ -80,6 +88,9 @@ export default {
 	  },
      getWenZhangCon () { // 查询单独文章
        var Id = localStorage.getItem('AgreementHelpId')
+	   if (Id == 45){
+		   this.dingzhiBtn = true
+	   }
        selectNewsContent({
          id: Id
        }).then((data) => {
@@ -123,7 +134,16 @@ export default {
 			  }
 			})
 		}
-     }
+     },
+	 goDingZhi () { // 定制按钮
+	 	this.$refs.lihun.goDingZhi(2)
+	 	if (!!window.ActiveXObject || "ActiveXObject" in window){ 
+	 		alert('为了您有更好的体验，建议您使用360浏览器，谷歌浏览器')
+	 	} 
+	 },
+	 getHeadActive (data) {
+	 	localStorage.setItem('topins',data)
+	 }
   }
 }
 </script>
@@ -134,6 +154,11 @@ export default {
 .c_m{background-color: #fff;margin-top: 39px;}
 .c_m_l{width: 239px;padding:150px 0;}
 .c_m_r{width: 960px;padding-left: 65px;padding-right: 65px;border-left: 2px solid #eceff4;}
+.dingzhi{text-align: center;padding:35px 0;}
+.dingzhi img{display: inline-block;}
+.shouyedingzhibtn{width: 300px;height: 50px;background-color: #ff3f68;display: flex;align-items: center;border-radius: 25px;justify-content: center}
+.shouyedingzhibtn:hover{background-color: #ff6687;cursor: pointer;}
+.shouyedingzhibtn span{font-size:24px;margin-left: 10px;}
 .m_r_m ul li{border-color: #eceff4;}
 .m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
 .m_r_m ul li span{color: #d1d1d1;font-size: 14px;}

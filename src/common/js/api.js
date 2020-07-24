@@ -309,6 +309,8 @@ const apiUrl = {
   sendEmail: baseLiHunURL + 'front_user/send_email',
   // 手机修改密码
   updatePasswordPhone: baseLiHunURL + 'front_user/update_password_phone',
+  // 手机修改密码
+  updatePasswordPhone2: baseLiHunURL + 'front_user/update_password_phone2',
   // 移动端修改密码
   remakePassword: baseLiHunURL + 'front_user/remake_password',
   // 新增用户

@@ -260,7 +260,7 @@
         </div>
       </el-dialog>
       <!-- 绑定邮箱 -->
-      <el-dialog title="绑定电子邮件" :visible.sync="dialogEmail01">
+      <el-dialog :title="this.isEmail==''?'绑定电子邮件':'修改电子邮件' " :visible.sync="dialogEmail01">
         <el-form class="mt-6" :model="form">
           <div data-v-6b6fd6b8="" class="el-form-item phoneBox">
             <label class="el-form-item__label" style="width: 120px;">邮箱</label>
@@ -282,12 +282,15 @@
           </div>
         </el-form>
         <div slot="footer" class="dialog-footer text-center pb-10">
-          <span class="anniu" @click="saveEmailBtn">绑定</span>
+          <span class="anniu" @click="saveEmailBtn">
+			  <span v-if="this.isEmail==''">绑定</span>
+			  <span v-if="this.isEmail!==''">修改</span>
+		  </span>
         </div>
       </el-dialog>
     </div>
 	<div v-if="dengluerrorBox==true" class="fixed errorBox">
-			  {{errorMsg}}
+		{{errorMsg}}
 	</div>
 	<lihun-bottom></lihun-bottom>
   </div>
@@ -295,7 +298,7 @@
 <script>
 import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
-import {updateUserName, phoneCode, phoneCodeV, updatePhone, uploadUserPhoto, updatePasswordPhone, sendEmail, updateUserEmail, usersSelect} from '@/api/api/AgreementRequest.js'
+import {updateUserName, phoneCode, phoneCodeV, updatePhone, uploadUserPhoto, updatePasswordPhone2, sendEmail, updateUserEmail, usersSelect} from '@/api/api/AgreementRequest.js'
 
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
@@ -350,7 +353,8 @@ export default {
         photo: ''
       },
 	  rename: '', // 修改名字
-      formLabelWidth: '120px'
+      formLabelWidth: '120px',
+	  isEmail: ''
     }
   },
   mounted () {
@@ -419,6 +423,7 @@ export default {
 			 
 			  this.userMsg.sex = data.data.sex
 			  var  markEmail = data.data.email
+			  this.isEmail = data.data.email
 			  this.userMsg.email = this.hideEmailInfo(markEmail)
 			  this.userMsg.photo = data.data.photo
 			  this.form.name = this.userMsg.name
@@ -426,7 +431,6 @@ export default {
 			  localStorage.setItem('name',this.userMsg.name)
 			  // console.log(data.data.name)
 		  } 
-        
       })
     },
     getPhone () { // 获取子组件的手机号
@@ -437,7 +441,7 @@ export default {
 	  this.form.name = this.rename
     },
     saveBtn () { // 确认编辑基础资料
-	  var nameReg = /^[\u4E00-\u9FA5]{2,4}$/;
+	  var nameReg = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
 	  if( !nameReg.test(this.form.name)) {
 		  this.$message({
 		    message: '名字过长请重新输入',
@@ -626,11 +630,12 @@ export default {
     editPassword () { // 点击修改密码弹窗
       this.dialogPassword01 = true
 	  this.form.PasswordCode = ''
+	  this.IsGetPsCode01 = true
     },
     sendPsCode () {   // 发送修改密码验证码
       phoneCode({
         phone: this.phoneNum,
-        type: 3
+        type: 4
       }).then((data) => {
         if (data.data.status_code == 200) {
           const TIME_COUNT = 60;
@@ -662,15 +667,25 @@ export default {
 		this.$refs.formPasswordCode.focus()
 	  	return false; 
 	  } else {
-		phoneCodeV ({
-			phone: this.phoneNum,
-			type: 3,
-			code: this.form.PasswordCode
-		}).then((data)=>{
-			this.dialogPassword01 = false
-			this.dialogPassword02 = true
-			this.IsGetPsCode01 = false
-		})
+		  phoneCodeV ({
+		  	phone: this.phoneNum,
+		  	type: 4,
+		  	code: this.form.PasswordCode
+		  }).then((data)=>{
+		  	if (data.data.status_code == 200) {
+			   this.dialogPassword01 = false
+			   this.dialogPassword02 = true
+			   this.IsGetPsCode01 = false
+		  	} else {
+			   this.dengluerrorBox = true
+			   this.errorMsg = '验证码有误，请重新填写'
+			   setTimeout(()=>{
+				 this.dengluerrorBox = false
+			   },1000)
+			   this.$refs.formPasswordCode.focus()
+		  	}
+		  })
+		  
 	  }
     },
     PassWordsaveBtn () {
@@ -689,7 +704,7 @@ export default {
 		  },1000)
 		  this.$refs.formPasswordAgain.focus()
 	  } else if (this.form.passwordNew == this.form.passwordAgain) {
-        updatePasswordPhone({
+        updatePasswordPhone2({
           phone: this.phoneNum,
           password: this.form.passwordNew,
 		  passwordagain: this.form.passwordAgain

@@ -23,12 +23,12 @@
 				</li>
 				<li>
 					<h2 class="text-base">姓名</h2>
-					<span>{{ this.userMsg.name }}</span>
+					<span @click="renameAc">{{ this.userMsg.name }}</span>
 				</li>  
 				<li>
 					<h2 class="text-base">性别</h2>
-					<span v-if="this.userMsg.sex===1">男</span>
-					<span v-if="this.userMsg.sex===2">女</span>
+					<span @click="resexAc" v-if="this.userMsg.sex===1">男</span>
+					<span @click="resexAc" v-if="this.userMsg.sex===2">女</span>
 				</li>
 				<li>
 					<h2 class="text-base">修改密码</h2>
@@ -41,11 +41,37 @@
 			</ul>
 			<span @click="loginOut" class="tuichu">退出登录</span>
 		</div>
+		<div v-if="namedialog" class="mianze">
+			<div class="mianzeBox">
+				<h2 class="text-base font-bold text-center py-5">修改姓名</h2>
+				<div class="text-left  px-5">
+					<el-form :model="userMsg" >
+					  <el-form-item label="" :label-width="formLabelWidth">
+					    <el-input v-model="userMsg.name" autocomplete="off" ref="userMsgName" placeholder="请输入您的姓名"></el-input>
+					  </el-form-item>
+					</el-form>
+				  <!-- <input type="text" v-model="userMsg.name" placeholder="请输入您的姓名" ref="userMsgName"> -->
+				</div>
+				<div class="px-5 mt-2 flex justify-between pb-3 pt-5">
+				  <span class="cbt" @click="cancelnamedialog">取 消</span>
+				  <span class="cbt re" @click="renamedialog">确 定</span>
+				</div>
+			</div>
+		</div>
+		<div v-if="sexdialog" class="mianze">
+			<div class="sexBox">
+				<ul>
+					<li @click="changesex(1)" class="text-center">男</li>
+					<li @click="changesex(2)" class="text-center">女</li>
+					<li @click="closesexdialog" class="text-center">取消</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
-import {usersSelect} from '@/api/api/AgreementRequest.js'
+import {usersSelect, updateUserName} from '@/api/api/AgreementRequest.js'
 export default {
 	name: 'mUser',
 	data () {
@@ -56,7 +82,10 @@ export default {
 				phone: '',
 				photo: ''
 			},
-			isLogin: false
+			isLogin: false,
+			namedialog: false,
+			formLabelWidth: '0px',
+			sexdialog: false
 		}
 	},
 	mounted () {
@@ -90,8 +119,62 @@ export default {
 		loginOut () { // 退出登录
 			localStorage.removeItem('token') // 存储token
 			this.$router.replace('/m/mhome')
+		},
+		renameAc () { // 点击弹出修改姓名弹窗
+			this.namedialog = true
+		},
+		cancelnamedialog () { // 取消修改姓名
+			this.namedialog = false
+		},
+		renamedialog () { // 确定修改姓名
+			var nameReg = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
+			if( !nameReg.test(this.userMsg.name)) {
+			  this.$message({
+				message: '名字过长请重新输入',
+				type: 'error'
+			  })
+			  this.$refs.userMsgName.focus()
+			} else {
+			  updateUserName({
+				name: this.userMsg.name,
+				sex: this.userMsg.sex
+			  }).then((data) => {
+				if (data.data.status_code == 200) {
+				  this.namedialog = false
+				  this.$message({
+				    message: '修改成功',
+				    type: 'success'
+				  })
+				  this.getUserMsg()
+				} else {
+				  this.$message.error(data.data.message)
+				}
+			  })
+			}
+		},
+		resexAc () {
+			this.sexdialog = true
+		},
+		changesex (e) { // 修改性别
+			updateUserName({
+				name: this.userMsg.name,
+				sex: e
+			}).then((data) => {
+				if (data.data.status_code == 200) {
+				  this.sexdialog = false
+				  this.$message({
+					message: '修改成功',
+					type: 'success'
+				  })
+				  this.getUserMsg()
+				} else {
+				  this.$message.error(data.data.message)
+				}
+			})
+		},
+		closesexdialog () {
+			this.sexdialog = false
 		}
-		
 	}
 }
 </script>
@@ -108,4 +191,11 @@ export default {
 	.user_min ul li img{width: 9px;height: 17px;display: inline-block;}
 	.user_min ul li span{color: #a4a4a4;}
 	.tuichu{display: inline-block;width: 100%;height: 38px;line-height: 38px;border-radius: 19px;border:1px solid #ff7f9a;color:#ff3f68;text-align: center;font-size: 16px;margin-top: 88px;}
+	.mianze{width: 100vw;height: 100vh;position: fixed;top: 0;left: 0; background: rgba(0,0,0,0.5);}
+	.mianzeBox{width: 90%;left: 5%;height: 200px;background: #fff;margin-top:-100px;top:50%;position: absolute;}
+	.sexBox{height: 133px;position: absolute;bottom:20px;width: 90%;left: 5%;background: #fff;}
+	.sexBox ul li{height: 42px;line-height: 42px;font-size: 15px;border-bottom: 1px solid #c4c4c4;color: #4d4d4d;}
+	.sexBox ul li:last-of-type{border-bottom: none;}
+	.cbt{width: 128px;height: 32px;text-align: center;line-height: 32px;font-size: 15px;border:1px solid #888888;border-radius: 16px;display: inline-block;}
+	.re{border:1px solid #ff4c72;color: #ff4c72;}
 </style>

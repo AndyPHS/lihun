@@ -58,8 +58,8 @@
 					 <i class="mr-2 shuzi inline-block" v-if="index==5">6</i>
 					 <h2 class="text-xl font-bold">{{item.title}}</h2> 
 				  </div>
-				  <span class="text-base text-gray-500" v-if="item.view!==null">帮助{{item.view}}人</span>
-				  <span class="text-base text-gray-500" v-if="item.view==null">帮助{{2514}}人</span>
+				  <span class="text-sm text-gray-500" v-if="item.view!==null">帮助{{item.view}}人</span>
+				  <span class="text-sm text-gray-500" v-if="item.view==null">帮助{{2514}}人</span>
 			  </div>
 			  <p class="mt-2">{{item.description}}</p>
 	        </li>
@@ -79,11 +79,11 @@
 				</li>
 			</ul>
 		</div>
-		<div class="flex px-10 py-10 justify-around items-center">
+		<div class="hidden flex px-10 py-10 justify-around items-center">
 			<img src="../../../assets/images/lihun/gongzhonghao.png" alt="">
 			<div>
 				<h2 class="text-xl">扫码关注</h2>
-				<p class="text-base">蜗牛说家事</p>
+				<p class="text-base">蜗牛小助手</p>
 			</div>
 		</div>
 	  </div>
@@ -261,6 +261,6 @@ export default {
 		
 	}
 	.hot_min img{display: inline-block;width: 12px;height: 26px;}
-	.hot_min h2{width:140px;overflow: hidden;white-space: nowrap;}
+	.hot_min h2{width:170px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
 	.hot_min i{font-family: -webkit-pictograph;font-size: 28px;}
 </style>

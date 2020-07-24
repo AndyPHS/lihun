@@ -73,6 +73,16 @@ export const updatePasswordPhone = params => {
     data: params
   });
 };
+// 手机号修改密码
+export const updatePasswordPhone2 = params => {
+  return axios({
+    method: 'post',
+    dataType: 'json',
+    url: apiUrl.updatePasswordPhone2,
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
 // 新增用户
 export const addUser = params => {
   return axios({
