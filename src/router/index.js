@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import maping from './mate.js'
 import Router from 'vue-router'       // 问题管理页面      // 关联管理页面
 const Login = () => import('@/components/LiHun/houtai/login')
 const Home = () => import('@/components/LiHun/Ad/Home') // 离婚协议书推广首页
@@ -57,7 +58,7 @@ Router.prototype.push = function push(location) {
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',  //去掉url中的#
   scrollBehavior (to, from, savedPosition) { // 新开页面回到顶部
     if (savedPosition) {
@@ -67,10 +68,10 @@ export default new Router({
     }
   },
   routes: [
-    {path: '/', name: 'Home', component: Home},
+    {path: '/', name: 'Home', component: Home, meta: maping.home,},
 	{path: '/login', name: 'login', component: Login},
     // 离婚协议书推广我的协议书
-    {path: '/MyConsult', name: 'MyConsult', component: MyConsult},
+    {path: '/dzlhxys', name: 'MyConsult', component: MyConsult,  meta: maping.MyConsult},
     // 离婚协议书推广定制协议书
     {path: '/CustomAgreement', name: 'CustomAgreement', component: CustomAgreement},
     // 离婚协议书推广页面确定页面
@@ -88,13 +89,13 @@ export default new Router({
 	// 离婚协议书推广定制协议书用户页面
     {path: '/AgreementUser', name: 'AgreementUser', component: AgreementUser},
 	// 离婚协议书范文
-	{path: '/AgreementModel', name: 'AgreementModel', component: AgreementModel},
+	{path: '/lhxys', name: 'AgreementModel', component: AgreementModel,meta: maping.AgreementModel},
     // 离婚协议书推广使用协议帮助
     {path: '/UserAgreement', name: 'UserAgreement', component: UserAgreement},
     // 离婚协议书推广知识列表页面
-    {path: '/Knowledge', name: 'Knowledge', component: Knowledge},
+    {path: '/lhzs/', name: 'Knowledge', component: Knowledge, meta: maping.Knowledge},
     // 离婚协议书推广知识详情页面
-    {path: '/KnowledgeCon/:id', name: 'KnowledgeCon', component: KnowledgeCon},
+    {path: '/lhzs/:route/:id', name: 'KnowledgeCon', component: KnowledgeCon,  meta: maping.KnowledgeCon},
     // 支付页面
     {path: '/Pay', name: 'Pay', component: Pay},
 	// 正支付页面
@@ -149,3 +150,36 @@ export default new Router({
 	{path: "*",redirect: "/404.html"}
   ]
 })
+router.beforeEach((to, from, next) => {
+ 
+    const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+ 
+    const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
+ 
+    const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
+ 
+    // console.log(previousNearestWithMeta);
+ 
+    if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
+ 
+    Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
+ 
+    if(!nearestWithMeta) return next();
+ 
+    nearestWithMeta.meta.metaTags.map(tagDef => {
+ 
+        const tag = document.createElement('meta');
+    
+        Object.keys(tagDef).forEach(key => {
+            tag.setAttribute(key, tagDef[key]);
+        });
+ 
+        tag.setAttribute('data-vue-router-controlled', '');
+ 
+        return tag;
+    }).forEach(tag => document.head.appendChild(tag));
+ 
+    next();
+})
+
+export default router

@@ -1,22 +1,32 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view v-if="isRouterAlive"></router-view>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  
+  provide () {
+	  return {
+		  reload: this.reload
+	  }
+  },
   data() {
 	  return{
-		  // isRouterAlive: true                    //控制视图是否显示的变量
+		  isRouterAlive: true                    //控制视图是否显示的变量
 	  }
   },
   methods: {
 	  _isMobile() {
 	  	 let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
 	  	 return flag;
+	  },
+	  reload () {
+		  this.isRouterAlive = false
+		  this.$nextTick(function(){
+			  this.isRouterAlive = true
+		  })
 	  }
   },
   mounted () {

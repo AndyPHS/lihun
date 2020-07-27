@@ -3694,7 +3694,7 @@ export default {
 	  })
     },
     returnUserList () {
-      this.$router.replace('/MyConsult')
+      this.$router.replace('/dzlhxys')
     },
 	goHome () {
 		localStorage.setItem('topins',0)

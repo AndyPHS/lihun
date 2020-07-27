@@ -309,6 +309,7 @@
 			goComplete(item) { // 点击查看协议跳转到生成协议页面
 				const e = item.id
 				localStorage.setItem('quid', e)
+				localStorage.setItem('qid', 3)
 				this.$router.push({
 				  name: 'CustomShengCheng',
 				  params: {
@@ -319,6 +320,7 @@
 			},
 			goOnTianxie(e) { // 点击继续起草
 				localStorage.setItem('quid', e)
+				localStorage.setItem('qid', 3)
 				this.$router.replace('/CustomBasic')
 			},
 			checkHistory (index) { // 查看历史版本

@@ -6,8 +6,8 @@
 		  <div class="mt-10">
 		  	<el-breadcrumb separator-class="el-icon-arrow-right text-sm">
 		  	  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-		  	  <el-breadcrumb-item :to="{ path: '/Knowledge' }">离婚知识</el-breadcrumb-item>
-			  <el-breadcrumb-item :to="{ path: '/Knowledge' }">{{this.insName}}</el-breadcrumb-item>
+		  	  <el-breadcrumb-item :to="{ path: '/lhzs/' }">离婚知识</el-breadcrumb-item>
+			  <el-breadcrumb-item :to="{ path: '/lhzs/' }">{{this.insName}}</el-breadcrumb-item>
 			  <el-breadcrumb-item>正文</el-breadcrumb-item>
 		  	</el-breadcrumb>
 		  </div>
@@ -32,7 +32,7 @@
             <span class="font-bold text-sm">相关知识</span>
           </div>
           <ul class="mt-6">
-            <li v-for="(item, index) in relevantAll" :key="index" class="mb-2 text-sm list-disc cursor-pointer hover:underline list-inside" @click="goKnowledgeMin(item.id)">{{ item.title }}</li>
+            <li v-for="(item, index) in relevantAll" :key="index" class="mb-2 text-sm list-disc cursor-pointer hover:underline list-inside" @click="goKnowledgeMin(item)">{{ item.title }}</li>
           </ul>
         </div>
 		<!-- <div class="min_bottom mt-5">
@@ -47,7 +47,7 @@
 			  <img src="../../../assets/images/lihun/hot_icon.png" alt="">
 		  </h3>
 	      <ul class="mt-5 zhishiul">
-	        <li v-for="(item, index) in hotAll.slice(0,6)" :key="index" class="text-base text-left cursor-pointer" @click="goKnowledgeMin(item.id)">
+	        <li v-for="(item, index) in hotAll.slice(0,6)" :key="index" class="text-base text-left cursor-pointer" @click="goKnowledgeMin(item)">
 	          <div class="flex justify-between items-center">
 				  <div class="flex hot_min items-center">
 					 <img v-if="index==0" class="mr-2" src="../../../assets/images/lihun/hot1.png" alt="">
@@ -74,7 +74,7 @@
 				知识精选
 			</h3>
 			<ul class="mt-5 jingxuan">
-				<li v-for="(item, index) in jingxuanAll" :key="index" class="text-base text-left  cursor-pointer" @click="goKnowledgeMin(item.id)">
+				<li v-for="(item, index) in jingxuanAll" :key="index" class="text-base text-left  cursor-pointer" @click="goKnowledgeMin(item)">
 					{{item.title}}
 				</li>
 			</ul>
@@ -103,6 +103,7 @@ export default {
     'lihun-head': lihun_head,
 	'lihun-bottom': lihun_bottom
   },
+  inject: ['reload'],
   data () {
     return {
       hotAll: [], // 文章分类汇总
@@ -124,10 +125,10 @@ export default {
     this.getWenZhangCon()
     this.getWenType()
 	localStorage.setItem('topins',1)
-	window.addEventListener('scroll', this.scrollToTop)
+	// window.addEventListener('scroll', this.scrollToTop)
   },
   destroyed () {
-    window.removeEventListener('scroll', this.scrollToTop)
+    // window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
      getWenZhangCon () { // 查询单独文章
@@ -163,7 +164,7 @@ export default {
 	getHeadActive (data) { // 导航选中状态
 		localStorage.setItem('topins',data)
 	},
-	goKnowledgeMin (id) { // 相关文章
+	goKnowledgeMin (item) { // 相关文章
 	  var isLogin = localStorage.getItem('token')
 	  if (isLogin !== undefined) {
 		 stopUserNewsLog().then((data) => {
@@ -171,18 +172,20 @@ export default {
 		 })
 		 addUserNewsLog({
 		   key_word: '/',
-		   newsId: id,
+		   newsId: item.id,
 		   type: 3
 		 }).then((data) => {
 		   localStorage.setItem('unlId', data.data.data)
 		 }) 
 	  }
+	  var itemId = item.id
+	  var itemRoute = item.route
 	  this.$router.push({
-	    path: `/KnowledgeCon/${id}`,
+	    path: `/lhzs/${itemRoute}/${itemId}`,
 	  })
-	  localStorage.setItem('KnowledgeId',id)
+	  localStorage.setItem('KnowledgeId',itemId)
 	  selectNewsContent({
-	    id: id
+	    id: item.id
 	  }).then((data) => {
 	    this.wenCon.title = data.data.data.title;
 	    this.wenCon.time = data.data.data.createdTime;
@@ -191,14 +194,15 @@ export default {
 		this.relevantAll = data.data.data.relevant;
 		this.ins = data.data.data.faId
 	  })
-	  const that = this
-		let timer = setInterval(() => {
-		  let ispeed = Math.floor(-that.scrollTop / 5)
-		  document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
-		  if (that.scrollTop === 0) {
-			clearInterval(timer)
-		  }
-		}, 16)
+	 //  const that = this
+		// let timer = setInterval(() => {
+		//   let ispeed = Math.floor(-that.scrollTop / 5)
+		//   document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
+		//   if (that.scrollTop === 0) {
+		// 	clearInterval(timer)
+		//   }
+		// }, 16)
+		this.reload()
 	},
 	scrollToTop () {
 	    const that = this

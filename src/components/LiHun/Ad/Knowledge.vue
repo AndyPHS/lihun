@@ -25,14 +25,14 @@
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" @click="goKnowledgeMin(20)">协议书如何谈判</li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" @click="goKnowledgeMin(21)">离婚协议常见误区</li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" @click="goKnowledgeMin(25)">离婚方式与选择</li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/luzh/20'>协议书如何谈判</router-link></li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/luzh/21'>离婚协议常见误区</router-link></li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/luzh/25'>离婚方式与选择</router-link></li>
           </ul>
         </div>
         <div class="m_r_m">
           <ul v-if="!this.tableDataNull" class="min_l">
-            <li v-for="(item, index) in tableData" :key="index"  class="pb-6 border-b cursor-pointer" @click="goKnowledgeMin(item.id)">
+            <li v-for="(item, index) in tableData" :key="index"  class="pb-6 border-b cursor-pointer" @click="goKnowledgeMinNew(item)">
               <div class="pt-6 pb-4 flex justify-between items-center">
                 <h2 class="w-4/5 overflow-hidden hover:underline" v-html="item.title"></h2>
 				<span class="w-1/8 text-sm mr-3 text-left font-thin">帮助&nbsp;<span>{{ item.view }}</span><span v-if="item.view==null ">1254</span> 人</span>
@@ -139,6 +139,32 @@ export default {
       })
 	  localStorage.setItem('KnowledgeId',id)
     },
+	goKnowledgeMinNew (item) {
+		var keyword
+		if( this.keyMsg ==''){
+			keyword = '/'
+		} else {
+			keyword = this.keyMsg
+		}
+		var isLogin = localStorage.getItem('token')
+		if (isLogin !== undefined){
+			addUserNewsLog({
+				  key_word: keyword,
+				  newsId: item.id,
+				  type: 3
+			}).then((data) => {
+				  localStorage.setItem('unlId',data.data.data)
+			})
+		}
+		var itemId = item.id
+		var itemRout = item.route
+		// console.log(itemRout)
+		this.$router.push({
+		  path: `/lhzs/${itemRout}/${itemId}`,
+		})
+		// console.log(itemRout)
+		localStorage.setItem('KnowledgeId',itemId)
+	},
     getWenType () { // 查询分类
       selectAction().then((data) => {
         this.fenleiAll = data.data[0].data

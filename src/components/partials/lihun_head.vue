@@ -614,7 +614,7 @@ export default {
 			} else if (index == 1){
 				localStorage.setItem('topins',1)
 				const {href} = this.$router.resolve({
-					path: '/Knowledge',
+					path: '/lhzs/',
 					params: {
 					  topins: this.topins
 					}
@@ -628,7 +628,7 @@ export default {
 				} else {
 					// this.$router.resolve('/MyConsult')
 					const {href} = this.$router.resolve({
-						path: '/MyConsult',
+						path: '/dzlhxys',
 						params: {
 						  topins: this.topins
 						}
@@ -638,7 +638,7 @@ export default {
 			} else if(index == 3){
 				localStorage.setItem('topins',3)
 				const {href} = this.$router.resolve({
-					path: '/AgreementModel',
+					path: '/lhxys',
 					params: {
 					  topins: this.topins
 					}
@@ -660,7 +660,7 @@ export default {
 			} else if (index == 1){
 				localStorage.setItem('topins',1)
 				const {href} = this.$router.replace({
-					path: '/Knowledge',
+					path: '/lhzs/',
 					params: {
 					  topins: this.topins
 					}
@@ -671,9 +671,9 @@ export default {
 				if (isLogin == undefined){
 					this.dialogLogin = true
 				} else {
-					// this.$router.replace('/MyConsult')
+					// this.$router.replace('/dzlhxys')
 					const {href} = this.$router.replace({
-						path: '/MyConsult',
+						path: '/dzlhxys',
 						params: {
 						  topins: this.topins
 						}
@@ -683,7 +683,7 @@ export default {
 			}else if(index == 3){
 				localStorage.setItem('topins',3)
 				const {href} = this.$router.replace({
-					path: '/AgreementModel',
+					path: '/lhxys',
 					params: {
 					  topins: this.topins
 					}
@@ -774,7 +774,7 @@ export default {
 	loginFormgetYan () { // 快捷登录获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
 			this.dengluerrorBox = true
-			this.errorMsg = '手机号有误，请重新填写'
+			this.errorMsg = '手机号码不正确'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
@@ -810,7 +810,7 @@ export default {
     getYan () { // 获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
 			this.dengluerrorBox = true
-			this.errorMsg = '手机号有误，请重新填写'
+			this.errorMsg = '手机号码不正确'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
@@ -844,37 +844,37 @@ export default {
 		}
     },
     nextSt () { // 点击注册成功下一步
-      if (this.checkOne) {
-		  if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
-		  	this.dengluerrorBox = true
-		  	this.errorMsg = '手机号有误，请重新填写'
-		  	setTimeout(()=>{
-		  		this.dengluerrorBox = false
-		  	},1000)
-			this.$refs.zhucePhone.focus()
-		  	return false; 
-		  } else if(this.form.password =='') {
-			  this.$message.error('密码不能为空');
-			  this.$refs.zhucePassword.focus()
-		  } else if(this.form.valueCode==null|| this.form.valueCode.length != 6){
-			  this.$message.error('验证码不正确');
-			  this.$refs.zhuceValueCode.focus()
-		  } else {
+	  if(!(/^1[3456789]\d{9}$/.test(this.form.phone))){
+		this.dengluerrorBox = true
+		this.errorMsg = '手机号码不正确'
+		setTimeout(()=>{
+			this.dengluerrorBox = false
+		},1000)
+		this.$refs.zhucePhone.focus()
+		return false; 
+	  } else if(this.form.password =='') {
+		  this.$message.error('密码不正确');
+		  this.$refs.zhucePassword.focus()
+	  } else if(this.form.valueCode==null|| this.form.valueCode.length != 6){
+		  this.$message.error('验证码不正确');
+		  this.$refs.zhuceValueCode.focus()
+	  } else {
+		  if (this.checkOne) {
 			  addUser({
-			    phone: this.form.phone,
-			    password: this.form.password,
-			    code: JSON.parse(this.form.valueCode)
+				phone: this.form.phone,
+				password: this.form.password,
+				code: JSON.parse(this.form.valueCode)
 			  }).then((data) => {
-			    if (data.data.status_code === 200) {
-			      this.$message({
-			        message: '恭喜你，注册成功',
-			        type: 'success'
-			      })
-			      this.zhuce = false
+				if (data.data.status_code === 200) {
+				  this.$message({
+					message: '恭喜你，注册成功',
+					type: 'success'
+				  })
+				  this.zhuce = false
 				  
 				  this.$message({
-				    message: '登录成功',
-				    type: 'success'
+					message: '登录成功',
+					type: 'success'
 				  })
 				  localStorage.setItem('topins',0)
 				  var tel = this.form.phone
@@ -897,21 +897,21 @@ export default {
 						localStorage.setItem('name', this.UserName)
 						this.getUserMsg()
 					})
-			    } else {
-			      this.$message({
-			        message: data.data.message,
-			        type: 'error'
-			      })
-			    }
+				} else {
+				  this.$message({
+					message: data.data.message,
+					type: 'error'
+				  })
+				}
 			  }) 
+		  } else {
+			  this.dengluerrorBox = true
+			  this.errorMsg = '请先阅读蜗牛家事使用协议'
+			  setTimeout(()=>{
+				this.dengluerrorBox = false
+			  },1000)
 		  }
-      } else {
-		  this.dengluerrorBox = true
-		  this.errorMsg = '请先阅读蜗牛家事使用协议'
-		  setTimeout(()=>{
-		  	this.dengluerrorBox = false
-		  },1000)
-      }
+	  }
     },
 	gologin () { // 去登陆
 		this.dialogFormVisible = false
@@ -950,7 +950,7 @@ export default {
 		var phone = phoneNum
 		if(!(/^1[3456789]\d{9}$/.test(phone))){ 
 			this.dengluerrorBox = true
-			this.errorMsg = '手机号有误，请重新填写'
+			this.errorMsg = '手机号码不正确'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
@@ -978,7 +978,7 @@ export default {
 	fastloginBt () { //快捷登录按钮
 		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
 			this.dengluerrorBox = true
-			this.errorMsg = '手机号有误，请重新填写'
+			this.errorMsg = '手机号码不正确'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
@@ -1046,14 +1046,14 @@ export default {
     loginBt () { // 点击登录中的登录按钮
 		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
 			this.dengluerrorBox = true
-			this.errorMsg = '手机号有误，请重新填写'
+			this.errorMsg = '手机号码不正确'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)
 			this.$refs.loginmmPhone.focus()
 			return false; 
 		} else if(this.loginForm.password =='') {
-			this.$message.error('密码不能为空');
+			this.$message.error('密码不正确');
 			this.$refs.loginmmPassword.focus()
 		} else {
 			frontLogin({
@@ -1133,7 +1133,7 @@ export default {
 	findYan () { // 找回密码获取验证码
 		this.newform.valueCode = null
 		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
-			this.$message.error('手机号有误，请重新填写'); 
+			this.$message.error('手机号码不正确'); 
 			return false; 
 		} else {
 			// this.registYan = true
@@ -1207,7 +1207,7 @@ export default {
 		this.dialogFindByPhone = true
 	},
 	resetPW () { // 设置新密码弹窗确认
-		if( this.newform.password == ''){
+		if( this.newform.password == '' ||  this.newform.passwordAgain==''){
 			this.dengluerrorBox = true
 			this.errorMsg = '密码不能为空'
 			setTimeout(()=>{
@@ -1267,7 +1267,7 @@ export default {
     forgetNext () { // 点击忘记密码弹窗1下一步
 		if(!(/^1[3456789]\d{9}$/.test(this.newform.phone))){
 			this.dengluerrorBox = true
-			this.errorMsg = '手机号有误，请重新填写'
+			this.errorMsg = '手机号码不正确'
 			setTimeout(()=>{
 				this.dengluerrorBox = false
 			},1000)

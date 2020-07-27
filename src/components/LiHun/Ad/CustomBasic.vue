@@ -1385,7 +1385,7 @@ export default {
       }).then((data) => {
         this.userWenJuan.title = ''
         this.dialogSavedWenJuan = false
-        // this.$router.replace('/MyConsult')
+        // this.$router.replace('/dzlhxys')
       }).catch((data) => {
 
       })
@@ -1398,7 +1398,7 @@ export default {
     },
     alreadySave () { // 确认已保存，返回列表
       this.dialogTiShi = false
-	  this.$router.replace('/MyConsult')
+	  this.$router.replace('/dzlhxys')
     },
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true

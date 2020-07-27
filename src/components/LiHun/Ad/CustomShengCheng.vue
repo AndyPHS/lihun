@@ -184,7 +184,7 @@ export default {
     canceldialogSaveWenJuan () { // 取消保存按钮
       this.dialogSavedWenJuan = false
       if (this.isGoBack) {
-        this.$router.replace('/MyConsult')
+        this.$router.replace('/dzlhxys')
       }
     },
     dialogSaveWenJuanOk () { // 点击保存确定按钮保存
@@ -196,14 +196,14 @@ export default {
       }).then((data) => {
         this.userWenJuan.title = ''
         this.dialogSavedWenJuan = false
-        this.$router.replace('/MyConsult')
+        this.$router.replace('/dzlhxys')
       }).catch((data) => {
 
       })
     },
     returnUserList () { // 返回协议列表
 	  if (this.$route.params.content!==undefined) {
-		  this.$router.replace('/MyConsult')
+		  this.$router.replace('/dzlhxys')
 	  } else {
 		 this.dialogTiShi = true
 	  }
@@ -213,7 +213,7 @@ export default {
     },
     alreadySave () { // 确认已保存，返回列表
       this.dialogTiShi = false
-      this.$router.replace('/MyConsult')
+      this.$router.replace('/dzlhxys')
     },
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true
