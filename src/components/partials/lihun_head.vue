@@ -626,7 +626,7 @@ export default {
 				if (isLogin == undefined){
 					this.dialogLogin = true
 				} else {
-					// this.$router.resolve('/MyConsult')
+					// this.$router.resolve('/dzlhxys')
 					const {href} = this.$router.resolve({
 						path: '/dzlhxys',
 						params: {
@@ -715,14 +715,14 @@ export default {
 		this.$emit('headActiveEvent',this.topins)
 		if(this.$route.path=='/CustomBasic' || this.$route.path=='/CustomAgreement' || this.$route.path=='/CustomQueDing' || this.$route.path=='/CustomShengCheng' ) {
 				  const {href} = this.$router.resolve({
-				  	path: '/MyConsult',
+				  	path: '/dzlhxys',
 				  	params: {
 				  	  topins: this.topins
 				  	}
 				  })
 				  window.open(href, '_blank')
 		} else {
-				  this.$router.replace('/MyConsult')
+				  this.$router.replace('/dzlhxys')
 		}
 		this.dengluBox = false
 	},
@@ -918,7 +918,7 @@ export default {
 		// this.dialogLogin = true
 		this.form.valueCode = ''
 		this.zhuce = true
-		this.$router.replace('/MyConsult')
+		this.$router.replace('/dzlhxys')
 		localStorage.setItem('topins',2)
 	},
     loginAc () { // 点击登录按钮
