@@ -7,7 +7,7 @@
 		</div>
 		<div class="min px-4 mt-4">
 			<!-- <div id="outputwordmsg" v-html="this.outputWord"></div> -->
-			<img :src="this.pdfSrc" alt="">
+			<img :src="this.mesUrl" alt="">
 			<!-- iframe :src="this.mesUrl" frameborder="0" height="560" width="100%"></iframe> -->
 			<!-- <pdf
 			      v-for="i in numPages"
