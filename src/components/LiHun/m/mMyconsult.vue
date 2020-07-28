@@ -155,14 +155,16 @@ export default {
 		goComplete(item) { // 点击查看协议跳转到生成协议页面
 			const e = item.id
 			localStorage.setItem('quid', e)
+			this.mesUrl = 'http://localhost:8083/api/Questionnaire/v1/page/pdf_pdf/'+item.id + '.pdf'
+			window.open(this.mesUrl);
 			// this.$router.replace('/m/mAgreement')
-			this.$router.push({
-			  name: 'mAgreement',
-			  params: {
-				  title: item.title,
-				  content: item.content
-			  }
-			})
+			// this.$router.push({
+			//   name: 'mAgreement',
+			//   params: {
+			// 	  title: item.title,
+			// 	  content: item.content
+			//   }
+			// })
 		}
 	}
 }
