@@ -6,7 +6,17 @@
 			<span @click="DownLoadWord" class="inline-block download">下载</span>
 		</div>
 		<div class="min px-4 mt-4">
-			<div id="outputwordmsg" v-html="this.outputWord"></div>
+			<!-- <div id="outputwordmsg" v-html="this.outputWord"></div> -->
+			<img :src="this.pdfSrc" alt="">
+			<!-- iframe :src="this.mesUrl" frameborder="0" height="560" width="100%"></iframe> -->
+			<!-- <pdf
+			      v-for="i in numPages"
+			      ref="pdfs"
+			      :src="pdfSrc"
+			      :key="i"
+			      :page="i"
+			    >
+			</pdf> -->
 		</div>
 		<div v-if="dialogxieyi" class="mianze">
 			<div class="mianzeBox">
@@ -38,7 +48,8 @@
 </template>
 
 <script>
-import {getWord, outPutWord} from '@/api/api/AgreementRequest.js'
+import {getWord, outPutWord, pdfPdf} from '@/api/api/AgreementRequest.js'
+import pdf from 'vue-pdf'
 export default {
 	name: 'mAgreement',
 	data() {
@@ -50,7 +61,10 @@ export default {
 			checkOne: false,
 			dialogxieyi: false,
 			dengluerrorBox: false,
-			errorMsg: ''
+			errorMsg: '',
+			mesUrl: '',
+			pdfSrc: '',
+			numPages: []
 		}
 	},
 	mounted() {
@@ -63,6 +77,13 @@ export default {
 		GetOutPutWord () { // 获取协议
 		  this.userWenJuan.title = this.$route.params.title
 		  this.outputWord = this.$route.params.content
+		  this.mesUrl = 'http://localhost:8083/api/Questionnaire/v1/page/pdf_pdf/'+localStorage.getItem('quid') + '.pdf'
+		  window.open(this.mesUrl);
+		  // this.pdfSrc = pdf.createLoadingTask(this.mesUrl)
+		  // this.pdfSrc.then(pdf => {
+		  // 	// console.log('pdf', pdf)
+		  // 	this.numPages = pdf.numPages
+		  // })
 		  // outPutWord().then((data) => {
 			 //  if (data.data.status_code == 200) {
 			 //    this.outputWord = data.data.data.content

@@ -221,6 +221,8 @@ const apiUrl = {
   deleteQuestionnaire: baseLiHunURL + 'questionnaire/delete/',
   // 查找用户问卷
   selectUserQuestionnaire: baseLiHunURL + 'page/select_user_questionnaire/',
+  // 获取用户问卷pdf
+  pdfPdf: baseLiHunURL + 'page/pdf_pdf/',
   // 新增用户问卷时间
   addQuestionnaireLog: baseLiHunURL + 'front_user/add_questionnaire_log/',
   // 结束问卷时间

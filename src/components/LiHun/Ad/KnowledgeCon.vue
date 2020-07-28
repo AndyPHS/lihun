@@ -7,7 +7,7 @@
 		  	<el-breadcrumb separator-class="el-icon-arrow-right text-sm">
 		  	  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
 		  	  <el-breadcrumb-item :to="{ path: '/lhzs/' }">离婚知识</el-breadcrumb-item>
-			  <el-breadcrumb-item :to="{ path: '/lhzs/' }">{{this.insName}}</el-breadcrumb-item>
+			  <span data-v-5c5dd245="" class="el-breadcrumb__item"  @click="searchList"><span role="link" class="el-breadcrumb__inner is-link">{{this.insName}}</span><i class="el-breadcrumb__separator el-icon-arrow-right text-sm"></i></span>
 			  <el-breadcrumb-item>正文</el-breadcrumb-item>
 		  	</el-breadcrumb>
 		  </div>
@@ -151,16 +151,16 @@ export default {
 		 this.jingxuanAll = data.data.data.hou
        })
      },
-    //  searchList (item, index) { // 点击文章分类跳转到文章列表页
-	   // localStorage.setItem('topins',1)
-    //    this.$router.push({
-    //      name: 'Knowledge',
-    //      params: {
-    //        id: item.id,
-		  //  ins: index
-    //      }
-    //    })
-    //  },
+     searchList () { // 点击文章分类跳转到文章列表页
+	   localStorage.setItem('topins',1)
+	   var selectFaid = localStorage.getItem('selectFaid')
+       this.$router.push({
+		name: 'Knowledge',
+		params:{
+			selectFaid: selectFaid
+		}
+       })
+     },
 	getHeadActive (data) { // 导航选中状态
 		localStorage.setItem('topins',data)
 	},

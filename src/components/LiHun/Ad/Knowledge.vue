@@ -89,7 +89,7 @@ export default {
       fenleiAll: [], // 文章分类汇总
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
-      ins: -1,
+      ins: null,
 	  tableDataNull: false, // 无文章
 	  // 分页
 	  first_page_url: '',
@@ -111,11 +111,27 @@ export default {
   },
   methods: {
 	getIns () {
-		if (this.$route.params.ins === undefined ) {
+		if (this.$route.params.selectFaid === undefined ) {
 			this.ins =0
 		} else {
-			this.ins = this.$route.params.ins
-		}
+			this.ins = this.$route.params.selectFaid
+			console.log(this.ins)
+			this.getbacklist ()
+		} 
+	},
+	getbacklist () {
+		selectFaIDNews({
+		  status: 1,
+		  faId: this.ins,
+		  page: this.currentPage
+		}).then((data) => {
+		  this.tableData = data.data.data.data
+			this.total = data.data.data.total
+			if (this.tableData.length == 0 ) {
+				this.tableDataNull = true
+				this.keyMsg = item.title
+			}
+		})
 	},
     goKnowledgeMin (id) {
 	  var keyword
@@ -168,12 +184,17 @@ export default {
     getWenType () { // 查询分类
       selectAction().then((data) => {
         this.fenleiAll = data.data[0].data
-        if (this.$route.params.id != undefined) {
-          this.firstType = this.$route.params.id
-        } else {
-          this.firstType = this.fenleiAll[0].id
-        }
-        this.startList()
+		if (this.$route.params.selectFaid === undefined ) {
+			this.startList()
+		} else {
+			this.ins = localStorage.getItem('selectFaid')
+			this.getbacklist() 
+		}
+  //       if (this.$route.params.id != undefined) {
+  //         this.firstType = this.$route.params.id
+  //       } else {
+  //         this.firstType = this.fenleiAll[0].id
+  //       }
       })
     },
     startList () { // 初始化页面查找第一个分类下的文章
@@ -213,9 +234,10 @@ export default {
 		  })
 	  }
 	  localStorage.setItem('insName',item.title)
+	  localStorage.setItem('selectFaid', item.id)
       selectFaIDNews({
         status: 1,
-        faId: item.id,
+        faId: this.ins,
 		page: this.currentPage
       }).then((data) => {
         this.tableData = data.data.data.data

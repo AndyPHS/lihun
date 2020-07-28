@@ -259,6 +259,16 @@ export const selectUserQuestionnaire = params => {
     data: params
   });
 };
+// 获取用户问卷
+export const pdfPdf = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.pdfPdf + localStorage.getItem('quid'),
+    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    data: params
+  });
+};
 // 查找单独用户问卷
 export const selectOnlyUserQuestionnaire = params => {
   return axios({
