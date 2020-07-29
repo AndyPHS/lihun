@@ -7,6 +7,7 @@
 		  	<el-breadcrumb separator-class="el-icon-arrow-right text-sm">
 		  	  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
 		  	  <el-breadcrumb-item :to="{ path: '/lhzs/' }">离婚知识</el-breadcrumb-item>
+			  <!-- <el-breadcrumb-item :to="{ path: this.insRout }">{{this.insName}}</el-breadcrumb-item> -->
 			  <span data-v-5c5dd245="" class="el-breadcrumb__item"  @click="searchList"><span role="link" class="el-breadcrumb__inner is-link">{{this.insName}}</span><i class="el-breadcrumb__separator el-icon-arrow-right text-sm"></i></span>
 			  <el-breadcrumb-item>正文</el-breadcrumb-item>
 		  	</el-breadcrumb>
@@ -117,6 +118,7 @@ export default {
       },
 	  ins: null,
 	  insName: '离婚',
+	  insRout: '',
 	  relevantAll: [],   // 相关文章
 	  fenleiAll: [],
     }
@@ -133,6 +135,8 @@ export default {
   methods: {
      getWenZhangCon () { // 查询单独文章
        this.insName = localStorage.getItem('insName')
+	   var url = document.location.toString()
+	   this.insRout = url.slice(url.length-7).slice(0,4)
 	   var Id = this.$route.params.id
        selectNewsContent({
          id: Id
@@ -154,11 +158,9 @@ export default {
      searchList () { // 点击文章分类跳转到文章列表页
 	   localStorage.setItem('topins',1)
 	   var selectFaid = localStorage.getItem('selectFaid')
+	   var insRout = this.insRout
        this.$router.push({
-		name: 'KnowledgeList',
-		params:{
-			selectFaid: selectFaid
-		}
+		path: `/lhzs/${insRout}`,
        })
      },
 	getHeadActive (data) { // 导航选中状态

@@ -1,5 +1,13 @@
-var KnowledgeContitle,KnowledgeConkeywords,KnowledgeCondescription
+var KnowledgeContitle
+var KnowledgeConkeywords
+var KnowledgeCondescription
+var urlPath = window.location.href
+if (urlPath.indexOf('lhcs')!= -1){
+	console.log('lhcs')
+}
+console.log(urlPath)
 var isName = localStorage.getItem('insName')
+console.log(isName)
 if(isName='离婚常识'){
 	KnowledgeContitle = '离婚手续_离婚冷静期-蜗牛家事'
 	KnowledgeConkeywords = '离婚手续,离婚冷静期,一方不同意离婚能拖多久'

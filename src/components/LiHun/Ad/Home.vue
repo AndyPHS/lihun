@@ -517,15 +517,21 @@ export default {
 	},
 	goMoreKnowledge () {
 		localStorage.setItem('topins',1)
-		this.$router.replace('Knowledge')
+		this.$router.push({
+		  path: `/lhzs`,
+		})
 	},
 	goKnowledgeMin (id) { // 协议书如何谈判
 	  localStorage.setItem('topins',1)
+	  // this.$router.push({
+	  //   name: 'KnowledgeCon',
+	  //   params: {
+	  //     id: id
+	  //   }
+	  // })
+	 
 	  this.$router.push({
-	    name: 'KnowledgeCon',
-	    params: {
-	      id: id
-	    }
+	    path: `/lhzs/xylh/${id}`,
 	  })
 	  localStorage.setItem('KnowledgeId',id)
 	},

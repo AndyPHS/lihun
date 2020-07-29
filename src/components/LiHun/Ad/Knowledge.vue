@@ -25,9 +25,9 @@
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/luzh/20'>协议书如何谈判</router-link></li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/luzh/21'>离婚协议常见误区</router-link></li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/luzh/25'>离婚方式与选择</router-link></li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/xylh/20'>协议书如何谈判</router-link></li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/xylh/21'>离婚协议常见误区</router-link></li>
+            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/lhcs/25'>离婚方式与选择</router-link></li>
           </ul>
         </div>
         <div class="m_r_m">
