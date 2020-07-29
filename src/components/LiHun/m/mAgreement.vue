@@ -49,6 +49,7 @@
 
 <script>
 import {getWord, outPutWord, pdfPdf} from '@/api/api/AgreementRequest.js'
+import {apiUrl} from '@/common/js/api.js'
 // import pdf from 'vue-pdf'
 export default {
 	name: 'mAgreement',
@@ -77,7 +78,7 @@ export default {
 		GetOutPutWord () { // 获取协议
 		  this.userWenJuan.title = this.$route.params.title
 		  this.outputWord = this.$route.params.content
-		  this.mesUrl = 'http://localhost:8083/api/Questionnaire/v1/page/pdf_pdf/'+localStorage.getItem('quid') + '.pdf'
+		  this.mesUrl = apiUrl.pdfPdf +localStorage.getItem('quid') + '.pdf'
 		  window.open(this.mesUrl);
 		  // this.pdfSrc = pdf.createLoadingTask(this.mesUrl)
 		  // this.pdfSrc.then(pdf => {
