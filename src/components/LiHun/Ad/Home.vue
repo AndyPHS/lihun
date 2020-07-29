@@ -493,6 +493,17 @@ import lihun_head from '../../partials/lihun_head.vue'
 import lihun_bottom from '../../partials/lihun_bottom.vue'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
+  metaInfo: {
+  title: '标题', // set a title
+  meta: [{ // set meta
+  name: '测试1',
+  content: '测试2'
+  }],
+  link: [{ // set link
+  rel: '',
+  href: 'https://assets-cdn.github.com/'
+  }]
+  },
   name: 'Home',
   components:{
     'lihun-head':lihun_head,

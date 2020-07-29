@@ -20,6 +20,7 @@
     "element-ui": "^2.13.2",
     "js-cookie": "^2.2.1",
     "jsonp": "^0.2.1",
+    "prerender-spa-plugin": "^3.4.0",
     "tailwindcss": "^1.1.2",
     "vee-validate": "^3.0.3",
     "vue": "^2.5.2",

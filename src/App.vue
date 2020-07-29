@@ -30,9 +30,9 @@ export default {
 	  }
   },
   mounted () {
-	  if (this._isMobile()) {
-		this.$router.replace('/m/mhome');
-	  }
+	 //  if (this._isMobile()) {
+		// this.$router.replace('/m/mhome');
+	 //  }
   }
 }
 </script>
