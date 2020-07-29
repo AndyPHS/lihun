@@ -76,6 +76,7 @@ export default {
 	},
 	methods: {
 		GetOutPutWord () { // 获取协议
+		  console.log(apiUrl.pdfPdf)
 		  this.userWenJuan.title = this.$route.params.title
 		  this.outputWord = this.$route.params.content
 		  this.mesUrl = apiUrl.pdfPdf +localStorage.getItem('quid') + '.pdf'
