@@ -15,6 +15,7 @@ const AgreementUser = () => import('@/components/LiHun/Ad/AgreementUser')  // �
 const AgreementModel = () => import('@/components/LiHun/Ad/AgreementModel')  // 协议范文
 const UserAgreement = () => import('@/components/LiHun/Ad/UserAgreement')  // 推广页使用帮助
 const Knowledge = () => import('@/components/LiHun/Ad/Knowledge') // 知识列表页面
+const KnowledgeList = () => import('@/components/LiHun/Ad/KnowledgeList') // 知识模块页面
 const KnowledgeCon = () => import('@/components/LiHun/Ad/KnowledgeCon') // 知识详情页面
 const Pay = () => import('@/components/LiHun/Ad/Pay') // 支付页面
 const onPay = () => import('@/components/LiHun/Ad/onPay') // 正支付支付页面
@@ -94,6 +95,8 @@ const router = new Router({
     {path: '/UserAgreement', name: 'UserAgreement', component: UserAgreement},
     // 离婚协议书推广知识列表页面
     {path: '/lhzs/', name: 'Knowledge', component: Knowledge, meta: maping.Knowledge},
+	// 离婚协议书模块列表页面
+	{path: '/lhzs/:route', name: 'KnowledgeList', component: KnowledgeList, meta: maping.KnowledgeList},
     // 离婚协议书推广知识详情页面
     {path: '/lhzs/:route/:id', name: 'KnowledgeCon', component: KnowledgeCon,  meta: maping.KnowledgeCon},
     // 支付页面

@@ -155,7 +155,7 @@ export default {
 	   localStorage.setItem('topins',1)
 	   var selectFaid = localStorage.getItem('selectFaid')
        this.$router.push({
-		name: 'Knowledge',
+		name: 'KnowledgeList',
 		params:{
 			selectFaid: selectFaid
 		}

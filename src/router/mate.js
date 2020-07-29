@@ -96,6 +96,13 @@ const maping = {
 			{name:'description',content:'离婚知识栏目综合为您提供离婚知识性知识，包括怎样写离婚协议书，协议离婚，诉讼离婚，离婚子女抚养，离婚财产怎么分割等内容，在这里能充分了解离婚的各种信息，助您及时解决离婚问题，快速离婚。'}
 		]
 	},
+	KnowledgeList: {
+		title: KnowledgeContitle,
+		metaTags: [
+			{name:'keywords',content:KnowledgeConkeywords},
+			{name:'description',content:KnowledgeCondescription}
+		]
+	},
 	KnowledgeCon: {
 		title: KnowledgeContitle,
 		metaTags: [

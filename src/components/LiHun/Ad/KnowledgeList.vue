@@ -7,7 +7,7 @@
           <h3 class="text-22 text-center font-bold">离婚知识</h3>
           <ul class="mt-5 px-16 text-center ml-3 zhishiul">
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base mb-3 leading-loose text-left">
-              <h2 :class="ins === item.id?'default_active':'default'">{{ item.title }}</h2>
+              <h2>{{ item.title }}</h2>
               <ul class="" v-if="item.data.length>0">
                 <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
 					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
@@ -78,7 +78,7 @@ import lihun_bottom from '../../partials/lihun_bottom.vue'
 import {selectAction, selectFaIDNews, selectOsNews, addUserNewsLog, stopUserNewsLog} from '@/api/api/AgreementRequest.js'
 // import {answer} from '@/api/api/requestLogin.js'
 export default {
-  name: 'Knowledge',
+  name: 'KnowledgeList',
   components: {
     'lihun-head': lihun_head,
 	'lihun-bottom': lihun_bottom
@@ -108,6 +108,9 @@ export default {
   mounted () {
     this.getWenType()
 	this.getIns()
+  },
+  beforeMount() {
+  	
   },
   methods: {
 	getIns () {
@@ -178,6 +181,7 @@ export default {
 		this.$router.push({
 		  path: `/lhzs/${itemRout}/${itemId}`,
 		})
+		// console.log(itemRout)
 		localStorage.setItem('KnowledgeId',itemId)
 	},
     getWenType () { // 查询分类
@@ -245,6 +249,7 @@ export default {
       }).then((data) => {
         this.tableData = data.data.data.data
 		this.total = data.data.data.total
+		this.keyMsg = item.title
 		if (this.tableData.length == 0 ) {
 			this.tableDataNull = true
 			this.keyMsg = item.title
