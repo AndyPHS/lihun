@@ -9,8 +9,8 @@
             <li v-for="(item, index) in fenleiAll" :key="index" class="text-base mb-3 leading-loose text-left">
               <h2>{{ item.title }}</h2>
               <ul class="" v-if="item.data.length>0">
-                <li v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
-					<h2 :class="ins === $item.id?'default_active':'default_erji'"  @click="searchList($item, $index)">{{ $item.title }}</h2>
+                <li :class="ins== $item.id?'default_active':'default_erji'" v-for="($item, $index) in item.data" :key="$index" class="text-base cursor-pointer hover:font-bold leading-loose text-left">
+					<h2 @click="searchList($item, $index)">{{ $item.title }}</h2>
 				</li>
               </ul>
             </li>
@@ -25,9 +25,7 @@
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/xylh/20'>协议书如何谈判</router-link></li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/xylh/21'>离婚协议常见误区</router-link></li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/lhcs/25'>离婚方式与选择</router-link></li>
+            <li v-for="(item, index) in headList" :key="index" @click="goKnowledgeMinNew(item)" class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" >{{ item.title }}</li>
           </ul>
         </div>
         <div class="m_r_m">
@@ -86,10 +84,15 @@ export default {
   data () {
     return {
       keyMsg: '', // 关键词搜索
+	  headList: [
+		  {id:20,route:'xylh',title: '协议书如何谈判',faidName:'协议离婚'},
+		  {id:21,route:'xylh',title: '离婚协议常见误区',faidName:'协议离婚'},
+		  {id:25,route:'lhcs',title: '离婚方式与选择',faidName:'离婚常识'}
+	  ],
       fenleiAll: [], // 文章分类汇总
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
-      ins: null,
+      ins:null,
 	  tableDataNull: false, // 无文章
 	  // 分页
 	  first_page_url: '',
@@ -109,16 +112,15 @@ export default {
     this.getWenType()
 	this.getIns()
   },
-  beforeMount() {
-  	
+  updated() {
+     this.ins = Number(localStorage.getItem('selectFaid'))
   },
   methods: {
 	getIns () {
 		if (this.$route.params.selectFaid === undefined ) {
 			this.ins =0
 		} else {
-			this.ins = this.$route.params.selectFaid
-			console.log(this.ins)
+			this.ins = Number(localStorage.getItem('selectFaid'))
 			this.getbacklist ()
 		} 
 	},
@@ -136,28 +138,6 @@ export default {
 			}
 		})
 	},
-    goKnowledgeMin (id) {
-	  var keyword
-	  if( this.keyMsg ==''){
-		  keyword = '/'
-	  } else {
-		  keyword = this.keyMsg
-	  }
-	  var isLogin = localStorage.getItem('token')
-	  if (isLogin !== undefined){
-	  	addUserNewsLog({
-		  key_word: keyword,
-		  newsId: id,
-		  type: 3
-	  	}).then((data) => {
-		  localStorage.setItem('unlId',data.data.data)
-	  	})
-	  }
-      this.$router.push({
-        path: `/KnowledgeCon/${id}`,
-      })
-	  localStorage.setItem('KnowledgeId',id)
-    },
 	goKnowledgeMinNew (item) {
 		var keyword
 		if( this.keyMsg ==''){
@@ -177,27 +157,39 @@ export default {
 		}
 		var itemId = item.id
 		var itemRout = item.route
-		// console.log(itemRout)
 		this.$router.push({
 		  path: `/lhzs/${itemRout}/${itemId}`,
 		})
 		// console.log(itemRout)
 		localStorage.setItem('KnowledgeId',itemId)
+		if (item.faidName !==undefined){
+			localStorage.setItem('insName', item.faidName)
+		}
 	},
     getWenType () { // 查询分类
       selectAction().then((data) => {
         this.fenleiAll = data.data[0].data
-		if (this.$route.params.selectFaid === undefined ) {
-			this.startList()
-		} else {
-			this.ins = localStorage.getItem('selectFaid')
-			this.getbacklist() 
-		}
-        if (this.$route.params.id != undefined) {
-          this.firstType = this.$route.params.id
-        } else {
-          this.firstType = this.fenleiAll[0].id
-        }
+		selectFaIDNews({
+		    status: 1,
+		    faId: localStorage.getItem('selectFaid'),
+			page: this.currentPage
+		}).then((data) => {
+		  if(data.data.status_code ==200){
+			  this.tableData = data.data.data.data
+			  this.total = data.data.data.total
+			  if (this.tableData.length == 0 ) {
+				this.tableDataNull = true
+			  }
+			   var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+				document.documentElement.scrollTop = document.body.scrollTop =0; 
+		  } else if (data.data.status_code == 401) {
+			  localStorage.removeItem('token') // 存储token
+			  localStorage.removeItem('phone')
+			  localStorage.removeItem('isLogin')
+			  this.$message.error('账号过期，请重新登录')
+			  this.$router.replace('/')
+		  }
+		})
       })
     },
     startList () { // 初始化页面查找第一个分类下的文章
@@ -255,6 +247,7 @@ export default {
 			this.keyMsg = item.title
 		}
       })
+	  console.log(this.ins)
     },
     searchAction () {
 		if(this.keyMsg ==''){
