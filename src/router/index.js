@@ -150,7 +150,7 @@ const router = new Router({
 	// 移动端404
 	{path: '/m/merror', name: 'merror', component: merror},
 	
-	{path: "*",redirect: "/404.html"}
+	// {path: "*",redirect: "/404.html"}
   ]
 })
 router.beforeEach((to, from, next) => {
