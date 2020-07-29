@@ -25,9 +25,7 @@
             <img @click="searchAction" class="cursor-pointer" src="../../../assets/images/lihun/searchM_icon.png" alt="">
           </div>
           <ul class="c_m_r_t flex pt-3">
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/xylh/20'>协议书如何谈判</router-link></li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/xylh/21'>离婚协议常见误区</router-link></li>
-            <li class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" ><router-link to='/lhzs/lhcs/25'>离婚方式与选择</router-link></li>
+            <li v-for="(item, index) in headList" :key="index" @click="goKnowledgeMinNew(item)" class="w-1/5 text-left hover:font-bold ml-3 underline cursor-pointer" >{{ item.title }}</li>
           </ul>
         </div>
         <div class="m_r_m">
@@ -86,6 +84,11 @@ export default {
   data () {
     return {
       keyMsg: '', // 关键词搜索
+	  headList: [
+		  {id:20,route:'xylh',title: '协议书如何谈判',faidName:'协议离婚'},
+		  {id:21,route:'xylh',title: '离婚协议常见误区',faidName:'协议离婚'},
+		  {id:25,route:'lhcs',title: '离婚方式与选择',faidName:'离婚常识'}
+	  ],
       fenleiAll: [], // 文章分类汇总
       tableData: [], // 分类文章汇总
       firstType: null,  // 初始化分类
@@ -179,6 +182,9 @@ export default {
 		  path: `/lhzs/${itemRout}/${itemId}`,
 		})
 		localStorage.setItem('KnowledgeId',itemId)
+		if (item.faidName !==undefined){
+			localStorage.setItem('insName', item.faidName)
+		}
 	},
     getWenType () { // 查询分类
       selectAction().then((data) => {
