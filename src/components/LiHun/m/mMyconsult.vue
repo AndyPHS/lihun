@@ -57,6 +57,7 @@
 
 <script>
 import {selectUserQuestionnaire, getWord} from '@/api/api/AgreementRequest.js'
+import {apiUrl} from '@/common/js/api.js'
 export default {
 	name: 'mMyconsult',
 	data () {
@@ -155,7 +156,7 @@ export default {
 		goComplete(item) { // 点击查看协议跳转到生成协议页面
 			const e = item.id
 			localStorage.setItem('quid', e)
-			this.mesUrl = 'http://localhost:8083/api/Questionnaire/v1/page/pdf_pdf/'+item.id + '.pdf'
+			this.mesUrl = apiUrl.pdfPdf + item.id + '.pdf'
 			window.open(this.mesUrl);
 			// this.$router.replace('/m/mAgreement')
 			// this.$router.push({
