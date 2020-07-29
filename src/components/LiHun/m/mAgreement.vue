@@ -49,7 +49,7 @@
 
 <script>
 import {getWord, outPutWord, pdfPdf} from '@/api/api/AgreementRequest.js'
-import pdf from 'vue-pdf'
+// import pdf from 'vue-pdf'
 export default {
 	name: 'mAgreement',
 	data() {
