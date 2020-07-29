@@ -156,7 +156,7 @@ export default {
 		goComplete(item) { // 点击查看协议跳转到生成协议页面
 			const e = item.id
 			localStorage.setItem('quid', e)
-			this.mesUrl = apiUrl.pdfPdf + item.id + '.pdf'
+			this.mesUrl = '/api'+apiUrl.pdfPdf + item.id + '.pdf'
 			window.open(this.mesUrl);
 			// this.$router.replace('/m/mAgreement')
 			// this.$router.push({
