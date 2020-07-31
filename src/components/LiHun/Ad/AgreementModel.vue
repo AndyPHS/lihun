@@ -181,7 +181,7 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
 	.w{width: 1200px; margin: 0 auto;}
 	.bg-color {
 		background: #f2f4f7;

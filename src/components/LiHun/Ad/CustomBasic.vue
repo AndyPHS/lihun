@@ -29,6 +29,12 @@
                   </li>
                 </ul>
               </div>
+			  <div class="tishiMsg">
+				  <p>
+					  <img src="../../../assets/images/tishiMsg.png" alt="">
+					  定制中，系统会自动保存您填写的信息
+				  </p>
+			  </div>
               <div class="relative allmin" v-loading="loading">
                 <div v-if="this.ins ===3 || this.zhaiquanNav==true" class="allmin_l">
 					<ul class="caichanul" v-if="this.ins ===3" >
@@ -1672,4 +1678,7 @@ html{height: 100%;background-color: #f7fafc;}
 .shili_img {width: 129px;height: 90px;margin: 0 auto;}
 .cailist{padding-top: 34px;padding-bottom: 34px;}
 .cailist span{padding:5px 12px;background-color:#fff4f6;border:1px solid #ff3f68;color:#ff3f68;border-radius: 5px; margin-right: 17px;margin-bottom: 19px;}
+.tishiMsg{width: 1050px;margin:0 auto;text-align: end;}
+.tishiMsg p{color: green;font-size: 15px;line-height: 50px;}
+.tishiMsg p img{display: inline-block;vertical-align: sub;margin-right: 8px;}
 </style>
