@@ -410,7 +410,7 @@
 				  			</div>
 				  			<div class="tupian" v-if="this.ChuShiMsg.car">
 				  				<div class="w-full tupian_tit">
-				  					10.机动车登记证
+				  					10.机动车行驶证
 				  				</div>
 				  				<div class="shili_img">
 				  					<img src="@/assets/images/lihun/jidongchexingshizheng01.jpg" alt="机动车行驶证">
