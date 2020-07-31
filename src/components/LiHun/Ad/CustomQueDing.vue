@@ -522,7 +522,6 @@
 		margin-left: 20px;
 	}
 	.lis_red span{display: inline-block;font-size:16px;margin-left: 10px;}
-
 	.dingzhi {
 		width: 193px;
 		height: 40px;
