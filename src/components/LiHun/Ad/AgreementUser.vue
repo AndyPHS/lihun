@@ -444,7 +444,7 @@ export default {
 	  var nameReg = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
 	  if( !nameReg.test(this.form.name)) {
 		  this.$message({
-		    message: '名字过长请重新输入',
+		    message: '您输入的姓名不正确',
 		    type: 'error'
 		  })
 		  this.$refs.formName.focus()
