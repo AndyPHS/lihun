@@ -31,7 +31,7 @@
               </div>
 			  <div class="tishiMsg">
 				  <p>
-					  <img src="../../../assets/images/tishiMsg.png" alt="">
+					  <img src="../../../assets/images/tishiMsg.gif" alt="">
 					  定制中，系统会自动保存您填写的信息
 				  </p>
 			  </div>
