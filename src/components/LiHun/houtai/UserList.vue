@@ -13,16 +13,14 @@
         <!-- <input type="text" class="w-4/5 border" placeholder="输入用户手机号"> -->
         <el-form ref="form" label-width="70px">
           <el-form-item
-            label="快速查找"
-
-          >
+            label="快速查找">
             <el-col :span="24">
-              <el-input v-model="phoneVal" size="mini" type="number" placeholder="输入用户手机号"></el-input>
+              <el-input v-model="phoneVal" size="mini" type="number" placeholder="输入用户手机号" ref="formPhoneVal"></el-input>
             </el-col>
           </el-form-item>
         </el-form>
         <div class="cursor-pointer search_icon">
-          <img src="../../../assets/images/search_icon.png" alt="">
+          <img @click="searchAc" src="../../../assets/images/search_icon.png" alt="">
         </div>
       </div>
     </div>
@@ -68,11 +66,14 @@
 	      :total="this.min.total">
 	  </el-pagination>
     </div>
+	<div v-if="dengluerrorBox==true" class="fixed errorBox">
+		{{errorMsg}}
+	</div>
   </div>
 </template>
 
 <script>
-import {selectUserBack} from '@/api/api/AgreementRequest.js'
+import {selectUserBack, selectUserBackByPhone} from '@/api/api/AgreementRequest.js'
  export default{
    name: 'UserList',
    data() {
@@ -84,6 +85,8 @@ import {selectUserBack} from '@/api/api/AgreementRequest.js'
      };
      return {
        activeIndex: '2',
+	   dengluerrorBox: false,
+	   errorMsg: '',
        phoneVal: null, // 输入手机号查找
        tableData: Array(20).fill(item),
 	   pageInfo:[
@@ -158,7 +161,29 @@ import {selectUserBack} from '@/api/api/AgreementRequest.js'
 		   qqpucount: row.qqpucount
          }
        })
-     }
+     },
+	 searchAc(){
+		 if(!(/^1[3456789]\d{9}$/.test(this.phoneVal))){
+		 	this.dengluerrorBox = true
+		 	this.errorMsg = '手机号有误，请重新填写'
+		 	setTimeout(()=>{
+		 		this.dengluerrorBox = false
+		 	},1000)
+		 	this.$refs.formPhoneVal.focus()
+		 	return false; 
+		 } else {
+			 selectUserBackByPhone({
+				 page:this.currentPage,
+				 phone:this.phoneVal
+			 }).then((data)=>{
+			     this.pageInfo = data.data.data.data
+			     this.min = data.data.data
+			 }).catch((data)=>{
+			     this.$router.replace("/");
+			 })
+		 }
+		 
+	 }
    }
  }
 </script>
@@ -173,4 +198,5 @@ import {selectUserBack} from '@/api/api/AgreementRequest.js'
 
 }
 .searchBox .search_icon{margin-bottom: 20px;margin-left: 10px;}
+.errorBox{width: 300px;height: 48px;line-height: 48px;background-color:#feebef;color:#f81b1b;z-index: 3000;top:20px;left: 50%;margin-left: -150px;font-size: 15px;border-radius: 5px;}
 </style>

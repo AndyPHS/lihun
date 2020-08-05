@@ -200,6 +200,16 @@ export const selectUserBack = params => {
     data: params
   });
 };
+// 通过手机查询用户
+export const selectUserBackByPhone = params => {
+  return axios({
+    method: "get",
+    dataType: 'json',
+    url: apiUrl.selectUser+'?type=2&phone='+params.phone+'&page='+params.page,
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
+    data: params
+  });
+};
 // usersSelect查找用户基本信息
 export const usersSelect = params => {
   return axios({
