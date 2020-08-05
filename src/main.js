@@ -7,7 +7,6 @@ import $ from 'jquery'
 import router from './router/index'
 import ElementUI from 'element-ui'
 import VueResource from 'vue-resource'  // 请求数据
-import MetaInfo from 'vue-meta-info'  // 预加载数据
 // 引入mock.js
 // require('./mock.js')
 import '../static/UE/ueditor.config.js'
