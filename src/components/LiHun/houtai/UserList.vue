@@ -164,22 +164,22 @@ import {selectUserBack, selectUserBackByPhone} from '@/api/api/AgreementRequest.
      },
 	 searchAc(){
 		 if(!(/^1[3456789]\d{9}$/.test(this.phoneVal))){
-		 	this.dengluerrorBox = true
-		 	this.errorMsg = '手机号有误，请重新填写'
-		 	setTimeout(()=>{
-		 		this.dengluerrorBox = false
-		 	},1000)
-		 	this.$refs.formPhoneVal.focus()
-		 	return false; 
+			this.dengluerrorBox = true
+			this.errorMsg = '手机号有误，请重新填写'
+			setTimeout(()=>{
+				this.dengluerrorBox = false
+			},1000)
+			this.$refs.formPhoneVal.focus()
+			return false; 
 		 } else {
 			 selectUserBackByPhone({
 				 page:this.currentPage,
 				 phone:this.phoneVal
 			 }).then((data)=>{
-			     this.pageInfo = data.data.data.data
-			     this.min = data.data.data
+				 this.pageInfo = data.data.data.data
+				 this.min = data.data.data
 			 }).catch((data)=>{
-			     this.$router.replace("/");
+				 this.$router.replace("/");
 			 })
 		 }
 		 
