@@ -37,6 +37,9 @@
         <el-form-item label="文章简介" prop="description">
           <el-input type="textarea" v-model="ruleForm.description"></el-input>
         </el-form-item>
+		<el-form-item label="文章关键词" prop="keywords">
+		  <el-input type="textarea" v-model="ruleForm.keywords"></el-input>
+		</el-form-item>
 		<el-form-item label="文章来源" prop="source">
 		  <el-input  v-model="ruleForm.source"></el-input>
 		</el-form-item>
@@ -101,6 +104,7 @@ export default{
       ruleForm: { // 上传文章表单
         title: '',
         description: '',
+		keywords: '', // 关键词
         content: '',
         faId: null,  // 分类ID
         topping: '', // 置顶 1置顶0取消
@@ -120,6 +124,9 @@ export default{
         description: [
           { required: true, message: '请填写文章简介', trigger: 'blur' }
         ],
+		keywords: [
+		  { required: true, message: '请填写文章关键词', trigger: 'blur' }
+		],
         topping: [
           { required: true, message: '文章是否置顶', trigger: 'change' }
         ],
@@ -159,6 +166,7 @@ export default{
         }).then((data) => {
           this.ruleForm.title = data.data.data.title;
           this.ruleForm.description = data.data.data.description;
+		  this.ruleForm.keywords = data.data.data.keywords;
           this.ruleForm.faId = data.data.data.faId;
 		  this.ruleForm.view = data.data.data.view;
 		  this.ruleForm.source = data.data.data.source;
@@ -235,6 +243,7 @@ export default{
         updateNews({
           title: this.ruleForm.title,
           description: this.ruleForm.description,
+		  keywords: this.ruleForm.keywords,
           content: this.ruleForm.content,
           faId: this.ruleForm.faId,  // 分类ID
           topping: this.ruleForm.topping ,//
