@@ -648,7 +648,6 @@ export default {
 			}
 		} else {
 			if(index == 0){
-				alert('123')
 				window.location.href('http://woniujiashi.jialilaw.com/')
 				
 				// this.$router.replace('http://woniujiashi.jialilaw.com/')
