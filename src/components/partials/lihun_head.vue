@@ -508,7 +508,6 @@ export default {
 		  {name: '离婚知识'},
 		  {name: '定制离婚协议书'},
 		  {name: '离婚协议书范文'},
-		  {name: '家理律所'},
 	  ]
     }
   },
@@ -1318,9 +1317,9 @@ export default {
   }
 
   .nav {
-    width: 656px;
+    width: 556px;
     font-size: 18px;
-	margin-right: 25px;
+	/* margin-right: 25px; */
   }
 
   .nav li:hover {

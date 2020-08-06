@@ -231,6 +231,8 @@
 		},
 		data() {
 			return {
+				userInfo: '',
+				cookie_value: '',
 				wenshuList: [], // 文书汇总
 				historys: -1, // 历史版本
 				dialogDownLoadWenJuan: false, // 免责弹窗
@@ -259,8 +261,45 @@
 		mounted() {
 			this.getWenShu()
 			localStorage.setItem('topins',2)
+			// this.getCookie(userInfo)
+			this.cookie_value = this.getCookie(userInfo)
+			console.log(this.cookie_value )
 		},
 		methods: {
+			// getCookie(userInfo){
+			// 	if(document.cookie.length>0){
+			// 		this.c_start = document.cookie.indexOf(userInfo + "=")
+			// 		if(this.c_start !=-1){
+			// 			this.c_start = this.c_start + userInfo.length + 1
+			// 			this.c_end = document.cookie.indexOf(';', this.c_start)
+			// 			if (this.c_end == -1) this.c_end = document.cookie.length
+			// 			return
+			// 		}
+			// 	}
+				
+			// },
+			getCookie(userInfo) {
+				var allcookies = document.cookie;
+				//索引长度，开始索引的位置
+				var cookie_pos = allcookies.indexOf(userInfo);
+		
+				// 如果找到了索引，就代表cookie存在,否则不存在
+				if (cookie_pos != -1) {
+					// 把cookie_pos放在值的开始，只要给值加1即可
+					//计算取cookie值得开始索引，加的1为“=”
+					cookie_pos = cookie_pos + userInfo.length + 1; 
+					//计算取cookie值得结束索引
+					var cookie_end = allcookies.indexOf(";", cookie_pos);
+					
+					if (cookie_end == -1) {
+						cookie_end = allcookies.length;
+		
+					}
+					//得到想要的cookie的值
+					var value = unescape(allcookies.substring(cookie_pos, cookie_end)); 
+				}
+				return value;
+			},
 			dingzhiBtn() { // 点击定制协议跳转到小问卷页面
 				localStorage.setItem('qid', 3)
 				userAddQuestionnaire({

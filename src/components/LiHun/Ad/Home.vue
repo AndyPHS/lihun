@@ -184,10 +184,10 @@
       </div>
       <div class="w guanyu_min flex justify-between">
         <div>
-		  <img src="../../../assets/images/lihun/video_img.jpeg" alt="">
-          <!-- <video src="http://sem.jialilaw.com/sem/video/xuanchuan.mp4" id="player" controls="controls" width="600" height="339" poster="../../../assets/images/lihun/guanyu_video.png" >
-          	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="http://sem.jialilaw.com/sem/video/xuanchuan.mp4">下载视频</a>
-          </video> -->
+		  <!-- <img src="../../../assets/images/lihun/video_img.jpeg" alt=""> -->
+          <video src="http://woniujiashi.jialilaw.com/images/wnjs.mp4" id="player" controls="controls" width="600" height="339" poster="../../../assets/images/lihun/video_img.jpeg" >
+          	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="http://woniujiashi.jialilaw.com/images/wnjs.mp4">下载视频</a>
+          </video>
         </div>
         <div class="guanyu_min_r">
           <div class="guanyu_min_r_con">
@@ -227,9 +227,9 @@
           </dd>
         </dl>
         <dl class="w-1/4 mr-4">
-          <dt>20000+咨询</dt>
+          <dt>50000+咨询</dt>
           <dd>
-            <p>每年为近30000人提供了免费的</br>婚姻家事法律咨询</p>
+            <p>家理成立至今，为50000余人提供了</br>免费的婚姻家事法律咨询</p>
           </dd>
         </dl>
         <dl class="w-1/4">
