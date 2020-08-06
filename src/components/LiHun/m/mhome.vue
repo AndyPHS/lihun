@@ -284,10 +284,12 @@ export default {
 			this.$router.replace('/m/mQueDing')
 		},
 		goKnowledge () { // 去离婚知识页面
-			this.$router.replace('/m/mKnowledge')
+			// this.$router.replace('/m/mKnowledge')
+			window.open('http://jiawen.jialilawyer.com/lhzs.html')
 		},
 		gomAgreementModel () { // 协议书模板
-			this.$router.replace('/m/mAgreementModel')
+			// this.$router.replace('/m/mAgreementModel')
+			window.open('http://jiawen.jialilawyer.com/xyfw.html')
 		},
 		goLogin () { // 去登录
 			this.$router.replace('/m/mLogin')

@@ -90,7 +90,7 @@ const router = new Router({
 	// 离婚协议书推广定制协议书用户页面
     {path: '/AgreementUser', name: 'AgreementUser', component: AgreementUser},
 	// 离婚协议书范文
-	{path: '/lhxys', name: 'AgreementModel', component: AgreementModel,meta: maping.AgreementModel},
+	{path: '/lhxys.html', name: 'AgreementModel', component: AgreementModel,meta: maping.AgreementModel},
     // 离婚协议书推广使用协议帮助
     {path: '/UserAgreement', name: 'UserAgreement', component: UserAgreement},
     // 离婚协议书推广知识列表页面

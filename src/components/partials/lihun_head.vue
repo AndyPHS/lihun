@@ -649,7 +649,8 @@ export default {
 			}
 		} else {
 			if(index == 0){
-				this.$router.replace('/')
+				window.open('http://woniujiashi.jialilaw.com/')
+				// this.$router.replace('http://woniujiashi.jialilaw.com/')
 				// const {href} = this.$router.replace({
 				// 	path: '/',
 				// 	params: {
@@ -659,13 +660,13 @@ export default {
 				// window.open(href, '_blank')
 			} else if (index == 1){
 				localStorage.setItem('topins',1)
-				const {href} = this.$router.replace({
-					path: '/lhzs/',
-					params: {
-					  topins: this.topins
-					}
-				})
-				// window.open(href, '_blank')
+				// const {href} = this.$router.replace({
+				// 	path: '/lhzs/',
+				// 	params: {
+				// 	  topins: this.topins
+				// 	}
+				// })
+				window.open('http://woniujiashi.jialilaw.com/lhzs.html')
 			} else if(index == 2){
 				var isLogin = localStorage.getItem('token')
 				if (isLogin == undefined){
@@ -682,12 +683,13 @@ export default {
 				}
 			}else if(index == 3){
 				localStorage.setItem('topins',3)
-				const {href} = this.$router.replace({
-					path: '/lhxys',
-					params: {
-					  topins: this.topins
-					}
-				})
+				// const {href} = this.$router.replace({
+				// 	path: '/lhxys',
+				// 	params: {
+				// 	  topins: this.topins
+				// 	}
+				// })
+				window.open('http://woniujiashi.jialilaw.com/lhxys.html')
 			} else if (index == 4){
 				window.open('http://www.jialilaw.com/', '_blank')
 			}
@@ -766,10 +768,11 @@ export default {
 		this.dialogLogin = false
 	},
     handleCheckedCitiesChange () {
-      const {href} = this.$router.resolve({
-      	path: '/UserAgreement'
-      })
-      window.open(href, '_blank')
+      // const {href} = this.$router.resolve({
+      // 	path: '/UserAgreement'
+      // })
+      // window.open(href, '_blank')
+	  window.open('http://woniujiashi.jialilaw.com/userAgreement.html')
     },
 	loginFormgetYan () { // 快捷登录获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
@@ -1105,10 +1108,11 @@ export default {
 		}
     },
 	checkXieyi () { // 查看协议
-		const {href} = this.$router.resolve({
-			path: '/UserAgreement'
-		})
-		window.open(href, '_blank')
+		// const {href} = this.$router.resolve({
+		// 	path: '/UserAgreement'
+		// })
+		// window.open(href, '_blank')
+		window.open('http://woniujiashi.jialilaw.com/userAgreement.html')
 	},
     changeCode (val) { // 获取验证码
       verifyCode({cache:new Date().getTime()}).then((data) => {
