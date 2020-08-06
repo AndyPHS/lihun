@@ -648,7 +648,9 @@ export default {
 			}
 		} else {
 			if(index == 0){
-				window.open('http://woniujiashi.jialilaw.com/')
+				alert('123')
+				window.location.href('http://woniujiashi.jialilaw.com/')
+				
 				// this.$router.replace('http://woniujiashi.jialilaw.com/')
 				// const {href} = this.$router.replace({
 				// 	path: '/',
@@ -665,7 +667,7 @@ export default {
 				// 	  topins: this.topins
 				// 	}
 				// })
-				window.open('http://woniujiashi.jialilaw.com/lhzs.html')
+				window.location.href('http://woniujiashi.jialilaw.com/lhzs.html')
 			} else if(index == 2){
 				var isLogin = localStorage.getItem('token')
 				if (isLogin == undefined){
@@ -688,9 +690,9 @@ export default {
 				// 	  topins: this.topins
 				// 	}
 				// })
-				window.open('http://woniujiashi.jialilaw.com/lhxys.html')
+				window.location.href('http://woniujiashi.jialilaw.com/lhxys.html')
 			} else if (index == 4){
-				window.open('http://www.jialilaw.com/', '_blank')
+				window.location.href('http://www.jialilaw.com/', '_blank')
 			}
 		}
 		this.topins = localStorage.getItem('topins')
@@ -945,7 +947,7 @@ export default {
     },
 	goguanwang () { // 登录官网
 		this.dialogFormVisible = false
-		window.open('http://www.jialilaw.com/', '_blank')
+		window.location.href('http://www.jialilaw.com/', '_blank')
 		this.zhuce = true
 	},
 	checkPhone (phoneNum) { // 手机号验证
@@ -1068,8 +1070,8 @@ export default {
 			      message: '登录成功',
 			      type: 'success'
 			    })
-				localStorage.setItem('topins',0)
 			    this.userPhone = this.loginForm.phone
+				localStorage.setItem('topins',0)
 			    localStorage.setItem('token', data.data.data.token) // 存储token
 			    localStorage.setItem('phone', this.loginForm.phone)
 			    localStorage.setItem('isLogin', true)
