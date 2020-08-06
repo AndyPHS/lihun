@@ -9,7 +9,10 @@ const CustomQueDing = () => import('@/components/LiHun/Ad/CustomQueDing')  // �
 const CustomBasic = () => import('@/components/LiHun/Ad/CustomBasic')  // 推广页离婚协议书信息填写页面
 const CustomShengCheng = () => import('@/components/LiHun/Ad/CustomShengCheng')  // 推广页离婚协议书生成页面
 const AgreementHelp = () => import('@/components/LiHun/Ad/AgreementHelp')  // 推广页定制我的离婚协议书帮助
-const AgreementHelpCon = () => import('@/components/LiHun/Ad/AgreementHelpCon')  // 推广页定制我的离婚协议书帮助详情页
+const AgreementHelpCon = () => import('@/components/LiHun/Ad/AgreementHelpCon') 
+// 产品故事 
+const AgreementHelpCongushi = () => import('@/components/LiHun/Ad/AgreementHelpCongushi') 
+// 推广页定制我的离婚协议书帮助详情页
 
 const AgreementUser = () => import('@/components/LiHun/Ad/AgreementUser')  // 推广页定制我的离婚协议书帮助
 const AgreementModel = () => import('@/components/LiHun/Ad/AgreementModel')  // 协议范文
@@ -86,11 +89,11 @@ const router = new Router({
     {path: '/AgreementHelp', name: 'AgreementHelp', component: AgreementHelp},
     // 离婚协议书推广定制协议书帮助页面
     {path: '/AgreementHelpCon', name: 'AgreementHelpCon', component: AgreementHelpCon},
-	
+	{path: '/AgreementHelpCongushi', name: 'AgreementHelpCongushi', component: AgreementHelpCongushi},
 	// 离婚协议书推广定制协议书用户页面
     {path: '/AgreementUser', name: 'AgreementUser', component: AgreementUser},
 	// 离婚协议书范文
-	{path: '/lhxys.html', name: 'AgreementModel', component: AgreementModel,meta: maping.AgreementModel},
+	{path: '/lhxys', name: 'AgreementModel', component: AgreementModel,meta: maping.AgreementModel},
     // 离婚协议书推广使用协议帮助
     {path: '/UserAgreement', name: 'UserAgreement', component: UserAgreement},
     // 离婚协议书推广知识列表页面
