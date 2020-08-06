@@ -10,9 +10,13 @@
         </div>
         <div class="flex justify-between items-center">
           <ul class="nav flex justify-around items-center">
-			<li v-for="(item,index) in nav" :key="index" :class="topins == index?'activered':'default'" @click="goDingZhi(index)">
-				{{ item.name }}
-			</li>
+			<li><a href="http://www.jialilaw.com/">首页</a></li>
+			<li><a href="http://woniujiashi.jialilaw.com/lhzs.html">离婚知识</a></li>
+			<li><a href="">定制离婚协议书</a></li>
+			<li><a href="http://woniujiashi.jialilaw.com/lhxys.html">离婚协议书范文</a></li>
+			<!-- <li v-for="(item,index) in nav" :key="index" :class="topins == index?'activered':'default'" @click="goDingZhi(index)">
+					{{ item.name }}
+			</li> -->
           </ul>
           <div v-if="this.isLogin==false" class="loginBox flex justify-around items-center">
             <span class="cursor-pointer hover:underline" @click="loginAc">登录</span>
