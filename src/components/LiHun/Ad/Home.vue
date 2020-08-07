@@ -183,7 +183,7 @@
         <span>基于法律服务的初心和使命</span>
       </div>
       <div class="w guanyu_min flex justify-between">
-        <div>
+        <div id="videoBox">
           <video src="http://woniujiashi.jialilaw.com/images/wnjs.mp4" id="player" controls="controls" width="600" height="339" poster="../../../assets/images/lihun/video_img.jpeg" >
           	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="http://woniujiashi.jialilaw.com/images/wnjs.mp4">下载视频</a>
           </video>
@@ -563,6 +563,7 @@ export default {
 }
 </script>
 <style scoped >
+#videoBox video:focus{outline: none;}
 .shouyedingzhibtn{width: 300px;height: 50px;background-color: #ff3f68;display: flex;align-items: center;border-radius: 25px;justify-content: center}
 .shouyedingzhibtn:hover{background-color: #ff6687;cursor: pointer;}
 .shouyedingzhibtn span{font-size:24px;margin-left: 10px;}

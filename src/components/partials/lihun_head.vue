@@ -648,7 +648,7 @@ export default {
 			}
 		} else {
 			if(index == 0){
-				window.open('http://woniujiashi.jialilaw.com/')
+				window.location.href="http://woniujiashi.jialilaw.com/"
 				
 				// this.$router.replace('http://woniujiashi.jialilaw.com/')
 				// const {href} = this.$router.replace({
@@ -666,7 +666,7 @@ export default {
 				// 	  topins: this.topins
 				// 	}
 				// })
-				window.open('http://woniujiashi.jialilaw.com/lhzs.html')
+				window.location.href = 'http://woniujiashi.jialilaw.com/lhzs.html'
 			} else if(index == 2){
 				var isLogin = localStorage.getItem('token')
 				if (isLogin == undefined){
@@ -689,9 +689,9 @@ export default {
 				// 	  topins: this.topins
 				// 	}
 				// })
-				window.open('http://woniujiashi.jialilaw.com/lhxys.html')
+				window.location.href = 'http://woniujiashi.jialilaw.com/lhxys.html'
 			} else if (index == 4){
-				window.open('http://www.jialilaw.com/', '_blank')
+				window.location.href = 'http://www.jialilaw.com/', '_blank'
 			}
 		}
 		this.topins = localStorage.getItem('topins')
