@@ -27,7 +27,7 @@
 					<li v-if="this.activeIndex=='2' " class="pt-8 border-b border-grey-400 relative">
 						<div class="el-form-item">
 						  <div class="el-form-item__content">
-							  <el-input placeholder="请输入密码" class="text-base" v-model="form.password" show-password ref="loginmmPassword"></el-input>
+							  <input type="password" placeholder="请输入密码" class="text-base" v-model="form.password" show-password ref="loginmmPassword">
 						  </div>
 						</div>
 					</li>
@@ -272,6 +272,7 @@ export default {
 							phone: this.form.phone,
 							code: this.form.valueCode
 						}).then((data)=>{
+							console.log(data.data)
 							if(data.data.status_code ===200){
 							  this.dialogLogin = false
 							  this.$message({
@@ -283,6 +284,7 @@ export default {
 							  // var tel = this.form.phone
 							  // this.userPhone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
 							  localStorage.setItem('token', data.data.data.token) // 存储token
+							  this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
 							  // localStorage.setItem('phone', this.userPhone)
 							  // localStorage.setItem('isLogin', true)
 							  this.form = {}
@@ -337,6 +339,8 @@ export default {
 							// localStorage.setItem('topins',0)
 						 //    this.userPhone = this.form.phone
 						    localStorage.setItem('token', data.data.data.token) // 存储token
+							this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
+							
 						    // localStorage.setItem('phone', this.form.phone)
 						    // localStorage.setItem('isLogin', true)
 						    this.form = {}

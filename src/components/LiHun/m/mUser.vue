@@ -128,6 +128,7 @@ export default {
 		loginOut () { // 退出登录
 			localStorage.removeItem('token') // 存储token
 			this.$router.replace('/m/mhome')
+			this.$cookieStore.delCookie("token")
 		},
 		renameAc () { // 点击弹出修改姓名弹窗
 			this.namedialog = true

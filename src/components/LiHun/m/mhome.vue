@@ -277,6 +277,9 @@ export default {
 			  } else  {
 				  this.userMsg.photo = data.data.photo
 				  this.isLogin = true
+				  var userInfo = JSON.stringify(data.data)
+				  this.$cookieStore.setCookie( 'userInfo' ,userInfo);
+				  console.log(userInfo)
 			  }
 			})
 		},

@@ -730,6 +730,8 @@ export default {
 	},
     liveOut () { // 点击退出登录
 	  this.dialogExit = true
+	  this.$cookieStore.delCookie('token')
+	  this.$cookieStore.delCookie('userInfo')
     },
 	canceldialogExit () { // 取消退出
 		this.dialogExit = false

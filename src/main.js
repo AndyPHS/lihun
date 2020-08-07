@@ -7,7 +7,8 @@ import $ from 'jquery'
 import router from './router/index'
 import ElementUI from 'element-ui'
 import VueResource from 'vue-resource'  // 请求数据
-// 引入mock.js
+import {setCookie,getCookie,delCookie} from '@/assets/js/cookie' // 引入cookie 
+Vue.prototype.$cookieStore = {setCookie,getCookie,delCookie}  // 引入cookie 
 // require('./mock.js')
 import '../static/UE/ueditor.config.js'
 import '../static/UE/ueditor.all.min.js'
