@@ -479,7 +479,7 @@ export const updateAction = params => {
     method: "put",
     dataType: 'json',
     url: apiUrl.updateAction + localStorage.getItem('id'),
-    headers: {Authorization:'bearer ' + localStorage.getItem('token')},
+    headers: {Authorization:'bearer ' + localStorage.getItem('tokenBack')},
     data: params
   });
 };
