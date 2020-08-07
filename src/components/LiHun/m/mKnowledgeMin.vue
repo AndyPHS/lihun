@@ -56,7 +56,7 @@ export default {
 		gohome () {
 			var Id = this.$route.params.id
 			if (Id == 45) { 
-				this.$router.replace('/m/mhome')
+				this.$router.replace('/')
 			} else {
 				this.$router.replace('/m/mKnowledge')
 			}
