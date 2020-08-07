@@ -73,6 +73,9 @@
 		<el-form-item label="路径" :label-width="formLabelWidth">
 		  <el-input v-model="actionForm.route" autocomplete="off"></el-input>
 		</el-form-item>
+		<el-form-item label="TDK的T" :label-width="formLabelWidth">
+		  <el-input v-model="actionForm.tit" autocomplete="off"></el-input>
+		</el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -96,6 +99,9 @@
         <el-form-item label="路径" :label-width="formLabelWidth">
           <el-input v-model="actionForm.route" autocomplete="off"></el-input>
         </el-form-item>
+		<el-form-item label="TDK的T" :label-width="formLabelWidth">
+		  <el-input v-model="actionForm.tit" autocomplete="off"></el-input>
+		</el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="updateDialogFormVisible = false">取 消</el-button>
@@ -128,7 +134,8 @@ export default{
         faId: null, // 父ID
         id: null,
 		keywords: '',
-		route: ''
+		route: '',
+		tit: ''
       }
     }
   },
@@ -149,13 +156,15 @@ export default{
       this.actionForm.description = ''
 	  this.actionForm.keywords = ''
 	  this.actionForm.route = ''
+	  this.actionForm.tit = ''
     },
     addActionBtn () { // 添加分类确认按钮
       addAction({
         title: this.actionForm.title,
         description: this.actionForm.description,
 		keywords: this.actionForm.keywords,
-		route: this.actionForm.route
+		route: this.actionForm.route,
+		tit: this.actionForm.tit
       }).then((data) => {
         this.dialogFormVisible = false
         this.getFenlei()
@@ -165,6 +174,7 @@ export default{
       this.addChild = true
       this.dialogFormVisible = true
       this.actionForm.title = ''
+	  this.actionForm.tit = ''
       this.actionForm.description = ''
 	  this.actionForm.keywords = ''
 	  this.actionForm.route = ''
@@ -176,7 +186,8 @@ export default{
         description: this.actionForm.description,
         faId: this.actionForm.faId,
 		keywords: this.actionForm.keywords,
-		route: this.actionForm.route
+		route: this.actionForm.route,
+		tit: this.actionForm.tit
       }).then((data) => {
         this.dialogFormVisible = false
         this.getFenlei()
@@ -191,6 +202,7 @@ export default{
       this.actionForm.description = row.description
 	  this.actionForm.keywords = row.keywords
 	  this.actionForm.route = row.route
+	  this.actionForm.tit = row.tit
       localStorage.setItem('id', row.id)
     },
     updateActionBtn () {
@@ -199,7 +211,8 @@ export default{
         description: this.actionForm.description,
         faId: this.actionForm.faId,
 		keywords: this.actionForm.keywords,
-		route: this.actionForm.route
+		route: this.actionForm.route,
+		tit: this.actionForm.tit
       }).then((data) => {
         this.updateDialogFormVisible = false
         this.getFenlei()
