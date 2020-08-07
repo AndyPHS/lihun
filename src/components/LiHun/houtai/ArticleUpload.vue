@@ -52,7 +52,9 @@
             <el-radio label="0">否</el-radio>
           </el-radio-group>
         </el-form-item>
-		
+		<el-form-item label="TDK的T" prop="tit">
+		  <el-input  v-model="ruleForm.tit"></el-input>
+		</el-form-item>
 	    <el-form-item label="阅读数量"  prop="view" >
 		  <el-input type="view" v-model.number="ruleForm.view" autocomplete="off"></el-input>
 		</el-form-item>
@@ -106,6 +108,7 @@ export default{
         description: '',
 		keywords: '', // 关键词
         content: '',
+		tit: '', 
         faId: null,  // 分类ID
         topping: '', // 置顶 1置顶0取消
 		view: null  ,// 文章阅读数量
@@ -126,6 +129,9 @@ export default{
         ],
 		keywords: [
 		  { required: true, message: '请填写文章关键词', trigger: 'blur' }
+		],
+		tit: [
+		  { required: true, message: '请填写TDK的T', trigger: 'blur' }
 		],
         topping: [
           { required: true, message: '文章是否置顶', trigger: 'change' }
@@ -169,6 +175,7 @@ export default{
 		  this.ruleForm.keywords = data.data.data.keywords;
           this.ruleForm.faId = data.data.data.faId;
 		  this.ruleForm.view = data.data.data.view;
+		  this.ruleForm.tit = data.data.data.tit;
 		  this.ruleForm.source = data.data.data.source;
 		  this.ruleForm.route = data.data.data.route;
           this.ruleForm.topping = JSON.stringify(data.data.data.topping);
@@ -248,6 +255,7 @@ export default{
           faId: this.ruleForm.faId,  // 分类ID
           topping: this.ruleForm.topping ,//
 		  view: this.ruleForm.view,
+		  tit: this.ruleForm.tit,
 		  source: this.ruleForm.source,
 		  route: this.ruleForm.route
         }).then((data) => {
