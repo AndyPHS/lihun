@@ -121,7 +121,7 @@ export default {
     },
     getWenType () { // 查询分类
       selectAction().then((data) => {
-        this.fenleiAll = data.data[1].data
+        this.fenleiAll = data.data[1].data.slice(0, 2)
         if (this.$route.params.id != undefined) {
           this.firstType = this.$route.params.id
         } else {

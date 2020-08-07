@@ -184,7 +184,6 @@
       </div>
       <div class="w guanyu_min flex justify-between">
         <div>
-		  <!-- <img src="../../../assets/images/lihun/video_img.jpeg" alt=""> -->
           <video src="http://woniujiashi.jialilaw.com/images/wnjs.mp4" id="player" controls="controls" width="600" height="339" poster="../../../assets/images/lihun/video_img.jpeg" >
           	当前浏览器不支持 video直接播放，点击这里下载视频： <a href="http://woniujiashi.jialilaw.com/images/wnjs.mp4">下载视频</a>
           </video>

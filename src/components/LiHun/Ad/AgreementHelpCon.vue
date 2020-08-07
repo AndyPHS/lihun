@@ -104,7 +104,7 @@ export default {
      getWenType () { // 查询分类
        selectAction().then((data) => {
 		 // 获取离婚帮助
-         this.fenleiAll = data.data[1].data
+         this.fenleiAll = data.data[1].data.slice(0, 2)
        })
      },
      searchList (item, index) { // 点击文章分类跳转到文章列表页
