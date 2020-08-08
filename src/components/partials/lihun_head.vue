@@ -581,6 +581,7 @@ export default {
 	getUserMsg () { // 查询用户基本信息
 	  this.UserName = localStorage.getItem('name')
 	  this.topins = localStorage.getItem('topins')
+	  this.userPhone = localStorage.getItem('phone')
 	},
 	goHome () { // 点击图标返回首页
 		localStorage.setItem('topins',0)

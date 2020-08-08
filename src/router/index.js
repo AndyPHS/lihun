@@ -151,7 +151,7 @@ const router = new Router({
 	// 移动端忘记密码
 	{path: '/m/mForgetPassword', name: 'mForgetPassword', component: mForgetPassword},
 	// 移动端404
-	{path: '/m/merror', name: 'merror', component: merror},
+	{path: '/m/404.html', name: 'merror', component: merror},
 	
 	// {path: "*",redirect: "/404.html"}
   ]
