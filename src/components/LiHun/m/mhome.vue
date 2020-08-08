@@ -273,7 +273,7 @@ export default {
 			  if (data.data.status_code == 401) {
 				  localStorage.removeItem('token') // 存储token
 				  this.isLogin = false
-				  this.$router.replace('/m/mhome')
+				  window.open('/')
 			  } else  {
 				  this.userMsg.photo = data.data.photo
 				  this.isLogin = true
@@ -288,11 +288,11 @@ export default {
 		},
 		goKnowledge () { // 去离婚知识页面
 			// this.$router.replace('/m/mKnowledge')
-			window.open('http://jiawen.jialilawyer.com/lhzs.html')
+			window.open('/lhzs.html')
 		},
 		gomAgreementModel () { // 协议书模板
 			// this.$router.replace('/m/mAgreementModel')
-			window.open('http://jiawen.jialilawyer.com/xyfw.html')
+			window.open('/xyfw.html')
 		},
 		goLogin () { // 去登录
 			this.$router.replace('/m/mLogin')
