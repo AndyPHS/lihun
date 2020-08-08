@@ -649,9 +649,9 @@ export default {
 			}
 		} else {
 			if(index == 0){
-				window.location.href="http://woniujiashi.jialilaw.com/"
+				window.location.href="/"
 				
-				// this.$router.replace('http://woniujiashi.jialilaw.com/')
+				// this.$router.replace('/')
 				// const {href} = this.$router.replace({
 				// 	path: '/',
 				// 	params: {
@@ -667,7 +667,7 @@ export default {
 				// 	  topins: this.topins
 				// 	}
 				// })
-				window.location.href = 'http://woniujiashi.jialilaw.com/lhzs.html'
+				window.location.href = '/lhzs.html'
 			} else if(index == 2){
 				var isLogin = localStorage.getItem('token')
 				if (isLogin == undefined){
@@ -690,7 +690,7 @@ export default {
 				// 	  topins: this.topins
 				// 	}
 				// })
-				window.location.href = 'http://woniujiashi.jialilaw.com/lhxys.html'
+				window.location.href = '/lhxys.html'
 			} else if (index == 4){
 				window.location.href = 'http://www.jialilaw.com/', '_blank'
 			}
@@ -775,7 +775,7 @@ export default {
       // 	path: '/UserAgreement'
       // })
       // window.open(href, '_blank')
-	  window.open('http://woniujiashi.jialilaw.com/userAgreement.html')
+	  window.open('/userAgreement.html')
     },
 	loginFormgetYan () { // 快捷登录获取验证码
 		if(!(/^1[3456789]\d{9}$/.test(this.loginForm.phone))){
@@ -1115,7 +1115,7 @@ export default {
 		// 	path: '/UserAgreement'
 		// })
 		// window.open(href, '_blank')
-		window.open('http://woniujiashi.jialilaw.com/userAgreement.html')
+		window.open('/userAgreement.html')
 	},
     changeCode (val) { // 获取验证码
       verifyCode({cache:new Date().getTime()}).then((data) => {
