@@ -87,6 +87,7 @@ export default {
 	.mlogo{width:94px;height: 31px;display: inline-block;}
 	.denglu{color:#547ce0;}
 	.mhead{margin: 0.8125rem 1.5rem;}
+	.m_min{padding-top:100px;padding-bottom: 100px;}
 	.m_min img{display: inline-block;width: 150px;margin:0 auto;}
 	.touxiang img{display: inline-block;width: 32px;height: 32px;border-radius: 50%;}
 </style>

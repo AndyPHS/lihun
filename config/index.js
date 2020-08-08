@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api':{
-        target:'http://jiawen.jialilawyer.com/pug/api/',
+        target:'http://www.woniujiashi.com/pug/api/',
         // target: 'http://localhost:3921/pug/api/',
         changeOrigin:true,//允许跨域
         pathRewrite:{

@@ -10,6 +10,8 @@ import VueResource from 'vue-resource'  // 请求数据
 import {setCookie,getCookie,delCookie} from '@/assets/js/cookie' // 引入cookie 
 Vue.prototype.$cookieStore = {setCookie,getCookie,delCookie}  // 引入cookie 
 // require('./mock.js')
+import qs from 'qs'
+Vue.prototype.$qs = qs
 import '../static/UE/ueditor.config.js'
 import '../static/UE/ueditor.all.min.js'
 import '../static/UE/lang/zh-cn/zh-cn.js'
