@@ -279,7 +279,6 @@ export default {
 				  this.isLogin = true
 				  var userInfo = JSON.stringify(data.data)
 				  this.$cookieStore.setCookie( 'userInfo' ,userInfo);
-				  console.log(userInfo)
 			  }
 			})
 		},
@@ -287,12 +286,12 @@ export default {
 			this.$router.replace('/m/mQueDing')
 		},
 		goKnowledge () { // 去离婚知识页面
-			// this.$router.replace('/m/mKnowledge')
-			window.open('/lhzs.html')
+			this.$router.replace('/m/mKnowledge')
+			// window.open('/lhzs.html')
 		},
 		gomAgreementModel () { // 协议书模板
-			// this.$router.replace('/m/mAgreementModel')
-			window.open('/xyfw.html')
+			this.$router.replace('/m/mAgreementModel')
+			// window.open('/xyfw.html')
 		},
 		goLogin () { // 去登录
 			this.$router.replace('/m/mLogin')
