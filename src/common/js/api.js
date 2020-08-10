@@ -6,7 +6,7 @@
 // http://www.baiodu.com/api/v1/users/my_address/address_edit_before
 // 环境配置
 var environment = {
-  onLine: "http://jiawen.jialilawyer.com/pug/api/",
+  onLine: "http://jiawen.jialilawyer.com:3921/api/",
   // dev:"测试环境地址",
   dev: '/',
   devOfflin:"http://192.168.1.242/h5"
