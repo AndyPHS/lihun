@@ -338,7 +338,7 @@ export default {
 						      message: '登录成功',
 						      type: 'success'
 						    })
-							this.$router.replace('/m/mhome')
+							window.location.href = "/"
 							// localStorage.setItem('topins',0)
 						 //    this.userPhone = this.form.phone
 						    localStorage.setItem('token', data.data.data.token) // 存储token
