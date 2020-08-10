@@ -22,7 +22,7 @@
 		  
           <div v-else class="flex justify-around items-center relative">
 			<div @click="dengluBox = !dengluBox">
-				<span v-if="this.UserName== 'null' " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
+				<span v-if="this.UserName== 'null' || this.UserName== undefined " class="el-dropdown-link text-b border-b border-blue-500 cursor-pointer">{{ this.userPhone }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 				<span v-else class="el-dropdown-link text-b cursor-pointer hover:underline">{{ this.UserName }}<i class="el-icon-arrow-down el-icon--right"></i></span>
 			</div>
 			<div v-if="this.dengluBox" class="absolute denglu" id="dengluBox">

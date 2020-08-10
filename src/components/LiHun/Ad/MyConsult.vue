@@ -179,13 +179,13 @@
 					</div>
 				</el-dialog>
 				<!-- 离婚指导弹窗 -->
-				<div class="zhidaopage myconsult"  v-if="this.dialogZhiDao == true">
+				<div id="zhidaolunboBox" class="zhidaopage myconsult"  v-if="this.dialogZhiDao == true">
 					<div style="width: 761px;height: 554px;position: absolute;top:50%;left: 50%;margin-top: -280px;margin-left: -380px;background-color: #fff;box-shadow: 6px 14px 20px 1px #141313;">
 						<div>
 							<div class="text-right py-2">
 								<span class="mr-4 mt-1" @click="closeZhiDao">X</span>
 							</div>
-							<div >
+							<div  id="zhidaolunbo">
 								<el-carousel :interval="5000" width="761" style="height: 550px;" arrow="always">
 									<el-carousel-item v-for="item in zhidaoArr" :key="item" style="height: 550px;">
 										<img :src="item" alt="">
@@ -261,23 +261,18 @@
 		mounted() {
 			this.getWenShu()
 			localStorage.setItem('topins',2)
-			// this.getCookie(userInfo)
 			this.cookie_value = this.getCookie(userInfo)
-			console.log(this.cookie_value )
+			document.addEventListener('mouseup', this.queryHide)
 		},
 		methods: {
-			// getCookie(userInfo){
-			// 	if(document.cookie.length>0){
-			// 		this.c_start = document.cookie.indexOf(userInfo + "=")
-			// 		if(this.c_start !=-1){
-			// 			this.c_start = this.c_start + userInfo.length + 1
-			// 			this.c_end = document.cookie.indexOf(';', this.c_start)
-			// 			if (this.c_end == -1) this.c_end = document.cookie.length
-			// 			return
-			// 		}
-			// 	}
-				
-			// },
+			queryHide (e) {//点击空白关闭轮播图
+				var dialogLogin_con = document.getElementById('zhidaolunbo')
+				if(dialogLogin_con) {
+				  if(!dialogLogin_con.contains(e.target)) {
+					this.dialogLogin = false
+				  }
+				}
+			},
 			getCookie(userInfo) {
 				var allcookies = document.cookie;
 				//索引长度，开始索引的位置
