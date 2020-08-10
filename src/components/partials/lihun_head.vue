@@ -558,7 +558,6 @@ export default {
 		  	this.dialogPhonePw = false
 		    }
 		  }
-		  
 		  var dengluBox_con = document.getElementById('dengluBox')
 		  if(dengluBox_con) {
 		    if(!dengluBox_con.contains(e.target)) {

@@ -264,12 +264,15 @@
 			// this.cookie_value = this.getCookie(userInfo)
 			document.addEventListener('mouseup', this.queryHide)
 		},
+		beforeDestroy () {
+		  // document.removeEventListener('click',this.queryHide)
+		},
 		methods: {
 			queryHide (e) {//点击空白关闭轮播图
-				var dialogLogin_con = document.getElementById('zhidaolunbo')
-				if(dialogLogin_con) {
-				  if(!dialogLogin_con.contains(e.target)) {
-					this.dialogLogin = false
+				var zhidaolunbo_con = document.getElementById('zhidaolunbo')
+				if(zhidaolunbo_con) {
+				  if(!zhidaolunbo_con.contains(e.target)) {
+					this.dialogZhiDao = false
 				  }
 				}
 			},
