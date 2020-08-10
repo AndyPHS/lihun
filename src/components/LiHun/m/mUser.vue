@@ -117,7 +117,7 @@ export default {
 			})
 		},
 		gohome () {
-			this.$router.replace('/m/mhome')
+			window.location.href = "/"
 		},
 		tomyconsult () {
 			this.$router.replace('/m/mMyconsult')

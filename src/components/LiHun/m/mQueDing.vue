@@ -80,7 +80,7 @@ export default {
 	},
 	methods: {
 		gohome () {
-			this.$router.replace('/')
+			window.location.href = "/"
 		}
 	}
 }

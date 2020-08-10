@@ -36,17 +36,20 @@
 				  </p>
 			  </div>
               <div class="relative allmin" v-loading="loading">
-                <div v-if="this.ins ===3 || this.zhaiquanNav==true" class="allmin_l">
+                <div class="allmin_l">
 					<ul class="caichanul" v-if="this.ins ===3" >
-					  <li v-bind:class="{active:index+3 == CaiIns}" @click="caichanNavBtn(index)" v-for="(item, index) in caichanNavList" :key="index" >{{ item.title }}</li>
+					  <li v-bind:class="{active:item.num == CaiIns}" @click="caichanNavBtn(item)" v-for="(item, index) in caichanNavList" :key="index" >{{ item.title }}</li>
+					  <div v-if="this.ins ===3" class="tianjiafenlei" @click="tianjiafenlei"><img src="../../../assets/images/add_icon.png" alt="">添加分类</div>
 					</ul>
-					<div v-if="this.ins ===3" class="othercai">其他财产 <img src="../../../assets/images/open.png" alt=""></div>
-					<ul class="caichanul" style="right: 100px;" v-if="zhaiquanNav">
-					  <li v-bind:class="{active:index+16 == zhaiIns}" @click="zhaiquanNavBtn(index)" v-for="(item, index) in zhaiquanNavList" :key="index" >{{ item.title }}</li>
+					<ul class="caichanul" style="right: 100px;" v-if="this.ins ===4">
+					  <li v-bind:class="{active:item.num == zhaiIns}" @click="zhaiquanNavBtn(item)" v-for="(item, index) in zhaiquanNavList" :key="index" >{{ item.title }}</li>
 					</ul>
+					<div v-if="this.ins ===3" class="othercai hidden">其他财产 <img src="../../../assets/images/open.png" alt=""></div>
+					
+					
 				</div>
                 <div>
-					<div v-if="active=== key" v-for="(mo, key) in mokuai" :key="key" class="min">
+					<div v-if="active=== mo.num" v-for="(mo, key) in mokuai" :key="key" class="min">
 					  <div>
 					    <div>
 					      <el-form label-position="top" label-width="160px">
@@ -227,9 +230,9 @@
 					  </div>
 					</div>
 					<div class="mt-10">
-					  <el-button class="step_btn my-5"  v-if="active < this.mokuai.length && active > 0" @click="prev" :loading="prevLoading">上一步</el-button>
-					  <el-button class="step_btn step_btn_re my-5" v-if="active < this.mokuai.length-1" @click="next" :loading="nextLoading">下一步</el-button>
-					  <el-button class="step_btn re my-5 act" v-if="active==this.mokuai.length-1" @click="GoComplatePage">生成协议</el-button>
+					  <el-button class="step_btn my-5"  v-if="active !=595" @click="prev" :loading="prevLoading">上一步</el-button>
+					  <el-button class="step_btn step_btn_re my-5" v-if="this.mokuai.length -1> 0 && active!=332" @click="next" :loading="nextLoading">下一步</el-button>
+					  <el-button class="step_btn re my-5 act" v-if="active==332" @click="GoComplatePage">生成协议</el-button>
 					</div>
 				</div>
                 
@@ -293,7 +296,45 @@
 			      <span class="cbt re" @click="alreadyDelete">确认</span>
 			    </div>
 			  </el-dialog>
-			  
+			  <!-- 添加模块 -->
+			  <el-dialog title="添加财产分类" :visible.sync="dialogFormVisible">
+			  		<div class="text-left ml-5">
+			  			  <el-form :model="caichanform" >
+			  			    <el-form-item label="">
+			  			      <div>
+			  			        <label slot="label">{{ caichanform.caichan01.title }}</label>
+			  			      </div>
+			  			      <el-checkbox-group v-model="caichanform.caichan01.answer" >
+			  			        <el-checkbox :label="list.value" v-for="(list, listIndex) in caichanform.caichan01.listData" :key="'list'+listIndex"  @change='changehasOthercaichan(caichanform.caichan01)'>{{list.label}}</el-checkbox>
+			  			      </el-checkbox-group>
+			  			    </el-form-item>
+							<el-form-item label="">
+							  <div>
+							    <label slot="label">{{ caichanform.caichan01.title }}</label>
+							  </div>
+							  <el-checkbox-group v-model="caichanform.caichan02.answer" >
+							    <el-checkbox :label="list.value" v-for="(list, listIndex) in caichanform.caichan02.listData" :key="'list'+listIndex" >{{list.label}}</el-checkbox>
+							  </el-checkbox-group>
+							</el-form-item>
+							<!-- <div v-if="hasOthercaichan">
+								<el-form-item  label="">
+								  <div>
+								    <label slot="label">{{ caichanform.caichan02.title }}</label>
+								  </div>
+								  <el-checkbox-group v-model="caichanform.caichan02.answer" >
+								    <el-checkbox :label="list.value" v-for="(list, listIndex) in caichanform.caichan01.listData" :key="'list'+listIndex" >{{list.label}}</el-checkbox>
+								  </el-checkbox-group>
+								</el-form-item>
+							</div> -->
+			  			  </el-form>
+			  		</div>
+			    <div slot="footer" class="dialog-footer pb-4">
+			  			<div class="flex justify-around">
+			  				<span class="anniu" @click="caichancancleBtn">取消</span>
+			  				<span class="anniu" @click="caichansaveBtn">保存</span>
+			  			</div>
+			    </div>
+			  </el-dialog>
             </div>
           </div>
           <div v-show="shengchengloading" id="shengchengloading">
@@ -459,7 +500,7 @@ import lihun_bottom_com from '../../partials/lihun_bottom_com.vue'
 import QuestionModel from '../../partials/QuestionModel.vue' // 引入子组件
 import {returnQuestionnaireJson} from '@/api/api/AgreementRequest.js' // 查询问卷json
 import {userUpdateQuestionnaire} from '@/api/api/AgreementRequest.js' // 修改离婚协议书
-// import {userAddAnswer} from '@/api/api/requestLogin.js'    // 用户添加问卷的内容
+import {userAddAnswer} from '@/api/api/AgreementRequest.js'    // 用户添加问卷的内容
 import {userAddSelectAnswer} from '@/api/api/AgreementRequest.js' // 添加子女或者房产等
 import {userDeleteSelectAnswer} from '@/api/api/AgreementRequest.js' // 删除子女或者房产等
 import {demoYanZheng} from '@/api/api/AgreementRequest.js' // 验证单独word demo
@@ -475,13 +516,46 @@ export default {
   },
   data () {
     return {
+	  dialogFormVisible: false, // 其他财产弹窗
+	  caichanform: {
+		  caichan01: {
+			  title:'共同财产有哪些？',
+			  id: '520',
+			  answer: [],
+			  listData: [
+			    { label: '房子', value: '1' },
+			    { label: '车辆', value: '2' },
+			    { label: '存款', value: '3' },
+			    { label: '理财', value: '4' },
+			    { label: '公积金', value: '5' },
+			    { label: '保险', value: '6' },
+			    { label: '股权（股份）', value: '7' },
+			    { label: '股票账户', value: '8' },
+			    { label: '家具家电', value: '9' },
+			    { label: '其他财产', value: '10' }
+			  ],
+		  },
+		  caichan02: {
+			  title: '具体约定哪些其他财产？',
+			  id: '3853',
+			  answer: [],
+			  listData: [
+				{ label: '珠宝首饰收藏', value: '1' },
+				{ label: '债券', value: '2' },
+				{ label: '店铺', value: '3' },
+				{ label: '宅基地房屋', value: '4' },
+				{ label: '其他', value: '5' }
+			  ]
+		  }
+	  },
+	  hasOthercaichan: false,  // 具体约定的那些其他财产是否出现
 	  checkcailiaoDialog: false, // 所需材料弹窗
 	  shengchengloading: false,
       tabPosition: 'right',
       loading: true,
       ins: 0,
-      CaiIns: 3, // 财产
-      zhaiIns: 16, // 债权
+      CaiIns: null, // 财产
+      zhaiIns: 655, // 债权
       caichanNav: false,
       zhaiquanNav: false,
 	  dialogDelete: false, // 删除模块弹窗
@@ -525,20 +599,20 @@ export default {
         {title: '基本信息', part: 'BasicInformation', id: 1, num: 595},
         {title: '婚姻状况', part: 'HunYinStatus', id: 2, num: 596},
         {title: '子女抚养', part: 'ZiNv', id: 3, num: 3859},
-        {title: '房产', part: 'FangChan', id: 4, num: 521},
-        {title: '车辆', part: 'Car', id: 5, num: 522},
-        {title: '存款', part: 'CunKuan', id: 6, num: 637},
-        {title: '理财', part: 'LiCai', id: 7, num: 523},
-        {title: '公积金', part: 'GongJiJin', id: 8, num: 3614},
-        {title: '保险', part: 'BaoXian', id: 9, num: 524},
-        {title: '股权（股份）', part: 'GuQuanGuFen', id: 10, num: 3636},
-        {title: '股票账户', part: 'GuPiaoZhangHu', id: 11, num: 3637},
-        {title: '家具家电', part: 'JiaDian', id: 12, num: 636},
-        {title: '珠宝首饰收藏品', part: 'ZhuBaoShouShi', id: 13, num: 3638},
-        {title: '债券', part: 'ZhaiJuan', id: 14, num: 3639},
-        {title: '店铺', part: 'DianPu', id: 15, num: 3640},
-        {title: '宅基地房屋', part: 'ZhaiJiDi', id: 16, num: 3641},
-        {title: '其他', part: 'QiTa', id: 17, num: 3642},
+        // {title: '房产', part: 'FangChan', id: 4, num: 521},
+        // {title: '车辆', part: 'Car', id: 5, num: 522},
+        // {title: '存款', part: 'CunKuan', id: 6, num: 637},
+        // {title: '理财', part: 'LiCai', id: 7, num: 523},
+        // {title: '公积金', part: 'GongJiJin', id: 8, num: 3614},
+        // {title: '保险', part: 'BaoXian', id: 9, num: 524},
+        // {title: '股权（股份）', part: 'GuQuanGuFen', id: 10, num: 3636},
+        // {title: '股票账户', part: 'GuPiaoZhangHu', id: 11, num: 3637},
+        // {title: '家具家电', part: 'JiaDian', id: 12, num: 636},
+        // {title: '珠宝首饰收藏品', part: 'ZhuBaoShouShi', id: 13, num: 3638},
+        // {title: '债券', part: 'ZhaiJuan', id: 14, num: 3639},
+        // {title: '店铺', part: 'DianPu', id: 15, num: 3640},
+        // {title: '宅基地房屋', part: 'ZhaiJiDi', id: 16, num: 3641},
+        // {title: '其他', part: 'QiTa', id: 17, num: 3642},
         {title: '债权', part: 'ZhaiQuan', id: 18, num: 655},
         {title: '债务', part: 'ZhaiWu', id: 19, num: 656},
         {title: '其他债权债务', part: 'QiTaZhaiQuan', id: 20, num: 3855},
@@ -554,27 +628,27 @@ export default {
 
       ],
       caichanNavList: [
-        {title: '房产', id: 3},
-        {title: '车辆', id: 4},
-        {title: '存款', id: 5},
-        {title: '理财', id: 6},
-        {title: '公积金', id: 7},
-        {title: '保险', id: 8},
-        {title: '股权（股份）', id: 9},
-        {title: '股票账户', id: 10},
-        {title: '家具家电', id: 11},
-        {title: '珠宝首饰收藏品', id: 12},
-        {title: '债券', id: 13},
-        {title: '店铺', id: 14},
-        {title: '宅基地房屋', id: 15},
-        {title: '其他', id: 16}
+        // {title: '房产', id: 3},
+        // {title: '车辆', id: 4},
+        // {title: '存款', id: 5},
+        // {title: '理财', id: 6},
+        // {title: '公积金', id: 7},
+        // {title: '保险', id: 8},
+        // {title: '股权（股份）', id: 9},
+        // {title: '股票账户', id: 10},
+        // {title: '家具家电', id: 11},
+        // {title: '珠宝首饰收藏品', id: 12},
+        // {title: '债券', id: 13},
+        // {title: '店铺', id: 14},
+        // {title: '宅基地房屋', id: 15},
+        // {title: '其他', id: 16}
       ],
       zhaiquanNavList: [
-        {title: '债权', id: 17},
-        {title: '债务', id: 18},
-        {title: '其他', id: 19}
+        {title: '债权', id: 17,num:655},
+        {title: '债务', id: 18,num:656},
+        {title: '其他', id: 19,num:3855}
       ],
-      active: 0,
+      active: 595,
       fullscreenLoading: false, // 加载框
       nextLoading: false, // 下一步按钮加载状态
       prevLoading: false,  // 上一步按钮加载状态
@@ -669,6 +743,15 @@ export default {
     this.getTeShuYueDingMsg()
   },
   mounted () {
+	// this.mokuai = [
+	// 	{title: '基本信息', part: 'BasicInformation', id: 1, num: 595},
+	// 	{title: '婚姻状况', part: 'HunYinStatus', id: 2, num: 596},
+	// 	{title: '子女抚养', part: 'ZiNv', id: 3, num: 3859},
+	// 	{title: '债权', part: 'ZhaiQuan', id: 18, num: 655},
+	// 	{title: '债务', part: 'ZhaiWu', id: 19, num: 656},
+	// 	{title: '其他债权债务', part: 'QiTaZhaiQuan', id: 20, num: 3855},
+	// 	{title: '特殊约定', part: 'TeShuYueDing', id: 21, num: 332},
+	// ]
 	this.getMsg(); // 获取初始页面的信息
 	localStorage.setItem('topins',2)
 	window.isCloseHint = true;
@@ -782,7 +865,7 @@ export default {
 			}
         }
 		this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer = JSON.parse(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
-		console.log(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
+		// console.log(this.aa.ZiNv[0][1].questions[8].childQuestion[1][2].answer)
         this.loading = false
       }).catch((data) => {
       })
@@ -971,7 +1054,13 @@ export default {
       }).catch((data) => {
       })
     },
-
+    returnObjNum(data){
+    		var i =0;
+			for(var n in data){
+				i++
+			}
+			return i;
+    },
     compare (property) {
       return function (a, b) {
         let value1 = a[property]
@@ -979,6 +1068,9 @@ export default {
         return value1 - value2
       }
     },
+	sortId(a,b){  
+	   return a.id-b.id  
+	},
 
     userAddSelectAnswerAction (e) { // 添加子女或者房产等
       this.$message({
@@ -1099,141 +1191,99 @@ export default {
 		this.DeleteIndex = index;
 		this.dialogDelete = true;
     },
-    stepClick (item, index) {
+    stepClick (item, index) {  // 头部导航切换
       this.ins = index
       var _that = this
       this.caichanNav = false
       this.zhaiquanNav = false
-      if (item.id < 3) {
-        _that.active = item.id
-      } else if (item.id === 3) {
-        _that.active = 3
-        _that.CaiIns = 3
+	  if (index==0) {
+	    _that.active = 595
+	  } else if (index==1) {
+	    _that.active = 596
+	  } else if (index==2) {
+        _that.active = 3859
+      } else if (index=== 3) {
+		var caichanNavList = _that.caichanNavList
+		if(caichanNavList.length>0){
+			_that.active = caichanNavList[0].num
+			_that.CaiIns = caichanNavList[0].num
+		} else {
+			_that.active = 0
+		}
+        // _that.CaiIns = 3
         this.caichanNav = true
-      } else if (item.id === 4) {
-        _that.active = 17
-        _that.zhaiIns = 16
+		this.zhaiquanNav = false
+      } else if (index=== 4) {
+        _that.active = 655
+        _that.zhaiIns = 655
         this.zhaiquanNav = true
-      } else if (item.id === 5) {
-        _that.active = 20
+		this.caichanNav = false
+      } else if (index=== 5) {
+        _that.active = 332
       }
       localStorage.setItem('active', _that.active)
     },
-    caichanNavBtn (index) {
+    caichanNavBtn (item) { // 点击财产分割左侧导航栏列表
       var _that = this
-      _that.CaiIns = 3
-      _that.CaiIns = _that.CaiIns + index
-      _that.active = index + 3
+      _that.CaiIns = item.num
+      _that.active = item.num
       localStorage.setItem('active', _that.active)
     },
-    zhaiquanNavBtn (index) {
+    zhaiquanNavBtn (item) { // 债权左侧导航列表
       var _that = this
-      _that.zhaiIns = 16
-
-      _that.zhaiIns = _that.zhaiIns + index
-      _that.active = index + 17
+      _that.zhaiIns = item.num
+      _that.active = item.num
       localStorage.setItem('active', _that.active)
     },
-    prev () {
+    prev () { // 点击上一步
       // this.prevLoading = true
-      let mokuai = this.mokuai
-      for (var i = 0; i < mokuai.length; i++) {
-        if (this.mokuai[this.active].title === mokuai[i].title) {
-          localStorage.setItem('qpid', mokuai[i].num)
-          // demoYanZheng({
-          //   qpid: mokuai[i].num
-          // }).then((data) => {
-          //   if (data.data.status_code === 330) {
-          //     this.missMsgBox = true
-          //     this.missMsg = data.data.data
-          //     this.loading = false
-          //   } else {
-          //     this.loading = false
-          //     this.caichanNav = false
-          //     this.zhaiquanNav = false
-          //     this.prevLoading = false
-          //     if (this.ins < 3) {
-          //       --this.ins
-          //       --this.active
-          //       var _that = this
-          //       localStorage.setItem('active', _that.active)
-          //     } else if (this.ins === 3) {
-          //       // this.active = 3
-          //       --this.active
-          //       var _that = this
-          //       if (_that.CaiIns > 3) {
-          //         --_that.CaiIns
-          //         this.caichanNav = true
-          //       } else if (_that.CaiIns ===3) {
-          //         --this.ins
-          //         this.caichanNav = false
-          //       }
-          //       localStorage.setItem('active', this.active)
-          //     } else if (this.ins === 4) {
-          //       --this.active
-          //       var _that = this
-          //       if (_that.zhaiIns > 16) {
-          //        --_that.zhaiIns
-          //        this.zhaiquanNav = true
-          //       } else if (_that.zhaiIns ===16) {
-          //         this.CaiIns = 16
-          //         --this.ins
-          //         this.zhaiquanNav = false
-          //       }
-          //       localStorage.setItem('active', this.active)
-          //     } else if (this.ins ===5 ){
-          //       --this.ins
-          //       this.active = 19
-          //       this.zhaiIns = 18
-          //       this.zhaiquanNav = true
-          //     }
-
-          //     this.$notify({
-          //       title: '保存成功',
-          //       message: mokuai[i].title + '模块已成功保存',
-          //       type: 'success'
-          //     })
-          //   }
-          // }).catch((data) => {
-          // })
-		  if (this.ins < 3) {
-		    --this.ins
-		    --this.active
-		    var _that = this
-		    localStorage.setItem('active', _that.active)
-		  } else if (this.ins === 3) {
-		    // this.active = 3
-		    --this.active
-		    var _that = this
-		    if (_that.CaiIns > 3) {
-		      --_that.CaiIns
-		      this.caichanNav = true
-		    } else if (_that.CaiIns ===3) {
-		      --this.ins
-		      this.caichanNav = false
-		    }
-		    localStorage.setItem('active', this.active)
-		  } else if (this.ins === 4) {
-		    --this.active
-		    var _that = this
-		    if (_that.zhaiIns > 16) {
-		     --_that.zhaiIns
-		     this.zhaiquanNav = true
-		    } else if (_that.zhaiIns ===16) {
-		      this.CaiIns = 16
-		      --this.ins
-		      this.zhaiquanNav = false
-		    }
-		    localStorage.setItem('active', this.active)
-		  } else if (this.ins ===5 ){
-		    --this.ins
-		    this.active = 19
-		    this.zhaiIns = 18
-		    this.zhaiquanNav = true
+	 if (this.ins ==1){
+		  this.active = 595
+		  this.ins = 0
+	 } else if (this.ins ==2){
+		  this.active = 596
+		  this.ins = 1
+	 }else if(this.ins ==3){
+		 this.caichanNav = true
+		  var caichanNavList = this.caichanNavList
+		  var caichanNavListNums = this.returnObjNum(caichanNavList)
+		  if(caichanNavListNums==0 || this.active ==caichanNavList[0].num){
+			this.active = 3859
+		  	this.ins = 2
+		  } else {
+			for(var i =0;i<caichanNavListNums;i++){
+				if(caichanNavList[i].num == this.active){
+					this.CaiIns = caichanNavList[i-1].num
+					this.active =  caichanNavList[i-1].num
+					return
+				}
+			}
 		  }
-        }
-      }
-      if (this.active < 0) this.active = 0
+	  } else if (this.ins ==4){
+		  this.zhaiquanNav = false
+		  this.caichanNav = true
+		  var zhaiquanNavList = this.zhaiquanNavList
+		  var caichanNavList = this.caichanNavList
+		  if(this.active ==zhaiquanNavList[0].num){
+			this.CaiIns = caichanNavList[0].num
+		  	this.active = caichanNavList[0].num
+		  	this.ins = 3
+		  } else {
+			for(var i =0;i<zhaiquanNavList.length;i++){
+				if(zhaiquanNavList[i].num == this.active){
+					this.zhaiIns = zhaiquanNavList[i-1].num
+					this.active =  zhaiquanNavList[i-1].num
+					return
+				}
+			}
+		  }
+	  } else if (this.ins ==5){
+		  var zhaiquanNavList = this.zhaiquanNavList
+		  this.zhaiIns = zhaiquanNavList[0].num
+		  this.active =  zhaiquanNavList[0].num
+		  this.ins = 4
+		  this.zhaiquanNav = true
+	  }
 	  const that = this
 		let timer = setInterval(() => {
 		  let ispeed = Math.floor(-that.scrollTop / 5)
@@ -1243,69 +1293,76 @@ export default {
 		  }
 		}, 16)
     },
-    next () {
+    next () { //下一步
       this.nextLoading = true
-      let mokuai = this.mokuai
-      for (var i = 0; i < mokuai.length; i++) {
-        if (this.mokuai[this.active].title === mokuai[i].title) {
-          localStorage.setItem('qpid', mokuai[i].num)
-          demoYanZheng({
-            qpid: mokuai[i].num
-          }).then((data) => {
-            if (data.data.status_code === 330) {
-              this.missMsgBox = true
-              this.missMsg = data.data.data
-              this.loading = false
-            } else {
-              this.loading = false
-              this.caichanNav = false
-              this.zhaiquanNav = false
-              this.nextLoading = false
-              if (this.ins < 3) {
-                this.ins++
-                this.active++
-                var _that = this
-                localStorage.setItem('active', _that.active)
-              } else if (this.ins === 3) {
-                // this.active = 3
-                this.active++
-                var _that = this
-                if (_that.CaiIns < 17) {
-                  _that.CaiIns++
-                }
-                this.caichanNav = true
-                this.zhaiIns = 16
-                localStorage.setItem('active', this.active)
-              } else if (this.ins === 4) {
-                this.active++
-                var _that = this
-                // console.log(_that.zhaiIns)
-                if (_that.zhaiIns < 20) {
-                  _that.zhaiIns++
-                }
-                this.zhaiquanNav = true
-                localStorage.setItem('active', this.active)
-              }
-              if (this.active === 17) {
-                this.caichanNav = false
-                this.zhaiquanNav = true
-                this.ins = 4
-              } else if (this.active === 20) {
-                this.ins = 5
-                this.zhaiquanNav = false
-              }
-              this.$notify({
-                title: '保存成功',
-                message: mokuai[i].title + '模块已成功保存',
-                type: 'success'
-              })
-              if (this.active++ > this.mokuai.length - 1) this.$router.replace('/ShengChengXieYi')
-			  
-            }
-          }).catch((data) => {
-          })
-        }
-      }
+	  // localStorage.setItem('qpid', this.active)
+	  demoYanZheng({
+	    qpid: this.active
+	  }).then((data) => {
+	    if (data.data.status_code === 330) {
+	      this.missMsgBox = true
+	      this.missMsg = data.data.data
+	      this.loading = false
+	    } else {
+	      this.loading = false
+	      this.nextLoading = false
+		  if (this.ins == 0) {
+		    this.ins = 1
+		    this.active = 596
+		    localStorage.setItem('active', this.active)
+		  } else if (this.ins == 1) {
+	        this.ins = 2
+	        this.active = 3859
+	        localStorage.setItem('active', this.active)
+	      } else if (this.ins == 2) {
+			this.ins = 3
+			var caichanNavList = this.caichanNavList
+			this.active = caichanNavList[0].num
+			this.CaiIns = caichanNavList[0].num
+	        localStorage.setItem('active', this.active)
+	      } else if (this.ins == 3) {
+			var caichanNavList = this.caichanNavList
+			var _that = this
+			var caichanNavListNums = this.returnObjNum(caichanNavList)
+			if(caichanNavListNums ==0 || this.active == caichanNavList[caichanNavListNums-1].num){
+				this.active = 655
+				this.ins = 4
+			} else {
+				for(var i =0;i<caichanNavListNums;i++){
+					if(caichanNavList[i].num == this.active){
+						this.CaiIns = caichanNavList[i+1].num
+						this.active =  caichanNavList[i+1].num
+						return
+					}
+				}
+			}
+		  } else if(this.ins ==4){
+			  var that = this
+			  var zhaiquanNavList = this.zhaiquanNavList
+			  var zhaiquanNavListNums = this.returnObjNum(zhaiquanNavList)
+			  for(var i =0;i<zhaiquanNavListNums;i++){
+			  	if(zhaiquanNavList[i].num == this.active){
+			  		this.zhaiIns = zhaiquanNavList[i+1].num
+			  		this.active =  zhaiquanNavList[i+1].num
+			  		localStorage.setItem('active', this.active)
+					return
+			  	} else  if(this.active == zhaiquanNavList[zhaiquanNavListNums-1].num){
+			  		this.active = 332
+			  		that.ins = 5
+					localStorage.setItem('active', this.active)
+					return
+			  	}
+			  }
+		  }	       
+	      // this.$notify({
+	      //   title: '保存成功',
+	      //   message: '模块已成功保存',
+	      //   type: 'success'
+	      // })
+	  			  
+	    }
+	  }).catch((data) => {
+	  })
 	  const that = this
 		let timer = setInterval(() => {
 		  let ispeed = Math.floor(-that.scrollTop / 5)
@@ -1315,6 +1372,7 @@ export default {
 		  }
 		}, 16)
     },
+	
     closeMissMsgBox () { // 关闭未填写项弹窗
       this.missMsgBox = false
       this.flag = false
@@ -1418,7 +1476,7 @@ export default {
     saveWenShu () { // 保存文书
       this.dialogSavedWenJuan = true
     },
-	goHome () {
+	goHome () {  // 返回首页
 		localStorage.setItem('topins',0)
 		const {href} = this.$router.resolve({
 			path: '/'
@@ -1448,11 +1506,20 @@ export default {
 		this.checkcailiaoDialog = false
 	},
 	getMsg() {
+		this.mokuai = [
+		  {title: '基本信息', part: 'BasicInformation', id: 1, num: 595},
+		  {title: '婚姻状况', part: 'HunYinStatus', id: 2, num: 596},
+		  {title: '子女抚养', part: 'ZiNv', id: 3, num: 3859},
+		  {title: '债权', part: 'ZhaiQuan', id: 18, num: 655},
+		  {title: '债务', part: 'ZhaiWu', id: 19, num: 656},
+		  {title: '其他债权债务', part: 'QiTaZhaiQuan', id: 20, num: 3855},
+		  {title: '特殊约定', part: 'TeShuYueDing', id: 21, num: 332}
+		],
 		getOnlyValue({
 			qpid: 520, // 关联id
 			quid: Number(localStorage.getItem('quid')) //用户的问卷id
 		}).then((data) => {
-	
+			this.caichanform.caichan01.answer =  JSON.parse(data.data.data)
 			let getmodel = JSON.parse(data.data.data)
 			getmodel.forEach((item) => {
 				if (item == 1) {
@@ -1468,6 +1535,14 @@ export default {
 						title2: '(示例七)',
 						img: ''
 					})
+					this.caichanNavList.push({
+						title: '房产',
+						id: 3,
+						num: 521
+					})
+					this.mokuai.push({title: '房产', part: 'FangChan', id: 4, num: 521})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 2) {
 					this.ChuShiMsgArr.push({
 						title: '机动车登记证',
@@ -1480,9 +1555,24 @@ export default {
 						img: ''
 					})
 					this.ChuShiMsg.car = true
-					// this.ChuShiMsg.money = true
+					this.caichanNavList.push({
+						title: '车辆',
+						id: 4,
+						num: 522
+					})
+					this.mokuai.push({title: '车辆', part: 'Car', id: 5, num: 522})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 3) {
 					this.CommonCaiChan.cunkuan = true
+					this.caichanNavList.push({
+						title: '存款',
+						id: 5,
+						num:637
+					})
+					this.mokuai.push({title: '存款', part: 'CunKuan', id: 6, num: 637})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 4) {
 					this.ChuShiMsgArr.push({
 						title: '理财协议',
@@ -1491,9 +1581,24 @@ export default {
 					})
 					this.ChuShiMsg.liCai = true
 					this.CommonCaiChan.licai = true
+					this.caichanNavList.push({
+						title: '理财',
+						id: 6,
+						num: 523
+					})
+					this.mokuai.push({title: '理财', part: 'LiCai', id: 7, num: 523})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 5) {
 					this.CommonCaiChan.gongjijin = true
-					// this.ChuShiMsg.jiaDian = true
+					this.caichanNavList.push({
+						title: '公积金',
+						id: 7,
+						num: 3614
+					})
+					this.mokuai.push({title: '公积金', part: 'GongJiJin', id: 8, num: 3614})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 6) {
 					this.ChuShiMsg.baoXian = true
 					this.ChuShiMsgArr.push({
@@ -1501,7 +1606,45 @@ export default {
 						title2: '(示例十一)',
 						img: ''
 					})
+					this.caichanNavList.push({
+						title: '保险',
+						id: 8,
+						num: 524
+					})
+					this.mokuai.push({title: '保险', part: 'BaoXian', id: 9, num: 524})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
+				} else if (item==7) {
+					this.caichanNavList.push({
+						title: '股权（股份）',
+						id: 9,
+						num: 3636
+					})
+					this.mokuai.push({title: '股权（股份）', part: 'GuQuanGuFen', id: 10, num: 3636})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
+				} else if (item==8) {
+					this.caichanNavList.push({
+						title: '股票账户',
+						id: 10,
+						num: 3637
+					})
+					this.mokuai.push({title: '股票账户', part: 'GuPiaoZhangHu', id: 11, num: 3637})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
+				} else if (item==9) {
+					this.caichanNavList.push({
+						title: '家具家电',
+						id: 11,
+						num: 636
+					})
+					this.mokuai.push({title: '家具家电', part: 'JiaDian', id: 12, num: 636})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
+				} else if (item==10) {
+					this.hasOthercaichan = true
 				}
+				
 				if (item == 1) {
 					this.CommonCaiChan.fangchan = true
 				} else if (item == 2) {
@@ -1574,23 +1717,137 @@ export default {
 			qpid: 3853, // 关联id
 			quid: Number(localStorage.getItem('quid')) //用户的问卷id
 		}).then((data) => {
+			
+			if(data.data.data != 'null'){
+				console.log(data.data.data)
+				this.caichanform.caichan02.answer =  JSON.parse(data.data.data)
+			} else {
+				
+				this.caichanform.caichan02.answer =  []
+				console.log( 2)
+			}
 			let getmodel = JSON.parse(data.data.data)
 			getmodel.forEach((item) => {
 				if (item == 1) {
 					this.CommonCaiChan.zhubaoshoushi = true
+					this.caichanNavList.push({
+						title: '珠宝首饰收藏品',
+						id: 12,
+						 num: 3638
+					})
+					this.mokuai.push({title: '珠宝首饰收藏品', part: 'ZhuBaoShouShi', id: 13, num: 3638})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 2) {
 					this.CommonCaiChan.zhuaijuan = true
+					this.caichanNavList.push({
+						title: '债券',
+						id: 13,
+						num: 3639
+					})
+					this.mokuai.push({title: '债券', part: 'ZhaiJuan', id: 14, num: 3639})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 3) {
 					this.CommonCaiChan.dianpu = true
+					this.caichanNavList.push({
+						title: '店铺',
+						id: 14,
+						num: 3640
+					})
+					this.mokuai.push({title: '店铺', part: 'DianPu', id: 15, num: 3640})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				} else if (item == 4) {
 					this.CommonCaiChan.zhaijidi = true
+					this.caichanNavList.push({
+						title: '宅基地房屋',
+						id: 15,
+						num: 3641
+					})
+					this.mokuai.push({title: '宅基地房屋', part: 'ZhaiJiDi', id: 16, num: 3641})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
+				} else if (item == 5) {
+					this.caichanNavList.push({
+						title: '其他',
+						id: 16,
+						num: 3642
+					})
+					this.mokuai.push({title: '其他', part: 'QiTa', id: 17, num: 3642})
+					this.mokuai.sort(this.sortId)
+					this.caichanNavList.sort(this.sortId)
 				}
-	
 			})
 		}).catch((data) => {
 	
 		})
 	},
+	tianjiafenlei () { // 点击添加财产分类
+		this.dialogFormVisible = true
+	},
+	caichancancleBtn () { // 关闭其他财产弹窗
+		this.dialogFormVisible = false
+		getOnlyValue({
+			qpid: 520, // 关联id
+			quid: Number(localStorage.getItem('quid')) //用户的问卷id
+		}).then((data) => {
+			this.caichanform.caichan01.answer =  JSON.parse(data.data.data)
+		})
+		getOnlyValue({
+			qpid: 3853, // 关联id
+			quid: Number(localStorage.getItem('quid')) //用户的问卷id
+		}).then((data) => {
+			this.caichanform.caichan02.answer =  JSON.parse(data.data.data)
+		})
+	},
+	caichansaveBtn () { // 保存其他财产确认弹窗
+		this.caichanNavList = []
+		console.log(this.caichanform.caichan01.answer)
+		userAddAnswer({
+		  value: JSON.stringify(this.caichanform.caichan01.answer), // 值
+		  qpid: 520, // 关联id
+		  quid: localStorage.getItem('quid') // 用户的问卷id
+		}).then((data) => {
+			var list = this.caichanform.caichan01.answer
+			if(list.indexOf('10') > -1){
+				this.caichanNavList = []
+				console.log(this.caichanform.caichan02.answer)
+				userAddAnswer({
+				  value: JSON.stringify(this.caichanform.caichan02.answer), // 值
+				  qpid: 3853, // 关联id
+				  quid: localStorage.getItem('quid') // 用户的问卷id
+				}).then((data) => {
+					this.getMsg()
+				}).catch((data) => {
+				})
+				this.dialogFormVisible = false
+			} else {
+				
+				this.getMsg()
+				userAddAnswer({
+				  value: '', // 值
+				  qpid: 3853, // 关联id
+				  quid: localStorage.getItem('quid') // 用户的问卷id
+				}).then((data) => {
+					
+				}).catch((data) => {
+				})
+				this.dialogFormVisible = false
+			}
+		}).catch((data) => {
+		})
+		
+	},
+	changehasOthercaichan (e) {
+		var list = e.answer
+		list.forEach((item) => {
+			if(item ==10){
+				this.hasOthercaichan = true
+			}
+		})
+		
+	}
   }
 }
 </script>
@@ -1613,6 +1870,8 @@ html{height: 100%;background-color: #f7fafc;}
 #tab-9{border-top: 1px solid #d2d2d2;}
 .othercai{position: absolute;top: 360px;left: 50px;width: 96px;height: 30px;line-height: 30px;font-weight: bold;font-size: 16px;color: #303133;}
 .othercai img{position: absolute;top:6px;right:-2px;}
+.tianjiafenlei{width: 135px;padding-bottom: 20px;line-height: 30px;font-weight: bold;font-size: 16px;color: #547ce0;padding-left: 20px;border-bottom: 1px solid #c4c4c4;cursor: pointer;}
+.tianjiafenlei img{display: inline-block;vertical-align: sub;margin-right: 10px;}
 .navUl{width: 100%;margin:0 auto;padding:10px}
 .navUl li{width: 150px;position: relative;color:#c0c0c0;}
 .divider-line{position: absolute;height: 2px;background-color: #C0C4CC;top:21px;left:86px;width: 180px;}
@@ -1625,7 +1884,6 @@ html{height: 100%;background-color: #f7fafc;}
 .allmin_l{width: 150px;float: left;height: 620px;}
 .caichanul{position: absolute; top:0;left: 50px; width: 150px; text-align: left;}
 .caichanul li{height: 40px;line-height: 40px;padding-left: 20px;}
-.caichanul li:nth-of-type(10){margin-top:35px}
 .caichanul li.active{color:#0055AA;border-left: 1px solid #0055AA;}
 .min{width:600px;margin:0 auto;}
 .min:nth-of-type(3){margin-top: 50px;}
@@ -1678,6 +1936,8 @@ html{height: 100%;background-color: #f7fafc;}
 .shili_img {width: 129px;height: 90px;margin: 0 auto;}
 .cailist{padding-top: 34px;padding-bottom: 34px;}
 .cailist span{padding:5px 12px;background-color:#fff4f6;border:1px solid #ff3f68;color:#ff3f68;border-radius: 5px; margin-right: 17px;margin-bottom: 19px;}
+.anniu{width: 220px;height: 40px;text-align: center;line-height: 40px;font-size: 18px;border:1px solid #878787;border-radius:20px;margin:0 20px;display: inline-block;cursor: pointer;}
+.anniu:last-of-type{color:#ff3f68;border: 1px solid #ff3f68;}
 .tishiMsg{width: 1050px;margin:0 auto;text-align: end;}
 .tishiMsg p{color: green;font-size: 15px;line-height: 50px;}
 .tishiMsg p img{display: inline-block;vertical-align: sub;margin-right: 8px;}
