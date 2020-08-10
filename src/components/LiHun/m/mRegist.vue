@@ -189,7 +189,8 @@ export default {
 	},
 	methods: {
 		gohome () { // 返回上一页
-			this.$router.replace('/m/mhome')
+			// this.$router.replace('/m/mhome')
+			window.location.href = "/"
 		},
 		goshiyongxieyi (e) { // 查看协议
 			this.dialogxieyi = true

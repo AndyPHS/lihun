@@ -106,7 +106,8 @@ export default {
 			  if (data.data.status_code == 401) {
 				  localStorage.removeItem('token') // 存储token
 				  this.isLogin = false
-				  this.$router.replace('/m/mhome')
+				  // this.$router.replace('/m/mhome')
+				  window.location.href = "/"
 			  } else  {
 				  this.userMsg.photo = data.data.photo
 				  this.userMsg.name = data.data.name
@@ -127,7 +128,7 @@ export default {
 		},
 		loginOut () { // 退出登录
 			localStorage.removeItem('token') // 存储token
-			this.$router.replace('/m/mhome')
+			window.location.href = "/"
 			this.$cookieStore.delCookie("token")
 		},
 		renameAc () { // 点击弹出修改姓名弹窗
