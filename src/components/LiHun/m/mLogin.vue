@@ -173,7 +173,7 @@
 </template>
 <script type="text/javascript" src="../../../assets/js/cookie.js"></script>
 <script>
-import {phoneCode, codeLoginPhone, frontLogin} from '@/api/api/AgreementRequest.js'
+import {phoneCode, codeLoginPhone, frontLogin, usersSelect} from '@/api/api/AgreementRequest.js'
 export default {
 	name: 'mLogin',
 	data () {
@@ -193,9 +193,24 @@ export default {
 		}
 	},
 	mounted () {
-	
+		
 	},
 	methods: {
+		getUserMsg() {
+			usersSelect().then((data) => {
+			  if (data.data.status_code == 401) {
+				  localStorage.removeItem('token') // 存储token
+				  this.isLogin = false
+				  window.open('/')
+			  } else  {
+				  this.userMsg.photo = data.data.photo
+				  this.isLogin = true
+				  var userInfo = JSON.stringify(data.data)
+				  // this.$cookieStore.setCookie( 'userInfo' ,userInfo);
+				   $.cookie("userInfo", userInfo, { expires:604800})
+			  }
+			})
+		},
 		gohome () { // 返回上一页
 			// this.$router.replace('/m/mhome')
 			window.location.href = "/"
@@ -280,7 +295,7 @@ export default {
 							    message: '登录成功',
 							    type: 'success'
 							  })
-							  // this.$router.replace('/m/mhome')
+							  this.getUserMsg()
 							  window.location.href = '/'
 							  // localStorage.setItem('topins',0)
 							  // var tel = this.form.phone
@@ -288,8 +303,6 @@ export default {
 							  localStorage.setItem('token', data.data.data.token) // 存储token
 							  // this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
 							  $.cookie("token", data.data.data.token, { expires:data.data.data.expires_in})
-							  // localStorage.setItem('phone', this.userPhone)
-							  // localStorage.setItem('isLogin', true)
 							  this.form = {}
 							  // this.isLogin = true
 							  this.loginFormregistYan = true
