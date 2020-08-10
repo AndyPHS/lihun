@@ -6,7 +6,8 @@
 // http://www.baiodu.com/api/v1/users/my_address/address_edit_before
 // 环境配置
 var environment = {
-  onLine: "http://m.woniujiashi.com/pug/api/",
+  onLineM: "http://m.woniujiashi.com/pug/api/",
+  onLinePC: "http://www.woniujiashi.com/pug/api/",
   // dev:"测试环境地址",
   dev: '/',
   devOfflin:"http://192.168.1.242/h5"
@@ -18,9 +19,12 @@ var host = location.host,
   baseLiHunURL = '',
   adminBaseURL, compBaseURL
 
-if(host.indexOf('woniujiashi.com') > -1){
+if(host.indexOf('www.woniujiashi.com') > -1){
   //线上环境
-  baseHost = environment.onLine
+  baseHost = environment.onLinePC
+}else if(host.indexOf('m.woniujiashi.com') > -1){
+  //线上环境
+  baseHost = environment.onLineM
 }else {
   //测试环境
   baseHost = environment.dev
