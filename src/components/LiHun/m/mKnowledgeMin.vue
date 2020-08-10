@@ -56,7 +56,7 @@ export default {
 		gohome () {
 			var Id = this.$route.params.id
 			if (Id == 45) { 
-				this.$router.replace('/')
+				window.location.href = "/"
 			} else {
 				this.$router.replace('/m/mKnowledge')
 			}
