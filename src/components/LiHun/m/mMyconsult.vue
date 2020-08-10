@@ -102,7 +102,8 @@ export default {
 			this.checkOne = !this.checkOne
 		},
 		gohome () {
-			this.$router.replace('/m/mUser')
+			// this.$router.replace('/m/mUser')
+			window.location.href = "/"
 		},
 		canceldialogDownLoadWenJuan () { // 关闭提示
 			this.dialogxieyi = false

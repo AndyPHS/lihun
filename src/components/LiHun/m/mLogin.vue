@@ -171,7 +171,7 @@
 		</div>
 	</div>
 </template>
-
+<script type="text/javascript" src="../../../assets/js/cookie.js"></script>
 <script>
 import {phoneCode, codeLoginPhone, frontLogin} from '@/api/api/AgreementRequest.js'
 export default {
@@ -279,12 +279,14 @@ export default {
 							    message: '登录成功',
 							    type: 'success'
 							  })
-							  this.$router.replace('/m/mhome')
+							  // this.$router.replace('/m/mhome')
+							  window.location.href = '/'
 							  // localStorage.setItem('topins',0)
 							  // var tel = this.form.phone
 							  // this.userPhone = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
 							  localStorage.setItem('token', data.data.data.token) // 存储token
-							  this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
+							  // this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
+							  $.cookie("token", data.data.data.token, { expires:data.data.data.expires_in})
 							  // localStorage.setItem('phone', this.userPhone)
 							  // localStorage.setItem('isLogin', true)
 							  this.form = {}
@@ -339,7 +341,8 @@ export default {
 							// localStorage.setItem('topins',0)
 						 //    this.userPhone = this.form.phone
 						    localStorage.setItem('token', data.data.data.token) // 存储token
-							this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
+							// this.$cookieStore.setCookie('token', data.data.data.token, data.data.data.expires_in);
+							 $.cookie("token", data.data.data.token, { expires:data.data.data.expires_in})
 							
 						    // localStorage.setItem('phone', this.form.phone)
 						    // localStorage.setItem('isLogin', true)

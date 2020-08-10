@@ -1812,21 +1812,21 @@ export default {
 			var list = this.caichanform.caichan01.answer
 			if(list.indexOf('10') > -1){
 				this.caichanNavList = []
-				console.log(this.caichanform.caichan02.answer)
 				userAddAnswer({
 				  value: JSON.stringify(this.caichanform.caichan02.answer), // 值
 				  qpid: 3853, // 关联id
 				  quid: localStorage.getItem('quid') // 用户的问卷id
 				}).then((data) => {
+					this.caichanNavList = []
 					this.getMsg()
 				}).catch((data) => {
 				})
 				this.dialogFormVisible = false
 			} else {
-				
+				this.caichanNavList = []
 				this.getMsg()
 				userAddAnswer({
-				  value: '', // 值
+				  value: '[]', // 值
 				  qpid: 3853, // 关联id
 				  quid: localStorage.getItem('quid') // 用户的问卷id
 				}).then((data) => {
