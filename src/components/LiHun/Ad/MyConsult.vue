@@ -261,7 +261,7 @@
 		mounted() {
 			this.getWenShu()
 			localStorage.setItem('topins',2)
-			this.cookie_value = this.getCookie(userInfo)
+			// this.cookie_value = this.getCookie(userInfo)
 			document.addEventListener('mouseup', this.queryHide)
 		},
 		methods: {

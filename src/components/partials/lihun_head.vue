@@ -565,15 +565,6 @@ export default {
 		  	this.dengluBox = false
 		    }
 		  }
-		// if ((!this.$refs.queryBox.contains(e.target)) && (!this.$refs.queryDown.contains(e.target))) {
-	 //  /* 关闭元素 */
-		//   // this.dialogLogin = false
-		//   // this.dialogFormVisible = false
-		//   // this.forgetDialog = false
-		//   // this.forgetDialog2 = false
-		//   // this.dialogFindByPhone = false
-		//   // this.dialogPhonePw = false
-		// }
 	  },
 	  dengluTabAc () { // 登录方式切换
 		  this.dengluTab = !this.dengluTab
@@ -650,30 +641,14 @@ export default {
 		} else {
 			if(index == 0){
 				window.location.href="/"
-				
-				// this.$router.replace('/')
-				// const {href} = this.$router.replace({
-				// 	path: '/',
-				// 	params: {
-				// 	  topins: this.topins
-				// 	}
-				// })
-				// window.open(href, '_blank')
 			} else if (index == 1){
 				localStorage.setItem('topins',1)
-				// const {href} = this.$router.replace({
-				// 	path: '/lhzs/',
-				// 	params: {
-				// 	  topins: this.topins
-				// 	}
-				// })
 				window.location.href = '/lhzs.html'
 			} else if(index == 2){
 				var isLogin = localStorage.getItem('token')
 				if (isLogin == undefined){
 					this.dialogLogin = true
 				} else {
-					// this.$router.replace('/dzlhxys')
 					const {href} = this.$router.replace({
 						path: '/dzlhxys',
 						params: {
@@ -684,12 +659,6 @@ export default {
 				}
 			}else if(index == 3){
 				localStorage.setItem('topins',3)
-				// const {href} = this.$router.replace({
-				// 	path: '/lhxys',
-				// 	params: {
-				// 	  topins: this.topins
-				// 	}
-				// })
 				window.location.href = '/lhxys.html'
 			} else if (index == 4){
 				window.location.href = 'http://www.jialilaw.com/', '_blank'
