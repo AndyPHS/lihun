@@ -30,14 +30,7 @@
 					<p style="text-align: justify; font-size: 14px; font-family: DengXian; white-space: normal; text-indent: 32px; line-height: 3em;"><span
 						 style="font-size: 18px;">相信我们，选择我们，我们始终与您同在。</span></p>
 				</div>
-				<div>
-					<div class="dingzhi">
-						<div @click="goDingZhi" class="shouyedingzhibtn mx-auto">
-							<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
-							<span class="inline-block text-white">免费定制离婚协议书</span>
-						</div>
-					</div>
-				</div>
+				
 				<div class="m_r_b py-6 px-6 hidden">
 					<div class="flex items-center m_r_b_t">
 						<div></div>
