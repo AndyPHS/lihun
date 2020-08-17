@@ -86,9 +86,9 @@ const router = new Router({
     {path: '/CustomShengCheng', name: 'CustomShengCheng', component: CustomShengCheng},
 
     // 离婚协议书推广定制协议书帮助页面
-    {path: '/AgreementHelp', name: 'AgreementHelp', component: AgreementHelp},
+    {path: '/AgreementHelp', name: 'AgreementHelp', component: AgreementHelp,meta: maping.AgreementHelp},
     // 离婚协议书推广定制协议书帮助页面
-    {path: '/AgreementHelpCon', name: 'AgreementHelpCon', component: AgreementHelpCon},
+    {path: '/AgreementHelpCon', name: 'AgreementHelpCon', component: AgreementHelpCon, meta:maping.AgreementHelpCon},
 	{path: '/AgreementHelpCongushi', name: 'AgreementHelpCongushi', component: AgreementHelpCongushi},
 	// 离婚协议书推广定制协议书用户页面
     {path: '/AgreementUser', name: 'AgreementUser', component: AgreementUser},
