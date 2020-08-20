@@ -14,7 +14,7 @@
         <div class="bot02 border-b-2 flex justify-between  items-end">
           <div class="w-1/3 text-left text-white bot02_l">
             <h2>联系我们</h2>
-            <p>电话：400-8989-818    &nbsp;  时间：周一至周日 09:00-18:00 </p>
+            <p>电话：17888828870    &nbsp;  时间：周一至周日 09:00-18:00 </p>
             <p>地址：北京市朝阳区建国门外大街22号赛特大厦3层</p>
           </div>
           <dl class="w-1/5 text-white flex items-center">
