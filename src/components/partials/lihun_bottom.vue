@@ -27,6 +27,21 @@
             </dt>
           </dl>
         </div>
+		<div class="lianjie flex pt-2">
+			<span class="span">友情链接：</span>
+			<ul class="flex flex-wrap">
+				<li class="pr-2 pb-1"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+			</ul>
+		</div>
         <div class="bot03 text-left text-white">
           <p>©2017 北京家理律师事务所      备案号：京ICP备14011260号-4      京公网安备：11010502037274号</p>
         </div>
@@ -148,7 +163,9 @@ export default {
   .bot02{border-color: #a0a0a0;padding-bottom: 15px;}
   .bot02_l h2{padding-top:40px;line-height:47px;font-size: 18px;font-weight: bold;}
   .bot02_l p{font-size: 14px;}
-  .bot03{padding-top: 15px;}
+  .bot03{padding-top: 10px;}
   .bot03 p{font-size: 14px;}
   .w{width: 1200px; margin: 0 auto;}
+  .lianjie ul li a{font-size: 14px;}
+  .lianjie .span{width: 80px;font-size: 14px; align-items: flex-start;margin-top: 2px;white-space: nowrap;}
 </style>

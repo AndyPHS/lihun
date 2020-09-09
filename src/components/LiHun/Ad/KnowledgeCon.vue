@@ -20,6 +20,7 @@
           <h2 class="text-center pb-4 text-bold text-25">{{ this.wenCon.title }}</h2>
 		  <div>
 			  <span class="inline-block pb-6 text-14">{{ this.wenCon.time }}</span>
+			  <span class="inline-block pb-6 text-14">{{ this.wenCon.source }}</span>
 			  <span v-if="this.wenCon.view !=null" class="inline-block pb-6 text-14 ml-4">帮助 {{ this.wenCon.view }} 人</span>
 			  <span v-if="this.wenCon.view ==null" class="inline-block pb-6 text-14 ml-4">帮助 1245 人</span>
 		  </div>
@@ -114,7 +115,8 @@ export default {
         title: '',
         time: '',
         con: '',
-		view: null
+		view: null,
+		source:''
       },
 	  ins: null,
 	  insName: '离婚',
@@ -145,6 +147,7 @@ export default {
          this.wenCon.time = data.data.data.createdTime;
          this.wenCon.con = data.data.data.content;
 		 this.wenCon.view = data.data.data.view;
+		 this.wenCon.source = data.data.data.source;
 		 this.relevantAll = data.data.data.relevant;
 		 this.ins = data.data.data.faId
        })

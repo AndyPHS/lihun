@@ -482,6 +482,37 @@
         	<span class="inline-block text-white">免费定制离婚协议书</span>
         </div>
       </div>
+	  <div class="w zhishilist">
+		<div class="w-1/4 px-5 overflow-hidden">
+			<ul class="text-left">
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+			</ul>
+		</div>
+		<div class="w-1/4 px-5 overflow-hidden">
+			<ul class="text-left">
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+			</ul>
+		</div>
+		<div class="w-1/4 px-5 overflow-hidden">
+			<ul class="text-left">
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+			</ul>
+		</div>
+		<div class="w-1/4 px-5 overflow-hidden">
+			<ul class="text-left">
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+				<li class="pb-2 text-sm"><a class="hover:underline pb-1 hover:font-bold" href="">世界十大未解之谜</a></li>
+			</ul>
+		</div>
+	  
+	  </div>
     </div>
     <!-- 公共底部 -->
 	<lihun-bottom></lihun-bottom>
@@ -599,7 +630,7 @@ export default {
 .guanyu_min_r .guanyu_min_r_con{width: 520px;height: 207px;margin:45px auto;font-size:16px;color:#737374;text-align: left;}
 .guanyu_min_r_con p{margin: 20px 0; text-indent: 2em;line-height: 35px;}
 .guanyu_min_r_con p:hover{text-decoration: underline;cursor: pointer;}
-.dingzhi{text-align: center;padding:135px 0;}
+.dingzhi{text-align: center;padding:100px 0 50px;}
 .dingzhi img{display: inline-block;}
 .quanyue_01{padding-bottom: 37px;}
 .quanyue_01 dl dt{height: 102px;background-color: #fff;font-size:37px;color: #547ce0;line-height: 102px;text-align: center;}
@@ -632,4 +663,8 @@ export default {
 .liucheng_li:last-of-type{width: 209px;}
 .liucheng_li dl dd{margin-top:27px;font-size: 30px;color:#535353;}
 .liucheng_li>img{margin-top:52px;}
+
+.zhishilist{display: flex;justify-content:space-between;padding-top:50px;padding-bottom: 30px;}
+.zhishilist div ul li a{text-underline-position: under;color:#818181;}
+/* .zhishilist div ul li a:hover{text-decoration: underline;} */
 </style>
