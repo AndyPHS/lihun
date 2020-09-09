@@ -230,6 +230,7 @@ export default {
 .c_m_l{width: 870px;padding:0 69px;margin:38px auto;border-right: 2px solid #eceff4;}
 .c_m_r{width: 325px;padding:38px 23px;}
 /* .c_m_r_m{width: 890px;} */
+.m_r_m .s3 img{margin: 0 auto}
 .m_r_m ul li{border-color: #eceff4;}
 .m_r_m ul li h2{font-size: 22px;color: #6a6a6a;}
 .m_r_m ul li span{color: #d1d1d1;font-size: 14px;}
