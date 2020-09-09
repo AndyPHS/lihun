@@ -207,6 +207,7 @@ export default{
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
       this.ruleForm.content = content;
       this.ruleForm.faId = this.ruleForm.faId;
+	  this.ruleForm.view = 0
       this.$refs[formName].validate((valid) => {
         addNews(this.ruleForm).then((data) => {
           if (data.data.status_code === 200) {
