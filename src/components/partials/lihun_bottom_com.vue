@@ -8,7 +8,7 @@
 			</div>
           <dl class="w-1/5 text-white flex items-center">
             <dd>
-              <img class="inline-block" src="../../assets/images/lihun/weichat.png" alt="">
+              <img class="inline-block weichat" src="../../assets/images/lihun/weichat.png" alt="">
             </dd>
             <dt class="ml-5">
               <h2 class="mt-2">扫码关注</h2>
@@ -46,4 +46,5 @@ export default {
   .bot03{padding-left: 54px;}
   .bot03 p{font-size: 14px;}
   .w{width: 1200px; margin: 0 auto;}
+  .weichat{width: 70px;height: 70px;}
 </style>

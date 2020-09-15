@@ -182,19 +182,9 @@ export default{
     },
     getUEContent () {
       let content = this.$refs.ue.getUEContent() // 调用子组件方法
-      // this.$notify({
-      //   title: '获取成功，可在控制台查看！',
-      //   message: content,
-      //   type: 'success'
-      // })
     },
     getUEContentTxt () {
       let content = this.$refs.ue.getUEContentTxt() // 调用子组件方法
-      // this.$notify({
-      //   title: '获取成功，可在控制台查看！',
-      //   message: content,
-      //   type: 'success'
-      // })
     },
     submitForm(formName) {
       if (this.ruleForm.faId.length == 2) {
