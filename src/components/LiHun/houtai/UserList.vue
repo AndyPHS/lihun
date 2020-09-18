@@ -122,6 +122,10 @@ import {selectUserBack, selectUserBackByPhone} from '@/api/api/AgreementRequest.
 	     selectUserBack({page:this.currentPage}).then((data)=>{
 	         this.pageInfo = data.data.data.data
 	         this.total = data.data.data.total
+			 if(data.data.status_code == 401){
+				 this.errorMsg = '登录过期，请重新登录'
+				 this.$router.replace("login");
+			 }
 	     }).catch((data)=>{
 	         this.$router.replace("/");
 	     })
