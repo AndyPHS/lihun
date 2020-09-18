@@ -63,7 +63,7 @@
 	      @current-change="handleUserList"
 	      :page-size="pagesize"
 	      :current-page.sync="currentPage"
-	      :total="this.min.total">
+	      :total="total">
 	  </el-pagination>
     </div>
 	<div v-if="dengluerrorBox==true" class="fixed errorBox">
@@ -110,8 +110,8 @@ import {selectUserBack, selectUserBackByPhone} from '@/api/api/AgreementRequest.
 	   ],
 	   currentPage:1, //初始页
 	   pagesize:10,    //    每页的数据
-	   pageNum: 1, // 第几页
 	   min: '',
+	   total: 0
      }
    },
    mounted () {
@@ -121,7 +121,7 @@ import {selectUserBack, selectUserBackByPhone} from '@/api/api/AgreementRequest.
 	 handleUserList () { // 获取用户
 	     selectUserBack({page:this.currentPage}).then((data)=>{
 	         this.pageInfo = data.data.data.data
-	         this.min = data.data.data
+	         this.total = data.data.data.total
 	     }).catch((data)=>{
 	         this.$router.replace("/");
 	     })
