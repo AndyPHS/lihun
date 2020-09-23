@@ -1295,10 +1295,12 @@ export default {
     },
     next () { //下一步
       this.nextLoading = true
+	  this.fullscreenLoading = true
 	  // localStorage.setItem('qpid', this.active)
 	  demoYanZheng({
 	    qpid: this.active
 	  }).then((data) => {
+		  this.fullscreenLoading = false
 	    if (data.data.status_code === 330) {
 	      this.missMsgBox = true
 	      this.missMsg = data.data.data
