@@ -116,7 +116,7 @@ export default{
       rules: {
         title: [
           { required: true, message: '请输入文章标题', trigger: 'blur' },
-          { max: 30, message: '长度在 30个字符内', trigger: 'blur' }
+          { max: 100, message: '长度在 100个字符内', trigger: 'blur' }
         ],
         faId: [
           { required: true, message: '请选择文章类型', trigger: 'change' }
