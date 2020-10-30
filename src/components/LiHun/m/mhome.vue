@@ -42,7 +42,7 @@
 				</el-carousel-item>
 				<el-carousel-item >
 					<div class="swiper01 swiperCommon">
-					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01.jpg" alt="">
+					  <img class="inline-block" src="../../../assets/images/lihun/m/home_swiper01_1.jpg" alt="">
 					</div>
 				</el-carousel-item>
 			</el-carousel>
