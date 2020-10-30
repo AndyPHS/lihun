@@ -65,7 +65,7 @@
 			  <div class="w flex justify-between items-center swi">
 				<div class="swiper01_min">
 				  <p>自主操作，私密定制</p>
-				  <h2 class="font-thin">资深律师团队精心研发</h2>
+				  <h2 class="font-thin">婚姻律师团队精心研发</h2>
 				  <div>
 					<div @click="goDingZhi" class="shouyedingzhibtn">
 						<img class="inline-block" src="../../../assets/images/lihun/ding_icon.png" alt="">
@@ -210,7 +210,7 @@
     <div class="qianyue">
       <div class="head_com">
         <h2>家理团队研发，让您定制更放心</h2>
-        <span>国内最大的婚姻家事律师事务所</span>
+        <span>国内专注婚姻家事律师事务所</span>
       </div>
       <div class="w quanyue_01 flex justify-between">
         <dl class="w-1/4 mr-4">
