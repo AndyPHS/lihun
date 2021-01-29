@@ -30,20 +30,11 @@
 		<div class="lianjie flex pt-2">
 			<span class="span">友情链接：</span>
 			<ul class="flex flex-wrap">
-				<li class="pr-2 pb-1"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
-				<li class="pr-2"><a href="">北京家理律师事务所</a></li>
+				<li class="pr-2 pb-1"><a href="http://www.jialilaw.com/">北京家理律师事务所</a></li>
 			</ul>
 		</div>
         <div class="bot03 text-left text-white">
-          <p>©2017 北京家理律师事务所      备案号：京ICP备14011260号-4      京公网安备：11010502037274号</p>
+          <p>©2017 北京家理律师事务所      备案号：<a href="https://beian.miit.gov.cn">京ICP备14011260号-4</a>      </p>
         </div>
       </div>
     </div>
