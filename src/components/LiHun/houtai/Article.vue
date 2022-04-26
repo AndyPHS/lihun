@@ -14,14 +14,15 @@
         <el-form ref="form" label-width="70px">
           <el-form-item
             label="选择分类"
-
           >
             <el-cascader
-              v-model="selectFenLei"
+              v-model="selectfenid"
+			  :placeholder="selectfenleiName"
               @change="getFenLeiList()"
               clearable
               :options="fenleiAll"
               :props="SetKesDept"
+			  ref="myCascader"
             ></el-cascader>
           </el-form-item>
         </el-form>
@@ -75,7 +76,7 @@
 import {selectActionBack} from '@/api/api/AgreementRequest.js' // 查询文章类型
 import {deleteNews} from '@/api/api/AgreementRequest.js' // 删除文章
 import {recoveryNews} from '@/api/api/AgreementRequest.js' // 恢复文章
-import {selectNews} from '@/api/api/AgreementRequest.js' // 查询文章
+import {selectNews,selectFaIDNews} from '@/api/api/AgreementRequest.js' // 查询文章
 import {selectFaIDNewsBack} from '@/api/api/AgreementRequest.js' // 通过分类查询文章
 export default{
   name: 'Article',
@@ -91,7 +92,9 @@ export default{
       tableData: [],
       status: 1,
       fenleiAll: [], // 全部分类
-      selectFenLei: null, // 已选分类
+      selectFenLei: null, // 已选分类数组
+	  selectfenid: null, // 已选分类ID
+	  selectfenleiName: '', // 已选分类名称
       fullscreenLoading: false ,// 加载图标
 	  // 分页
 	  first_page_url: '',
@@ -122,20 +125,23 @@ export default{
       this.getFenLeiList()
     },
     getFenLeiList () { // 查询总文章
-      // if (this.selectFenLei.length > 0) {
-      //   this.selectFenLei = this.selectFenLei[1]
-      // } else {
-      //   this.selectFenLei = this.selectFenLei[0]
-      // }
-      this.fullscreenLoading = true
-      if (this.selectFenLei != null) {
+	  var that = this;
+	  that.total = null;
+	  that.tableData = []
+      this.fullscreenLoading = true;
+	  console.log(that.selectfenid)
+      if (that.selectfenid != null && that.selectfenid.length != 0) {
+		that.selectfenid = this.$refs["myCascader"].getCheckedNodes()[0].value;
+		that.selectfenleiName = this.$refs["myCascader"].getCheckedNodes()[0].label;
         selectFaIDNews({
           status: 1,
-          faId: this.selectFenLei
+          faId: that.selectfenid,
+		  page: this.currentPage
         }).then((data) => {
-          this.tableData = data.data.data
-          this.fullscreenLoading = false
-          this.selectFenLei = null
+          this.tableData = data.data.data.data;
+		  that.total = data.data.data.total;
+          this.fullscreenLoading = false;
+		  this.$refs.myCascader.dropDownVisible = false;
         })
       } else {
         selectNews({
@@ -143,30 +149,37 @@ export default{
 		  page: this.currentPage
         }).then((data) => {
           this.tableData = data.data.data.data
-		  this.total = data.data.data.total
+		  that.total = data.data.data.total;
           this.fullscreenLoading = false
         })
       }
     },
     deleteAction () { // 点击回收站按钮
+	  var that = this;
       this.fullscreenLoading = true
       this.tableData = []
+	  that.total = null;
       this.status = 9
-      if (this.selectFenLei != null) {
+      if (that.selectfenid != null && that.selectfenid.length != 0) {
+		that.selectfenid = this.$refs["myCascader"].getCheckedNodes()[0].value;
+		that.selectfenleiName = this.$refs["myCascader"].getCheckedNodes()[0].label;
         selectFaIDNews({
           status: 9,
-          faId: this.selectFenLei
+          faId: that.selectfenid,
+		  page: this.currentPage
         }).then((data) => {
           this.fullscreenLoading = false
-          this.tableData = data.data.data
-          this.selectFenLei = null
+          this.tableData = data.data.data.data
+		  that.total = data.data.data.total;
+		  this.$refs.myCascader.dropDownVisible = false;
         })
       } else {
         selectNews({
           status: 9
         }).then((data) => {
-          this.fullscreenLoading = false
-          this.tableData = data.data.data
+          that.fullscreenLoading = false
+          that.tableData = data.data.data.data
+		  that.total = data.data.data.total;
         })
       }
     },
